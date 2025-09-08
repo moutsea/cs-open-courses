@@ -1,0 +1,979 @@
+
+> cs-courses@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1716ms
+ ✓ Compiled /middleware in 100ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 870ms (743 modules)
+Invalid or missing locale: undefined
+ ⨯ [Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request] {
+  digest: '3250917909'
+}
+ HEAD /en 500 in 1425ms
+ ✓ Compiled in 158ms (743 modules)
+ ✓ Compiled in 184ms (748 modules)
+ ⨯ Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request
+    at async LocaleLayout (src/app/[locale]/layout.tsx:55:20)
+  53 |   if (!locales.includes(locale)) notFound();
+  54 |
+> 55 |   const messages = await getMessages({ locale });
+     |                    ^
+  56 |
+  57 |   return (
+  58 |     <html lang={locale}> {
+  digest: '4135563573'
+}
+ HEAD /en 500 in 167ms
+ ✓ Compiled in 187ms (743 modules)
+ ⨯ ./src/app/[locale]/layout.tsx:61:23
+Module not found: Can't resolve '../../messages/en.json'
+  59 |     console.error(`Failed to load messages for locale: ${locale}`, error);
+  60 |     // Fallback to English
+> 61 |     messages = (await import(`../../messages/en.json`)).default;
+     |                       ^
+  62 |   }
+  63 |
+  64 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+ ✓ Compiled in 165ms (743 modules)
+Invalid or missing locale: undefined
+ ⨯ [Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request] {
+  digest: '3250917909'
+}
+ HEAD /en 500 in 118ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1742ms
+ ✓ Compiled /middleware in 267ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1732ms (744 modules)
+ ⨯ [Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router] {
+  digest: '1566942100'
+}
+ HEAD /en 500 in 2391ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1635ms
+ ✓ Compiled /middleware in 263ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1742ms (748 modules)
+ ⨯ Error: Cannot find module './undefined.json'
+    at <unknown> (.next/server/app/[locale]/page.js:34:12)
+    at async getRequestConfig (src/i18n.ts:6:16)
+  4 | export default async function getRequestConfig({ locale }: { locale: string }) {
+  5 |   return {
+> 6 |     messages: (await import(`../messages/${locale}.json`)).default
+    |                ^
+  7 |   };
+  8 | } {
+  code: 'MODULE_NOT_FOUND',
+  digest: '4039073233'
+}
+ HEAD /en 500 in 2287ms
+ ✓ Compiled in 238ms (743 modules)
+ ✓ Compiled in 145ms (743 modules)
+ ⨯ Error: Cannot find module './undefined.json'
+    at <unknown> (.next/server/app/[locale]/page.js:34:12)
+    at async getRequestConfig (src/i18n.ts:6:16)
+  4 | export default async function getRequestConfig({ locale }: { locale: string }) {
+  5 |   return {
+> 6 |     messages: (await import(`../messages/${locale}.json`)).default
+    |                ^
+  7 |   };
+  8 | } {
+  code: 'MODULE_NOT_FOUND',
+  digest: '1452211662'
+}
+ HEAD /en 500 in 167ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1574ms
+ ✓ Compiled /middleware in 258ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1776ms (743 modules)
+ ⨯ [Error: Couldn't find next-intl config file. Please follow the instructions at https://next-intl.dev/docs/getting-started/app-router] {
+  digest: '1566942100'
+}
+ HEAD /en 500 in 2535ms
+ ✓ Compiled in 78ms (264 modules)
+ ✓ Compiled in 61ms (264 modules)
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1838ms
+ ✓ Compiled /middleware in 250ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1706ms (743 modules)
+ ⨯ Error: Cannot find module './undefined.json'
+    at <unknown> (.next/server/app/[locale]/page.js:34:12)
+    at async getRequestConfig (src/i18n.ts:6:16)
+  4 | export default async function getRequestConfig({ locale }: { locale: string }) {
+  5 |   return {
+> 6 |     messages: (await import(`../messages/${locale}.json`)).default
+    |                ^
+  7 |   };
+  8 | } {
+  code: 'MODULE_NOT_FOUND',
+  digest: '1452211662'
+}
+ HEAD /en 500 in 2236ms
+ ✓ Compiled in 226ms (743 modules)
+ ⨯ [Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request] {
+  digest: '3250917909'
+}
+ HEAD /en 500 in 160ms
+ ✓ Compiled in 216ms (264 modules)
+ ✓ Compiled in 58ms (264 modules)
+ ✓ Compiled in 51ms (264 modules)
+ ✓ Compiled in 52ms (264 modules)
+ ✓ Compiled in 49ms (264 modules)
+ ✓ Compiled in 56ms (264 modules)
+ ✓ Compiled in 64ms (264 modules)
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1694ms
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1653ms
+ ✓ Compiled /middleware in 265ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1763ms (743 modules)
+ ⨯ [Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request] {
+  digest: '3250917909'
+}
+ GET /en 500 in 2670ms
+ ⨯ [Error: No locale was returned from `getRequestConfig`.
+
+See https://next-intl.dev/docs/usage/configuration#i18n-request] {
+  digest: '3250917909'
+}
+ GET /zh 500 in 376ms
+ ✓ Compiled in 243ms (692 modules)
+ ✓ Compiled in 151ms (689 modules)
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...
+   ▲ Next.js 15.5.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.3.119:3000
+
+ ✓ Starting...
+ ✓ Ready in 1718ms
+ ✓ Compiled /middleware in 260ms (143 modules)
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 1611ms (689 modules)
+ ⨯ Error: Failed to call `useTranslations` because the context from `NextIntlClientProvider` was not found.
+
+This can happen because:
+1) You intended to render this component as a Server Component, the render
+   failed, and therefore React attempted to render the component on the client
+   instead. If this is the case, check the console for server errors.
+2) You intended to render this component on the client side, but no context was found.
+   Learn more about this error here: https://next-intl.dev/docs/environments/server-client-components#missing-context
+    at Header (src/components/Header.tsx:9:28)
+   7 | export default function Header() {
+   8 |   const [isMenuOpen, setIsMenuOpen] = useState(false)
+>  9 |   const t = useTranslations('nav')
+     |                            ^
+  10 |   const locale = useLocale()
+  11 |
+  12 |   return ( {
+  digest: '2425897797'
+}
+ GET /en 500 in 2447ms
+ ✓ Compiled in 221ms (639 modules)
+ ✓ Compiled in 184ms (639 modules)
+ GET /en 200 in 539ms
+ GET /zh 200 in 376ms
+ ✓ Compiled in 420ms (239 modules)
+ ✓ Compiled in 83ms (239 modules)
+ ✓ Compiled in 106ms (239 modules)
+ ✓ Compiled in 81ms (239 modules)
+ ✓ Compiled in 190ms (239 modules)
+ ✓ Compiled in 77ms (239 modules)
+ ✓ Compiled in 79ms (239 modules)
+ ✓ Compiled in 78ms (239 modules)
+ ✓ Compiled in 74ms (239 modules)
+ ✓ Compiled in 142ms (239 modules)
+ ✓ Compiled in 87ms (239 modules)
+ ✓ Compiled in 121ms (239 modules)
+ ✓ Compiled in 153ms (239 modules)
+ ✓ Compiled in 94ms (239 modules)
+ ✓ Compiled in 61ms (239 modules)
+ ✓ Compiled /[locale] in 97ms (403 modules)
+ GET /en 200 in 670ms
+ GET /zh 200 in 421ms
+ GET /en 200 in 416ms
+ GET /zh 200 in 418ms
+ ✓ Compiled in 307ms (239 modules)
+ ✓ Compiled /[locale] in 79ms (403 modules)
+ GET /en 200 in 682ms
+ GET /zh 200 in 384ms
+ GET /en 200 in 627ms
+ GET /site.webmanifest 404 in 432ms
+ GET /en 200 in 575ms
+ ✓ Compiled /favicon.ico in 149ms (420 modules)
+ GET /favicon.ico 200 in 234ms
+ GET /favicon.ico 200 in 13ms
+ GET /site.webmanifest 404 in 570ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ ✓ Compiled /_not-found in 362ms (650 modules)
+ GET /en 200 in 312ms
+ GET /en/universities 404 in 605ms
+ GET /en/universities 404 in 24ms
+ GET /favicon.ico 200 in 44ms
+ GET /favicon.ico 200 in 18ms
+ GET /en 200 in 488ms
+ GET /site.webmanifest 404 in 465ms
+ ✓ Compiled in 365ms (243 modules)
+ GET /en 200 in 335ms
+ ✓ Compiled in 88ms (239 modules)
+ ✓ Compiled in 82ms (239 modules)
+ GET /en 200 in 728ms
+ GET /en 200 in 680ms
+ GET /en 200 in 623ms
+ ✓ Compiled in 349ms (642 modules)
+ GET /en 200 in 465ms
+ ✓ Compiled in 320ms (642 modules)
+ GET /en 200 in 336ms
+ ⨯ ./src/app/[locale]/universities/page.tsx:71:23
+Module not found: Can't resolve '../../../messages/en.json'
+  69 |     messages = (await import(`../../../messages/${locale}.json`)).default
+  70 |   } catch (error) {
+> 71 |     messages = (await import(`../../../messages/en.json`)).default
+     |                       ^
+  72 |   }
+  73 |
+  74 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/[locale]/universities/page.tsx:71:23
+Module not found: Can't resolve '../../../messages/en.json'
+  69 |     messages = (await import(`../../../messages/${locale}.json`)).default
+  70 |   } catch (error) {
+> 71 |     messages = (await import(`../../../messages/en.json`)).default
+     |                       ^
+  72 |   }
+  73 |
+  74 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+ ○ Compiling /_not-found ...
+ ⨯ ./src/app/[locale]/universities/page.tsx:71:23
+Module not found: Can't resolve '../../../messages/en.json'
+  69 |     messages = (await import(`../../../messages/${locale}.json`)).default
+  70 |   } catch (error) {
+> 71 |     messages = (await import(`../../../messages/en.json`)).default
+     |                       ^
+  72 |   }
+  73 |
+  74 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/[locale]/universities/page.tsx:71:23
+Module not found: Can't resolve '../../../messages/en.json'
+  69 |     messages = (await import(`../../../messages/${locale}.json`)).default
+  70 |   } catch (error) {
+> 71 |     messages = (await import(`../../../messages/en.json`)).default
+     |                       ^
+  72 |   }
+  73 |
+  74 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+ GET /en/universities 500 in 2291ms
+ GET /en 500 in 386ms
+ GET /en 500 in 9ms
+ GET /en 500 in 8ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_error in 455ms (992 modules)
+ GET /en 200 in 1196ms
+ ✓ Compiled /favicon.ico in 135ms (613 modules)
+ GET /favicon.ico 200 in 258ms
+ GET /favicon.ico 200 in 6ms
+ GET /site.webmanifest 404 in 606ms
+ ✓ Compiled in 99ms (396 modules)
+ GET /en 200 in 309ms
+ ✓ Compiled /[locale]/tutorial in 259ms (997 modules)
+ GET /en/tutorial 200 in 672ms
+ GET /en/universities 200 in 377ms
+ GET /zh/universities 200 in 39ms
+ GET /en/tutorial 200 in 81ms
+ GET /zh/tutorial 200 in 58ms
+ GET /en/universities 200 in 32ms
+ GET /en/universities 200 in 51ms
+ GET /zh/universities 200 in 78ms
+ GET /favicon.ico 200 in 36ms
+ GET /site.webmanifest 404 in 655ms
+ GET /en/universities 200 in 58ms
+ GET /site.webmanifest 404 in 434ms
+ GET /en 200 in 286ms
+ ✓ Compiled in 535ms (506 modules)
+ GET /en 200 in 315ms
+ ✓ Compiled in 138ms (392 modules)
+ GET /en 200 in 310ms
+ ✓ Compiled in 115ms (392 modules)
+ ✓ Compiled in 87ms (392 modules)
+ ✓ Compiled in 550ms (1089 modules)
+ GET /en 200 in 1695ms
+ GET /en 200 in 1609ms
+ GET /en 200 in 1545ms
+ GET /en 200 in 1007ms
+ ✓ Compiled in 106ms (392 modules)
+ ✓ Compiled in 219ms (1089 modules)
+ GET /en 200 in 1146ms
+ GET /en 200 in 1062ms
+ GET /en 200 in 869ms
+ ✓ Compiled in 84ms (392 modules)
+ ✓ Compiled in 237ms (1089 modules)
+ GET /en 200 in 1015ms
+ GET /en 200 in 948ms
+ GET /en 200 in 662ms
+ HEAD /zh 200 in 409ms
+ GET /en 200 in 784ms
+ ✓ Compiled /favicon.ico in 215ms (614 modules)
+ GET /favicon.ico 200 in 301ms
+ GET /favicon.ico 200 in 6ms
+ GET /site.webmanifest 404 in 623ms
+ GET /en 200 in 628ms
+ GET /favicon.ico 200 in 7ms
+ GET /site.webmanifest 404 in 481ms
+ ✓ Compiled in 572ms (506 modules)
+ ✓ Compiled in 111ms (392 modules)
+ ✓ Compiled in 89ms (392 modules)
+ ✓ Compiled in 64ms (392 modules)
+ ✓ Compiled in 194ms (392 modules)
+ ✓ Compiled in 78ms (392 modules)
+ ✓ Compiled in 101ms (392 modules)
+ ✓ Compiled in 72ms (392 modules)
+ ✓ Compiled in 82ms (392 modules)
+ ✓ Compiled / in 298ms (977 modules)
+ HEAD / 200 in 776ms
+ ⨯ ./src/app/courses/page.tsx:1:1
+Module not found: Can't resolve './[locale]/courses/page'
+> 1 | import Courses from './[locale]/courses/page'
+    | ^
+  2 |
+  3 | export default function RootCoursesPage() {
+  4 |   // Serve English courses content directly at root level
+
+https://nextjs.org/docs/messages/module-not-found
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ HEAD /courses 500 in 261ms
+ HEAD /courses 500 in 13ms
+ ○ Compiling /courses ...
+ ⨯ ./src/app/courses/page.tsx:1:1
+Module not found: Can't resolve './[locale]/courses/page'
+> 1 | import Courses from './[locale]/courses/page'
+    | ^
+  2 |
+  3 | export default function RootCoursesPage() {
+  4 |   // Serve English courses content directly at root level
+
+https://nextjs.org/docs/messages/module-not-found
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ HEAD /universities 500 in 167ms
+ HEAD /universities 500 in 7ms
+ ⨯ ./src/app/courses/page.tsx:1:1
+Module not found: Can't resolve './[locale]/courses/page'
+> 1 | import Courses from './[locale]/courses/page'
+    | ^
+  2 |
+  3 | export default function RootCoursesPage() {
+  4 |   // Serve English courses content directly at root level
+
+https://nextjs.org/docs/messages/module-not-found
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ ⨯ [TypeError: Cannot read properties of undefined (reading '/_app')]
+[TypeError: Cannot read properties of undefined (reading '/_app')]
+ HEAD /tutorial 500 in 169ms
+ HEAD /tutorial 500 in 9ms
+ ⨯ ./src/app/tutorial/page.tsx:1:1
+Module not found: Can't resolve './[locale]/tutorial/page'
+> 1 | import Tutorial from './[locale]/tutorial/page'
+    | ^
+  2 |
+  3 | export default function RootTutorialPage() {
+  4 |   // Serve English tutorial content directly at root level
+
+https://nextjs.org/docs/messages/module-not-found
+ ⨯ ./src/app/tutorial/page.tsx:1:1
+Module not found: Can't resolve './[locale]/tutorial/page'
+> 1 | import Tutorial from './[locale]/tutorial/page'
+    | ^
+  2 |
+  3 | export default function RootTutorialPage() {
+  4 |   // Serve English tutorial content directly at root level
+
+https://nextjs.org/docs/messages/module-not-found
+ ✓ Compiled /tutorial in 484ms (1057 modules)
+ ⨯ Error: Attempted to call the default export of "/Users/liang/Documents/code/react/no_hard_thing/cs-courses/src/app/[locale]/courses/page.tsx" from the server, but it's on the client. It's not possible to invoke a client function from the server, it can only be rendered as a Component or passed to props of a Client Component.
+    at RootCoursesPage (src/app/courses/page.tsx:5:17)
+  3 | export default function RootCoursesPage() {
+  4 |   // Serve English courses content directly at root level
+> 5 |   return Courses({ params: Promise.resolve({ locale: 'en' }) })
+    |                 ^
+  6 | } {
+  digest: '172614315'
+}
+ HEAD /courses 500 in 240ms
+ GET / 200 in 603ms
+ ✓ Compiled /favicon.ico in 295ms (653 modules)
+ GET /favicon.ico 200 in 460ms
+ HEAD /universities 200 in 142ms
+ GET /favicon.ico 200 in 32ms
+ HEAD /tutorial 200 in 75ms
+ ⨯ Failed to generate static paths for /[locale]:
+TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:401:39)
+    at <unknown> (.next/server/app/[locale]/page.js:402:104) {
+  type: 'TypeError'
+}
+ GET /dashboard 404 in 665ms
+ GET /favicon.ico 200 in 7ms
+ ✓ Compiled in 332ms (1014 modules)
+ GET / 200 in 1041ms
+ GET /favicon.ico 200 in 53ms
+ HEAD / 200 in 468ms
+ HEAD /universities 200 in 40ms
+ HEAD /tutorial 200 in 50ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:401:39)
+    at <unknown> (.next/server/app/[locale]/page.js:402:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ HEAD /zh 500 in 565ms
+ GET / 200 in 764ms
+ GET /favicon.ico 200 in 14ms
+ GET /favicon.ico 200 in 7ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:401:39)
+    at <unknown> (.next/server/app/[locale]/page.js:402:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ GET /zh 500 in 589ms
+ GET / 200 in 539ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:401:39)
+    at <unknown> (.next/server/app/[locale]/page.js:402:104) {
+  type: 'TypeError',
+  page: '/dashboard'
+}
+ GET /dashboard 500 in 455ms
+ GET / 200 in 494ms
+ GET / 200 in 571ms
+ GET /favicon.ico 200 in 9ms
+ GET / 200 in 508ms
+ ✓ Compiled in 513ms (994 modules)
+ GET / 200 in 404ms
+ HEAD / 200 in 367ms
+ ✓ Compiled /universities in 348ms (618 modules)
+ GET /universities 200 in 507ms
+ GET /universities 200 in 22ms
+ ✓ Compiled in 540ms (1010 modules)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ GET / 500 in 327ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ GET / 500 in 227ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 944ms (993 modules)
+ GET / 200 in 31ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ GET / 500 in 227ms
+ ✓ Compiled /favicon.ico in 85ms (618 modules)
+ GET /favicon.ico 200 in 257ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 639ms (1009 modules)
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/page.js:345:39)
+    at <unknown> (.next/server/app/page.js:346:104)
+    at <unknown> (.next/server/app/page.js:346:47)
+    at Object.<anonymous> (.next/server/app/page.js:349:3) {
+  page: '/'
+}
+ GET / 500 in 226ms
+ GET /favicon.ico 200 in 51ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:365:39)
+    at <unknown> (.next/server/app/[locale]/page.js:366:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ HEAD /zh 500 in 565ms
+ ✓ Compiled in 148ms (392 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 147ms (392 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET / 200 in 21ms
+ GET / 200 in 1253ms
+ GET /favicon.ico 200 in 8ms
+ GET /favicon.ico 200 in 7ms
+ ✓ Compiled in 331ms (1010 modules)
+ GET / 200 in 358ms
+ ✓ Compiled in 201ms (392 modules)
+ GET / 200 in 402ms
+ ✓ Compiled in 192ms (392 modules)
+ GET / 200 in 511ms
+ ✓ Compiled in 597ms (1011 modules)
+ GET / 200 in 386ms
+ ✓ Compiled in 212ms (392 modules)
+ ✓ Compiled in 120ms (392 modules)
+ GET / 200 in 723ms
+ GET / 200 in 595ms
+ HEAD / 200 in 409ms
+ HEAD /universities 200 in 38ms
+ ✓ Compiled /tutorial in 194ms (622 modules)
+ HEAD /tutorial 200 in 507ms
+ GET / 200 in 307ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:365:39)
+    at <unknown> (.next/server/app/[locale]/page.js:366:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ HEAD /zh 500 in 603ms
+ ✓ Compiled /courses in 219ms (607 modules)
+ GET /courses 200 in 378ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 27ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 16ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 16ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 16ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 18ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 22ms
+ GET /courses 200 in 42ms
+ GET /courses 200 in 20ms
+ GET /courses 200 in 18ms
+ GET /courses 200 in 20ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 23ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 117ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 8ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 9ms
+ GET /courses 200 in 13ms
+ GET /courses 200 in 10ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 16ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 14ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 15ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 11ms
+ GET /courses 200 in 16ms
+ GET /courses 200 in 12ms
+ GET /courses 200 in 219ms
+ GET / 200 in 916ms
+ GET /universities 200 in 38ms
+ GET /tutorial 200 in 66ms
+ GET / 200 in 1077ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:365:39)
+    at <unknown> (.next/server/app/[locale]/page.js:366:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ GET /zh 500 in 591ms
+ GET / 200 in 628ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:365:39)
+    at <unknown> (.next/server/app/[locale]/page.js:366:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ GET /zh 500 in 524ms
+ GET / 200 in 594ms
+ ⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at __webpack_exec__ (.next/server/app/[locale]/page.js:365:39)
+    at <unknown> (.next/server/app/[locale]/page.js:366:104) {
+  type: 'TypeError',
+  page: '/zh'
+}
+ GET /zh 500 in 569ms
+ GET / 200 in 606ms
+ ✓ Compiled in 1200ms (994 modules)
+ GET / 200 in 342ms
+ ✓ Compiled in 401ms (994 modules)
+ GET / 200 in 421ms
+ ✓ Compiled in 345ms (994 modules)
+ GET / 200 in 329ms
+ ✓ Compiled in 223ms (994 modules)
+ GET / 200 in 362ms
+ ✓ Compiled in 785ms (994 modules)
+ GET / 200 in 324ms
+ ✓ Compiled in 689ms (994 modules)
+ GET / 200 in 341ms
+ HEAD /zh 200 in 704ms
+ HEAD /zh/universities 200 in 50ms
+ HEAD /zh/tutorial 200 in 67ms
+ HEAD / 200 in 318ms
+ HEAD /universities 200 in 92ms
+ GET /zh 200 in 767ms
+ ✓ Compiled /favicon.ico in 375ms (619 modules)
+ GET /favicon.ico 200 in 722ms
+ GET /site.webmanifest 404 in 557ms
+ GET / 200 in 562ms
+ GET /universities 200 in 30ms
+ ✓ Compiled in 1184ms (1013 modules)
+ GET / 200 in 462ms
+ ✓ Compiled in 554ms (996 modules)
+ GET / 200 in 377ms
+ ✓ Compiled in 267ms (996 modules)
+ GET / 200 in 357ms
+ HEAD / 200 in 383ms
+ HEAD /zh 200 in 350ms
+ GET / 200 in 346ms
+ GET / 200 in 304ms
+ GET / 200 in 303ms
+ GET / 200 in 315ms
+ GET / 200 in 860ms
+ GET / 200 in 719ms
+ GET / 200 in 332ms
+ GET / 200 in 278ms
+ ✓ Compiled in 939ms (393 modules)
+ GET / 200 in 292ms
+ ✓ Compiled in 1235ms (996 modules)
+ GET / 200 in 629ms
+ ✓ Compiled in 1094ms (996 modules)
+ GET / 200 in 337ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 523ms (996 modules)
+ ⨯ ReferenceError: toggleLanguage is not defined
+    at Header (src/components/Header.tsx:69:24)
+  67 |             </Link>
+  68 |             <button
+> 69 |               onClick={toggleLanguage}
+     |                        ^
+  70 |               className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 text-sm font-medium rounded transition-colors"
+  71 |             >
+  72 |               {t.language} {
+  digest: '798564103'
+}
+ GET / 500 in 1406ms
+ ✓ Compiled /favicon.ico in 198ms (620 modules)
+ GET /favicon.ico 200 in 301ms
+ GET /favicon.ico 200 in 30ms
+ ✓ Compiled in 1762ms (1331 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⨯ ReferenceError: Transition is not defined
+    at Header (src/components/Header.tsx:81:16)
+  79 |               </div>
+  80 |
+> 81 |               <Transition
+     |                ^
+  82 |                 as={Fragment}
+  83 |                 enter="transition ease-out duration-100"
+  84 |                 enterFrom="transform opacity-0 scale-95" {
+  digest: '3434274895'
+}
+ GET / 500 in 951ms
+ GET /favicon.ico 200 in 21ms
+ GET /favicon.ico 200 in 7ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/2.pack.gz_' -> '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/2.pack.gz'
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 610ms (1331 modules)
+ ⨯ ReferenceError: Transition is not defined
+    at Header (src/components/Header.tsx:81:16)
+  79 |               </div>
+  80 |
+> 81 |               <Transition
+     |                ^
+  82 |                 as={Fragment}
+  83 |                 enter="transition ease-out duration-100"
+  84 |                 enterFrom="transform opacity-0 scale-95" {
+  digest: '3434274895'
+}
+ GET / 500 in 1142ms
+ GET /favicon.ico 200 in 514ms
+ GET /favicon.ico 200 in 10ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled in 1130ms (1335 modules)
+ GET / 200 in 1569ms
+ GET /favicon.ico 200 in 27ms
+ GET /favicon.ico 200 in 7ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development-fallback/1.pack.gz_' -> '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development-fallback/1.pack.gz'
+ HEAD / 200 in 339ms
+ HEAD /zh 200 in 360ms
+ GET / 200 in 381ms
+ GET / 200 in 299ms
+ GET / 200 in 317ms
+ GET / 200 in 310ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz'
+ ✓ Compiled in 1113ms (1318 modules)
+ GET / 200 in 475ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz'
+ ✓ Compiled in 950ms (1318 modules)
+ GET / 200 in 411ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz_' -> '/Users/liang/Documents/code/react/no_hard_thing/cs-courses/.next/cache/webpack/client-development/0.pack.gz'
+ ✓ Compiled in 1260ms (1318 modules)
+ GET / 200 in 457ms
+[?25h

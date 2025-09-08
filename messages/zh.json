@@ -1,0 +1,236 @@
+{
+  "nav": {
+    "courses": "所有课程",
+    "tutorial": "教程",
+    "universities": "大学"
+  },
+  "courses": {
+    "title": "所有课程",
+    "difficulty": "难度",
+    "duration": "学习时间",
+    "language": "编程语言",
+    "showMore": "查看详情",
+    "showLess": "收起",
+    "viewCourse": "查看课程",
+    "browseMore": "浏览更多课程",
+    "backToCourses": "返回课程列表",
+    "loading": "加载中...",
+    "categories": "分类",
+    "noCourses": "该分类下暂无课程",
+    "allCategories": "所有分类",
+    "coursesCount": "门课程",
+    "subcategories": "子分类：",
+    "more": "更多"
+  },
+  "course": {
+    "courseContent": "课程内容",
+    "loading": "加载课程中...",
+    "notFound": "课程未找到",
+    "notFoundDescription": "您要查找的课程不存在。",
+    "error": "加载课程失败"
+  },
+  "home": {
+    "hero": {
+      "title": "CS公开课",
+      "subtitle": "来自顶尖大学的免费计算机科学课程",
+      "description": "免费访问世界各地著名大学的高质量计算机科学课程。",
+      "cta": "探索课程"
+    },
+    "stats": {
+      "courses": "门课程",
+      "universities": "所大学",
+      "subjects": "个学科"
+    },
+    "features": {
+      "universityQuality": {
+        "title": "大学品质",
+        "description": "来自麻省理工、斯坦福、哈佛等顶尖大学的课程。"
+      },
+      "comprehensiveCoverage": {
+        "title": "全面覆盖",
+        "description": "从编程入门到高级机器学习的全方位内容。"
+      },
+      "completelyFree": {
+        "title": "完全免费",
+        "description": "所有课程均可免费访问，无需注册。"
+      },
+      "selfPaced": {
+        "title": "自主学习",
+        "description": "灵活安排时间，按照自己的节奏学习。"
+      }
+    },
+    "universities": {
+      "title": "顶尖大学",
+      "subtitle": "向全世界最好的机构学习",
+      "learnMore": "了解更多 →"
+    },
+    "cta": {
+      "title": "立即开始学习",
+      "subtitle": "加入数千名免费学习计算机科学的学生行列",
+      "button": "浏览所有课程"
+    }
+  },
+  "tutorial": {
+    "title": "计算机科学学习路径",
+    "subtitle": "基于真实大学课程的完整CS学习规划",
+    "stages": "个学习阶段",
+    "sequence_title": "建议学习顺序",
+    "sequence_subtitle": "按照这个顺序学习，可以建立扎实的计算机科学基础",
+    "how_to_start": "如何开始学习？",
+    "how_to_start_desc": "基于CS学习规划文档的建议，从基础工具开始，逐步深入到各个专业领域",
+    "start_basic": "从基础开始",
+    "start_basic_desc": "先掌握命令行、Git等基础工具，然后学习数学基础",
+    "progress_gradually": "循序渐进",
+    "progress_gradually_desc": "按照从初级到高级的顺序，每个阶段都打好基础",
+    "practice_oriented": "实践导向",
+    "practice_oriented_desc": "每门课程都包含实际项目，通过动手实践来巩固理论知识",
+    "ready_to_start": "准备好开始你的CS之旅了吗？",
+    "ready_to_start_desc": "从基础工具开始，逐步掌握计算机科学的核心概念",
+    "browse_courses": "浏览课程",
+    "start_learning": "开始学习",
+    "sections": {
+      "essential_tools": {
+        "title": "基础工具",
+        "description": "掌握每个计算机科学学生都需要的基础工具"
+      },
+      "mathematical_foundations": {
+        "title": "数学基础",
+        "description": "为计算机科学打下坚实的数学基础"
+      },
+      "programming_fundamentals": {
+        "title": "编程基础",
+        "description": "从多种语言开始学习编程"
+      },
+      "computer_systems": {
+        "title": "计算机系统",
+        "description": "从硬件到软件理解计算机的工作原理"
+      },
+      "algorithms_theory": {
+        "title": "算法与理论",
+        "description": "掌握计算机科学的理论基础"
+      },
+      "machine_learning_ai": {
+        "title": "机器学习与人工智能",
+        "description": "探索人工智能的迷人世界"
+      },
+      "specialized_topics": {
+        "title": "专业领域",
+        "description": "探索计算机科学的高级和专业领域"
+      }
+    },
+    "courses": {
+      "command_line_shell": {
+        "name": "命令行与Shell",
+        "description": "学习Vim、命令行基础和Shell脚本编程"
+      },
+      "git_version_control": {
+        "name": "Git与版本控制",
+        "description": "掌握Git进行项目管理和协作开发"
+      },
+      "ide_development_environment": {
+        "name": "IDE与开发环境",
+        "description": "设置VS Code、调试工具和开发工作流"
+      },
+      "docker_containerization": {
+        "name": "Docker与容器化",
+        "description": "学习现代开发中的容器技术"
+      },
+      "calculus_linear_algebra": {
+        "name": "微积分与线性代数",
+        "description": "算法和机器学习的基础数学"
+      },
+      "discrete_mathematics": {
+        "name": "离散数学",
+        "description": "逻辑、集合论、图论和组合数学"
+      },
+      "probability_theory": {
+        "name": "概率论",
+        "description": "机器学习和算法的基础"
+      },
+      "information_theory": {
+        "name": "信息论",
+        "description": "熵、编码和通信理论"
+      },
+      "introduction_programming": {
+        "name": "编程入门",
+        "description": "从Python或C开始学习 - 哈佛CS50，MIT 6.100L"
+      },
+      "data_structures_algorithms": {
+        "name": "数据结构与算法",
+        "description": "UCB CS61B，普林斯顿算法 - 核心CS基础"
+      },
+      "software_engineering": {
+        "name": "软件工程",
+        "description": "MIT 6.031，UCB CS169 - 编写生产级代码"
+      },
+      "advanced_programming": {
+        "name": "高级编程",
+        "description": "斯坦福CS106B/X，MIT 6.824 - 系统编程"
+      },
+      "computer_architecture": {
+        "name": "计算机体系结构",
+        "description": "Nand2Tetris，UCB CS61C - 从零开始构建计算机"
+      },
+      "operating_systems": {
+        "name": "操作系统",
+        "description": "MIT 6.S081，UCB CS162 - 编写自己的操作系统内核"
+      },
+      "computer_networks": {
+        "name": "计算机网络",
+        "description": "斯坦福CS144 - 实现TCP/IP协议栈"
+      },
+      "database_systems": {
+        "name": "数据库系统",
+        "description": "CMU 15-445，UCB CS186 - 构建自己的数据库"
+      },
+      "algorithm_design": {
+        "name": "算法设计",
+        "description": "UCB CS170，MIT 6.046 - 高级算法技术"
+      },
+      "theory_computation": {
+        "name": "计算理论",
+        "description": "MIT 6.045J - 自动机、可计算性、复杂性"
+      },
+      "cryptography": {
+        "name": "密码学",
+        "description": "斯坦福CS255 - 安全的数学基础"
+      },
+      "convex_optimization": {
+        "name": "凸优化",
+        "description": "斯坦福EE364A - 机器学习和算法中的优化"
+      },
+      "machine_learning_fundamentals": {
+        "name": "机器学习基础",
+        "description": "Andrew Ng ML，斯坦福CS229 - 核心ML概念"
+      },
+      "deep_learning": {
+        "name": "深度学习",
+        "description": "斯坦福CS231n，CS224n - CNN、RNN、Transformer"
+      },
+      "reinforcement_learning": {
+        "name": "强化学习",
+        "description": "UCB CS285 - 深度RL和策略优化"
+      },
+      "ai_systems": {
+        "name": "AI系统",
+        "description": "CMU 10-414 - 深度学习系统和优化"
+      },
+      "computer_graphics": {
+        "name": "计算机图形学",
+        "description": "斯坦福CS148，Games101 - 渲染和可视化"
+      },
+      "parallel_computing": {
+        "name": "并行计算",
+        "description": "CMU 15-418/斯坦福CS149 - GPU编程和CUDA"
+      },
+      "distributed_systems": {
+        "name": "分布式系统",
+        "description": "MIT 6.824 - 共识、复制、容错"
+      },
+      "system_security": {
+        "name": "系统安全",
+        "description": "UCB CS161，SU SEED Labs - 安全和密码学"
+      }
+    }
+  }
+}

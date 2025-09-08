@@ -1,0 +1,236 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "tutorial": "Tutorial",
+    "universities": "Universities"
+  },
+  "courses": {
+    "title": "All Courses",
+    "difficulty": "Difficulty",
+    "duration": "Duration",
+    "language": "Language",
+    "showMore": "Show More",
+    "showLess": "Show Less",
+    "viewCourse": "View Course",
+    "browseMore": "Browse More Courses",
+    "backToCourses": "Back to Courses",
+    "loading": "Loading...",
+    "categories": "Categories",
+    "noCourses": "No courses found in this category",
+    "allCategories": "All Categories",
+    "coursesCount": "courses",
+    "subcategories": "Subcategories:",
+    "more": "more"
+  },
+  "course": {
+    "courseContent": "Course Content",
+    "loading": "Loading course...",
+    "notFound": "Course Not Found",
+    "notFoundDescription": "The course you're looking for doesn't exist.",
+    "error": "Failed to load course"
+  },
+  "home": {
+    "hero": {
+      "title": "CS Open Courses",
+      "subtitle": "Free Computer Science Courses from Top Universities",
+      "description": "Access high-quality computer science courses from prestigious universities around the world, completely free of charge.",
+      "cta": "Explore Courses"
+    },
+    "stats": {
+      "courses": "Courses",
+      "universities": "Universities",
+      "subjects": "Subjects"
+    },
+    "features": {
+      "universityQuality": {
+        "title": "University Quality",
+        "description": "Courses from top universities like MIT, Stanford, and Harvard."
+      },
+      "comprehensiveCoverage": {
+        "title": "Comprehensive Coverage",
+        "description": "From introductory programming to advanced machine learning."
+      },
+      "completelyFree": {
+        "title": "Completely Free",
+        "description": "All courses are free to access with no registration required."
+      },
+      "selfPaced": {
+        "title": "Self-Paced Learning",
+        "description": "Learn at your own pace with flexible scheduling."
+      }
+    },
+    "universities": {
+      "title": "Top Universities",
+      "subtitle": "Learn from the best institutions in the world",
+      "learnMore": "Learn more →"
+    },
+    "cta": {
+      "title": "Start Learning Today",
+      "subtitle": "Join thousands of students learning computer science for free",
+      "button": "Browse All Courses"
+    }
+  },
+  "tutorial": {
+    "title": "Computer Science Learning Path",
+    "subtitle": "Complete CS learning roadmap based on real university courses",
+    "stages": "Learning Stages",
+    "sequence_title": "Suggested Learning Sequence",
+    "sequence_subtitle": "Follow this sequence to build a solid foundation in computer science",
+    "how_to_start": "How to Get Started?",
+    "how_to_start_desc": "Based on the CS Learning Planning document, start with essential tools and gradually progress to specialized areas",
+    "start_basic": "Start with Basics",
+    "start_basic_desc": "Master essential tools like command line and Git, then learn mathematical foundations",
+    "progress_gradually": "Progress Gradually",
+    "progress_gradually_desc": "Follow the sequence from beginner to advanced, building strong foundations at each stage",
+    "practice_oriented": "Practice-Oriented",
+    "practice_oriented_desc": "Each course includes practical projects to reinforce theoretical knowledge through hands-on practice",
+    "ready_to_start": "Ready to Start Your CS Journey?",
+    "ready_to_start_desc": "Start with essential tools and gradually master core computer science concepts",
+    "browse_courses": "Browse Courses",
+    "start_learning": "Start Learning",
+    "sections": {
+      "essential_tools": {
+        "title": "Essential Tools",
+        "description": "Master the fundamental tools that every computer science student needs"
+      },
+      "mathematical_foundations": {
+        "title": "Mathematical Foundations",
+        "description": "Build strong mathematical background for computer science"
+      },
+      "programming_fundamentals": {
+        "title": "Programming Fundamentals",
+        "description": "Learn programming from scratch with multiple languages"
+      },
+      "computer_systems": {
+        "title": "Computer Systems",
+        "description": "Understand how computers work from hardware to software"
+      },
+      "algorithms_theory": {
+        "title": "Algorithms & Theory",
+        "description": "Master the theoretical foundations of computer science"
+      },
+      "machine_learning_ai": {
+        "title": "Machine Learning & AI",
+        "description": "Explore the fascinating world of artificial intelligence"
+      },
+      "specialized_topics": {
+        "title": "Specialized Topics",
+        "description": "Explore advanced and specialized areas of computer science"
+      }
+    },
+    "courses": {
+      "command_line_shell": {
+        "name": "Command Line & Shell",
+        "description": "Learn Vim, command line basics, and shell scripting"
+      },
+      "git_version_control": {
+        "name": "Git & Version Control",
+        "description": "Master Git for project management and collaboration"
+      },
+      "ide_development_environment": {
+        "name": "IDE & Development Environment",
+        "description": "Set up VS Code, debugging tools, and development workflow"
+      },
+      "docker_containerization": {
+        "name": "Docker & Containerization",
+        "description": "Learn container technology for modern development"
+      },
+      "calculus_linear_algebra": {
+        "name": "Calculus & Linear Algebra",
+        "description": "Essential math for algorithms and machine learning"
+      },
+      "discrete_mathematics": {
+        "name": "Discrete Mathematics",
+        "description": "Logic, set theory, graph theory, and combinatorics"
+      },
+      "probability_theory": {
+        "name": "Probability Theory",
+        "description": "Foundation for machine learning and algorithms"
+      },
+      "information_theory": {
+        "name": "Information Theory",
+        "description": "Entropy, coding, and communication theory"
+      },
+      "introduction_programming": {
+        "name": "Introduction to Programming",
+        "description": "Start with Python or C - Harvard CS50, MIT 6.100L"
+      },
+      "data_structures_algorithms": {
+        "name": "Data Structures & Algorithms",
+        "description": "UCB CS61B, Princeton Algorithms - Core CS foundation"
+      },
+      "software_engineering": {
+        "name": "Software Engineering",
+        "description": "MIT 6.031, UCB CS169 - Write production-quality code"
+      },
+      "advanced_programming": {
+        "name": "Advanced Programming",
+        "description": "Stanford CS106B/X, MIT 6.824 - Systems programming"
+      },
+      "computer_architecture": {
+        "name": "Computer Architecture",
+        "description": "Nand2Tetris, UCB CS61C - Build a computer from scratch"
+      },
+      "operating_systems": {
+        "name": "Operating Systems",
+        "description": "MIT 6.S081, UCB CS162 - Write your own OS kernel"
+      },
+      "computer_networks": {
+        "name": "Computer Networks",
+        "description": "Stanford CS144 - Implement TCP/IP protocol stack"
+      },
+      "database_systems": {
+        "name": "Database Systems",
+        "description": "CMU 15-445, UCB CS186 - Build your own database"
+      },
+      "algorithm_design": {
+        "name": "Algorithm Design",
+        "description": "UCB CS170, MIT 6.046 - Advanced algorithm techniques"
+      },
+      "theory_computation": {
+        "name": "Theory of Computation",
+        "description": "MIT 6.045J - Automata, computability, complexity"
+      },
+      "cryptography": {
+        "name": "Cryptography",
+        "description": "Stanford CS255 - Mathematical foundations of security"
+      },
+      "convex_optimization": {
+        "name": "Convex Optimization",
+        "description": "Stanford EE364A - Optimization in ML and algorithms"
+      },
+      "machine_learning_fundamentals": {
+        "name": "Machine Learning Fundamentals",
+        "description": "Andrew Ng ML, Stanford CS229 - Core ML concepts"
+      },
+      "deep_learning": {
+        "name": "Deep Learning",
+        "description": "Stanford CS231n, CS224n - CNNs, RNNs, Transformers"
+      },
+      "reinforcement_learning": {
+        "name": "Reinforcement Learning",
+        "description": "UCB CS285 - Deep RL and policy optimization"
+      },
+      "ai_systems": {
+        "name": "AI Systems",
+        "description": "CMU 10-414 - Deep learning systems and optimization"
+      },
+      "computer_graphics": {
+        "name": "Computer Graphics",
+        "description": "Stanford CS148, Games101 - Rendering and visualization"
+      },
+      "parallel_computing": {
+        "name": "Parallel Computing",
+        "description": "CMU 15-418/Stanford CS149 - GPU programming and CUDA"
+      },
+      "distributed_systems": {
+        "name": "Distributed Systems",
+        "description": "MIT 6.824 - Consensus, replication, fault tolerance"
+      },
+      "system_security": {
+        "name": "System Security",
+        "description": "UCB CS161, SU SEED Labs - Security and cryptography"
+      }
+    }
+  }
+}

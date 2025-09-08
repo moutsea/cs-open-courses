@@ -1,0 +1,293 @@
+{
+  "essentialTools": {
+    "title": "必学工具",
+    "content": [
+      {
+        "title": "学会提问",
+        "content": "你可能会很惊讶提问竟然是第一个列出来的？我认为在开源社区中，学会提问是非常重要的一个能力。这包含两个方面。第一，这间接培养了你的独立解决问题的能力，因为形成一个疑问、描述清楚、获得他人解答、然后理解回应的这个周期是很长的。如果你指望他人远程协助你解决每一个琐碎的问题，那么计算机的世界可能不适合你。第二，如果经过尝试仍然无法解决问题，可以向开源社区寻求帮助。但此时如何向他人简洁地说明你的情况和目标就变得特别重要。我推荐阅读《提问的智慧》这篇文章，它不仅能提高你解决问题的概率和效率，而且能让提供答案的开源社区成员保持好心情。",
+        "link": "https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md",
+        "linkText": "提问的智慧"
+      },
+      {
+        "title": "MIT Missing Semester",
+        "content": "这门课程涵盖了很多黑客必备的工具，并且提供了详细的使用说明。我强烈建议初学者学习这门课程。但需要注意的是，课程偶尔会涉及开发流程相关的术语。因此建议至少学完一门计算机科学导论课程后再学习。",
+        "link": "/cs-self-learning/docs/编程入门/MIT-Missing-Semester.md",
+        "linkText": "MIT Missing Semester 课程"
+      },
+      {
+        "title": "命令行",
+        "content": "熟练使用命令行经常被忽视或者觉得难以掌握，但实际上它能极大地提高你作为工程师的灵活性和生产力。《命令行的艺术》是一个经典的教程，它最初是Quora上的一个问题，但随着众多专家的贡献，已经成为一个拥有超过10万星的GitHub顶级项目，被翻译成数十种语言。教程不长，我强烈建议大家反复阅读并通过实践内化。另外，shell脚本编程的掌握也不容忽视。",
+        "link": "https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md",
+        "linkText": "命令行的艺术"
+      },
+      {
+        "title": "IDE（集成开发环境）",
+        "content": "简单来说，就是你写代码的地方。IDE对于程序员的重要性不言而喻，但很多IDE是为大型项目设计的，相当臃肿且功能过度。现在一些轻量级的文本编辑器加上丰富的插件生态系统基本可以满足日常轻量级编程的需求。我个人比较喜欢VS Code和Sublime（前者插件配置非常简单，后者稍微复杂但更美观）。当然，对于大型项目，我还是会使用稍微重一些的IDE，比如Pycharm（Python）、IDEA（Java）等。",
+        "link": null
+      },
+      {
+        "title": "Vim",
+        "content": "一个命令行编辑器。Vim的学习曲线有点陡峭，但我认为掌握它是非常必要的，因为它会极大地提高你的开发效率。大多数现代IDE也支持Vim插件，让你在享受现代开发环境的同时保持极客的酷炫。",
+        "link": "/cs-self-learning/docs/必学工具/Vim.md",
+        "linkText": "Vim 教程"
+      },
+      {
+        "title": "Emacs",
+        "content": "与Vim齐名的经典编辑器，同样拥有极高的开发效率和更强大的扩展性。可以配置成轻量级编辑器，也可以扩展成自定义IDE，甚至更复杂的技巧。",
+        "link": "/cs-self-learning/docs/必学工具/Emacs.md",
+        "linkText": "Emacs 教程"
+      },
+      {
+        "title": "Git",
+        "content": "项目的版本控制工具。由Linux之父Linus创建的Git，绝对是每个CS学生必备的工具之一。",
+        "link": "/cs-self-learning/docs/必学工具/Git.md",
+        "linkText": "Git 教程"
+      },
+      {
+        "title": "GitHub",
+        "content": "基于Git的代码托管平台。世界最大的开源社区和CS专家聚集地。",
+        "link": "/cs-self-learning/docs/必学工具/GitHub.md",
+        "linkText": "GitHub 指南"
+      },
+      {
+        "title": "GNU Make",
+        "content": "工程构建工具。熟练使用GNU Make会帮助你养成模块化代码的习惯，并熟悉大型项目的编译和链接过程。",
+        "link": "/cs-self-learning/docs/必学工具/GNU_Make.md",
+        "linkText": "GNU Make 教程"
+      },
+      {
+        "title": "CMake",
+        "content": "比GNU Make更强大的构建工具，建议在掌握GNU Make后学习。",
+        "link": "/cs-self-learning/docs/必学工具/CMake.md",
+        "linkText": "CMake 教程"
+      },
+      {
+        "title": "LaTeX",
+        "content": "文档排版系统，特别适合学术论文。",
+        "link": "/cs-self-learning/docs/必学工具/LaTeX.md",
+        "linkText": "LaTeX 教程"
+      },
+      {
+        "title": "Docker",
+        "content": "比虚拟机更轻量级的软件打包和部署工具。",
+        "link": "/cs-self-learning/docs/必学工具/Docker.md",
+        "linkText": "Docker 教程"
+      },
+      {
+        "title": "实用工具箱",
+        "content": "除了上述开发中常用的工具外，我还收集了很多实用有趣的免费工具，比如下载工具、设计工具、学习网站等。",
+        "link": "/cs-self-learning/docs/必学工具/tools.md",
+        "linkText": "实用工具箱"
+      }
+    ]
+  },
+  "recommendedBooks": {
+    "title": "好书推荐",
+    "content": "我认为一本好的教科书应该是以人为本的，而不是技术术语的堆砌。告诉读者\"是什么\"固然重要，但更好的方式是作者将自己在该领域数十年的经验融入到书中，向读者叙述\"为什么是这样\"以及未来应该怎么做。",
+    "link": "/cs-self-learning/docs/好书推荐.md",
+    "linkText": "查看推荐书籍"
+  },
+  "environmentSetup": {
+    "title": "环境配置",
+    "content": [
+      {
+        "title": "PC环境配置",
+        "content": "如果你是Mac用户，那么恭喜你，本指南将带你搭建完整的开发环境。如果你是Windows用户，得益于开源社区的努力，你可以通过Scoop享受到类似的体验。",
+        "link": "https://sourabhbajaj.com/mac-setup/",
+        "linkText": "Mac配置指南"
+      },
+      {
+        "title": "服务器端环境配置",
+        "content": "服务器端运维需要Linux（或其他Unix-like系统）的基本使用和进程、设备、网络等基础概念。初学者可以参考中国科学技术大学Linux用户协会整理的《Linux 101》在线笔记。如果想深入学习系统运维，可以参考《系统管理诸方面》课程。",
+        "link": "https://101.lug.ustc.edu.cn/",
+        "linkText": "Linux 101 教程"
+      },
+      {
+        "title": "DevOps指南",
+        "content": "如果你需要学习特定的概念或工具，我推荐一个很棒的GitHub项目，它涵盖了管理领域的很多基础知识和教程，比如Docker、Kubernetes、Linux、CI-CD、GitHub Actions等等。",
+        "link": "https://github.com/Tikam02/DevOps-Guide",
+        "linkText": "DevOps指南"
+      }
+    ]
+  },
+  "courseMap": {
+    "title": "课程地图",
+    "content": "本课程地图仅为课程规划的参考指南。只要你满足课程的先修要求，就可以根据自己的需求和兴趣自由选择任何课程。你可以根据自己的兴趣和目标定制自己的课程地图。",
+    "subsections": [
+      {
+        "id": "mathematics",
+        "title": "数学基础",
+        "courses": [
+          {
+            "title": "微积分与线性代数",
+            "description": "作为大一新生，掌握微积分和线性代数与学习编程同样重要。如果你觉得课堂上讲授的内容晦涩难懂，可以参考MIT的微积分课程和18.06：线性代数课程笔记。我也强烈推荐数学YouTuber 3Blue1Brown，他的频道用生动的动画来解释数学的核心。",
+            "links": [
+              { "text": "MIT微积分课程", "url": "/cs-self-learning/docs/数学基础/MITmaths.md" },
+              { "text": "MIT线性代数", "url": "/cs-self-learning/docs/数学基础/MITLA.md" },
+              { "text": "3Blue1Brown YouTube频道", "url": "https://www.youtube.com/c/3blue1brown" }
+            ]
+          },
+          {
+            "title": "信息论导论",
+            "description": "对于计算机专业的学生来说，尽早获得一些信息论的基础知识是有益的。MIT的6.050J：信息论和熵是为大一新生量身定制的，几乎没有任何先修要求，涵盖编码、压缩、通信、信息熵等内容。",
+            "links": [
+              { "text": "MIT 6.050J：信息论", "url": "/cs-self-learning/docs/数学基础/information.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-advanced",
+        "title": "数学进阶",
+        "courses": [
+          {
+            "title": "离散数学与概率论",
+            "description": "集合论、图论和概率论是算法推导和证明的必备工具，也是更高级数学课程的基础。UCB CS70和CS126是加州大学伯克利分校的概率论课程，强调理论与实践的结合。",
+            "links": [
+              { "text": "UCB CS70：离散数学", "url": "/cs-self-learning/docs/数学进阶/CS70.md" },
+              { "text": "UCB CS126：概率论", "url": "/cs-self-learning/docs/数学进阶/CS126.md" }
+            ]
+          },
+          {
+            "title": "数值分析",
+            "description": "培养针对真实世界问题建模和计算机仿真的计算思维。Julia编程语言在数值计算中变得流行，具有C语言的速度和Python友好的语法。",
+            "links": [
+              { "text": "计算思维课程", "url": "https://computationalthinking.mit.edu/Spring21/" },
+              { "text": "Julia编程语言", "url": "https://julialang.org/" },
+              { "text": "MIT 18.330：数值分析", "url": "/cs-self-learning/docs/数学进阶/numerical.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "programming",
+        "title": "编程入门",
+        "courses": [
+          {
+            "title": "通用编程",
+            "description": "语言只是工具 - 选择合适的工具来完成合适的工作。既然没有万能的完美工具，也就没有万能的完美语言。",
+            "courses": [
+              { "name": "MIT Missing Semester", "url": "/cs-self-learning/docs/编程入门/MIT-Missing-Semester.md" },
+              { "name": "Harvard CS50", "url": "/cs-self-learning/docs/编程入门/C/CS50.md" }
+            ]
+          },
+          {
+            "title": "Python",
+            "courses": [
+              { "name": "CS50P: CS50的Python编程入门", "url": "/cs-self-learning/docs/编程入门/Python/CS50P.md" },
+              { "name": "UCB CS61A：计算机程序的构造和解释", "url": "/cs-self-learning/docs/编程入门/Python/CS61A.md" },
+              { "name": "MIT6.100L：使用Python的计算机科学和编程导论", "url": "/cs-self-learning/docs/编程入门/Python/MIT6.100L.md" }
+            ]
+          },
+          {
+            "title": "Java",
+            "courses": [
+              { "name": "MIT 6.092：Java编程导论", "url": "/cs-self-learning/docs/编程入门/Java/MIT 6.092.md" }
+            ]
+          },
+          {
+            "title": "C++",
+            "courses": [
+              { "name": "Stanford CS106B/X：编程抽象", "url": "/cs-self-learning/docs/编程入门/cpp/CS106B_CS106X.md" },
+              { "name": "Stanford CS106L：标准C++编程", "url": "/cs-self-learning/docs/编程入门/cpp/CS106L.md" }
+            ]
+          },
+          {
+            "title": "Rust",
+            "courses": [
+              { "name": "Stanford CS110L：系统编程安全", "url": "/cs-self-learning/docs/编程入门/Rust/CS110L.md" }
+            ]
+          },
+          {
+            "title": "函数式编程",
+            "courses": [
+              { "name": "Cornell CS3110：OCaml编程正确+高效+优美", "url": "/cs-self-learning/docs/编程入门/Functional/CS3110.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "系统方向",
+        "courses": [
+          {
+            "title": "计算机体系结构",
+            "description": "从逻辑门到完整的计算机 - 在每个层面理解计算机的工作原理。没有什么比从零开始构建自己的计算机更能帮助你理解计算机体系结构了。",
+            "courses": [
+              { "name": "Nand2Tetris", "url": "/cs-self-learning/docs/体系结构/N2T.md" },
+              { "name": "UCB CS61C：计算机体系结构中的伟大思想", "url": "/cs-self-learning/docs/体系结构/CS61C.md" }
+            ]
+          },
+          {
+            "title": "操作系统",
+            "description": "没有什么比编写自己的内核更能帮助你理解操作系统了。",
+            "courses": [
+              { "name": "MIT 6.S081：操作系统工程", "url": "/cs-self-learning/docs/操作系统/MIT6.S081.md" },
+              { "name": "UCB CS162：操作系统", "url": "/cs-self-learning/docs/操作系统/CS162.md" },
+              { "name": "NJU：操作系统设计与实现", "url": "/cs-self-learning/docs/操作系统/NJUOS.md" },
+              { "name": "HIT OS：操作系统", "url": "/cs-self-learning/docs/操作系统/HITOS.md" }
+            ]
+          },
+          {
+            "title": "并行与分布式系统",
+            "description": "随着摩尔定律的终结，并行编程和分布式系统成为必备技能。",
+            "courses": [
+              { "name": "CMU 15-418/Stanford CS149：并行计算", "url": "/cs-self-learning/docs/并行与分布式系统/CS149.md" },
+              { "name": "MIT 6.824：分布式系统", "url": "/cs-self-learning/docs/并行与分布式系统/MIT6.824.md" }
+            ]
+          },
+          {
+            "title": "计算机网络",
+            "description": "没有什么比实现自己的TCP/IP协议栈更能帮助你理解计算机网络了。",
+            "courses": [
+              { "name": "Stanford CS144：计算机网络", "url": "/cs-self-learning/docs/计算机网络/CS144.md" },
+              { "name": "UCB CS168：计算机网络导论", "url": "/cs-self-learning/docs/计算机网络/CS168.md" }
+            ]
+          },
+          {
+            "title": "数据库系统",
+            "description": "没有什么比实现自己的关系数据库更能帮助你理解数据库系统了。",
+            "courses": [
+              { "name": "CMU 15-445：数据库系统导论", "url": "/cs-self-learning/docs/数据库系统/15445.md" },
+              { "name": "UCB CS186：数据库系统导论", "url": "/cs-self-learning/docs/数据库系统/CS186.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-ml",
+        "title": "人工智能与机器学习",
+        "courses": [
+          {
+            "title": "人工智能",
+            "description": "传统AI分支，包括搜索、逻辑和知识表示。",
+            "courses": [
+              { "name": "Harvard CS50：Python人工智能导论", "url": "/cs-self-learning/docs/人工智能/CS50.md" },
+              { "name": "UCB CS188：人工智能导论", "url": "/cs-self-learning/docs/人工智能/CS188.md" }
+            ]
+          },
+          {
+            "title": "机器学习",
+            "description": "从统计学习基础到深度学习和神经网络。",
+            "courses": [
+              { "name": "Coursera：吴恩达机器学习", "url": "/cs-self-learning/docs/机器学习/ML.md" },
+              { "name": "Stanford CS229：机器学习", "url": "/cs-self-learning/docs/机器学习/CS229.md" },
+              { "name": "UCB CS189：机器学习导论", "url": "/cs-self-learning/docs/机器学习/CS189.md" }
+            ]
+          },
+          {
+            "title": "深度学习",
+            "description": "神经网络和深度学习在计算机视觉、NLP等领域的应用。",
+            "courses": [
+              { "name": "Coursera：吴恩达深度学习", "url": "/cs-self-learning/docs/深度学习/CS230.md" },
+              { "name": "Stanford CS231n：用于视觉识别的CNN", "url": "/cs-self-learning/docs/深度学习/CS231.md" },
+              { "name": "Stanford CS224n：自然语言处理", "url": "/cs-self-learning/docs/深度学习/CS224n.md" },
+              { "name": "Stanford CS224w：图机器学习", "url": "/cs-self-learning/docs/深度学习/CS224w.md" },
+              { "name": "UCB CS285：深度强化学习", "url": "/cs-self-learning/docs/深度学习/CS285.md" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

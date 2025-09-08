@@ -1,0 +1,293 @@
+{
+  "essentialTools": {
+    "title": "Essential Tools",
+    "content": [
+      {
+        "title": "Learn to Ask Questions",
+        "content": "You might be surprised that asking questions is the first one listed? I think in the open-source community, learning to ask questions is a very important ability. It involves two aspects. First, it indirectly cultivates your ability to solve problems independently, as the cycle of forming a question, describing it, getting answers from others, and then understanding the response is quite long. If you expect others to remotely assist you with every trivial issue, then the world of computers might not suit you. Second, if after trying, you still can't solve a problem, you can seek help from the open-source community. But at that point, how to concisely explain your situation and goal to others becomes particularly important. I recommend reading the article \"How To Ask Questions The Smart Way\", which not only increases the probability and efficiency of solving your problems but also keeps those who provide answers in the open-source community in a good mood.",
+        "link": "https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md",
+        "linkText": "How To Ask Questions The Smart Way"
+      },
+      {
+        "title": "MIT Missing Semester",
+        "content": "This course covers many useful tools for a hacker and provides detailed usage instructions. I strongly recommend beginners to study this course. However, one thing to note is that the course occasionally refers to terms related to the development process. Therefore, it is recommended to study it at least after completing an introductory computer science course.",
+        "link": "/cs-self-learning/docs/Programming Introduction/MIT-Missing-Semester.en.md",
+        "linkText": "MIT Missing Semester Course"
+      },
+      {
+        "title": "Command Line",
+        "content": "Proficiency in using the command line is often overlooked or considered difficult to master, but in reality, it greatly enhances your flexibility and productivity as an engineer. \"The Art of Command Line\" is a classic tutorial that started as a question on Quora, but with the contribution of many experts, it has become a top GitHub project with over 100,000 stars, translated into dozens of languages. The tutorial is not long, and I highly recommend everyone to read it repeatedly and internalize it through practice. Also, mastering shell script programming should not be overlooked.",
+        "link": "https://github.com/jlevy/the-art-of-command-line/blob/master/README-zh.md",
+        "linkText": "The Art of Command Line"
+      },
+      {
+        "title": "IDE (Integrated Development Environment)",
+        "content": "Simply put, it's where you write your code. The importance of an IDE for a programmer goes without saying, but many IDEs are designed for large-scale projects and are quite bulky and overly feature-rich. Nowadays, some lightweight text editors with rich plugin ecosystems can basically meet the needs of daily lightweight programming. My personal favorites are VS Code and Sublime (the former has a very simple plugin configuration, while the latter is a bit more complex but aesthetically pleasing). Of course, for large projects, I would still use slightly heavier IDEs, such as Pycharm (Python), IDEA (Java), etc.",
+        "link": null
+      },
+      {
+        "title": "Vim",
+        "content": "A command-line editor. Vim has a somewhat steep learning curve, but mastering it, I think, is very necessary because it will greatly improve your development efficiency. Most modern IDEs also support Vim plugins, allowing you to retain the coolness of a geek while enjoying a modern development environment.",
+        "link": "/cs-self-learning/docs/Essential Tools/Vim.en.md",
+        "linkText": "Vim Tutorial"
+      },
+      {
+        "title": "Emacs",
+        "content": "A classic editor that stands alongside Vim, with equally high development efficiency and more powerful expandability. It can be configured as a lightweight editor or expanded into a custom IDE, and even more sophisticated tricks.",
+        "link": "/cs-self-learning/docs/Essential Tools/Emacs.en.md",
+        "linkText": "Emacs Tutorial"
+      },
+      {
+        "title": "Git",
+        "content": "A version control tool for your project. Git, created by the father of Linux, Linus, is definitely one of the must-have tools for every CS student.",
+        "link": "/cs-self-learning/docs/Essential Tools/Git.en.md",
+        "linkText": "Git Tutorial"
+      },
+      {
+        "title": "GitHub",
+        "content": "A code hosting platform based on Git. The world's largest open-source community and a gathering place for CS experts.",
+        "link": "/cs-self-learning/docs/Essential Tools/GitHub.en.md",
+        "linkText": "GitHub Guide"
+      },
+      {
+        "title": "GNU Make",
+        "content": "An engineering build tool. Proficiency in GNU Make will help you develop a habit of modularizing your code and familiarize you with the compilation and linking processes of large projects.",
+        "link": "/cs-self-learning/docs/Essential Tools/GNU_Make.en.md",
+        "linkText": "GNU Make Tutorial"
+      },
+      {
+        "title": "CMake",
+        "content": "A more powerful build tool than GNU Make, recommended for study after mastering GNU Make.",
+        "link": "/cs-self-learning/docs/Essential Tools/CMake.en.md",
+        "linkText": "CMake Tutorial"
+      },
+      {
+        "title": "LaTeX",
+        "content": "A document typesetting system, particularly useful for academic papers.",
+        "link": "/cs-self-learning/docs/Essential Tools/LaTeX.en.md",
+        "linkText": "LaTeX Tutorial"
+      },
+      {
+        "title": "Docker",
+        "content": "A lighter-weight software packaging and deployment tool compared to virtual machines.",
+        "link": "/cs-self-learning/docs/Essential Tools/Docker.en.md",
+        "linkText": "Docker Tutorial"
+      },
+      {
+        "title": "Practical Toolkit",
+        "content": "In addition to the tools mentioned above that are frequently used in development, I have also collected many practical and interesting free tools, such as download tools, design tools, learning websites, etc.",
+        "link": "/cs-self-learning/docs/Essential Tools/tools.en.md",
+        "linkText": "Practical Toolkit"
+      }
+    ]
+  },
+  "recommendedBooks": {
+    "title": "Recommended Books",
+    "content": "I believe a good textbook should be people-oriented, rather than a display of technical jargon. It's certainly important to tell readers \"what it is,\" but a better approach would be for the author to integrate decades of experience in the field into the book and narratively convey to the reader \"why it is\" and what should be done in the future.",
+    "link": "/cs-self-learning/docs/Book Recommendation.en.md",
+    "linkText": "View Recommended Books"
+  },
+  "environmentSetup": {
+    "title": "Environment Setup",
+    "content": [
+      {
+        "title": "PC Environment Setup",
+        "content": "If you are a Mac user, you're in luck, as this guide will walk you through setting up the entire development environment. If you are a Windows user, thanks to the efforts of the open-source community, you can enjoy a similar experience with Scoop.",
+        "link": "https://sourabhbajaj.com/mac-setup/",
+        "linkText": "Mac Setup Guide"
+      },
+      {
+        "title": "Server-Side Environment Setup",
+        "content": "Server-side operation and maintenance require basic use of Linux (or other Unix-like systems) and fundamental concepts like processes, devices, networks, etc. Beginners can refer to the \"Linux 101\" online notes compiled by the Linux User Association of the University of Science and Technology of China. If you want to delve deeper into system operation and maintenance, you can refer to the \"Aspects of System Administration\" course.",
+        "link": "https://101.lug.ustc.edu.cn/",
+        "linkText": "Linux 101 Tutorial"
+      },
+      {
+        "title": "DevOps Guide",
+        "content": "If you need to learn a specific concept or tool, I recommend a great GitHub project that covers a lot of foundational knowledge and tutorials in the administration field, such as Docker, Kubernetes, Linux, CI-CD, GitHub Actions, and more.",
+        "link": "https://github.com/Tikam02/DevOps-Guide",
+        "linkText": "DevOps Guide"
+      }
+    ]
+  },
+  "courseMap": {
+    "title": "Course Map",
+    "content": "This course map is merely a reference guide for course planning. As long as you meet the prerequisites for a course, you are free to choose any course according to your needs and interests. You can customize your own course map based on your interests and goals.",
+    "subsections": [
+      {
+        "id": "mathematics",
+        "title": "Mathematical Foundations",
+        "courses": [
+          {
+            "title": "Calculus and Linear Algebra",
+            "description": "As a freshman, mastering calculus and linear algebra is as important as learning to code. If you find the content taught in class to be obscure, consider referring to MIT's Calculus Course and 18.06: Linear Algebra course notes. I also highly recommend the maths YouTuber 3Blue1Brown, whose channel features videos explaining the core of mathematics with vivid animations.",
+            "links": [
+              { "text": "MIT Calculus Course", "url": "/cs-self-learning/docs/Fundamental Mathematics/MITmaths.en.md" },
+              { "text": "MIT Linear Algebra", "url": "/cs-self-learning/docs/Fundamental Mathematics/MITLA.en.md" },
+              { "text": "3Blue1Brown YouTube Channel", "url": "https://www.youtube.com/c/3blue1brown" }
+            ]
+          },
+          {
+            "title": "Introduction to Information Theory",
+            "description": "For computer science students, gaining some foundational knowledge in information theory early on is beneficial. MIT's 6.050J: Information theory and Entropy is tailored for freshmen, with almost no prerequisites, covering coding, compression, communication, information entropy, and more.",
+            "links": [
+              { "text": "MIT 6.050J: Information Theory", "url": "/cs-self-learning/docs/Fundamental Mathematics/information.en.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "math-advanced",
+        "title": "Advanced Mathematics",
+        "courses": [
+          {
+            "title": "Discrete Mathematics and Probability Theory",
+            "description": "Set theory, graph theory, and probability theory are essential tools for algorithm derivation and proof, as well as foundations for more advanced mathematical courses. UCB CS70 and CS126 are UC Berkeley's probability courses that emphasize the integration of theory and practice.",
+            "links": [
+              { "text": "UCB CS70: Discrete Math", "url": "/cs-self-learning/docs/Advanced Mathematics/CS70.en.md" },
+              { "text": "UCB CS126: Probability Theory", "url": "/cs-self-learning/docs/Advanced Mathematics/CS126.en.md" }
+            ]
+          },
+          {
+            "title": "Numerical Analysis",
+            "description": "Develop computational thinking for real-world problem modeling and computer simulation. The Julia programming language has become popular in numerical computation with C-like speed and Python-friendly syntax.",
+            "links": [
+              { "text": "Computational Thinking Course", "url": "https://computationalthinking.mit.edu/Spring21/" },
+              { "text": "Julia Programming Language", "url": "https://julialang.org/" },
+              { "text": "MIT 18.330: Numerical Analysis", "url": "/cs-self-learning/docs/Advanced Mathematics/numerical.en.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "programming",
+        "title": "Programming Introduction",
+        "courses": [
+          {
+            "title": "General Programming",
+            "description": "Languages are tools - choose the right tool for the right job. Since there's no universally perfect tool, there's no universally perfect language.",
+            "courses": [
+              { "name": "MIT Missing Semester", "url": "/cs-self-learning/docs/Programming Introduction/MIT-Missing-Semester.en.md" },
+              { "name": "Harvard CS50", "url": "/cs-self-learning/docs/Programming Introduction/C/CS50.en.md" }
+            ]
+          },
+          {
+            "title": "Python",
+            "courses": [
+              { "name": "CS50P: CS50's Introduction to Programming with Python", "url": "/cs-self-learning/docs/Programming Introduction/Python/CS50P.en.md" },
+              { "name": "UCB CS61A: Structure and Interpretation of Computer Programs", "url": "/cs-self-learning/docs/Programming Introduction/Python/CS61A.en.md" },
+              { "name": "MIT6.100L: Introduction to CS and Programming using Python", "url": "/cs-self-learning/docs/Programming Introduction/Python/MIT6.100L.en.md" }
+            ]
+          },
+          {
+            "title": "Java",
+            "courses": [
+              { "name": "MIT 6.092: Introduction To Programming In Java", "url": "/cs-self-learning/docs/Programming Introduction/Java/MIT 6.092.en.md" }
+            ]
+          },
+          {
+            "title": "C++",
+            "courses": [
+              { "name": "Stanford CS106B/X: Programming Abstractions", "url": "/cs-self-learning/docs/Programming Introduction/cpp/CS106B_CS106X.en.md" },
+              { "name": "Stanford CS106L: Standard C++ Programming", "url": "/cs-self-learning/docs/Programming Introduction/cpp/CS106L.en.md" }
+            ]
+          },
+          {
+            "title": "Rust",
+            "courses": [
+              { "name": "Stanford CS110L: Safety in Systems Programming", "url": "/cs-self-learning/docs/Programming Introduction/Rust/CS110L.en.md" }
+            ]
+          },
+          {
+            "title": "Functional Programming",
+            "courses": [
+              { "name": "Cornell CS3110: OCaml Programming Correct + Efficient + Beautiful", "url": "/cs-self-learning/docs/Programming Introduction/Functional/CS3110.en.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "systems",
+        "title": "Systems",
+        "courses": [
+          {
+            "title": "Computer Architecture",
+            "description": "From logic gates to complete computers - understand how computers work at every level. Nothing helps you understand computer architecture better than building your own computer from scratch.",
+            "courses": [
+              { "name": "Nand2Tetris", "url": "/cs-self-learning/docs/Computer Architecture/N2T.en.md" },
+              { "name": "UCB CS61C: Great Ideas in Computer Architecture", "url": "/cs-self-learning/docs/Computer Architecture/CS61C.en.md" }
+            ]
+          },
+          {
+            "title": "Operating Systems",
+            "description": "Nothing helps you understand operating systems better than writing your own kernel.",
+            "courses": [
+              { "name": "MIT 6.S081: Operating System Engineering", "url": "/cs-self-learning/docs/Operating Systems/MIT6.S081.en.md" },
+              { "name": "UCB CS162: Operating System", "url": "/cs-self-learning/docs/Operating Systems/CS162.en.md" },
+              { "name": "NJU: Operating System Design and Implementation", "url": "/cs-self-learning/docs/Operating Systems/NJUOS.en.md" },
+              { "name": "HIT OS: Operating System", "url": "/cs-self-learning/docs/Operating Systems/HITOS.en.md" }
+            ]
+          },
+          {
+            "title": "Parallel and Distributed Systems",
+            "description": "With Moore's Law ending, parallel programming and distributed systems are essential skills.",
+            "courses": [
+              { "name": "CMU 15-418/Stanford CS149: Parallel Computing", "url": "/cs-self-learning/docs/Distributed Systems/CS149.en.md" },
+              { "name": "MIT 6.824: Distributed System", "url": "/cs-self-learning/docs/Distributed Systems/MIT6.824.en.md" }
+            ]
+          },
+          {
+            "title": "Computer Networks",
+            "description": "Nothing helps you understand computer networks better than implementing your own TCP/IP stack.",
+            "courses": [
+              { "name": "Stanford CS144: Computer Network", "url": "/cs-self-learning/docs/Computer Networking/CS144.en.md" },
+              { "name": "UCB CS168: Introduction to Computer Networks", "url": "/cs-self-learning/docs/Computer Networking/CS168.en.md" }
+            ]
+          },
+          {
+            "title": "Database Systems",
+            "description": "Nothing helps you understand database systems better than implementing your own relational database.",
+            "courses": [
+              { "name": "CMU 15-445: Introduction to Database System", "url": "/cs-self-learning/docs/Database Systems/15445.en.md" },
+              { "name": "UCB CS186: Introduction to Database System", "url": "/cs-self-learning/docs/Database Systems/CS186.en.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ai-ml",
+        "title": "Artificial Intelligence and Machine Learning",
+        "courses": [
+          {
+            "title": "Artificial Intelligence",
+            "description": "Traditional AI branches including search, logic, and knowledge representation.",
+            "courses": [
+              { "name": "Harvard CS50: Introduction to AI with Python", "url": "/cs-self-learning/docs/Artificial Intelligence/CS50.en.md" },
+              { "name": "UCB CS188: Introduction to Artificial Intelligence", "url": "/cs-self-learning/docs/Artificial Intelligence/CS188.en.md" }
+            ]
+          },
+          {
+            "title": "Machine Learning",
+            "description": "From statistical learning basics to deep learning and neural networks.",
+            "courses": [
+              { "name": "Coursera: Machine Learning by Andrew Ng", "url": "/cs-self-learning/docs/Machine Learning/ML.en.md" },
+              { "name": "Stanford CS229: Machine Learning", "url": "/cs-self-learning/docs/Machine Learning/CS229.en.md" },
+              { "name": "UCB CS189: Introduction to Machine Learning", "url": "/cs-self-learning/docs/Machine Learning/CS189.en.md" }
+            ]
+          },
+          {
+            "title": "Deep Learning",
+            "description": "Neural networks and deep learning for computer vision, NLP, and more.",
+            "courses": [
+              { "name": "Coursera: Deep Learning by Andrew Ng", "url": "/cs-self-learning/docs/Deep Learning/CS230.en.md" },
+              { "name": "Stanford CS231n: CNN for Visual Recognition", "url": "/cs-self-learning/docs/Deep Learning/CS231.en.md" },
+              { "name": "Stanford CS224n: Natural Language Processing", "url": "/cs-self-learning/docs/Deep Learning/CS224n.en.md" },
+              { "name": "Stanford CS224w: Machine Learning with Graphs", "url": "/cs-self-learning/docs/Deep Learning/CS224w.en.md" },
+              { "name": "UCB CS285: Deep Reinforcement Learning", "url": "/cs-self-learning/docs/Deep Learning/CS285.en.md" }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
