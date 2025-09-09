@@ -10,60 +10,55 @@ export interface CoursePath {
 }
 
 export async function getAllCoursePaths(): Promise<CoursePath[]> {
-  const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
+  const docsPath = path.join('/Users/liang/Documents/code/react/no_hard_thing/cs-courses', 'cs-self-learning', 'docs-new');
   const paths: CoursePath[] = [];
   
-  async function scanDirectory(dirPath: string, currentPath: string[] = []) {
-    const items = await fs.readdir(dirPath);
+  async function scanLanguageDirectory(langDir: string, locale: string) {
+    const langPath = path.join(docsPath, langDir);
     
-    for (const item of items) {
-      const itemPath = path.join(dirPath, item);
-      const stats = await fs.stat(itemPath);
+    async function scanDirectory(dirPath: string, currentPath: string[] = []) {
+      const items = await fs.readdir(dirPath);
       
-      if (stats.isDirectory()) {
-        await scanDirectory(itemPath, [...currentPath, item]);
-      } else if (item.endsWith('.md') && !item.endsWith('.en.md')) {
-        // This is a Chinese course
-        const coursePath = [...currentPath, item.replace('.md', '')];
+      for (const item of items) {
+        const itemPath = path.join(dirPath, item);
+        const stats = await fs.stat(itemPath);
         
-        // Check if English version exists
-        const englishPath = path.join(dirPath, item.replace('.md', '.en.md'));
-        const hasEnglishVersion = await fileExists(englishPath);
-        
-        // Read the Chinese file to get title
-        const chineseContent = await fs.readFile(itemPath, 'utf-8');
-        const title = extractTitle(chineseContent, item.replace('.md', ''));
-        
-        paths.push({
-          locale: 'zh',
-          path: coursePath,
-          title,
-          hasChineseVersion: true,
-          hasEnglishVersion,
-        });
-        
-        if (hasEnglishVersion) {
-          // Read the English file to get title
-          const englishContent = await fs.readFile(englishPath, 'utf-8');
-          const englishTitle = extractTitle(englishContent, item.replace('.md', ''));
+        if (stats.isDirectory()) {
+          await scanDirectory(itemPath, [...currentPath, item]);
+        } else if (item.endsWith('.md') && !item.endsWith('.en.md')) {
+          // This is a course file
+          const coursePath = [...currentPath, item.replace('.md', '')];
+          
+          // Check if the other language version exists
+          const otherLang = locale === 'zh' ? 'en' : 'zh';
+          const otherLangPath = path.join(docsPath, otherLang, ...currentPath, item);
+          const hasOtherVersion = await fileExists(otherLangPath);
+          
+          // Read the file to get title
+          const content = await fs.readFile(itemPath, 'utf-8');
+          const title = extractTitle(content, item.replace('.md', ''));
           
           paths.push({
-            locale: 'en',
+            locale: locale,
             path: coursePath,
-            title: englishTitle,
-            hasChineseVersion: true,
-            hasEnglishVersion: true,
+            title,
+            hasChineseVersion: locale === 'zh' || hasOtherVersion,
+            hasEnglishVersion: locale === 'en' || hasOtherVersion,
           });
         }
       }
     }
+    
+    try {
+      await scanDirectory(langPath, []);
+    } catch (error) {
+      console.error(`Error scanning ${langDir} directory:`, error);
+    }
   }
   
-  try {
-    await scanDirectory(docsPath);
-  } catch (error) {
-    console.error('Error scanning docs directory:', error);
-  }
+  // Scan both Chinese and English directories
+  await scanLanguageDirectory('zh', 'zh');
+  await scanLanguageDirectory('en', 'en');
   
   return paths;
 }
@@ -87,30 +82,67 @@ function extractTitle(content: string, fallback: string): string {
 }
 
 export async function getCourseContent(coursePath: string[], locale: string) {
-  const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
+  const docsPath = path.join('/Users/liang/Documents/code/react/no_hard_thing/cs-courses', 'cs-self-learning', 'docs-new');
   const relativePath = path.join(...coursePath);
   
-  // Determine file extension based on locale
-  const fileExtension = locale === 'zh' ? '.md' : '.en.md';
-  const filePath = path.join(docsPath, relativePath + fileExtension);
+  // Use language-specific directory
+  const langDir = locale === 'zh' ? 'zh' : 'en';
   
-  try {
-    const content = await fs.readFile(filePath, 'utf-8');
-    const title = extractTitle(content, coursePath[coursePath.length - 1] || 'Untitled');
-    
-    return {
-      content,
-      title,
-      filePath,
-      exists: true,
-      hasEnglishVersion: locale === 'zh',
-      hasChineseVersion: locale === 'en',
-    };
-  } catch (error) {
-    // If the requested language version doesn't exist, try the other language
-    const fallbackExtension = locale === 'zh' ? '.en.md' : '.md';
-    const fallbackPath = path.join(docsPath, relativePath + fallbackExtension);
-    
+  // Try different file naming conventions
+  const possiblePaths = [
+    path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
+    path.join(docsPath, langDir, relativePath + '.en.md'), // English version
+  ];
+  
+  // Add debug logging
+  console.log('getCourseContent called with:', { coursePath, locale, docsPath, relativePath, langDir, possiblePaths });
+  
+  // Try each possible path
+  for (const filePath of possiblePaths) {
+    try {
+      const content = await fs.readFile(filePath, 'utf-8');
+      const title = extractTitle(content, coursePath[coursePath.length - 1] || 'Untitled');
+      
+      // Check if the other language version exists
+      const otherLangDir = locale === 'zh' ? 'en' : 'zh';
+      const otherPossiblePaths = [
+        path.join(docsPath, otherLangDir, relativePath + '.md'),
+        path.join(docsPath, otherLangDir, relativePath + '.en.md'),
+      ];
+      
+      let hasOtherVersion = false;
+      for (const otherPath of otherPossiblePaths) {
+        if (await fileExists(otherPath)) {
+          hasOtherVersion = true;
+          break;
+        }
+      }
+      
+      console.log('File found successfully:', { filePath, contentLength: content.length });
+      
+      return {
+        content,
+        title,
+        filePath,
+        exists: true,
+        hasEnglishVersion: locale === 'en' || hasOtherVersion,
+        hasChineseVersion: locale === 'zh' || hasOtherVersion,
+      };
+    } catch (error) {
+      console.log('Failed to read file:', filePath);
+      // Continue to next possible path
+    }
+  }
+  
+  // If all attempts failed, try fallback to other language
+  console.log('All attempts failed, trying fallback...');
+  const fallbackLangDir = locale === 'zh' ? 'en' : 'zh';
+  const fallbackPaths = [
+    path.join(docsPath, fallbackLangDir, relativePath + '.md'),
+    path.join(docsPath, fallbackLangDir, relativePath + '.en.md'),
+  ];
+  
+  for (const fallbackPath of fallbackPaths) {
     try {
       const content = await fs.readFile(fallbackPath, 'utf-8');
       const title = extractTitle(content, coursePath[coursePath.length - 1] || 'Untitled');
@@ -120,21 +152,24 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         title,
         filePath: fallbackPath,
         exists: true,
-        hasEnglishVersion: fallbackExtension === '.md',
-        hasChineseVersion: fallbackExtension === '.en.md',
+        hasEnglishVersion: fallbackLangDir === 'en',
+        hasChineseVersion: fallbackLangDir === 'zh',
         isFallback: true,
       };
     } catch (fallbackError) {
-      return {
-        content: '',
-        title: '',
-        filePath: '',
-        exists: false,
-        hasEnglishVersion: false,
-        hasChineseVersion: false,
-      };
+      console.log('Fallback failed:', fallbackPath);
     }
   }
+  
+  console.log('No files found, returning not found');
+  return {
+    content: '',
+    title: '',
+    filePath: '',
+    exists: false,
+    hasEnglishVersion: false,
+    hasChineseVersion: false,
+  };
 }
 
 export async function getCourseMetadata(coursePath: string[]) {

@@ -2,25 +2,25 @@
 
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
-import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
+import { encodePathParameter } from '@/lib/pathUtils';
 
 interface CourseCardProps {
   course: Course;
+  locale: string;
   forceLanguage?: 'en' | 'zh';
 }
 
-export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
-  const hookLocale = useLocale();
-  const locale = forceLanguage || hookLocale;
+export default function CourseCard({ course, locale, forceLanguage }: CourseCardProps) {
+  const resolvedLocale = forceLanguage || locale;
   const t = useTranslations('courses');
   
   // Fallback translations in case the translations aren't loaded yet
   const fallbackTranslations = {
-    difficulty: locale === 'zh' ? '难度' : 'Difficulty',
-    duration: locale === 'zh' ? '学习时间' : 'Duration',
-    language: locale === 'zh' ? '编程语言' : 'Language',
-    viewCourse: locale === 'zh' ? '查看课程' : 'View Course'
+    difficulty: resolvedLocale === 'zh' ? '难度' : 'Difficulty',
+    duration: resolvedLocale === 'zh' ? '学习时间' : 'Duration',
+    language: resolvedLocale === 'zh' ? '编程语言' : 'Language',
+    viewCourse: resolvedLocale === 'zh' ? '查看课程' : 'View Course'
   };
   
   // Safely get translations with fallback
@@ -65,7 +65,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
           </svg>
         </div>
         
-        <Link href={`/${locale}/course/${course.path}`}>
+        <Link href={`/${resolvedLocale}/course?path=${encodePathParameter(course.path)}`}>
           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
             {course.title}
           </h3>
@@ -95,11 +95,11 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
             <span className="ml-2 text-xs text-gray-600 font-medium">
               {
                 typeof course.duration === 'object' 
-                  ? `${course.duration.value} ${locale === 'en' ? 'hours' : '小时'}`
+                  ? `${course.duration.value} ${resolvedLocale === 'en' ? 'hours' : '小时'}`
                   : (() => {
                       // 处理字符串类型的duration
                       const durationStr = course.duration.toString();
-                      if (locale === 'en') {
+                      if (resolvedLocale === 'en') {
                         // 如果已经包含"hours"，直接返回
                         if (durationStr.toLowerCase().includes('hours')) {
                           return durationStr;
@@ -136,7 +136,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
       {(course.summary || course.summaryEn) && (
         <div className="mb-4">
           <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-            {locale === 'en' && course.summaryEn ? course.summaryEn : course.summary}
+            {resolvedLocale === 'en' && course.summaryEn ? course.summaryEn : course.summary}
           </p>
         </div>
       )}
@@ -144,7 +144,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
       {/* View Course Button */}
       <div className="flex justify-end pt-4 border-t border-gray-100">
         <Link 
-          href={`/${locale}/course/${course.path}`}
+          href={`/${resolvedLocale}/course?path=${encodePathParameter(course.path)}`}
           className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
         >
           <span>{translations.viewCourse}</span>

@@ -185,20 +185,44 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <p className="text-lg mb-12 text-blue-200 max-w-3xl mx-auto">
                 {messages.home.hero.description}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  href={`/${locale}/courses`}
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
-                >
-                  {messages.home.hero.cta}
-                </Link>
-                <Link 
-                  href={`/${locale}/universities`}
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
-                >
-                  {messages.home.universities.title}
-                </Link>
-              </div>
+              <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href={`/${locale}/courses`}
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              >
+                {messages.home.hero.cta}
+              </Link>
+              <Link 
+                href={`/${locale}/universities`}
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                {messages.home.universities.title}
+              </Link>
+            </div>
+            
+            <div className="flex gap-4">
+              <Link 
+                href="https://github.com/moutsea?tab=repositories"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group border border-white/30"
+              >
+                <svg className="w-5 h-5 text-white group-hover:text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </Link>
+              
+              <Link 
+                href="mailto:cfjwlchangji@gmail.com"
+                className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-colors group border border-white/30"
+              >
+                <svg className="w-5 h-5 text-white group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </Link>
+            </div>
+          </div>
             </div>
           </div>
         </section>
@@ -207,18 +231,18 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <div className="text-4xl font-bold text-blue-600 mb-2">{totalCourses}+</div>
-                <div className="text-gray-600">{messages.home.stats.courses}</div>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <div className="text-4xl font-bold text-purple-600 mb-2">{totalCategories}</div>
-                <div className="text-gray-600">{messages.home.stats.subjects}</div>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-md">
-                <div className="text-4xl font-bold text-green-600 mb-2">{TOTAL_UNIVERSITIES}</div>
-                <div className="text-gray-600">{messages.home.stats.universities}</div>
-              </div>
+              <Link href={`/${locale}/courses`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
+                <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700">{totalCourses}+</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.courses}</div>
+              </Link>
+              <Link href={`/${locale}/courses`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
+                <div className="text-4xl font-bold text-purple-600 mb-2 group-hover:text-purple-700">{totalCategories}</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.subjects}</div>
+              </Link>
+              <Link href={`/${locale}/universities`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
+                <div className="text-4xl font-bold text-green-600 mb-2 group-hover:text-green-700">{TOTAL_UNIVERSITIES}</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.universities}</div>
+              </Link>
             </div>
           </div>
         </section>
@@ -252,7 +276,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </section>
 
         {/* Popular Courses Section */}
-        <PopularCourses courses={popularCourses} />
+        <PopularCourses courses={popularCourses} locale={locale} />
 
         {/* Universities Section */}
         <section className="py-16">
@@ -278,7 +302,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
             <div className="text-center mt-12">
               <Link href={`/${locale}/universities`} className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                {messages.home.hero.cta}
+                {locale === 'zh' ? '更多大学' : 'More Universities'}
               </Link>
             </div>
           </div>
@@ -288,7 +312,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose {messages.home.hero.title}?</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose CS Study Hub?</h2>
               <p className="text-lg text-gray-600">{messages.home.hero.description}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -37,6 +37,8 @@ export default function Header({ locale }: { locale: string }) {
   const handleLanguageChange = (newLocale: string) => {
     if (newLocale !== locale) {
       const currentPath = window.location.pathname
+      const currentSearch = window.location.search
+      const currentHash = window.location.hash
 
       // Handle root path (English) and language-specific paths
       let newPath
@@ -57,7 +59,9 @@ export default function Header({ locale }: { locale: string }) {
         newPath = `/${newLocale}${currentPath}`
       }
 
-      router.push(newPath)
+      // Preserve query parameters and hash
+      const fullNewPath = newPath + currentSearch + currentHash
+      router.push(fullNewPath)
     }
     setIsMenuOpen(false)
   }
@@ -68,7 +72,7 @@ export default function Header({ locale }: { locale: string }) {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href={locale === 'zh' ? '/zh' : '/'} className="text-2xl font-bold text-white" as={locale === 'zh' ? '/zh' : '/'}>
-              CS Open Courses
+              CS Study Hub
             </Link>
           </div>
 

@@ -214,7 +214,7 @@ export default function CoursesPage() {
                 {getFilteredCourses().length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {getFilteredCourses().map((course) => (
-                      <CourseCard key={course.id} course={course} />
+                      <CourseCard key={course.id} course={course} locale={locale} />
                     ))}
                   </div>
                 ) : (

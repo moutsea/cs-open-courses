@@ -3,17 +3,22 @@ import hljs from 'highlight.js';
 
 export async function markdownToHTML(markdown: string): Promise<string> {
   // Configure marked options
-  marked.setOptions({
-    highlight: function(code, lang) {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return hljs.highlight(code, { language: lang }).value;
-        } catch (err) {
-          console.error('Highlight.js error:', err);
-        }
+  const renderer = new marked.Renderer();
+  
+  // Custom code block rendering with syntax highlighting
+  renderer.code = function({ text: code, lang }: { text: string; lang?: string }) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `<pre><code class="hljs language-${lang}">${hljs.highlight(code, { language: lang }).value}</code></pre>`;
+      } catch (err) {
+        console.error('Highlight.js error:', err);
       }
-      return hljs.highlightAuto(code).value;
-    },
+    }
+    return `<pre><code class="hljs">${hljs.highlightAuto(code).value}</code></pre>`;
+  };
+  
+  marked.setOptions({
+    renderer: renderer,
     breaks: true,
     gfm: true,
   });

@@ -13,17 +13,21 @@ export async function GET(
     const resolvedParams = await params;
     locale = resolvedParams.locale;
     
-    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
+    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new');
     const categories: Category[] = [];
     
-    // Get all directories in docs folder (excluding images)
-    const categoryDirs = await fs.readdir(docsPath);
+    // Use language-specific directory based on locale
+    const langDir = locale === 'zh' ? 'zh' : 'en';
+    const langPath = path.join(docsPath, langDir);
+    
+    // Get all directories in language folder
+    const categoryDirs = await fs.readdir(langPath);
     
     for (const categoryDir of categoryDirs) {
-      const categoryPath = path.join(docsPath, categoryDir);
+      const categoryPath = path.join(langPath, categoryDir);
       const stats = await fs.stat(categoryPath);
       
-      if (!stats.isDirectory() || categoryDir === 'images') continue;
+      if (!stats.isDirectory()) continue;
       
       const category: Category = {
         name: categoryDir,
@@ -49,9 +53,7 @@ export async function GET(
         
         // Get all markdown files in subcategory folder
         const files = await fs.readdir(subcategoryPath);
-        const markdownFiles = files.filter(file => 
-          locale === 'zh' ? file.endsWith('.md') && !file.endsWith('.en.md') : file.endsWith('.en.md')
-        );
+        const markdownFiles = files.filter(file => file.endsWith('.md'));
         
         for (const file of markdownFiles) {
           const filePath = path.join(subcategoryPath, file);
@@ -59,13 +61,13 @@ export async function GET(
           
           if (courseData) {
             const course: Course = {
-              id: `${category.slug}-${subcategory.slug}-${file.replace('.md', '').replace('.en', '')}`,
+              id: `${category.slug}-${subcategory.slug}-${file.replace('.md', '')}`,
               title: courseData.title,
               description: courseData.content.substring(0, 200) + '...',
-              path: `${category.slug}/${subcategory.slug}/${file.replace('.md', '').replace('.en', '')}`,
-              slug: file.replace('.md', '').replace('.en', ''),
+              path: `${category.slug}/${subcategory.slug}/${file.replace('.md', '')}`,
+              slug: file.replace('.md', ''),
               content: courseData.content,
-              hasEnglishVersion: file.endsWith('.en.md'),
+              hasEnglishVersion: locale === 'en', // English API means this course has English version
               summary: courseData.summary,
               summaryEn: courseData.summaryEn,
               programmingLanguage: courseData.programmingLanguage,
@@ -84,9 +86,7 @@ export async function GET(
       
       // Add courses directly in category folder
       const categoryFiles = await fs.readdir(categoryPath);
-      const categoryMarkdownFiles = categoryFiles.filter(file => 
-        locale === 'zh' ? file.endsWith('.md') && !file.endsWith('.en.md') : file.endsWith('.en.md')
-      );
+      const categoryMarkdownFiles = categoryFiles.filter(file => file.endsWith('.md'));
       
       for (const file of categoryMarkdownFiles) {
         const filePath = path.join(categoryPath, file);
@@ -94,13 +94,13 @@ export async function GET(
         
         if (courseData) {
           const course: Course = {
-            id: `${category.slug}-${file.replace('.md', '').replace('.en', '')}`,
+            id: `${category.slug}-${file.replace('.md', '')}`,
             title: courseData.title,
             description: courseData.content.substring(0, 200) + '...',
-            path: `${category.slug}/${file.replace('.md', '').replace('.en', '')}`,
-            slug: file.replace('.md', '').replace('.en', ''),
+            path: `${category.slug}/${file.replace('.md', '')}`,
+            slug: file.replace('.md', ''),
             content: courseData.content,
-            hasEnglishVersion: file.endsWith('.en.md'),
+            hasEnglishVersion: locale === 'en', // English API means this course has English version
             summary: courseData.summary,
             summaryEn: courseData.summaryEn,
             programmingLanguage: courseData.programmingLanguage,

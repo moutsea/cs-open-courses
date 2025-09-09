@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface MDXRendererProps {
   content: string;
@@ -38,34 +39,17 @@ export default function MDXRenderer({
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} />
       <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
-        {/* Language switcher */}
-        <div className="mb-6 flex justify-end">
-          <div className="bg-white rounded-lg shadow-sm p-2 inline-flex">
-            {hasChineseVersion && (
-              <a
-                href={`/${locale === 'zh' ? 'en' : 'zh'}/course/${coursePath.join('/')}`}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                  isChinese
-                    ? 'bg-blue-100 text-blue-700'
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                中文
-              </a>
-            )}
-            {hasEnglishVersion && (
-              <a
-                href={`/${locale === 'zh' ? 'en' : 'zh'}/course/${coursePath.join('/')}`}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                  !isChinese
-                    ? 'bg-blue-100 text-blue-700'
-                    : 'text-gray-600 hover:bg-gray-100'
-                }`}
-              >
-                English
-              </a>
-            )}
-          </div>
+        {/* Back to courses button */}
+        <div className="mb-6">
+          <a
+            href={`/${locale}/courses`}
+            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            {isChinese ? '返回课程列表' : 'Back to Courses'}
+          </a>
         </div>
 
         {/* Fallback language notice */}
@@ -95,6 +79,8 @@ export default function MDXRenderer({
           </div>
         )}
       </main>
+      
+      <Footer locale={locale} />
     </div>
   );
 }

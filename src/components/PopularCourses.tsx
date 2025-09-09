@@ -1,16 +1,17 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { Course } from '@/lib/courseParser';
+import { encodePathParameter } from '@/lib/pathUtils';
 
 interface PopularCoursesProps {
   courses: Course[];
+  locale: string;
 }
 
-export default function PopularCourses({ courses }: PopularCoursesProps) {
+export default function PopularCourses({ courses, locale }: PopularCoursesProps) {
   const t = useTranslations('home');
-  const locale = useLocale();
   
   // Fallback translations in case the translations aren't loaded yet
   const fallbackTranslations = {
@@ -109,7 +110,7 @@ export default function PopularCourses({ courses }: PopularCoursesProps) {
                   </div>
                 </div>
                 
-                <Link href={`/${locale}/course/${course.path}`}>
+                <Link href={`/${locale}/course?path=${encodePathParameter(course.path)}`}>
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
                     {course.title}
                   </h3>
@@ -182,7 +183,7 @@ export default function PopularCourses({ courses }: PopularCoursesProps) {
               {/* View Course Button */}
               <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                 <Link 
-                  href={`/${locale}/course/${course.path}`}
+                  href={`/${locale}/course?path=${encodePathParameter(course.path)}`}
                   className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
                 >
                   <span>{translations.viewCourse}</span>

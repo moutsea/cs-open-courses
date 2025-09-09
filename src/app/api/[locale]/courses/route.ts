@@ -156,16 +156,16 @@ export async function GET(request: NextRequest) {
       }
       
       return acc;
-    }, {} as any);
+    }, {} as Record<string, { slug: string; name: string; courses: CourseInfo[]; subcategories: Record<string, { slug: string; name: string; courses: CourseInfo[] }> }>);
     
     // 转换为最终格式，并过滤掉[...path]类别
     const result = Object.values(groupedCourses)
-      .filter((category: any) => category.slug !== '[...path]')
-      .map((category: any) => ({
+      .filter((category: { slug: string; name: string; courses: CourseInfo[]; subcategories: Record<string, { slug: string; name: string; courses: CourseInfo[] }> }) => category.slug !== '[...path]')
+      .map((category: { slug: string; name: string; courses: CourseInfo[]; subcategories: Record<string, { slug: string; name: string; courses: CourseInfo[] }> }) => ({
         slug: category.slug,
         name: category.name,
         courses: category.courses,
-        subcategories: Object.values(category.subcategories).map((subcategory: any) => ({
+        subcategories: Object.values(category.subcategories || {}).map((subcategory: { slug: string; name: string; courses: CourseInfo[] }) => ({
           slug: subcategory.slug,
           name: subcategory.name,
           courses: subcategory.courses

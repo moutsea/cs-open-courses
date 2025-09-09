@@ -1,4 +1,37 @@
 import Link from 'next/link'
+import { encodePathParameter } from '@/lib/pathUtils'
+
+// Popular courses data - same as homepage
+const POPULAR_COURSES = [
+  {
+    id: 'programming-introduction-python-cs61a',
+    title: 'CS61A: Structure and Interpretation of Computer Programs',
+    titleEn: 'CS61A: Structure and Interpretation of Computer Programs',
+    slug: 'CS61A',
+    path: 'programming-introduction/python/CS61A'
+  },
+  {
+    id: 'data-structures-algorithms-cs61b',
+    title: 'CS61B: Data Structures and Algorithms',
+    titleEn: 'CS61B: Data Structures and Algorithms',
+    slug: 'CS61B',
+    path: 'data-structures-algorithms/CS61B'
+  },
+  {
+    id: 'machine-learning-cs189',
+    title: 'CS189: Introduction to Machine Learning',
+    titleEn: 'CS189: Introduction to Machine Learning',
+    slug: 'CS189',
+    path: 'machine-learning/CS189'
+  },
+  {
+    id: 'deep-learning-cs224n',
+    title: 'CS224n: Natural Language Processing',
+    titleEn: 'CS224n: Natural Language Processing',
+    slug: 'CS224n',
+    path: 'deep-learning/CS224n'
+  }
+]
 
 export default function Footer({ locale }: { locale: string }) {
   return (
@@ -6,7 +39,7 @@ export default function Footer({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">CS Open Courses</h3>
+            <h3 className="text-2xl font-bold mb-4">CS Study Hub</h3>
             <p className="text-gray-300 mb-4">
               Discover and access free computer science courses from top universities worldwide. 
               Helping learners access quality educational content for free.
@@ -35,17 +68,23 @@ export default function Footer({ locale }: { locale: string }) {
           <div>
             <h4 className="text-lg font-semibold mb-4">Popular Courses</h4>
             <ul className="space-y-2">
-              <li><Link href="#" className="text-gray-300 hover:text-white">Introduction to Algorithms</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Machine Learning</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Operating Systems</Link></li>
-              <li><Link href="#" className="text-gray-300 hover:text-white">Computer Networks</Link></li>
+              {POPULAR_COURSES.map((course) => (
+                <li key={course.id}>
+                  <Link 
+                    href={`/${locale}/course?path=${encodePathParameter(course.path)}`}
+                    className="text-gray-300 hover:text-white"
+                  >
+                    {locale === 'zh' ? course.title : course.titleEn}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-300">
-            © 2024 CS Open Courses. All rights reserved.
+            © 2025 CS Study Hub. All rights reserved.
           </p>
         </div>
       </div>
