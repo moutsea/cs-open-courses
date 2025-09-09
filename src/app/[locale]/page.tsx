@@ -31,7 +31,10 @@ const POPULAR_COURSES = [
     duration: '50 小时',
     durationEn: '50 hours',
     programmingLanguage: 'Python, Scheme, SQL',
-    slug: 'CS61A'
+    slug: 'CS61A',
+    path: '/programming-introduction/python/CS61A',
+    categorySlug: 'programming-introduction',
+    subcategorySlug: 'python'
   },
   {
     id: 'data-structures-algorithms-cs61b',
@@ -43,7 +46,9 @@ const POPULAR_COURSES = [
     duration: '60 小时',
     durationEn: '60 hours',
     programmingLanguage: 'Java',
-    slug: 'CS61B'
+    slug: 'CS61B',
+    path: '/data-structures-algorithms/CS61B',
+    categorySlug: 'data-structures-algorithms'
   },
   {
     id: 'machine-learning-cs189',
@@ -55,7 +60,9 @@ const POPULAR_COURSES = [
     duration: '100 小时',
     durationEn: '100 hours',
     programmingLanguage: 'Python',
-    slug: 'CS189'
+    slug: 'CS189',
+    path: '/machine-learning/CS189',
+    categorySlug: 'machine-learning'
   },
   {
     id: 'computer-graphics-games101',
@@ -67,7 +74,9 @@ const POPULAR_COURSES = [
     duration: '80 小时',
     durationEn: '80 hours',
     programmingLanguage: 'C++',
-    slug: 'GAMES101'
+    slug: 'GAMES101',
+    path: '/computer-graphics/GAMES101',
+    categorySlug: 'computer-graphics'
   },
   {
     id: 'deep-learning-cs224n',
@@ -79,7 +88,9 @@ const POPULAR_COURSES = [
     duration: '80 小时',
     durationEn: '80 hours',
     programmingLanguage: 'Python',
-    slug: 'CS224n'
+    slug: 'CS224n',
+    path: '/deep-learning/CS224n',
+    categorySlug: 'deep-learning'
   },
   {
     id: 'parallel-distributed-systems-mit6824',
@@ -91,7 +102,9 @@ const POPULAR_COURSES = [
     duration: '200 小时',
     durationEn: '200 hours',
     programmingLanguage: 'Go',
-    slug: 'MIT6.824'
+    slug: 'MIT6.824',
+    path: '/parallel-distributed-systems/MIT6.824',
+    categorySlug: 'parallel-distributed-systems'
   }
 ]
 
@@ -128,7 +141,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     hasEnglishVersion: true,
     content: course.description,
     contentEn: course.descriptionEn,
-    path: '',
+    path: course.path.replace(/^\//, ''), // Remove leading slash
     slug: course.slug
   }))
   

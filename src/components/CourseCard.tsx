@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
-import { useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useTranslations } from 'next-intl';
 
@@ -12,14 +11,48 @@ interface CourseCardProps {
 }
 
 export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
   const hookLocale = useLocale();
   const locale = forceLanguage || hookLocale;
   const t = useTranslations('courses');
-
-  const toggleExpanded = (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsExpanded(!isExpanded);
+  
+  // Fallback translations in case the translations aren't loaded yet
+  const fallbackTranslations = {
+    difficulty: locale === 'zh' ? '难度' : 'Difficulty',
+    duration: locale === 'zh' ? '学习时间' : 'Duration',
+    language: locale === 'zh' ? '编程语言' : 'Language',
+    viewCourse: locale === 'zh' ? '查看课程' : 'View Course'
+  };
+  
+  // Safely get translations with fallback
+  const getTranslation = (key: string) => {
+    try {
+      const value = t(key);
+      return value || fallbackTranslations[key as keyof typeof fallbackTranslations];
+    } catch (error) {
+      return fallbackTranslations[key as keyof typeof fallbackTranslations];
+    }
+  };
+  
+  const getDifficultyColor = (difficulty: string) => {
+    switch (difficulty.toLowerCase()) {
+      case 'beginner':
+        return 'bg-green-100 text-green-800';
+      case 'intermediate':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'advanced':
+        return 'bg-red-100 text-red-800';
+      case 'expert':
+        return 'bg-purple-100 text-purple-800';
+      default:
+        return 'bg-gray-100 text-gray-800';
+    }
+  };
+  
+  const translations = {
+    difficulty: getTranslation('difficulty'),
+    duration: getTranslation('duration'),
+    language: getTranslation('language'),
+    viewCourse: getTranslation('viewCourse')
   };
 
   return (
@@ -32,7 +65,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
           </svg>
         </div>
         
-        <Link href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}>
+        <Link href={`/${locale}/course/${course.path}`}>
           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
             {course.title}
           </h3>
@@ -42,82 +75,79 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
       {/* Course Metadata */}
       <div className="mb-4 space-y-2">
         {course.difficulty && (
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm">
             <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>{t('difficulty')}: {course.difficulty}</span>
+            <span>{translations.difficulty}: </span>
+            <span className={`px-2 py-1 rounded-full text-xs font-medium ml-1 ${getDifficultyColor(course.difficulty)}`}>
+              {course.difficulty}
+            </span>
           </div>
         )}
         
         {course.duration && (
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm">
             <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>
-              {t('duration')}: {
+            <span>{translations.duration}: </span>
+            <span className="ml-2 text-xs text-gray-600 font-medium">
+              {
                 typeof course.duration === 'object' 
                   ? `${course.duration.value} ${locale === 'en' ? 'hours' : '小时'}`
-                  : course.duration
+                  : (() => {
+                      // 处理字符串类型的duration
+                      const durationStr = course.duration.toString();
+                      if (locale === 'en') {
+                        // 如果已经包含"hours"，直接返回
+                        if (durationStr.toLowerCase().includes('hours')) {
+                          return durationStr;
+                        }
+                        // 移除中文的"小时"字样
+                        const cleanDuration = durationStr.replace(/\s*小时\s*$/, '').trim();
+                        return `${cleanDuration} hours`;
+                      }
+                      // 中文环境下，如果包含"hours"，替换为"小时"
+                      if (durationStr.toLowerCase().includes('hours')) {
+                        return durationStr.replace(/hours/i, '小时');
+                      }
+                      return durationStr;
+                    })()
               }
             </span>
           </div>
         )}
         
         {course.programmingLanguage && (
-          <div className="flex items-center text-sm text-gray-600">
+          <div className="flex items-center text-sm">
             <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
-            <span>{t('language')}: {course.programmingLanguage}</span>
+            <span>{translations.language}: </span>
+            <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium ml-1">
+              {course.programmingLanguage}
+            </span>
           </div>
         )}
       </div>
 
-      {/* Collapsible Course Description */}
+      {/* Course Description */}
       {(course.summary || course.summaryEn) && (
         <div className="mb-4">
-          <div className={`text-gray-600 text-sm leading-relaxed transition-all duration-300 overflow-hidden ${
-            isExpanded ? 'max-h-96' : 'max-h-0'
-          }`}>
-            <p>
-              {isExpanded 
-                ? (locale === 'en' && course.contentEn ? course.contentEn : course.content)
-                : (locale === 'en' && course.summaryEn ? course.summaryEn : course.summary)
-              }
-            </p>
-          </div>
+          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
+            {locale === 'en' && course.summaryEn ? course.summaryEn : course.summary}
+          </p>
         </div>
       )}
 
-      {/* Bottom Actions */}
-      <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100">
-        {(course.summary || course.summaryEn) && (
-          <button
-            onClick={toggleExpanded}
-            className="flex items-center text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200"
-          >
-            <span>{isExpanded ? t('showLess') : t('showMore')}</span>
-            <svg 
-              className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                isExpanded ? 'rotate-180' : ''
-              }`} 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-        )}
-        
+      {/* View Course Button */}
+      <div className="flex justify-end pt-4 border-t border-gray-100">
         <Link 
-          href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}
-          className="flex items-center text-gray-500 hover:text-blue-600 transition-colors duration-300 text-sm font-medium"
-          onClick={(e) => e.stopPropagation()}
+          href={`/${locale}/course/${course.path}`}
+          className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
         >
-          <span>{t('viewCourse')}</span>
+          <span>{translations.viewCourse}</span>
           <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>

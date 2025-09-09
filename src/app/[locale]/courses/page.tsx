@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
-import { Category } from '@/lib/courseParser';
+import { Category, Course } from '@/lib/courseParser';
 import CourseCard from '@/components/CourseCard';
 import { getChineseName } from '@/lib/categoryMapping';
 import { useTranslations } from 'next-intl';
@@ -94,7 +94,7 @@ export default function CoursesPage() {
     }
   };
 
-  const getFilteredCourses = () => {
+  const getFilteredCourses = (): Course[] => {
     if (!selectedCategory) return [];
     
     const category = categories.find(cat => cat.slug === selectedCategory);

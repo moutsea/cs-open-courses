@@ -16,6 +16,7 @@ export const pathnames = {
   '/zh/universities': '/zh/universities',
   '/tutorial': '/tutorial',
   '/zh/tutorial': '/zh/tutorial',
+  '/course/[...slug]': '/course/[...slug]',
 } satisfies Pathnames<typeof locales>;
 
 // Type definitions for app pathnames removed with pathnames configuration

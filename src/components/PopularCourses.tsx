@@ -109,7 +109,7 @@ export default function PopularCourses({ courses }: PopularCoursesProps) {
                   </div>
                 </div>
                 
-                <Link href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}>
+                <Link href={`/${locale}/course/${course.path}`}>
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
                     {course.title}
                   </h3>
@@ -182,7 +182,7 @@ export default function PopularCourses({ courses }: PopularCoursesProps) {
               {/* View Course Button */}
               <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                 <Link 
-                  href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}
+                  href={`/${locale}/course/${course.path}`}
                   className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
                 >
                   <span>{translations.viewCourse}</span>
