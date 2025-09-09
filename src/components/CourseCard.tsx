@@ -22,7 +22,6 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
     setIsExpanded(!isExpanded);
   };
 
-  
   return (
     <div className="relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 cursor-pointer border border-gray-100 hover:border-blue-100 group overflow-hidden">
       {/* Card Header with icon */}
@@ -33,7 +32,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
           </svg>
         </div>
         
-        <Link href={`/${locale}/course/${course.categorySlug || course.id.split('-')[0]}/${course.slug}`}>
+        <Link href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}>
           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
             {course.title}
           </h3>
@@ -114,7 +113,7 @@ export default function CourseCard({ course, forceLanguage }: CourseCardProps) {
         )}
         
         <Link 
-          href={`/${locale}/course/${course.categorySlug || course.id.split('-')[0]}/${course.slug}`}
+          href={locale === 'en' ? `/course/${course.id}` : `/${locale}/course/${course.id}`}
           className="flex items-center text-gray-500 hover:text-blue-600 transition-colors duration-300 text-sm font-medium"
           onClick={(e) => e.stopPropagation()}
         >

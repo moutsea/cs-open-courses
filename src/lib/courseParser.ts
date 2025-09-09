@@ -349,102 +349,116 @@ export async function getCourseByPath(coursePath: string): Promise<Course | null
 }
 
 export async function getCourseById(id: string, lang: string = 'en'): Promise<Course | null> {
-  const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
-  
   // Parse the ID to extract path components
   const parts = id.split('-');
   if (parts.length < 2) return null;
   
-  // Find the course file
-  const categorySlug = parts[0];
-  const courseSlug = parts[parts.length - 1];
-  
-  // Find the category directory
-  const categoryDirs = await fs.readdir(docsPath);
-  for (const categoryDir of categoryDirs) {
-    const categoryPath = path.join(docsPath, categoryDir);
-    const stats = await fs.stat(categoryPath);
+  // For direct category courses (format: category-course), use the same logic as categories API
+  if (parts.length === 2) {
+    const categorySlug = parts[0];
+    const courseSlug = parts[1];
     
-    if (!stats.isDirectory() || categoryDir === 'images') continue;
+    // Find the category directory
+    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
+    const categoryDirs = await fs.readdir(docsPath);
     
-    // Check if this category matches the slug
-    if (getEnglishSlug(categoryDir) === categorySlug) {
-      // Look for the course file
-      const items = await fs.readdir(categoryPath);
+    for (const categoryDir of categoryDirs) {
+      const categoryPath = path.join(docsPath, categoryDir);
+      const stats = await fs.stat(categoryPath);
       
-      for (const item of items) {
-        const itemPath = path.join(categoryPath, item);
-        const itemStats = await fs.stat(itemPath);
+      if (!stats.isDirectory() || categoryDir === 'images') continue;
+      
+      // Check if this category matches the slug
+      if (getEnglishSlug(categoryDir) === categorySlug) {
+        // Look for the course file directly in category (using categories API logic)
+        const categoryFiles = await fs.readdir(categoryPath);
+        const targetFile = lang === 'zh' ? `${courseSlug}.md` : `${courseSlug}.en.md`;
         
-        if (itemStats.isDirectory()) {
-          // Check subcategory
-          const subcategoryItems = await fs.readdir(itemPath);
-          for (const subItem of subcategoryItems) {
-            if (subItem.endsWith('.md') || subItem.endsWith('.en.md')) {
-              const courseFileName = subItem.replace('.en.md', '.md');
-              if (courseFileName.replace('.md', '') === courseSlug) {
-                const coursePath = path.join(itemPath, courseFileName);
-                const courseEnglishPath = path.join(itemPath, courseFileName.replace('.md', '.en.md'));
-                
-                const hasEnglishVersion = await fileExists(courseEnglishPath);
-                
-                let targetPath = coursePath;
-                if (lang === 'en' && hasEnglishVersion) {
-                  targetPath = courseEnglishPath;
-                } else if (lang === 'zh') {
-                  targetPath = coursePath; // Always use Chinese version for lang='zh'
-                }
-                
-                const { title, content, summary, summaryEn, programmingLanguage, difficulty, duration } = await parseMarkdownFile(targetPath);
+        if (categoryFiles.includes(targetFile)) {
+          const filePath = path.join(categoryPath, targetFile);
+          const courseData = await parseMarkdownFile(filePath);
+          
+          if (courseData) {
+            const hasEnglishVersion = lang === 'zh' && categoryFiles.includes(`${courseSlug}.en.md`);
+            
+            return {
+              id: `${categorySlug}-${courseSlug}`,
+              title: courseData.title,
+              description: courseData.content.substring(0, 200) + '...',
+              path: path.relative(docsPath, filePath),
+              slug: courseSlug,
+              content: courseData.content,
+              hasEnglishVersion,
+              summary: courseData.summary,
+              summaryEn: courseData.summaryEn,
+              programmingLanguage: courseData.programmingLanguage,
+              difficulty: courseData.difficulty,
+              duration: courseData.duration,
+              categorySlug
+            };
+          }
+        }
+      }
+    }
+  }
+  
+  // For subcategory courses (format: category-subcategory-course), use similar logic
+  if (parts.length >= 3) {
+    const categorySlug = parts[0];
+    const subcategorySlug = parts[1];
+    const courseSlug = parts[parts.length - 1];
+    
+    // Find the category directory
+    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs');
+    const categoryDirs = await fs.readdir(docsPath);
+    
+    for (const categoryDir of categoryDirs) {
+      const categoryPath = path.join(docsPath, categoryDir);
+      const stats = await fs.stat(categoryPath);
+      
+      if (!stats.isDirectory() || categoryDir === 'images') continue;
+      
+      // Check if this category matches the slug
+      if (getEnglishSlug(categoryDir) === categorySlug) {
+        // Look for the subcategory
+        const subcategoryDirs = await fs.readdir(categoryPath);
+        
+        for (const subcategoryDir of subcategoryDirs) {
+          const subcategoryPath = path.join(categoryPath, subcategoryDir);
+          const subStats = await fs.stat(subcategoryPath);
+          
+          if (!subStats.isDirectory()) continue;
+          
+          // Check if this subcategory matches the slug
+          if (getEnglishSlug(subcategoryDir) === subcategorySlug) {
+            // Look for the course file (using categories API logic)
+            const files = await fs.readdir(subcategoryPath);
+            const targetFile = lang === 'zh' ? `${courseSlug}.md` : `${courseSlug}.en.md`;
+            
+            if (files.includes(targetFile)) {
+              const filePath = path.join(subcategoryPath, targetFile);
+              const courseData = await parseMarkdownFile(filePath);
+              
+              if (courseData) {
+                const hasEnglishVersion = lang === 'zh' && files.includes(`${courseSlug}.en.md`);
                 
                 return {
-                  id,
-                  title,
-                  description: content.substring(0, 200) + '...',
-                  path: path.relative(docsPath, targetPath),
+                  id: `${categorySlug}-${subcategorySlug}-${courseSlug}`,
+                  title: courseData.title,
+                  description: courseData.content.substring(0, 200) + '...',
+                  path: path.relative(docsPath, filePath),
                   slug: courseSlug,
-                  content,
+                  content: courseData.content,
                   hasEnglishVersion,
-                  summary: summary || content.substring(0, 150) + '...',
-                  summaryEn: summaryEn || content.substring(0, 150) + '...',
-                  programmingLanguage,
-                  difficulty,
-                  duration
+                  summary: courseData.summary,
+                  summaryEn: courseData.summaryEn,
+                  programmingLanguage: courseData.programmingLanguage,
+                  difficulty: courseData.difficulty,
+                  duration: courseData.duration,
+                  categorySlug
                 };
               }
             }
-          }
-        } else if (item.endsWith('.md') || item.endsWith('.en.md')) {
-          const courseFileName = item.replace('.en.md', '.md');
-          if (courseFileName.replace('.md', '') === courseSlug) {
-            const coursePath = path.join(categoryPath, courseFileName);
-            const courseEnglishPath = path.join(categoryPath, courseFileName.replace('.md', '.en.md'));
-            
-            const hasEnglishVersion = await fileExists(courseEnglishPath);
-            
-            let targetPath = coursePath;
-            if (lang === 'en' && hasEnglishVersion) {
-              targetPath = courseEnglishPath;
-            } else if (lang === 'zh') {
-              targetPath = coursePath; // Always use Chinese version for lang='zh'
-            }
-            
-            const { title, content, summary, summaryEn, programmingLanguage, difficulty, duration } = await parseMarkdownFile(targetPath);
-            
-            return {
-              id,
-              title,
-              description: content.substring(0, 200) + '...',
-              path: path.relative(docsPath, targetPath),
-              slug: courseSlug,
-              content,
-              hasEnglishVersion,
-              summary: summary || content.substring(0, 150) + '...',
-              summaryEn: summaryEn || content.substring(0, 150) + '...',
-              programmingLanguage,
-              difficulty,
-              duration
-            };
           }
         }
       }

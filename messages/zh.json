@@ -68,6 +68,14 @@
       "title": "立即开始学习",
       "subtitle": "加入数千名免费学习计算机科学的学生行列",
       "button": "浏览所有课程"
+    },
+    "popularCourses": {
+      "title": "热门课程",
+      "subtitle": "精选顶尖大学经典课程",
+      "viewCourse": "查看课程",
+      "difficulty": "难度",
+      "duration": "学习时间",
+      "language": "编程语言"
     }
   },
   "tutorial": {
@@ -88,6 +96,7 @@
     "ready_to_start_desc": "从基础工具开始，逐步掌握计算机科学的核心概念",
     "browse_courses": "浏览课程",
     "start_learning": "开始学习",
+    "viewRelatedCourse": "查看相关课程",
     "sections": {
       "essential_tools": {
         "title": "基础工具",

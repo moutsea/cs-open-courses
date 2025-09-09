@@ -1,7 +1,9 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import PopularCourses from '@/components/PopularCourses'
+import LearningPathFlow from '@/components/LearningPathFlow'
 import Link from 'next/link'
-import { buildCourseStructure } from '@/lib/courseParser'
+// import { buildCourseStructure } from '@/lib/courseParser'
 import enMessages from '../../../messages/en.json'
 import zhMessages from '../../../messages/zh.json'
 
@@ -17,19 +19,95 @@ const universities = [
 // Real university count based on actual document analysis
 const TOTAL_UNIVERSITIES = 26
 
+// Popular courses data
+const POPULAR_COURSES = [
+  {
+    id: 'programming-introduction-python-cs61a',
+    title: 'CS61A: Structure and Interpretation of Computer Programs',
+    description: '伯克利CS系列入门课，强调程序抽象和原理，最终实现Scheme解释器',
+    descriptionEn: 'First course in Berkeley CS61 series, emphasizes abstraction and program construction principles',
+    difficulty: '🌟🌟🌟',
+    difficultyEn: 'Intermediate',
+    duration: '50 小时',
+    durationEn: '50 hours',
+    programmingLanguage: 'Python, Scheme, SQL',
+    slug: 'CS61A'
+  },
+  {
+    id: 'data-structures-algorithms-cs61b',
+    title: 'CS61B: Data Structures and Algorithms',
+    description: '数据结构与算法，14个Lab + 10个Homework + 3个Project，接触千行级工程代码',
+    descriptionEn: 'Data structures and algorithms with 14 Labs, 10 Homework, and 3 Projects',
+    difficulty: '🌟🌟🌟',
+    difficultyEn: 'Intermediate',
+    duration: '60 小时',
+    durationEn: '60 hours',
+    programmingLanguage: 'Java',
+    slug: 'CS61B'
+  },
+  {
+    id: 'machine-learning-cs189',
+    title: 'CS189: Introduction to Machine Learning',
+    description: '理论深入的机器学习入门课，开源所有homework代码和autograder',
+    descriptionEn: 'Theoretical machine learning course with open source homework and autograder',
+    difficulty: '🌟🌟🌟🌟',
+    difficultyEn: 'Advanced',
+    duration: '100 小时',
+    durationEn: '100 hours',
+    programmingLanguage: 'Python',
+    slug: 'CS189'
+  },
+  {
+    id: 'computer-graphics-games101',
+    title: 'GAMES101: 现代计算机图形学入门',
+    description: '国内知名图形学公开课，涵盖光栅化、几何表示、光线传播、动画模拟',
+    descriptionEn: 'Popular graphics course covering rasterization, geometry, light transport, and animation',
+    difficulty: '🌟🌟🌟',
+    difficultyEn: 'Intermediate',
+    duration: '80 小时',
+    durationEn: '80 hours',
+    programmingLanguage: 'C++',
+    slug: 'GAMES101'
+  },
+  {
+    id: 'deep-learning-cs224n',
+    title: 'CS224n: Natural Language Processing',
+    description: 'Chris Manning教授的NLP经典课程，覆盖词向量到Transformer的完整知识体系',
+    descriptionEn: 'Classic NLP course by Chris Manning covering word vectors to Transformers',
+    difficulty: '🌟🌟🌟🌟',
+    difficultyEn: 'Advanced',
+    duration: '80 小时',
+    durationEn: '80 hours',
+    programmingLanguage: 'Python',
+    slug: 'CS224n'
+  },
+  {
+    id: 'parallel-distributed-systems-mit6824',
+    title: 'MIT6.824: Distributed System',
+    description: 'MIT PDOS实验室出品，基于论文精读的分布式系统课程，4个高难度Project',
+    descriptionEn: 'MIT PDOS Lab distributed systems course with paper reading and challenging projects',
+    difficulty: '🌟🌟🌟🌟🌟🌟',
+    difficultyEn: 'Expert',
+    duration: '200 小时',
+    durationEn: '200 hours',
+    programmingLanguage: 'Go',
+    slug: 'MIT6.824'
+  }
+]
+
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  const categories = await buildCourseStructure()
+  // const categories = await buildCourseStructure()
   
   // Filter courses based on locale
   // For English locale, only show courses that have English versions
   // For Chinese locale, show all courses
-  const filteredCategories = locale === 'en' 
-    ? categories.map(category => ({
-        ...category,
-        courses: category.courses.filter(course => course.hasEnglishVersion)
-      })).filter(category => category.courses.length > 0)
-    : categories; // For Chinese, show all categories and courses
+  // const filteredCategories = locale === 'en' 
+  //   ? categories.map(category => ({
+  //       ...category,
+  //       courses: category.courses.filter(course => course.hasEnglishVersion)
+  //     })).filter(category => category.courses.length > 0)
+  //   : categories; // For Chinese, show all categories and courses
   
   // Use real document counts for both languages
   const totalCourses = locale === 'zh' ? 130 : 128 // Real document counts: Chinese 130, English 128
@@ -37,6 +115,22 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   
   // Load translations
   const messages = locale === 'zh' ? zhMessages : enMessages
+  
+  // Prepare popular courses data based on locale
+  const popularCourses = POPULAR_COURSES.map(course => ({
+    id: course.id,
+    title: course.title,
+    description: locale === 'zh' ? course.description : course.descriptionEn,
+    summary: locale === 'zh' ? course.description : course.descriptionEn,
+    difficulty: course.difficultyEn,
+    duration: locale === 'zh' ? course.duration : course.durationEn,
+    programmingLanguage: course.programmingLanguage,
+    hasEnglishVersion: true,
+    content: course.description,
+    contentEn: course.descriptionEn,
+    path: '',
+    slug: course.slug
+  }))
   
   const features = [
     {
@@ -97,7 +191,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div className="bg-white p-8 rounded-lg shadow-md">
@@ -115,6 +209,37 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
           </div>
         </section>
+
+        {/* Tutorial Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <div className="text-6xl mb-6">🌱</div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {locale === 'zh' ? 'CS 初学者学习路径' : 'CS Beginner Learning Path'}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                {locale === 'zh' ? '零基础开始你的 CS 之旅' : '7 stages, start Your CS Journey from Zero'}
+              </p>
+            </div>
+
+            <div className="bg-white  mx-auto">
+              <LearningPathFlow />
+              
+              <div className="text-center mt-16">
+                <Link 
+                  href={`/${locale}/tutorial`}
+                  className="bg-blue-800 text-white w-16 h-16 rounded-full hover:bg-blue-900 transition-all transform hover:scale-110 flex items-center justify-center mx-auto text-xl font-bold"
+                >
+                  {locale === 'zh' ? '开始' : 'Go!'}
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Courses Section */}
+        <PopularCourses courses={popularCourses} />
 
         {/* Universities Section */}
         <section className="py-16">

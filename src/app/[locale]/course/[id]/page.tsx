@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
 import { getEnglishSlug } from '@/lib/categoryMapping';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface CoursePageProps {
   params: Promise<{
     locale: string;
-    category: string;
-    course: string;
+    id: string;
   }>;
 }
 
@@ -20,25 +22,15 @@ export default function CoursePage({ params }: CoursePageProps) {
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations('course');
   const tCourses = useTranslations('courses');
-  const locale = useLocale();
+  const params_data = useParams<{ locale: string; id: string }>();
+  const locale = params_data.locale;
 
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const { locale, category, course: courseName } = await params;
+        const { id: courseId } = await params;
         
-        // Build course ID from path components
-        // For courses directly in category, the format is `${category}-${category}-${courseName}`
-        // For courses in subcategories, the format is `${category}-${subcategory}-${courseName}`
-        // We need to try both formats
-        const courseId1 = `${category}-${courseName}`;
-        const courseId2 = `${category}-${category}-${courseName}`;
-        
-        let response = await fetch(`/${locale}/api/course/${courseId1}`);
-        if (!response.ok) {
-          // Try the alternative format
-          response = await fetch(`/${locale}/api/course/${courseId2}`);
-        }
+        const response = await fetch(`/api/${locale}/course/${courseId}`);
         
         if (!response.ok) {
           if (response.status === 404) {
@@ -91,7 +83,7 @@ export default function CoursePage({ params }: CoursePageProps) {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">{t('notFound')}</h1>
           <p className="text-gray-600 mb-6">{t('notFoundDescription')}</p>
-          <Link href={`/${locale}/courses`} className="text-blue-600 hover:text-blue-800">
+          <Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-blue-600 hover:text-blue-800">
             ← {tCourses('backToCourses')}
           </Link>
         </div>
@@ -230,12 +222,13 @@ export default function CoursePage({ params }: CoursePageProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+      <Header locale={locale} />
       {/* Header */}
       <div className="bg-white shadow-sm border-b border-gray-200">
         <div className="container mx-auto px-4 py-6 max-w-4xl">
           <div className="flex items-center justify-between">
             <Link 
-              href={`/${locale}/courses`} 
+              href={locale === 'en' ? '/courses' : `/${locale}/courses`} 
               className="flex items-center text-blue-600 hover:text-blue-800 transition-colors"
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,12 +237,12 @@ export default function CoursePage({ params }: CoursePageProps) {
               {tCourses('backToCourses')}
             </Link>
             
-            {course.hasEnglishVersion && (
+            {(course.hasEnglishVersion || locale === 'zh') && (
               <div className="flex items-center px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm font-medium">
                 <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                 </svg>
-                {locale === 'zh' ? '英文版本' : 'English Version'}
+                {locale === 'zh' ? '中文版本' : 'English Version'}
               </div>
             )}
           </div>
@@ -302,7 +295,7 @@ export default function CoursePage({ params }: CoursePageProps) {
         {/* Footer */}
         <div className="mt-8 text-center">
           <Link 
-            href={`/${locale}/courses`} 
+            href={locale === 'en' ? '/courses' : `/${locale}/courses`} 
             className="inline-flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium"
           >
             <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,6 +305,8 @@ export default function CoursePage({ params }: CoursePageProps) {
           </Link>
         </div>
       </div>
+      
+      <Footer locale={locale} />
     </div>
   );
 }

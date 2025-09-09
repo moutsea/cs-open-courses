@@ -67,7 +67,7 @@ export default function Header({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="text-2xl font-bold text-white">
+            <Link href={locale === 'zh' ? '/zh' : '/'} className="text-2xl font-bold text-white" as={locale === 'zh' ? '/zh' : '/'}>
               CS Open Courses
             </Link>
           </div>
@@ -75,7 +75,7 @@ export default function Header({ locale }: { locale: string }) {
           <div className="hidden md:flex items-center space-x-8">
             <nav className="flex space-x-8">
 
-              <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
+              <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" as={locale === 'zh' ? '/zh' : '/'}>
                 Home
               </Link>
               {/* <Link href={locale === 'en' ? '/' : `/${locale}/courses`} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
@@ -88,15 +88,15 @@ export default function Header({ locale }: { locale: string }) {
                 {t.tutorial}
               </Link> */}
 
-              <Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/courses' : '/zh/courses'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.courses}
               </Link>
-              <Link href={locale === 'en' ? '/universities' : `/${locale}/universities`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/universities' : '/zh/universities'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.universities}
               </Link>
-              <Link href={locale === 'en' ? '/tutorial' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/tutorial' : '/zh/tutorial'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.tutorial}
               </Link>
@@ -172,15 +172,15 @@ export default function Header({ locale }: { locale: string }) {
                 {t.tutorial}
               </Link> */}
 
-              <Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/courses' : '/zh/courses'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.courses}
               </Link>
-              <Link href={locale === 'en' ? '/universities' : `/${locale}/universities`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/universities' : '/zh/universities'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.universities}
               </Link>
-              <Link href={locale === 'en' ? '/tutorial' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
+              <Link href={locale === 'en' ? '/tutorial' : '/zh/tutorial'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.tutorial}
               </Link>

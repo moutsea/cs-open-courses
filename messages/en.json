@@ -68,6 +68,14 @@
       "title": "Start Learning Today",
       "subtitle": "Join thousands of students learning computer science for free",
       "button": "Browse All Courses"
+    },
+    "popularCourses": {
+      "title": "Popular Courses",
+      "subtitle": "Handpicked classic courses from top universities",
+      "viewCourse": "View Course",
+      "difficulty": "Difficulty",
+      "duration": "Duration",
+      "language": "Language"
     }
   },
   "tutorial": {
@@ -88,6 +96,7 @@
     "ready_to_start_desc": "Start with essential tools and gradually master core computer science concepts",
     "browse_courses": "Browse Courses",
     "start_learning": "Start Learning",
+    "viewRelatedCourse": "View Related Course",
     "sections": {
       "essential_tools": {
         "title": "Essential Tools",

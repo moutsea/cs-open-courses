@@ -9,9 +9,13 @@ export const localePrefix = 'as-needed';
 
 export const pathnames = {
   '/': '/',
+  '/zh': '/zh',
   '/courses': '/courses',
+  '/zh/courses': '/zh/courses',
   '/universities': '/universities',
+  '/zh/universities': '/zh/universities',
   '/tutorial': '/tutorial',
+  '/zh/tutorial': '/zh/tutorial',
 } satisfies Pathnames<typeof locales>;
 
 // Type definitions for app pathnames removed with pathnames configuration

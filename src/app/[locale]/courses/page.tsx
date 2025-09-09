@@ -5,14 +5,33 @@ import Header from '@/components/Header';
 import { Category } from '@/lib/courseParser';
 import CourseCard from '@/components/CourseCard';
 import { getChineseName } from '@/lib/categoryMapping';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 
 export default function CoursesPage() {
+  // 添加左侧边栏滚动条样式
+  const style = `
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 3px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #a8a8a8;
+    }
+  `;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
-  const locale = useLocale();
+  const params = useParams<{ locale: string }>();
+  const locale = params.locale;
   const isChinese = locale === 'zh';
   const t = useTranslations('courses');
   
@@ -36,7 +55,7 @@ export default function CoursesPage() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch(`/${locale}/api/categories`);
+        const response = await fetch(`/api/${locale}/categories`);
         const data = await response.json();
         setCategories(data);
       } catch (error) {
@@ -56,6 +75,10 @@ export default function CoursesPage() {
     } else {
       setSelectedCategory(categorySlug);
       setSelectedSubcategory(null);
+      // 滚动页面到顶部
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
 
@@ -64,6 +87,10 @@ export default function CoursesPage() {
       setSelectedSubcategory(null);
     } else {
       setSelectedSubcategory(subcategorySlug);
+      // 滚动页面到顶部
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
 
@@ -95,6 +122,7 @@ export default function CoursesPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <style>{style}</style>
       <Header locale={locale} />
       <main className="flex-grow container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">{t('title')}</h1>
@@ -102,13 +130,13 @@ export default function CoursesPage() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm p-6">
+            <div className="bg-white rounded-lg shadow-sm p-6 sticky top-8">
               <h2 className="text-lg font-semibold mb-4">
                 {t('categories')}
               </h2>
               
               {/* Categories */}
-              <div className="space-y-2">
+              <div className="space-y-2 max-h-[calc(100vh-250px)] overflow-y-auto pr-2 custom-scrollbar">
                 {categories.map((category) => (
                   <div key={category.slug}>
                     <button
@@ -169,6 +197,13 @@ export default function CoursesPage() {
                     onClick={() => {
                       setSelectedCategory(null);
                       setSelectedSubcategory(null);
+                      // 滚动右侧内容区域到顶部
+                      setTimeout(() => {
+                        const mainContent = document.querySelector('.lg\\:col-span-3');
+                        if (mainContent) {
+                          mainContent.scrollTop = 0;
+                        }
+                      }, 100);
                     }}
                     className="text-blue-600 hover:text-blue-800"
                   >
