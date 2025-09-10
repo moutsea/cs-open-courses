@@ -62,11 +62,15 @@ export async function parseMarkdownFile(filePath: string): Promise<{
     // Detect if this is an English file
     const isEnglishFile = filePath.includes('.en.md') || 
                          content.toLowerCase().includes('descriptions') ||
-                         content.toLowerCase().includes('course introduction');
+                         content.toLowerCase().includes('course introduction') ||
+                         content.toLowerCase().includes('course overview') ||
+                         content.toLowerCase().includes('offered by:') ||
+                         content.toLowerCase().includes('programming language:') ||
+                         content.toLowerCase().includes('programming languages:');
     
     const introSectionIndex = lines.findIndex(line => 
       line.includes('课程简介') || line.includes('Course Introduction') || line.includes('课程介绍') || 
-      line.includes('Descriptions') || line.includes('Description') || line.includes('简介')
+      line.includes('Course Overview') || line.includes('Descriptions') || line.includes('Description') || line.includes('简介')
     );
     
     if (introSectionIndex !== -1) {
