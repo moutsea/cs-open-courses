@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { GlobeAltIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import SearchBox from './SearchBox'
 
 export default function Header({ locale }: { locale: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -77,6 +78,7 @@ export default function Header({ locale }: { locale: string }) {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
+            <SearchBox locale={locale} />
             <nav className="flex space-x-8">
 
               <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" as={locale === 'zh' ? '/zh' : '/'}>
@@ -162,6 +164,7 @@ export default function Header({ locale }: { locale: string }) {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <SearchBox locale={locale} />
 
               <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
                 Home
