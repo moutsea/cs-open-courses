@@ -78,8 +78,7 @@ export default function Header({ locale }: { locale: string }) {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <SearchBox locale={locale} />
-            <nav className="flex space-x-8">
+            <nav className="flex space-x-8 items-center">
 
               <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" as={locale === 'zh' ? '/zh' : '/'}>
                 Home
@@ -106,6 +105,7 @@ export default function Header({ locale }: { locale: string }) {
   font-medium">
                 {t.tutorial}
               </Link>
+              <SearchBox locale={locale} />
             </nav>
 
             {/* Language Dropdown */}
