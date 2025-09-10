@@ -56,7 +56,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
             
             // Parse the markdown file to extract metadata
             try {
-              const courseData = await parseMarkdownFile(itemPath)
+              const courseData = await parseMarkdownFile(itemPath, locale)
               
               // Check if the other language version exists
               const otherLang = locale === 'zh' ? 'en' : 'zh'
@@ -66,7 +66,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
               // Parse the other language version if it exists
               let otherLangData = null
               if (hasOtherVersion) {
-                otherLangData = await parseMarkdownFile(otherLangPath)
+                otherLangData = await parseMarkdownFile(otherLangPath, otherLang)
               }
               
               // Determine Chinese and English descriptions/summaries based on file content

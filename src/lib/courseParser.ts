@@ -32,7 +32,7 @@ export interface Category {
   courses: Course[];
 }
 
-export async function parseMarkdownFile(filePath: string): Promise<{ 
+export async function parseMarkdownFile(filePath: string, locale?: string): Promise<{ 
   title: string; 
   content: string; 
   summary?: string; 
@@ -59,14 +59,8 @@ export async function parseMarkdownFile(filePath: string): Promise<{
     let difficulty = '';
     let duration: string | { value: number | null; originalText: string } = '';
     
-    // Detect if this is an English file
-    const isEnglishFile = filePath.includes('.en.md') || 
-                         content.toLowerCase().includes('descriptions') ||
-                         content.toLowerCase().includes('course introduction') ||
-                         content.toLowerCase().includes('course overview') ||
-                         content.toLowerCase().includes('offered by:') ||
-                         content.toLowerCase().includes('programming language:') ||
-                         content.toLowerCase().includes('programming languages:');
+    // Determine language from file path
+    const isEnglishFile = locale === 'en' || filePath.includes('/en/') || filePath.includes('.en.md');
     
     const introSectionIndex = lines.findIndex(line => 
       line.includes('课程简介') || line.includes('Course Introduction') || line.includes('课程介绍') || 
@@ -232,7 +226,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
             const courseEnglishPath = path.join(itemPath, courseFile.replace('.md', '.en.md'));
             
             const hasEnglishVersion = await fileExists(courseEnglishPath);
-            const { title: chineseTitle, content: chineseContent, summary: chineseSummary, summaryEn: chineseSummaryEn, programmingLanguage: chinesePL, difficulty: chineseDiff, duration: chineseDur } = await parseMarkdownFile(coursePath);
+            const { title: chineseTitle, content: chineseContent, summary: chineseSummary, summaryEn: chineseSummaryEn, programmingLanguage: chinesePL, difficulty: chineseDiff, duration: chineseDur } = await parseMarkdownFile(coursePath, 'zh');
             
             let title = chineseTitle;
             let content = chineseContent;
@@ -245,7 +239,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
             let duration = chineseDur;
             
             if (hasEnglishVersion) {
-              const { title: englishTitle, content: englishContent, summary: englishSummary, summaryEn: englishSummaryEn, programmingLanguage: englishPL, difficulty: englishDiff, duration: englishDur } = await parseMarkdownFile(courseEnglishPath);
+              const { title: englishTitle, content: englishContent, summary: englishSummary, summaryEn: englishSummaryEn, programmingLanguage: englishPL, difficulty: englishDiff, duration: englishDur } = await parseMarkdownFile(courseEnglishPath, 'en');
               title = englishTitle;
               content = chineseContent;
               contentEn = englishContent;
@@ -284,7 +278,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
         const courseEnglishPath = path.join(categoryPath, item.replace('.md', '.en.md'));
         
         const hasEnglishVersion = await fileExists(courseEnglishPath);
-        const { title: chineseTitle, content: chineseContent, summary: chineseSummary, summaryEn: chineseSummaryEn, programmingLanguage: chinesePL, difficulty: chineseDiff, duration: chineseDur } = await parseMarkdownFile(coursePath);
+        const { title: chineseTitle, content: chineseContent, summary: chineseSummary, summaryEn: chineseSummaryEn, programmingLanguage: chinesePL, difficulty: chineseDiff, duration: chineseDur } = await parseMarkdownFile(coursePath, 'zh');
         
         let title = chineseTitle;
         let content = chineseContent;
@@ -296,7 +290,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
         let duration = chineseDur;
         
         if (hasEnglishVersion) {
-          const { title: englishTitle, content: englishContent, summary: englishSummary, summaryEn: englishSummaryEn, programmingLanguage: englishPL, difficulty: englishDiff, duration: englishDur } = await parseMarkdownFile(courseEnglishPath);
+          const { title: englishTitle, content: englishContent, summary: englishSummary, summaryEn: englishSummaryEn, programmingLanguage: englishPL, difficulty: englishDiff, duration: englishDur } = await parseMarkdownFile(courseEnglishPath, 'en');
           title = englishTitle;
           content = chineseContent;
           contentEn = englishContent;
@@ -380,7 +374,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
         
         if (categoryFiles.includes(targetFile)) {
           const filePath = path.join(categoryPath, targetFile);
-          const courseData = await parseMarkdownFile(filePath);
+          const courseData = await parseMarkdownFile(filePath, lang);
           
           if (courseData) {
             const hasEnglishVersion = lang === 'zh' && categoryFiles.includes(`${courseSlug}.en.md`);
@@ -441,7 +435,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
             
             if (files.includes(targetFile)) {
               const filePath = path.join(subcategoryPath, targetFile);
-              const courseData = await parseMarkdownFile(filePath);
+              const courseData = await parseMarkdownFile(filePath, lang);
               
               if (courseData) {
                 const hasEnglishVersion = lang === 'zh' && files.includes(`${courseSlug}.en.md`);
