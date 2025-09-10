@@ -124,12 +124,6 @@ export async function GET(request: NextRequest) {
     
     scanDirectory(courseDir);
     
-    // 调试：打印课程信息
-    console.log(`Total courses found for ${locale}: ${courses.length}`);
-    console.log(`Sample courses:`);
-    courses.slice(0, 3).forEach(course => {
-      console.log(`- ${course.title} (summary: ${course.summary ? course.summary.substring(0, 50) + '...' : 'none'}, summaryEn: ${course.summaryEn ? course.summaryEn.substring(0, 50) + '...' : 'none'})`);
-    });
     
     // 按类别和子类别分组
     const groupedCourses = courses.reduce((acc, course) => {

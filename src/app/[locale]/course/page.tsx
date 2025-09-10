@@ -25,7 +25,6 @@ function CourseContent({ locale, encodedPath }: { locale: string; encodedPath: s
 }
 
 async function CourseRenderer({ locale, path }: { locale: string; path: string }) {
-  console.log('CourseRenderer called with:', { locale, path, pathArray: path.split('/') });
   const courseContent = await getCourseContent(path.split('/'), locale);
   
   if (!courseContent.exists) {

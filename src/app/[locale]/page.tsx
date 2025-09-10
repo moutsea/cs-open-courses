@@ -3,7 +3,6 @@ import Footer from '@/components/Footer'
 import PopularCourses from '@/components/PopularCourses'
 import LearningPathFlow from '@/components/LearningPathFlow'
 import Link from 'next/link'
-// import { buildCourseStructure } from '@/lib/courseParser'
 import enMessages from '../../../messages/en.json'
 import zhMessages from '../../../messages/zh.json'
 
@@ -67,6 +66,7 @@ const POPULAR_COURSES = [
   {
     id: 'computer-graphics-games101',
     title: 'GAMES101: 现代计算机图形学入门',
+    titleEn: 'GAMES101: Introduction to Modern Computer Graphics',
     description: '国内知名图形学公开课，涵盖光栅化、几何表示、光线传播、动画模拟',
     descriptionEn: 'Popular graphics course covering rasterization, geometry, light transport, and animation',
     difficulty: '🌟🌟🌟',
@@ -110,17 +110,6 @@ const POPULAR_COURSES = [
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  // const categories = await buildCourseStructure()
-  
-  // Filter courses based on locale
-  // For English locale, only show courses that have English versions
-  // For Chinese locale, show all courses
-  // const filteredCategories = locale === 'en' 
-  //   ? categories.map(category => ({
-  //       ...category,
-  //       courses: category.courses.filter(course => course.hasEnglishVersion)
-  //     })).filter(category => category.courses.length > 0)
-  //   : categories; // For Chinese, show all categories and courses
   
   // Use real document counts for both languages
   const totalCourses = locale === 'zh' ? 130 : 128 // Real document counts: Chinese 130, English 128
@@ -132,7 +121,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   // Prepare popular courses data based on locale
   const popularCourses = POPULAR_COURSES.map(course => ({
     id: course.id,
-    title: course.title,
+    title: locale === 'zh' ? course.title : (course.titleEn || course.title),
     description: locale === 'zh' ? course.description : course.descriptionEn,
     summary: locale === 'zh' ? course.description : course.descriptionEn,
     difficulty: course.difficultyEn,

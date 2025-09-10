@@ -94,8 +94,6 @@ export async function getCourseContent(coursePath: string[], locale: string) {
     path.join(docsPath, langDir, relativePath + '.en.md'), // English version
   ];
   
-  // Add debug logging
-  console.log('getCourseContent called with:', { coursePath, locale, docsPath, relativePath, langDir, possiblePaths });
   
   // Try each possible path
   for (const filePath of possiblePaths) {
@@ -118,7 +116,6 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         }
       }
       
-      console.log('File found successfully:', { filePath, contentLength: content.length });
       
       return {
         content,
@@ -129,13 +126,11 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         hasChineseVersion: locale === 'zh' || hasOtherVersion,
       };
     } catch (error) {
-      console.log('Failed to read file:', filePath);
       // Continue to next possible path
     }
   }
   
   // If all attempts failed, try fallback to other language
-  console.log('All attempts failed, trying fallback...');
   const fallbackLangDir = locale === 'zh' ? 'en' : 'zh';
   const fallbackPaths = [
     path.join(docsPath, fallbackLangDir, relativePath + '.md'),
@@ -157,11 +152,9 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         isFallback: true,
       };
     } catch (fallbackError) {
-      console.log('Fallback failed:', fallbackPath);
     }
   }
   
-  console.log('No files found, returning not found');
   return {
     content: '',
     title: '',
