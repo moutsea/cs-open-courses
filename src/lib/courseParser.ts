@@ -132,10 +132,10 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
         }
       }
       
-      // Skip metadata lines (lines starting with - or containing : )
+      // Skip metadata lines (lines starting with -) and empty lines
       while (descriptionStartIndex < lines.length) {
         const line = lines[descriptionStartIndex].trim();
-        if (line.startsWith('-') || line.includes(':') || line.startsWith('##') || line === '') {
+        if (line.startsWith('-') || line.startsWith('##') || line === '') {
           descriptionStartIndex++;
         } else {
           break;
