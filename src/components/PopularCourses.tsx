@@ -28,7 +28,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
     try {
       const value = t(key);
       return value || fallbackTranslations[key as keyof typeof fallbackTranslations];
-    } catch (error) {
+    } catch {
       return fallbackTranslations[key as keyof typeof fallbackTranslations];
     }
   };

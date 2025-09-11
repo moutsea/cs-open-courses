@@ -1,6 +1,5 @@
 import { getTranslations } from 'next-intl/server';
 import Header from './Header';
-import Footer from './Footer';
 import SectionNavigation from './SectionNavigation';
 import Link from 'next/link';
 import TutorialTopicCard from './TutorialTopicCard';
@@ -191,22 +190,7 @@ export default async function TutorialContent({ locale }: { locale: string }) {
     }
   };
   
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case "Beginner": return 'bg-green-100 text-green-800';
-      case "Intermediate": return 'bg-yellow-100 text-yellow-800';
-      case "Advanced": return 'bg-red-100 text-red-800';
-      default: return 'bg-gray-100 text-gray-800';
-    }
-  };
-
-  const levelTranslations = {
-    en: { Beginner: "Beginner", Intermediate: "Intermediate", Advanced: "Advanced" },
-    zh: { Beginner: "初级", Intermediate: "中级", Advanced: "高级" }
-  };
-
-  const hoursText = locale === 'zh' ? '小时' : 'hours';
-  const titleText = t('title');
+    const titleText = t('title');
   const subtitleText = t('subtitle');
   const stagesText = t('stages');
   const sequenceTitle = t('sequence_title');
@@ -222,7 +206,6 @@ export default async function TutorialContent({ locale }: { locale: string }) {
   const readyToStart = t('ready_to_start');
   const readyToStartDesc = t('ready_to_start_desc');
   const browseCourses = t('browse_courses');
-  const startLearning = t('start_learning');
 
   return (
     <div className="min-h-screen flex flex-col">

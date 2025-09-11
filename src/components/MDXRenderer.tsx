@@ -1,39 +1,20 @@
 'use client';
 
-import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 interface MDXRendererProps {
   content: string;
-  title: string;
   locale: string;
-  hasEnglishVersion?: boolean;
-  hasChineseVersion?: boolean;
   isFallback?: boolean;
-  coursePath: string[];
 }
 
 export default function MDXRenderer({ 
   content, 
-  title, 
   locale, 
-  hasEnglishVersion = false, 
-  hasChineseVersion = false,
   isFallback = false,
-  coursePath 
 }: MDXRendererProps) {
-  const [copiedCode, setCopiedCode] = useState<string>('');
-
-  const handleCopyCode = (code: string, event: React.MouseEvent) => {
-    event.preventDefault();
-    navigator.clipboard.writeText(code).then(() => {
-      setCopiedCode(code);
-      setTimeout(() => setCopiedCode(''), 2000);
-    });
-  };
-
   const isChinese = locale === 'zh';
 
   return (
@@ -72,13 +53,6 @@ export default function MDXRenderer({
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </article>
-
-        {/* Copy code notification */}
-        {copiedCode && (
-          <div className="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg">
-            Code copied to clipboard!
-          </div>
-        )}
       </main>
       
       <Footer locale={locale} />

@@ -4,10 +4,9 @@ interface SectionNavigationProps {
   sections: Array<{
     title: string;
   }>;
-  locale: string;
 }
 
-export default function SectionNavigation({ sections, locale }: SectionNavigationProps) {
+export default function SectionNavigation({ sections }: SectionNavigationProps) {
   const handleSectionClick = (index: number) => {
     const element = document.getElementById(`section-${index}`);
     if (element) {

@@ -125,7 +125,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         hasEnglishVersion: locale === 'en' || hasOtherVersion,
         hasChineseVersion: locale === 'zh' || hasOtherVersion,
       };
-    } catch (error) {
+    } catch {
       // Continue to next possible path
     }
   }
@@ -151,7 +151,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         hasChineseVersion: fallbackLangDir === 'zh',
         isFallback: true,
       };
-    } catch (fallbackError) {
+    } catch {
     }
   }
   

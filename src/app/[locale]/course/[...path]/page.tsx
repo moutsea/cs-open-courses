@@ -182,12 +182,8 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
   return (
     <MDXRenderer
       content={htmlContent}
-      title={title}
       locale={locale}
-      hasEnglishVersion={courseContent.hasEnglishVersion}
-      hasChineseVersion={courseContent.hasChineseVersion}
       isFallback={courseContent.isFallback}
-      coursePath={path}
     />
   );
 }

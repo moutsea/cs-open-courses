@@ -1,8 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
-import { useTranslations } from 'next-intl';
 
 interface TutorialTopic {
   name: string;
@@ -13,7 +11,6 @@ interface TutorialTopic {
 
 interface TutorialTopicCardProps {
   topic: TutorialTopic;
-  index: number;
   locale: string;
 }
 
@@ -92,8 +89,7 @@ const courseMapping: Record<string, string> = {
   "系统安全": "system-security-CS161"
 };
 
-export default function TutorialTopicCard({ topic, index, locale }: TutorialTopicCardProps) {
-  const t = useTranslations('tutorial');
+export default function TutorialTopicCard({ topic, locale }: TutorialTopicCardProps) {
   
   const getLevelColor = (level: string) => {
     switch (level) {
