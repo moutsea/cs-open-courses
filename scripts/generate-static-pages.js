@@ -137,7 +137,7 @@ async function generateCoursePage({
   const content = await fs.readFile(filePath, 'utf-8');
   
   // Extract course metadata
-  const courseData = extractCourseData(content, courseFile, isEnglishFile);
+  const courseData = extractCourseData(content, courseFile);
   
   // Generate the page component
   const pageContent = generatePageComponent({
@@ -156,7 +156,7 @@ async function generateCoursePage({
   console.log(`📄 Generated: ${routePath}`);
 }
 
-function extractCourseData(content, fileName, isEnglishFile) {
+function extractCourseData(content, fileName) {
   const lines = content.split('\n');
   
   // Extract title from first h1 or use filename
