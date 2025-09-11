@@ -34,7 +34,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
     return searchIndex
   }
 
-  const docsPath = path.join(process.cwd(), 'docs-new')
+  const docsPath = path.join(process.cwd(), 'course-content')
   const courses: CourseSearchIndex[] = []
   
   async function scanLanguageDirectory(langDir: string, locale: string) {
@@ -50,9 +50,10 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
           
           if (stats.isDirectory()) {
             await scanDirectory(itemPath, [...currentPath, item])
-          } else if (item.endsWith('.md') && !item.endsWith('.en.md')) {
+          } else if (item.endsWith('.md')) {
             // This is a course file
-            const coursePath = [...currentPath, item.replace('.md', '')]
+            const fileName = item.replace('.md', '').replace('.en', '')
+            const coursePath = [...currentPath, fileName]
             
             // Parse the markdown file to extract metadata
             try {
@@ -60,7 +61,10 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
               
               // Check if the other language version exists
               const otherLang = locale === 'zh' ? 'en' : 'zh'
-              const otherLangPath = path.join(docsPath, otherLang, ...currentPath, item)
+              const otherLangFileName = item.endsWith('.en.md') ? 
+                item.replace('.en.md', '.md') : 
+                item.replace('.md', '.en.md')
+              const otherLangPath = path.join(docsPath, otherLang, ...currentPath, otherLangFileName)
               const hasOtherVersion = await fileExists(otherLangPath)
               
               // Parse the other language version if it exists
@@ -258,6 +262,4 @@ export function clearSearchIndexCache() {
 }
 
 // Clear the cache to ensure changes take effect
-if (searchIndex) {
-  searchIndex = null;
-}
+searchIndex = null;

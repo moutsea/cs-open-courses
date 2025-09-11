@@ -26,7 +26,7 @@ const tutorialSections: TutorialSection[] = [
     topics: [
       { name: "Command Line & Shell", level: "Beginner" as const, duration: "4 hours", description: "Learn Vim, command line basics, and shell scripting" },
       { name: "Git & Version Control", level: "Beginner" as const, duration: "3 hours", description: "Master Git for project management and collaboration" },
-      { name: "IDE & Development Environment", level: "Beginner" as const, duration: "2 hours", description: "Set up VS Code, debugging tools, and development workflow" },
+      { name: "Information Retrieval", level: "Beginner" as const, duration: "2 hours", description: "Learn information retrieval techniques, search engines, and data indexing" },
       { name: "Docker & Containerization", level: "Intermediate" as const, duration: "3 hours", description: "Learn container technology for modern development" }
     ]
   },
@@ -113,7 +113,7 @@ export default async function TutorialContent({ locale }: { locale: string }) {
             topics: [
               { name: "命令行与Shell", level: "Beginner" as const, duration: "4 hours", description: "学习Vim、命令行基础和Shell脚本编程" },
               { name: "Git与版本控制", level: "Beginner" as const, duration: "3 hours", description: "掌握Git进行项目管理和协作开发" },
-              { name: "IDE与开发环境", level: "Beginner" as const, duration: "2 hours", description: "设置VS Code、调试工具和开发工作流" },
+              { name: "信息检索", level: "Beginner" as const, duration: "2 hours", description: "学习信息检索技术、搜索引擎和数据索引" },
               { name: "Docker与容器化", level: "Intermediate" as const, duration: "3 hours", description: "学习现代开发中的容器技术" }
             ]
           },

@@ -10,7 +10,7 @@ export interface CoursePath {
 }
 
 export async function getAllCoursePaths(): Promise<CoursePath[]> {
-  const docsPath = path.join(process.cwd(), 'docs-new');
+  const docsPath = path.join(process.cwd(), 'course-content');
   const paths: CoursePath[] = [];
   
   async function scanLanguageDirectory(langDir: string, locale: string) {
@@ -82,7 +82,7 @@ function extractTitle(content: string, fallback: string): string {
 }
 
 export async function getCourseContent(coursePath: string[], locale: string) {
-  const docsPath = path.join(process.cwd(), 'docs-new');
+  const docsPath = path.join(process.cwd(), 'course-content');
   const relativePath = path.join(...coursePath);
   
   // Use language-specific directory

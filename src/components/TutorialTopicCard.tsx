@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { memo } from 'react';
+import { buildDynamicRoutePath } from '@/lib/pathUtils';
 
 interface TutorialTopic {
   name: string;
@@ -15,79 +16,79 @@ interface TutorialTopicCardProps {
   locale: string;
 }
 
-// 课程映射 - 基于课程名称映射到课程ID
+// 课程映射 - 基于课程名称映射到课程文件系统路径
 const courseMapping: Record<string, string> = {
   // Essential Tools
-  "Command Line & Shell": "essential-tools-Vim",
-  "Git & Version Control": "essential-tools-Git", 
-  "IDE & Development Environment": "essential-tools-workflow",
-  "Docker & Containerization": "essential-tools-Docker",
+  "Command Line & Shell": "essential-tools/Vim",
+  "Git & Version Control": "essential-tools/Git", 
+  "Information Retrieval": "essential-tools/information-retrieval",
+  "Docker & Containerization": "essential-tools/Docker",
   
   // Mathematical Foundations
-  "Calculus & Linear Algebra": "mathematics-basics-MITmaths",
-  "Discrete Mathematics": "advanced-mathematics-CS70",
-  "Probability Theory": "advanced-mathematics-CS126",
-  "Information Theory": "mathematics-basics-information",
+  "Calculus & Linear Algebra": "mathematics-basics/MITmaths",
+  "Discrete Mathematics": "advanced-mathematics/CS70",
+  "Probability Theory": "advanced-mathematics/CS126",
+  "Information Theory": "mathematics-basics/information",
   
-  // Programming Fundamentals
-  "Introduction to Programming": "programming-introduction-MIT-Missing-Semester",
-  "Data Structures & Algorithms": "data-structures-algorithms-CS61B",
-  "Software Engineering": "software-engineering-CS169",
-  "Advanced Programming": "computer-systems-basics-CS110",
+  // Programming Fundamentals - 修正为实际存在的课程路径
+  "Introduction to Programming": "programming-introduction/python/CS50P",
+  "Data Structures & Algorithms": "data-structures-algorithms/CS61B",
+  "Software Engineering": "software-engineering/CS169",
+  "Advanced Programming": "programming-introduction/cpp/CS106B_CS106X",
   
   // Computer Systems
-  "Computer Architecture": "computer-architecture-N2T",
-  "Operating Systems": "operating-systems-MIT6.S081",
-  "Computer Networks": "computer-networks-CS144",
-  "Database Systems": "database-systems-15445",
+  "Computer Architecture": "computer-architecture/CS61C",
+  "Operating Systems": "operating-systems/MIT6.S081",
+  "Computer Networks": "computer-networks/CS144",
+  "Database Systems": "database-systems/CS186",
   
   // Algorithms & Theory
-  "Algorithm Design": "data-structures-algorithms-CS170",
-  "Theory of Computation": "advanced-mathematics-6.042J",
-  "Cryptography": "system-security-CS161",
-  "Convex Optimization": "advanced-mathematics-convex",
+  "Algorithm Design": "data-structures-algorithms/CS170",
+  "Theory of Computation": "advanced-mathematics/6.042J",
+  "Cryptography": "system-security/CS161",
+  "Convex Optimization": "advanced-mathematics/convex",
   
   // Machine Learning & AI
-  "Machine Learning Fundamentals": "machine-learning-CS229",
-  "Deep Learning": "deep-learning-CS231",
-  "Reinforcement Learning": "deep-learning-CS285",
-  "AI Systems": "machine-learning-systems-CMU10-414",
+  "Machine Learning Fundamentals": "machine-learning/CS229",
+  "Deep Learning": "deep-learning/CS231",
+  "Reinforcement Learning": "deep-learning/CS285",
+  "AI Systems": "machine-learning-systems/CMU10-414",
   
   // Specialized Topics
-  "Computer Graphics": "computer-graphics-CS148",
-  "Parallel Computing": "parallel-distributed-systems-CS149",
-  "Distributed Systems": "parallel-distributed-systems-MIT6.824",
-  "System Security": "system-security-CS161",
+  "Computer Graphics": "computer-graphics/CS148",
+  "Parallel Computing": "parallel-distributed-systems/CS149",
+  "Distributed Systems": "parallel-distributed-systems/MIT6.824",
+  "System Security": "system-security/CS161",
   
   // 中文映射
-  "命令行与Shell": "essential-tools-Vim",
-  "Git与版本控制": "essential-tools-Git",
-  "IDE与开发环境": "essential-tools-workflow", 
-  "Docker与容器化": "essential-tools-Docker",
-  "微积分与线性代数": "mathematics-basics-MITmaths",
-  "离散数学": "advanced-mathematics-CS70",
-  "概率论": "advanced-mathematics-CS126",
-  "信息论": "mathematics-basics-information",
-  "编程入门": "programming-introduction-MIT-Missing-Semester",
-  "数据结构与算法": "data-structures-algorithms-CS61B",
-  "软件工程": "software-engineering-CS169",
-  "高级编程": "computer-systems-basics-CS110",
-  "计算机体系结构": "computer-architecture-N2T",
-  "操作系统": "operating-systems-MIT6.S081",
-  "计算机网络": "computer-networks-CS144",
-  "数据库系统": "database-systems-15445",
-  "算法设计": "data-structures-algorithms-CS170",
-  "计算理论": "advanced-mathematics-6.042J",
-  "密码学": "system-security-CS161",
-  "凸优化": "advanced-mathematics-convex",
-  "机器学习基础": "machine-learning-CS229",
-  "深度学习": "deep-learning-CS231",
-  "强化学习": "deep-learning-CS285",
-  "AI系统": "machine-learning-systems-CMU10-414",
-  "计算机图形学": "computer-graphics-CS148",
-  "并行计算": "parallel-distributed-systems-CS149",
-  "分布式系统": "parallel-distributed-systems-MIT6.824",
-  "系统安全": "system-security-CS161"
+  "命令行与Shell": "essential-tools/Vim",
+  "Git与版本控制": "essential-tools/Git",
+  "信息检索": "essential-tools/information-retrieval", 
+  "Docker与容器化": "essential-tools/Docker",
+  "微积分与线性代数": "mathematics-basics/MITmaths",
+  "离散数学": "advanced-mathematics/CS70",
+  "概率论": "advanced-mathematics/CS126",
+  "信息论": "mathematics-basics/information",
+  "编程入门": "programming-introduction/python/CS50P",
+  "数据结构与算法": "data-structures-algorithms/CS61B",
+  "软件工程": "software-engineering/CS169",
+  "高级编程": "programming-introduction/cpp/CS106B_CS106X",
+  "计算机体系结构": "computer-architecture/CS61C",
+  "操作系统": "operating-systems/MIT6.S081",
+  "计算机网络": "computer-networks/CS144",
+  "数据库系统": "database-systems/CS186",
+  "算法设计": "data-structures-algorithms/CS170",
+  "计算理论": "advanced-mathematics/6.042J",
+  "密码学": "system-security/CS161",
+  "凸优化": "advanced-mathematics/convex",
+  "机器学习基础": "machine-learning/CS229",
+  "深度学习": "deep-learning/CS231",
+  "强化学习": "deep-learning/CS285",
+  "AI系统": "machine-learning-systems/CMU10-414",
+  "计算机图形学": "computer-graphics/CS148",
+  "并行计算": "parallel-distributed-systems/CS149",
+  "分布式系统": "parallel-distributed-systems/MIT6.824",
+  "系统安全": "system-security/CS161"
 };
 
 const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale }: TutorialTopicCardProps) {
@@ -108,16 +109,21 @@ const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale }: Tut
 
   const hoursText = locale === 'zh' ? '小时' : 'hours';
   
-  // 查找相关的课程ID
-  const courseId = courseMapping[topic.name];
-  const hasRelatedCourse = !!courseId;
+  // 查找相关的课程路径
+  const coursePath = courseMapping[topic.name];
+  const hasRelatedCourse = !!coursePath;
+  
+  // 构建正确的跳转路径
+  const courseLinkPath = hasRelatedCourse 
+    ? `/${locale}/course/${buildDynamicRoutePath(coursePath).join('/')}`
+    : '';
   
   return (
     <div className={`border border-gray-200 rounded-lg p-4 hover:border-blue-300 transition-all duration-300 ${
       hasRelatedCourse ? 'hover:shadow-md cursor-pointer group' : ''
     }`}>
       {hasRelatedCourse ? (
-        <Link href={`/${locale}/course/${courseId}`} className="block">
+        <Link href={courseLinkPath} className="block">
           <div className="flex items-center justify-between mb-2">
             <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
               {topic.name}

@@ -5,7 +5,7 @@ import { Category, Subcategory, Course } from './courseParser';
 import { getEnglishSlug } from './categoryMapping';
 
 export async function getCategoriesForLocale(locale: string): Promise<Category[]> {
-  const docsPath = path.join(process.cwd(), 'docs-new');
+  const docsPath = path.join(process.cwd(), 'course-content');
   const categories: Category[] = [];
   
   try {
