@@ -25,7 +25,7 @@ export async function getAllCoursePaths(): Promise<CoursePath[]> {
         
         if (stats.isDirectory()) {
           await scanDirectory(itemPath, [...currentPath, item]);
-        } else if (item.endsWith('.md') && !item.endsWith('.en.md')) {
+        } else if (item.endsWith('.md')) {
           // This is a course file
           const coursePath = [...currentPath, item.replace('.md', '')];
           
@@ -89,13 +89,8 @@ export async function getCourseContent(coursePath: string[], locale: string) {
   const langDir = locale === 'zh' ? 'zh' : 'en';
   
   // Try different file naming conventions
-  // For English, prioritize .en.md files, for Chinese, prioritize .md files
-  const possiblePaths = locale === 'en' ? [
-    path.join(docsPath, langDir, relativePath + '.en.md'), // English version
+  const possiblePaths = [
     path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
-  ] : [
-    path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
-    path.join(docsPath, langDir, relativePath + '.en.md'), // English version
   ];
   
   
@@ -136,12 +131,8 @@ export async function getCourseContent(coursePath: string[], locale: string) {
   
   // If all attempts failed, try fallback to other language
   const fallbackLangDir = locale === 'zh' ? 'en' : 'zh';
-  const fallbackPaths = fallbackLangDir === 'en' ? [
-    path.join(docsPath, fallbackLangDir, relativePath + '.en.md'),
+  const fallbackPaths = [
     path.join(docsPath, fallbackLangDir, relativePath + '.md'),
-  ] : [
-    path.join(docsPath, fallbackLangDir, relativePath + '.md'),
-    path.join(docsPath, fallbackLangDir, relativePath + '.en.md'),
   ];
   
   for (const fallbackPath of fallbackPaths) {
