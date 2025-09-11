@@ -1,36 +1,12 @@
-// Popular courses data (synced from homepage)
-const POPULAR_COURSES = [
-  {
-    path: '/programming-introduction/python/CS61A',
-    slug: 'CS61A',
-  },
-  {
-    path: '/data-structures-algorithms/CS61B',
-    slug: 'CS61B',
-  },
-  {
-    path: '/machine-learning/CS189',
-    slug: 'CS189',
-  },
-  {
-    path: '/computer-graphics/GAMES101',
-    slug: 'GAMES101',
-  },
-  {
-    path: '/deep-learning/CS224n',
-    slug: 'CS224n',
-  },
-  {
-    path: '/parallel-distributed-systems/MIT6.824',
-    slug: 'MIT6.824',
-  },
-]
+import { getAllCourses } from '@/lib/getServerData'
+import { buildDynamicRoutePath } from '@/lib/pathUtils'
 
-export default function sitemap() {
+export default async function sitemap() {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
   const currentDate = new Date().toISOString().split('T')[0]
   
   const sitemapEntries = [
+    // 首页
     {
       url: `${baseUrl}/`,
       lastModified: currentDate,
@@ -44,11 +20,25 @@ export default function sitemap() {
       priority: 0.9,
     },
     
-    // 课程页面
+    // 关于页面
+    {
+      url: `${baseUrl}/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/zh/about`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    
+    // 课程列表页面
     {
       url: `${baseUrl}/courses`,
       lastModified: currentDate,
-      changeFrequency: 'daily' as const, // 课程信息变化较频繁
+      changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
@@ -85,26 +75,66 @@ export default function sitemap() {
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
+    
+    // 搜索页面
+    {
+      url: `${baseUrl}/search`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/zh/search`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
   ]
   
-  // 添加热门课程到 sitemap
-  POPULAR_COURSES.forEach(course => {
-    // 英文版本
-    sitemapEntries.push({
-      url: `${baseUrl}/course?path=${encodeURIComponent(course.path)}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+  try {
+    // 获取所有课程并添加到 sitemap
+    const [enCourses, zhCourses] = await Promise.all([
+      getAllCourses('en'),
+      getAllCourses('zh')
+    ])
+    
+    // 使用 Set 来避免重复路径
+    const enCoursePaths = new Set<string>()
+    const zhCoursePaths = new Set<string>()
+    
+    // 添加英文课程（去重）
+    enCourses.forEach(course => {
+      const routePath = buildDynamicRoutePath(course.path)
+      const url = `${baseUrl}/course/${routePath.join('/')}`
+      if (!enCoursePaths.has(url)) {
+        enCoursePaths.add(url)
+        sitemapEntries.push({
+          url: url,
+          lastModified: currentDate,
+          changeFrequency: 'monthly' as const,
+          priority: 0.8,
+        })
+      }
     })
     
-    // 中文版本
-    sitemapEntries.push({
-      url: `${baseUrl}/zh/course?path=${encodeURIComponent(course.path)}`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
+    // 添加中文课程（去重）
+    zhCourses.forEach(course => {
+      const routePath = buildDynamicRoutePath(course.path)
+      const url = `${baseUrl}/zh/course/${routePath.join('/')}`
+      if (!zhCoursePaths.has(url)) {
+        zhCoursePaths.add(url)
+        sitemapEntries.push({
+          url: url,
+          lastModified: currentDate,
+          changeFrequency: 'monthly' as const,
+          priority: 0.8,
+        })
+      }
     })
-  })
+    
+  } catch (error) {
+    console.error('Error generating course sitemap entries:', error)
+  }
   
   return sitemapEntries
 }
