@@ -153,6 +153,20 @@ export async function getCategoriesForLocale(locale: string): Promise<Category[]
   }
 }
 
+export async function getAllCourses(locale: string): Promise<Course[]> {
+  const categories = await getCategoriesForLocale(locale);
+  const allCourses: Course[] = [];
+  
+  for (const category of categories) {
+    allCourses.push(...category.courses);
+    for (const subcategory of category.subcategories) {
+      allCourses.push(...subcategory.courses);
+    }
+  }
+  
+  return allCourses;
+}
+
 async function fileExists(filePath: string): Promise<boolean> {
   try {
     await fs.access(filePath);

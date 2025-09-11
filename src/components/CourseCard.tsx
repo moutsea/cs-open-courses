@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
 import { useTranslations } from 'next-intl';
-import { encodeFilePathToURL } from '@/lib/pathUtils';
+import { buildDynamicRoutePath } from '@/lib/pathUtils';
 
 interface CourseCardProps {
   course: Course;
@@ -65,7 +65,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
           </svg>
         </div>
         
-        <Link href={`/${resolvedLocale}/course?path=${encodeFilePathToURL(course.path)}`}>
+        <Link href={`/${resolvedLocale}/course/${buildDynamicRoutePath(course.path).join('/')}`}>
           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
             {course.title}
           </h3>
@@ -144,7 +144,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
       {/* View Course Button */}
       <div className="flex justify-end pt-4 border-t border-gray-100">
         <Link 
-          href={`/${resolvedLocale}/course?path=${encodeFilePathToURL(course.path)}`}
+          href={`/${resolvedLocale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
           className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
         >
           <span>{translations.viewCourse}</span>

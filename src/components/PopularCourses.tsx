@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { Course } from '@/lib/courseParser';
-import { encodePathParameter } from '@/lib/pathUtils';
+import { buildDynamicRoutePath } from '@/lib/pathUtils';
 
 interface PopularCoursesProps {
   courses: Course[];
@@ -110,7 +110,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                   </div>
                 </div>
                 
-                <Link href={`/${locale}/course?path=${encodePathParameter(course.path)}`}>
+                <Link href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}>
                   <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
                     {course.title}
                   </h3>
@@ -183,7 +183,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
               {/* View Course Button */}
               <div className="flex justify-between items-center pt-4 border-t border-gray-100">
                 <Link 
-                  href={`/${locale}/course?path=${encodePathParameter(course.path)}`}
+                  href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
                   className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
                 >
                   <span>{translations.viewCourse}</span>

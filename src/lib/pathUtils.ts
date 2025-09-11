@@ -27,14 +27,14 @@ export function encodeFilePathToURL(filePath: string): string {
 }
 
 /**
- * 将 URL 路径解码回文件系统路径
- * @param urlPath URL 路径，如 "getting-started/java/mit-6092"
+ * 将 URL 路径解码回文件系统路径数组
+ * @param urlPath URL 路径数组，如 ["programming-introduction", "python", "CS50P"]
  * @param locale 语言环境，用于查找对应的中文目录名
- * @returns 文件系统路径
+ * @returns 文件系统路径数组
  */
-export function decodeURLToFilePath(urlPath: string): string {
-  // 这里需要实现反向映射，暂时先返回原路径
-  // 实际使用时，我们需要通过扫描目录来找到对应的文件
+export function decodeURLToFilePath(urlPath: string[]): string[] {
+  // 对于新的动态路由，URL 路径已经是文件系统路径格式
+  // 不需要转换，直接返回
   return urlPath;
 }
 
@@ -68,7 +68,36 @@ export function buildCoursePathFromId(courseId: string): string {
 }
 
 /**
- * 安全地编码路径参数
+ * 构建动态路由的 URL 路径
+ * @param filePath 文件系统路径，如 "zh/programming-introduction/python/CS50P.md"
+ * @returns 动态路由路径数组，如 ["programming-introduction", "python", "CS50P"]
+ */
+export function buildDynamicRoutePath(filePath: string): string[] {
+  // 移除语言前缀和文件扩展名
+  const pathParts = filePath.split('/');
+  
+  // 检查是否包含语言前缀（如 "zh/" 或 "en/"）
+  let pathWithoutLocale = pathParts;
+  if (pathParts.length > 1 && (pathParts[0] === 'zh' || pathParts[0] === 'en')) {
+    pathWithoutLocale = pathParts.slice(1); // 移除语言前缀
+  }
+  
+  const lastPart = pathWithoutLocale[pathWithoutLocale.length - 1];
+  if (lastPart && lastPart.endsWith('.md')) {
+    pathWithoutLocale[pathWithoutLocale.length - 1] = lastPart.replace('.md', '');
+  }
+  
+  // 将目录部分转换为英文 slug
+  return pathWithoutLocale.map((segment, index) => {
+    if (index < pathWithoutLocale.length - 1) {
+      return getEnglishSlug(segment);
+    }
+    return segment;
+  });
+}
+
+/**
+ * 安全地编码路径参数（保留用于向后兼容）
  * @param path 原始路径
  * @returns 编码后的路径
  */
@@ -77,7 +106,7 @@ export function encodePathParameter(path: string): string {
 }
 
 /**
- * 安全地解码路径参数
+ * 安全地解码路径参数（保留用于向后兼容）
  * @param encodedPath 编码后的路径
  * @returns 解码后的路径
  */

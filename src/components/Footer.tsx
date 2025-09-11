@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { encodePathParameter } from '@/lib/pathUtils'
+import { buildDynamicRoutePath } from '@/lib/pathUtils'
 
 // Popular courses data - same as homepage
 const POPULAR_COURSES = [
@@ -71,7 +71,7 @@ export default function Footer({ locale }: { locale: string }) {
               {POPULAR_COURSES.map((course) => (
                 <li key={course.id}>
                   <Link 
-                    href={`/${locale}/course?path=${encodePathParameter(course.path)}`}
+                    href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
                     className="text-gray-300 hover:text-white"
                   >
                     {locale === 'zh' ? course.title : course.titleEn}

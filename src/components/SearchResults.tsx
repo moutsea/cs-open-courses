@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { encodePathParameter } from '@/lib/pathUtils'
+import { buildDynamicRoutePath } from '@/lib/pathUtils'
 
 interface CourseSearchIndex {
   id: string
@@ -172,7 +172,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
             <div className="flex items-start justify-between">
               <div className="flex-1">
                 <Link 
-                  href={`/${locale}/course?path=${encodePathParameter(result.course.path)}`}
+                  href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
                   className="text-lg font-semibold text-gray-900 hover:text-blue-600 mb-2 block"
                 >
                   {locale === 'zh' ? result.course.title : result.course.titleEn}
@@ -279,7 +279,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
               
               <div className="ml-4 flex-shrink-0">
                 <Link 
-                  href={`/${locale}/course?path=${encodePathParameter(result.course.path)}`}
+                  href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
                   className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                 >
                   {locale === 'zh' ? '查看课程' : 'View Course'}
