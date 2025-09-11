@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
 import { Course } from '@/lib/courseParser';
 import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { useSafeTranslations, getDifficultyColor } from '@/lib/translationUtils';
 
 interface PopularCoursesProps {
   courses: Course[];
@@ -11,42 +11,7 @@ interface PopularCoursesProps {
 }
 
 export default function PopularCourses({ courses, locale }: PopularCoursesProps) {
-  const t = useTranslations('home');
-  
-  // Fallback translations in case the translations aren't loaded yet
-  const fallbackTranslations = {
-    title: locale === 'zh' ? '热门课程' : 'Popular Courses',
-    subtitle: locale === 'zh' ? '精选顶尖大学经典课程' : 'Handpicked classic courses from top universities',
-    viewCourse: locale === 'zh' ? '查看课程' : 'View Course',
-    difficulty: locale === 'zh' ? '难度' : 'Difficulty',
-    duration: locale === 'zh' ? '学习时间' : 'Duration',
-    language: locale === 'zh' ? '编程语言' : 'Language'
-  };
-  
-  // Safely get translations with fallback
-  const getTranslation = (key: string) => {
-    try {
-      const value = t(key);
-      return value || fallbackTranslations[key as keyof typeof fallbackTranslations];
-    } catch {
-      return fallbackTranslations[key as keyof typeof fallbackTranslations];
-    }
-  };
-
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty.toLowerCase()) {
-      case 'beginner':
-        return 'bg-green-100 text-green-800';
-      case 'intermediate':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'advanced':
-        return 'bg-red-100 text-red-800';
-      case 'expert':
-        return 'bg-purple-100 text-purple-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
+  const { t } = useSafeTranslations('home', locale);
 
   const getDurationStyle = (duration: string) => {
     const durationNum = parseInt(duration);
@@ -71,25 +36,16 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
     
     return { width, color };
   };
-  
-  const translations = {
-    title: getTranslation('popularCourses.title'),
-    subtitle: getTranslation('popularCourses.subtitle'),
-    viewCourse: getTranslation('popularCourses.viewCourse'),
-    difficulty: getTranslation('popularCourses.difficulty'),
-    duration: getTranslation('popularCourses.duration'),
-    language: getTranslation('popularCourses.language')
-  };
 
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            {translations.title}
+            {t('popularCourses.title')}
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {translations.subtitle}
+            {t('popularCourses.subtitle')}
           </p>
         </div>
         
@@ -124,7 +80,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                     <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span>{translations.difficulty}: </span>
+                    <span>{t('popularCourses.difficulty')}: </span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ml-1 ${getDifficultyColor(course.difficulty)}`}>
                       {course.difficulty}
                     </span>
@@ -136,7 +92,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                     <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span>{translations.duration}: </span>
+                    <span>{t('popularCourses.duration')}: </span>
                     <div className="flex items-center ml-2">
                       {(() => {
                         const durationStr = typeof course.duration === 'object' 
@@ -165,7 +121,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                     <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
-                    <span>{translations.language}: </span>
+                    <span>{t('popularCourses.language')}: </span>
                     <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium ml-1">
                       {course.programmingLanguage}
                     </span>
@@ -186,7 +142,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                   href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
                   className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
                 >
-                  <span>{translations.viewCourse}</span>
+                  <span>{t('popularCourses.viewCourse')}</span>
                   <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

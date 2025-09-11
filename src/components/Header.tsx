@@ -8,26 +8,13 @@ import { Fragment } from 'react'
 import { GlobeAltIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import SearchBox from './SearchBox'
 import Image from 'next/image'
+import { useSimpleTranslations } from '@/lib/translationUtils'
 
 export default function Header({ locale }: { locale: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
 
-  // Simple translations based on locale
-  const translations = {
-    en: {
-      courses: 'Courses',
-      universities: 'Universities',
-      tutorial: 'Tutorial'
-    },
-    zh: {
-      courses: '所有课程',
-      universities: '大学',
-      tutorial: '教程'
-    }
-  }
-
-  const t = translations[locale as keyof typeof translations] || translations.en
+  const t = useSimpleTranslations(locale)
 
   // Language options
   const languages = [

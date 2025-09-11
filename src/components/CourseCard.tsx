@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
-import { useTranslations } from 'next-intl';
 import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { useSafeTranslations, getDifficultyColor } from '@/lib/translationUtils';
 
 interface CourseCardProps {
   course: Course;
@@ -13,47 +13,7 @@ interface CourseCardProps {
 
 export default function CourseCard({ course, locale, forceLanguage }: CourseCardProps) {
   const resolvedLocale = forceLanguage || locale;
-  const t = useTranslations('courses');
-  
-  // Fallback translations in case the translations aren't loaded yet
-  const fallbackTranslations = {
-    difficulty: resolvedLocale === 'zh' ? '难度' : 'Difficulty',
-    duration: resolvedLocale === 'zh' ? '学习时间' : 'Duration',
-    language: resolvedLocale === 'zh' ? '编程语言' : 'Language',
-    viewCourse: resolvedLocale === 'zh' ? '查看课程' : 'View Course'
-  };
-  
-  // Safely get translations with fallback
-  const getTranslation = (key: string) => {
-    try {
-      const value = t(key);
-      return value || fallbackTranslations[key as keyof typeof fallbackTranslations];
-    } catch {
-      return fallbackTranslations[key as keyof typeof fallbackTranslations];
-    }
-  };
-  
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty.toLowerCase()) {
-      case 'beginner':
-        return 'bg-green-100 text-green-800';
-      case 'intermediate':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'advanced':
-        return 'bg-red-100 text-red-800';
-      case 'expert':
-        return 'bg-purple-100 text-purple-800';
-      default:
-        return 'bg-gray-100 text-gray-800';
-    }
-  };
-  
-  const translations = {
-    difficulty: getTranslation('difficulty'),
-    duration: getTranslation('duration'),
-    language: getTranslation('language'),
-    viewCourse: getTranslation('viewCourse')
-  };
+  const { t } = useSafeTranslations('courses', resolvedLocale);
 
   return (
     <div className="relative bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 cursor-pointer border border-gray-100 hover:border-blue-100 group overflow-hidden">
@@ -79,7 +39,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
             <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>{translations.difficulty}: </span>
+            <span>{t('difficulty')}: </span>
             <span className={`px-2 py-1 rounded-full text-xs font-medium ml-1 ${getDifficultyColor(course.difficulty)}`}>
               {course.difficulty}
             </span>
@@ -91,7 +51,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
             <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span>{translations.duration}: </span>
+            <span>{t('duration')}: </span>
             <span className="ml-2 text-xs text-gray-600 font-medium">
               {
                 typeof course.duration === 'object' 
@@ -124,7 +84,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
             <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
-            <span>{translations.language}: </span>
+            <span>{t('language')}: </span>
             <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium ml-1">
               {course.programmingLanguage}
             </span>
@@ -147,7 +107,7 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
           href={`/${resolvedLocale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
           className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 text-sm font-medium"
         >
-          <span>{translations.viewCourse}</span>
+          <span>{t('viewCourse')}</span>
           <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
