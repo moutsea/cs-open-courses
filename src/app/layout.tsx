@@ -53,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     
     verification: {
-      google: 'your-actual-verification-code'
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''
     }
   }
 }

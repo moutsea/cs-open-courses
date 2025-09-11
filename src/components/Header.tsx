@@ -7,6 +7,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { GlobeAltIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import SearchBox from './SearchBox'
+import Image from 'next/image'
 
 export default function Header({ locale }: { locale: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -72,11 +73,13 @@ export default function Header({ locale }: { locale: string }) {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-3" as={locale === 'zh' ? '/zh' : '/'}>
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="CS61B & Beyond Logo" 
+                width={40}
+                height={40}
                 className="h-10 w-auto"
-                loading="eager"
+                priority
               />
               <span className="text-xl font-bold text-white">CS61B & Beyond</span>
             </Link>

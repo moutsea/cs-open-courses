@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const path = require('path');
+import fs from 'fs/promises';
+import path from 'path';
 
 // Simplified category mapping - extracted from the TypeScript file
 const categoryMapping = {
@@ -525,8 +525,8 @@ export default function CoursePage() {
 }
 
 // Run the script
-if (require.main === module) {
+if (import.meta.url === `file://${process.argv[1]}`) {
   generateStaticPages();
 }
 
-module.exports = { generateStaticPages };
+export { generateStaticPages };
