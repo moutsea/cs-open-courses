@@ -1,8 +1,61 @@
 import './globals.css'
+import { Metadata } from 'next'
 
-export const metadata = {
-  title: 'CS Open Courses - Free Computer Science Learning Resources',
-  description: 'Access free computer science courses from top universities. Learn programming, algorithms, machine learning, and more.',
+// app/layout.tsx
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://cs61b.com' : 'http://localhost:3001'),
+    title: {
+      template: '%s | CS61B & Beyond | Computer Science Courses',  // 将两者结合
+      default: 'CS61B & Beyond - Free Top Computer Science Open Courses'
+    },
+    description: "CS61B & Beyond - Premier collection of top CS open courses: Berkeley CS61A/CS61B/CS189, Stanford CS224N, MIT 6.824, Games101. Your hub for world-class programming education.",
+    keywords: [
+      'cs61b', 'cs61a', 'cs189', 'cs224n', 'mit 6.824', 'games101',
+      'berkeley computer science', 'stanford cs courses', 'mit courses',
+      'data structures algorithms', 'open courses', 'free programming courses'
+    ],
+    alternates: {
+      canonical: 'https://cs61b.com',
+      languages: {
+        'en': 'https://cs61b.com',
+        'zh': 'https://cs61b.com/zh'
+      }
+    },
+    openGraph: {
+      siteName: 'CS61B & Beyond',
+      type: 'website',
+      title: 'CS61B & Beyond - Top Computer Science Open Courses',
+      description: 'Master CS61B, CS61A, CS189 and other top computer science courses from Berkeley, MIT, Stanford',
+      url: 'https://cs61b.com',
+      images: [
+        {
+          url: '/logo.png',
+          width: 400,
+          height: 400,
+          alt: 'CS61B & Beyond - Computer Science Open Courses'
+        }
+      ]
+    },
+
+    robots: 'index, follow, max-image-preview:large',
+    
+    authors: [{ name: 'CS61B & Beyond Team' }],
+    creator: 'CS61B & Beyond',
+    publisher: 'CS61B & Beyond',
+    category: 'Education',
+    
+    twitter: {
+      card: 'summary_large_image',
+      title: 'CS61B & Beyond - Top CS Open Courses',
+      description: 'Master CS61B, CS61A and top computer science courses',
+      images: ['/logo.png']
+    },
+    
+    verification: {
+      google: 'your-actual-verification-code'
+    }
+  }
 }
 
 export default function RootLayout({
@@ -19,7 +72,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        </head>
+      </head>
       <body className="antialiased" suppressHydrationWarning>{children}</body>
     </html>
   )

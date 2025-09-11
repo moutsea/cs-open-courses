@@ -31,9 +31,9 @@
   },
   "home": {
     "hero": {
-      "title": "CS Study Hub",
-      "subtitle": "Free Computer Science Courses from Top Universities",
-      "description": "Access high-quality computer science courses from prestigious universities around the world, completely free of charge.",
+      "title": "CS61B & Beyond",
+      "subtitle": "Free Top Computer Science Open Courses",
+      "description": "Premier collection of top CS open courses: Berkeley CS61A/CS61B/CS189, Stanford CS224N, MIT 6.824, Games101. Your hub for world-class programming education.",
       "cta": "Explore Courses"
     },
     "stats": {

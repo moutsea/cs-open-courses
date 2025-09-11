@@ -13,39 +13,6 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  
-  return {
-    title: 'CS Open Courses - Free Computer Science Learning Resources',
-    description: 'Access free computer science courses from top universities. Learn programming, algorithms, machine learning, and more.',
-    keywords: ['computer science', 'online courses', 'programming', 'algorithms', 'machine learning', 'free education'],
-    authors: [{ name: 'CS Open Courses' }],
-    openGraph: {
-      title: 'CS Open Courses - Free Computer Science Learning Resources',
-      description: 'Access free computer science courses from top universities.',
-      type: 'website',
-      locale: locale,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'CS Open Courses - Free Computer Science Learning Resources',
-      description: 'Access free computer science courses from top universities.',
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'en': '/en',
-        'zh': '/zh',
-      },
-    },
-  };
-}
-
 export default async function LocaleLayout({
   children,
   params

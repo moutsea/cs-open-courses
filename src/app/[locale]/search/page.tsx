@@ -2,6 +2,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Suspense } from 'react'
 import SearchResults from '@/components/SearchResults'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Search Courses', 
+  description: 'Search through our comprehensive collection of computer science open courses. Find the perfect course by topic, university, or difficulty level.'
+}
 
 interface SearchResultsPageProps {
   params: Promise<{

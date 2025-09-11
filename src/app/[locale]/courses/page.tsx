@@ -7,6 +7,12 @@ import CourseCard from '@/components/CourseCard';
 import { getChineseName } from '@/lib/categoryMapping';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'All Courses',
+  description: 'Browse all computer science open courses from Berkeley, MIT, Stanford. Find CS61A, CS61B, CS189, CS224N, Games101 and more top programming courses.'
+}
 
 export default function CoursesPage() {
   // 添加左侧边栏滚动条样式

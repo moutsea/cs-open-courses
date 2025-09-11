@@ -39,7 +39,7 @@ export default function Footer({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">CS Study Hub</h3>
+            <h3 className="text-2xl font-bold mb-4">CS61B & Beyond</h3>
             <p className="text-gray-300 mb-4">
               Discover and access free computer science courses from top universities worldwide. 
               Helping learners access quality educational content for free.
@@ -84,7 +84,7 @@ export default function Footer({ locale }: { locale: string }) {
 
         <div className="mt-8 pt-8 border-t border-gray-700 text-center">
           <p className="text-gray-300">
-            © 2025 CS Study Hub. All rights reserved.
+            © 2025 CS61B & Beyond. All rights reserved.
           </p>
         </div>
       </div>

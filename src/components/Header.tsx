@@ -71,8 +71,14 @@ export default function Header({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="text-2xl font-bold text-white" as={locale === 'zh' ? '/zh' : '/'}>
-              CS Study Hub
+            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-3" as={locale === 'zh' ? '/zh' : '/'}>
+              <img 
+                src="/logo.png" 
+                alt="CS61B & Beyond Logo" 
+                className="h-10 w-auto"
+                loading="eager"
+              />
+              <span className="text-xl font-bold text-white">CS61B & Beyond</span>
             </Link>
           </div>
 

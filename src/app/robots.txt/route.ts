@@ -1,18 +1,11 @@
 export default function Robots() {
-  return `User-agent: *
-Allow: /
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
+  return `
 # Sitemap
-Sitemap: https://cs-courses.vercel.app/sitemap.xml
+Sitemap: ${siteUrl}/sitemap.xml
 
-# Crawl delay (optional)
-Crawl-delay: 1
-
-# Allow specific bots
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
+User-agent: *
 Allow: /
 
 # Block unnecessary paths
