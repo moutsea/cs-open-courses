@@ -1,0 +1,223 @@
+'use client';
+
+import { useState } from 'react';
+import { Category, Course } from '@/lib/courseParser';
+import CourseCard from '@/components/CourseCard';
+import { getChineseName } from '@/lib/categoryMapping';
+import { useTranslations } from 'next-intl';
+
+interface CoursesContentProps {
+  categories: Category[];
+  locale: string;
+}
+
+export default function CoursesContent({ categories, locale }: CoursesContentProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
+  const isChinese = locale === 'zh';
+  const t = useTranslations('courses');
+  
+  const getCategoryDisplayName = (category: Category) => {
+    if (!isChinese) {
+      return category.slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    } else {
+      return getChineseName(category.slug);
+    }
+  };
+  
+  const getSubcategoryDisplayName = (subcategoryName: string, subcategorySlug: string) => {
+    if (!isChinese) {
+      return subcategorySlug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    } else {
+      return subcategoryName;
+    }
+  };
+
+  const handleCategorySelect = (categorySlug: string) => {
+    if (selectedCategory === categorySlug) {
+      setSelectedCategory(null);
+      setSelectedSubcategory(null);
+    } else {
+      setSelectedCategory(categorySlug);
+      setSelectedSubcategory(null);
+      // 滚动页面到顶部
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  const handleSubcategorySelect = (subcategorySlug: string) => {
+    if (selectedSubcategory === subcategorySlug) {
+      setSelectedSubcategory(null);
+    } else {
+      setSelectedSubcategory(subcategorySlug);
+      // 滚动页面到顶部
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+  };
+
+  const getFilteredCourses = (): Course[] => {
+    if (!selectedCategory) return [];
+    
+    const category = categories.find(cat => cat.slug === selectedCategory);
+    if (!category) return [];
+    
+    if (!selectedSubcategory) return category.courses;
+    
+    const subcategory = category.subcategories.find(sub => sub.slug === selectedSubcategory);
+    return subcategory ? subcategory.courses : [];
+  };
+
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      {/* Sidebar */}
+      <div className="lg:col-span-1">
+        <div className="bg-white rounded-lg shadow-sm p-6 sticky top-8">
+          <h2 className="text-lg font-semibold mb-4">
+            {t('categories')}
+          </h2>
+          
+          {/* Categories */}
+          <div className="space-y-2 max-h-[calc(100vh-250px)] overflow-y-auto pr-2 custom-scrollbar">
+            {categories.map((category) => (
+              <div key={category.slug}>
+                <button
+                  onClick={() => handleCategorySelect(category.slug)}
+                  className={`w-full text-left px-3 py-2 rounded-md transition-colors ${
+                    selectedCategory === category.slug
+                      ? 'bg-blue-100 text-blue-700'
+                      : 'hover:bg-gray-100'
+                  }`}
+                >
+                  {getCategoryDisplayName(category)}
+                  <span className="float-right text-sm text-gray-500">
+                    {category.courses.length}
+                  </span>
+                </button>
+                
+                {/* Subcategories */}
+                {selectedCategory === category.slug && category.subcategories.length > 0 && (
+                  <div className="ml-4 mt-2 space-y-1">
+                    {category.subcategories.map((subcategory) => (
+                      <button
+                        key={subcategory.slug}
+                        onClick={() => handleSubcategorySelect(subcategory.slug)}
+                        className={`w-full text-left px-3 py-1 rounded-md text-sm transition-colors ${
+                          selectedSubcategory === subcategory.slug
+                            ? 'bg-blue-100 text-blue-700'
+                            : 'hover:bg-gray-100'
+                        }`}
+                      >
+                        {getSubcategoryDisplayName(subcategory.name, subcategory.slug)}
+                        <span className="float-right text-xs text-gray-500">
+                          {subcategory.courses.length}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      {/* Main Content */}
+      <div className="lg:col-span-3">
+        {selectedCategory ? (
+          <div>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-2xl font-semibold">
+                {getCategoryDisplayName(categories.find(cat => cat.slug === selectedCategory)!)}
+                {selectedSubcategory && ` - ${getSubcategoryDisplayName(
+                  categories.find(cat => cat.slug === selectedCategory)!
+                    .subcategories.find(sub => sub.slug === selectedSubcategory)!.name,
+                  selectedSubcategory
+                )}`}
+              </h2>
+              <button
+                onClick={() => {
+                  setSelectedCategory(null);
+                  setSelectedSubcategory(null);
+                  // 滚动右侧内容区域到顶部
+                  setTimeout(() => {
+                    const mainContent = document.querySelector('.lg\\:col-span-3');
+                    if (mainContent) {
+                      mainContent.scrollTop = 0;
+                    }
+                  }, 100);
+                }}
+                className="text-blue-600 hover:text-blue-800"
+              >
+                {t('backToCourses')}
+              </button>
+            </div>
+            
+            {getFilteredCourses().length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {getFilteredCourses().map((course) => (
+                  <CourseCard key={course.id} course={course} locale={locale} />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-12">
+                <p className="text-gray-500">
+                  {t('noCourses')}
+                </p>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div>
+            <h2 className="text-2xl font-semibold mb-6">
+              {t('allCategories')}
+            </h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {categories.map((category) => (
+                <div
+                  key={category.slug}
+                  className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow cursor-pointer"
+                  onClick={() => handleCategorySelect(category.slug)}
+                >
+                  <h3 className="text-xl font-semibold mb-2">
+                    {getCategoryDisplayName(category)}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {category.courses.length} {t('coursesCount')}
+                  </p>
+                  
+                  {category.subcategories.length > 0 && (
+                    <div className="space-y-2">
+                      <h4 className="font-medium text-gray-700">
+                        {t('subcategories')}
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {category.subcategories.slice(0, 3).map((subcategory) => (
+                          <span
+                            key={subcategory.slug}
+                            className="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm"
+                          >
+                            {getSubcategoryDisplayName(subcategory.name, subcategory.slug)}
+                          </span>
+                        ))}
+                        {category.subcategories.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded-md text-sm">
+                            +{category.subcategories.length - 3} {t('more')}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}

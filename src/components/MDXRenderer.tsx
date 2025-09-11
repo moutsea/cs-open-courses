@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 interface MDXRendererProps {
   content: string;
@@ -41,7 +42,7 @@ export default function MDXRenderer({
       <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
         {/* Back to courses button */}
         <div className="mb-6">
-          <a
+          <Link
             href={`/${locale}/courses`}
             className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
           >
@@ -49,7 +50,7 @@ export default function MDXRenderer({
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
             {isChinese ? '返回课程列表' : 'Back to Courses'}
-          </a>
+          </Link>
         </div>
 
         {/* Fallback language notice */}
