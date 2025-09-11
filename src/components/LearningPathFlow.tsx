@@ -1,10 +1,12 @@
+import { memo } from 'react';
+
 interface LearningPathFlowProps {
   steps: Array<{
     title: string;
   }>;
 }
 
-export default function LearningPathFlow({ steps }: LearningPathFlowProps) {
+const LearningPathFlow = memo(function LearningPathFlow({ steps }: LearningPathFlowProps) {
 
   return (
     <div className="flex flex-wrap justify-center items-center gap-3 max-w-4xl mx-auto">
@@ -20,4 +22,6 @@ export default function LearningPathFlow({ steps }: LearningPathFlowProps) {
       ))}
     </div>
   );
-}
+});
+
+export default LearningPathFlow;

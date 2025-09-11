@@ -1,8 +1,8 @@
 import { getTranslations } from 'next-intl/server';
-import Header from './Header';
 import SectionNavigation from './SectionNavigation';
 import Link from 'next/link';
 import TutorialTopicCard from './TutorialTopicCard';
+import PageLayout from './PageLayout';
 
 interface TutorialTopic {
   name: string;
@@ -208,9 +208,7 @@ export default async function TutorialContent({ locale }: { locale: string }) {
   const browseCourses = t('browse_courses');
 
   return (
-    <div className="min-h-screen flex flex-col">
-      {/* Header */}
-      <Header locale={locale} />
+    <PageLayout locale={locale}>
       
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-20">
@@ -280,7 +278,7 @@ export default async function TutorialContent({ locale }: { locale: string }) {
                 <div className="flex items-start space-x-6">
                   <div className="text-5xl flex-shrink-0">{section.icon}</div>
                   <div className="flex-grow">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3">{section.title}</h2>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{section.title}</h3>
                     <p className="text-gray-600 mb-6 text-lg">{section.description}</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -313,7 +311,6 @@ export default async function TutorialContent({ locale }: { locale: string }) {
           </div>
         </div>
       </section>
-
-    </div>
+    </PageLayout>
   );
 }

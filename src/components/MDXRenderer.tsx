@@ -1,9 +1,8 @@
 'use client';
 
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { sanitizeMarkdownHTML } from '@/lib/htmlSanitizer';
+import PageLayout from './PageLayout';
 
 interface MDXRendererProps {
   content: string;
@@ -22,9 +21,8 @@ export default function MDXRenderer({
   const sanitizedContent = sanitizeMarkdownHTML(content);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header locale={locale} />
-      <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
+    <PageLayout locale={locale}>
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Back to courses button */}
         <div className="mb-6">
           <Link
@@ -57,9 +55,7 @@ export default function MDXRenderer({
             dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
         </article>
-      </main>
-      
-      <Footer locale={locale} />
-    </div>
+      </div>
+    </PageLayout>
   );
 }

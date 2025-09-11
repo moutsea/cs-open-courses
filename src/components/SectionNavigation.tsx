@@ -1,12 +1,14 @@
 'use client'
 
+import { memo } from 'react';
+
 interface SectionNavigationProps {
   sections: Array<{
     title: string;
   }>;
 }
 
-export default function SectionNavigation({ sections }: SectionNavigationProps) {
+const SectionNavigation = memo(function SectionNavigation({ sections }: SectionNavigationProps) {
   const handleSectionClick = (index: number) => {
     const element = document.getElementById(`section-${index}`);
     if (element) {
@@ -31,4 +33,6 @@ export default function SectionNavigation({ sections }: SectionNavigationProps) 
       ))}
     </div>
   );
-}
+});
+
+export default SectionNavigation;

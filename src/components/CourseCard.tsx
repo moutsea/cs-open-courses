@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { memo } from 'react';
 import { Course } from '@/lib/courseParser';
 import { buildDynamicRoutePath } from '@/lib/pathUtils';
 import { useSafeTranslations, getDifficultyColor } from '@/lib/translationUtils';
@@ -11,7 +12,7 @@ interface CourseCardProps {
   forceLanguage?: 'en' | 'zh';
 }
 
-export default function CourseCard({ course, locale, forceLanguage }: CourseCardProps) {
+const CourseCard = memo(function CourseCard({ course, locale, forceLanguage }: CourseCardProps) {
   const resolvedLocale = forceLanguage || locale;
   const { t } = useSafeTranslations('courses', resolvedLocale);
 
@@ -119,4 +120,6 @@ export default function CourseCard({ course, locale, forceLanguage }: CourseCard
       <div className="absolute bottom-0 left-0 w-16 h-16 bg-gradient-to-tr from-blue-50 to-purple-50 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
     </div>
   );
-}
+});
+
+export default CourseCard;

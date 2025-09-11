@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { memo } from 'react';
 
 interface TutorialTopic {
   name: string;
@@ -89,7 +90,7 @@ const courseMapping: Record<string, string> = {
   "系统安全": "system-security-CS161"
 };
 
-export default function TutorialTopicCard({ topic, locale }: TutorialTopicCardProps) {
+const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale }: TutorialTopicCardProps) {
   
   const getLevelColor = (level: string) => {
     switch (level) {
@@ -159,4 +160,6 @@ export default function TutorialTopicCard({ topic, locale }: TutorialTopicCardPr
       )}
     </div>
   );
-}
+});
+
+export default TutorialTopicCard;

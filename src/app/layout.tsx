@@ -30,10 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
       url: 'https://cs61b.com',
       images: [
         {
-          url: '/logo.png',
-          width: 400,
-          height: 400,
-          alt: 'CS61B & Beyond - Computer Science Open Courses'
+          url: '/og.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'CS61B & Beyond - Free Computer Science Courses from Top Universities'
         }
       ]
     },
@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'CS61B & Beyond - Top CS Open Courses',
       description: 'Master CS61B, CS61A and top computer science courses',
-      images: ['/logo.png']
+      images: ['/og.jpg']
     },
     
     verification: {

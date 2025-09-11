@@ -5,6 +5,7 @@ import { markdownToHTML, extractTitleFromMarkdown } from '@/lib/markdownProcesso
 import { getCourseContent } from '@/lib/courseUtils';
 import { getEnglishSlug } from '@/lib/categoryMapping';
 import { getAllCourses } from '@/lib/getServerData';
+import StructuredData from '@/components/StructuredData';
 
 interface CoursePageProps {
   params: Promise<{
@@ -177,11 +178,107 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
   // Convert markdown to HTML
   const htmlContent = await markdownToHTML(courseContent.content);
 
+  // Generate structured data
+  const courseUrl = `https://cs61b.com/${locale}/course/${path.join('/')}`;
+  const courseTitle = extractTitleFromMarkdown(courseContent.content);
+  const categoryName = path[0] || 'computer science';
+  
+  // Estimate course duration based on content length
+  const estimatedDuration = Math.max(1, Math.ceil(courseContent.content.length / 5000));
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Course",
+        "name": courseTitle,
+        "description": `Learn ${courseTitle} - ${categoryName.replace(/-/g, ' ')} course from top universities including Berkeley, MIT, and Stanford.`,
+        "url": courseUrl,
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "CS61B & Beyond",
+          "url": "https://cs61b.com",
+          "description": "Free computer science courses from top universities"
+        },
+        "educationalLevel": "Higher Education",
+        "courseMode": "online",
+        "isAccessibleForFree": true,
+        "inLanguage": locale === 'zh' ? "zh-CN" : "en-US",
+        "timeRequired": `PT${estimatedDuration}H`,
+        "teaches": courseTitle,
+        "about": {
+          "@type": "Thing",
+          "name": categoryName.replace(/-/g, ' ')
+        },
+        "hasCourseInstance": {
+          "@type": "CourseInstance",
+          "courseMode": "online",
+          "courseSchedule": {
+            "@type": "Schedule",
+            "repeatFrequency": "daily"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cs61b.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": locale === 'zh' ? "课程" : "Courses",
+            "item": `https://cs61b.com/${locale}/courses`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": categoryName.replace(/-/g, ' '),
+            "item": `https://cs61b.com/${locale}/courses/${categoryName}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": courseTitle,
+            "item": courseUrl
+          }
+        ]
+      },
+      {
+        "@type": "EducationalOrganization",
+        "name": "CS61B & Beyond",
+        "url": "https://cs61b.com",
+        "description": "Platform offering free computer science courses from top universities including UC Berkeley, MIT, Stanford, and Princeton",
+        "knowsAbout": [
+          "Computer Science",
+          "Data Structures",
+          "Algorithms",
+          "Machine Learning",
+          "Computer Architecture",
+          "Operating Systems",
+          "Computer Networks",
+          "Database Systems"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "US"
+        }
+      }
+    ]
+  };
+
   return (
-    <MDXRenderer
-      content={htmlContent}
-      locale={locale}
-      isFallback={courseContent.isFallback}
-    />
+    <>
+      <StructuredData data={structuredData} />
+      <MDXRenderer
+        content={htmlContent}
+        locale={locale}
+        isFallback={courseContent.isFallback}
+      />
+    </>
   );
 }
