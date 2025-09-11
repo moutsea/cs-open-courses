@@ -89,7 +89,11 @@ export async function getCourseContent(coursePath: string[], locale: string) {
   const langDir = locale === 'zh' ? 'zh' : 'en';
   
   // Try different file naming conventions
-  const possiblePaths = [
+  // For English, prioritize .en.md files, for Chinese, prioritize .md files
+  const possiblePaths = locale === 'en' ? [
+    path.join(docsPath, langDir, relativePath + '.en.md'), // English version
+    path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
+  ] : [
     path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
     path.join(docsPath, langDir, relativePath + '.en.md'), // English version
   ];
@@ -132,7 +136,10 @@ export async function getCourseContent(coursePath: string[], locale: string) {
   
   // If all attempts failed, try fallback to other language
   const fallbackLangDir = locale === 'zh' ? 'en' : 'zh';
-  const fallbackPaths = [
+  const fallbackPaths = fallbackLangDir === 'en' ? [
+    path.join(docsPath, fallbackLangDir, relativePath + '.en.md'),
+    path.join(docsPath, fallbackLangDir, relativePath + '.md'),
+  ] : [
     path.join(docsPath, fallbackLangDir, relativePath + '.md'),
     path.join(docsPath, fallbackLangDir, relativePath + '.en.md'),
   ];
