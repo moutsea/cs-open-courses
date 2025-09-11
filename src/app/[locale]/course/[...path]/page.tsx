@@ -28,9 +28,13 @@ export async function generateStaticParams() {
         const pathWithoutLocale = pathParts.slice(1); // Remove locale prefix
         const lastPart = pathWithoutLocale[pathWithoutLocale.length - 1];
         
-        // Remove file extension if present
+        // Remove file extension if present (both .md and .en.md)
         if (lastPart && lastPart.endsWith('.md')) {
-          pathWithoutLocale[pathWithoutLocale.length - 1] = lastPart.replace('.md', '');
+          if (lastPart.endsWith('.en.md')) {
+            pathWithoutLocale[pathWithoutLocale.length - 1] = lastPart.replace('.en.md', '');
+          } else {
+            pathWithoutLocale[pathWithoutLocale.length - 1] = lastPart.replace('.md', '');
+          }
         }
         
         // Convert directory parts to English slugs

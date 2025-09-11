@@ -50,11 +50,11 @@ export async function getCategoriesForLocale(locale: string): Promise<Category[]
               const courseData = await parseMarkdownFile(coursePath, locale);
               
               const course: Course = {
-                id: `${category.slug}-${subcategory.slug}-${courseFile.replace('.md', '')}`,
+                id: `${category.slug}-${subcategory.slug}-${courseFile.endsWith('.en.md') ? courseFile.replace('.en.md', '') : courseFile.replace('.md', '')}`,
                 title: courseData.title,
                 description: courseData.content.substring(0, 200) + '...',
                 path: path.relative(docsPath, coursePath),
-                slug: courseFile.replace('.md', ''),
+                slug: courseFile.endsWith('.en.md') ? courseFile.replace('.en.md', '') : courseFile.replace('.md', ''),
                 content: courseData.content,
                 hasEnglishVersion: locale === 'en', // Will be updated later if needed
                 summary: courseData.summary,
@@ -78,11 +78,11 @@ export async function getCategoriesForLocale(locale: string): Promise<Category[]
           const courseData = await parseMarkdownFile(coursePath, locale);
           
           const course: Course = {
-            id: `${category.slug}-${item.replace('.md', '')}`,
+            id: `${category.slug}-${item.endsWith('.en.md') ? item.replace('.en.md', '') : item.replace('.md', '')}`,
             title: courseData.title,
             description: courseData.content.substring(0, 200) + '...',
             path: path.relative(docsPath, coursePath),
-            slug: item.replace('.md', ''),
+            slug: item.endsWith('.en.md') ? item.replace('.en.md', '') : item.replace('.md', ''),
             content: courseData.content,
             hasEnglishVersion: locale === 'en', // Will be updated later if needed
             summary: courseData.summary,
