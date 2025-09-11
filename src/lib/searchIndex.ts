@@ -34,7 +34,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
     return searchIndex
   }
 
-  const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new')
+  const docsPath = path.join(process.cwd(), 'docs-new')
   const courses: CourseSearchIndex[] = []
   
   async function scanLanguageDirectory(langDir: string, locale: string) {

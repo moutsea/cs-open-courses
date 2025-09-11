@@ -44,7 +44,7 @@ const subcategoryMapping = {
 };
 
 const docsPath = path.join(__dirname, 'cs-self-learning', 'docs');
-const docsNewPath = path.join(__dirname, 'cs-self-learning', 'docs-new');
+const docsNewPath = path.join(__dirname, 'docs-new');
 
 // Create docs-new directory structure
 function createDirectoryStructure() {

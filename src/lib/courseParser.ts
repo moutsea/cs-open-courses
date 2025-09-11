@@ -183,7 +183,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
 }
 
 export async function buildCourseStructure(): Promise<Category[]> {
-  const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new');
+  const docsPath = path.join(process.cwd(), 'docs-new');
   const categories: Category[] = [];
   
   // Get all directories in docs folder (excluding images)
@@ -357,7 +357,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
     const courseSlug = parts[1];
     
     // Find the category directory
-    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new');
+    const docsPath = path.join(process.cwd(), 'docs-new');
     const categoryDirs = await fs.readdir(docsPath);
     
     for (const categoryDir of categoryDirs) {
@@ -407,7 +407,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
     const courseSlug = parts[parts.length - 1];
     
     // Find the category directory
-    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new');
+    const docsPath = path.join(process.cwd(), 'docs-new');
     const categoryDirs = await fs.readdir(docsPath);
     
     for (const categoryDir of categoryDirs) {

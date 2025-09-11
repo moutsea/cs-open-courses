@@ -13,7 +13,7 @@ export async function GET(
     const resolvedParams = await params;
     locale = resolvedParams.locale;
     
-    const docsPath = path.join(process.cwd(), 'cs-self-learning', 'docs-new');
+    const docsPath = path.join(process.cwd(), 'docs-new');
     const categories: Category[] = [];
     
     // Use language-specific directory based on locale
