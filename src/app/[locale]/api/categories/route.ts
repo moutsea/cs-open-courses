@@ -1,11 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { buildCourseStructure } from '@/lib/courseParser';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const { pathname } = new URL(request.url);
-    const locale = pathname.split('/')[1];
-    
     const categories = await buildCourseStructure();
     
     return NextResponse.json(categories);

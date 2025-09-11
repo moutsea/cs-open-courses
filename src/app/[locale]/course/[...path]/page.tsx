@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 import MDXRenderer from '@/components/MDXRenderer';
 import { markdownToHTML, extractTitleFromMarkdown } from '@/lib/markdownProcessor';
 import { getCourseContent } from '@/lib/courseUtils';
-import { decodeURLToFilePath } from '@/lib/pathUtils';
 import { getEnglishSlug } from '@/lib/categoryMapping';
 import { getAllCourses } from '@/lib/getServerData';
 
@@ -177,7 +176,6 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
 
   // Convert markdown to HTML
   const htmlContent = await markdownToHTML(courseContent.content);
-  const title = extractTitleFromMarkdown(courseContent.content);
 
   return (
     <MDXRenderer

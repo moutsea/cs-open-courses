@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import { notFound } from 'next/navigation';
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import '../globals.css';
 import LangUpdater from '@/components/LangUpdater';
-import { routing } from '@/routing';
-import Header from "@/components/Header";
 
 const locales = ['en', 'zh'] as const;
 

@@ -1,10 +1,9 @@
+import { getTranslations } from 'next-intl/server'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PopularCourses from '@/components/PopularCourses'
 import LearningPathFlow from '@/components/LearningPathFlow'
 import Link from 'next/link'
-import enMessages from '../../../messages/en.json'
-import zhMessages from '../../../messages/zh.json'
 
 const universities = [
   { name: "MIT", icon: "🏛️" },
@@ -113,10 +112,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   
   // Use real document counts for both languages
   const totalCourses = locale === 'zh' ? 130 : 128 // Real document counts: Chinese 130, English 128
-  const totalCategories = locale === 'zh' ? 26 : 26 // Same category structure for both languages
+  const totalCategories = 26 // Same category structure for both languages
   
   // Load translations
-  const messages = locale === 'zh' ? zhMessages : enMessages
+  const tHome = await getTranslations({ locale, namespace: 'home' })
+  const tTutorial = await getTranslations({ locale, namespace: 'tutorial' })
   
   // Prepare popular courses data based on locale
   const popularCourses = POPULAR_COURSES.map(course => ({
@@ -136,23 +136,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   
   const features = [
     {
-      title: messages.home.features.universityQuality.title,
-      description: messages.home.features.universityQuality.description,
+      title: tHome('features.universityQuality.title'),
+      description: tHome('features.universityQuality.description'),
       icon: "🎓"
     },
     {
-      title: messages.home.features.comprehensiveCoverage.title,
-      description: messages.home.features.comprehensiveCoverage.description,
+      title: tHome('features.comprehensiveCoverage.title'),
+      description: tHome('features.comprehensiveCoverage.description'),
       icon: "📚"
     },
     {
-      title: messages.home.features.completelyFree.title,
-      description: messages.home.features.completelyFree.description,
+      title: tHome('features.completelyFree.title'),
+      description: tHome('features.completelyFree.description'),
       icon: "🆓"
     },
     {
-      title: messages.home.features.selfPaced.title,
-      description: messages.home.features.selfPaced.description,
+      title: tHome('features.selfPaced.title'),
+      description: tHome('features.selfPaced.description'),
       icon: "⏰"
     }
   ]
@@ -166,13 +166,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                {messages.home.hero.title}
+                {tHome('hero.title')}
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100">
-                {messages.home.hero.subtitle}
+                {tHome('hero.subtitle')}
               </p>
               <p className="text-lg mb-12 text-blue-200 max-w-3xl mx-auto">
-                {messages.home.hero.description}
+                {tHome('hero.description')}
               </p>
               <div className="flex flex-col items-center gap-6">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -180,13 +180,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 href={`/${locale}/courses`}
                 className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
               >
-                {messages.home.hero.cta}
+                {tHome('hero.cta')}
               </Link>
               <Link 
                 href={`/${locale}/universities`}
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
               >
-                {messages.home.universities.title}
+                {tHome('universities.title')}
               </Link>
             </div>
             
@@ -222,15 +222,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <Link href={`/${locale}/courses`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
                 <div className="text-4xl font-bold text-blue-600 mb-2 group-hover:text-blue-700">{totalCourses}+</div>
-                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.courses}</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{tHome('stats.courses')}</div>
               </Link>
               <Link href={`/${locale}/courses`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
                 <div className="text-4xl font-bold text-purple-600 mb-2 group-hover:text-purple-700">{totalCategories}</div>
-                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.subjects}</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{tHome('stats.subjects')}</div>
               </Link>
               <Link href={`/${locale}/universities`} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow cursor-pointer group">
                 <div className="text-4xl font-bold text-green-600 mb-2 group-hover:text-green-700">{TOTAL_UNIVERSITIES}</div>
-                <div className="text-gray-600 group-hover:text-gray-800">{messages.home.stats.universities}</div>
+                <div className="text-gray-600 group-hover:text-gray-800">{tHome('stats.universities')}</div>
               </Link>
             </div>
           </div>
@@ -242,22 +242,46 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             <div className="text-center mb-12">
               <div className="text-6xl mb-6">🌱</div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {locale === 'zh' ? 'CS 初学者学习路径' : 'CS Beginner Learning Path'}
+                {tTutorial('title')}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {locale === 'zh' ? '零基础开始你的 CS 之旅' : '7 stages, start Your CS Journey from Zero'}
+                {tTutorial('subtitle')}
               </p>
             </div>
 
             <div className="bg-white  mx-auto">
-              <LearningPathFlow />
+              <LearningPathFlow 
+              steps={[
+                {
+                  title: tTutorial('sections.essential_tools.title'),
+                },
+                {
+                  title: tTutorial('sections.mathematical_foundations.title'),
+                },
+                {
+                  title: tTutorial('sections.programming_fundamentals.title'),
+                },
+                {
+                  title: tTutorial('sections.computer_systems.title'),
+                },
+                {
+                  title: tTutorial('sections.algorithms_theory.title'),
+                },
+                {
+                  title: tTutorial('sections.machine_learning_ai.title'),
+                },
+                {
+                  title: tTutorial('sections.specialized_topics.title'),
+                }
+              ]}
+            />
               
               <div className="text-center mt-16">
                 <Link 
                   href={`/${locale}/tutorial`}
                   className="bg-blue-800 text-white w-16 h-16 rounded-full hover:bg-blue-900 transition-all transform hover:scale-110 flex items-center justify-center mx-auto text-xl font-bold"
                 >
-                  {locale === 'zh' ? '开始' : 'Go!'}
+                  Go!
                 </Link>
               </div>
             </div>
@@ -272,10 +296,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                {messages.home.universities.title}
+                {tHome('universities.title')}
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {messages.home.universities.subtitle}
+                {tHome('universities.subtitle')}
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -284,7 +308,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <div className="text-4xl mb-4">{university.icon}</div>
                   <h3 className="text-xl font-semibold mb-2">{university.name}</h3>
                   <Link href={`/${locale}/universities`} className="text-blue-600 hover:text-blue-800 font-medium">
-                    {messages.home.universities.learnMore}
+                    {tHome('universities.learnMore')}
                   </Link>
                 </div>
               ))}
@@ -302,7 +326,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose CS Study Hub?</h2>
-              <p className="text-lg text-gray-600">{messages.home.hero.description}</p>
+              <p className="text-lg text-gray-600">{tHome('hero.description')}</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
@@ -319,15 +343,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* CTA Section */}
         <section className="py-16 bg-blue-600 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold mb-4">{messages.home.cta.title}</h2>
+            <h2 className="text-3xl font-bold mb-4">{tHome('cta.title')}</h2>
             <p className="text-xl mb-8 text-blue-100">
-              {messages.home.cta.subtitle}
+              {tHome('cta.subtitle')}
             </p>
             <Link 
               href={`/${locale}/courses`}
               className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-block"
             >
-              {messages.home.cta.button}
+              {tHome('cta.button')}
             </Link>
           </div>
         </section>

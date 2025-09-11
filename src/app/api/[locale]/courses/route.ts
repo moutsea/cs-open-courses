@@ -52,7 +52,7 @@ export async function GET(request: NextRequest) {
           }
           
           if (shouldScan) {
-            const courseInfo = parseCourseFile(itemPath, currentCategory, currentSubcategory, locale);
+            const courseInfo = parseCourseFile(itemPath, currentCategory, currentSubcategory);
             if (courseInfo) {
               courses.push(courseInfo);
             }
@@ -62,7 +62,7 @@ export async function GET(request: NextRequest) {
     };
     
     // 解析课程文件获取基本信息
-    const parseCourseFile = (filePath: string, category: string, subcategory: string, currentLocale: string): CourseInfo | null => {
+    const parseCourseFile = (filePath: string, category: string, subcategory: string): CourseInfo | null => {
       try {
         const content = fs.readFileSync(filePath, 'utf-8');
         const relativePath = path.relative(courseDir, filePath);

@@ -3,6 +3,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { sanitizeMarkdownHTML } from '@/lib/htmlSanitizer';
 
 interface MDXRendererProps {
   content: string;
@@ -16,6 +17,9 @@ export default function MDXRenderer({
   isFallback = false,
 }: MDXRendererProps) {
   const isChinese = locale === 'zh';
+  
+  // 净化HTML内容以防止XSS攻击
+  const sanitizedContent = sanitizeMarkdownHTML(content);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -50,7 +54,7 @@ export default function MDXRenderer({
         <article className="bg-white rounded-lg shadow-sm p-6">
           <div 
             className="prose prose-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: content }}
+            dangerouslySetInnerHTML={{ __html: sanitizedContent }}
           />
         </article>
       </main>

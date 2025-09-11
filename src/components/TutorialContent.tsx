@@ -263,7 +263,6 @@ export default async function TutorialContent({ locale }: { locale: string }) {
           
           <SectionNavigation 
             sections={getTranslatedContent().sections} 
-            locale={locale} 
           />
         </div>
       </section>
@@ -289,7 +288,6 @@ export default async function TutorialContent({ locale }: { locale: string }) {
                         <TutorialTopicCard 
                           key={topicIndex} 
                           topic={topic} 
-                          index={topicIndex}
                           locale={locale}
                         />
                       ))}
