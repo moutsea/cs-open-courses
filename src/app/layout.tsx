@@ -7,7 +7,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 // app/layout.tsx
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    metadataBase: new URL(process.env.NODE_ENV === 'production' ? 'https://cs61b.com' : 'http://localhost:3001'),
+    metadataBase: new URL(process.env.NODE_ENV === 'production' ? process.env.NEXT_PUBLIC_SITE_URL! : 'http://localhost:3001'),
     title: {
       template: '%s | CS61B & Beyond | Computer Science Courses',  // 将两者结合
       default: 'CS61B & Beyond - Free Top Computer Science Open Courses'
@@ -19,10 +19,10 @@ export async function generateMetadata(): Promise<Metadata> {
       'data structures algorithms', 'open courses', 'free programming courses'
     ],
     alternates: {
-      canonical: 'https://www.cs61bbeyond.com',
+      canonical: process.env.NEXT_PUBLIC_SITE_URL!,
       languages: {
-        'en': 'https://www.cs61bbeyond.com/',
-        'zh': 'https://www.cs61bbeyond.com/zh'
+        'en': `${process.env.NEXT_PUBLIC_SITE_URL}/`,
+        'zh': `${process.env.NEXT_PUBLIC_SITE_URL}/zh`
       }
     },
     openGraph: {
@@ -30,10 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       title: 'CS61B & Beyond - Top Computer Science Open Courses',
       description: 'Master CS61B, CS61A, CS189 and other top computer science courses from Berkeley, MIT, Stanford',
-      url: 'https://www.cs61bbeyond.com/',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/`,
       images: [
         {
-          url: '/og.jpg',
+          url: `${process.env.NEXT_PUBLIC_SITE_URL}/og.jpg`,
           width: 1200,
           height: 630,
           alt: 'CS61B & Beyond - Free Computer Science Courses from Top Universities'
@@ -52,7 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: 'summary_large_image',
       title: 'CS61B & Beyond - Top CS Open Courses',
       description: 'Master CS61B, CS61A and top computer science courses',
-      images: ['/og.jpg']
+      images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og.jpg`]
     },
     
     verification: {

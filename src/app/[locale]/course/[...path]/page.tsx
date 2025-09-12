@@ -125,7 +125,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     openGraph: {
       title: `${title} | CS61B & Beyond`,
       description: description,
-      url: `https://cs61b.com/${locale}/course/${path.join('/')}`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`,
       images: [
         {
           url: '/logo.png',
@@ -179,7 +179,7 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
   const htmlContent = await markdownToHTML(courseContent.content);
 
   // Generate structured data
-  const courseUrl = `https://cs61b.com/${locale}/course/${path.join('/')}`;
+  const courseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
   const courseTitle = extractTitleFromMarkdown(courseContent.content);
   const categoryName = path[0] || 'computer science';
   
@@ -197,7 +197,7 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
         "provider": {
           "@type": "EducationalOrganization",
           "name": "CS61B & Beyond",
-          "url": "https://cs61b.com",
+          "url": process.env.NEXT_PUBLIC_SITE_URL!,
           "description": "Free computer science courses from top universities"
         },
         "educationalLevel": "Higher Education",
@@ -226,19 +226,19 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://cs61b.com"
+            "item": process.env.NEXT_PUBLIC_SITE_URL!
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": locale === 'zh' ? "课程" : "Courses",
-            "item": `https://cs61b.com/${locale}/courses`
+            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": categoryName.replace(/-/g, ' '),
-            "item": `https://cs61b.com/${locale}/courses/${categoryName}`
+            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses/${categoryName}`
           },
           {
             "@type": "ListItem",

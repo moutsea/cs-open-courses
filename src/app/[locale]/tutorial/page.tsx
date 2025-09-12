@@ -29,7 +29,7 @@ export default async function TutorialPage({params}: {params: Promise<{locale: s
         "description": locale === 'zh' 
           ? '完整的计算机科学初学者指南。从CS61A基础知识到算法、机器学习和系统编程等高级主题的分步路线图。'
           : 'Complete beginner\'s guide to computer science learning. Step-by-step roadmap from CS61A basics to advanced topics like algorithms, machine learning, and systems programming.',
-        "url": `https://cs61b.com/${locale}/tutorial`,
+        "url": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/tutorial`,
         "inLanguage": locale === 'zh' ? "zh-CN" : "en-US",
         "educationalLevel": "Beginner",
         "learningResourceType": "Learning Path",
@@ -46,7 +46,7 @@ export default async function TutorialPage({params}: {params: Promise<{locale: s
         "provider": {
           "@type": "EducationalOrganization",
           "name": "CS61B & Beyond",
-          "url": "https://cs61b.com",
+          "url": process.env.NEXT_PUBLIC_SITE_URL!,
           "description": "Free computer science courses from top universities"
         }
       },
@@ -57,13 +57,13 @@ export default async function TutorialPage({params}: {params: Promise<{locale: s
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://cs61b.com"
+            "item": process.env.NEXT_PUBLIC_SITE_URL!
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": locale === 'zh' ? "学习路径" : "Learning Path",
-            "item": `https://cs61b.com/${locale}/tutorial`
+            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/tutorial`
           }
         ]
       }
