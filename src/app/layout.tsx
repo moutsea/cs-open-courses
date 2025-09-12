@@ -19,10 +19,10 @@ export async function generateMetadata(): Promise<Metadata> {
       'data structures algorithms', 'open courses', 'free programming courses'
     ],
     alternates: {
-      canonical: 'https://cs61b.com',
+      canonical: 'https://www.cs61bbeyond.com',
       languages: {
-        'en': 'https://cs61b.com',
-        'zh': 'https://cs61b.com/zh'
+        'en': 'https://www.cs61bbeyond.com/',
+        'zh': 'https://www.cs61bbeyond.com/zh'
       }
     },
     openGraph: {
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       title: 'CS61B & Beyond - Top Computer Science Open Courses',
       description: 'Master CS61B, CS61A, CS189 and other top computer science courses from Berkeley, MIT, Stanford',
-      url: 'https://cs61b.com',
+      url: 'https://www.cs61bbeyond.com/',
       images: [
         {
           url: '/og.jpg',
