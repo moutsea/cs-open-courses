@@ -1,17 +1,20 @@
-# CS Study Hub
+# CS61B & Beyond
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38B2AC)](https://tailwindcss.com/)
+[![Website](https://img.shields.io/badge/Website-cs61bbeyond.com-blue)](https://www.cs61bbeyond.com/)
 
 **English** | [中文](#中文)
+
+**🌐 Official Website:** [https://www.cs61bbeyond.com/](https://www.cs61bbeyond.com/) | [中文版](https://www.cs61bbeyond.com/zh/)
 
 ## English
 
 ### 🎓 Project Overview
 
-CS Study Hub is a modern, beautifully designed computer science learning platform built upon the excellent open-source project [cs-self-learning](https://github.com/pkuflyingpig/cs-self-learning/) by **pkuflyingpig**. This platform transforms comprehensive CS educational resources into an engaging, user-friendly web experience with enhanced features and optimizations.
+CS61B & Beyond is a modern, beautifully designed computer science learning platform built upon the excellent open-source project [cs-self-learning](https://github.com/pkuflyingpig/cs-self-learning/) by **pkuflyingpig**. This platform transforms comprehensive CS educational resources into an engaging, user-friendly web experience with enhanced features and optimizations.
 
 ### 🌟 Features
 
@@ -72,7 +75,7 @@ Special thanks to:
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/cs-courses.git
+git clone https://github.com/moutsea/cs-open-courses.git
 cd cs-courses
 
 # Install dependencies
@@ -95,7 +98,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ### 🎓 项目概述
 
-CS Study Hub 是一个现代化、设计精美的计算机科学学习平台，基于 **pkuflyingpig** 创建的优秀开源项目 [cs-self-learning](https://github.com/pkuflyingpig/cs-self-learning/) 构建。本平台将全面的 CS 教育资源转变为引人入胜、用户友好的网络体验，并提供了增强功能和优化。
+CS61B & Beyond 是一个现代化、设计精美的计算机科学学习平台，基于 **pkuflyingpig** 创建的优秀开源项目 [cs-self-learning](https://github.com/pkuflyingpig/cs-self-learning/) 构建。本平台将全面的 CS 教育资源转变为引人入胜、用户友好的网络体验，并提供了增强功能和优化。
 
 ### 🌟 功能特色
 
@@ -156,7 +159,7 @@ CS Study Hub 是一个现代化、设计精美的计算机科学学习平台，�
 
 ```bash
 # 克隆仓库
-git clone https://github.com/your-username/cs-courses.git
+git clone https://github.com/moutsea/cs-open-courses.git
 cd cs-courses
 
 # 安装依赖
@@ -177,7 +180,11 @@ npm run build
 
 <div align="center">
 
-**Built with ❤️ by the CS Study Hub team**
+**🌐 Official Website:**
+- English: https://www.cs61bbeyond.com/
+- 中文: https://www.cs61bbeyond.com/zh/
+
+Built with ❤️ by the CS61B & Beyond team
 
 *Inspired by the amazing work of pkuflyingpig and the cs-self-learning community*
 
