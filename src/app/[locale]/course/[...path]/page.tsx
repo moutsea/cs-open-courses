@@ -16,32 +16,33 @@ interface CoursePageProps {
 
 export async function generateStaticParams() {
   const params = [];
-  
+
   // Generate params for both locales
   for (const locale of ['en', 'zh']) {
     try {
       const courses = await getAllCourses(locale);
-      
+
       for (const course of courses) {
         // Convert course path to URL format
         const pathParts = course.path.split('/');
         const pathWithoutLocale = pathParts.slice(1); // Remove locale prefix
         const lastPart = pathWithoutLocale[pathWithoutLocale.length - 1];
-        
+
         // Remove file extension if present
         if (lastPart && lastPart.endsWith('.md')) {
           pathWithoutLocale[pathWithoutLocale.length - 1] = lastPart.replace('.md', '');
         }
-        
+
         // Convert directory parts to English slugs
         const urlPath = pathWithoutLocale.map((segment, index) => {
           if (index < pathWithoutLocale.length - 1) {
             // Convert Chinese directory names to English slugs
             return getEnglishSlug(segment);
           }
+          // For file names, preserve original name (including spaces)
           return segment;
         });
-        
+
         params.push({
           locale,
           path: urlPath,
@@ -51,7 +52,7 @@ export async function generateStaticParams() {
       console.error(`Error generating static params for locale ${locale}:`, error);
     }
   }
-  
+
   return params;
 }
 

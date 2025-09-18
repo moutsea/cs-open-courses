@@ -84,29 +84,53 @@ function extractTitle(content: string, fallback: string): string {
 export async function getCourseContent(coursePath: string[], locale: string) {
   const docsPath = path.join(process.cwd(), 'course-content');
   const relativePath = path.join(...coursePath);
-  
+
   // Use language-specific directory
   const langDir = locale === 'zh' ? 'zh' : 'en';
-  
+
   // Try different file naming conventions
   const possiblePaths = [
     path.join(docsPath, langDir, relativePath + '.md'),  // Standard .md file
   ];
-  
-  
+
+  // Also try paths with URL-encoded spaces for files with spaces in names
+  const encodedRelativePath = coursePath.map(segment =>
+    segment.replace(/%20/g, ' ').replace(/\+/g, ' ')
+  ).join('/');
+
+  // Try different URL encodings for special characters
+  const encodedVariants = [
+    encodedRelativePath,
+    coursePath.map(segment =>
+      decodeURIComponent(segment)
+    ).join('/'),
+    coursePath.map(segment =>
+      segment.replace(/%3A/g, ':').replace(/%EF%BC%9A/g, '：').replace(/%20/g, ' ').replace(/\+/g, ' ')
+    ).join('/')
+  ].filter((variant, index, self) => self.indexOf(variant) === index); // Remove duplicates
+
+  // Add all encoded variants to possible paths
+  for (const variant of encodedVariants) {
+    if (variant !== relativePath) {
+      possiblePaths.unshift(path.join(docsPath, langDir, variant + '.md'));
+    }
+  }
+
   // Try each possible path
   for (const filePath of possiblePaths) {
     try {
       const content = await fs.readFile(filePath, 'utf-8');
       const title = extractTitle(content, coursePath[coursePath.length - 1] || 'Untitled');
-      
+
       // Check if the other language version exists
       const otherLangDir = locale === 'zh' ? 'en' : 'zh';
       const otherPossiblePaths = [
         path.join(docsPath, otherLangDir, relativePath + '.md'),
+        path.join(docsPath, otherLangDir, encodedRelativePath + '.md'),
         path.join(docsPath, otherLangDir, relativePath + '.en.md'),
+        path.join(docsPath, otherLangDir, encodedRelativePath + '.en.md'),
       ];
-      
+
       let hasOtherVersion = false;
       for (const otherPath of otherPossiblePaths) {
         if (await fileExists(otherPath)) {
@@ -114,8 +138,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
           break;
         }
       }
-      
-      
+
       return {
         content,
         title,
@@ -128,18 +151,19 @@ export async function getCourseContent(coursePath: string[], locale: string) {
       // Continue to next possible path
     }
   }
-  
+
   // If all attempts failed, try fallback to other language
   const fallbackLangDir = locale === 'zh' ? 'en' : 'zh';
   const fallbackPaths = [
     path.join(docsPath, fallbackLangDir, relativePath + '.md'),
+    ...encodedVariants.map(variant => path.join(docsPath, fallbackLangDir, variant + '.md')),
   ];
-  
+
   for (const fallbackPath of fallbackPaths) {
     try {
       const content = await fs.readFile(fallbackPath, 'utf-8');
       const title = extractTitle(content, coursePath[coursePath.length - 1] || 'Untitled');
-      
+
       return {
         content,
         title,
@@ -152,7 +176,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
     } catch {
     }
   }
-  
+
   return {
     content: '',
     title: '',
