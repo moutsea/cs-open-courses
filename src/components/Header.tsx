@@ -60,9 +60,9 @@ export default function Header({ locale }: { locale: string }) {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-3" as={locale === 'zh' ? '/zh' : '/'}>
-              <Image 
-                src="/logo.png" 
-                alt="CS61B & Beyond Logo" 
+              <Image
+                src="/logo.png"
+                alt="CS61B & Beyond Logo"
                 width={40}
                 height={40}
                 className="h-10 w-auto"
@@ -78,16 +78,6 @@ export default function Header({ locale }: { locale: string }) {
               <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" as={locale === 'zh' ? '/zh' : '/'}>
                 Home
               </Link>
-              {/* <Link href={locale === 'en' ? '/' : `/${locale}/courses`} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
-                {t.courses}
-              </Link>
-              <Link href={locale === 'en' ? '/' : `/${locale}/universities`} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
-                {t.universities}
-              </Link>
-              <Link href={locale === 'en' ? '/' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium">
-                {t.tutorial}
-              </Link> */}
-
               <Link href={locale === 'en' ? '/courses' : '/zh/courses'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
   font-medium">
                 {t.courses}

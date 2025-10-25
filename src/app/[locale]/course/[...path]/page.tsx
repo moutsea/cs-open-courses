@@ -58,7 +58,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
   const { locale, path } = await params;
-  
+
   // Convert URL path back to file system path
   const coursePath = path.join('/');
   const courseContent = await getCourseContent(path, locale);
@@ -75,7 +75,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   }
 
   const title = extractTitleFromMarkdown(courseContent.content);
-  
+
   // Create category-specific description based on actual categories
   const categoryDescriptions = {
     'programming-introduction': 'programming fundamentals, software development, and computational thinking',
@@ -104,16 +104,19 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     'system-security': 'cybersecurity, encryption, and system protection mechanisms',
     'web-development': 'web technologies, frontend/backend development, and modern web frameworks'
   };
-  
+
   const categoryName = path[0] || 'computer science';
   const categoryDescription = categoryDescriptions[categoryName as keyof typeof categoryDescriptions] || 'advanced computer science concepts';
-  
+
   // Create specific description based on path
   const description = `Learn ${title} - ${categoryDescription}. Master essential concepts and practical applications in this comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities.`;
 
   return {
     title: title,
     description: description,
+    alternates: {
+      canonical: coursePath,
+    },
     keywords: [
       title,
       categoryName.replace(/-/g, ' '),
@@ -147,7 +150,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
 
 export default async function CoursePage({ params }: CoursePageProps) {
   const { locale, path } = await params;
-  
+
   return (
     <Suspense fallback={<div className="text-center py-8">Loading course...</div>}>
       <CourseRenderer locale={locale} path={path} />
@@ -183,7 +186,7 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
   const courseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
   const courseTitle = extractTitleFromMarkdown(courseContent.content);
   const categoryName = path[0] || 'computer science';
-  
+
   // Estimate course duration based on content length
   const estimatedDuration = Math.max(1, Math.ceil(courseContent.content.length / 5000));
 
