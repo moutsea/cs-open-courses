@@ -41,7 +41,7 @@ export default function Footer({ locale }: { locale: string }) {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">CS61B & Beyond</h3>
             <p className="text-gray-300 mb-4">
-              Discover and access free computer science courses from top universities worldwide. 
+              Discover and access free computer science courses from top universities worldwide.
               Helping learners access quality educational content for free.
             </p>
             <div className="flex space-x-4">
@@ -70,7 +70,7 @@ export default function Footer({ locale }: { locale: string }) {
             <ul className="space-y-2">
               {POPULAR_COURSES.map((course) => (
                 <li key={course.id}>
-                  <Link 
+                  <Link
                     href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
                     className="text-gray-300 hover:text-white"
                   >
@@ -78,6 +78,13 @@ export default function Footer({ locale }: { locale: string }) {
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold mb-4">We Also Build</h4>
+            <ul className="space-y-2">
+              <li><Link href="https://www.claudeide.net" className="text-gray-300 hover:text-white">Claude Code Ide</Link></li>
             </ul>
           </div>
         </div>
