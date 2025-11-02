@@ -115,7 +115,11 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     title: title,
     description: description,
     alternates: {
-      canonical: coursePath,
+      canonical: `https://www.cs61bbeyond.com/course/${coursePath}`,
+      languages: {
+        'en': `https://www.cs61bbeyond.com/course/${coursePath}`,
+        'zh': `https://www.cs61bbeyond.com/zh/course/${coursePath}`,
+      },
     },
     keywords: [
       title,
