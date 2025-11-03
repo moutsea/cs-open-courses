@@ -111,6 +111,10 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   // Create specific description based on path
   const description = `Learn ${title} - ${categoryDescription}. Master essential concepts and practical applications in this comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities.`;
 
+  const url = locale === 'en'
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${coursePath}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${coursePath}`;
+
   return {
     title: title,
     description: description,
@@ -133,7 +137,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     openGraph: {
       title: `${title} | CS61B & Beyond`,
       description: description,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`,
+      url: url,
       images: [
         {
           url: '/logo.png',
