@@ -57,11 +57,11 @@ export default function Footer({ locale }: { locale: string }) {
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href={`/${locale}`} className="text-gray-300 hover:text-white">Home</Link></li>
-              <li><Link href={`/${locale}/courses`} className="text-gray-300 hover:text-white">Courses</Link></li>
-              <li><Link href={`/${locale}/universities`} className="text-gray-300 hover:text-white">Universities</Link></li>
-              <li><Link href={`/${locale}/tutorial`} className="text-gray-300 hover:text-white">Tutorial</Link></li>
-              <li><Link href={`/${locale}/about`} className="text-gray-300 hover:text-white">About</Link></li>
+              <li><Link href={locale === 'en' ? '/' : `/${locale}`} className="text-gray-300 hover:text-white">Home</Link></li>
+              <li><Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-gray-300 hover:text-white">Courses</Link></li>
+              <li><Link href={locale === 'en' ? '/universities' : `/${locale}/universities`} className="text-gray-300 hover:text-white">Universities</Link></li>
+              <li><Link href={locale === 'en' ? '/tutorial' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white">Tutorial</Link></li>
+              <li><Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="text-gray-300 hover:text-white">About</Link></li>
             </ul>
           </div>
 
@@ -71,7 +71,10 @@ export default function Footer({ locale }: { locale: string }) {
               {POPULAR_COURSES.map((course) => (
                 <li key={course.id}>
                   <Link
-                    href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
+                    href={
+                      locale === 'en' ?
+                        `/course/${buildDynamicRoutePath(course.path).join('/')}` :
+                        `/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
                     className="text-gray-300 hover:text-white"
                   >
                     {locale === 'zh' ? course.title : course.titleEn}

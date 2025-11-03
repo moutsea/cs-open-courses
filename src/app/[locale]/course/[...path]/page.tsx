@@ -191,7 +191,9 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
   const htmlContent = await markdownToHTML(courseContent.content);
 
   // Generate structured data
-  const courseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
+  const courseUrl = locale === 'en'
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${path.join('/')}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
   const courseTitle = extractTitleFromMarkdown(courseContent.content);
   const categoryName = path[0] || 'computer science';
 
