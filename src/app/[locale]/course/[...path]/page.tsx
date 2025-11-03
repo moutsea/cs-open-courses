@@ -244,13 +244,7 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
             "@type": "ListItem",
             "position": 2,
             "name": locale === 'zh' ? "课程" : "Courses",
-            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses`
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": categoryName.replace(/-/g, ' '),
-            "item": `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses/${categoryName}`
+            "item": locale === 'en' ? `${process.env.NEXT_PUBLIC_SITE_URL}/courses` : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses`
           },
           {
             "@type": "ListItem",
