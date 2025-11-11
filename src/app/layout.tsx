@@ -42,19 +42,19 @@ export async function generateMetadata(): Promise<Metadata> {
     },
 
     robots: 'index, follow, max-image-preview:large',
-    
+
     authors: [{ name: 'CS61B & Beyond Team' }],
     creator: 'CS61B & Beyond',
     publisher: 'CS61B & Beyond',
     category: 'Education',
-    
+
     twitter: {
       card: 'summary_large_image',
       title: 'CS61B & Beyond - Top CS Open Courses',
       description: 'Master CS61B, CS61A and top computer science courses',
       images: [`${process.env.NEXT_PUBLIC_SITE_URL}/og.jpg`]
     },
-    
+
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || ''
     }
@@ -72,6 +72,8 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="94d0AGhYzngO2upOLwVzqv8bQtfJqo32U5I2dSXDEto" />
+        <meta name="msvalidate.01" content="8B900A7AD31AF4E513F58422B9EBA7E5" />
+        <meta name="baidu-site-verification" content="codeva-nqGUCGJrBm" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.svg" />
