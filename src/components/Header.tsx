@@ -1,342 +1,275 @@
 'use client'
 
-import { useState } from 'react'
-import { Link } from '@/navigation'
-import { useRouter } from 'next/navigation'
-import { Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
-import { GlobeAltIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
-import SearchBox from './SearchBox'
+import { Fragment, useMemo, useState } from 'react'
 import Image from 'next/image'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon, GlobeAltIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { usePathname, useRouter } from 'next/navigation'
+import { Link } from '@/navigation'
+import SearchBox from './SearchBox'
 import { useSimpleTranslations } from '@/lib/translationUtils'
+
+interface LanguageOption {
+  code: string
+  nativeName: string
+}
+
+type NavPath =
+  | '/'
+  | '/zh'
+  | '/courses'
+  | '/zh/courses'
+  | '/universities'
+  | '/zh/universities'
+  | '/tutorial'
+  | '/zh/tutorial'
+
+interface NavLink {
+  id: string
+  label: string
+  href: NavPath
+}
 
 export default function Header({ locale }: { locale: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const router = useRouter()
-
+  const pathname = usePathname()
   const t = useSimpleTranslations(locale)
 
-  // Language options
-  const languages = [
-    { code: 'en', name: 'English', nativeName: 'English' },
-    { code: 'zh', name: 'Chinese', nativeName: '中文' }
+  const languages: LanguageOption[] = [
+    { code: 'en', nativeName: 'English' },
+    { code: 'zh', nativeName: '中文' }
+  ]
+
+  const baseLinks: NavLink[] = useMemo(() => {
+    const homeHref: NavPath = locale === 'zh' ? '/zh' : '/'
+    return [
+      { id: 'home', label: locale === 'zh' ? '首页' : 'Home', href: homeHref },
+      { id: 'courses', label: t.courses, href: (locale === 'zh' ? '/zh/courses' : '/courses') as NavPath },
+      { id: 'universities', label: t.universities, href: (locale === 'zh' ? '/zh/universities' : '/universities') as NavPath },
+      { id: 'tutorial', label: t.tutorial, href: (locale === 'zh' ? '/zh/tutorial' : '/tutorial') as NavPath }
+    ]
+  }, [locale, t])
+
+  const aiTools = [
+    { label: 'Claude Code', href: locale === 'en' ? 'https://www.claudeide.net' : `https://www.claudeide.net/${locale}` },
+    { label: 'Codex', href: locale === 'en' ? 'https://www.codeilab.com' : `https://www.codeilab.com/${locale}` }
   ]
 
   const handleLanguageChange = (newLocale: string) => {
-    if (newLocale !== locale) {
-      const currentPath = window.location.pathname
-      const currentSearch = window.location.search
-      const currentHash = window.location.hash
+    if (newLocale === locale) return
 
-      // Handle root path (English) and language-specific paths
-      let newPath
-      if (currentPath === '/' && newLocale === 'zh') {
-        // From root English to Chinese
-        newPath = '/zh'
-      } else if (currentPath.startsWith('/zh/') && newLocale === 'en') {
-        // From Chinese to English
-        newPath = currentPath.replace('/zh', '') || '/'
-      } else if (currentPath.startsWith('/' + locale + '/')) {
-        // Between language-specific paths
-        newPath = currentPath.replace(`/${locale}`, `/${newLocale}`)
-      } else if (currentPath === '/' + locale) {
-        // From language root to another language root
-        newPath = '/' + newLocale
-      } else {
-        // Default case: add language prefix
-        newPath = `/${newLocale}${currentPath}`
-      }
+    const currentPath = window.location.pathname
+    const currentSearch = window.location.search
+    const currentHash = window.location.hash
 
-      // Preserve query parameters and hash
-      const fullNewPath = newPath + currentSearch + currentHash
-      router.push(fullNewPath)
+    let newPath
+    if (currentPath === '/' && newLocale === 'zh') {
+      newPath = '/zh'
+    } else if (currentPath.startsWith('/zh') && newLocale === 'en') {
+      newPath = currentPath.replace('/zh', '') || '/'
+    } else if (currentPath.startsWith(`/${locale}/`)) {
+      newPath = currentPath.replace(`/${locale}`, `/${newLocale}`)
+    } else if (currentPath === `/${locale}`) {
+      newPath = `/${newLocale}`
+    } else {
+      newPath = `/${newLocale}${currentPath}`
     }
+
+    router.push(newPath + currentSearch + currentHash)
     setIsMenuOpen(false)
   }
 
+  const isActive = (href: string) => {
+    const current = pathname || '/'
+    if (href === '/' || href === '/zh') {
+      return current === href
+    }
+    return current.startsWith(href)
+  }
+
+  const brandSubtitle = locale === 'zh' ? '跨越顶尖 CS 课程' : 'Across elite CS courses'
+
   return (
-    <header className="bg-black shadow-sm border-b border-gray-800">
-      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center space-x-3" as={locale === 'zh' ? '/zh' : '/'}>
-              <Image
-                src="/logo.png"
-                alt="CS61B & Beyond Logo"
-                width={40}
-                height={40}
-                className="h-10 w-auto"
-                priority
-              />
-              <span className="text-xl font-bold text-white">CS61B & Beyond</span>
-            </Link>
-          </div>
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/60 via-40% to-transparent" aria-hidden="true"></div>
+      <div className="mx-auto flex max-w-screen-2xl flex-col px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between gap-4">
+          <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
+            <Image src="/logo.png" alt="CS Study Hub" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
+            <div className="flex flex-col min-w-0">
+              <span className="text-lg font-semibold text-white truncate">CS Study Hub</span>
+              <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 truncate">{brandSubtitle}</span>
+            </div>
+          </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-8 items-center">
-
-              <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium" as={locale === 'zh' ? '/zh' : '/'}>
-                Home
+          <nav className="hidden items-center gap-6 xl:flex">
+            {baseLinks.map(link => (
+              <Link
+                key={link.id}
+                href={link.href}
+                className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-all ${isActive(link.href)
+                  ? 'text-white'
+                  : 'text-white/70 hover:text-white'
+                  }`}
+              >
+                {link.label}
+                {isActive(link.href) && (
+                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></span>
+                )}
               </Link>
-              <Link href={locale === 'en' ? '/courses' : '/zh/courses'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
-  font-medium">
-                {t.courses}
-              </Link>
-              <Link href={locale === 'en' ? '/universities' : '/zh/universities'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
-  font-medium">
-                {t.universities}
-              </Link>
-              <Link href={locale === 'en' ? '/tutorial' : '/zh/tutorial'} className="text-gray-300 hover:text-white block px-3 py-2 text-base
-  font-medium">
-                {t.tutorial}
-              </Link>
+            ))}
 
-              {/* AI Coding Dropdown */}
-              <Menu as="div" className="relative inline-block text-left">
-                <div>
-                  <Menu.Button className="inline-flex items-center justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
-                    AI Coding
-                    <ChevronDownIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? 'https://www.claudeide.net' : `https://www.claudeide.net/${locale}`}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Claude Code
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? 'https://www.codeilab.com' : `https://www.codeilab.com/${locale}`}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Codex
-                          </a>
-                        )}
-                      </Menu.Item>
-
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-
-              <SearchBox locale={locale} />
-            </nav>
-
-            {/* Language Dropdown */}
-            <Menu as="div" className="relative inline-block text-left">
-              <div>
-                <Menu.Button className="inline-flex items-center justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
-                  <GlobeAltIcon className="h-4 w-4 mr-2" />
-                  {languages.find(lang => lang.code === locale)?.nativeName || 'English'}
-                  <ChevronDownIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-                </Menu.Button>
-              </div>
+            <Menu as="div" className="relative">
+              <Menu.Button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/30 hover:text-white">
+                AI Coding
+                <ChevronDownIcon className="h-4 w-4" />
+              </Menu.Button>
 
               <Transition
                 as={Fragment}
-                enter="transition ease-out duration-100"
+                enter="transition ease-out duration-150"
                 enterFrom="transform opacity-0 scale-95"
                 enterTo="transform opacity-100 scale-100"
-                leave="transition ease-in duration-75"
+                leave="transition ease-in duration-100"
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 z-50 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                  <div className="py-1">
-                    {languages.map((language) => (
-                      <Menu.Item key={language.code}>
-                        {({ active }) => (
-                          <button
-                            onClick={() => handleLanguageChange(language.code)}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block w-full text-left px-4 py-2 text-sm ${language.code === locale ? 'bg-blue-50 text-blue-700 font-medium' : ''
-                              }`}
-                          >
-                            {language.nativeName}
-                          </button>
-                        )}
-                      </Menu.Item>
-                    ))}
-                  </div>
+                <Menu.Items className="absolute right-0 z-50 mt-3 w-48 origin-top-right rounded-2xl border border-white/10 bg-slate-900/95 p-2 shadow-2xl">
+                  {aiTools.map(item => (
+                    <Menu.Item key={item.label}>
+                      {({ active }) => (
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`block rounded-xl px-4 py-3 text-sm font-medium transition ${active ? 'bg-white/10 text-white' : 'text-white/80'}`}
+                        >
+                          {item.label}
+                        </a>
+                      )}
+                    </Menu.Item>
+                  ))}
+                </Menu.Items>
+              </Transition>
+            </Menu>
+          </nav>
+
+          <div className="hidden items-center gap-3 xl:flex">
+            <div className="mr-16 w-44 xl:w-52">
+              <SearchBox locale={locale} />
+            </div>
+
+            <Menu as="div" className="relative">
+              <Menu.Button className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white/80 transition hover:border-white/30 hover:text-white">
+                <GlobeAltIcon className="h-4 w-4" />
+                {languages.find(lang => lang.code === locale)?.nativeName ?? 'English'}
+                <ChevronDownIcon className="h-4 w-4" />
+              </Menu.Button>
+
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-150"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-100"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                <Menu.Items className="absolute right-0 z-50 mt-3 w-36 origin-top-right rounded-2xl border border-white/10 bg-slate-900/95 p-2 shadow-2xl">
+                  {languages.map(language => (
+                    <Menu.Item key={language.code}>
+                      {({ active }) => (
+                        <button
+                          onClick={() => handleLanguageChange(language.code)}
+                          className={`w-full rounded-xl px-3 py-2 text-sm font-medium transition ${language.code === locale ? 'bg-blue-500/20 text-white' : active ? 'bg-white/10 text-white' : 'text-white/70'}`}
+                        >
+                          {language.nativeName}
+                        </button>
+                      )}
+                    </Menu.Item>
+                  ))}
                 </Menu.Items>
               </Transition>
             </Menu>
           </div>
 
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white focus:outline-none focus:text-white"
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
+          <button
+            onClick={() => setIsMenuOpen(prev => !prev)}
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 p-2 text-white/80 transition hover:border-white/30 hover:text-white xl:hidden"
+            aria-label="Toggle navigation"
+          >
+            {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
+          </button>
         </div>
 
-        {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <SearchBox locale={locale} />
+        <Transition
+          show={isMenuOpen}
+          as={Fragment}
+          enter="transition duration-200 ease-out"
+          enterFrom="transform opacity-0 -translate-y-2"
+          enterTo="transform opacity-100 translate-y-0"
+          leave="transition duration-150 ease-in"
+          leaveFrom="transform opacity-100 translate-y-0"
+          leaveTo="transform opacity-0 -translate-y-2"
+        >
+          <div className="mt-4 flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 shadow-xl shadow-black/40 xl:hidden">
+            <SearchBox locale={locale} />
 
-              <Link href={locale === 'zh' ? '/zh' : '/'} className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
-                Home
-              </Link>
-              {/* <Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
-                {t.courses}
-              </Link>
-              <Link href={locale === 'en' ? '/universities' : `/${locale}/universities`} className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
-                {t.universities}
-              </Link>
-              <Link href={locale === 'en' ? '/tutorial' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white block px-3 py-2 text-base font-medium">
-                {t.tutorial}
-              </Link> */}
-
-              <Link href={locale === 'en' ? '/courses' : '/zh/courses'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
-  font-medium">
-                {t.courses}
-              </Link>
-              <Link href={locale === 'en' ? '/universities' : '/zh/universities'} className="text-gray-300 hover:text-white block px-3 py-2 text-base 
-  font-medium">
-                {t.universities}
-              </Link>
-              <Link href={locale === 'en' ? '/tutorial' : '/zh/tutorial'} className="text-gray-300 hover:text-white block px-3 py-2 text-base
-  font-medium">
-                {t.tutorial}
-              </Link>
-
-              {/* Mobile AI Coding Dropdown */}
-              <Menu as="div" className="relative inline-block text-left w-full">
-                <div>
-                  <Menu.Button className="inline-flex items-center justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
-                    AI Coding
-                    <ChevronDownIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
+            <div className="grid gap-2">
+              {baseLinks.map(link => (
+                <Link
+                  key={link.id}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${isActive(link.href) ? 'bg-white/10 text-white' : 'text-white/80 hover:bg-white/5 hover:text-white'}`}
                 >
-                  <Menu.Items className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? '/ai-coding/code-generation' : '/zh/ai-coding/code-generation'}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Code Generation
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? '/ai-coding/code-review' : '/zh/ai-coding/code-review'}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Code Review
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? '/ai-coding/debugging' : '/zh/ai-coding/debugging'}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Debugging Assistant
-                          </a>
-                        )}
-                      </Menu.Item>
-                      <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href={locale === 'en' ? '/ai-coding/documentation' : '/zh/ai-coding/documentation'}
-                            className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                              } block px-4 py-2 text-sm`}
-                          >
-                            Documentation
-                          </a>
-                        )}
-                      </Menu.Item>
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
-
-              {/* Mobile Language Dropdown */}
-              <Menu as="div" className="relative inline-block text-left w-full">
-                <div>
-                  <Menu.Button className="inline-flex items-center justify-center w-full rounded-md border border-gray-600 shadow-sm px-4 py-2 bg-gray-800 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-blue-500">
-                    <GlobeAltIcon className="h-4 w-4 mr-2" />
-                    {languages.find(lang => lang.code === locale)?.nativeName || 'English'}
-                    <ChevronDownIcon className="ml-2 h-4 w-4" aria-hidden="true" />
-                  </Menu.Button>
-                </div>
-
-                <Transition
-                  as={Fragment}
-                  enter="transition ease-out duration-100"
-                  enterFrom="transform opacity-0 scale-95"
-                  enterTo="transform opacity-100 scale-100"
-                  leave="transition ease-in duration-75"
-                  leaveFrom="transform opacity-100 scale-100"
-                  leaveTo="transform opacity-0 scale-95"
-                >
-                  <Menu.Items className="absolute right-0 z-50 mt-2 w-32 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                    <div className="py-1">
-                      {languages.map((language) => (
-                        <Menu.Item key={language.code}>
-                          {({ active }) => (
-                            <button
-                              onClick={() => handleLanguageChange(language.code)}
-                              className={`${active ? 'bg-gray-100 text-gray-900' : 'text-gray-700'
-                                } block w-full text-left px-4 py-2 text-sm ${language.code === locale ? 'bg-blue-50 text-blue-700 font-medium' : ''
-                                }`}
-                            >
-                              {language.nativeName}
-                            </button>
-                          )}
-                        </Menu.Item>
-                      ))}
-                    </div>
-                  </Menu.Items>
-                </Transition>
-              </Menu>
+                  {link.label}
+                </Link>
+              ))}
             </div>
+
+            <div className="rounded-3xl border border-white/10 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">{locale === 'zh' ? 'AI 工具' : 'AI Tools'}</p>
+              <div className="mt-3 grid gap-2">
+                {aiTools.map(tool => (
+                  <a
+                    key={tool.label}
+                    href={tool.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10"
+                  >
+                    {tool.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 p-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/40">{locale === 'zh' ? '语言' : 'Language'}</p>
+              <div className="mt-3 grid grid-cols-2 gap-2">
+                {languages.map(language => (
+                  <button
+                    key={language.code}
+                    onClick={() => handleLanguageChange(language.code)}
+                    className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${language.code === locale ? 'bg-blue-500/20 text-white' : 'bg-white/5 text-white/70 hover:bg-white/10'}`}
+                  >
+                    {language.nativeName}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              href={locale === 'zh' ? '/zh/courses' : '/courses'}
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
+            >
+              {locale === 'zh' ? '立即开始' : 'Start learning'}
+            </Link>
           </div>
-        )}
+        </Transition>
       </div>
     </header>
   )

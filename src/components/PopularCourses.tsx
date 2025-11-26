@@ -38,26 +38,19 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
   };
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-        <div className="absolute top-10 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-float-delayed"></div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-float-slow"></div>
-      </div>
-
-      <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-20">
+      <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-6">
-            <span className="text-blue-700 text-sm font-semibold">🔥 Featured Courses</span>
+          <div className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/10 rounded-full mb-6">
+            <span className="text-white/80 text-sm font-semibold">🔥 Featured Courses</span>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             {t('popularCourses.title')}
           </h2>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
             {t('popularCourses.subtitle')}
           </p>
         </div>

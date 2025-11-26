@@ -1,8 +1,10 @@
+import { ReactNode } from 'react'
 import { getTranslations } from 'next-intl/server'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PopularCourses from '@/components/PopularCourses'
 import LearningPathFlow from '@/components/LearningPathFlow'
+import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import Link from 'next/link'
 import './hero-animations.css'
 
@@ -108,6 +110,14 @@ const POPULAR_COURSES = [
   }
 ]
 
+function renderSharedSection(content: ReactNode, className = '') {
+  return (
+    <ImmersiveSection className={className}>
+      {content}
+    </ImmersiveSection>
+  )
+}
+
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
 
@@ -161,827 +171,719 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} />
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative min-h-[90vh] bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
+      <ImmersivePage>
+          {renderSharedSection(
+            (
+              <div className="relative min-h-[90vh] overflow-hidden">
+              <div className="absolute inset-0 pointer-events-none">
+                <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
+                <div className="absolute top-40 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
+                <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
+              </div>
 
-          {/* Floating Elements */}
-          <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-20 left-1/4 w-24 h-24 bg-cyan-500/10 rounded-full blur-xl animate-pulse delay-2000"></div>
-          </div>
+              <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+                <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+                  {/* Left Content */}
+                  <div className="text-center lg:text-left space-y-8">
+                    {/* Badge */}
+                    <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium">
+                      <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                      {locale === 'zh' ? '全新学习体验' : 'New Learning Experience'}
+                    </div>
 
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-            <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-              {/* Left Content */}
-              <div className="text-center lg:text-left space-y-8">
-                {/* Badge */}
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium">
-                  <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                  {locale === 'zh' ? '全新学习体验' : 'New Learning Experience'}
-                </div>
-
-                {/* Main Title */}
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
-                  <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    {tHome('hero.title').split(' ')[0]}
-                  </span>
-                  <br />
-                  <span className="text-white">
-                    {tHome('hero.title').split(' ').slice(1).join(' ')}
-                  </span>
-                </h1>
-
-                {/* Subtitle */}
-                <p className="text-xl md:text-2xl text-blue-200 font-light max-w-2xl">
-                  {tHome('hero.subtitle')}
-                </p>
-
-                {/* Description */}
-                <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
-                  {tHome('hero.description')}
-                </p>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                  <Link
-                    href={`/${locale}/courses`}
-                    className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center">
-                      <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                        {tHome('hero.cta')}
+                    {/* Main Title */}
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+                      <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                        {tHome('hero.title').split(' ')[0]}
                       </span>
-                      <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </span>
-
-                    {/* Hover gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    {/* Shimmer effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                  </Link>
-
-                  <Link
-                    href={`/${locale}/universities`}
-                    className="group relative inline-flex items-center px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-bold text-lg rounded-2xl hover:bg-white/20 hover:border-white/50 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center">
-                      {tHome('universities.title')}
-                      <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                      </svg>
-                    </span>
-
-                    {/* Subtle shimmer effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
-                  </Link>
-                </div>
-
-                {/* Social Links */}
-                <div className="flex items-center gap-6 pt-6">
-                  <span className="text-sm text-gray-400">{locale === 'zh' ? '关注我们' : 'Follow us'}</span>
-                  <div className="flex gap-3">
-                    <Link
-                      href="https://github.com/moutsea?tab=repositories"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-200 group border border-white/20"
-                    >
-                      <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                      </svg>
-                    </Link>
-
-                    <Link
-                      href="mailto:cfjwlchangji@gmail.com"
-                      className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-200 group border border-white/20"
-                    >
-                      <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Content - Visual Elements */}
-              <div className="relative hidden lg:block">
-                <div className="relative">
-                  {/* Floating Cards */}
-                  <div className="absolute top-8 -left-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">CS</div>
-                      <div>
-                        <div className="text-sm font-semibold">{locale === 'zh' ? '数据结构' : 'Data Structures'}</div>
-                        <div className="text-xs text-gray-300">{locale === 'zh' ? '基础课程' : 'Foundation'}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                      <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-32 right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float-delayed">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">ML</div>
-                      <div>
-                        <div className="text-sm font-semibold">{locale === 'zh' ? '机器学习' : 'Machine Learning'}</div>
-                        <div className="text-xs text-gray-300">{locale === 'zh' ? '高级课程' : 'Advanced'}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                      <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-8 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">AI</div>
-                      <div>
-                        <div className="text-sm font-semibold">{locale === 'zh' ? '人工智能' : 'Artificial Intelligence'}</div>
-                        <div className="text-xs text-gray-300">{locale === 'zh' ? '前沿领域' : 'Cutting-edge'}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                      <div className="flex gap-1">
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                        <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Central Glow */}
-                  <div className="w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl mx-auto"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Gradient Fade */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23933ea' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
-
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                {locale === 'zh' ? '学习平台数据' : 'Platform Statistics'}
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                {locale === 'zh' ? '我们为全球学习者提供优质的计算机科学教育资源' : 'Providing quality computer science education for learners worldwide'}
-              </p>
-            </div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* Courses Stat */}
-              <Link
-                href={`/${locale}/courses`}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-blue-200 hover:-translate-y-1"
-              >
-                {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                  </div>
-
-                  {/* Number */}
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-5xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
-                      {totalCourses}
-                    </span>
-                    <span className="text-2xl font-semibold text-blue-600">+</span>
-                  </div>
-
-                  {/* Label */}
-                  <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
-                    {tHome('stats.courses')}
-                  </div>
-
-                  {/* Description */}
-                  <div className="mt-3 text-sm text-gray-500">
-                    {locale === 'zh' ? '涵盖各个领域' : 'Covering all fields'}
-                  </div>
-                </div>
-              </Link>
-
-              {/* Categories Stat */}
-              <Link
-                href={`/${locale}/courses`}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-purple-200 hover:-translate-y-1"
-              >
-                {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-purple-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-
-                  {/* Number */}
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-5xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
-                      {totalCategories}
-                    </span>
-                  </div>
-
-                  {/* Label */}
-                  <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
-                    {tHome('stats.subjects')}
-                  </div>
-
-                  {/* Description */}
-                  <div className="mt-3 text-sm text-gray-500">
-                    {locale === 'zh' ? '专业分类体系' : 'Professional categories'}
-                  </div>
-                </div>
-              </Link>
-
-              {/* Universities Stat */}
-              <Link
-                href={`/${locale}/universities`}
-                className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-gray-100 hover:border-green-200 hover:-translate-y-1"
-              >
-                {/* Gradient Background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-green-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                    </svg>
-                  </div>
-
-                  {/* Number */}
-                  <div className="flex items-baseline gap-2 mb-3">
-                    <span className="text-5xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
-                      {TOTAL_UNIVERSITIES}
-                    </span>
-                  </div>
-
-                  {/* Label */}
-                  <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
-                    {tHome('stats.universities')}
-                  </div>
-
-                  {/* Description */}
-                  <div className="mt-3 text-sm text-gray-500">
-                    {locale === 'zh' ? '全球顶尖院校' : 'Top global universities'}
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center mt-12">
-              <Link
-                href={`/${locale}/courses`}
-                className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {locale === 'zh' ? '开始学习' : 'Start Learning'}
-                  </span>
-                  <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Tutorial Section */}
-        <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-purple-50 relative overflow-hidden">
-          {/* Background Elements */}
-          <div className="absolute inset-0 opacity-40">
-            <div className="absolute top-20 left-10 w-32 h-32 bg-indigo-200/20 rounded-full blur-2xl"></div>
-            <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-200/20 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-200/20 rounded-full blur-2xl"></div>
-          </div>
-
-          {/* Floating Icons Background */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-10 left-10 text-6xl opacity-10 animate-float-slow">💻</div>
-            <div className="absolute top-20 right-20 text-4xl opacity-10 animate-float-delayed">📚</div>
-            <div className="absolute bottom-20 left-1/3 text-5xl opacity-10 animate-float">🎯</div>
-            <div className="absolute top-1/2 right-1/4 text-6xl opacity-10 animate-float-delayed">🚀</div>
-          </div>
-
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl mb-6 shadow-lg">
-                <span className="text-3xl">🌱</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                  {tTutorial('title').split(' ')[0]}
-                </span>
-                <br />
-                <span className="text-gray-900">
-                  {tTutorial('title').split(' ').slice(1).join(' ')}
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                {tTutorial('subtitle')}
-              </p>
-            </div>
-
-            {/* Learning Path Container */}
-            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 md:p-16 relative overflow-hidden">
-              {/* Background pattern */}
-              <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                  backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Cpath d='M0 15h30v1H0zM0 0h1v30H0zM14 0h1v30h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-                }}></div>
-              </div>
-
-              {/* Decorative gradient */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-100/20 to-purple-100/20 rounded-full blur-3xl"></div>
-
-              <div className="relative z-10">
-                <div className="text-center mb-12">
-                  <h3 className="text-3xl font-bold text-gray-900 mb-3">
-                    {locale === 'zh' ? '学习路径' : 'Learning Path'}
-                  </h3>
-                  <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-                    {locale === 'zh' ? '从基础到进阶，循序渐进地掌握计算机科学核心知识' : 'Master computer science fundamentals step by step'}
-                  </p>
-                </div>
-
-                <div className="py-8 px-4">
-                  <LearningPathFlow
-                    steps={[
-                      {
-                        title: tTutorial('sections.essential_tools.title'),
-                      },
-                      {
-                        title: tTutorial('sections.mathematical_foundations.title'),
-                      },
-                      {
-                        title: tTutorial('sections.programming_fundamentals.title'),
-                      },
-                      {
-                        title: tTutorial('sections.computer_systems.title'),
-                      },
-                      {
-                        title: tTutorial('sections.algorithms_theory.title'),
-                      },
-                      {
-                        title: tTutorial('sections.machine_learning_ai.title'),
-                      },
-                      {
-                        title: tTutorial('sections.specialized_topics.title'),
-                      }
-                    ]}
-                  />
-                </div>
-              </div>
-
-              {/* CTA Section */}
-              <div className="mt-12 text-center">
-                <div className="mb-6">
-                  <p className="text-gray-600 mb-4">
-                    {locale === 'zh' ? '准备好开始你的学习之旅了吗？' : 'Ready to start your learning journey?'}
-                  </p>
-                  <Link
-                    href={`/${locale}/tutorial`}
-                    className="group relative inline-flex items-center gap-3 px-12 py-6 bg-gradient-to-r from-white via-white to-indigo-50 text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-indigo-500/20 border-2 border-white/50 hover:border-indigo-200/50 backdrop-blur-sm overflow-hidden"
-                  >
-                    <span className="relative z-10 flex items-center">
-                      <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        {locale === 'zh' ? '开始学习' : 'Start Learning'}
+                      <br />
+                      <span className="text-white">
+                        {tHome('hero.title').split(' ').slice(1).join(' ')}
                       </span>
-                      <svg className="w-6 h-6 ml-3 text-indigo-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                      </svg>
-                    </span>
+                    </h1>
 
-                    {/* Hover gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    {/* Subtitle */}
+                    <p className="text-xl md:text-2xl text-blue-200 font-light max-w-2xl">
+                      {tHome('hero.subtitle')}
+                    </p>
 
-                    {/* Shimmer effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                  </Link>
-                </div>
+                    {/* Description */}
+                    <p className="text-lg text-gray-300 max-w-2xl leading-relaxed">
+                      {tHome('hero.description')}
+                    </p>
 
-                {/* Alternative CTA for minimal design */}
-                <div className="flex justify-center">
-                  <Link
-                    href={`/${locale}/tutorial`}
-                    className="group relative inline-flex items-center justify-center w-16 h-16 bg-white border-2 border-indigo-200 text-indigo-600 rounded-full hover:bg-indigo-600 hover:text-white transition-all duration-300 hover:scale-110 hover:shadow-lg"
-                  >
-                    <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            </div>
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                      <Link
+                        href={`/${locale}/courses`}
+                        className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
+                      >
+                        <span className="relative z-10 flex items-center">
+                          <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            {tHome('hero.cta')}
+                          </span>
+                          <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </span>
 
-            {/* Feature Pills */}
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
-              <div className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium">
-                {locale === 'zh' ? '循序渐进' : 'Step-by-Step'}
-              </div>
-              <div className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                {locale === 'zh' ? '实践导向' : 'Practice-Oriented'}
-              </div>
-              <div className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                {locale === 'zh' ? '完全免费' : 'Completely Free'}
-              </div>
-              <div className="px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                {locale === 'zh' ? '社区支持' : 'Community Support'}
-              </div>
-            </div>
-          </div>
-        </section>
+                        {/* Hover gradient overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-        {/* Popular Courses Section */}
-        <PopularCourses courses={popularCourses} locale={locale} />
+                        {/* Shimmer effect on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                      </Link>
 
-        {/* Universities Section */}
-        <section className="relative py-20 bg-gradient-to-br from-indigo-50 via-white to-purple-50 overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div className="absolute top-10 right-10 w-64 h-64 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl animate-float-delayed"></div>
-            <div className="absolute bottom-10 left-1/3 w-64 h-64 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl animate-float-slow"></div>
-          </div>
-
-          {/* Floating educational icons */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-20 text-6xl opacity-20 animate-float-slow">🎓</div>
-            <div className="absolute top-1/3 right-20 text-5xl opacity-20 animate-float">📚</div>
-            <div className="absolute bottom-20 left-1/4 text-6xl opacity-20 animate-float-delayed">🏛️</div>
-            <div className="absolute top-1/2 left-1/3 text-5xl opacity-20 animate-float">⭐</div>
-          </div>
-
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-full mb-6">
-                <span className="text-indigo-700 text-sm font-semibold">🎓 Top Universities</span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-900 via-purple-800 to-pink-800 bg-clip-text text-transparent mb-6">
-                {tHome('universities.title')}
-              </h2>
-
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                {tHome('universities.subtitle')}
-              </p>
-            </div>
-
-            {/* Universities Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {universities.map((university, index) => (
-                <div
-                  key={index}
-                  className="group relative"
-                >
-                  {/* University Card */}
-                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/50 hover:border-indigo-200/50 overflow-hidden">
-                    {/* Background gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                    {/* Number Badge */}
-                    <div className="absolute top-6 right-6 w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      {index + 1}
-                    </div>
-
-                    <div className="relative">
-                      {/* University Icon */}
-                      <div className="mb-6">
-                        <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
-                          {university.icon}
-                        </div>
-                      </div>
-
-                      {/* University Name */}
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors duration-300 leading-tight">
-                        {university.name}
-                      </h3>
-
-                      {/* Description placeholder */}
-                      <p className="text-gray-600 text-sm leading-relaxed mb-6">
-                        {locale === 'zh'
-                          ? `${university.name} 是全球顶尖的计算机科学教育和研究机构，培养了无数优秀的科技人才。`
-                          : `${university.name} is a world-leading institution for computer science education and research, nurturing countless talented tech professionals.`
-                        }
-                      </p>
-
-                      {/* Stats */}
-                      <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-indigo-600">{15 + index * 2}</div>
-                          <div className="text-xs text-gray-500">{locale === 'zh' ? '课程' : 'Courses'}</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-purple-600">{8 + index}</div>
-                          <div className="text-xs text-gray-500">{locale === 'zh' ? '教授' : 'Professors'}</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-lg font-bold text-pink-600">{2000 + index * 500}</div>
-                          <div className="text-xs text-gray-500">{locale === 'zh' ? '学生' : 'Students'}</div>
-                        </div>
-                      </div>
-
-                      {/* Explore Button */}
                       <Link
                         href={`/${locale}/universities`}
-                        className="group/btn inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold"
+                        className="group relative inline-flex items-center px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white font-bold text-lg rounded-2xl hover:bg-white/20 hover:border-white/50 transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl overflow-hidden"
                       >
-                        <span>{tHome('universities.learnMore')}</span>
-                        <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                        <span className="relative z-10 flex items-center">
+                          {tHome('universities.title')}
+                          <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                          </svg>
+                        </span>
+
+                        {/* Subtle shimmer effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
                       </Link>
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="flex items-center gap-6 pt-6">
+                      <span className="text-sm text-gray-400">{locale === 'zh' ? '关注我们' : 'Follow us'}</span>
+                      <div className="flex gap-3">
+                        <Link
+                          href="https://github.com/moutsea?tab=repositories"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-200 group border border-white/20"
+                        >
+                          <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                          </svg>
+                        </Link>
+
+                        <Link
+                          href="mailto:cfjwlchangji@gmail.com"
+                          className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/20 transition-all duration-200 group border border-white/20"
+                        >
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Content - Visual Elements */}
+                  <div className="relative hidden lg:block">
+                    <div className="relative">
+                      {/* Floating Cards */}
+                      <div className="absolute top-8 -left-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">CS</div>
+                            <div>
+                              <div className="text-sm font-semibold">{locale === 'zh' ? '数据结构' : 'Data Structures'}</div>
+                              <div className="text-xs text-gray-300">{locale === 'zh' ? '基础课程' : 'Foundation'}</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                            <div className="flex gap-1">
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="absolute top-32 right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float-delayed">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">ML</div>
+                            <div>
+                              <div className="text-sm font-semibold">{locale === 'zh' ? '机器学习' : 'Machine Learning'}</div>
+                              <div className="text-xs text-gray-300">{locale === 'zh' ? '高级课程' : 'Advanced'}</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                            <div className="flex gap-1">
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="absolute bottom-8 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">AI</div>
+                            <div>
+                              <div className="text-sm font-semibold">{locale === 'zh' ? '人工智能' : 'Artificial Intelligence'}</div>
+                              <div className="text-xs text-gray-300">{locale === 'zh' ? '前沿领域' : 'Cutting-edge'}</div>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                            <div className="flex gap-1">
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Central Glow */}
+                        <div className="w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl mx-auto"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ),
+            'text-white'
+          )}
 
-            {/* Explore All Universities Button */}
-            <div className="text-center mt-16">
-              <Link
-                href={`/${locale}/universities`}
-                className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-indigo-50 text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-indigo-500/20 border-2 border-white/50 hover:border-indigo-200/50 backdrop-blur-sm overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                    {locale === 'zh' ? '探索所有大学' : 'Explore All Universities'}
-                  </span>
-                  <svg className="w-6 h-6 ml-3 text-indigo-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-slate-50 overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl animate-float"></div>
-            <div className="absolute top-10 right-10 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-xl animate-float-delayed"></div>
-            <div className="absolute bottom-10 left-1/3 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl animate-float-slow"></div>
-          </div>
-
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23933ea' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0-11.046 8.954-20 20-20s20 8.954 20 20-8.954 20-20 20-20-8.954-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
-
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Section Header */}
-            <div className="text-center mb-20">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-green-100 rounded-full mb-6">
-                <span className="text-blue-700 text-sm font-semibold">✨ Why Choose Us</span>
+          {renderSharedSection(
+            (
+              <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  {locale === 'zh' ? '学习平台数据' : 'Platform Statistics'}
+                </h2>
+                <p className="text-lg text-blue-100/80 max-w-2xl mx-auto">
+                  {locale === 'zh' ? '我们为全球学习者提供优质的计算机科学教育资源' : 'Providing quality computer science education for learners worldwide'}
+                </p>
               </div>
 
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-900 via-green-800 to-purple-800 bg-clip-text text-transparent mb-6">
-                Why Choose CS Study Hub?
-              </h2>
-
-              <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                {tHome('hero.description')}
-              </p>
-            </div>
-
-            {/* Features Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="group relative"
+              {/* Stats Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Courses Stat */}
+                <Link
+                  href={`/${locale}/courses`}
+                  className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-blue-200 hover:-translate-y-1.5"
                 >
-                  {/* Feature Card */}
-                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/50 hover:border-blue-200/50 overflow-hidden h-full">
-                    {/* Background gradient on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-green-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                  {/* Gradient Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/90 to-blue-100/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
 
-                    <div className="relative text-center h-full flex flex-col">
-                      {/* Feature Icon */}
-                      <div className="mb-6">
-                        <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-green-100 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl mx-auto">
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-blue-500/30">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                      </svg>
+                    </div>
+
+                    {/* Number */}
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-5xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        {totalCourses}
+                      </span>
+                      <span className="text-2xl font-semibold text-blue-600">+</span>
+                    </div>
+
+                    {/* Label */}
+                    <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                      {tHome('stats.courses')}
+                    </div>
+
+                    {/* Description */}
+                    <div className="mt-3 text-sm text-gray-500">
+                      {locale === 'zh' ? '涵盖各个领域' : 'Covering all fields'}
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Categories Stat */}
+                <Link
+                  href={`/${locale}/courses`}
+                  className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-purple-200 hover:-translate-y-1.5"
+                >
+                  {/* Gradient Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50/90 to-purple-100/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-purple-500/30">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                      </svg>
+                    </div>
+
+                    {/* Number */}
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-5xl font-bold text-gray-900 group-hover:text-purple-600 transition-colors">
+                        {totalCategories}
+                      </span>
+                    </div>
+
+                    {/* Label */}
+                    <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                      {tHome('stats.subjects')}
+                    </div>
+
+                    {/* Description */}
+                    <div className="mt-3 text-sm text-gray-500">
+                      {locale === 'zh' ? '专业分类体系' : 'Professional categories'}
+                    </div>
+                  </div>
+                </Link>
+
+                {/* Universities Stat */}
+                <Link
+                  href={`/${locale}/universities`}
+                  className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-green-200 hover:-translate-y-1.5"
+                >
+                  {/* Gradient Background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50/90 to-green-100/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-green-500/30">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+
+                    {/* Number */}
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <span className="text-5xl font-bold text-gray-900 group-hover:text-green-600 transition-colors">
+                        {TOTAL_UNIVERSITIES}
+                      </span>
+                    </div>
+
+                    {/* Label */}
+                    <div className="text-lg font-medium text-gray-600 group-hover:text-gray-900 transition-colors">
+                      {tHome('stats.universities')}
+                    </div>
+
+                    {/* Description */}
+                    <div className="mt-3 text-sm text-gray-500">
+                      {locale === 'zh' ? '全球顶尖院校' : 'Top global universities'}
+                    </div>
+                  </div>
+                </Link>
+              </div>
+
+              {/* Bottom CTA */}
+              <div className="text-center mt-12">
+                <Link
+                  href={`/${locale}/courses`}
+                  className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                      {locale === 'zh' ? '开始学习' : 'Start Learning'}
+                    </span>
+                    <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </span>
+
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </Link>
+              </div>
+              </div>
+            ),
+            'pt-32 pb-28 text-white'
+          )}
+
+          {/* Tutorial Section - Perfect Flow */}
+          {renderSharedSection(
+            (
+              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                  <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+                    {tTutorial('title').split(' ')[0]}
+                  </span>
+                  <br />
+                  <span className="text-white/90">
+                    {tTutorial('title').split(' ').slice(1).join(' ')}
+                  </span>
+                </h2>
+                <p className="text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
+                  {tTutorial('subtitle')}
+                </p>
+              </div>
+
+              {/* Learning Path Container */}
+              <div className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-8 md:p-16 relative overflow-hidden">
+                {/* Background pattern */}
+                <div className="absolute inset-0 opacity-10">
+                  <div className="absolute inset-0" style={{
+                    backgroundImage: `url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Cpath d='M0 15h30v1H0zM0 0h1v30H0zM14 0h1v30h-1z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+                  }}></div>
+                </div>
+
+                {/* Decorative gradient */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-600/20 to-purple-600/20 rounded-full blur-3xl"></div>
+
+                <div className="relative z-10">
+                  <div className="text-center mb-12">
+                    <h3 className="text-3xl font-bold text-white mb-3">
+                      {locale === 'zh' ? '学习路径' : 'Learning Path'}
+                    </h3>
+                    <p className="text-blue-100/80 max-w-2xl mx-auto text-lg">
+                      {locale === 'zh' ? '从基础到进阶，循序渐进地掌握计算机科学核心知识' : 'Master computer science fundamentals step by step'}
+                    </p>
+                  </div>
+
+                  <div className="py-8 px-4">
+                    <LearningPathFlow
+                      steps={[
+                        {
+                          title: tTutorial('sections.essential_tools.title'),
+                        },
+                        {
+                          title: tTutorial('sections.mathematical_foundations.title'),
+                        },
+                        {
+                          title: tTutorial('sections.programming_fundamentals.title'),
+                        },
+                        {
+                          title: tTutorial('sections.computer_systems.title'),
+                        },
+                        {
+                          title: tTutorial('sections.algorithms_theory.title'),
+                        },
+                        {
+                          title: tTutorial('sections.machine_learning_ai.title'),
+                        },
+                        {
+                          title: tTutorial('sections.specialized_topics.title'),
+                        }
+                      ]}
+                    />
+                  </div>
+                </div>
+
+                {/* CTA Section */}
+                <div className="mt-12 text-center">
+                  <div className="mb-6">
+                    <p className="text-blue-100/80 mb-4">
+                      {locale === 'zh' ? '准备好开始你的学习之旅了吗？' : 'Ready to start your learning journey?'}
+                    </p>
+                    <Link
+                      href={`/${locale}/tutorial`}
+                      className="group relative inline-flex items-center gap-3 px-12 py-6 bg-white text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-indigo-500/30 border-2 border-white/70 overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center">
+                        <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                          {locale === 'zh' ? '开始学习' : 'Start Learning'}
+                        </span>
+                        <svg className="w-6 h-6 ml-3 text-indigo-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                        </svg>
+                      </span>
+
+                      <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </Link>
+                  </div>
+
+                  {/* Alternative CTA for minimal design */}
+                  <div className="flex justify-center">
+                    <Link
+                      href={`/${locale}/tutorial`}
+                      className="group relative inline-flex items-center justify-center w-16 h-16 bg-white/10 border-2 border-white/20 text-white rounded-full hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                    >
+                      <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Feature Pills */}
+              <div className="mt-12 flex flex-wrap justify-center gap-3">
+                <div className="px-4 py-2 bg-white/10 border border-white/10 text-white rounded-full text-sm font-medium">
+                  {locale === 'zh' ? '循序渐进' : 'Step-by-Step'}
+                </div>
+                <div className="px-4 py-2 bg-white/10 border border-white/10 text-white rounded-full text-sm font-medium">
+                  {locale === 'zh' ? '实践导向' : 'Practice-Oriented'}
+                </div>
+                <div className="px-4 py-2 bg-white/10 border border-white/10 text-white rounded-full text-sm font-medium">
+                  {locale === 'zh' ? '完全免费' : 'Completely Free'}
+                </div>
+                <div className="px-4 py-2 bg-white/10 border border-white/10 text-white rounded-full text-sm font-medium">
+                  {locale === 'zh' ? '社区支持' : 'Community Support'}
+                </div>
+              </div>
+              </div>
+            ),
+            'py-24 text-white'
+          )}
+
+          {/* Popular Courses Section */}
+          {renderSharedSection(
+            (
+              <PopularCourses courses={popularCourses} locale={locale} />
+            ),
+            'py-0 text-white'
+          )}
+
+          {/* Universities Section */}
+          {renderSharedSection(
+            (
+              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/15 rounded-full mb-6">
+                  <span className="text-white/90 text-sm font-semibold">🎓 Top Universities</span>
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  {tHome('universities.title')}
+                </h2>
+
+                <p className="text-xl text-blue-100/80 max-w-4xl mx-auto leading-relaxed">
+                  {tHome('universities.subtitle')}
+                </p>
+              </div>
+
+              {/* Universities Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {universities.map((university, index) => (
+                  <div
+                    key={index}
+                    className="group relative"
+                  >
+                    {/* University Card */}
+                    <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/50 hover:border-indigo-200/50 overflow-hidden">
+                      {/* Background gradient on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                      {/* Number Badge */}
+                      <div className="absolute top-6 right-6 w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
+                        {index + 1}
+                      </div>
+
+                      <div className="relative">
+                        {/* University Icon */}
+                        <div className="mb-6">
+                          <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
+                            {university.icon}
+                          </div>
+                        </div>
+
+                        {/* University Name */}
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors duration-300 leading-tight">
+                          {university.name}
+                        </h3>
+
+                        {/* Description placeholder */}
+                        <p className="text-gray-600 text-sm leading-relaxed mb-6">
+                          {locale === 'zh'
+                            ? `${university.name} 是全球顶尖的计算机科学教育和研究机构，培养了无数优秀的科技人才。`
+                            : `${university.name} is a world-leading institution for computer science education and research, nurturing countless talented tech professionals.`
+                          }
+                        </p>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-3 gap-4 mb-6">
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-indigo-600">{15 + index * 2}</div>
+                            <div className="text-xs text-gray-500">{locale === 'zh' ? '课程' : 'Courses'}</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-purple-600">{8 + index}</div>
+                            <div className="text-xs text-gray-500">{locale === 'zh' ? '教授' : 'Professors'}</div>
+                          </div>
+                          <div className="text-center">
+                            <div className="text-lg font-bold text-pink-600">{2000 + index * 500}</div>
+                            <div className="text-xs text-gray-500">{locale === 'zh' ? '学生' : 'Students'}</div>
+                          </div>
+                        </div>
+
+                        {/* Explore Button */}
+                        <Link
+                          href={`/${locale}/universities`}
+                          className="group/btn inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold"
+                        >
+                          <span>{tHome('universities.learnMore')}</span>
+                          <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Explore All Universities Button */}
+              <div className="text-center mt-16">
+                <Link
+                  href={`/${locale}/universities`}
+                  className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-indigo-50 text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-indigo-500/20 border-2 border-white/50 hover:border-indigo-200/50 backdrop-blur-sm overflow-hidden"
+                >
+                  <span className="relative z-10 flex items-center">
+                    <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      {locale === 'zh' ? '探索所有大学' : 'Explore All Universities'}
+                    </span>
+                    <svg className="w-6 h-6 ml-3 text-indigo-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </span>
+
+                  {/* Hover gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-indigo-50/80 via-purple-50/80 to-pink-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                </Link>
+              </div>
+              </div>
+            ),
+            'py-20 text-white'
+          )}
+
+          {/* Features & CTA Section */}
+          {renderSharedSection(
+            (
+              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+              <div>
+                <div className="text-center mb-14">
+                  <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm font-semibold uppercase tracking-[0.2em] mb-6">
+                    ✨ {locale === 'zh' ? '选择我们的理由' : 'Why Choose Us'}
+                  </div>
+                  <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Why Choose CS Study Hub?
+                  </h2>
+                  <p className="text-lg md:text-xl text-blue-100/80 max-w-3xl mx-auto leading-relaxed">
+                    {tHome('hero.description')}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {features.map((feature, index) => (
+                    <div key={index} className="rounded-3xl border border-white/10 bg-white/5 px-6 py-8 text-center shadow-2xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20">
+                      <div className="mb-6 flex justify-center">
+                        <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
                           {feature.icon}
                         </div>
                       </div>
-
-                      {/* Feature Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300 leading-tight">
+                      <h3 className="text-xl font-semibold mb-3 text-white">
                         {feature.title}
                       </h3>
-
-                      {/* Feature Description */}
-                      <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                      <p className="text-sm text-blue-100/80 leading-relaxed mb-6">
                         {feature.description}
                       </p>
-
-                      {/* Learn More Link */}
                       <Link
                         href={`/${locale}/courses`}
-                        className="group/btn inline-flex items-center justify-center text-blue-600 hover:text-blue-800 transition-colors duration-300 font-semibold text-sm mx-auto"
+                        className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-white/90 transition-all duration-300 hover:bg-white/15"
                       >
-                        <span>Learn More</span>
-                        <svg className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <span>{locale === 'zh' ? '了解更多' : 'Learn More'}</span>
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
                       </Link>
                     </div>
+                  ))}
+                </div>
+
+                <div className="mt-12 flex flex-wrap justify-center gap-3">
+                  {[
+                    { text: locale === 'zh' ? '目标导向学习' : 'Goal-Oriented Learning', icon: '🎯' },
+                    { text: locale === 'zh' ? '快速技能提升' : 'Rapid Skill Development', icon: '🚀' },
+                    { text: locale === 'zh' ? '专家认可' : 'Expert Recognition', icon: '🌟' },
+                    { text: locale === 'zh' ? '创新教学方法' : 'Innovative Teaching Methods', icon: '💡' }
+                  ].map((pill, idx) => (
+                    <div key={idx} className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 text-sm font-semibold backdrop-blur">
+                      {pill.icon} {pill.text}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-3xl px-6 py-8 md:px-10 md:py-10 backdrop-blur-xl shadow-2xl">
+                <div className="grid gap-10 lg:grid-cols-[3fr_2fr] items-center">
+                  <div>
+                    <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs uppercase tracking-[0.2em] text-blue-100 mb-6">
+                      {locale === 'zh' ? '开始你的旅程' : 'Start Your Journey'}
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
+                      {tHome('cta.title')}
+                    </h2>
+                    <p className="text-base md:text-lg text-blue-100/90 leading-relaxed">
+                      {tHome('cta.subtitle')}
+                    </p>
+                    <div className="mt-6 flex flex-wrap gap-3 text-sm text-blue-100/80">
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                        <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                        {locale === 'zh' ? '即时加入' : 'Instant Access'}
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                        <span className="w-2 h-2 rounded-full bg-yellow-300"></span>
+                        {locale === 'zh' ? '100% 免费' : '100% Free'}
+                      </div>
+                      <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10">
+                        <span className="w-2 h-2 rounded-full bg-pink-300"></span>
+                        {locale === 'zh' ? '社区支持' : 'Community Support'}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/10 border border-white/20 rounded-3xl p-6 md:p-8 shadow-2xl space-y-6">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.2em] text-blue-100/80 mb-2">
+                        {locale === 'zh' ? '下一步' : 'Next Step'}
+                      </p>
+                      <Link
+                        href={`/${locale}/courses`}
+                        className="group relative inline-flex items-center justify-between w-full gap-3 px-6 py-4 bg-white text-blue-700 font-extrabold rounded-2xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-0.5"
+                      >
+                        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                          {tHome('cta.button')}
+                        </span>
+                        <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-100 text-blue-600 transition-transform duration-300 group-hover:translate-x-1">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </span>
+                      </Link>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 text-center text-xs text-blue-100/80">
+                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+                        <div className="text-xl font-bold text-white mb-1">24/7</div>
+                        <p>{locale === 'zh' ? '支持' : 'Support'}</p>
+                      </div>
+                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+                        <div className="text-xl font-bold text-white mb-1">100%</div>
+                        <p>{locale === 'zh' ? '免费' : 'Free'}</p>
+                      </div>
+                      <div className="p-3 rounded-2xl bg-white/5 border border-white/10">
+                        <div className="text-xl font-bold text-white mb-1">5k+</div>
+                        <p>{locale === 'zh' ? '学习者' : 'Learners'}</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
-            </div>
 
-            {/* Additional Feature Pills */}
-            <div className="mt-20 flex flex-wrap justify-center gap-4">
-              <div className="px-6 py-3 bg-gradient-to-r from-blue-100 to-blue-200 text-blue-700 rounded-full text-sm font-semibold shadow-md">
-                🎯 {locale === 'zh' ? '目标导向学习' : 'Goal-Oriented Learning'}
+
               </div>
-              <div className="px-6 py-3 bg-gradient-to-r from-green-100 to-green-200 text-green-700 rounded-full text-sm font-semibold shadow-md">
-                🚀 {locale === 'zh' ? '快速技能提升' : 'Rapid Skill Development'}
               </div>
-              <div className="px-6 py-3 bg-gradient-to-r from-purple-100 to-purple-200 text-purple-700 rounded-full text-sm font-semibold shadow-md">
-                🌟 {locale === 'zh' ? '专家认可' : 'Expert Recognition'}
-              </div>
-              <div className="px-6 py-3 bg-gradient-to-r from-pink-100 to-pink-200 text-pink-700 rounded-full text-sm font-semibold shadow-md">
-                💡 {locale === 'zh' ? '创新教学方法' : 'Innovative Teaching Methods'}
-              </div>
-            </div>
-
-            {/* Bottom CTA */}
-            <div className="text-center mt-16">
-              <Link
-                href={`/${locale}/courses`}
-                className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  <span className="bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                    {locale === 'zh' ? '开始学习之旅' : 'Start Your Learning Journey'}
-                  </span>
-                  <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-green-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-green-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="relative py-24 bg-gradient-to-br from-blue-600 via-indigo-700 to-purple-800 text-white overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-white/10 rounded-full mix-blend-screen blur-xl animate-float"></div>
-            <div className="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full mix-blend-screen blur-xl animate-float-delayed"></div>
-            <div className="absolute bottom-10 left-1/3 w-64 h-64 bg-white/10 rounded-full mix-blend-screen blur-xl animate-float-slow"></div>
-          </div>
-
-          {/* Background pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm0 0c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-          </div>
-
-          <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            {/* Main Content */}
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
-                {tHome('cta.title')}
-              </h2>
-              <p className="text-xl md:text-2xl text-blue-100 mb-12 leading-relaxed max-w-3xl mx-auto">
-                {tHome('cta.subtitle')}
-              </p>
-              <Link
-                href={`/${locale}/courses`}
-                className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center">
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    {tHome('cta.button')}
-                  </span>
-                  <svg className="w-6 h-6 ml-3 text-blue-600 group-hover:text-purple-600 group-hover:translate-x-1 transition-all duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </span>
-
-                {/* Hover gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-50/80 via-purple-50/80 to-indigo-50/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                {/* Shimmer effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </Link>
-            </div>
-
-            {/* Social Proof/Trust Indicators */}
-            <div className="mt-24 flex flex-wrap justify-center items-center gap-6 text-white/90">
-              <div className="group relative inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:bg-white/20 hover:border-white/30">
-                <div className="w-4 h-4 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center mr-3 shadow-lg"></div>
-                <span className="relative z-10">
-                  {locale === 'zh' ? '免费注册' : 'Free'}
-                </span>
-                <span className="text-xs font-medium ml-1">
-                  {locale === 'zh' ? '开始' : 'Start'}
-                </span>
-              </div>
-
-              <div className="group relative inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:bg-white/20 hover:border-white/30">
-                <div className="w-4 h-4 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-lg flex items-center justify-center mr-3 shadow-lg"></div>
-                <span className="relative z-10">
-                  {locale === 'zh' ? '即时访问' : 'Instant'}
-                </span>
-                <span className="text-xs font-medium ml-1">
-                  {locale === 'zh' ? '学习' : 'Learning'}
-                </span>
-              </div>
-
-              <div className="group relative inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl text-white font-bold text-lg transition-all duration-500 transform hover:scale-105 hover:bg-white/20 hover:border-white/30">
-                <div className="w-4 h-4 bg-gradient-to-br from-pink-400 to-pink-500 rounded-lg flex items-center justify-center mr-3 shadow-lg"></div>
-                <span className="relative z-10">
-                  {locale === 'zh' ? '24/7' : '24/7'}
-                </span>
-                <span className="text-xs font-medium ml-1">
-                  {locale === 'zh' ? '支持' : 'Support'}
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
+            ),
+            'py-20 text-white'
+          )}
+      </ImmersivePage>
       <Footer locale={locale} />
     </div>
   )

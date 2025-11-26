@@ -87,7 +87,8 @@ export default function Footer({ locale }: { locale: string }) {
           <div>
             <h4 className="text-lg font-semibold mb-4">We Also Build</h4>
             <ul className="space-y-2">
-              <li><Link href="https://www.claudeide.net" className="text-gray-300 hover:text-white">Claude Code Ide</Link></li>
+              <li><Link href={`https://www.claudeide.net/${locale}`} className="text-gray-300 hover:text-white">Claude Code Ide</Link></li>
+              <li><Link href={`https://www.codeilab.com/${locale}`} className="text-gray-300 hover:text-white">Codex Lab</Link></li>
             </ul>
           </div>
         </div>
