@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, HTMLAttributes } from 'react'
 
 interface ImmersivePageProps {
   children: ReactNode
@@ -31,14 +31,14 @@ export function ImmersivePage({
   )
 }
 
-interface ImmersiveSectionProps {
+interface ImmersiveSectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode
   className?: string
 }
 
-export function ImmersiveSection({ children, className = '' }: ImmersiveSectionProps) {
+export function ImmersiveSection({ children, className = '', ...rest }: ImmersiveSectionProps) {
   return (
-    <section className={`relative ${className}`}>
+    <section {...rest} className={`relative ${className}`}>
       {children}
     </section>
   )

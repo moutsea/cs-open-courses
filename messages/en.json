@@ -16,8 +16,10 @@
     "backToCourses": "Back to Courses",
     "loading": "Loading...",
     "categories": "Categories",
+    "category": "Category",
     "noCourses": "No courses found in this category",
     "allCategories": "All Categories",
+    "selectedCategory": "Selected Category",
     "coursesCount": "courses",
     "subcategories": "Subcategories:",
     "more": "more"

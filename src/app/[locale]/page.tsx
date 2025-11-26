@@ -6,15 +6,31 @@ import PopularCourses from '@/components/PopularCourses'
 import LearningPathFlow from '@/components/LearningPathFlow'
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import Link from 'next/link'
+import {
+  BadgeDollarSign,
+  BookOpen,
+  Building2,
+  Clock3,
+  Crosshair,
+  GraduationCap,
+  Landmark,
+  Lightbulb,
+  Palette,
+  Rocket,
+  Sparkles,
+  Target,
+  FlaskConical,
+  Layers
+} from 'lucide-react'
 import './hero-animations.css'
 
 const universities = [
-  { name: "MIT", icon: "🏛️" },
-  { name: "Stanford", icon: "🎯" },
-  { name: "Harvard", icon: "📖" },
-  { name: "Berkeley", icon: "🌉" },
-  { name: "CMU", icon: "🎨" },
-  { name: "Princeton", icon: "🔬" }
+  { name: "MIT", Icon: Building2 },
+  { name: "Stanford", Icon: Target },
+  { name: "Harvard", Icon: BookOpen },
+  { name: "Berkeley", Icon: Landmark },
+  { name: "CMU", Icon: Palette },
+  { name: "Princeton", Icon: FlaskConical }
 ]
 
 // Real university count based on actual document analysis
@@ -27,7 +43,6 @@ const POPULAR_COURSES = [
     title: 'CS61A: Structure and Interpretation of Computer Programs',
     description: '伯克利CS系列入门课，强调程序抽象和原理，最终实现Scheme解释器',
     descriptionEn: 'First course in Berkeley CS61 series, emphasizes abstraction and program construction principles',
-    difficulty: '🌟🌟🌟',
     difficultyEn: 'Intermediate',
     duration: '50 小时',
     durationEn: '50 hours',
@@ -42,7 +57,6 @@ const POPULAR_COURSES = [
     title: 'CS61B: Data Structures and Algorithms',
     description: '数据结构与算法，14个Lab + 10个Homework + 3个Project，接触千行级工程代码',
     descriptionEn: 'Data structures and algorithms with 14 Labs, 10 Homework, and 3 Projects',
-    difficulty: '🌟🌟🌟',
     difficultyEn: 'Intermediate',
     duration: '60 小时',
     durationEn: '60 hours',
@@ -56,7 +70,6 @@ const POPULAR_COURSES = [
     title: 'CS189: Introduction to Machine Learning',
     description: '理论深入的机器学习入门课，开源所有homework代码和autograder',
     descriptionEn: 'Theoretical machine learning course with open source homework and autograder',
-    difficulty: '🌟🌟🌟🌟',
     difficultyEn: 'Advanced',
     duration: '100 小时',
     durationEn: '100 hours',
@@ -71,7 +84,6 @@ const POPULAR_COURSES = [
     titleEn: 'GAMES101: Introduction to Modern Computer Graphics',
     description: '国内知名图形学公开课，涵盖光栅化、几何表示、光线传播、动画模拟',
     descriptionEn: 'Popular graphics course covering rasterization, geometry, light transport, and animation',
-    difficulty: '🌟🌟🌟',
     difficultyEn: 'Intermediate',
     duration: '80 小时',
     durationEn: '80 hours',
@@ -85,7 +97,6 @@ const POPULAR_COURSES = [
     title: 'CS224n: Natural Language Processing',
     description: 'Chris Manning教授的NLP经典课程，覆盖词向量到Transformer的完整知识体系',
     descriptionEn: 'Classic NLP course by Chris Manning covering word vectors to Transformers',
-    difficulty: '🌟🌟🌟🌟',
     difficultyEn: 'Advanced',
     duration: '80 小时',
     durationEn: '80 hours',
@@ -99,7 +110,6 @@ const POPULAR_COURSES = [
     title: 'MIT6.824: Distributed System',
     description: 'MIT PDOS实验室出品，基于论文精读的分布式系统课程，4个高难度Project',
     descriptionEn: 'MIT PDOS Lab distributed systems course with paper reading and challenging projects',
-    difficulty: '🌟🌟🌟🌟🌟🌟',
     difficultyEn: 'Expert',
     duration: '200 小时',
     durationEn: '200 hours',
@@ -149,23 +159,30 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     {
       title: tHome('features.universityQuality.title'),
       description: tHome('features.universityQuality.description'),
-      icon: "🎓"
+      Icon: GraduationCap
     },
     {
       title: tHome('features.comprehensiveCoverage.title'),
       description: tHome('features.comprehensiveCoverage.description'),
-      icon: "📚"
+      Icon: Layers
     },
     {
       title: tHome('features.completelyFree.title'),
       description: tHome('features.completelyFree.description'),
-      icon: "🆓"
+      Icon: BadgeDollarSign
     },
     {
       title: tHome('features.selfPaced.title'),
       description: tHome('features.selfPaced.description'),
-      icon: "⏰"
+      Icon: Clock3
     }
+  ]
+
+  const highlightPills = [
+    { zh: '目标导向学习', en: 'Goal-Oriented Learning', Icon: Crosshair },
+    { zh: '快速技能提升', en: 'Rapid Skill Development', Icon: Rocket },
+    { zh: '专家认可', en: 'Expert Recognition', Icon: Sparkles },
+    { zh: '创新教学方法', en: 'Innovative Teaching Methods', Icon: Lightbulb }
   ]
 
   return (
@@ -644,8 +661,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header */}
               <div className="text-center mb-16">
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 border border-white/15 rounded-full mb-6">
-                  <span className="text-white/90 text-sm font-semibold">🎓 Top Universities</span>
+                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/15 rounded-full mb-6 text-white/90 text-sm font-semibold">
+                  <GraduationCap className="w-4 h-4" aria-hidden="true" />
+                  <span>Top Universities</span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -677,9 +695,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       <div className="relative">
                         {/* University Icon */}
                         <div className="mb-6">
-                          <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
-                            {university.icon}
-                          </div>
+                          {(() => {
+                            const UniversityIcon = university.Icon
+                            return (
+                              <div className="w-20 h-20 bg-gradient-to-br from-indigo-100 to-purple-100 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl">
+                                <UniversityIcon className="w-10 h-10 text-indigo-600" aria-hidden="true" />
+                              </div>
+                            )
+                          })()}
                         </div>
 
                         {/* University Name */}
@@ -760,8 +783,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
               <div>
                 <div className="text-center mb-14">
-                  <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm font-semibold uppercase tracking-[0.2em] mb-6">
-                    ✨ {locale === 'zh' ? '选择我们的理由' : 'Why Choose Us'}
+                  <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm font-semibold uppercase tracking-[0.2em] mb-6">
+                    <Sparkles className="w-4 h-4" aria-hidden="true" />
+                    <span>{locale === 'zh' ? '选择我们的理由' : 'Why Choose Us'}</span>
                   </div>
                   <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
                     Why Choose CS Study Hub?
@@ -772,43 +796,45 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {features.map((feature, index) => (
-                    <div key={index} className="rounded-3xl border border-white/10 bg-white/5 px-6 py-8 text-center shadow-2xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20">
-                      <div className="mb-6 flex justify-center">
-                        <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center text-3xl shadow-lg shadow-blue-500/20">
-                          {feature.icon}
+                  {features.map((feature, index) => {
+                    const FeatureIcon = feature.Icon
+                    return (
+                      <div key={index} className="rounded-3xl border border-white/10 bg-white/5 px-6 py-8 text-center shadow-2xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20">
+                        <div className="mb-6 flex justify-center">
+                          <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                            <FeatureIcon className="w-8 h-8 text-white" aria-hidden="true" />
+                          </div>
                         </div>
+                        <h3 className="text-xl font-semibold mb-3 text-white">
+                          {feature.title}
+                        </h3>
+                        <p className="text-sm text-blue-100/80 leading-relaxed mb-6">
+                          {feature.description}
+                        </p>
+                        <Link
+                          href={`/${locale}/courses`}
+                          className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-white/90 transition-all duration-300 hover:bg-white/15"
+                        >
+                          <span>{locale === 'zh' ? '了解更多' : 'Learn More'}</span>
+                          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </Link>
                       </div>
-                      <h3 className="text-xl font-semibold mb-3 text-white">
-                        {feature.title}
-                      </h3>
-                      <p className="text-sm text-blue-100/80 leading-relaxed mb-6">
-                        {feature.description}
-                      </p>
-                      <Link
-                        href={`/${locale}/courses`}
-                        className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-white/90 transition-all duration-300 hover:bg-white/15"
-                      >
-                        <span>{locale === 'zh' ? '了解更多' : 'Learn More'}</span>
-                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </Link>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
 
                 <div className="mt-12 flex flex-wrap justify-center gap-3">
-                  {[
-                    { text: locale === 'zh' ? '目标导向学习' : 'Goal-Oriented Learning', icon: '🎯' },
-                    { text: locale === 'zh' ? '快速技能提升' : 'Rapid Skill Development', icon: '🚀' },
-                    { text: locale === 'zh' ? '专家认可' : 'Expert Recognition', icon: '🌟' },
-                    { text: locale === 'zh' ? '创新教学方法' : 'Innovative Teaching Methods', icon: '💡' }
-                  ].map((pill, idx) => (
-                    <div key={idx} className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 text-sm font-semibold backdrop-blur">
-                      {pill.icon} {pill.text}
-                    </div>
-                  ))}
+                  {highlightPills.map((pill, idx) => {
+                    const PillIcon = pill.Icon
+                    return (
+                      <div key={idx} className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-white/90 text-sm font-semibold backdrop-blur">
+                        <PillIcon className="w-4 h-4" aria-hidden="true" />
+                        <span>{locale === 'zh' ? pill.zh : pill.en}</span>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 

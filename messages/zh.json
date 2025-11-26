@@ -16,8 +16,10 @@
     "backToCourses": "返回课程列表",
     "loading": "加载中...",
     "categories": "分类",
+    "category": "分类",
     "noCourses": "该分类下暂无课程",
     "allCategories": "所有分类",
+    "selectedCategory": "当前分类",
     "coursesCount": "门课程",
     "subcategories": "子分类：",
     "more": "更多"

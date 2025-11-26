@@ -286,6 +286,11 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
         content={htmlContent}
         locale={locale}
         isFallback={courseContent.isFallback}
+        title={courseTitle}
+        categorySlug={path[0]}
+        subcategorySlug={path[1]}
+        hasEnglishVersion={courseContent.hasEnglishVersion}
+        hasChineseVersion={courseContent.hasChineseVersion}
       />
     </>
   );
