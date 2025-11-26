@@ -59,6 +59,14 @@ export default function Footer({ locale }: { locale: string }) {
             <ul className="space-y-2">
               <li><Link href={locale === 'en' ? '/' : `/${locale}`} className="text-gray-300 hover:text-white">Home</Link></li>
               <li><Link href={locale === 'en' ? '/courses' : `/${locale}/courses`} className="text-gray-300 hover:text-white">Courses</Link></li>
+              <li>
+                <Link
+                  href={locale === 'en' ? '/course/data-structures-algorithms/CS61B' : `/${locale}/course/data-structures-algorithms/CS61B`}
+                  className="text-gray-300 hover:text-white"
+                >
+                  CS61B
+                </Link>
+              </li>
               <li><Link href={locale === 'en' ? '/universities' : `/${locale}/universities`} className="text-gray-300 hover:text-white">Universities</Link></li>
               <li><Link href={locale === 'en' ? '/tutorial' : `/${locale}/tutorial`} className="text-gray-300 hover:text-white">Tutorial</Link></li>
               <li><Link href={locale === 'en' ? '/about' : `/${locale}/about`} className="text-gray-300 hover:text-white">About</Link></li>

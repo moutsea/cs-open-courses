@@ -69,6 +69,17 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
   const [total, setTotal] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
 
+  const formatDuration = (duration: CourseSearchIndex['duration']): string => {
+    if (!duration) return ''
+    if (typeof duration === 'object') {
+      if (duration.value) {
+        return `${duration.value} ${locale === 'zh' ? '小时' : 'hours'}`
+      }
+      return duration.originalText || ''
+    }
+    return duration
+  }
+
   useEffect(() => {
     const loadResults = async () => {
       setLoading(true)
@@ -96,18 +107,15 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
 
   if (loading) {
     return (
-      <div className="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="space-y-4">
-            {[...Array(3)].map((_, i) => (
-              <div key={i} className="bg-white rounded-lg shadow-sm p-6">
-                <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
-                <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-                <div className="h-4 bg-gray-200 rounded w-full"></div>
-              </div>
-            ))}
-          </div>
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="space-y-4">
+          {[...Array(3)].map((_, idx) => (
+            <div key={idx} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm animate-pulse">
+              <div className="h-5 w-2/3 rounded bg-gray-100 mb-3"></div>
+              <div className="h-4 w-full rounded bg-gray-100 mb-2"></div>
+              <div className="h-4 w-3/4 rounded bg-gray-100"></div>
+            </div>
+          ))}
         </div>
       </div>
     )
@@ -115,16 +123,15 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
 
   if (!query) {
     return (
-      <div className="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-        <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            {locale === 'zh' ? '请输入搜索关键词' : 'Please enter a search query'}
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="rounded-3xl border border-dashed border-gray-200 bg-white p-10 text-center shadow-sm">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-3">
+            {locale === 'zh' ? '请输入搜索关键词' : 'Start searching'}
           </h1>
-          <p className="text-gray-600 mb-4">
-            {locale === 'zh' 
-              ? '在搜索框中输入课程名称、大学或技术关键词来查找相关课程。'
-              : 'Enter course names, universities, or technical keywords in the search box to find relevant courses.'
-            }
+          <p className="text-gray-600">
+            {locale === 'zh'
+              ? '输入课程名称、大学或关键技术即可获得匹配结果。'
+              : 'Enter a course name, university, or keyword to see matching courses.'}
           </p>
         </div>
       </div>
@@ -133,18 +140,20 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
 
   if (results.length === 0) {
     return (
-      <div className="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-        <div className="bg-white rounded-lg shadow-sm p-8 text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">
-            {locale === 'zh' ? '未找到相关课程' : 'No courses found'}
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="rounded-3xl border border-gray-100 bg-white p-10 text-center shadow-sm">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-3">
+            {locale === 'zh' ? '未找到相关课程' : 'No matches found'}
           </h1>
-          <p className="text-gray-600 mb-4">
-            {locale === 'zh' 
-              ? `没有找到与 "${query}" 相关的课程。请尝试其他关键词。`
-              : `No courses found matching "${query}". Please try different keywords.`
-            }
+          <p className="text-gray-600 mb-6">
+            {locale === 'zh'
+              ? `没有找到与 “${query}” 匹配的课程，换个关键词试试？`
+              : `We couldn’t find results for “${query}”. Try another keyword?`}
           </p>
-          <Link href={`/${locale}/courses`} className="text-blue-600 hover:text-blue-800">
+          <Link
+            href={`/${locale}/courses`}
+            className="inline-flex items-center rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 transition"
+          >
             {locale === 'zh' ? '浏览所有课程' : 'Browse all courses'}
           </Link>
         </div>
@@ -153,161 +162,105 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
   }
 
   return (
-    <div className="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          {locale === 'zh' ? `搜索 "${query}" 的结果` : `Search results for "${query}"`}
-        </h1>
-        <p className="text-gray-600">
-          {locale === 'zh' 
-            ? `找到 ${total} 个相关课程`
-            : `Found ${total} ${total === 1 ? 'course' : 'courses'}`
-          }
+    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+      <div className="mb-8 flex flex-col gap-2">
+        <p className="text-sm uppercase tracking-[0.35em] text-gray-500">
+          {locale === 'zh' ? '搜索结果' : 'Results'}
         </p>
+        <div className="flex flex-wrap items-center gap-3">
+          <h1 className="text-3xl font-semibold text-gray-900">
+            {locale === 'zh' ? `“${query}” 的搜索结果` : `Results for “${query}”`}
+          </h1>
+          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+            {locale === 'zh' ? `共 ${total} 个课程` : `${total} ${total === 1 ? 'course' : 'courses'}`}
+          </span>
+        </div>
       </div>
 
-      <div className="space-y-4">
-        {results.map((result, index) => (
-          <div key={`${result.course.path}-${index}`} className="bg-white rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow">
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <Link 
+      <div className="space-y-5">
+        {results.map((result, index) => {
+          const durationText = formatDuration(result.course.duration)
+          return (
+          <div
+            key={`${result.course.path}-${index}`}
+            className="rounded-3xl border border-gray-100 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg"
+          >
+            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+              <div className="flex-1 space-y-3">
+                <Link
                   href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
-                  className="text-lg font-semibold text-gray-900 hover:text-blue-600 mb-2 block"
+                  className="block text-lg font-semibold text-gray-900 hover:text-blue-600"
                 >
                   {locale === 'zh' ? result.course.title : result.course.titleEn}
                 </Link>
-                <div className="mb-4 space-y-2">
+                <div className="flex flex-wrap gap-3 text-sm text-gray-600">
+                  {result.course.university && (
+                    <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-700">
+                      {result.course.university}
+                    </span>
+                  )}
                   {result.course.difficulty && (
-                    <div className="flex items-center text-sm">
-                      <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>{locale === 'zh' ? '难度' : 'Difficulty'}: </span>
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ml-1 ${
-                        result.course.difficulty.toLowerCase().includes('beginner') || result.course.difficulty.toLowerCase().includes('初级') 
-                          ? 'bg-green-100 text-green-800'
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-medium ${
+                        result.course.difficulty.toLowerCase().includes('beginner') || result.course.difficulty.toLowerCase().includes('初级')
+                          ? 'bg-green-50 text-green-700'
                           : result.course.difficulty.toLowerCase().includes('intermediate') || result.course.difficulty.toLowerCase().includes('中级')
-                          ? 'bg-yellow-100 text-yellow-800'
+                          ? 'bg-yellow-50 text-yellow-700'
                           : result.course.difficulty.toLowerCase().includes('advanced') || result.course.difficulty.toLowerCase().includes('高级')
-                          ? 'bg-red-100 text-red-800'
-                          : 'bg-gray-100 text-gray-800'
-                      }`}>
-                        {result.course.difficulty}
-                      </span>
-                    </div>
+                          ? 'bg-red-50 text-red-700'
+                          : 'bg-gray-100 text-gray-700'
+                      }`}
+                    >
+                      {result.course.difficulty}
+                    </span>
                   )}
-                  
                   {result.course.programmingLanguage && (
-                    <div className="flex items-center text-sm">
-                      <svg className="w-4 h-4 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                      </svg>
-                      <span>{locale === 'zh' ? '编程语言' : 'Language'}: </span>
-                      <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium ml-1">
-                        {result.course.programmingLanguage}
-                      </span>
-                    </div>
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+                      {result.course.programmingLanguage}
+                    </span>
                   )}
-                  
-                  {result.course.duration && (
-                    <div className="flex items-center text-sm">
-                      <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>{locale === 'zh' ? '学习时间' : 'Duration'}: </span>
-                      <div className="flex items-center ml-2">
-                        {(() => {
-                          const durationStr = typeof result.course.duration === 'object' 
-                            ? result.course.duration.value?.toString() || '0'
-                            : result.course.duration?.toString() || '';
-                          const style = (() => {
-                            const durationNum = parseInt(durationStr);
-                            let width, color;
-                            
-                            if (durationNum <= 50) {
-                              width = 'w-8';
-                              color = 'bg-green-500';
-                            } else if (durationNum <= 60) {
-                              width = 'w-12';
-                              color = 'bg-green-500';
-                            } else if (durationNum <= 100) {
-                              width = 'w-16';
-                              color = 'bg-yellow-500';
-                            } else if (durationNum <= 150) {
-                              width = 'w-24';
-                              color = 'bg-orange-500';
-                            } else {
-                              width = 'w-32';
-                              color = 'bg-red-500';
-                            }
-                            
-                            return { width, color };
-                          })();
-                          
-                          if (typeof result.course.duration === 'object' && result.course.duration.value) {
-                            return (
-                              <>
-                                <div className={`h-3 ${style.color} rounded-full ${style.width}`}></div>
-                                <span className="ml-2 text-xs text-gray-600">
-                                  {result.course.duration.value} {locale === 'en' ? 'hours' : '小时'}
-                                </span>
-                              </>
-                            );
-                          } else if (typeof result.course.duration === 'string') {
-                            return (
-                              <span className="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">
-                                {result.course.duration}
-                              </span>
-                            );
-                          }
-                          return null;
-                        })()}
-                      </div>
-                    </div>
+                  {durationText && (
+                    <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+                      {durationText}
+                    </span>
                   )}
                 </div>
-                
-                {(locale === 'zh' ? result.course.summary : result.course.summaryEn) && (
-                  <div className="mb-4">
-                    <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-                      {locale === 'zh' ? result.course.summary : result.course.summaryEn}
-                    </p>
-                  </div>
-                )}
               </div>
-              
-              <div className="ml-4 flex-shrink-0">
-                <Link 
-                  href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
-                >
-                  {locale === 'zh' ? '查看课程' : 'View Course'}
-                </Link>
-              </div>
+              <Link
+                href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 transition"
+              >
+                {locale === 'zh' ? '查看课程' : 'View course'}
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </Link>
             </div>
+            {(locale === 'zh' ? result.course.summary : result.course.summaryEn) && (
+              <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+                {locale === 'zh' ? result.course.summary : result.course.summaryEn}
+              </p>
+            )}
           </div>
-        ))}
+        )})}
       </div>
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="mt-8 flex justify-center">
-          <div className="flex space-x-2">
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+        <div className="mt-10 flex justify-center">
+          <nav className="inline-flex rounded-full border border-gray-200 bg-white p-1 shadow-sm">
+            {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(pageNum => (
               <Link
                 key={pageNum}
                 href={`/${locale}/search?q=${encodeURIComponent(query)}&page=${pageNum}`}
-                className={`px-3 py-2 rounded-lg text-sm font-medium ${
-                  pageNum === page
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
+                className={`px-4 py-2 text-sm font-semibold rounded-full ${
+                  pageNum === page ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-50'
                 }`}
               >
                 {pageNum}
               </Link>
             ))}
-          </div>
+          </nav>
         </div>
       )}
     </div>

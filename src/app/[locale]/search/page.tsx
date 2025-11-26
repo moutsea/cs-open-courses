@@ -5,7 +5,7 @@ import SearchResults from '@/components/SearchResults'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Search Courses', 
+  title: 'Search Courses',
   description: 'Search through our comprehensive collection of computer science open courses. Find the perfect course by topic, university, or difficulty level.'
 }
 
@@ -19,21 +19,17 @@ interface SearchResultsPageProps {
   }>
 }
 
-// Loading fallback component
-function SearchResultsLoading() {
+function SearchSkeleton() {
   return (
-    <div className="flex-grow container mx-auto px-4 py-8 max-w-6xl">
-      <div className="animate-pulse">
-        <div className="h-8 bg-gray-200 rounded mb-4"></div>
-        <div className="space-y-4">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className="bg-white rounded-lg shadow-sm p-6">
-              <div className="h-6 bg-gray-200 rounded w-3/4 mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-1/2 mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-full"></div>
-            </div>
-          ))}
-        </div>
+    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+      <div className="space-y-4">
+        {[...Array(3)].map((_, idx) => (
+          <div key={idx} className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+            <div className="h-5 w-2/3 rounded bg-gray-100 mb-3"></div>
+            <div className="h-4 w-full rounded bg-gray-100 mb-2"></div>
+            <div className="h-4 w-3/4 rounded bg-gray-100"></div>
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -45,15 +41,11 @@ export default async function SearchResultsPage({ params, searchParams }: Search
   const page = parseInt(pageParam || '1', 10)
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-50">
       <Header locale={locale} />
-      <main className="flex-grow bg-gray-50">
-        <Suspense fallback={<SearchResultsLoading />}>
-          <SearchResults 
-            locale={locale} 
-            query={query || ''} 
-            page={page} 
-          />
+      <main className="flex-grow py-10">
+        <Suspense fallback={<SearchSkeleton />}>
+          <SearchResults locale={locale} query={query || ''} page={page} />
         </Suspense>
       </main>
       <Footer locale={locale} />

@@ -14,20 +14,10 @@ interface LanguageOption {
   nativeName: string
 }
 
-type NavPath =
-  | '/'
-  | '/zh'
-  | '/courses'
-  | '/zh/courses'
-  | '/universities'
-  | '/zh/universities'
-  | '/tutorial'
-  | '/zh/tutorial'
-
 interface NavLink {
   id: string
   label: string
-  href: NavPath
+  href: string
 }
 
 export default function Header({ locale }: { locale: string }) {
@@ -42,12 +32,19 @@ export default function Header({ locale }: { locale: string }) {
   ]
 
   const baseLinks: NavLink[] = useMemo(() => {
-    const homeHref: NavPath = locale === 'zh' ? '/zh' : '/'
+    const cs61bPath = locale === 'zh'
+      ? `/${locale}/course/data-structures-algorithms/CS61B`
+      : `/course/data-structures-algorithms/CS61B`
     return [
-      { id: 'home', label: locale === 'zh' ? '首页' : 'Home', href: homeHref },
-      { id: 'courses', label: t.courses, href: (locale === 'zh' ? '/zh/courses' : '/courses') as NavPath },
-      { id: 'universities', label: t.universities, href: (locale === 'zh' ? '/zh/universities' : '/universities') as NavPath },
-      { id: 'tutorial', label: t.tutorial, href: (locale === 'zh' ? '/zh/tutorial' : '/tutorial') as NavPath }
+      { id: 'home', label: locale === 'zh' ? '首页' : 'Home', href: locale === 'zh' ? '/zh' : '/' },
+      { id: 'courses', label: t.courses, href: locale === 'zh' ? '/zh/courses' : '/courses' },
+      {
+        id: 'cs61b',
+        label: locale === 'zh' ? 'CS61B 课程' : 'CS61B Course',
+        href: cs61bPath
+      },
+      { id: 'universities', label: t.universities, href: locale === 'zh' ? '/zh/universities' : '/universities' },
+      { id: 'tutorial', label: t.tutorial, href: locale === 'zh' ? '/zh/tutorial' : '/tutorial' }
     ]
   }, [locale, t])
 
@@ -107,7 +104,7 @@ export default function Header({ locale }: { locale: string }) {
             {baseLinks.map(link => (
               <Link
                 key={link.id}
-                href={link.href}
+                href={link.href as any}
                 className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-all ${isActive(link.href)
                   ? 'text-white'
                   : 'text-white/70 hover:text-white'
@@ -220,7 +217,7 @@ export default function Header({ locale }: { locale: string }) {
               {baseLinks.map(link => (
                 <Link
                   key={link.id}
-                  href={link.href}
+                  href={link.href as any}
                   onClick={() => setIsMenuOpen(false)}
                   className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${isActive(link.href) ? 'bg-white/10 text-white' : 'text-white/80 hover:bg-white/5 hover:text-white'}`}
                 >

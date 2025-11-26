@@ -160,6 +160,12 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
                   >
                     {locale === 'zh' ? '路线概览' : 'View roadmap'}
                   </Link>
+                  <Link
+                    href={`/${locale}/course/data-structures-algorithms/CS61B`}
+                    className="inline-flex items-center gap-3 rounded-full border border-blue-100/40 px-6 py-3 text-sm font-semibold text-blue-100 transition hover:border-white hover:text-white"
+                  >
+                    {locale === 'zh' ? '转到 CS61B 专区' : 'Jump to CS61B Hub'}
+                  </Link>
                 </div>
               </div>
 

@@ -89,6 +89,18 @@ export default async function sitemap() {
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/course/data-structures-algorithms/CS61B`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/zh/course/data-structures-algorithms/CS61B`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
   ]
   
   try {

@@ -196,9 +196,25 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
     : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
   const courseTitle = extractTitleFromMarkdown(courseContent.content);
   const categoryName = path[0] || 'computer science';
+  const courseSlug = path[path.length - 1]?.toLowerCase() || '';
+  const isCS61B = courseSlug === 'cs61b';
 
   // Estimate course duration based on content length
   const estimatedDuration = Math.max(1, Math.ceil(courseContent.content.length / 5000));
+
+  const providerInfo = isCS61B
+    ? {
+      "@type": "CollegeOrUniversity",
+      "name": "UC Berkeley EECS",
+      "sameAs": "https://eecs.berkeley.edu",
+      "url": "https://www.berkeley.edu/"
+    }
+    : {
+      "@type": "EducationalOrganization",
+      "name": "CS61B & Beyond",
+      "url": process.env.NEXT_PUBLIC_SITE_URL!,
+      "description": "Free computer science courses from top universities"
+    };
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -206,14 +222,11 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
       {
         "@type": "Course",
         "name": courseTitle,
-        "description": `Learn ${courseTitle} - ${categoryName.replace(/-/g, ' ')} course from top universities including Berkeley, MIT, and Stanford.`,
+        "description": isCS61B
+          ? "Comprehensive guide to UC Berkeley CS61B, covering Java, data structures, and project-based learning."
+          : `Learn ${courseTitle} - ${categoryName.replace(/-/g, ' ')} course from top universities including Berkeley, MIT, and Stanford.`,
         "url": courseUrl,
-        "provider": {
-          "@type": "EducationalOrganization",
-          "name": "CS61B & Beyond",
-          "url": process.env.NEXT_PUBLIC_SITE_URL!,
-          "description": "Free computer science courses from top universities"
-        },
+        "provider": providerInfo,
         "educationalLevel": "Higher Education",
         "courseMode": "online",
         "isAccessibleForFree": true,
@@ -224,6 +237,14 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
           "@type": "Thing",
           "name": categoryName.replace(/-/g, ' ')
         },
+        "audience": isCS61B
+          ? {
+            "@type": "EducationalAudience",
+            "educationalRole": "Undergraduate",
+            "description": "Students preparing for Berkeley CS61B or equivalent data structures coursework."
+          }
+          : undefined,
+        "coursePrerequisites": isCS61B ? "CS61A or equivalent introductory programming experience" : undefined,
         "hasCourseInstance": {
           "@type": "CourseInstance",
           "courseMode": "online",
@@ -278,6 +299,50 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
       }
     ]
   };
+
+  if (isCS61B) {
+    const faqItems = locale === 'zh'
+      ? [
+        {
+          q: 'CS61B 难度如何？',
+          a: 'CS61B 是伯克利的中级课程，要求扎实的编程基础和大量项目实践，主要学习 Java 与数据结构。'
+        },
+        {
+          q: 'CS61B 包含哪些项目？',
+          a: '课程包含世界地图、Gitlet 等项目，帮助掌握树、图、哈希等数据结构在工程中的应用。'
+        },
+        {
+          q: '如何准备 CS61B？',
+          a: '建议先完成 CS61A 或同等级别的编程课程，并熟悉 Java 语法与面向对象思想。'
+        }
+      ]
+      : [
+        {
+          q: 'How hard is Berkeley CS61B?',
+          a: 'CS61B is an intermediate Berkeley course that assumes strong programming skills and emphasizes Java, algorithms, and rigorous projects.'
+        },
+        {
+          q: 'What projects are in CS61B?',
+          a: 'Expect multi-week projects like Build Your Own Gitlet and world maps that apply trees, graphs, and hashing in production-style codebases.'
+        },
+        {
+          q: 'How should I prepare for CS61B?',
+          a: 'Complete CS61A or an equivalent intro class, get comfortable with Java tooling, and review recursion plus basic data structures beforehand.'
+        }
+      ];
+
+    structuredData["@graph"].push({
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(item => ({
+        "@type": "Question",
+        "name": item.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": item.a
+        }
+      }))
+    } as any);
+  }
 
   return (
     <>
