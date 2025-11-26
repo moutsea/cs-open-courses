@@ -331,17 +331,30 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
         }
       ];
 
-    structuredData["@graph"].push({
+    type GraphItem = typeof structuredData["@graph"][number] | {
+      "@type": "FAQPage";
+      mainEntity: Array<{
+        "@type": "Question";
+        name: string;
+        acceptedAnswer: {
+          "@type": "Answer";
+          text: string;
+        };
+      }>;
+    };
+
+    const faqNode: GraphItem = {
       "@type": "FAQPage",
-      "mainEntity": faqItems.map(item => ({
+      mainEntity: faqItems.map(item => ({
         "@type": "Question",
-        "name": item.q,
-        "acceptedAnswer": {
+        name: item.q,
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": item.a
+          text: item.a
         }
       }))
-    } as any);
+    };
+    (structuredData["@graph"] as GraphItem[]).push(faqNode)
   }
 
   return (
