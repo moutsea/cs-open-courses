@@ -23,7 +23,7 @@ import {
   FlaskConical,
   Layers
 } from 'lucide-react'
-import './hero-animations.css'
+
 
 const universities = [
   { name: "MIT", Icon: Building2 },
@@ -233,15 +233,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   const cs61bHighlights = locale === 'zh'
     ? [
-        '完整涵盖 Java、ADT、图、堆、红黑树等核心数据结构',
-        '实验与 Project 全部开源，含 Gitlet、世界地图等经典项目',
-        '配套学习路径：先修 CS61A，进阶 CS61C、CS170'
-      ]
+      '完整涵盖 Java、ADT、图、堆、红黑树等核心数据结构',
+      '实验与 Project 全部开源，含 Gitlet、世界地图等经典项目',
+      '配套学习路径：先修 CS61A，进阶 CS61C、CS170'
+    ]
     : [
-        'Covers Java, ADTs, graphs, heaps, red-black trees, and testing',
-        'Open-source labs & projects including Gitlet and World Maps',
-        'Guided pathway: finish CS61A first, then move into CS61C / CS170'
-      ]
+      'Covers Java, ADTs, graphs, heaps, red-black trees, and testing',
+      'Open-source labs & projects including Gitlet and World Maps',
+      'Guided pathway: finish CS61A first, then move into CS61C / CS170'
+    ]
 
   const cs61bStats = [
     {
@@ -265,9 +265,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     <div className="min-h-screen flex flex-col">
       <Header locale={locale} />
       <ImmersivePage>
-          {renderSharedSection(
-            (
-              <div className="relative min-h-[90vh] overflow-hidden">
+        {renderSharedSection(
+          (
+            <div className="relative min-h-[90vh] overflow-hidden">
               <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/10 rounded-full blur-xl animate-pulse"></div>
                 <div className="absolute top-40 right-20 w-32 h-32 bg-purple-500/10 rounded-full blur-xl animate-pulse delay-1000"></div>
@@ -373,76 +373,76 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     <div className="relative">
                       {/* Floating Cards */}
                       <div className="absolute top-8 -left-8 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">CS</div>
-                            <div>
-                              <div className="text-sm font-semibold">{locale === 'zh' ? '数据结构' : 'Data Structures'}</div>
-                              <div className="text-xs text-gray-300">{locale === 'zh' ? '基础课程' : 'Foundation'}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                            <div className="flex gap-1">
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
-                            </div>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-purple-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">CS</div>
+                          <div>
+                            <div className="text-sm font-semibold">{locale === 'zh' ? '数据结构' : 'Data Structures'}</div>
+                            <div className="text-xs text-gray-300">{locale === 'zh' ? '基础课程' : 'Foundation'}</div>
                           </div>
                         </div>
-
-                        <div className="absolute top-32 right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float-delayed">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">ML</div>
-                            <div>
-                              <div className="text-sm font-semibold">{locale === 'zh' ? '机器学习' : 'Machine Learning'}</div>
-                              <div className="text-xs text-gray-300">{locale === 'zh' ? '高级课程' : 'Advanced'}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                            <div className="flex gap-1">
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            </div>
+                        <div className="flex items-center gap-1">
+                          <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                          <div className="flex gap-1">
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-gray-600 rounded-full"></div>
                           </div>
                         </div>
-
-                        <div className="absolute bottom-8 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">AI</div>
-                            <div>
-                              <div className="text-sm font-semibold">{locale === 'zh' ? '人工智能' : 'Artificial Intelligence'}</div>
-                              <div className="text-xs text-gray-300">{locale === 'zh' ? '前沿领域' : 'Cutting-edge'}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
-                            <div className="flex gap-1">
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                              <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Central Glow */}
-                        <div className="w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl mx-auto"></div>
                       </div>
+
+                      <div className="absolute top-32 right-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float-delayed">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-blue-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">ML</div>
+                          <div>
+                            <div className="text-sm font-semibold">{locale === 'zh' ? '机器学习' : 'Machine Learning'}</div>
+                            <div className="text-xs text-gray-300">{locale === 'zh' ? '高级课程' : 'Advanced'}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                          <div className="flex gap-1">
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="absolute bottom-8 -left-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 w-48 animate-float">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-lg flex items-center justify-center text-white text-sm font-bold">AI</div>
+                          <div>
+                            <div className="text-sm font-semibold">{locale === 'zh' ? '人工智能' : 'Artificial Intelligence'}</div>
+                            <div className="text-xs text-gray-300">{locale === 'zh' ? '前沿领域' : 'Cutting-edge'}</div>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span className="text-xs text-gray-300">{locale === 'zh' ? '难度' : 'Level'}</span>
+                          <div className="flex gap-1">
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                            <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Central Glow */}
+                      <div className="w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full blur-3xl mx-auto"></div>
                     </div>
                   </div>
                 </div>
               </div>
-            ),
-            'text-white'
-          )}
+            </div>
+          ),
+          'text-white'
+        )}
 
-          {renderSharedSection(
-            (
-              <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        {renderSharedSection(
+          (
+            <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header */}
               <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -587,15 +587,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                 </Link>
               </div>
-              </div>
-            ),
-            'pt-32 pb-28 text-white'
-          )}
+            </div>
+          ),
+          'pt-32 pb-28 text-white'
+        )}
 
-          {/* Tutorial Section - Perfect Flow */}
-          {renderSharedSection(
-            (
-              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Tutorial Section - Perfect Flow */}
+        {renderSharedSection(
+          (
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header */}
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
@@ -716,98 +716,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   {locale === 'zh' ? '社区支持' : 'Community Support'}
                 </div>
               </div>
-              </div>
-            ),
-            'py-24 text-white'
-          )}
+            </div>
+          ),
+          'py-24 text-white'
+        )}
 
-          {renderSharedSection(
-            (
-              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid gap-10 lg:grid-cols-[3fr_2fr] items-center">
-                  <div className="space-y-6 text-white">
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
-                      <span className="inline-flex h-2 w-2 rounded-full bg-blue-300"></span>
-                      {locale === 'zh' ? '伯克利 CS61B 指南' : 'Berkeley CS61B Guide'}
-                    </div>
-                    <h2 className="text-3xl sm:text-4xl font-bold leading-tight">
-                      {locale === 'zh'
-                        ? '掌握 CS61B：数据结构与工程化项目'
-                        : 'Own CS61B with data structures + production projects'}
-                    </h2>
-                    <p className="text-white/70 text-lg leading-relaxed">
-                      {locale === 'zh'
-                        ? '从实验、Project 到复习资料，我们整理了 CS61B 的全部资源、先修路径与学习建议，帮助你在线完成整门课程。'
-                        : 'We organize every CS61B lab, project, and study note—plus prerequisites and pacing—so you can complete Berkeley’s data structures class entirely online.'}
-                    </p>
-                    <ul className="space-y-3">
-                      {cs61bHighlights.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-3 text-white/80">
-                          <span className="mt-1 inline-flex h-2.5 w-2.5 rounded-full bg-gradient-to-r from-blue-400 to-purple-400"></span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex flex-wrap gap-3">
-                      <Link
-                        href={`/${locale}/course/data-structures-algorithms/CS61B`}
-                        className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
-                      >
-                        {locale === 'zh' ? '查看 CS61B 课程' : 'Open CS61B Course'}
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </Link>
-                      <Link
-                        href={`/${locale}/tutorial`}
-                        className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white/80 transition hover:border-white hover:text-white"
-                      >
-                        {locale === 'zh' ? '查看学习路径' : 'View Learning Path'}
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="rounded-[32px] border border-white/15 bg-white/5 p-6 backdrop-blur-xl shadow-[0_25px_80px_rgba(2,6,23,0.4)] text-white space-y-6">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.4em] text-white/60">
-                        CS61B {locale === 'zh' ? '关键指标' : 'Key Stats'}
-                      </p>
-                      <h3 className="text-2xl font-semibold mt-2">
-                        {locale === 'zh' ? '项目驱动的数据结构修炼' : 'Project-first data structures training'}
-                      </h3>
-                    </div>
-                    <div className="space-y-4">
-                      {cs61bStats.map(stat => (
-                        <div key={stat.label} className="rounded-2xl border border-white/15 bg-white/5 p-4">
-                          <div className="text-3xl font-bold text-white">{stat.value}</div>
-                          <p className="text-xs uppercase tracking-[0.35em] text-white/60">{stat.label}</p>
-                          <p className="text-sm text-white/70 mt-1">{stat.helper}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="rounded-2xl border border-blue-200/30 bg-blue-200/10 p-4 text-sm text-blue-100">
-                      {locale === 'zh'
-                        ? '需要帮助？我们整理了实验环境搭建、评分标准、往年考点与复习节奏，助你更快完成 CS61B。'
-                        : 'Need support? We curate lab setup notes, grading policies, past exams, and pacing tips to keep you on track.'}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ),
-            'py-20 text-white'
-          )}
+        {/* Popular Courses Section */}
+        {renderSharedSection(
+          (
+            <PopularCourses courses={popularCourses} locale={locale} />
+          ),
+          'py-0 text-white'
+        )}
 
-          {/* Popular Courses Section */}
-          {renderSharedSection(
-            (
-              <PopularCourses courses={popularCourses} locale={locale} />
-            ),
-            'py-0 text-white'
-          )}
-
-          {/* Universities Section */}
-          {renderSharedSection(
-            (
-              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Universities Section */}
+        {renderSharedSection(
+          (
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Section Header */}
               <div className="text-center mb-16">
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/15 rounded-full mb-6 text-white/90 text-sm font-semibold">
@@ -921,15 +846,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
                 </Link>
               </div>
-              </div>
-            ),
-            'py-20 text-white'
-          )}
+            </div>
+          ),
+          'py-20 text-white'
+        )}
 
-          {/* Features & CTA Section */}
-          {renderSharedSection(
-            (
-              <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        {/* Features & CTA Section */}
+        {renderSharedSection(
+          (
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
               <div>
                 <div className="text-center mb-14">
                   <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/10 text-white/80 text-sm font-semibold uppercase tracking-[0.2em] mb-6">
@@ -1054,10 +979,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
 
               </div>
-              </div>
-            ),
-            'py-20 text-white'
-          )}
+            </div>
+          ),
+          'py-20 text-white'
+        )}
       </ImmersivePage>
       <Footer locale={locale} />
     </div>

@@ -3,8 +3,8 @@ import Footer from '@/components/Footer'
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Learn about CS61B & Beyond - your trusted platform for discovering and accessing top computer science open courses from world-class universities.'
+  title: 'About CS61B & Beyond',
+  description: 'Meet CS61B & Beyond, the team curating Berkeley CS61B, MIT, Stanford open CS courses so anyone can learn data structures, systems, and AI for free.'
 }
 
 export default async function AboutPage({params}: {params: Promise<{locale: string}>}) {

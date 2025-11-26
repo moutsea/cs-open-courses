@@ -29,16 +29,26 @@ const sectionIconMap: Record<TutorialIcon, (props: { className?: string }) => JS
   rocket: RocketIcon
 }
 
-export const metadata: Metadata = {
-  title: 'CS Learning Path for Beginners',
-  description: "Complete beginner's guide to computer science learning. Step-by-step roadmap from CS61A basics to advanced topics like algorithms, machine learning, and systems programming.",
-  openGraph: {
-    title: 'CS Learning Path for Beginners - CS61B & Beyond',
-    description: 'Start your computer science journey with our curated learning paths. From Python basics to advanced CS topics, designed for complete beginners.'
-  },
-  twitter: {
-    title: 'CS Learning Path for Beginners',
-    description: 'Complete roadmap to learn computer science from scratch'
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const isZh = locale === 'zh'
+  const title = 'CS Learning Path from CS61A to CS61B | CS61B & Beyond'
+  const description = isZh
+    ? '从 CS61A 入门到伯克利 CS61B、系统、算法与 AI，逐阶段列出工具、数学与项目，帮助零基础学习者稳步进阶。'
+    : 'Follow a guided roadmap from CS61A fundamentals through Berkeley CS61B, systems, algorithms, and AI with tools, math, and project checkpoints for beginners.'
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description: isZh
+        ? '完整 CS 学习路径：CS61A、CS61B、系统、算法与 AI，含工具与项目建议。'
+        : 'Complete CS path from CS61A to CS61B, systems, algorithms, and AI with tool and project tips.'
+    },
+    twitter: {
+      title,
+      description
+    }
   }
 }
 
