@@ -16,18 +16,18 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const { locale } = await params;
     const isZh = locale === 'zh';
     return {
-        title: 'Browse 130+ CS Courses | CS61B & Beyond',
+        title: 'Browse 130+ CS Courses',
         description: isZh
             ? '浏览 130+ 门伯克利 CS61B、MIT、斯坦福等开放课程，按类别与子主题筛选，构建系统化的数据结构、系统与 AI 学习路径。'
             : 'Explore 130+ Berkeley CS61B, MIT, Stanford open CS courses and filter by category or subtopic to build a complete data structures, systems, and AI path.',
         openGraph: {
-            title: 'Browse 130+ CS Courses | CS61B & Beyond',
+            title: 'Browse 130+ CS Courses',
             description: isZh
                 ? '查看伯克利 CS61B、MIT、斯坦福等名校开放课程目录，轻松筛选并规划你的计算机科学学习路线。'
                 : 'Browse Berkeley CS61B, MIT, Stanford course catalog and plan your computer science journey.'
         },
         twitter: {
-            title: 'Browse 130+ CS Courses | CS61B & Beyond',
+            title: 'Browse 130+ CS Courses',
             description: isZh
                 ? '按类别浏览 130+ 门免费 CS 课程，覆盖数据结构、系统、AI 等方向。'
                 : 'Filter 130+ free CS courses across data structures, systems, and AI.'

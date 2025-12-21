@@ -31,7 +31,7 @@ const iconMap = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isZh = locale === 'zh'
-  const title = 'World CS Universities Guide | CS61B & Beyond'
+  const title = 'World CS Universities Guide'
   const description = isZh
     ? '对比伯克利、MIT、斯坦福、CMU 等名校的 CS 开放课程：查看排名、课程数量与直达链接，快速选择理想项目。'
     : 'Compare Berkeley, MIT, Stanford, CMU open CS programs, see rankings, course counts, and jump directly into each curriculum.'
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title,
     description,
     openGraph: {
-      title: 'Top Universities & CS Programs - CS61B & Beyond',
+      title: 'Top Universities & CS Programs',
       description: isZh
         ? '探索全球顶尖 CS 项目，查看大学简介、课程数量与官方链接。'
         : 'Discover global top CS programs with descriptions, course counts, and official links.'

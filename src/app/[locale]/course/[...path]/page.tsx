@@ -109,7 +109,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   const categoryDescription = categoryDescriptions[categoryName as keyof typeof categoryDescriptions] || 'advanced computer science concepts';
 
   // Create specific description based on path
-  const description = `Learn ${title} - ${categoryDescription}. Master essential concepts and practical applications in this comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities.`;
+  const description = `Start learning ${title} today. A comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities like Berkeley, MIT, and Stanford. Master ${categoryDescription} with free resources.`;
 
   const url = locale === 'en'
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${coursePath}`
@@ -127,15 +127,18 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     },
     keywords: [
       title,
+      `${title} course`,
+      `learn ${title}`,
       categoryName.replace(/-/g, ' '),
       'computer science',
       'programming',
       'online course',
       'free education',
+      'self-taught',
       ...path
     ],
     openGraph: {
-      title: `${title} | CS61B & Beyond`,
+      title: `${title}`,
       description: description,
       url: url,
       images: [
@@ -149,7 +152,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} | CS61B & Beyond`,
+      title: `${title}`,
       description: description,
       images: ['/logo.png']
     }

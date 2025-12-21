@@ -5,8 +5,7 @@ import SearchResults from '@/components/SearchResults'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Search CS61B & Top CS Courses | CS61B & Beyond',
-  description: 'Search Berkeley CS61B and 120+ CS courses by keyword, university, or tech stack. Filter paged results to jump straight into labs, projects, and study notes.'
+      title: 'Search CS61B & Top CS Courses',  description: 'Search Berkeley CS61B and 120+ CS courses by keyword, university, or tech stack. Filter paged results to jump straight into labs, projects, and study notes.'
 }
 
 interface SearchResultsPageProps {

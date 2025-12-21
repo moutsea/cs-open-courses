@@ -141,7 +141,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     : 'Master Berkeley CS61B data structures & algorithms with labs, projects, and guided study paths.'
 
   return {
-    title,
+    title: {
+      absolute: title
+    },
     description,
     keywords: [
       'cs61b',
