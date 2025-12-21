@@ -74,7 +74,10 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
     };
   }
 
-  const title = extractTitleFromMarkdown(courseContent.content);
+  let title = extractTitleFromMarkdown(courseContent.content);
+  if (locale === 'zh') {
+    title = `${title} (中文)`;
+  }
 
   // Create category-specific description based on actual categories
   const categoryDescriptions = {
@@ -109,7 +112,9 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   const categoryDescription = categoryDescriptions[categoryName as keyof typeof categoryDescriptions] || 'advanced computer science concepts';
 
   // Create specific description based on path
-  const description = `Start learning ${title} today. A comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities like Berkeley, MIT, and Stanford. Master ${categoryDescription} with free resources.`;
+  const description = locale === 'zh'
+    ? `立即开始学习 ${title}。这是一门来自伯克利、MIT、斯坦福等顶尖大学的 ${categoryName.replace(/-/g, ' ')} 课程。免费掌握 ${categoryDescription} 相关的核心概念与技能。`
+    : `Start learning ${title} today. A comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities like Berkeley, MIT, and Stanford. Master ${categoryDescription} with free resources.`;
 
   const url = locale === 'en'
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${coursePath}`

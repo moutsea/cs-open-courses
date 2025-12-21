@@ -32,7 +32,7 @@ const sectionIconMap: Record<TutorialIcon, (props: { className?: string }) => JS
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isZh = locale === 'zh'
-  const title = 'CS Learning Path from CS61A to CS61B'
+  const title = isZh ? '计算机科学学习路径' : 'CS Learning Path from CS61A to CS61B'
   const description = isZh
     ? '从 CS61A 入门到伯克利 CS61B、系统、算法与 AI，逐阶段列出工具、数学与项目，帮助零基础学习者稳步进阶。'
     : 'Follow a guided roadmap from CS61A fundamentals through Berkeley CS61B, systems, algorithms, and AI with tools, math, and project checkpoints for beginners.'
