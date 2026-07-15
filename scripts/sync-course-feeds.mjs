@@ -350,7 +350,7 @@ function renderCourse(locale, course, resources, source, entry) {
 ## ${labels.descriptions}
 
 - ${labels.offeredBy}: ${cleanLine(course.offeredBy, 160)}
-- ${labels.prerequisites}: ${cleanLine(course.prerequisites || (isZh ? '未注明' : 'Not specified'), 200)}
+- ${labels.prerequisites}: ${cleanLine(course.prerequisites || (isZh ? '未注明' : 'Not specified'), 400)}
 - ${labels.languages}: ${cleanLine(course.programmingLanguages || (isZh ? '未注明' : 'Not specified'), 160)}
 - ${labels.difficulty}: ${difficultyStars(course.difficulty)}
 - ${labels.hours}: ${cleanLine(course.classHours || (isZh ? '未注明' : 'Not specified'), 100)}
