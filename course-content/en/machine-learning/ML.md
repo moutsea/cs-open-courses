@@ -24,3 +24,12 @@ Of course, as a public mooc, the difficulty of this course has been deliberately
 ## Personal Resources
 
 My implementation is lost in system reinstallation. However, the course is so famous that you can easily find related resources online. Also, course material is available on Coursera.
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## Latest Course Updates
+
+- **2026-02-21** — The course has been rebuilt as a specialization consisting of three courses. The course resource now points to the updated Coursera specialization page.
+  - Source: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/ed6ce780472caf98bb4d336a5671add542dc08c2)
+  - [Course Website](https://www.coursera.org/specializations/machine-learning-introduction)
+  <!-- feed-entry:2d2fa93488345272 -->
+<!-- AUTO-COURSE-UPDATES:END -->

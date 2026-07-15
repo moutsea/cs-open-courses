@@ -3,6 +3,7 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
+      "lastProcessedAt": "2026-07-15T02:44:55.785Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3ec3100168528558a30e2e447178697c3a43b3a7",
         "tag:github.com,2008:Grit::Commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
@@ -28,6 +29,7 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
+      "lastProcessedAt": "2026-07-15T02:45:13.882Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
         "tag:github.com,2008:Grit::Commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
@@ -53,6 +55,7 @@
     },
     "ossu-computer-science": {
       "initializedAt": "2026-07-15T02:23:31.267Z",
+      "lastProcessedAt": "2026-07-15T02:45:38.194Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
         "tag:github.com,2008:Grit::Commit/a9c3258d478640faa31c6b187096edeede347eaa",
@@ -77,5 +80,120 @@
       ]
     }
   },
-  "decisions": []
+  "decisions": [
+    {
+      "reviewedAt": "2026-07-15T02:45:38.194Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
+      "entryTitle": "Add class-based Lecture 30 archive link",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.99,
+      "reason": "The commit only adds a Lecture 30 video archive to a course page. No supplied existing-course targetPath matches this course, and the evidence is insufficient to create a complete new course entry without inventing required facts.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:45:28.238Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/a9c3258d478640faa31c6b187096edeede347eaa",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/a9c3258d478640faa31c6b187096edeede347eaa",
+      "entryTitle": "Remove incorrect class-based lecture archive",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.99,
+      "reason": "The commit only removes an incorrect Lecture 30 YouTube archive from an OSSU course page. No supplied existing-course path matches this course, and the evidence is insufficient for a new course entry.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:45:16.483Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/acf1cc774628d90f18276571b2fa5c9e66ac2523",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/acf1cc774628d90f18276571b2fa5c9e66ac2523",
+      "entryTitle": "docs: keep changelog unchanged",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.99,
+      "reason": "The commit only changes the Semantic Versioning link in CHANGELOG.md from HTTPS to HTTP; it provides no evidence of a course addition or update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:45:13.882Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
+      "entryTitle": "Add Game AI course (Spring 2021) from Georgia Tech (#506)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.98,
+      "reason": "The evidence names Georgia Tech CS 4731/7632 Game AI for Spring 2021, but the supplied URL searches for cs7632_2025. This term mismatch and the absence of verified course details or a dedicated official course page make a create action insufficiently supported.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:45:05.113Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
+      "entryTitle": "Add Generative AI course from CMU (#505)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.98,
+      "reason": "The evidence identifies CMU 10-423 S24: Generative AI and supplies course and video URLs, but it does not provide prerequisites, programming languages, difficulty, class hours, or enough course details for an evidence-backed create action; no existing course path exactly matches.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:45:00.417Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/ce004d4889508a5043414ac0702fb60f69db934c",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/ce004d4889508a5043414ac0702fb60f69db934c",
+      "entryTitle": "Add Optimization from EUROPT Summer School 2021 (#504)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.98,
+      "reason": "The evidence identifies a EUROPT Summer School optimization playlist, but does not establish a clearly identified university-level computer science course or provide sufficient course details for a create operation; it matches no existing-course target for an update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:44:55.785Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/3ec3100168528558a30e2e447178697c3a43b3a7",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/3ec3100168528558a30e2e447178697c3a43b3a7",
+      "entryTitle": "[README] rm automq logo (#845)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 1,
+      "reason": "The commit only removes an AutoMQ sponsorship section from README.md and contains no course creation or update evidence.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-07-15T02:44:52.111Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
+      "entryTitle": "[UPDATE] Update Coursera ML course (#843)",
+      "mode": "auto",
+      "type": "update",
+      "confidence": 0.99,
+      "targetPath": "machine-learning/ML",
+      "changedFiles": [
+        "course-content/en/machine-learning/ML.md",
+        "course-content/zh/machine-learning/ML.md"
+      ]
+    },
+    {
+      "reviewedAt": "2026-07-15T02:44:48.127Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/cb90db338bddfd5407c5d420320d90c669edb452",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/cb90db338bddfd5407c5d420320d90c669edb452",
+      "entryTitle": "[UPDATE] add CMU 15-779 course pages (#834)",
+      "mode": "auto",
+      "type": "create",
+      "confidence": 0.99,
+      "targetPath": "deep-generative-models/CMU15-779",
+      "changedFiles": [
+        "course-content/en/deep-generative-models/CMU15-779.md",
+        "course-content/zh/deep-generative-models/CMU15-779.md"
+      ]
+    }
+  ]
 }

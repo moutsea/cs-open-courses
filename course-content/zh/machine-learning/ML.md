@@ -24,3 +24,12 @@
 ## 资源汇总
 
 当时重装系统误删了文件，我的代码实现消失在了磁盘的 01 串中。不过这门课由于太过出名，网上想搜不到答案都难，相关课程资料 Coursera 上也一应俱全。
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## 最新课程动态
+
+- **2026-02-21** — 新版课程已重构为包含三门课程的系列课程，课程资源现已更新为新的 Coursera 专项课程页面。
+  - 来源: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/ed6ce780472caf98bb4d336a5671add542dc08c2)
+  - [课程网站](https://www.coursera.org/specializations/machine-learning-introduction)
+  <!-- feed-entry:2d2fa93488345272 -->
+<!-- AUTO-COURSE-UPDATES:END -->
