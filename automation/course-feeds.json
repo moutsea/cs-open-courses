@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "cs-self-learning",
+      "name": "cs-self-learning",
+      "feedUrl": "https://github.com/pkuflyingpig/cs-self-learning/commits/master.atom",
+      "repository": "pkuflyingpig/cs-self-learning",
+      "mode": "upstream",
+      "minimumConfidence": 0.95,
+      "enabled": true
+    },
+    {
+      "id": "cs-video-courses",
+      "name": "CS Video Courses",
+      "feedUrl": "https://github.com/Developer-Y/cs-video-courses/commits/master.atom",
+      "repository": "Developer-Y/cs-video-courses",
+      "mode": "discovery",
+      "minimumConfidence": 0.95,
+      "enabled": true
+    },
+    {
+      "id": "ossu-computer-science",
+      "name": "OSSU Computer Science",
+      "feedUrl": "https://github.com/ossu/computer-science/commits/master.atom",
+      "repository": "ossu/computer-science",
+      "mode": "curriculum",
+      "minimumConfidence": 0.97,
+      "enabled": true
+    }
+  ]
+}

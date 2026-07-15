@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { localizedPath } from '@/lib/pathUtils'
 
 interface SearchBoxProps {
   locale: string
@@ -15,7 +16,7 @@ export default function SearchBox({ locale }: SearchBoxProps) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (searchQuery.trim()) {
-      router.push(`/${locale}/search?q=${encodeURIComponent(searchQuery.trim())}`)
+      router.push(`${localizedPath(locale, '/search')}?q=${encodeURIComponent(searchQuery.trim())}`)
     }
   }
 

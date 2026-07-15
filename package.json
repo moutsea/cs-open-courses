@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "courses:sync": "node scripts/sync-course-feeds.mjs",
+    "courses:sync:check": "node scripts/sync-course-feeds.mjs --check"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.7",

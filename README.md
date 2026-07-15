@@ -172,6 +172,24 @@ npm run dev
 npm run build
 ```
 
+### 🤖 AI 自动更新课程
+
+项目每天通过 GitHub Actions 检查 `cs-self-learning`、CS Video Courses 和 OSSU 的 Atom Feed。新提交会经过 AI 结构化审核、来源白名单、重复检测和 Markdown 校验；只有高置信度结果才能新增双语课程或追加机器管理的课程动态。构建失败时不会提交任何更新。
+
+在仓库 Settings → Secrets and variables → Actions 中添加：
+
+```text
+COURSE_AI_API_KEY=你的 Anthropic Messages 兼容 API Key
+```
+
+AI 网关和模型配置位于 `.github/workflows/auto-update-courses.yml`。首次运行只记录当前 Feed 基线，不处理历史提交。也可以手动运行工作流，并选择影子模式观察 AI 决策而不修改课程文件。
+
+本地检查配置：
+
+```bash
+npm run courses:sync:check
+```
+
 ### 📄 许可证
 
 本项目采用 MIT 许可证 - 详情请参见 [LICENSE](LICENSE) 文件。

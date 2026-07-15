@@ -3,9 +3,23 @@ import Footer from '@/components/Footer'
 import { Suspense } from 'react'
 import SearchResults from '@/components/SearchResults'
 import { Metadata } from 'next'
+import { pageAlternates } from '@/lib/seo'
 
-export const metadata: Metadata = {
-      title: 'Search CS61B & Top CS Courses',  description: 'Search Berkeley CS61B and 120+ CS courses by keyword, university, or tech stack. Filter paged results to jump straight into labs, projects, and study notes.'
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params
+  const isZh = locale === 'zh'
+
+  return {
+    title: isZh ? '搜索计算机科学课程' : 'Search CS61B & Top CS Courses',
+    description: isZh
+      ? '按关键词、大学或技术方向搜索 CS61B 及其他计算机科学开放课程。'
+      : 'Search Berkeley CS61B and 120+ CS courses by keyword, university, or tech stack.',
+    alternates: pageAlternates(locale, '/search'),
+    robots: {
+      index: false,
+      follow: true
+    }
+  }
 }
 
 interface SearchResultsPageProps {

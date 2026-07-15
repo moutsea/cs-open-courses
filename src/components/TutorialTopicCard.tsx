@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { memo } from 'react';
-import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { buildDynamicRoutePath, localizedPath } from '@/lib/pathUtils';
 
 interface TutorialTopic {
   name: string;
@@ -115,7 +115,7 @@ const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale }: Tut
   
   // 构建正确的跳转路径
   const courseLinkPath = hasRelatedCourse 
-    ? `/${locale}/course/${buildDynamicRoutePath(coursePath).join('/')}`
+    ? localizedPath(locale, `/course/${buildDynamicRoutePath(coursePath).join('/')}`)
     : '';
   
   return (

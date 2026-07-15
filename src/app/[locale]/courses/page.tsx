@@ -4,6 +4,8 @@ import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePa
 import { getCategoriesForLocale } from '@/lib/getServerData';
 import { Metadata } from 'next';
 import { getChineseName } from '@/lib/categoryMapping';
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo';
+import { buildDynamicRoutePath } from '@/lib/pathUtils';
 
 export async function generateStaticParams() {
     return [
@@ -15,22 +17,32 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
     const { locale } = await params;
     const isZh = locale === 'zh';
+    const pageUrl = absoluteUrl(localizedPath(locale, '/courses'));
     return {
         title: isZh ? '所有课程' : 'All Courses',
         description: isZh
             ? '浏览 130+ 门伯克利 CS61B、MIT、斯坦福等开放课程，按类别与子主题筛选，构建系统化的数据结构、系统与 AI 学习路径。'
             : 'Explore 130+ Berkeley CS61B, MIT, Stanford open CS courses and filter by category or subtopic to build a complete data structures, systems, and AI path.',
+        robots: INDEXABLE_ROBOTS,
+        alternates: pageAlternates(locale, '/courses'),
         openGraph: {
-            title: 'Browse 130+ CS Courses',
+            title: isZh ? '浏览 130+ 门计算机科学课程' : 'Browse 130+ CS Courses',
             description: isZh
                 ? '查看伯克利 CS61B、MIT、斯坦福等名校开放课程目录，轻松筛选并规划你的计算机科学学习路线。'
-                : 'Browse Berkeley CS61B, MIT, Stanford course catalog and plan your computer science journey.'
+                : 'Browse Berkeley CS61B, MIT, Stanford course catalog and plan your computer science journey.',
+            url: pageUrl,
+            siteName: SITE_NAME,
+            type: 'website',
+            locale: isZh ? 'zh_CN' : 'en_US',
+            images: socialImages()
         },
         twitter: {
-            title: 'Browse 130+ CS Courses',
+            card: 'summary_large_image',
+            title: isZh ? '浏览 130+ 门计算机科学课程' : 'Browse 130+ CS Courses',
             description: isZh
                 ? '按类别浏览 130+ 门免费 CS 课程，覆盖数据结构、系统、AI 等方向。'
-                : 'Filter 130+ free CS courses across data structures, systems, and AI.'
+                : 'Filter 130+ free CS courses across data structures, systems, and AI.',
+            images: [absoluteUrl('/og.jpg')]
         }
     };
 }
@@ -47,6 +59,7 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
         locale === 'zh'
             ? getChineseName(slug)
             : slug.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+    const allCourses = categories.flatMap(category => category.courses);
 
     // 添加左侧边栏滚动条样式
     const style = `
@@ -74,22 +87,16 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
         "description": locale === 'zh'
             ? "来自顶尖大学的计算机科学开放课程集合"
             : "Collection of computer science open courses from top universities",
-        "numberOfItems": totalCourses,
-        "itemListElement": categories.flatMap((category, catIndex) => [
-            {
-                "@type": "ListItem",
-                "position": catIndex + 1,
-                "item": {
-                    "@type": "Course",
-                    "name": getChineseName(category.slug),
-                    "description": `${category.courses.length} ${locale === 'zh' ? '门课程' : 'courses'} in ${getChineseName(category.slug)}`,
-                    "provider": {
-                        "@type": "Organization",
-                        "name": "CS Courses Platform"
-                    }
-                }
+        "numberOfItems": allCourses.length,
+        "itemListElement": allCourses.map((course, index) => ({
+            "@type": "ListItem",
+            "position": index + 1,
+            "item": {
+                "@type": "Course",
+                "name": course.title,
+                "url": absoluteUrl(localizedPath(locale, `/course/${buildDynamicRoutePath(course.path).join('/')}`))
             }
-        ])
+        }))
     };
 
     return (

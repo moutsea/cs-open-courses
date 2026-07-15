@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Course } from '@/lib/courseParser';
-import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { buildDynamicRoutePath, localizedPath } from '@/lib/pathUtils';
 import { useSafeTranslations, getDifficultyColor } from '@/lib/translationUtils';
 
 interface PopularCoursesProps {
@@ -81,7 +81,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                       </div>
                     </div>
 
-                    <Link href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}>
+                    <Link href={localizedPath(locale, `/course/${buildDynamicRoutePath(course.path).join('/')}`)}>
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300 leading-tight group-hover:scale-105 transform origin-left">
                         {course.title}
                       </h3>
@@ -146,7 +146,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                   {/* View Course Button */}
                   <div className="flex justify-between items-center pt-6 border-t border-gray-100/50">
                     <Link
-                      href={`/${locale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
+                      href={localizedPath(locale, `/course/${buildDynamicRoutePath(course.path).join('/')}`)}
                       className="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-300 font-semibold group/btn"
                     >
                       <span>{t('popularCourses.viewCourse')}</span>
@@ -164,7 +164,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
         {/* View All Courses Button */}
         <div className="text-center mt-16">
           <Link
-            href={`/${locale}/courses`}
+            href={localizedPath(locale, '/courses')}
             className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
           >
             <span className="relative z-10 flex items-center">

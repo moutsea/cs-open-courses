@@ -1,9 +1,37 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { Metadata } from 'next';
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo';
 
-export const metadata: Metadata = {
-      title: 'About',  description: 'Meet CS61B & Beyond, the team curating Berkeley CS61B, MIT, Stanford open CS courses so anyone can learn data structures, systems, and AI for free.'
+export async function generateMetadata({params}: {params: Promise<{locale: string}>}): Promise<Metadata> {
+  const { locale } = await params;
+  const isZh = locale === 'zh';
+  const title = isZh ? '关于我们' : 'About';
+  const description = isZh
+    ? '了解 CS61B & Beyond：我们整理伯克利 CS61B、MIT、斯坦福等开放课程，帮助学习者免费学习数据结构、系统与人工智能。'
+    : 'Meet CS61B & Beyond, the team curating Berkeley CS61B, MIT, Stanford open CS courses so anyone can learn data structures, systems, and AI for free.';
+
+  return {
+    title,
+    description,
+    robots: INDEXABLE_ROBOTS,
+    alternates: pageAlternates(locale, '/about'),
+    openGraph: {
+      title: isZh ? '关于 CS61B & Beyond' : 'About CS61B & Beyond',
+      description,
+      url: absoluteUrl(localizedPath(locale, '/about')),
+      siteName: SITE_NAME,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      images: socialImages()
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: isZh ? '关于 CS61B & Beyond' : 'About CS61B & Beyond',
+      description,
+      images: [absoluteUrl('/og.jpg')]
+    }
+  };
 }
 
 export default async function AboutPage({params}: {params: Promise<{locale: string}>}) {

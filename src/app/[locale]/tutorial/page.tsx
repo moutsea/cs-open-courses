@@ -6,6 +6,7 @@ import { Metadata } from 'next'
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import { getTutorialSections, TutorialIcon } from '@/components/TutorialContent'
 import { getTranslations } from 'next-intl/server'
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo'
 import {
   AiIcon,
   BookIcon,
@@ -39,15 +40,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title,
     description,
+    robots: INDEXABLE_ROBOTS,
+    alternates: pageAlternates(locale, '/tutorial'),
     openGraph: {
       title,
       description: isZh
         ? '完整 CS 学习路径：CS61A、CS61B、系统、算法与 AI，含工具与项目建议。'
-        : 'Complete CS path from CS61A to CS61B, systems, algorithms, and AI with tool and project tips.'
+        : 'Complete CS path from CS61A to CS61B, systems, algorithms, and AI with tool and project tips.',
+      url: absoluteUrl(localizedPath(locale, '/tutorial')),
+      siteName: SITE_NAME,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      images: socialImages()
     },
     twitter: {
+      card: 'summary_large_image',
       title,
-      description
+      description,
+      images: [absoluteUrl('/og.jpg')]
     }
   }
 }
@@ -73,7 +83,7 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
           locale === 'zh'
             ? '完整的计算机科学初学者指南。从CS61A基础知识到算法、机器学习和系统编程等高级主题的分步路线图。'
             : "Complete beginner's guide to computer science learning. Step-by-step roadmap from CS61A basics to advanced topics like algorithms, machine learning, and systems programming.",
-        url: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/tutorial`,
+        url: absoluteUrl(localizedPath(locale, '/tutorial')),
         inLanguage: locale === 'zh' ? 'zh-CN' : 'en-US',
         educationalLevel: 'Beginner',
         learningResourceType: 'Learning Path',
@@ -90,7 +100,7 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
         provider: {
           '@type': 'EducationalOrganization',
           name: 'CS61B & Beyond',
-          url: process.env.NEXT_PUBLIC_SITE_URL!,
+          url: absoluteUrl('/'),
           description: 'Free computer science courses from top universities'
         }
       },
@@ -101,13 +111,13 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: process.env.NEXT_PUBLIC_SITE_URL!
+            item: absoluteUrl(localizedPath(locale))
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: locale === 'zh' ? '学习路径' : 'Learning Path',
-            item: `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/tutorial`
+            item: absoluteUrl(localizedPath(locale, '/tutorial'))
           }
         ]
       }
@@ -159,19 +169,19 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
 
                 <div className="flex flex-wrap gap-4">
                   <Link
-                    href={`/${locale}/courses`}
+                    href={localizedPath(locale, '/courses')}
                     className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
                   >
                     {locale === 'zh' ? '探索课程' : 'Explore courses'}
                   </Link>
                   <Link
-                    href={`/${locale}/tutorial#learning-path`}
+                    href={`${localizedPath(locale, '/tutorial')}#learning-path`}
                     className="inline-flex items-center gap-3 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/70 hover:text-white"
                   >
                     {locale === 'zh' ? '路线概览' : 'View roadmap'}
                   </Link>
                   <Link
-                    href={`/${locale}/course/data-structures-algorithms/CS61B`}
+                    href={localizedPath(locale, '/course/data-structures-algorithms/CS61B')}
                     className="inline-flex items-center gap-3 rounded-full border border-blue-100/40 px-6 py-3 text-sm font-semibold text-blue-100 transition hover:border-white hover:text-white"
                   >
                     {locale === 'zh' ? '转到 CS61B 专区' : 'Jump to CS61B Hub'}
@@ -293,13 +303,13 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
               <h2 className="mt-4 text-3xl font-bold text-white">{t('ready_to_start_desc')}</h2>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href={`/${locale}/courses`}
+                  href={localizedPath(locale, '/courses')}
                   className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
                 >
                   {t('browse_courses')}
                 </Link>
                 <Link
-                  href={`/${locale}/tutorial`}
+                  href={localizedPath(locale, '/tutorial')}
                   className="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/70 hover:text-white"
                 >
                   {locale === 'zh' ? '返回顶部' : 'Back to top'}

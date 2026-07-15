@@ -1,11 +1,13 @@
 import { Suspense } from 'react';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import MDXRenderer from '@/components/MDXRenderer';
 import { markdownToHTML, extractTitleFromMarkdown } from '@/lib/markdownProcessor';
 import { getCourseContent } from '@/lib/courseUtils';
-import { getEnglishSlug } from '@/lib/categoryMapping';
+import { getChineseName, getEnglishSlug } from '@/lib/categoryMapping';
 import { getAllCourses } from '@/lib/getServerData';
 import StructuredData from '@/components/StructuredData';
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo';
 
 interface CoursePageProps {
   params: Promise<{
@@ -64,14 +66,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
   const courseContent = await getCourseContent(path, locale);
 
   if (!courseContent.exists) {
-    return {
-      title: 'Course Not Found',
-      description: `Course "${coursePath}" not found. Explore our collection of Berkeley, MIT, and Stanford computer science courses instead.`,
-      openGraph: {
-        title: 'Course Not Found - CS61B & Beyond',
-        description: 'Discover other available computer science courses from top universities.'
-      }
-    };
+    notFound();
   }
 
   let title = extractTitleFromMarkdown(courseContent.content);
@@ -110,26 +105,19 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
 
   const categoryName = path[0] || 'computer science';
   const categoryDescription = categoryDescriptions[categoryName as keyof typeof categoryDescriptions] || 'advanced computer science concepts';
+  const categoryLabel = getChineseName(categoryName);
 
-  // Create specific description based on path
   const description = locale === 'zh'
-    ? `立即开始学习 ${title}。这是一门来自伯克利、MIT、斯坦福等顶尖大学的 ${categoryName.replace(/-/g, ' ')} 课程。免费掌握 ${categoryDescription} 相关的核心概念与技能。`
-    : `Start learning ${title} today. A comprehensive ${categoryName.replace(/-/g, ' ')} course from top universities like Berkeley, MIT, and Stanford. Master ${categoryDescription} with free resources.`;
-
-  const url = locale === 'en'
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${coursePath}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${coursePath}`;
+    ? `免费学习 ${title}，查看${categoryLabel}课程介绍、学习资料与相关资源，系统掌握核心概念与实践方法。`
+    : `Explore ${title}, a free ${categoryName.replace(/-/g, ' ')} learning resource with course overviews, materials, and guidance for ${categoryDescription}.`;
+  const pathname = `/course/${coursePath}`;
+  const url = absoluteUrl(localizedPath(locale, pathname));
 
   return {
-    title: title,
-    description: description,
-    alternates: {
-      canonical: `https://www.cs61bbeyond.com/course/${coursePath}`,
-      languages: {
-        'en': `https://www.cs61bbeyond.com/course/${coursePath}`,
-        'zh': `https://www.cs61bbeyond.com/zh/course/${coursePath}`,
-      },
-    },
+    title,
+    description,
+    robots: INDEXABLE_ROBOTS,
+    alternates: pageAlternates(locale, pathname),
     keywords: [
       title,
       `${title} course`,
@@ -143,72 +131,56 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
       ...path
     ],
     openGraph: {
-      title: `${title}`,
-      description: description,
-      url: url,
-      images: [
-        {
-          url: '/logo.png',
-          width: 400,
-          height: 400,
-          alt: 'CS61B & Beyond - Computer Science Open Courses'
-        }
-      ]
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: 'article',
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      images: socialImages()
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title}`,
-      description: description,
-      images: ['/logo.png']
+      title,
+      description,
+      images: [absoluteUrl('/og.jpg')]
     }
   };
 }
 
 export default async function CoursePage({ params }: CoursePageProps) {
   const { locale, path } = await params;
+  const courseContent = await getCourseContent(path, locale);
+
+  if (!courseContent.exists) {
+    notFound();
+  }
 
   return (
     <Suspense fallback={<div className="text-center py-8">Loading course...</div>}>
-      <CourseRenderer locale={locale} path={path} />
+      <CourseRenderer locale={locale} path={path} courseContent={courseContent} />
     </Suspense>
   );
 }
 
-async function CourseRenderer({ locale, path }: { locale: string; path: string[] }) {
-  const courseContent = await getCourseContent(path, locale);
-
-  if (!courseContent.exists) {
-    return (
-      <div className="min-h-screen flex flex-col">
-        <div className="flex-grow container mx-auto px-4 py-8 max-w-4xl">
-          <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-            <h1 className="text-2xl font-bold text-gray-900 mb-4">Course Not Found</h1>
-            <p className="text-gray-600 mb-4">
-              The course you&apos;re looking for doesn&apos;t exist or is not available.
-            </p>
-            <a href={`/${locale}/courses`} className="text-blue-600 hover:text-blue-800">
-              ← Back to Courses
-            </a>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
+async function CourseRenderer({
+  locale,
+  path,
+  courseContent
+}: {
+  locale: string;
+  path: string[];
+  courseContent: Awaited<ReturnType<typeof getCourseContent>>;
+}) {
   // Convert markdown to HTML
   const htmlContent = await markdownToHTML(courseContent.content);
 
   // Generate structured data
-  const courseUrl = locale === 'en'
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}/course/${path.join('/')}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/course/${path.join('/')}`;
+  const courseUrl = absoluteUrl(localizedPath(locale, `/course/${path.join('/')}`));
   const courseTitle = extractTitleFromMarkdown(courseContent.content);
   const categoryName = path[0] || 'computer science';
   const courseSlug = path[path.length - 1]?.toLowerCase() || '';
   const isCS61B = courseSlug === 'cs61b';
-
-  // Estimate course duration based on content length
-  const estimatedDuration = Math.max(1, Math.ceil(courseContent.content.length / 5000));
 
   const providerInfo = isCS61B
     ? {
@@ -219,8 +191,8 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
     }
     : {
       "@type": "EducationalOrganization",
-      "name": "CS61B & Beyond",
-      "url": process.env.NEXT_PUBLIC_SITE_URL!,
+      "name": SITE_NAME,
+      "url": absoluteUrl('/'),
       "description": "Free computer science courses from top universities"
     };
 
@@ -232,15 +204,15 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
         "name": courseTitle,
         "description": isCS61B
           ? "Comprehensive guide to UC Berkeley CS61B, covering Java, data structures, and project-based learning."
-          : `Learn ${courseTitle} - ${categoryName.replace(/-/g, ' ')} course from top universities including Berkeley, MIT, and Stanford.`,
+          : locale === 'zh'
+            ? `${courseTitle} 的免费课程介绍、学习资料与学习指南。`
+            : `Free course overview, learning materials, and study guidance for ${courseTitle}.`,
         "url": courseUrl,
         "provider": providerInfo,
         "educationalLevel": "Higher Education",
         "courseMode": "online",
         "isAccessibleForFree": true,
         "inLanguage": locale === 'zh' ? "zh-CN" : "en-US",
-        "timeRequired": `PT${estimatedDuration}H`,
-        "teaches": courseTitle,
         "about": {
           "@type": "Thing",
           "name": categoryName.replace(/-/g, ' ')
@@ -252,15 +224,7 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
             "description": "Students preparing for Berkeley CS61B or equivalent data structures coursework."
           }
           : undefined,
-        "coursePrerequisites": isCS61B ? "CS61A or equivalent introductory programming experience" : undefined,
-        "hasCourseInstance": {
-          "@type": "CourseInstance",
-          "courseMode": "online",
-          "courseSchedule": {
-            "@type": "Schedule",
-            "repeatFrequency": "daily"
-          }
-        }
+        "coursePrerequisites": isCS61B ? "CS61A or equivalent introductory programming experience" : undefined
       },
       {
         "@type": "BreadcrumbList",
@@ -268,102 +232,25 @@ async function CourseRenderer({ locale, path }: { locale: string; path: string[]
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Home",
-            "item": process.env.NEXT_PUBLIC_SITE_URL!
+            "name": locale === 'zh' ? "首页" : "Home",
+            "item": absoluteUrl(localizedPath(locale))
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": locale === 'zh' ? "课程" : "Courses",
-            "item": locale === 'en' ? `${process.env.NEXT_PUBLIC_SITE_URL}/courses` : `${process.env.NEXT_PUBLIC_SITE_URL}/${locale}/courses`
+            "item": absoluteUrl(localizedPath(locale, '/courses'))
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 3,
             "name": courseTitle,
             "item": courseUrl
           }
         ]
-      },
-      {
-        "@type": "EducationalOrganization",
-        "name": "CS61B & Beyond",
-        "url": "https://cs61b.com",
-        "description": "Platform offering free computer science courses from top universities including UC Berkeley, MIT, Stanford, and Princeton",
-        "knowsAbout": [
-          "Computer Science",
-          "Data Structures",
-          "Algorithms",
-          "Machine Learning",
-          "Computer Architecture",
-          "Operating Systems",
-          "Computer Networks",
-          "Database Systems"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "US"
-        }
       }
     ]
   };
-
-  if (isCS61B) {
-    const faqItems = locale === 'zh'
-      ? [
-        {
-          q: 'CS61B 难度如何？',
-          a: 'CS61B 是伯克利的中级课程，要求扎实的编程基础和大量项目实践，主要学习 Java 与数据结构。'
-        },
-        {
-          q: 'CS61B 包含哪些项目？',
-          a: '课程包含世界地图、Gitlet 等项目，帮助掌握树、图、哈希等数据结构在工程中的应用。'
-        },
-        {
-          q: '如何准备 CS61B？',
-          a: '建议先完成 CS61A 或同等级别的编程课程，并熟悉 Java 语法与面向对象思想。'
-        }
-      ]
-      : [
-        {
-          q: 'How hard is Berkeley CS61B?',
-          a: 'CS61B is an intermediate Berkeley course that assumes strong programming skills and emphasizes Java, algorithms, and rigorous projects.'
-        },
-        {
-          q: 'What projects are in CS61B?',
-          a: 'Expect multi-week projects like Build Your Own Gitlet and world maps that apply trees, graphs, and hashing in production-style codebases.'
-        },
-        {
-          q: 'How should I prepare for CS61B?',
-          a: 'Complete CS61A or an equivalent intro class, get comfortable with Java tooling, and review recursion plus basic data structures beforehand.'
-        }
-      ];
-
-    type GraphItem = typeof structuredData["@graph"][number] | {
-      "@type": "FAQPage";
-      mainEntity: Array<{
-        "@type": "Question";
-        name: string;
-        acceptedAnswer: {
-          "@type": "Answer";
-          text: string;
-        };
-      }>;
-    };
-
-    const faqNode: GraphItem = {
-      "@type": "FAQPage",
-      mainEntity: faqItems.map(item => ({
-        "@type": "Question",
-        name: item.q,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: item.a
-        }
-      }))
-    };
-    (structuredData["@graph"] as GraphItem[]).push(faqNode)
-  }
 
   return (
     <>

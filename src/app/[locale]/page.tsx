@@ -7,6 +7,8 @@ import PopularCourses from '@/components/PopularCourses'
 import LearningPathFlow from '@/components/LearningPathFlow'
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import Link from 'next/link'
+import StructuredData from '@/components/StructuredData'
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo'
 import {
   BadgeDollarSign,
   BookOpen,
@@ -131,7 +133,6 @@ function renderSharedSection(content: ReactNode, className = '') {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://cs61bbeyond.com'
   const isZh = locale === 'zh'
   const title = isZh
     ? 'CS61B & Beyond - 伯克利 CS61B 在线课程与学习指南'
@@ -145,6 +146,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       absolute: title
     },
     description,
+    robots: INDEXABLE_ROBOTS,
     keywords: [
       'cs61b',
       'cs61b berkeley',
@@ -156,28 +158,29 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       'cs61a',
       'cs61c'
     ],
-    alternates: {
-      canonical: isZh ? `${baseUrl}/zh` : `${baseUrl}/`,
-      languages: {
-        en: `${baseUrl}/`,
-        zh: `${baseUrl}/zh`
-      }
-    },
+    alternates: pageAlternates(locale),
     openGraph: {
       title,
       description,
-      url: isZh ? `${baseUrl}/zh` : `${baseUrl}/`,
-      siteName: 'CS61B & Beyond'
+      url: absoluteUrl(localizedPath(locale)),
+      siteName: SITE_NAME,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      alternateLocale: isZh ? ['en_US'] : ['zh_CN'],
+      images: socialImages()
     },
     twitter: {
+      card: 'summary_large_image',
       title,
-      description
+      description,
+      images: [absoluteUrl('/og.jpg')]
     }
   }
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
+  const homeUrl = absoluteUrl(localizedPath(locale))
 
   // Use real document counts for both languages
   const totalCourses = locale === 'zh' ? 130 : 128 // Real document counts: Chinese 130, English 128
@@ -265,6 +268,36 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
   return (
     <div className="min-h-screen flex flex-col">
+      <StructuredData
+        data={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebSite',
+              '@id': `${absoluteUrl('/')}#website`,
+              url: absoluteUrl('/'),
+              name: SITE_NAME,
+              inLanguage: locale === 'zh' ? 'zh-CN' : 'en-US'
+            },
+            {
+              '@type': 'EducationalOrganization',
+              '@id': `${absoluteUrl('/')}#organization`,
+              name: SITE_NAME,
+              url: absoluteUrl('/'),
+              logo: absoluteUrl('/logo.png')
+            },
+            {
+              '@type': 'CollectionPage',
+              '@id': `${homeUrl}#webpage`,
+              url: homeUrl,
+              name: locale === 'zh' ? 'CS61B & Beyond 计算机科学课程' : 'CS61B & Beyond Computer Science Courses',
+              isPartOf: { '@id': `${absoluteUrl('/')}#website` },
+              about: { '@id': `${absoluteUrl('/')}#organization` },
+              inLanguage: locale === 'zh' ? 'zh-CN' : 'en-US'
+            }
+          ]
+        }}
+      />
       <Header locale={locale} />
       <ImmersivePage>
         {renderSharedSection(
@@ -310,7 +343,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 pt-4">
                       <Link
-                        href={`/${locale}/courses`}
+                        href={localizedPath(locale, '/courses')}
                         className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
                       >
                         <span className="relative z-10 flex items-center">
@@ -330,7 +363,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       </Link>
 
                       <Link
-                        href={`/${locale}/course/data-structures-algorithms/CS61B`}
+                        href={localizedPath(locale, '/course/data-structures-algorithms/CS61B')}
                         className="group relative inline-flex items-center px-10 py-5 bg-transparent border-2 border-white/40 text-white font-bold text-lg rounded-2xl hover:bg-white/10 hover:border-white/60 transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-2xl overflow-hidden"
                       >
                         <span className="relative z-10 flex items-center gap-2">
@@ -459,7 +492,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {/* Courses Stat */}
                 <Link
-                  href={`/${locale}/courses`}
+                  href={localizedPath(locale, '/courses')}
                   className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-blue-200 hover:-translate-y-1.5"
                 >
                   {/* Gradient Background */}
@@ -496,7 +529,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
                 {/* Categories Stat */}
                 <Link
-                  href={`/${locale}/courses`}
+                  href={localizedPath(locale, '/courses')}
                   className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-purple-200 hover:-translate-y-1.5"
                 >
                   {/* Gradient Background */}
@@ -532,7 +565,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
                 {/* Universities Stat */}
                 <Link
-                  href={`/${locale}/universities`}
+                  href={localizedPath(locale, '/universities')}
                   className="group relative bg-white/85 backdrop-blur-xl rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 p-8 border border-white/40 hover:border-green-200 hover:-translate-y-1.5"
                 >
                   {/* Gradient Background */}
@@ -570,7 +603,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {/* Bottom CTA */}
               <div className="text-center mt-12">
                 <Link
-                  href={`/${locale}/courses`}
+                  href={localizedPath(locale, '/courses')}
                   className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-blue-50 text-blue-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-blue-500/20 border-2 border-white/50 hover:border-blue-200/50 backdrop-blur-sm overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
@@ -672,7 +705,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                       {locale === 'zh' ? '准备好开始你的学习之旅了吗？' : 'Ready to start your learning journey?'}
                     </p>
                     <Link
-                      href={`/${locale}/tutorial`}
+                      href={localizedPath(locale, '/tutorial')}
                       className="group relative inline-flex items-center gap-3 px-12 py-6 bg-white text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-indigo-500/30 border-2 border-white/70 overflow-hidden"
                     >
                       <span className="relative z-10 flex items-center">
@@ -691,7 +724,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   {/* Alternative CTA for minimal design */}
                   <div className="flex justify-center">
                     <Link
-                      href={`/${locale}/tutorial`}
+                      href={localizedPath(locale, '/tutorial')}
                       className="group relative inline-flex items-center justify-center w-16 h-16 bg-white/10 border-2 border-white/20 text-white rounded-full hover:bg-white hover:text-indigo-600 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                     >
                       <svg className="w-6 h-6 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -812,7 +845,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
 
                         {/* Explore Button */}
                         <Link
-                          href={`/${locale}/universities`}
+                          href={localizedPath(locale, '/universities')}
                           className="group/btn inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors duration-300 font-semibold"
                         >
                           <span>{tHome('universities.learnMore')}</span>
@@ -829,7 +862,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {/* Explore All Universities Button */}
               <div className="text-center mt-16">
                 <Link
-                  href={`/${locale}/universities`}
+                  href={localizedPath(locale, '/universities')}
                   className="group relative inline-flex items-center px-12 py-6 bg-gradient-to-r from-white via-white to-indigo-50 text-indigo-600 font-extrabold text-xl rounded-3xl transition-all duration-500 transform hover:scale-110 shadow-2xl hover:shadow-3xl hover:shadow-indigo-500/20 border-2 border-white/50 hover:border-indigo-200/50 backdrop-blur-sm overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
@@ -888,7 +921,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                           {feature.description}
                         </p>
                         <Link
-                          href={`/${locale}/courses`}
+                          href={localizedPath(locale, '/courses')}
                           className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-white/15 bg-white/5 text-sm font-semibold text-white/90 transition-all duration-300 hover:bg-white/15"
                         >
                           <span>{locale === 'zh' ? '了解更多' : 'Learn More'}</span>
@@ -948,7 +981,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                         {locale === 'zh' ? '下一步' : 'Next Step'}
                       </p>
                       <Link
-                        href={`/${locale}/courses`}
+                        href={localizedPath(locale, '/courses')}
                         className="group relative inline-flex items-center justify-between w-full gap-3 px-6 py-4 bg-white text-blue-700 font-extrabold rounded-2xl transition-all duration-500 hover:shadow-2xl hover:-translate-y-0.5"
                       >
                         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">

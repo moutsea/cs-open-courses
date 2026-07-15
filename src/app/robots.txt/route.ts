@@ -1,16 +1,15 @@
-export default function Robots() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+import { SITE_URL } from '@/lib/seo';
 
+export default function Robots() {
   return `
 # Sitemap
-Sitemap: ${siteUrl}/sitemap.xml
+Sitemap: ${SITE_URL}/sitemap.xml
 
 User-agent: *
 Allow: /
 
 # Block unnecessary paths
 Disallow: /api/
-Disallow: /_next/
 Disallow: /private/
 `
 }

@@ -1,5 +1,10 @@
 import { getEnglishSlug } from './categoryMapping';
 
+export function localizedPath(locale: string, pathname = '/'): string {
+  const normalizedPath = pathname === '/' ? '' : `/${pathname.replace(/^\/+|\/+$/g, '')}`;
+  return locale === 'zh' ? `/zh${normalizedPath}` : normalizedPath || '/';
+}
+
 /**
  * 将文件系统路径转换为 URL 安全的路径参数
  * @param filePath 文件系统路径，如 "zh/programming-introduction/python/CS50P.md"

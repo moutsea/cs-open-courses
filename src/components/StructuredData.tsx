@@ -3,7 +3,7 @@ interface StructuredDataProps {
 }
 
 export default function StructuredData({ data }: StructuredDataProps) {
-  const jsonString = JSON.stringify(data, null, 2);
+  const jsonString = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
 
   return (
     <script

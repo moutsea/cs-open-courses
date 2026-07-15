@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { sanitizeMarkdownHTML } from '@/lib/htmlSanitizer';
 import PageLayout from './PageLayout';
 import { getChineseName } from '@/lib/categoryMapping';
+import { localizedPath } from '@/lib/pathUtils';
 
 interface MDXRendererProps {
   content: string;
@@ -64,7 +65,7 @@ export default function MDXRenderer({
   const displayContent =
     contentWithoutHeading.length > 0 ? contentWithoutHeading : sanitizedContent;
 
-  const backToCoursesHref = locale === 'en' ? `/courses` : `/${locale}/courses`;
+  const backToCoursesHref = localizedPath(locale, '/courses');
 
   return (
     <PageLayout locale={locale}>

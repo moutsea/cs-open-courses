@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { memo } from 'react';
 import { Course } from '@/lib/courseParser';
-import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { buildDynamicRoutePath, localizedPath } from '@/lib/pathUtils';
 import { useSafeTranslations, getDifficultyColor } from '@/lib/translationUtils';
 
 interface CourseCardProps {
@@ -32,7 +32,7 @@ const CourseCard = memo(function CourseCard({ course, locale, forceLanguage, var
           </svg>
         </div>
         
-        <Link href={`/${resolvedLocale}/course/${buildDynamicRoutePath(course.path).join('/')}`}>
+        <Link href={localizedPath(resolvedLocale, `/course/${buildDynamicRoutePath(course.path).join('/')}`)}>
           <h3 className={`text-xl font-bold mb-2 transition-colors duration-300 leading-tight ${isImmersive ? 'text-white group-hover:text-blue-200' : 'text-gray-900 group-hover:text-blue-600'}`}>
             {course.title}
           </h3>
@@ -111,7 +111,7 @@ const CourseCard = memo(function CourseCard({ course, locale, forceLanguage, var
       {/* View Course Button */}
       <div className={`flex justify-end pt-4 border-t ${isImmersive ? 'border-white/10' : 'border-gray-100'}`}>
         <Link 
-          href={`/${resolvedLocale}/course/${buildDynamicRoutePath(course.path).join('/')}`}
+          href={localizedPath(resolvedLocale, `/course/${buildDynamicRoutePath(course.path).join('/')}`)}
           className={`flex items-center text-sm font-medium transition-colors duration-300 ${isImmersive ? 'text-blue-100 hover:text-white' : 'text-blue-600 hover:text-blue-800'}`}
         >
           <span>{t('viewCourse')}</span>

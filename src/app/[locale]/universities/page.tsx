@@ -6,6 +6,7 @@ import { Metadata } from 'next'
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import { universities } from '@/components/UniversitiesData'
 import { getTranslations } from 'next-intl/server'
+import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo'
 import {
   AtomIcon,
   BookIcon,
@@ -31,22 +32,31 @@ const iconMap = {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params
   const isZh = locale === 'zh'
-  const title = 'World CS Universities Guide'
+  const title = isZh ? '全球计算机科学大学指南' : 'World CS Universities Guide'
   const description = isZh
     ? '对比伯克利、MIT、斯坦福、CMU 等名校的 CS 开放课程：查看排名、课程数量与直达链接，快速选择理想项目。'
     : 'Compare Berkeley, MIT, Stanford, CMU open CS programs, see rankings, course counts, and jump directly into each curriculum.'
   return {
     title,
     description,
+    robots: INDEXABLE_ROBOTS,
+    alternates: pageAlternates(locale, '/universities'),
     openGraph: {
-      title: 'Top Universities & CS Programs',
+      title: isZh ? '顶尖大学与计算机科学项目' : 'Top Universities & CS Programs',
       description: isZh
         ? '探索全球顶尖 CS 项目，查看大学简介、课程数量与官方链接。'
-        : 'Discover global top CS programs with descriptions, course counts, and official links.'
+        : 'Discover global top CS programs with descriptions, course counts, and official links.',
+      url: absoluteUrl(localizedPath(locale, '/universities')),
+      siteName: SITE_NAME,
+      type: 'website',
+      locale: isZh ? 'zh_CN' : 'en_US',
+      images: socialImages()
     },
     twitter: {
-      title: 'Top Universities & CS Programs',
-      description
+      card: 'summary_large_image',
+      title: isZh ? '顶尖大学与计算机科学项目' : 'Top Universities & CS Programs',
+      description,
+      images: [absoluteUrl('/og.jpg')]
     }
   }
 }
@@ -154,7 +164,7 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
-                  href={`/${locale}/courses`}
+                  href={localizedPath(locale, '/courses')}
                   className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
                 >
                   {locale === 'zh' ? '浏览所有课程' : 'Browse all courses'}

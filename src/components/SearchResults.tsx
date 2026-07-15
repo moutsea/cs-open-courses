@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { buildDynamicRoutePath } from '@/lib/pathUtils'
+import { buildDynamicRoutePath, localizedPath } from '@/lib/pathUtils'
 
 interface CourseSearchIndex {
   id: string
@@ -151,7 +151,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
               : `We couldn’t find results for “${query}”. Try another keyword?`}
           </p>
           <Link
-            href={`/${locale}/courses`}
+            href={localizedPath(locale, '/courses')}
             className="inline-flex items-center rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 transition"
           >
             {locale === 'zh' ? '浏览所有课程' : 'Browse all courses'}
@@ -188,7 +188,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div className="flex-1 space-y-3">
                 <Link
-                  href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
+                  href={localizedPath(locale, `/course/${buildDynamicRoutePath(result.course.path).join('/')}`)}
                   className="block text-lg font-semibold text-gray-900 hover:text-blue-600"
                 >
                   {locale === 'zh' ? result.course.title : result.course.titleEn}
@@ -227,7 +227,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
                 </div>
               </div>
               <Link
-                href={`/${locale}/course/${buildDynamicRoutePath(result.course.path).join('/')}`}
+                href={localizedPath(locale, `/course/${buildDynamicRoutePath(result.course.path).join('/')}`)}
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 transition"
               >
                 {locale === 'zh' ? '查看课程' : 'View course'}
@@ -252,7 +252,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
             {Array.from({ length: totalPages }, (_, idx) => idx + 1).map(pageNum => (
               <Link
                 key={pageNum}
-                href={`/${locale}/search?q=${encodeURIComponent(query)}&page=${pageNum}`}
+                href={`${localizedPath(locale, '/search')}?q=${encodeURIComponent(query)}&page=${pageNum}`}
                 className={`px-4 py-2 text-sm font-semibold rounded-full ${
                   pageNum === page ? 'bg-blue-600 text-white' : 'text-gray-600 hover:bg-gray-50'
                 }`}
