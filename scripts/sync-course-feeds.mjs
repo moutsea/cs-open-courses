@@ -528,7 +528,7 @@ async function main() {
 
     const seen = new Set(sourceState?.seenEntryIds || [])
     const pending = replayLatest
-      ? entries.slice(0, 1)
+      ? entries.slice(0, maxPerSource).reverse()
       : entries.filter(entry => !seen.has(entry.id)).slice(0, maxPerSource).reverse()
     if (pending.length === 0) {
       log(`${source.id}: no new entries`)
