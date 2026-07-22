@@ -37,3 +37,13 @@ CS61B 和 CS61C 在本书中均有收录。
 @PKUFlyingPig 在学习这门课中用到的所有资源和作业实现都汇总在 [PKUFlyingPig/CS61A - GitHub](https://github.com/PKUFlyingPig/CS61A) 中。
 
 @InsideEmpire 在学习这门课中用到的所有资源和作业实现都汇总在 [InsideEmpire/CS61A - GitHub](https://github.com/InsideEmpire/CS61A-PathwayToSuccess/)
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## 最新课程动态
+
+- **2026-07-21** — 新增 2026 年春季课程网站备份和 YouTube 课程录像合集。
+  - 来源: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5)
+  - [2026 年春季课程网站备份](https://lr2933.github.io/cs61a-spring-2026)
+  - [YouTube 课程录像合集](https://www.youtube.com/watch?v=gNv81_4X0uU&list=PLHODd-fpPyMC5Mho6PIjIGsGgBW_syyHi)
+  <!-- feed-entry:39e98e5220e7573d -->
+<!-- AUTO-COURSE-UPDATES:END -->

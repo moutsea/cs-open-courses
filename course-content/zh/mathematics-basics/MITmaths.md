@@ -18,3 +18,13 @@ MIT 的微积分课由 MIT18.01: Single Variable Calculus 和 MIT18.02: Multivar
 - 课程视频：参见课程网站
 - 课程教材：参见课程 notes
 - 课程作业：书面作业及答案参见课程网站
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## 最新课程动态
+
+- **2026-07-21** — 更新课程资源，修正 MIT 单变量微积分和多变量微积分的开放课程链接。
+  - 来源: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/ffc70148d38a9cd3c81a198178357868a63cf7fa)
+  - [MIT 18.01SC：单变量微积分](https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010)
+  - [MIT 18.02SC：多变量微积分](https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010)
+  <!-- feed-entry:5ed02432031b0da4 -->
+<!-- AUTO-COURSE-UPDATES:END -->

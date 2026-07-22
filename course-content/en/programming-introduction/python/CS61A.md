@@ -37,3 +37,13 @@ Note: If you have no prior programming experience at all, getting started with C
 All the resources and assignments used by @PKUFlyingPig in this course are maintained in [PKUFlyingPig/CS61A - GitHub](https://github.com/PKUFlyingPig/CS61A)
 
 All the resources and assignments used by @InsideEmpire in this course are maintained in [InsideEmpire/CS61A - GitHub](https://github.com/InsideEmpire/CS61A-PathwayToSuccess/)
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## Latest Course Updates
+
+- **2026-07-21** — Add the Spring 2026 course-site backup and a YouTube recordings playlist.
+  - Source: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5)
+  - [Spring 2026 Course Website Backup](https://lr2933.github.io/cs61a-spring-2026)
+  - [YouTube Recordings Playlist](https://www.youtube.com/watch?v=gNv81_4X0uU&list=PLHODd-fpPyMC5Mho6PIjIGsGgBW_syyHi)
+  <!-- feed-entry:39e98e5220e7573d -->
+<!-- AUTO-COURSE-UPDATES:END -->

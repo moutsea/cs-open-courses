@@ -3,8 +3,11 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
-      "lastProcessedAt": "2026-07-15T02:44:55.785Z",
+      "lastProcessedAt": "2026-07-22T05:30:08.874Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
+        "tag:github.com,2008:Grit::Commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
+        "tag:github.com,2008:Grit::Commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
         "tag:github.com,2008:Grit::Commit/3ec3100168528558a30e2e447178697c3a43b3a7",
         "tag:github.com,2008:Grit::Commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
         "tag:github.com,2008:Grit::Commit/cb90db338bddfd5407c5d420320d90c669edb452",
@@ -81,6 +84,66 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-07-22T05:30:08.874Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5",
+      "entryTitle": "Update web links (#862)",
+      "mode": "auto",
+      "type": "update",
+      "confidence": 0.99,
+      "targetPath": "programming-introduction/python/CS61A",
+      "changedFiles": [
+        "course-content/en/programming-introduction/python/CS61A.md",
+        "course-content/zh/programming-introduction/python/CS61A.md"
+      ]
+    },
+    {
+      "reviewedAt": "2026-07-22T05:30:08.874Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5",
+      "entryTitle": "Update web links (#862)",
+      "mode": "auto",
+      "type": "update",
+      "confidence": 0.99,
+      "targetPath": "programming-introduction/MIT-Missing-Semester",
+      "changedFiles": [
+        "course-content/en/programming-introduction/MIT-Missing-Semester.md",
+        "course-content/zh/programming-introduction/MIT-Missing-Semester.md"
+      ]
+    },
+    {
+      "reviewedAt": "2026-07-22T05:29:31.267Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
+      "entryTitle": "[COURSE] Add CMU 15-442/642 Machine Learning Systems (#869)",
+      "mode": "auto",
+      "type": "create",
+      "confidence": 0.98,
+      "targetPath": "machine-learning-systems/CMU15-442",
+      "changedFiles": [
+        "course-content/en/machine-learning-systems/CMU15-442.md",
+        "course-content/zh/machine-learning-systems/CMU15-442.md"
+      ]
+    },
+    {
+      "reviewedAt": "2026-07-22T05:29:20.296Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
+      "entryTitle": "[Fix] update MIT calculus course links (#882)",
+      "mode": "auto",
+      "type": "update",
+      "confidence": 0.99,
+      "targetPath": "mathematics-basics/MITmaths",
+      "changedFiles": [
+        "course-content/en/mathematics-basics/MITmaths.md",
+        "course-content/zh/mathematics-basics/MITmaths.md"
+      ]
+    },
     {
       "reviewedAt": "2026-07-15T02:45:38.194Z",
       "sourceId": "ossu-computer-science",

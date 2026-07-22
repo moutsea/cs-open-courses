@@ -20,3 +20,12 @@
     - Missing_Semi_中译组（未完结）：<https://space.bilibili.com/1010983811?spm_id_from=333.337.search-card.all.click>
     - 刘黑黑a（已完结）：<https://space.bilibili.com/518734451?spm_id_from=333.337.search-card.all.click>
 - 课程作业：一些随堂小练习，具体见课程网站。
+
+<!-- AUTO-COURSE-UPDATES:START -->
+## 最新课程动态
+
+- **2026-07-21** — 将课程网站更新为当前不限定年份的 Missing Semester 官方网站。
+  - 来源: [cs-self-learning](https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5)
+  - [课程网站](https://missing.csail.mit.edu)
+  <!-- feed-entry:39e98e5220e7573d -->
+<!-- AUTO-COURSE-UPDATES:END -->
