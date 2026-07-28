@@ -49,24 +49,21 @@ function getUniversityKeys(university: string): string[] {
   return matchedKeys.length > 0 ? [...new Set(matchedKeys)] : [normalizedUniversity]
 }
 
+export function getUniversityKey(university: string): string | null {
+  return getUniversityKeys(university)[0] ?? null
+}
+
 export function countUniversities(courses: CourseWithUniversity[]): number {
   const universityKeys = new Set(courses.flatMap(course => course.university ? getUniversityKeys(course.university) : []))
   return universityKeys.size
 }
 
 export function countUniversityCourses(courses: CourseWithUniversity[], universityKey: string): number {
-  return courses.filter(course => (
-    course.university ? getUniversityKeys(course.university).includes(universityKey) : false
-  )).length
+  return getUniversityCourses(courses, universityKey).length
 }
 
-export function countUniversityCoursesByName(courses: CourseWithUniversity[], universityName: string): number {
-  const universityKeys = getUniversityKeys(universityName)
-
-  return courses.filter(course => {
-    if (!course.university) return false
-
-    const courseUniversityKeys = getUniversityKeys(course.university)
-    return courseUniversityKeys.some(key => universityKeys.includes(key))
-  }).length
+export function getUniversityCourses<T extends CourseWithUniversity>(courses: T[], universityKey: string): T[] {
+  return courses.filter(course => (
+    course.university ? getUniversityKeys(course.university).includes(universityKey) : false
+  ))
 }

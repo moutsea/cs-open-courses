@@ -5,10 +5,12 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage'
 import { universities } from '@/components/UniversitiesData'
+import CourseCard from '@/components/CourseCard'
 import { getTranslations } from 'next-intl/server'
 import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo'
 import { buildSearchIndex } from '@/lib/searchIndex'
-import { countUniversityCoursesByName } from '@/lib/universityUtils'
+import { countUniversityCourses, getUniversityCourses, getUniversityKey } from '@/lib/universityUtils'
+import type { Course } from '@/lib/courseParser'
 import {
   AtomIcon,
   BookIcon,
@@ -63,16 +65,52 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   }
 }
 
-export default async function LocaleUniversitiesPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function LocaleUniversitiesPage({
+  params,
+  searchParams
+}: {
+  params: Promise<{ locale: string }>
+  searchParams: Promise<{ university?: string | string[] }>
+}) {
   const { locale } = await params
+  const resolvedSearchParams = await searchParams
+  const requestedUniversityKey = Array.isArray(resolvedSearchParams.university)
+    ? resolvedSearchParams.university[0]
+    : resolvedSearchParams.university
   const [tHome, courses] = await Promise.all([
     getTranslations({ locale, namespace: 'home' }),
     buildSearchIndex()
   ])
-  const universitiesWithCounts = universities.map(university => ({
-    ...university,
-    courses: countUniversityCoursesByName(courses, university.name)
-  }))
+  const universitiesWithCounts = universities.map(university => {
+    const key = getUniversityKey(university.name) || university.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+
+    return {
+      ...university,
+      key,
+      courses: countUniversityCourses(courses, key)
+    }
+  })
+  const selectedUniversity = universitiesWithCounts.find(university => university.key === requestedUniversityKey)
+  const selectedCourses: Course[] = selectedUniversity
+    ? getUniversityCourses(courses, selectedUniversity.key)
+        .map(course => ({
+          id: course.id,
+          title: locale === 'zh' ? course.title : course.titleEn || course.title,
+          description: locale === 'zh' ? course.description : course.descriptionEn,
+          path: course.path,
+          slug: course.path.split('/').pop() || course.id,
+          content: '',
+          hasEnglishVersion: course.hasEnglishVersion,
+          summary: course.summary,
+          summaryEn: course.summaryEn,
+          university: course.university,
+          programmingLanguage: course.programmingLanguage,
+          difficulty: course.difficulty,
+          duration: course.duration,
+          categorySlug: course.category
+        }))
+        .sort((firstCourse, secondCourse) => firstCourse.title.localeCompare(secondCourse.title, locale))
+    : []
 
   const stats = [
     { label: locale === 'zh' ? '入选大学' : 'Universities', value: universitiesWithCounts.length },
@@ -123,8 +161,17 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {universitiesWithCounts.map((university, index) => {
                 const Icon = iconMap[university.icon]
+                const isSelected = university.key === selectedUniversity?.key
+                const coursesHref = `${localizedPath(locale, '/universities')}?university=${encodeURIComponent(university.key)}#university-courses`
                 return (
-                  <div key={university.name} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-xl">
+                  <div
+                    key={university.name}
+                    className={`rounded-3xl border p-6 text-white shadow-xl transition ${
+                      isSelected
+                        ? 'border-cyan-200/50 bg-cyan-200/10'
+                        : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/[0.07]'
+                    }`}
+                  >
                     <div className="flex items-center gap-4">
                       <div className="rounded-2xl bg-white/10 p-3">
                         <Icon />
@@ -137,15 +184,27 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
                       </div>
                     </div>
                     <p className="mt-4 text-sm text-white/70 leading-relaxed">{university.description}</p>
-                    <div className="mt-6 flex items-center justify-between text-sm text-white/60">
-                      <span>
-                        {university.courses} {locale === 'zh' ? '门课程' : 'Courses'}
-                      </span>
+                    <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
+                      {university.courses > 0 ? (
+                        <Link
+                          href={coursesHref}
+                          aria-current={isSelected ? 'location' : undefined}
+                          className="inline-flex flex-1 items-center justify-center rounded-full bg-white px-4 py-2 text-xs font-semibold text-slate-950 transition hover:bg-cyan-100"
+                        >
+                          {locale === 'zh'
+                            ? `查看 ${university.courses} 门公开课`
+                            : `View ${university.courses} open courses`}
+                        </Link>
+                      ) : (
+                        <span className="flex-1 text-xs text-white/45">
+                          {locale === 'zh' ? '暂未收录公开课' : 'No open courses listed yet'}
+                        </span>
+                      )}
                       <a
                         href={university.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="rounded-full border border-white/20 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 transition hover:border-white/60"
+                        className="rounded-full border border-white/20 px-4 py-2 text-xs font-semibold text-white/80 transition hover:border-white/60 hover:text-white"
                       >
                         {locale === 'zh' ? '访问官网' : 'Visit site'}
                       </a>
@@ -156,6 +215,50 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
             </div>
           </div>
         </ImmersiveSection>
+
+        {selectedUniversity && (
+          <ImmersiveSection id="university-courses" className="scroll-mt-24 py-16 text-white">
+            <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="rounded-[32px] border border-cyan-200/20 bg-slate-950/35 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+                <div className="flex flex-col gap-6 border-b border-white/10 pb-7 lg:flex-row lg:items-end lg:justify-between">
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200/70">
+                      {locale === 'zh' ? '大学公开课合集' : 'University course collection'}
+                    </p>
+                    <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">{selectedUniversity.name}</h2>
+                    <p className="mt-3 max-w-3xl text-white/60">
+                      {locale === 'zh'
+                        ? `这里聚合了本站收录的 ${selectedCourses.length} 门公开课，可直接进入课程详情查看讲义、作业和学习资源。`
+                        : `Browse all ${selectedCourses.length} open courses indexed for this university, with direct access to course materials and learning resources.`}
+                    </p>
+                  </div>
+                  <div className="flex flex-wrap gap-3">
+                    <a
+                      href={selectedUniversity.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-semibold text-white/80 transition hover:border-white/50 hover:text-white"
+                    >
+                      {locale === 'zh' ? '大学官网' : 'University website'}
+                    </a>
+                    <Link
+                      href={localizedPath(locale, '/universities')}
+                      className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
+                    >
+                      {locale === 'zh' ? '查看全部大学' : 'View all universities'}
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                  {selectedCourses.map(course => (
+                    <CourseCard key={course.id} course={course} locale={locale} variant="immersive" />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </ImmersiveSection>
+        )}
 
         <ImmersiveSection className="py-16 text-white">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">

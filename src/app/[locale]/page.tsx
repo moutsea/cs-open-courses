@@ -273,15 +273,23 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </div>
             <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {homeUniversities.map(university => (
-                <div key={university.key} className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+                <Link
+                  key={university.key}
+                  href={`${localizedPath(locale, '/universities')}?university=${encodeURIComponent(university.key)}#university-courses`}
+                  className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-cyan-200/30 hover:bg-white/10"
+                  aria-label={locale === 'zh'
+                    ? `查看 ${university.shortName} 的 ${university.courses} 门公开课`
+                    : `View ${university.courses} open courses from ${university.shortName}`}
+                >
                   <div className="flex min-w-0 items-center gap-3">
                     <GraduationCap className="h-5 w-5 flex-none text-cyan-200" aria-hidden="true" />
                     <span className="truncate font-semibold">{university.shortName}</span>
                   </div>
-                  <span className="ml-4 flex-none text-sm text-white/50">
-                    {university.courses} {t('universities.courseCount')}
-                  </span>
-                </div>
+                  <div className="ml-4 flex flex-none items-center gap-2 text-sm text-white/50 transition group-hover:text-cyan-100">
+                    <span>{university.courses} {t('universities.courseCount')}</span>
+                    <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden="true" />
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
