@@ -16,7 +16,7 @@ export function ImmersivePage({
   gradient = DEFAULT_GRADIENT
 }: ImmersivePageProps) {
   return (
-    <main className={`relative flex-grow overflow-hidden ${className}`}>
+    <main className={`relative flex-grow overflow-clip ${className}`}>
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0" style={{ background: gradient }}></div>
         <div className="absolute -top-1/3 left-1/4 w-[60vw] h-[60vw] bg-blue-700/25 blur-[200px]"></div>
