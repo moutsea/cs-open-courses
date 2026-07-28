@@ -32,52 +32,133 @@
     "error": "加载课程失败"
   },
   "home": {
+    "metadata": {
+      "title": "CS61B & Beyond - 免费计算机科学课程与学习路径",
+      "description": "探索来自伯克利、MIT、斯坦福等大学的免费计算机科学课程，并通过学习路径、收藏与进度管理持续学习。"
+    },
     "hero": {
+      "badge": "从 CS61B 出发，建立完整 CS 能力",
       "title": "CS61B & Beyond",
-      "subtitle": "来自顶尖大学的免费计算机科学课程",
-      "description": "免费访问世界各地著名大学的高质量计算机科学课程。",
-      "cta": "探索课程"
+      "description": "把顶尖大学的免费计算机课程，整理成真正能开始、能坚持、能完成的学习路径。",
+      "searchLabel": "搜索课程",
+      "searchPlaceholder": "搜索 CS61B、Python、操作系统…",
+      "searchButton": "搜索课程",
+      "browseCourses": "浏览所有课程",
+      "viewLearningPaths": "查看学习路线",
+      "recommendedEyebrow": "推荐起点",
+      "recommendedDescription": "用 Java、数据结构和大型项目建立扎实的工程基础。",
+      "openCourse": "进入 CS61B 课程"
     },
     "stats": {
-      "courses": "门课程",
+      "freeCourses": "门免费课程",
+      "subjectAreas": "个学习领域",
       "universities": "所大学",
-      "subjects": "个学科"
+      "courseCount": "门"
     },
-    "features": {
-      "universityQuality": {
-        "title": "大学品质",
-        "description": "来自麻省理工、斯坦福、哈佛等顶尖大学的课程。"
+    "learningPanel": {
+      "continueEyebrow": "继续学习",
+      "chooseEyebrow": "选择方向",
+      "continueTitle": "回到你的学习进度",
+      "chooseTitle": "你现在最想学习什么？",
+      "continueDescription": "收藏和进度保存在当前浏览器中，可以随时接着学。",
+      "chooseDescription": "先选一个目标，我们会把你带到最相关的课程。",
+      "inProgress": "门学习中",
+      "completed": "门已完成",
+      "statusCompleted": "已完成",
+      "statusInProgress": "学习中",
+      "statusSaved": "已收藏",
+      "continueCourse": "继续课程",
+      "directions": {
+        "beginner": {
+          "title": "零基础入门",
+          "description": "从 Python、CS50 或 CS61A 开始"
+        },
+        "algorithms": {
+          "title": "算法与数据结构",
+          "description": "以 CS61B 为核心建立算法能力"
+        },
+        "systems": {
+          "title": "计算机系统",
+          "description": "深入体系结构、操作系统与网络"
+        },
+        "ai": {
+          "title": "机器学习与 AI",
+          "description": "从数学基础走向现代 AI"
+        }
       },
-      "comprehensiveCoverage": {
-        "title": "全面覆盖",
-        "description": "从编程入门到高级机器学习的全方位内容。"
+      "ariaLabel": "你的学习空间"
+    },
+    "learningPaths": {
+      "eyebrow": "三步学习路线",
+      "title": "先建立基础，再选择方向",
+      "description": "首页只展示关键决策点，完整的七阶段路线和课程映射仍可深入查看。",
+      "viewAll": "查看完整路线",
+      "exploreStage": "查看这一阶段",
+      "stages": {
+        "foundation": {
+          "title": "打好基础",
+          "description": "工具、数学与编程入门",
+          "topics": ["命令行与 Git", "数学基础", "CS50 / CS61A"]
+        },
+        "core": {
+          "title": "掌握核心",
+          "description": "数据结构、算法与计算机系统",
+          "topics": ["CS61B 数据结构", "体系结构与操作系统", "算法设计"]
+        },
+        "direction": {
+          "title": "选择方向",
+          "description": "进入 AI、系统或专业领域",
+          "topics": ["机器学习与 AI", "分布式系统", "图形学与安全"]
+        }
       },
-      "completelyFree": {
-        "title": "完全免费",
-        "description": "所有课程均可免费访问，无需注册。"
+      "ariaLabel": "学习路线"
+    },
+    "featured": {
+      "eyebrow": "精选课程",
+      "title": "从这四门课程开始",
+      "description": "围绕 CS61B，覆盖先修知识、系统基础和一个热门进阶方向。",
+      "browseAll": "浏览全部课程",
+      "viewCourse": "查看课程",
+      "hours": "{count} 小时",
+      "roles": {
+        "core": "核心课程",
+        "prerequisite": "推荐先修",
+        "systems": "系统基础",
+        "popular": "热门方向"
       },
-      "selfPaced": {
-        "title": "自主学习",
-        "description": "灵活安排时间，按照自己的节奏学习。"
+      "difficulty": {
+        "beginner": "入门",
+        "intermediate": "中级",
+        "advanced": "进阶",
+        "expert": "专家"
       }
     },
     "universities": {
-      "title": "顶尖大学",
-      "subtitle": "向全世界最好的机构学习",
-      "learnMore": "了解更多"
+      "directoryTitle": "顶尖大学",
+      "directorySubtitle": "向全世界最好的机构学习",
+      "eyebrow": "课程来源",
+      "sourcesTitle": "来自世界一流大学",
+      "viewAll": "查看全部大学",
+      "courseCount": "门"
+    },
+    "benefits": {
+      "realCourses": {
+        "title": "真实课程",
+        "description": "课程资料来自大学公开课程与官方资源。"
+      },
+      "clearPaths": {
+        "title": "清晰路线",
+        "description": "从入门到进阶，知道下一门课该学什么。"
+      },
+      "freeAccess": {
+        "title": "完全免费",
+        "description": "无需注册即可浏览课程与记录本地进度。"
+      }
     },
     "cta": {
-      "title": "立即开始学习",
-      "subtitle": "加入数千名免费学习计算机科学的学生行列",
-      "button": "浏览所有课程"
-    },
-    "popularCourses": {
-      "title": "热门课程",
-      "subtitle": "精选顶尖大学经典课程",
-      "viewCourse": "查看课程",
-      "difficulty": "难度",
-      "duration": "学习时间",
-      "language": "编程语言"
+      "title": "准备开始了吗？",
+      "description": "选一门课程，今天就完成第一小节。",
+      "button": "选择课程"
     }
   },
   "tutorial": {

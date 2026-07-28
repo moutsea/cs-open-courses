@@ -7,6 +7,8 @@ import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePa
 import { universities } from '@/components/UniversitiesData'
 import { getTranslations } from 'next-intl/server'
 import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo'
+import { buildSearchIndex } from '@/lib/searchIndex'
+import { countUniversityCoursesByName } from '@/lib/universityUtils'
 import {
   AtomIcon,
   BookIcon,
@@ -63,12 +65,19 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function LocaleUniversitiesPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  const tHome = await getTranslations({ locale, namespace: 'home' })
+  const [tHome, courses] = await Promise.all([
+    getTranslations({ locale, namespace: 'home' }),
+    buildSearchIndex()
+  ])
+  const universitiesWithCounts = universities.map(university => ({
+    ...university,
+    courses: countUniversityCoursesByName(courses, university.name)
+  }))
 
   const stats = [
-    { label: locale === 'zh' ? '入选大学' : 'Universities', value: universities.length },
-    { label: locale === 'zh' ? '免费课程' : 'Free Courses', value: universities.reduce((sum, u) => sum + u.courses, 0) },
-    { label: locale === 'zh' ? '覆盖地区' : 'Regions', value: 4 }
+    { label: locale === 'zh' ? '入选大学' : 'Universities', value: universitiesWithCounts.length },
+    { label: locale === 'zh' ? '免费课程' : 'Free Courses', value: courses.length },
+    { label: locale === 'zh' ? '覆盖地区' : 'Regions', value: new Set(universities.map(university => university.region)).size }
   ]
 
   return (
@@ -95,8 +104,8 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
               <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                 {locale === 'zh' ? '全球合作网络' : 'Global Network'}
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">{tHome('universities.title')}</h1>
-              <p className="text-lg text-white/70 max-w-3xl mx-auto">{tHome('universities.subtitle')}</p>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">{tHome('universities.directoryTitle')}</h1>
+              <p className="text-lg text-white/70 max-w-3xl mx-auto">{tHome('universities.directorySubtitle')}</p>
               <div className="grid gap-4 sm:grid-cols-3">
                 {stats.map(stat => (
                   <div key={stat.label} className="rounded-3xl border border-white/15 bg-white/5 p-5">
@@ -112,7 +121,7 @@ export default async function LocaleUniversitiesPage({ params }: { params: Promi
         <ImmersiveSection className="py-16">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {universities.map((university, index) => {
+              {universitiesWithCounts.map((university, index) => {
                 const Icon = iconMap[university.icon]
                 return (
                   <div key={university.name} className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-xl">

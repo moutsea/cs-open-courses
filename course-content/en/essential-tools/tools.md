@@ -30,7 +30,7 @@
 
 ## Programming Related
 
-- [sqlfiddle](http://www.sqlfiddle.com/): An easy-to-use online SQL Playground.
+- [sqlfiddle](https://sqlfiddle.com/): An easy-to-use online SQL Playground.
 - [sqlzoo](https://sqlzoo.net/wiki/SQL_Tutorial): Practice SQL statements online.
 - [godbolt](https://godbolt.org/): A convenient compiler exploration tool. Write some C/C++ code, choose a compiler, and observe the specific assembly code generated.
 - [explainshell](https://explainshell.com/): Struggling with the meaning of a shell command? Try this site!
@@ -44,7 +44,7 @@
 - [DataStructureVisual](http://www.rmboot.com/): Data structure visualization website.
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html): Visualization website for data structures and algorithms.
 - [learngitbranching](https://learngitbranching.js.org/?locale=zh_CN): Visualize learning git.
-- [UnicodeCharacter](https://unicode-table.com/en/): Unicode character set website.
+- [UnicodeCharacter](https://symbl.cc/): Unicode character set website.
 - [cyrilex](https://extendsclass.com/regex-tester.html): A site for testing and visualizing regular expressions, supporting various programming language standards.
 - [mockium](https://softwium.com/mockium/): Platform for generating test data.
 
@@ -61,7 +61,7 @@
 - [seu-master](https://github.com/oneman233/seu-master): Southeast University graduate course materials.
 - [Runoob](https://www.runoob.com/): Brief tutorials on computer-related knowledge.
 - [FreeBSD From Entry to Run Away](https://book.bsdcn.org/): A Chinese tutorial on FreeBSD.
-- [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn): MDN's beginner's guide to web development.
+- [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn_web_development): MDN's beginner's guide to web development.
 - [Hello Algorithm](https://www.hello-algo.com/): A quick introductory tutorial on data structures and algorithms with animations, runnable examples, and Q&A.
 
 ## Encyclopedic/Dictionarial Websites
@@ -69,7 +69,7 @@
 - [os-wiki](https://wiki.osdev.org/Main_Page): An encyclopedia of operating system technology resources.
 - [FreeBSD Documentation](https://docs.freebsd.org/en/): Official FreeBSD documentation.
 - [Python3 Documentation](https://docs.python.org/zh-cn/3/): Official Chinese documentation for Python3.
-- [C++ Reference](https://en.cppreference.com/w/): C++ reference manual.
+- [C++ Reference](https://en.cppreference.com/): C++ reference manual.
 - [OI Wiki](https://oi-wiki.org/): An integrated site for programming competition knowledge.
 - [Microsoft Learn](https://learn.microsoft.com/zh-cn/): Microsoft's official learning platform, containing most Microsoft product documentation.
 - [Arch Wiki](https://wiki.archlinux.org/): Wiki written for Arch Linux, containing a lot of Linux-related knowledge.

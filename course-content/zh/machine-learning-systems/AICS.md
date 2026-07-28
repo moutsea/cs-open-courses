@@ -40,6 +40,4 @@
 
 - 旧版课程作业：6 个实验(包括编写卷积算子，为 TensorFlow 添加算子，用 BCL 编写算子并集成到 TensorFlow 中等)(具体内容在官网可以找到)
 - 旧版实验手册：[实验 2.0 指导手册](https://forum.cambricon.com/index.php?m=content&c=index&a=show&catid=155&id=708)
-- 学习笔记：<https://sanzo.top/categories/AI-Computing-Systems/>，参考实验手册总结的笔记(已失效)
 - @ysj1173886760 在学习这门课中用到的所有资源和作业实现都汇总在 [ysj1173886760/Learning: ai-system - GitHub](https://github.com/ysj1173886760/Learning/tree/master/ai-system) 中。
-

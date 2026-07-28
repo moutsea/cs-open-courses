@@ -30,7 +30,7 @@
 
 ## 编程相关
 
-- [sqlfiddle](http://www.sqlfiddle.com/): 一个简易的在线 SQL Playground。
+- [sqlfiddle](https://sqlfiddle.com/): 一个简易的在线 SQL Playground。
 - [sqlzoo](https://sqlzoo.net/wiki/SQL_Tutorial)：在线练习 sql 语句。
 - [sqlable](https://sqlable.com)：一个 SQL 工具网站（格式化器、验证器、生成器，SQL Playground）。
 - [godbolt](https://godbolt.org/): 非常方便的编译器探索工具。你可以写一段 C/C++ 代码，选择一款编译器，然后便可以观察生成的具体汇编代码。
@@ -45,7 +45,7 @@
 - [DataStructureVisual](http://www.rmboot.com/): 数据结构可视化网站。
 - [Data Structure Visualizations](https://www.cs.usfca.edu/~galles/visualization/Algorithms.html): 数据结构与算法的可视化网站。
 - [learngitbranching](https://learngitbranching.js.org/?locale=zh_CN): 可视化学习 git。
-- [UnicodeCharacter](https://unicode-table.com/en/): Unicode 字符集网站。
+- [UnicodeCharacter](https://symbl.cc/): Unicode 字符集网站。
 - [cyrilex](https://extendsclass.com/regex-tester.html): 一个用于测试和可视化正则表达式的网站，支持各种编程语言标准。
 - [mockium](https://softwium.com/mockium/): 生成测试数据的平台。
 
@@ -62,14 +62,14 @@
 - [seu-master](https://github.com/oneman233/seu-master): 东南大学研究生课程资料整理。
 - [菜鸟教程](https://www.runoob.com/): 计算机相关知识的简要的教程。
 - [FreeBSD 从入门到跑路](https://book.bsdcn.org/): 一本 FreeBSD 的中文教程。
-- [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn): MDN 网络开发入门手册。
+- [MDN Web Docs](https://developer.mozilla.org/zh-CN/docs/Learn_web_development): MDN 网络开发入门手册。
 - [Hello 算法](https://www.hello-algo.com/): 动画图解、能运行、可提问的数据结构与算法快速入门教程。
 
 ## 百科网站/词典性质的网站
 - [os-wiki](https://wiki.osdev.org/Main_Page): 操作系统技术资源百科全书。
 - [FreeBSD Documentation](https://docs.freebsd.org/en/): FreeBSD 官方文档。
 - [Python3 Documentation](https://docs.python.org/zh-cn/3/): Python3 官方中文文档。
-- [C++ Reference](https://en.cppreference.com/w/): C++ 参考手册。
+- [C++ Reference](https://en.cppreference.com/): C++ 参考手册。
 - [OI Wiki](https://oi-wiki.org/): 编程竞赛知识整合站点。
 - [Microsoft Learn](https://learn.microsoft.com/zh-cn/): 微软官方的学习平台，包含了绝大多数微软产品的文档。
 - [Arch Wiki](https://wiki.archlinux.org/): 专为 Arch Linux 而写的 Wiki，包含了大量 Linux 相关的知识。

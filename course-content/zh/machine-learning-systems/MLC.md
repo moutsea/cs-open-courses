@@ -26,7 +26,7 @@
 
 - 课程网站：<https://mlc.ai/summer22-zh/>
 - 课程视频：[Bilibili][Bilibili_link]
-- 课程笔记：<https://mlc.ai/zh/index.html>
-- 课程作业：<https://github.com/mlc-ai/notebooks/blob/main/assignment>
+- 课程笔记：<https://mlc.ai/>
+- 课程作业：<https://github.com/mlc-ai/notebooks/tree/main/assignment>
 
 [Bilibili_link]: https://www.bilibili.com/video/BV15v4y1g7EU?spm_id_from=333.337.search-card.all.click&vd_source=a4d76d1247665a7e7bec15d15fd12349

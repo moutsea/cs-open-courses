@@ -26,4 +26,4 @@ Of course, this course also has minor imperfections. For example, Linux 0.11 is 
 
 ## Complementary Resources
 
-@NaChen95 has compiled the principles and implementations of the eight experimental assignments in this course at [NaChen95 / Linux0.11](https://github.com/NaChen95/Linux0.11).
+@TonyWriting has compiled the principles and implementations of the eight experimental assignments in this course at [TonyWriting/Linux0.11](https://github.com/TonyWriting/Linux0.11).

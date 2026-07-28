@@ -10,7 +10,7 @@
 
 It is the second course of UC Berkeley's CS61 series. It mainly focuses on the design of data structures and algorithms as well as giving students the opportunity to be exposed to thousands of lines of engineering code and gain a preliminary understanding of software engineering through Java.
 
-I took the version for 2018 Spring. Josh Hug, the instructor, generously made the autograder open-source. You can use [gradescope](https://gradescope.com/) invitation code published on the website for free and easily test your implementation.
+I took the version for 2018 Spring. Josh Hug, the instructor, generously made the autograder open-source. You can use [gradescope](https://www.gradescope.com/) invitation code published on the website for free and easily test your implementation.
 
 According to the professor's latest policy, SP2021 CS61B is now open to the public. To get everything set up, go to Gradescope and select the "Add a course" button. Enter course code **MB7ZPY** to be added.
 
@@ -29,6 +29,4 @@ In addition, there are 3 projects that give you the opportunity to be exposed to
 
 ## Personal resources
 
-All resources and homework implementations used by @PKUFlyingPig in this course are summarized in [PKUFlyingPig/CS61B - GitHub](https://github.com/PKUFlyingPig/CS61B).
-
-All resources and homework implementations used by @InsideEmpire in this course are summarized in [InsideEmpire/CS61B-PathwayToSuccess - GitHub](https://github.com/InsideEmpire/CS61B-PathwayToSuccess.git).
+All resources and homework implementations used by @InsideEmpire in this course are summarized in [InsideEmpire/CS61B-PathwayToSuccess - GitHub](https://github.com/InsideEmpire/CS61B-PathwayToSuccess).

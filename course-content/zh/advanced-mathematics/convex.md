@@ -14,7 +14,7 @@
 
 ## 课程资源
 
-- 课程网站：<http://stanford.edu/class/ee364a/index.html>
+- 课程网站：<https://web.stanford.edu/class/ee364a/index.html>
 - 课程视频：<https://www.bilibili.com/video/BV1aD4y1Q7aW>
 - 课程教材：[Convex Optimization](https://stanford.edu/~boyd/cvxbook/)
 - 课程作业：9 个 Python 编程作业

@@ -4,7 +4,7 @@ export interface University {
   icon: 'shield' | 'target' | 'bridge' | 'book' | 'flask' | 'atom' | 'leaf' | 'building'
   courses: number
   website: string
-  region: 'US' | 'Europe' | 'Asia' | 'MiddleEast'
+  region: 'US' | 'Canada' | 'Europe' | 'Asia' | 'MiddleEast'
 }
 
 export const universities: University[] = [
@@ -57,6 +57,30 @@ export const universities: University[] = [
     courses: 4,
     website: 'https://www.cs.princeton.edu',
     region: 'US'
+  },
+  {
+    name: 'California Institute of Technology (Caltech)',
+    description: 'Research-focused university known for rigorous science, engineering, and computing programs.',
+    icon: 'flask',
+    courses: 0,
+    website: 'https://www.caltech.edu',
+    region: 'US'
+  },
+  {
+    name: 'Columbia University',
+    description: 'Ivy League university offering advanced computer science, statistics, and data science courses.',
+    icon: 'book',
+    courses: 0,
+    website: 'https://www.columbia.edu',
+    region: 'US'
+  },
+  {
+    name: 'University of Toronto',
+    description: 'Leading Canadian research university with influential computer science and machine learning programs.',
+    icon: 'shield',
+    courses: 0,
+    website: 'https://www.utoronto.ca',
+    region: 'Canada'
   },
   {
     name: 'Cornell University',
@@ -216,6 +240,22 @@ export const universities: University[] = [
     icon: 'bridge',
     courses: 2,
     website: 'https://www.ucsb.edu',
+    region: 'US'
+  },
+  {
+    name: 'University of Massachusetts Amherst (UMass)',
+    description: 'Public research university known for computer networking, systems, and artificial intelligence.',
+    icon: 'building',
+    courses: 0,
+    website: 'https://www.umass.edu',
+    region: 'US'
+  },
+  {
+    name: 'Oregon State University',
+    description: 'Public research university offering open computing resources across graphics and engineering.',
+    icon: 'leaf',
+    courses: 0,
+    website: 'https://oregonstate.edu',
     region: 'US'
   }
 ]

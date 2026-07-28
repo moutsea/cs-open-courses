@@ -95,7 +95,7 @@ export default function Header({ locale }: { locale: string }) {
     return current.startsWith(href)
   }
 
-  const brandSubtitle = locale === 'zh' ? '跨越顶尖 CS 课程' : 'Across elite CS courses'
+  const brandSubtitle = locale === 'zh' ? '免费 CS 课程与学习路径' : 'Free CS courses and learning paths'
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
@@ -103,9 +103,9 @@ export default function Header({ locale }: { locale: string }) {
       <div className="mx-auto flex max-w-screen-2xl flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
           <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
-            <Image src="/logo.png" alt="CS Study Hub" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
+            <Image src="/logo.png" alt="CS61B & Beyond" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
             <div className="flex flex-col min-w-0">
-              <span className="text-lg font-semibold text-white truncate">CS Study Hub</span>
+              <span className="text-lg font-semibold text-white truncate">CS61B & Beyond</span>
               <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 truncate">{brandSubtitle}</span>
             </div>
           </Link>

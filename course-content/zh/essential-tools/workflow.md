@@ -2,7 +2,7 @@
 
 计算机领域的知识覆盖面很广并且更新速度很快，因此保持终身学习的习惯很重要。但在日常开发和学习的过程中，我们获取知识的来源相对复杂且细碎。有成百上千页的文档手册，也有寥寥数语的博客，甚至闲暇时手机上划过的某则新闻和公众号都有可能包含我们感兴趣的知识。因此，如何利用现有的各类工具，形成一套适合自己的学习工作流，将不同来源的知识碎片整合进属于自己的知识库，方便之后的查阅与复习，就显得尤为重要。经过两年工作之余的学习后，我磨合出了以下学习工作流：
 
-![](https://raw.githubusercontent.com/HardwayLinka/image/master/Drawing 2022-10-20 11.23.41.excalidraw.png)
+![](https://raw.githubusercontent.com/HardwayLinka/image/master/Drawing%202022-10-20%2011.23.41.excalidraw.png)
 
 ## 底层核心逻辑
 

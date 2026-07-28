@@ -14,11 +14,11 @@ No programming experiences are assumed. So it may be appropriate for anyone who 
 
 ## Course Resources
 
-- Course Website: [2022](https://cs50.harvard.edu/python/2022/)
+- Course Website: [Latest](https://cs50.harvard.edu/python/)
 - Recordings: [2022](https://www.bilibili.com/video/BV1z5411X7wX)
 - Textbooks: No textbook required
-- Assignments: [2022](https://cs50.harvard.edu/python/2022/)
+- Assignments: [Latest](https://cs50.harvard.edu/python/)
 
 ## Personal Resources
 
-All the resources and assignments used by @mancuoj in this course are maintained in [mancuoj/CS50P - GitHub](https://github.com/mancuoj/CS50P).
+All the resources and assignments used by @csfive in this course are maintained in [csfive/CS50P - GitHub](https://github.com/csfive/CS50P).

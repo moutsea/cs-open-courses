@@ -27,13 +27,13 @@ CMU 大名鼎鼎的镇系神课，以其内容庞杂，Project 巨难而闻名�
 
 英语有困难的同学可以参考B站UP主[九曲阑干](https://space.bilibili.com/354767108/)对 CSAPP 的[中文讲解](https://www.bilibili.com/video/BV1cD4y1D7uR)（据说CMU的中国留学生也在CMU的课堂上看这个视频呢）。另外如果大家在看完 CSAPP 后对书中的第七章链接有一定的疑问，推荐阅读《程序员的自我修养》这本书，书的副标题是链接，装载与库。这本书能够帮助我们完善对程序链接的理解，相信你在看完这本书以后可以对程序的链接，ELF 文件，动态库都将有一个更加深入的理解。十分推荐在读完 CSAPP，对计算机系统有一定的了解以后作为补充资料来阅读。
 
-有关 Lab 部分，同学们亦可参考 [Arthals](https://arthals.ink/about-me) 在北大计算机系统导论（ICS）课程中所做的详尽笔记：
+有关 Lab 部分，同学们亦可参考 [Arthals](https://arthals.ink/about) 在北大计算机系统导论（ICS）课程中所做的详尽笔记：
 
-- [Data Lab](https://arthals.ink/posts/experience/data-lab)
-- [Bomb Lab](https://arthals.ink/posts/experience/bomb-lab)
-- [Attack Lab](https://arthals.ink/posts/experience/attack-lab)
-- [Arch Lab](https://arthals.ink/posts/experience/arch-lab)
-- [Cache Lab](https://arthals.ink/posts/experience/cache-lab)
-- [Tsh Lab](https://arthals.ink/posts/experience/tsh-lab)
-- [Malloc Lab](https://arthals.ink/posts/experience/malloc-lab)
-- [Proxy Lab](https://arthals.ink/posts/experience/proxy-lab)
+- [Data Lab](https://arthals.ink/blog/data-lab)
+- [Bomb Lab](https://arthals.ink/blog/bomb-lab)
+- [Attack Lab](https://arthals.ink/blog/attack-lab)
+- [Arch Lab](https://arthals.ink/blog/arch-lab)
+- [Cache Lab](https://arthals.ink/blog/cache-lab)
+- [Tsh Lab](https://arthals.ink/blog/tsh-lab)
+- [Malloc Lab](https://arthals.ink/blog/malloc-lab)
+- [Proxy Lab](https://arthals.ink/blog/proxy-lab)

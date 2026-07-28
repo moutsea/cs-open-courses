@@ -32,52 +32,132 @@
     "error": "Failed to load course"
   },
   "home": {
+    "metadata": {
+      "title": "CS61B & Beyond | Free Computer Science Courses and Learning Paths",
+      "description": "Explore free computer science courses from Berkeley, MIT, Stanford, and more with guided paths, saved courses, and progress tracking."
+    },
     "hero": {
+      "badge": "Start with CS61B, build complete CS foundations",
       "title": "CS61B & Beyond",
-      "subtitle": "Free Top Computer Science Open Courses",
-      "description": "Premier collection of top CS open courses: Berkeley CS61A/CS61B/CS189, Stanford CS224N, MIT 6.824, Games101. Your hub for world-class programming education.",
-      "cta": "Explore Courses"
+      "description": "Top university computer science courses, organized into paths you can start, follow, and finish.",
+      "searchLabel": "Search courses",
+      "searchPlaceholder": "Search CS61B, Python, operating systems…",
+      "searchButton": "Search",
+      "browseCourses": "Browse all courses",
+      "viewLearningPaths": "View learning paths",
+      "recommendedEyebrow": "Recommended start",
+      "recommendedDescription": "Build strong engineering foundations with Java, data structures, and substantial projects.",
+      "openCourse": "Open the CS61B course"
     },
     "stats": {
-      "courses": "Courses",
-      "universities": "Universities",
-      "subjects": "Subjects"
+      "freeCourses": "free courses",
+      "subjectAreas": "subject areas",
+      "universities": "universities"
     },
-    "features": {
-      "universityQuality": {
-        "title": "University Quality",
-        "description": "Courses from top universities like MIT, Stanford, and Harvard."
+    "learningPanel": {
+      "continueEyebrow": "Continue learning",
+      "chooseEyebrow": "Choose a direction",
+      "continueTitle": "Pick up where you left off",
+      "chooseTitle": "What do you want to learn next?",
+      "continueDescription": "Saved courses and progress stay in this browser so you can continue anytime.",
+      "chooseDescription": "Pick one goal and jump directly to the most relevant courses.",
+      "inProgress": "in progress",
+      "completed": "completed",
+      "statusCompleted": "Completed",
+      "statusInProgress": "In progress",
+      "statusSaved": "Saved",
+      "continueCourse": "Continue course",
+      "directions": {
+        "beginner": {
+          "title": "Start from zero",
+          "description": "Begin with Python, CS50, or CS61A"
+        },
+        "algorithms": {
+          "title": "Algorithms and data structures",
+          "description": "Build algorithmic foundations around CS61B"
+        },
+        "systems": {
+          "title": "Computer systems",
+          "description": "Explore architecture, operating systems, and networks"
+        },
+        "ai": {
+          "title": "Machine learning and AI",
+          "description": "Move from mathematical foundations to modern AI"
+        }
       },
-      "comprehensiveCoverage": {
-        "title": "Comprehensive Coverage",
-        "description": "From introductory programming to advanced machine learning."
+      "ariaLabel": "Your learning space"
+    },
+    "learningPaths": {
+      "eyebrow": "A three-step path",
+      "title": "Build foundations, then choose a direction",
+      "description": "The homepage shows the key decisions; the full seven-stage roadmap remains available when you need detail.",
+      "viewAll": "View the full roadmap",
+      "exploreStage": "Explore this stage",
+      "stages": {
+        "foundation": {
+          "title": "Build foundations",
+          "description": "Tools, mathematics, and programming",
+          "topics": ["Command line and Git", "Mathematical foundations", "CS50 / CS61A"]
+        },
+        "core": {
+          "title": "Master the core",
+          "description": "Data structures, algorithms, and systems",
+          "topics": ["CS61B data structures", "Architecture and operating systems", "Algorithm design"]
+        },
+        "direction": {
+          "title": "Choose a direction",
+          "description": "Advance into AI, systems, or a specialty",
+          "topics": ["Machine learning and AI", "Distributed systems", "Graphics and security"]
+        }
       },
-      "completelyFree": {
-        "title": "Completely Free",
-        "description": "All courses are free to access with no registration required."
+      "ariaLabel": "Learning paths"
+    },
+    "featured": {
+      "eyebrow": "Featured courses",
+      "title": "Start with these four courses",
+      "description": "A focused selection around CS61B, including prerequisites, systems foundations, and a popular advanced direction.",
+      "browseAll": "Browse all courses",
+      "viewCourse": "View course",
+      "hours": "{count} hours",
+      "roles": {
+        "core": "Core course",
+        "prerequisite": "Recommended prerequisite",
+        "systems": "Systems foundation",
+        "popular": "Popular direction"
       },
-      "selfPaced": {
-        "title": "Self-Paced Learning",
-        "description": "Learn at your own pace with flexible scheduling."
+      "difficulty": {
+        "beginner": "Beginner",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "expert": "Expert"
       }
     },
     "universities": {
-      "title": "Top Universities",
-      "subtitle": "Learn from the best institutions in the world",
-      "learnMore": "Learn more"
+      "directoryTitle": "Top Universities",
+      "directorySubtitle": "Learn from the best institutions in the world",
+      "eyebrow": "Course sources",
+      "sourcesTitle": "From world-class universities",
+      "viewAll": "View all universities",
+      "courseCount": "courses"
+    },
+    "benefits": {
+      "realCourses": {
+        "title": "Real courses",
+        "description": "Course materials come from university open courses and official resources."
+      },
+      "clearPaths": {
+        "title": "Clear pathways",
+        "description": "Know what to learn next from foundations to advanced topics."
+      },
+      "freeAccess": {
+        "title": "Free access",
+        "description": "Browse courses and track local progress without creating an account."
+      }
     },
     "cta": {
-      "title": "Start Learning Today",
-      "subtitle": "Join thousands of students learning computer science for free",
-      "button": "Browse All Courses"
-    },
-    "popularCourses": {
-      "title": "Popular Courses",
-      "subtitle": "Handpicked classic courses from top universities",
-      "viewCourse": "View Course",
-      "difficulty": "Difficulty",
-      "duration": "Duration",
-      "language": "Language"
+      "title": "Ready to start?",
+      "description": "Choose one course and finish the first lesson today.",
+      "button": "Choose a course"
     }
   },
   "tutorial": {

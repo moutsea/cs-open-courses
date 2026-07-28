@@ -13,6 +13,7 @@ export interface Course {
   hasEnglishVersion: boolean;
   summary?: string;
   summaryEn?: string;
+  university?: string;
   programmingLanguage?: string;
   difficulty?: string;
   duration?: string | { value: number | null; originalText: string };
@@ -64,10 +65,12 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
     // Determine language from file path
     const isEnglishFile = locale === 'en' || filePath.includes('/en/') || filePath.includes('.en.md');
     
-    const introSectionIndex = lines.findIndex(line => 
-      line.includes('课程简介') || line.includes('Course Introduction') || line.includes('课程介绍') || 
-      line.includes('Course Overview') || line.includes('Descriptions') || line.includes('Description') || line.includes('简介')
-    );
+    const introSectionIndex = lines.findIndex(line => {
+      const heading = line.replace(/^#+\s*/, '').trim().toLowerCase();
+      return line.includes('课程简介') || line.includes('Course Introduction') || line.includes('课程介绍') ||
+        line.includes('Course Overview') || line.includes('Descriptions') || line.includes('Description') ||
+        line.includes('简介') || heading === 'introduction';
+    });
     
     if (introSectionIndex !== -1) {
       // Look for the actual description text after the metadata
@@ -81,7 +84,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
 
         const metadataParts = line.replace(/^[-*]\s*/, '').replace(/\*\*/g, '').split(/[:：]/);
         const metadataLabel = metadataParts[0].trim().toLowerCase();
-        if (['offered by', 'university', '所属大学', '开课学校'].includes(metadataLabel)) {
+        if (['offered by', 'university', 'affiliated university', 'affiliated universities', '所属大学', '课程所属大学', '开课学校'].includes(metadataLabel)) {
           if (metadataParts.length > 1) {
             university = metadataParts.slice(1).join(':').trim().replace(/^·+/, '');
           }

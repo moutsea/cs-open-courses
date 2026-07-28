@@ -9,7 +9,7 @@
 - 预计学时：100 小时
 
 体系结构领域的大牛 Onur Mutlu 来教你数字电路和计算机体系结构。课程完全从计算机设计的角度出发，从晶体管、逻辑门开始，一直讲解到微架构、缓存和虚拟内存，还会介绍
-很多体系结构领域最新的研究进展。课程共有 9 个 lab，使用 Basys 3 FPGA 开发板（可自行购买）和 Xilinx 公司的  [Vivado 软件](https://china.xilinx.com/products/design-tools/vivado.html)（可在官网免费下载使用）进行电路设计，从组合电路
+很多体系结构领域最新的研究进展。课程共有 9 个 lab，使用 Basys 3 FPGA 开发板（可自行购买）和 AMD 公司的 [Vivado 软件](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html)（可在官网免费下载使用）进行电路设计，从组合电路
 和时序电路开始，一直到最后部署一个完整的 CPU。课程资料除了 lab 答案和当期考试答案之外全部开源，学完之后你可以掌握计算机相关的数字电路，Verilog 硬件描述语言，MIPS 与 C 之间的转换关系，MIPS 单周期多周期流水线 CPU 的设计和性能分析，缓存，虚拟内存等重要概念。
 
 ## 课程资源

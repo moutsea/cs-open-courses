@@ -18,7 +18,7 @@ All course resources are open-source, with versions available in both Chinese an
 
 - Course Website：<https://mlc.ai/summer22-zh/>
 - Course Videos：[Bilibili][Bilibili_link]
-- Course Notes：<https://mlc.ai/zh/index.html>
-- Course Assignments：<https://github.com/mlc-ai/notebooks/blob/main/assignment>
+- Course Notes：<https://mlc.ai/>
+- Course Assignments：<https://github.com/mlc-ai/notebooks/tree/main/assignment>
 
 [Bilibili_link]: https://www.bilibili.com/video/BV15v4y1g7EU?spm_id_from=333.337.search-card.all.click&vd_source=a4d76d1247665a7e7bec15d15fd12349

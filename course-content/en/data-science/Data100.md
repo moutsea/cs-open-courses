@@ -13,5 +13,5 @@ This is Berkeley's introductory course in data science, covering the basics of d
 ## Resources
 - Course Website: <https://ds100.org>
 - Records: refer to the course website
-- Textbook: <https://www.textbook.ds100.org/intro.html>
+- Textbook: <https://learningds.org/intro.html>
 - Assignments: refer to the course website

@@ -54,10 +54,10 @@ const SOCIAL_LINKS = [
 ]
 
 const OTHER_PROJECTS = [
-  { name: 'Code By AI', href: 'https://www.codebyai.net' },
-  { name: 'Claude Code Ide', href: 'https://www.claudeide.net' },
-  { name: 'Codex Lab', href: 'https://www.codeilab.com' },
-  { name: 'KeepAsk', href: 'https://keepask.net' }
+  { name: 'Code By AI', href: 'https://www.codebyai.net', localized: true },
+  { name: 'Claude Code Ide', href: 'https://www.claudeide.net', localized: true },
+  { name: 'Codex Lab', href: 'https://www.codeilab.com', localized: true },
+  { name: 'KeepAsk', href: 'https://keepask.net', localized: false }
 ]
 
 const COMPANY_LINKS = [
@@ -66,6 +66,32 @@ const COMPANY_LINKS = [
 
 export default function Footer({ locale }: { locale: string }) {
   const isEn = locale === 'en'
+  const labels = isEn
+    ? {
+        description: 'Discover free computer science courses from top universities and follow clear paths from foundations to advanced topics.',
+        quickLinks: 'Quick Links',
+        popularCourses: 'Popular Courses',
+        otherProjects: 'We Also Build',
+        company: 'Company',
+        rights: 'All rights reserved.'
+      }
+    : {
+        description: '探索来自顶尖大学的免费计算机科学课程，沿着清晰路线从基础持续学习到进阶领域。',
+        quickLinks: '快速导航',
+        popularCourses: '热门课程',
+        otherProjects: '我们的其他产品',
+        company: '公司',
+        rights: '保留所有权利。'
+      }
+
+  const quickLinks = [
+    { name: isEn ? 'Home' : '首页', href: isEn ? '/' : '/zh' },
+    { name: isEn ? 'Courses' : '所有课程', href: isEn ? '/courses' : '/zh/courses' },
+    { name: 'CS61B', href: isEn ? '/course/data-structures-algorithms/CS61B' : '/zh/course/data-structures-algorithms/CS61B' },
+    { name: isEn ? 'Universities' : '大学', href: isEn ? '/universities' : '/zh/universities' },
+    { name: isEn ? 'Learning Path' : '学习路线', href: isEn ? '/tutorial' : '/zh/tutorial' },
+    { name: isEn ? 'About' : '关于', href: isEn ? '/about' : '/zh/about' }
+  ]
 
   return (
     <footer className="bg-gray-900 text-white border-t border-gray-800">
@@ -76,8 +102,7 @@ export default function Footer({ locale }: { locale: string }) {
               CS61B & Beyond
             </h3>
             <p className="text-gray-400 mb-6 max-w-md">
-              Discover and access free computer science courses from top universities worldwide.
-              Helping learners access quality educational content for free.
+              {labels.description}
             </p>
             <div className="flex space-x-5">
               {SOCIAL_LINKS.map((link) => (
@@ -96,16 +121,9 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">{labels.quickLinks}</h4>
             <ul className="space-y-3">
-              {[
-                { name: 'Home', href: isEn ? '/' : '/zh' },
-                { name: 'Courses', href: isEn ? '/courses' : '/zh/courses' },
-                { name: 'CS61B', href: isEn ? '/course/data-structures-algorithms/CS61B' : '/zh/course/data-structures-algorithms/CS61B' },
-                { name: 'Universities', href: isEn ? '/universities' : '/zh/universities' },
-                { name: 'Tutorial', href: isEn ? '/tutorial' : '/zh/tutorial' },
-                { name: 'About', href: isEn ? '/about' : '/zh/about' },
-              ].map((link) => (
+              {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
                     {link.name}
@@ -116,7 +134,7 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Popular Courses</h4>
+            <h4 className="text-lg font-semibold mb-6">{labels.popularCourses}</h4>
             <ul className="space-y-3">
               {POPULAR_COURSES.map((course) => (
                 <li key={course.id}>
@@ -135,12 +153,12 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">We Also Build</h4>
+            <h4 className="text-lg font-semibold mb-6">{labels.otherProjects}</h4>
             <ul className="space-y-3">
               {OTHER_PROJECTS.map((project) => (
                 <li key={project.name}>
                   <a
-                    href={isEn ? project.href : `${project.href}/zh`}
+                    href={!isEn && project.localized ? `${project.href}/zh` : project.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-gray-400 hover:text-white transition-colors"
@@ -153,7 +171,7 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-6">Company</h4>
+            <h4 className="text-lg font-semibold mb-6">{labels.company}</h4>
             <ul className="space-y-3">
               {COMPANY_LINKS.map((link) => (
                 <li key={link.name}>
@@ -173,7 +191,7 @@ export default function Footer({ locale }: { locale: string }) {
 
         <div className="mt-12 pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} CS61B & Beyond. All rights reserved.
+            © {new Date().getFullYear()} CS61B & Beyond. {labels.rights}
           </p>
         </div>
       </div>

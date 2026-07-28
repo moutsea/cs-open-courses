@@ -13,7 +13,7 @@ scoop install nodejs
 
 ## Installing Scoop
 
-Scoop requires [Windows PowerShell 5.1](https://aka.ms/wmf5download) or [PowerShell](https://aka.ms/powershell) as its runtime environment. If you are using Windows 10 or later, Windows PowerShell is built into the system. However, the version of Windows PowerShell built into Windows 7 is outdated, and you will need to manually install a newer version of PowerShell.
+Scoop requires Windows 10 version 1809 or later and PowerShell 5.1 or later. Check the official [installation prerequisites](https://github.com/ScoopInstaller/Install#prerequisites) before installing.
 
 > Many students have encountered issues due to setting up Windows user accounts with Chinese usernames, leading to user directories also being named in Chinese. Installing software via Scoop into user directories in such cases may cause some software to execute incorrectly. Therefore, it is recommended to install in a custom directory. For other installation methods, please refer to: [ScoopInstaller/Install](https://github.com/ScoopInstaller/Install)
 

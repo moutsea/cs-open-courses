@@ -7,6 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "courses:links": "node scripts/audit-course-links.mjs",
     "courses:sync": "node scripts/sync-course-feeds.mjs",
     "courses:sync:check": "node scripts/sync-course-feeds.mjs --check"
   },

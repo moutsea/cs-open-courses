@@ -23,7 +23,7 @@ Topics covered in the course:
 - Curry
 - Monoid / Functor / Monad / Applicative
 
-If you have some programming experience, part 1 of the course is very easy. Most of the difficulties lie in part 2, after chap 13. Its exercises are great, which can give you a feeling of doing exercise of [CS61A](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/CS61A/). There are enough hints in the comments and the solutions will be given to you after submission, and you can ask questions or discuss them with others in the official Telegram community.
+If you have some programming experience, part 1 of the course is very easy. Most of the difficulties lie in part 2, after chap 13. Its exercises are great, which can give you a feeling of doing exercise of [CS61A](https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/Python/CS61A/). There are enough hints in the comments and the solutions will be given to you after submission, and you can ask questions or discuss them with others in the official Telegram community.
 
 ## Course Resources
 

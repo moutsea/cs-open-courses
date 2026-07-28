@@ -2,7 +2,7 @@
 
 The field of computer science is vast and rapidly evolving, making lifelong learning crucial. However, our sources of knowledge in daily development and learning are complex and fragmented. We encounter extensive documentation manuals, brief blogs, and even snippets of news and public accounts on our phones that may contain interesting knowledge. Therefore, it's vital to use various tools to create a learning workflow that suits you, integrating these knowledge fragments into your personal knowledge base for easy reference and review. After two years of learning alongside work, I have developed the following learning workflow:
 
-![](https://raw.githubusercontent.com/HardwayLinka/image/master/Drawing 2022-10-20 11.23.41.excalidraw.png)
+![](https://raw.githubusercontent.com/HardwayLinka/image/master/Drawing%202022-10-20%2011.23.41.excalidraw.png)
 
 ## Core Logic
 

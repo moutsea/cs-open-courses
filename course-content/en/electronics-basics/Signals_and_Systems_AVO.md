@@ -14,7 +14,7 @@ Okay, enough reason to take this class.
 
 ## Course Resources
 
-- Course Website: <https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/index.htm>
+- Course Website: <https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/>
 - Recordings: <https://www.bilibili.com/video/BV1CZ4y1j7hs>
 - Textbooks: Signals and Systems, 2nd Edition
-- Assignments: <https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/assignments>
+- Assignments: <https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/pages/assignments/>

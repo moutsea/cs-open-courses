@@ -37,5 +37,4 @@ Inspired by the course, I developed a [simple deep learning framework](https://g
 
 - Old edition coursework: 6 experiments (including writing convolution operators, adding operators to TensorFlow, writing operators with BCL and integrating them into TensorFlow, etc.) (details can be found on the official website)
 - Old edition lab manuals: [Experiment 2.0 Instruction Manual](https://forum.cambricon.com/index.php?m=content&c=index&a=show&catid=155&id=708)
-- Learning notes: https://sanzo.top/categories/AI-Computing-Systems/, notes summarized from the lab manuals (link is no longer active)
 - @ysj1173886760 has compiled all resources and homework implementations used in this course at [ysj1173886760/Learning: ai-system - GitHub](https://github.com/ysj1173886760/Learning/tree/master/ai-system).
