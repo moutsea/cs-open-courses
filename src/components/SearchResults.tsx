@@ -40,26 +40,16 @@ async function searchCoursesAPI(query: string, locale: string, page: number = 1,
   page: number
   totalPages: number
 }> {
-  try {
-    const response = await fetch(`/api/search?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}&locale=${locale}`)
-    if (!response.ok) {
-      throw new Error('Search failed')
-    }
-    const data = await response.json()
-    return {
-      results: data.results || [],
-      total: data.total || 0,
-      page: data.page || 1,
-      totalPages: data.totalPages || 0
-    }
-  } catch (error) {
-    console.error('Search API error:', error)
-    return {
-      results: [],
-      total: 0,
-      page: 1,
-      totalPages: 0
-    }
+  const response = await fetch(`/api/search?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}&locale=${locale}`)
+  if (!response.ok) {
+    throw new Error('Search failed')
+  }
+  const data = await response.json()
+  return {
+    results: data.results || [],
+    total: data.total || 0,
+    page: data.page || 1,
+    totalPages: data.totalPages || 0
   }
 }
 
@@ -68,6 +58,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
   const [loading, setLoading] = useState(true)
   const [total, setTotal] = useState(0)
   const [totalPages, setTotalPages] = useState(0)
+  const [error, setError] = useState(false)
 
   const formatDuration = (duration: CourseSearchIndex['duration']): string => {
     if (!duration) return ''
@@ -83,6 +74,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
   useEffect(() => {
     const loadResults = async () => {
       setLoading(true)
+      setError(false)
       try {
         const response = await searchCoursesAPI(query, locale, page)
         setResults(response.results)
@@ -93,6 +85,7 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
         setResults([])
         setTotal(0)
         setTotalPages(0)
+        setError(true)
       } finally {
         setLoading(false)
       }
@@ -132,6 +125,21 @@ export default function SearchResults({ locale, query, page }: SearchResultsProp
             {locale === 'zh'
               ? '输入课程名称、大学或关键技术即可获得匹配结果。'
               : 'Enter a course name, university, or keyword to see matching courses.'}
+          </p>
+        </div>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-8">
+        <div className="rounded-3xl border border-red-100 bg-white p-10 text-center shadow-sm">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-3">
+            {locale === 'zh' ? '搜索暂时不可用' : 'Search is temporarily unavailable'}
+          </h1>
+          <p className="text-gray-600">
+            {locale === 'zh' ? '请稍后重试，或先浏览全部课程。' : 'Please try again shortly or browse all courses.'}
           </p>
         </div>
       </div>

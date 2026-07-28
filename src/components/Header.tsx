@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useMemo, useState } from 'react'
+import { Fragment, Suspense, useMemo, useState } from 'react'
 import Image from 'next/image'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, GlobeAltIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -59,7 +59,8 @@ export default function Header({ locale }: { locale: string }) {
 
   const aiTools = [
     { label: 'Claude Code', href: locale === 'en' ? 'https://www.claudeide.net' : `https://www.claudeide.net/${locale}` },
-    { label: 'Codex', href: locale === 'en' ? 'https://www.codeilab.com' : `https://www.codeilab.com/${locale}` }
+    { label: 'Codex', href: locale === 'en' ? 'https://www.codeilab.com' : `https://www.codeilab.com/${locale}` },
+    { label: 'Gemini', href: locale === 'en' ? 'https://www.codebyai.net' : `https://www.codebyai.net/${locale}` }
   ]
 
   const handleLanguageChange = (newLocale: string) => {
@@ -163,7 +164,9 @@ export default function Header({ locale }: { locale: string }) {
 
           <div className="hidden items-center gap-3 xl:flex">
             <div className="mr-16 w-44 xl:w-52">
-              <SearchBox locale={locale} />
+              <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
+                <SearchBox locale={locale} />
+              </Suspense>
             </div>
 
             <Menu as="div" className="relative">
@@ -220,7 +223,9 @@ export default function Header({ locale }: { locale: string }) {
           leaveTo="transform opacity-0 -translate-y-2"
         >
           <div className="mt-4 flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 shadow-xl shadow-black/40 xl:hidden">
-            <SearchBox locale={locale} />
+            <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
+              <SearchBox locale={locale} />
+            </Suspense>
 
             <div className="grid gap-2">
               {baseLinks.map(link => (

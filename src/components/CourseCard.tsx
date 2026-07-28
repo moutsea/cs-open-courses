@@ -62,7 +62,9 @@ const CourseCard = memo(function CourseCard({ course, locale, forceLanguage, var
             <span className={`ml-2 text-xs font-medium ${isImmersive ? 'text-slate-100' : 'text-gray-600'}`}>
               {
                 typeof course.duration === 'object' 
-                  ? `${course.duration.value} ${resolvedLocale === 'en' ? 'hours' : '小时'}`
+                  ? course.duration.value !== null
+                    ? `${course.duration.value} ${resolvedLocale === 'en' ? 'hours' : '小时'}`
+                    : course.duration.originalText
                   : (() => {
                       // 处理字符串类型的duration
                       const durationStr = course.duration.toString();

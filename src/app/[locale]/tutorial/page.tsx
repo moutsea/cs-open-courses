@@ -19,6 +19,7 @@ import {
   ToolsIcon
 } from '@/components/icons/TutorialIcons'
 import { JSX } from 'react'
+import TutorialTopicCard from '@/components/TutorialTopicCard'
 
 const sectionIconMap: Record<TutorialIcon, (props: { className?: string }) => JSX.Element> = {
   tools: ToolsIcon,
@@ -225,14 +226,18 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
               {sections.map((section, index) => {
                 const IconComponent = sectionIconMap[section.icon]
                 return (
-                  <div key={section.title} className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <Link
+                    key={section.title}
+                    href={`${localizedPath(locale, '/tutorial')}#stage-${index + 1}`}
+                    className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-white/30 hover:bg-white/10"
+                  >
                     <IconComponent className="mb-3 h-10 w-10 text-white" />
                     <p className="text-xs uppercase tracking-[0.3em] text-white/60 mb-2">
                       {locale === 'zh' ? '阶段' : 'Stage'} {index + 1}
                     </p>
                     <h3 className="text-lg font-semibold text-white mb-2">{section.title}</h3>
                     <p className="text-sm text-white/60">{section.description}</p>
-                  </div>
+                  </Link>
                 )
               })}
             </div>
@@ -246,6 +251,7 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
               return (
                 <div
                   key={section.title}
+                  id={`stage-${index + 1}`}
                   className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-xl"
                 >
                   <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -268,24 +274,12 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
 
                   <div className="mt-6 grid gap-4 md:grid-cols-2">
                     {section.topics.map(topic => (
-                      <div
+                      <TutorialTopicCard
                         key={topic.name}
-                        className="rounded-2xl border border-white/10 bg-slate-950/40 p-4 transition hover:border-white/40"
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <h4 className="text-lg font-semibold text-white">{topic.name}</h4>
-                            <p className="text-sm text-white/60">{topic.description}</p>
-                          </div>
-                          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-                            {topic.level}
-                          </span>
-                        </div>
-                        <div className="mt-4 flex items-center justify-between text-xs text-white/50">
-                          <span>{topic.duration}</span>
-                          <span>{locale === 'zh' ? '自定进度' : 'Self-paced'}</span>
-                        </div>
-                      </div>
+                        topic={topic}
+                        locale={locale}
+                        variant="immersive"
+                      />
                     ))}
                   </div>
                 </div>

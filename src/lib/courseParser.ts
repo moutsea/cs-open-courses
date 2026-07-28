@@ -37,6 +37,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
   content: string; 
   summary?: string; 
   summaryEn?: string;
+  university?: string;
   programmingLanguage?: string; 
   difficulty?: string; 
   duration?: string | { value: number | null; originalText: string }; 
@@ -55,6 +56,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
     // Extract metadata from the course description section
     let summary = '';
     let summaryEn = '';
+    let university = '';
     let programmingLanguage = '';
     let difficulty = '';
     let duration: string | { value: number | null; originalText: string } = '';
@@ -74,8 +76,16 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
       // Extract metadata from lines starting with -
       for (let i = introSectionIndex + 1; i < lines.length; i++) {
         const line = lines[i].trim();
-        if (!line.startsWith('-') && line !== '') break;
+        if (!/^[-*]\s+/.test(line) && line !== '') break;
         if (line === '') continue; // Skip empty lines
+
+        const metadataParts = line.replace(/^[-*]\s*/, '').replace(/\*\*/g, '').split(/[:：]/);
+        const metadataLabel = metadataParts[0].trim().toLowerCase();
+        if (['offered by', 'university', '所属大学', '开课学校'].includes(metadataLabel)) {
+          if (metadataParts.length > 1) {
+            university = metadataParts.slice(1).join(':').trim().replace(/^·+/, '');
+          }
+        }
         
         // Extract programming language - handle both Chinese and English formats
         if (line.includes('编程语言') || line.includes('Programming Language') || line.includes('Programming Languages')) {
@@ -108,7 +118,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
         }
         
         // Extract duration - handle both Chinese and English formats
-        if (line.includes('预计学时') || line.includes('Class Hour') || line.includes('Class Hours') || line.includes('Estimated Hours')) {
+        if (line.includes('预计学时') || line.includes('Class Hour') || line.includes('Class Hours') || line.includes('Estimated Hours') || line.includes('Estimated Study Time')) {
           const parts = line.split(/[:：]/);
           if (parts.length > 1) {
             const durationText = parts[1].trim().replace(/\*\*/g, ''); // 移除**加粗符号
@@ -135,7 +145,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
       // Skip metadata lines (lines starting with -) and empty lines
       while (descriptionStartIndex < lines.length) {
         const line = lines[descriptionStartIndex].trim();
-        if (line.startsWith('-') || line.startsWith('##') || line === '') {
+        if (/^[-*]\s+/.test(line) || line.startsWith('##') || line === '') {
           descriptionStartIndex++;
         } else {
           break;
@@ -175,7 +185,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
       }
     }
     
-    return { title, content, summary, summaryEn, programmingLanguage, difficulty, duration };
+    return { title, content, summary, summaryEn, university, programmingLanguage, difficulty, duration };
   } catch (error) {
     console.error(`Error parsing markdown file ${filePath}:`, error);
     return { title: path.basename(filePath, '.md'), content: '', summary: '' };

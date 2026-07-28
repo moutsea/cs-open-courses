@@ -56,7 +56,8 @@ const SOCIAL_LINKS = [
 const OTHER_PROJECTS = [
   { name: 'Code By AI', href: 'https://www.codebyai.net' },
   { name: 'Claude Code Ide', href: 'https://www.claudeide.net' },
-  { name: 'Codex Lab', href: 'https://www.codeilab.com' }
+  { name: 'Codex Lab', href: 'https://www.codeilab.com' },
+  { name: 'KeepAsk', href: 'https://keepask.net' }
 ]
 
 const COMPANY_LINKS = [

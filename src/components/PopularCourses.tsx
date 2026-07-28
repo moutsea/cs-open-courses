@@ -115,7 +115,7 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                         <div className="flex items-center ml-2">
                           {(() => {
                             const durationStr = typeof course.duration === 'object'
-                              ? course.duration.value?.toString() || '0'
+                              ? course.duration.value?.toString() || course.duration.originalText
                               : course.duration;
                             const style = getDurationStyle(durationStr);
                             return (
@@ -124,7 +124,9 @@ export default function PopularCourses({ courses, locale }: PopularCoursesProps)
                                 <span className="ml-3 text-xs font-semibold text-gray-600">
                                   {
                                     typeof course.duration === 'object'
-                                      ? `${course.duration.value} ${locale === 'en' ? 'hours' : '小时'}`
+                                      ? course.duration.value !== null
+                                        ? `${course.duration.value} ${locale === 'en' ? 'hours' : '小时'}`
+                                        : course.duration.originalText
                                       : course.duration
                                   }
                                 </span>

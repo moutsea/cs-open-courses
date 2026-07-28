@@ -5,12 +5,14 @@ import { sanitizeMarkdownHTML } from '@/lib/htmlSanitizer';
 import PageLayout from './PageLayout';
 import { getChineseName } from '@/lib/categoryMapping';
 import { localizedPath } from '@/lib/pathUtils';
+import CourseLearningActions from '@/components/CourseLearningActions';
 
 interface MDXRendererProps {
   content: string;
   locale: string;
   isFallback?: boolean;
   title?: string;
+  coursePath: string[];
   categorySlug?: string;
   subcategorySlug?: string;
   hasEnglishVersion?: boolean;
@@ -22,6 +24,7 @@ export default function MDXRenderer({
   locale,
   isFallback = false,
   title,
+  coursePath,
   categorySlug,
   subcategorySlug,
   hasEnglishVersion = false,
@@ -43,17 +46,19 @@ export default function MDXRenderer({
   const displayCategory = formatSlug(categorySlug);
   const displaySubcategory = formatSlug(subcategorySlug);
 
-  const languageChips: Array<{ short: string; label: string }> = [];
+  const languageChips: Array<{ short: string; label: string; locale: 'en' | 'zh' }> = [];
   if (hasEnglishVersion) {
     languageChips.push({
       short: 'EN',
-      label: isChinese ? '英文版' : 'English'
+      label: isChinese ? '英文版' : 'English',
+      locale: 'en'
     });
   }
   if (hasChineseVersion) {
     languageChips.push({
       short: '中',
-      label: isChinese ? '中文版' : 'Chinese'
+      label: isChinese ? '中文版' : 'Chinese',
+      locale: 'zh'
     });
   }
 
@@ -66,6 +71,7 @@ export default function MDXRenderer({
     contentWithoutHeading.length > 0 ? contentWithoutHeading : sanitizedContent;
 
   const backToCoursesHref = localizedPath(locale, '/courses');
+  const displayedLocale = isFallback ? (locale === 'zh' ? 'en' : 'zh') : locale;
 
   return (
     <PageLayout locale={locale}>
@@ -103,13 +109,19 @@ export default function MDXRenderer({
                   </span>
                 )}
                 {languageChips.map(chip => (
-                  <span
+                  <Link
                     key={chip.short}
-                    className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[0.7rem] tracking-[0.3em]"
+                    href={localizedPath(chip.locale, `/course/${coursePath.join('/')}`)}
+                    aria-current={chip.locale === displayedLocale ? 'page' : undefined}
+                    className={`inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-[0.7rem] tracking-[0.3em] transition ${
+                      chip.locale === displayedLocale
+                        ? 'border-cyan-300/60 bg-cyan-300/15 text-white'
+                        : 'border-white/15 bg-white/5 hover:border-white/40 hover:bg-white/10'
+                    }`}
                   >
                     <span className="text-xs font-bold">{chip.short}</span>
                     <span className="tracking-[0.15em] text-white/70">{chip.label}</span>
-                  </span>
+                  </Link>
                 ))}
                 {isFallback && (
                   <span className="rounded-full border border-amber-300/70 bg-amber-300/10 px-4 py-1.5 text-[0.7rem] tracking-[0.3em] text-amber-100">
@@ -126,6 +138,14 @@ export default function MDXRenderer({
                   {courseTitle}
                 </h1>
               </div>
+
+              <CourseLearningActions
+                course={{
+                  path: coursePath.join('/'),
+                  title: courseTitle,
+                  locale
+                }}
+              />
             </div>
           </div>
         </div>

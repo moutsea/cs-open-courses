@@ -101,7 +101,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
                 descriptionEn: englishDescription,
                 summary: chineseSummary,
                 summaryEn: englishSummary,
-                university: '', // Not needed since description contains university info
+                university: courseData.university || otherLangData?.university || '',
                 path: coursePath.join('/'),
                 programmingLanguage: courseData.programmingLanguage || '',
                 difficulty: courseData.difficulty || '',
@@ -151,6 +151,7 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
           existing.programmingLanguage = course.programmingLanguage
           existing.difficulty = course.difficulty
           existing.duration = course.duration
+          existing.university = course.university || existing.university
           existing.hasChineseVersion = true
         }
         
@@ -170,6 +171,9 @@ export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
           }
           if (course.duration) {
             existing.duration = course.duration
+          }
+          if (course.university) {
+            existing.university = course.university
           }
         }
         
@@ -195,7 +199,7 @@ async function fileExists(filePath: string): Promise<boolean> {
   }
 }
 
-export function searchCourses(query: string, courses: CourseSearchIndex[], limit: number = 20): SearchResult[] {
+export function searchCourses(query: string, courses: CourseSearchIndex[], limit?: number): SearchResult[] {
   if (!query.trim()) {
     return []
   }
@@ -252,9 +256,8 @@ export function searchCourses(query: string, courses: CourseSearchIndex[], limit
   }
   
   // Sort by relevance score (highest first) and limit results
-  return results
-    .sort((a, b) => b.relevanceScore - a.relevanceScore)
-    .slice(0, limit)
+  const sortedResults = results.sort((a, b) => b.relevanceScore - a.relevanceScore)
+  return limit === undefined ? sortedResults : sortedResults.slice(0, limit)
 }
 
 export function clearSearchIndexCache() {

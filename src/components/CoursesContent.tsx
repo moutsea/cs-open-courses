@@ -1,10 +1,10 @@
 'use client';
 
-import { useState } from 'react';
 import { Category, Course } from '@/lib/courseParser';
 import CourseCard from '@/components/CourseCard';
 import { getChineseName } from '@/lib/categoryMapping';
 import { useTranslations } from 'next-intl';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface CoursesContentProps {
   categories: Category[];
@@ -13,15 +13,20 @@ interface CoursesContentProps {
 }
 
 export default function CoursesContent({ categories, locale, variant = 'default' }: CoursesContentProps) {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState<string | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
   const isChinese = locale === 'zh';
   const t = useTranslations('courses');
   const isImmersive = variant === 'immersive';
-  const activeCategory = selectedCategory ? categories.find(cat => cat.slug === selectedCategory) : null;
-  const activeSubcategory = activeCategory && selectedSubcategory
-    ? activeCategory.subcategories.find(sub => sub.slug === selectedSubcategory)
+  const categoryParam = searchParams.get('category');
+  const subcategoryParam = searchParams.get('subcategory');
+  const activeCategory = categoryParam ? categories.find(cat => cat.slug === categoryParam) || null : null;
+  const activeSubcategory = activeCategory && subcategoryParam
+    ? activeCategory.subcategories.find(sub => sub.slug === subcategoryParam) || null
     : null;
+  const selectedCategory = activeCategory?.slug || null;
+  const selectedSubcategory = activeSubcategory?.slug || null;
 
   const sidebarCardClass = isImmersive
     ? 'bg-white/5 rounded-[28px] border border-white/10 p-6 shadow-[0_25px_80px_rgba(2,6,23,0.55)] backdrop-blur-xl'
@@ -86,21 +91,35 @@ export default function CoursesContent({ categories, locale, variant = 'default'
   };
 
   const handleCategorySelect = (categorySlug: string) => {
+    const params = new URLSearchParams(searchParams.toString());
     if (selectedCategory === categorySlug) {
-      setSelectedCategory(null);
-      setSelectedSubcategory(null);
+      params.delete('category');
+      params.delete('subcategory');
     } else {
-      setSelectedCategory(categorySlug);
-      setSelectedSubcategory(null);
+      params.set('category', categorySlug);
+      params.delete('subcategory');
     }
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
   };
 
   const handleSubcategorySelect = (subcategorySlug: string) => {
+    const params = new URLSearchParams(searchParams.toString());
     if (selectedSubcategory === subcategorySlug) {
-      setSelectedSubcategory(null);
+      params.delete('subcategory');
     } else {
-      setSelectedSubcategory(subcategorySlug);
+      params.set('subcategory', subcategorySlug);
     }
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
+  };
+
+  const clearFilters = () => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.delete('category');
+    params.delete('subcategory');
+    const query = params.toString();
+    router.push(query ? `${pathname}?${query}` : pathname, { scroll: false });
   };
 
   const getFilteredCourses = (): Course[] => {
@@ -123,10 +142,11 @@ export default function CoursesContent({ categories, locale, variant = 'default'
           </div>
 
           <div className="space-y-3 max-h-[calc(100vh-260px)] overflow-y-auto pr-1 custom-scrollbar">
-            {categories.map((category, index) => (
+            {categories.map(category => (
               <div key={category.slug} className="space-y-2">
                 <button
                   onClick={() => handleCategorySelect(category.slug)}
+                  aria-pressed={selectedCategory === category.slug}
                   className={`${categoryButtonBase} ${selectedCategory === category.slug ? categoryButtonSelected : ''}`}
                 >
                   <div className="flex items-center justify-between gap-4">
@@ -150,6 +170,7 @@ export default function CoursesContent({ categories, locale, variant = 'default'
                       <button
                         key={subcategory.slug}
                         onClick={() => handleSubcategorySelect(subcategory.slug)}
+                        aria-pressed={selectedSubcategory === subcategory.slug}
                         className={`${subcategoryButtonBase} ${selectedSubcategory === subcategory.slug ? subcategoryButtonSelected : ''}`}
                       >
                         <div className="flex items-center justify-between gap-3">
@@ -190,10 +211,7 @@ export default function CoursesContent({ categories, locale, variant = 'default'
                 </p>
               </div>
               <button
-                onClick={() => {
-                  setSelectedCategory(null);
-                  setSelectedSubcategory(null);
-                }}
+                onClick={clearFilters}
                 className={`inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition ${
                   isImmersive
                     ? 'bg-white/10 text-white hover:bg-white/20'
@@ -227,6 +245,7 @@ export default function CoursesContent({ categories, locale, variant = 'default'
               <button
                 key={category.slug}
                 onClick={() => handleCategorySelect(category.slug)}
+                aria-pressed={selectedCategory === category.slug}
                 className={`group relative overflow-hidden rounded-[28px] p-6 text-left transition-all ${
                   isImmersive
                     ? `bg-gradient-to-br ${gradientPalette[index % gradientPalette.length]} border border-white/10 text-white hover:border-white/30`

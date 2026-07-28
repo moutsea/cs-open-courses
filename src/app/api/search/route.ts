@@ -5,8 +5,10 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
     const query = searchParams.get('q') || ''
-    const page = parseInt(searchParams.get('page') || '1', 10)
-    const limit = parseInt(searchParams.get('limit') || '10', 10)
+    const requestedPage = parseInt(searchParams.get('page') || '1', 10)
+    const requestedLimit = parseInt(searchParams.get('limit') || '10', 10)
+    const page = Number.isFinite(requestedPage) ? Math.max(1, requestedPage) : 1
+    const limit = Number.isFinite(requestedLimit) ? Math.min(50, Math.max(1, requestedLimit)) : 10
     const locale = searchParams.get('locale') || 'en'
     
     if (!query.trim()) {
@@ -31,7 +33,7 @@ export async function GET(request: NextRequest) {
     })
     
     // Search courses
-    const searchResults = searchCourses(query, filteredCourses, limit * 2) // Get more results for pagination
+    const searchResults = searchCourses(query, filteredCourses)
     
     // Calculate pagination
     const total = searchResults.length

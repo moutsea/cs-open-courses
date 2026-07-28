@@ -6,6 +6,8 @@ import { Metadata } from 'next';
 import { getChineseName } from '@/lib/categoryMapping';
 import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo';
 import { buildDynamicRoutePath } from '@/lib/pathUtils';
+import { Suspense } from 'react';
+import LearningDashboard from '@/components/LearningDashboard';
 
 export async function generateStaticParams() {
     return [
@@ -195,7 +197,11 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
                                 </p>
                             </div>
 
-                            <CoursesContent categories={categories} locale={locale} variant="immersive" />
+                            <LearningDashboard locale={locale} />
+
+                            <Suspense fallback={<div className="h-96 animate-pulse rounded-[32px] bg-white/5" />}>
+                                <CoursesContent categories={categories} locale={locale} variant="immersive" />
+                            </Suspense>
                         </div>
                     </div>
                 </ImmersiveSection>

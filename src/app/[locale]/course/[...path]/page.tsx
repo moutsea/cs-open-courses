@@ -260,6 +260,7 @@ async function CourseRenderer({
         locale={locale}
         isFallback={courseContent.isFallback}
         title={courseTitle}
+        coursePath={path}
         categorySlug={path[0]}
         subcategorySlug={path[1]}
         hasEnglishVersion={courseContent.hasEnglishVersion}
