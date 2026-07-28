@@ -14,7 +14,7 @@
 
 ## 课程资源
 
-- 课程网站：[2020](https://safari.ethz.ch/digitaltechnik/spring2020/),[2023](https://safari.ethz.ch/digitaltechnik/spring2023/)
+- 课程网站：[Spring 2026 当前学期](https://safari.ethz.ch/digitaltechnik/spring2026/)、[Spring 2023 归档](https://safari.ethz.ch/digitaltechnik/spring2023/)、[Spring 2020 归档](https://safari.ethz.ch/digitaltechnik/spring2020/)
 - 课程视频：[youtube](https://www.youtube.com/playlist?list=PL5Q2soXY2Zi_FRrloMa2fUYWPGiZUBQo2), [B站2020年版本搬运](https://www.bilibili.com/video/BV1MA411s7qq/?vd_source=77d47fcb2bac41ab4ad02f265b3273cf)
 - 课程教材1：Patt and Patel, Introduction to Computing Systems
 - 课程教材2：Harris and Harris, Digital Design and Computer Architecture (MIPS Edition)

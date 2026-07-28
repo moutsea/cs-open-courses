@@ -10,17 +10,17 @@
 
 这门课和 MIT 6.S081 一样，出品自 MIT 大名鼎鼎的 PDOS 实验室，授课老师 Robert Morris 教授曾是一位顶尖黑客，世界上第一个蠕虫病毒 Morris 病毒就是出自他之手。
 
-这门课每节课都会精读一篇分布式系统领域的经典论文，并由此传授分布式系统设计与实现的重要原则和关键技术。同时其课程 Project 也是以其难度之大而闻名遐迩，4 个编程作业循序渐进带你实现一个基于 Raft 共识算法的 KV-store 框架，让你在痛苦的 debug 中体会并行与分布式带来的随机性和复杂性。
+这门课每节课都会精读一篇分布式系统领域的经典论文，并由此传授分布式系统设计与实现的重要原则和关键技术。同时其课程 Project 也是以其难度之大而闻名遐迩。课程目前使用 6.5840 编号，Spring 2026 版本通过 5 个递进实验覆盖 MapReduce、KV 服务、Raft、容错 KV 与分片，让你在痛苦的 debug 中体会并行与分布式带来的随机性和复杂性。
 
 同样，这门课由于太过出名，网上答案无数，希望大家不要参考，而是力图自主实现整个 Project。
 
 ## 课程资源
 
-- 课程网站：<https://pdos.csail.mit.edu/6.824/schedule.html>
+- 课程网站：[MIT 6.5840 Spring 2026 当前版本](https://pdos.csail.mit.edu/6.824/)
 - 课程视频：参见课程网站链接
 - 课程视频中文翻译：<https://mit-public-courses-cn-translatio.gitbook.io/mit6-824/>
 - 课程教材：无，以阅读论文为主
-- 课程作业：4 个非常虐的 Project，具体要求参见课程网站
+- 课程作业：[Spring 2026 Schedule 与 5 个 Labs](https://pdos.csail.mit.edu/6.824/schedule.html)
 
 ## 资源汇总
 

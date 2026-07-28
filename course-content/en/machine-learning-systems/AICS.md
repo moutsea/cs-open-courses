@@ -26,12 +26,12 @@ Inspired by the course, I developed a [simple deep learning framework](https://g
 
 ## Personal Resources
 
-### New Edition Experiments for 2024
+### New Edition Experiments Since 2024
 
 - The 2024 edition of the Intelligent Computing Systems lab has undergone extensive adjustments in the knowledge structure, experimental topics, and lab manuals, including comprehensive use of PyTorch instead of TensorFlow, and the addition of experiments related to large models.
-- As the new lab topics and manuals have not been updated on the Cambricon Forum, the following repository is provided to store the new versions of the Intelligent Computing Systems lab topics, manuals, and individual experiment answers:
-- The resources for the new edition will be updated following the course schedule of the UCAS Spring Semester 2024, with completion expected by June 2024.
-- 2024 New labs, manuals, and answers created by @Yuichi: https://github.com/Yuichi1001/2024-AICS-EXP
+- Because the new lab topics and manuals were not synchronized to the Cambricon Forum, the community repository below collects the revised lab topics, manuals, and personal solutions.
+- The repository has been adapted for the UCAS Spring 2025 offering and continued receiving code updates in 2026. Consult its README and changelog for current coverage.
+- New-edition labs, manuals, and answers maintained by @Yuichi: [Yuichi1001/2024-AICS-EXP](https://github.com/Yuichi1001/2024-AICS-EXP)
 
 ### Old Edition Experiments
 

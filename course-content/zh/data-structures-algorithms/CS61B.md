@@ -13,7 +13,7 @@
 我上的是 2018 年春季学期的版本，该课的开课老师 Josh Hug 教授慷慨地将 autograder 开源了，大家可以通过网站公开的邀请码在 [gradescope](https://www.gradescope.com/)
  免费加入课程，从而方便地测评自己的代码。
 
-根据教授最新的政策，SP2021 的 CS61B 也对公众开放。要设置所有内容，请前往 Gradescope 并选择"Add a course"按钮。输入课程代码 **MB7ZPY** 以添加课程。
+目前优先推荐使用 2026 年的官方版本：Summer 2026 的 CS61BL 采用实验密集型短学期安排；Spring 2026 的 CS61B 则公开提供完整课程日历、讲义、课程视频、作业与项目说明。需要注意，CS61BL 的部分资源要求使用 Berkeley CalNet 登录，公开自学时可以优先参考 Spring 2026 版本。
 
 这门课所有的编程作业都是使用 Java 完成的。没有 Java 基础的同学也不用担心，课程会有保姆级的教程，从 IDEA（一款主流的 Java 编程环境）的配置讲起，把 Java 的核心语法与特性事无巨细地讲授，大家完全不用担心跟不上的问题。
 
@@ -22,10 +22,10 @@
 
 ## 课程资源
 
-- 课程网站：[spring2024](https://sp24.datastructur.es/), [fall2023](https://fa23.datastructur.es/), [spring2023](https://sp23.datastructur.es/), [spring2021](https://sp21.datastructur.es/), [spring2018](https://sp18.datastructur.es/)
-- 课程视频：原版视频参见课程网站，B站有中文翻译搬运。
-- 课程教材：无
-- 课程作业：每年略有不同，18 年春季学期有 14 个 Lab，10 个 Homework以及 3 个 Project，具体要求详见课程网站。
+- 课程网站：[Summer 2026 CS61BL](https://cs61bl.org/)、[Spring 2026 CS61B](https://sp26.datastructur.es/)、[Spring 2024](https://sp24.datastructur.es/)、[Fall 2023](https://fa23.datastructur.es/)、[Spring 2018](https://sp18.datastructur.es/)
+- 课程视频：[Spring 2026 官方课程视频](https://www.youtube.com/playlist?list=PL8FaHk7qbOD44fDmItR1wrkor8XdfUXC6)
+- 课程教材：[Spring 2026 在线教材](https://cs61b-2.gitbook.io/cs61b-textbook-spring-2026/)
+- 课程作业：[Spring 2026 Homeworks](https://sp26.datastructur.es/homeworks/) 与 [Projects](https://sp26.datastructur.es/projects/)，不同学期的安排会有所调整。
 
 ## 资源汇总
 

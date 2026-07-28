@@ -10,7 +10,7 @@
 
 This is the undergraduate operating system course at MIT, offered by the well-known PDOS Group. One of the instructors, Robert Morris, was once a famous hacker who created 'Morris', the first worm virus in the world.
 
-The predecessor of this course was the famous MIT6.828. The same instructors at MIT created an educational operating system called JOS based on x86, which has been adopted by many other famous universities. While after the birth of RISC-V, they implemented it based on RISC-V, and offered MIT 6.S081. RISC-V is lightweight and user-friendly, so students don't have to struggle with the confusing legacy features in x86 as in JOS, but focus on the operating system design and implementation. 
+The predecessor of this course was the famous MIT6.828. The same instructors at MIT created an educational operating system called JOS based on x86, which has been adopted by many other famous universities. After the arrival of RISC-V, they built the RISC-V version of xv6 and offered MIT 6.S081. The course now uses the number 6.1810, with Fall 2025 as the latest public offering. RISC-V is lightweight and user-friendly, so students can focus on operating-system design and implementation instead of x86 legacy complexity.
 
 The instructors have also written a [tutorial](https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf), elaborately explaining the ideas of design and details of the implementation of xv6 operating system. 
 
@@ -20,11 +20,11 @@ In the second half of the course, the instructors will discuss a couple of class
 
 ## Course Resources
 
-- Course Website: <https://pdos.csail.mit.edu/6.828/2021/schedule.html>
+- Course Website: [MIT 6.1810 Fall 2025 current offering](https://pdos.csail.mit.edu/6.1810/2025/), [MIT 6.S081 2021 archive](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 - Lecture Videos: <https://www.youtube.com/watch?v=L6YqHxYHa7A>, videos for each lecture can be found on the course website.
 - Translated documentation(Chinese) of Lecture videos: <https://mit-public-courses-cn-translatio.gitbook.io/mit6-s081/>
-- Text Book: <https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf>
-- Assignments: <https://pdos.csail.mit.edu/6.828/2021/schedule.html>, 11 labs, can be found on the course website.
+- Text Book: [xv6 book (2021 edition)](https://pdos.csail.mit.edu/6.828/2021/xv6/book-riscv-rev2.pdf)
+- Assignments: see the [Fall 2025 schedule and labs](https://pdos.csail.mit.edu/6.1810/2025/schedule.html); the historical 6.S081 labs remain available in the 2021 archive.
 
 ## xv6 Resources
 

@@ -20,10 +20,10 @@ Finally, I want to thank Professor Jiang again for designing and offering such a
 
 ## Course Resources
 
-- Course Website: <https://jyywiki.cn/OS/2022/index.html>
-- Course Videos: <https://space.bilibili.com/202224425/channel/collectiondetail?sid=192498>
-- Course Textbook: <http://pages.cs.wisc.edu/~remzi/OSTEP/>
-- Course Assignments: <https://jyywiki.cn/OS/2022/index.html>
+- Course Website: [Spring 2026 current offering](https://jyywiki.cn/OS/2026/), [2022 archive](https://jyywiki.cn/OS/2022/index.html)
+- Course Videos: [2026 recordings](https://space.bilibili.com/202224425/lists/7587348), [2022 playlist](https://space.bilibili.com/202224425/channel/collectiondetail?sid=192498)
+- Course Textbook: [Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
+- Course Assignments: [2026 lab guide and assignment list](https://jyywiki.cn/OS/2026/labs/Labs.md)
 
 ## Resource Summary
 

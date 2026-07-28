@@ -20,10 +20,10 @@
 
 ## 课程资源
 
-- 课程网站：<https://jyywiki.cn/OS/2022/index.html>
-- 课程视频：<https://space.bilibili.com/202224425/channel/collectiondetail?sid=192498>
-- 课程教材：<http://pages.cs.wisc.edu/~remzi/OSTEP/>
-- 课程作业：<https://jyywiki.cn/OS/2022/index.html>
+- 课程网站：[2026 春季当前版本](https://jyywiki.cn/OS/2026/)、[2022 归档](https://jyywiki.cn/OS/2022/index.html)
+- 课程视频：[2026 视频回看](https://space.bilibili.com/202224425/lists/7587348)、[2022 视频合集](https://space.bilibili.com/202224425/channel/collectiondetail?sid=192498)
+- 课程教材：[Operating Systems: Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
+- 课程作业：[2026 实验须知与实验列表](https://jyywiki.cn/OS/2026/labs/Labs.md)
 
 ## 资源汇总
 

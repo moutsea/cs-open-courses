@@ -17,10 +17,10 @@ The programming practice involves using Verilog to design and simulate RT implem
 
 ## Course Resources
 
-- Course Website: [2020 Fall](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start), [2022 Fall](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start)
+- Course Website: [Fall 2025 current offering](https://safari.ethz.ch/architecture/fall2025/doku.php?id=start), [Fall 2022 archive](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start)
 - Course Videos: Official videos available on the course website. A [2020 version is available on Bilibili](https://www.bilibili.com/video/BV1Vf4y1i7YG/?vd_source=77d47fcb2bac41ab4ad02f265b3273cf).
 - Course Textbooks: No designated textbook; each lecture has an extensive bibliography for reading.
-- Course Assignments: 5 Projects, mostly related to memory and cache, detailed on the [lab page of the course website](https://safari.ethz.ch/architecture/fall2022/doku.php?id=labs).
+- Course Assignments: See the [Fall 2025 Labs](https://safari.ethz.ch/architecture/fall2025/doku.php?id=labs), which focus on processors, memory systems, and caches.
 
 ## Resource Summary
 Some universities in China have introduced this course, so interested students can find additional resources through online searches.

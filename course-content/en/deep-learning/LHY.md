@@ -10,15 +10,15 @@
 
 Professor Hung-yi Lee, a professor at National Taiwan University, is known for his humorous and engaging teaching style. He often incorporates fun elements like Pokémon into his slides, making the learning experience enjoyable.
 
-Although labeled as a machine learning course, the breadth of topics covered is impressive. The course includes a total of 15 labs covering Regression, Classification, CNN, Self-Attention, Transformer, GAN, BERT, Anomaly Detection, Explainable AI, Attack, Adaptation, RL, Compression, Life-Long Learning, and Meta Learning. This wide coverage allows students to gain insights into various domains of deep learning, helping them choose areas for further in-depth study.
+Although labeled as a machine learning course, the breadth of topics covered is impressive. The 2023 and earlier editions covered Regression, Classification, CNN, Self-Attention, Transformer, GAN, BERT, Anomaly Detection, Explainable AI, Attack, Adaptation, RL, Compression, Life-Long Learning, Meta Learning, and many other topics. This broad coverage helps students build an overview of multiple deep-learning domains.
 
-Don't be overly concerned about the difficulty of the assignments. All assignments come with example code from teaching assistants, guiding students through data processing, model building, and more. Students are required to make modifications based on the provided code. This presents an excellent opportunity to learn from high-quality code, and the assignments serve as valuable resources for those looking to breeze through course projects.
+Past assignments typically provided TA examples or scaffolding for data processing, model construction, and other foundational steps. Availability and requirements vary by semester, so independent learners should follow the current Homework page. The released materials are also useful examples of well-structured model-training code.
 
-The 2025 version of the course has undergone a reform of the course content, focusing more on RAG, AI Agent, LLM all sorts of fancier content; it differs greatly from the 2023 version and previous versions
+Starting in 2025, the course underwent a major redesign around RAG, AI agents, and LLMs. Spring 2026 continues in that direction with material on inference, self-correction, and self-improvement, making it substantially different from the 2023 and earlier editions.
 
 ## Course Resources
 
-- Course Websites：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)
-- Course Videos：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)
+- Course Websites: [Spring 2026 current offering](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php), [Spring 2025 archive](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php), [Spring 2023 archive](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
+- Course Videos: See the lecture links on the [Spring 2026 course page](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php)
 - Course Textbook: N/A
-- Course Assignments：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)(15 labs covering a wide range of deep learning domains), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php) (focus on  LLM related work like AI Agent)
+- Course Assignments: See the Homework section of the [Spring 2026 course page](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php); older assignments remain available in the 2025 and 2023 archives

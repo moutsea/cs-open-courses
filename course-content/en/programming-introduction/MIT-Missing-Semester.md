@@ -10,10 +10,12 @@
 
 Just as the course name indicated, this course will teach the missing things in the university courses. It will cover shell programming, git, vim editor, tmux, ssh, sed, awk and even how to beautify your terminal. Trust me, this will be your first step to become a hacker!
 
+The 2026 edition adds current material on development environments, debugging, shipping code, and agentic coding alongside the established shell and version-control topics.
+
 ## Course Resources
 
-- Course Website: <https://missing.csail.mit.edu/>
-- Recordings: <https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J>
+- Course Website: [2026 current edition](https://missing.csail.mit.edu/), [2020 archive](https://missing.csail.mit.edu/2020/)
+- Recordings: [2020 public playlist](https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J); use the current site for the 2026 notes and exercises.
 - Assignments: Some exercises after each lecture, refer to the course website.
 
 <!-- AUTO-COURSE-UPDATES:START -->

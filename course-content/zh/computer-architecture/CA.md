@@ -18,12 +18,11 @@
 
 ## 课程资源
 
-- 课程网站：[2020 Fall](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start), [2022 Fall](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start)
+- 课程网站：[Fall 2025 当前学期](https://safari.ethz.ch/architecture/fall2025/doku.php?id=start)、[Fall 2022 归档](https://safari.ethz.ch/architecture/fall2022/doku.php?id=start)
 - 课程视频：官方视频详见课程网站。B站有个[2020年版本搬运](https://www.bilibili.com/video/BV1Vf4y1i7YG/?vd_source=77d47fcb2bac41ab4ad02f265b3273cf)。
 - 课程教材：无指定教材，每个 lecture 都有大量文献可供阅读
-- 课程作业：5 个 Project ，大多与内存和cache相关，具体内容见[课程网站的lab界面](https://safari.ethz.ch/architecture/fall2022/doku.php?id=labs)
+- 课程作业：详见 [Fall 2025 Labs](https://safari.ethz.ch/architecture/fall2025/doku.php?id=labs)，内容主要涉及处理器、内存系统与 cache
 
 ## 资源汇总
 国内有高校引入了这门课，因此有需要的同学可以搜索到一些资源。
-
 

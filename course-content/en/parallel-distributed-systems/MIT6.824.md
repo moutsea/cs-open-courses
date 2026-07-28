@@ -10,16 +10,15 @@
 
 This course, the same as MIT 6.S081, comes from the renowned MIT PDOS Lab. The instructor, Professor Robert Morris, was once a famous hacker who created 'Morris', the first worm virus in the world.
 
-Each lecture will discuss a classic paper in the field of distributed systems, teaching you the important principles and key techniques of distributed systems design and implementation. The Project is known for its difficulty. In four programming assignments, you will implement a KV-store framework step by step based on the Raft consensus algorithm, allowing you to experience the randomness and complexity to implement and debug a distributed system.
+Each lecture discusses a classic paper in distributed systems and uses it to teach important design principles and implementation techniques. The course now uses the number 6.5840. The Spring 2026 offering has five progressive labs covering MapReduce, a key/value service, Raft, a fault-tolerant key/value service, and sharding, exposing the randomness and complexity of implementing and debugging distributed systems.
 
 This course is so famous that you can easily have access to the project solutions on the Internet. It is highly recommended to implement the projects on your own.
 
 ## Resources
 
-- Course Website: <https://pdos.csail.mit.edu/6.824/schedule.html>
-- Assignments: refer to the course website.
+- Course Website: [MIT 6.5840 Spring 2026 current offering](https://pdos.csail.mit.edu/6.824/)
 - Textbook: None
-- Assignments: 4 torturing projects, the course website has specific requirements.
+- Assignments: see the [Spring 2026 schedule and five labs](https://pdos.csail.mit.edu/6.824/schedule.html).
 
 ## Personal Resources
 

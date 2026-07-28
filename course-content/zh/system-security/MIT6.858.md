@@ -1,4 +1,4 @@
-# MIT 6.858: Computer System Security
+# MIT 6.858 / 6.5660: Computer System Security
 
 ## 课程简介
 
@@ -8,7 +8,7 @@
 - 课程难度：🌟🌟🌟🌟🌟
 - 预计学时：150 小时
 
-MIT 的计算机系统安全课程，实验环境是一个 Web Application Zoobar。学生学习攻防技术并应用于该 Web Application。
+MIT 的计算机系统安全课程，实验环境是一个 Web Application Zoobar。学生学习攻防技术并应用于该 Web Application。课程在 2023 年改用 6.5660 编号，最新公开课程归档为 Spring 2023。
 
 - Lab 1: you will explore the zoobar web application, and use buffer overflow attacks to break its security properties.
 - Lab 2: you will improve the zoobar web application by using privilege separation, so that if one component is compromised, the adversary doesn't get control over the whole web application.
@@ -21,7 +21,7 @@ MIT 的计算机系统安全课程，实验环境是一个 Web Application Zooba
 
 ## 课程资源
 
-- 课程网站：<http://css.csail.mit.edu/6.858/2022/>
+- 课程网站：[6.5660 Spring 2023 最新公开归档](https://css.csail.mit.edu/6.858/)、[6.858 2022 归档](https://css.csail.mit.edu/6.858/2022/)
 - 课程视频：参见课程网站
 - 课程教材：无
 - 课程作业：4 个 Lab + Final Project / Lab5

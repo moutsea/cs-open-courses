@@ -10,16 +10,15 @@
 
 李宏毅老师是国立台湾大学的教授，其风趣幽默的授课风格深受大家喜爱，并且尤其喜欢在 PPT 中插入宝可梦等动漫元素，是个非常可爱的老师。
 
-这门课挂着机器学习的牌子，但其课程内容之广实在令人咋舌，其作业一共包含 15 个 lab，分别是 Regression、Classification、CNN、Self-Attention、Transformer、GAN、BERT、Anomaly Detection、Explainable AI、Attack、Adaptation、
-RL、Compression、Life-Long Learning 以及 Meta Learning。可谓是包罗万象，能让学生对于深度学习的绝大多数领域都有一定了解，从而可以进一步选择想要深入的方向进行学习。
+这门课挂着机器学习的牌子，但其课程内容之广实在令人咋舌。2023 年及更早版本曾包含 Regression、Classification、CNN、Self-Attention、Transformer、GAN、BERT、Anomaly Detection、Explainable AI、Attack、Adaptation、RL、Compression、Life-Long Learning 以及 Meta Learning 等大量主题，能让学生对深度学习的多个领域建立整体认识。
 
-大家也大可不必担心作业的难度，因为所有作业都会提供助教的示例代码，帮你完成数据处理、模型搭建等，你只需要在其基础上进行适量的修改即可。这也是一个学习别人优质代码的极好机会，大家需要水课程大作业的话，这里也是一个不错的资料来源。
+历年作业通常会提供助教示例代码或脚手架，帮助完成数据处理、模型搭建等基础步骤。不同学期的开放程度和要求可能变化，自学时应以当期 Homework 页面为准；这些材料也很适合用来学习高质量的模型训练代码。
 
-2025年版课程的课程内容发生改革，更加侧重于RAG、AI Agent、LLM种种更fasion的内容；与2023版及之前版本差异极大
+从 2025 年开始，课程内容进行了较大改革，更侧重 RAG、AI Agent、LLM 等方向。Spring 2026 延续了这一方向，并加入推理、自我纠错与自我改进等内容，与 2023 年及之前版本差异较大。
 
 ## 课程资源
 
-- 课程网站：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)
-- 课程视频：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)，每节课的链接参见课程网站
+- 课程网站：[Spring 2026 当前版本](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php)、[Spring 2025 归档](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php)、[Spring 2023 归档](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php)
+- 课程视频：参见 [Spring 2026 课程主页](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php)中的每讲视频链接
 - 课程教材：无
-- 课程作业：[Spring2023](https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php) (5 个 lab，几乎覆盖了主流深度学习的所有领域；部分作业colab上可能无法打开，这时候可以参考弘毅老师的github), [Spring2025](https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php) (主要关注 AI Agent 等 LLM 相关领域)
+- 课程作业：参见 [Spring 2026 Homework](https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php)；旧版作业可通过 2025 与 2023 归档访问

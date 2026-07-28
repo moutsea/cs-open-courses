@@ -20,6 +20,7 @@
 
 ## 课程资源
 
-- 课程网站：[主页](https://xiongyingfei.github.io/SA/2020/main.htm) 这是 2020 年的课程主页，在[熊老师的主页](https://xiongyingfei.github.io/)上可以找到更多年份的课程内容。
-- 课程视频：[2020 燕云直播](https://liveclass.org.cn/cloudCourse/#/courseDetail/8mI06L2eRqk8GcsW)
+- 课程网站：[Fall 2025 当前公开版本](https://xiongyingfei.github.io/SA_new/2025/)、[2020 归档](https://xiongyingfei.github.io/SA/2020/main.htm)、[历年课程入口](https://xiongyingfei.github.io/)
+- 课程讲义与作业：[Fall 2025 讲义](https://xiongyingfei.github.io/SA_new/2025/lectures.html)、[Fall 2025 作业](https://xiongyingfei.github.io/SA_new/2025/assignments.html)
+- 课程视频：[2020 燕云直播归档](https://liveclass.org.cn/cloudCourse/#/courseDetail/8mI06L2eRqk8GcsW)
 - 课程教材：无

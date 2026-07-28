@@ -1,4 +1,4 @@
-# University of Helsinki: Full Stack open 2022
+# University of Helsinki: Full Stack open
 
 ## 课程简介
 
@@ -11,6 +11,8 @@
 本课程是介绍如何使用 JavaScript 开发现代Web应用程序。 课程的重点是使用 ReactJS 构建单页面应用程序（SPA），并使用由 Node.js 构建 REST API。该课程还包含介绍 GraphQL 的部分，这是 REST API 的现代替代方案。
 
 课程还包括测试、配置和环境管理，以及使用 MongoDB 来存储应用的数据。
+
+官方课程已取消按年份发布的版本，内容会在同一网站持续更新，因此建议始终从课程主页开始学习。
 
 ## 课程资源
 

@@ -20,6 +20,7 @@ The course project of this experiment is to implement a pointer analysis system 
 
 ## Resources
 
-- Course Website: [Homepage](https://xiongyingfei.github.io/SA/2020/main.htm) This is the course homepage of 2020. More course content can be found on [Prof. Xiong's homepage](https://xiongyingfei.github.io/).
-- Course Video: [2020](https://liveclass.org.cn/cloudCourse/#/courseDetail/8mI06L2eRqk8GcsW)
+- Course Website: [Fall 2025 current public offering](https://xiongyingfei.github.io/SA_new/2025/), [2020 archive](https://xiongyingfei.github.io/SA/2020/main.htm), [all offerings](https://xiongyingfei.github.io/)
+- Lectures and Assignments: [Fall 2025 lectures](https://xiongyingfei.github.io/SA_new/2025/lectures.html), [Fall 2025 assignments](https://xiongyingfei.github.io/SA_new/2025/assignments.html)
+- Course Video: [2020 lecture archive](https://liveclass.org.cn/cloudCourse/#/courseDetail/8mI06L2eRqk8GcsW)
 - Course Textbook: None

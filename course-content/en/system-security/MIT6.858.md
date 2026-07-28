@@ -1,4 +1,4 @@
-# MIT 6.858: Computer System Security
+# MIT 6.858 / 6.5660: Computer System Security
 
 ## Descriptions
 
@@ -8,7 +8,7 @@
 - Difficulty:🌟🌟🌟🌟🌟
 - Class Hour: 150 hours
 
-This is MIT's Computer Systems Security course. Lectures cover threat models, attacks that compromise security, and techniques for achieving security, based on recent research papers. Topics include operating system (OS) security, capabilities, information flow control, language security, network protocols, hardware security, and security in web applications.
+This is MIT's Computer Systems Security course. Lectures cover threat models, attacks that compromise security, and techniques for achieving security, based on recent research papers. Topics include operating system (OS) security, capabilities, information flow control, language security, network protocols, hardware security, and security in web applications. The course moved to the 6.5660 number in 2023, and Spring 2023 is the latest public archive.
 
 Assignments include labs that involve implementing and compromising a secure web server and web application, and a group final project:
 
@@ -23,7 +23,7 @@ In the Final Project, you will build a remote file system, [SecFS](https://www.u
 
 ## Resources
 
-- Course Website: <http://css.csail.mit.edu/6.858/2022/>
+- Course Website: [6.5660 Spring 2023 latest public archive](https://css.csail.mit.edu/6.858/), [6.858 2022 archive](https://css.csail.mit.edu/6.858/2022/)
 - Assignments: refer to the course website.
 - Textbook: None
 - Assignments:  4 Labs + Final Project / Lab5

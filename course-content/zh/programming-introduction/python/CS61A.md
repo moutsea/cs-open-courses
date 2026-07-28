@@ -24,13 +24,13 @@ CS61B 和 CS61C 在本书中均有收录。
 
 ## 课程资源
 
-- [课程网站](https://cs61a.org)
-- 课程网站 (页面备份): [fall2024](https://insideempire.github.io/CS61A-Website-Archive/), [spring2022](https://cs61a.vercel.app/), [fall2022](https://web.archive.org/web/20220913035803/http://cs61a.org/), [fall2020](https://web.archive.org/web/20201219202644/https://cs61a.org/)
-- 课程视频: [spring2024](https://www.bilibili.com/video/BV1sy411z7nA/), [fall2022](https://www.bilibili.com/video/BV1GK411Q7qp/), [fall2020](https://www.bilibili.com/video/BV1s3411G7yM/)
+- 课程网站：[Summer 2026 当前学期](https://cs61a.org/)
+- 课程网站（页面备份）：[Spring 2026](https://lr2933.github.io/cs61a-spring-2026)、[Fall 2024](https://insideempire.github.io/CS61A-Website-Archive/)、[Spring 2022](https://cs61a.vercel.app/)、[Fall 2020](https://web.archive.org/web/20201219202644/https://cs61a.org/)
+- 课程视频：[Summer 2026 官方课程日历与视频](https://cs61a.org/)、[Spring 2024 Bilibili](https://www.bilibili.com/video/BV1sy411z7nA/)、[Fall 2022 Bilibili](https://www.bilibili.com/video/BV1GK411Q7qp/)
 - [课程教材](https://www.composingprograms.com/)
 - [课程教材电子书](https://github.com/CC-bit/UCB-CS61A-Textbook/)
 - [课程教材中文翻译](https://composingprograms.netlify.app/)
-- 课程作业: [fall2024](https://github.com/InsideEmpire/CS61A-Assignments)
+- 课程作业：[Summer 2026 Labs、Homeworks 与 Projects](https://cs61a.org/)、[Fall 2024 备份](https://github.com/InsideEmpire/CS61A-Assignments)
 
 ## 资源汇总
 
