@@ -166,7 +166,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
 
               <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-cyan-100 to-cyan-300 bg-clip-text text-transparent">
                   {t('hero.title')}
                 </span>
               </h1>

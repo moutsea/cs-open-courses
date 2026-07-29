@@ -98,7 +98,7 @@ export default function Footer({ locale }: { locale: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 md:gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-cyan-300 bg-clip-text text-transparent">
               CS61B & Beyond
             </h3>
             <p className="text-gray-400 mb-6 max-w-md">

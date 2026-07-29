@@ -46,28 +46,28 @@ export default function CoursesContent({ categories, locale, variant = 'default'
       : 'border-transparent hover:bg-slate-50 text-slate-600'
   }`;
   const categoryButtonSelected = isImmersive
-    ? 'bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-purple-500/30 text-white border-white/30 shadow-[0_25px_55px_rgba(59,130,246,0.35)]'
-    : 'bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 text-blue-900 border-blue-100 shadow-[0_12px_30px_rgba(59,130,246,0.2)]';
+    ? 'bg-gradient-to-r from-slate-800/70 to-cyan-500/20 text-white border-cyan-200/30 shadow-[0_25px_55px_rgba(8,145,178,0.3)]'
+    : 'bg-gradient-to-r from-slate-50 to-cyan-50 text-cyan-900 border-cyan-100 shadow-[0_12px_30px_rgba(8,145,178,0.15)]';
   const subcategoryButtonBase = `w-full text-left px-3 py-2 rounded-xl text-sm transition-all border ${
     isImmersive
       ? 'border-white/5 text-slate-300 hover:border-white/15 hover:bg-white/5'
       : 'border-slate-200 text-slate-600 hover:bg-slate-50'
   }`;
   const subcategoryButtonSelected = isImmersive
-    ? 'bg-white/15 text-white border-white/30 shadow-[0_12px_30px_rgba(59,130,246,0.25)]'
-    : 'bg-blue-50 text-blue-700 border-blue-200';
+    ? 'bg-white/15 text-white border-cyan-200/30 shadow-[0_12px_30px_rgba(8,145,178,0.2)]'
+    : 'bg-cyan-50 text-cyan-800 border-cyan-200';
   const gradientPalette = isImmersive
     ? [
-        'from-blue-500/15 via-blue-400/10 to-cyan-400/20',
-        'from-purple-500/15 via-fuchsia-500/10 to-pink-500/20',
-        'from-emerald-500/15 via-teal-500/10 to-cyan-500/20',
-        'from-amber-400/15 via-orange-500/10 to-pink-500/20'
+        'from-slate-700/25 to-cyan-400/20',
+        'from-slate-700/25 to-sky-400/18',
+        'from-slate-700/25 to-teal-400/18',
+        'from-slate-700/25 to-slate-400/15'
       ]
     : [
-        'from-slate-50 via-white to-indigo-50',
-        'from-rose-50 via-white to-orange-50',
-        'from-emerald-50 via-white to-teal-50',
-        'from-amber-50 via-white to-rose-50'
+        'from-slate-50 to-cyan-50',
+        'from-slate-50 to-sky-50',
+        'from-slate-50 to-teal-50',
+        'from-slate-50 to-slate-100'
       ];
   const subcategoryPanelClass = isImmersive
     ? 'space-y-1.5 rounded-2xl border border-dashed border-white/15 bg-white/5 px-3 py-3'

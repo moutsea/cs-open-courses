@@ -262,7 +262,7 @@ export default async function LocaleUniversitiesPage({
 
         <ImmersiveSection className="py-16 text-white">
           <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 p-10 text-center">
+            <div className="rounded-3xl border border-cyan-200/20 bg-gradient-to-r from-slate-900/60 via-slate-900/40 to-cyan-500/15 p-10 text-center">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70 mb-2">
                 {locale === 'zh' ? '与顶尖大学同行' : 'Learn with the best'}
               </p>
@@ -277,7 +277,7 @@ export default async function LocaleUniversitiesPage({
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href={localizedPath(locale, '/courses')}
-                  className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/20 transition hover:scale-[1.02]"
                 >
                   {locale === 'zh' ? '浏览所有课程' : 'Browse all courses'}
                 </Link>

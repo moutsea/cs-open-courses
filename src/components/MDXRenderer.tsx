@@ -77,9 +77,8 @@ export default function MDXRenderer({
     <PageLayout locale={locale}>
       <div className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-10 left-1/3 h-72 w-72 rounded-full bg-blue-500/30 blur-[200px]"></div>
-          <div className="absolute top-24 right-0 h-64 w-64 rounded-full bg-purple-500/20 blur-[180px]"></div>
-          <div className="absolute -bottom-10 left-10 h-80 w-80 rounded-full bg-cyan-400/20 blur-[180px]"></div>
+          <div className="absolute -top-10 left-1/3 h-72 w-72 rounded-full bg-slate-700/35 blur-[200px]"></div>
+          <div className="absolute -bottom-10 left-10 h-80 w-80 rounded-full bg-cyan-500/15 blur-[180px]"></div>
         </div>
 
         <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-24 sm:px-6 lg:px-8">

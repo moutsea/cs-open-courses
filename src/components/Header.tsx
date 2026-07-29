@@ -99,10 +99,10 @@ export default function Header({ locale }: { locale: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/60 via-40% to-transparent" aria-hidden="true"></div>
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 via-40% to-transparent" aria-hidden="true"></div>
       <div className="mx-auto flex max-w-screen-2xl flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
-          <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
+          <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-cyan-500/10 transition hover:border-white/30 min-w-0">
             <Image src="/logo.png" alt="CS61B & Beyond" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
             <div className="flex flex-col min-w-0">
               <span className="text-lg font-semibold text-white truncate">CS61B & Beyond</span>
@@ -122,7 +122,7 @@ export default function Header({ locale }: { locale: string }) {
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></span>
+                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-cyan-300"></span>
                 )}
               </Link>
             ))}
@@ -275,7 +275,7 @@ export default function Header({ locale }: { locale: string }) {
             <Link
               href={locale === 'zh' ? '/zh/courses' : '/courses'}
               onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center rounded-2xl bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-200"
             >
               {locale === 'zh' ? '立即开始' : 'Start learning'}
             </Link>
