@@ -19,9 +19,8 @@ export function ImmersivePage({
     <main className={`relative flex-grow overflow-clip ${className}`}>
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <div className="absolute inset-0" style={{ background: gradient }}></div>
-        <div className="absolute -top-1/3 left-1/4 w-[60vw] h-[60vw] bg-blue-700/25 blur-[200px]"></div>
-        <div className="absolute top-1/3 right-0 w-[45vw] h-[45vw] bg-purple-600/15 blur-[180px]"></div>
-        <div className="absolute bottom-[-15%] left-1/5 w-[70vw] h-[50vw] bg-cyan-300/20 blur-[220px]"></div>
+        <div className="absolute -top-1/3 left-1/4 w-[60vw] h-[60vw] bg-slate-700/30 blur-[200px]"></div>
+        <div className="absolute bottom-[-15%] left-1/5 w-[70vw] h-[50vw] bg-cyan-500/12 blur-[220px]"></div>
       </div>
 
       <div className={contentClassName}>
