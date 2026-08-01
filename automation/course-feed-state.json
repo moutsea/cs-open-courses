@@ -284,7 +284,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
+      "lastProcessedAt": "2026-08-01T05:35:36.934Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
         "tag:github.com,2008:Grit::Commit/e6b37692cf5e330939aa9384f2236894e6dcbe5d",
         "tag:github.com,2008:Grit::Commit/797269b962b877bf2310c91aa68f683e4c2d216f",
         "tag:github.com,2008:Grit::Commit/017fcc4c2eb3d84ce8269da0660b6313637a78ed",
@@ -465,6 +467,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-01T05:35:36.934Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/fa38be294aa995692654be335f8e0727eb119aa2",
+      "entryTitle": "removed the AI folder",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Upstream commit only deletes an internal 'AI' scaffolding folder (AI-assisted lab drafts, design principles, and an instructor manual) from the seed-labs repository. It adds no published lab, no course-level information, and no new resource URLs relevant to system-security/SEEDLabs, so no update is",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-07-22T05:30:08.874Z",
       "sourceId": "cs-self-learning",
