@@ -10,6 +10,7 @@ export const localePrefix = 'as-needed';
 export const pathnames = {
   '/': '/',
   '/courses': '/courses',
+  '/open-source': '/open-source',
   '/universities': '/universities',
   '/tutorial': '/tutorial',
   '/course/[...slug]': '/course/[...slug]',

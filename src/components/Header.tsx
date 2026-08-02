@@ -19,6 +19,7 @@ type Route =
   | '/courses'
   | '/course/data-structures-algorithms/CS61B'
   | '/universities'
+  | '/open-source'
   | '/tutorial'
 
 interface NavLink {
@@ -48,6 +49,7 @@ export default function Header({ locale }: { locale: string }) {
         href: '/course/data-structures-algorithms/CS61B'
       },
       { id: 'universities', label: t.universities, href: '/universities' },
+      { id: 'open-source', label: locale === 'zh' ? '开源项目' : 'Open Source', href: '/open-source' },
       { id: 'tutorial', label: t.tutorial, href: '/tutorial' }
     ]
   }, [locale, t])
@@ -109,7 +111,7 @@ export default function Header({ locale }: { locale: string }) {
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-6 xl:flex">
+          <nav className="hidden items-center gap-3 2xl:flex">
             {baseLinks.map(link => (
               <Link
                 key={link.id}
@@ -161,7 +163,7 @@ export default function Header({ locale }: { locale: string }) {
             </Menu>
           </nav>
 
-          <div className="hidden items-center gap-3 xl:flex">
+          <div className="hidden items-center gap-3 2xl:flex">
             <div className="mr-16 w-44 xl:w-52">
               <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
                 <SearchBox locale={locale} />
@@ -204,7 +206,7 @@ export default function Header({ locale }: { locale: string }) {
 
           <button
             onClick={() => setIsMenuOpen(prev => !prev)}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 p-2 text-white/80 transition hover:border-white/30 hover:text-white xl:hidden"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 p-2 text-white/80 transition hover:border-white/30 hover:text-white 2xl:hidden"
             aria-label="Toggle navigation"
           >
             {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
@@ -221,7 +223,7 @@ export default function Header({ locale }: { locale: string }) {
           leaveFrom="transform opacity-100 translate-y-0"
           leaveTo="transform opacity-0 -translate-y-2"
         >
-          <div className="mt-4 flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 shadow-xl shadow-black/40 xl:hidden">
+          <div className="mt-4 flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 shadow-xl shadow-black/40 2xl:hidden">
             <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
               <SearchBox locale={locale} />
             </Suspense>

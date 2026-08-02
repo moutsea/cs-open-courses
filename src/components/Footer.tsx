@@ -89,6 +89,7 @@ export default function Footer({ locale }: { locale: string }) {
     { name: isEn ? 'Courses' : '所有课程', href: isEn ? '/courses' : '/zh/courses' },
     { name: 'CS61B', href: isEn ? '/course/data-structures-algorithms/CS61B' : '/zh/course/data-structures-algorithms/CS61B' },
     { name: isEn ? 'Universities' : '大学', href: isEn ? '/universities' : '/zh/universities' },
+    { name: isEn ? 'Open Source' : '开源项目', href: isEn ? '/open-source' : '/zh/open-source' },
     { name: isEn ? 'Learning Path' : '学习路线', href: isEn ? '/tutorial' : '/zh/tutorial' },
     { name: isEn ? 'About' : '关于', href: isEn ? '/about' : '/zh/about' }
   ]

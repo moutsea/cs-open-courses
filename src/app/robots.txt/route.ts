@@ -1,6 +1,6 @@
 import { SITE_URL } from '@/lib/seo';
 
-export default function Robots() {
+function robotsContent() {
   return `
 # Sitemap
 Sitemap: ${SITE_URL}/sitemap.xml
@@ -15,7 +15,7 @@ Disallow: /private/
 }
 
 export function GET() {
-  return new Response(Robots(), {
+  return new Response(robotsContent(), {
     headers: {
       'Content-Type': 'text/plain',
     },

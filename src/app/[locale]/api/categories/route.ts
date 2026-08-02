@@ -1,16 +1,10 @@
-import { NextResponse } from 'next/server';
-import { buildCourseStructure } from '@/lib/courseParser';
+import { NextResponse } from 'next/server'
+import { buildCourseCatalog } from '@/lib/searchIndex'
 
-export async function GET() {
-  try {
-    const categories = await buildCourseStructure();
-    
-    return NextResponse.json(categories);
-  } catch (error) {
-    console.error('Error fetching categories:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch categories' },
-      { status: 500 }
-    );
-  }
+export async function GET(
+  _request: Request,
+  { params }: { params: Promise<{ locale: string }> }
+) {
+  const { locale } = await params
+  return NextResponse.json(buildCourseCatalog(locale))
 }

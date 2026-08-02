@@ -16,6 +16,10 @@
 # next.js
 /.next/
 /out/
+.open-next/
+.wrangler/
+.dev.vars*
+!.dev.vars.example
 
 # production
 /build
@@ -39,3 +43,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+*.cpuprofile

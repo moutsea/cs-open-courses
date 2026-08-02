@@ -1,0 +1,3 @@
+NEXTJS_ENV=development
+GITHUB_TOKEN=replace-with-a-github-token
+GITHUB_PROJECTS_CRON_SECRET=replace-with-a-random-secret

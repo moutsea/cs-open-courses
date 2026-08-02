@@ -28,6 +28,13 @@ interface SearchResult {
   relevanceScore: number
 }
 
+interface SearchApiResponse {
+  results?: SearchResult[]
+  total?: number
+  page?: number
+  totalPages?: number
+}
+
 interface SearchResultsProps {
   locale: string
   query: string
@@ -44,7 +51,7 @@ async function searchCoursesAPI(query: string, locale: string, page: number = 1,
   if (!response.ok) {
     throw new Error('Search failed')
   }
-  const data = await response.json()
+  const data = await response.json() as SearchApiResponse
   return {
     results: data.results || [],
     total: data.total || 0,

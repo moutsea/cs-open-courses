@@ -1,0 +1,54 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cs-courses",
+  "main": "worker.ts",
+  "compatibility_date": "2026-08-02",
+  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "base_dir": ".open-next/server-functions/default",
+  "find_additional_modules": true,
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["course-content/**/*.md"],
+      "fallthrough": false
+    },
+    {
+      "type": "CompiledWasm",
+      "globs": ["__unused_worker_modules__/**/*.wasm"],
+      "fallthrough": false
+    }
+  ],
+  "workers_dev": true,
+  "preview_urls": true,
+  "vars": {
+    "NEXTJS_ENV": "production"
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".open-next/assets"
+  },
+  "images": {
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true,
+    "logs": {
+      "head_sampling_rate": 1
+    },
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.05
+    }
+  },
+  "triggers": {
+    "crons": ["17 3 * * *"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cs-courses",
+      "database_id": "c36e00b7-c2ae-4ad4-9aa3-6bd977fb77cd",
+      "migrations_dir": "./migrations"
+    }
+  ]
+}

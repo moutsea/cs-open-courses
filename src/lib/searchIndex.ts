@@ -1,6 +1,4 @@
-import { promises as fs } from 'fs'
-import path from 'path'
-import { parseMarkdownFile } from './courseParser'
+import generatedSearchIndex from '@/data/generated/course-search-index.json'
 
 export interface CourseSearchIndex {
   id: string
@@ -26,243 +24,125 @@ export interface SearchResult {
   relevanceScore: number
 }
 
-// Global search index cache
-let searchIndex: CourseSearchIndex[] | null = null
-
-export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
-  if (searchIndex) {
-    return searchIndex
-  }
-
-  const docsPath = path.join(process.cwd(), 'course-content')
-  const courses: CourseSearchIndex[] = []
-  
-  async function scanLanguageDirectory(langDir: string, locale: string) {
-    const langPath = path.join(docsPath, langDir)
-    
-    async function scanDirectory(dirPath: string, currentPath: string[] = []) {
-      try {
-        const items = await fs.readdir(dirPath)
-        
-        for (const item of items) {
-          const itemPath = path.join(dirPath, item)
-          const stats = await fs.stat(itemPath)
-          
-          if (stats.isDirectory()) {
-            await scanDirectory(itemPath, [...currentPath, item])
-          } else if (item.endsWith('.md')) {
-            // This is a course file
-            const fileName = item.replace('.md', '').replace('.en', '')
-            const coursePath = [...currentPath, fileName]
-            
-            // Parse the markdown file to extract metadata
-            try {
-              const courseData = await parseMarkdownFile(itemPath, locale)
-              
-              // Check if the other language version exists
-              const otherLang = locale === 'zh' ? 'en' : 'zh'
-              const otherLangFileName = item.endsWith('.en.md') ? 
-                item.replace('.en.md', '.md') : 
-                item.replace('.md', '.en.md')
-              const otherLangPath = path.join(docsPath, otherLang, ...currentPath, otherLangFileName)
-              const hasOtherVersion = await fileExists(otherLangPath)
-              
-              // Parse the other language version if it exists
-              let otherLangData = null
-              if (hasOtherVersion) {
-                otherLangData = await parseMarkdownFile(otherLangPath, otherLang)
-              }
-              
-              // Determine Chinese and English descriptions/summaries based on file content
-              let chineseDescription = ''
-              let englishDescription = ''
-              let chineseSummary = ''
-              let englishSummary = ''
-              
-              if (locale === 'zh') {
-                // This is a Chinese file
-                chineseDescription = courseData.content.substring(0, 200) + '...'
-                englishDescription = otherLangData?.content?.substring(0, 200) + '...' || ''
-                chineseSummary = courseData.summary || ''
-                englishSummary = otherLangData?.summaryEn || otherLangData?.summary || ''
-              } else {
-                // This is an English file
-                chineseDescription = otherLangData?.content?.substring(0, 200) + '...' || ''
-                englishDescription = courseData.content.substring(0, 200) + '...'
-                chineseSummary = otherLangData?.summary || ''
-                englishSummary = courseData.summaryEn || courseData.summary || ''
-              }
-              
-              courses.push({
-                id: `${locale}-${coursePath.join('-')}`,
-                title: locale === 'zh' ? courseData.title : (otherLangData?.title || courseData.title),
-                titleEn: locale === 'zh' ? (otherLangData?.title || courseData.title) : courseData.title,
-                description: chineseDescription,
-                descriptionEn: englishDescription,
-                summary: chineseSummary,
-                summaryEn: englishSummary,
-                university: courseData.university || otherLangData?.university || '',
-                path: coursePath.join('/'),
-                programmingLanguage: courseData.programmingLanguage || '',
-                difficulty: courseData.difficulty || '',
-                duration: courseData.duration,
-                category: coursePath[0] || 'Unknown',
-                subcategory: coursePath[1] || undefined,
-                hasChineseVersion: locale === 'zh' || hasOtherVersion,
-                hasEnglishVersion: locale === 'en' || hasOtherVersion,
-              })
-            } catch (error) {
-              console.error(`Error processing course file ${itemPath}:`, error)
-            }
-          }
-        }
-      } catch (error) {
-        console.error(`Error scanning directory ${dirPath}:`, error)
-      }
-    }
-    
-    await scanDirectory(langPath, [])
-  }
-  
-  try {
-    // Scan both Chinese and English directories
-    await scanLanguageDirectory('zh', 'zh')
-    await scanLanguageDirectory('en', 'en')
-    
-    // Merge courses that exist in both languages
-    const mergedCourses: CourseSearchIndex[] = []
-    
-    courses.forEach(course => {
-      const existingIndex = mergedCourses.findIndex(c => c.path === course.path)
-      
-      if (existingIndex === -1) {
-        // New course, add it
-        mergedCourses.push(course)
-      } else {
-        // Course exists, merge language-specific fields
-        const existing = mergedCourses[existingIndex]
-        
-          // Merge fields based on language
-        if (course.hasChineseVersion) {
-          // Update Chinese fields
-          existing.title = course.title
-          existing.description = course.description
-          existing.summary = course.summary
-          existing.programmingLanguage = course.programmingLanguage
-          existing.difficulty = course.difficulty
-          existing.duration = course.duration
-          existing.university = course.university || existing.university
-          existing.hasChineseVersion = true
-        }
-        
-        if (course.hasEnglishVersion) {
-          // Update English fields
-          existing.titleEn = course.titleEn
-          existing.descriptionEn = course.descriptionEn
-          existing.summaryEn = course.summaryEn // Don't fallback to summary for English
-          existing.hasEnglishVersion = true
-          
-          // If this is an English course, also update the programming language to ensure it's in English
-          if (course.programmingLanguage) {
-            existing.programmingLanguage = course.programmingLanguage
-          }
-          if (course.difficulty) {
-            existing.difficulty = course.difficulty
-          }
-          if (course.duration) {
-            existing.duration = course.duration
-          }
-          if (course.university) {
-            existing.university = course.university
-          }
-        }
-        
-        // Keep other fields from the first occurrence
-      }
-    })
-    
-    searchIndex = mergedCourses
-    return mergedCourses
-  } catch (error) {
-    console.error('Error building search index:', error)
-    return []
-  }
+export interface CourseCatalogEntry {
+  id: string
+  title: string
+  description: string
+  path: string
+  slug: string
+  category: string
+  subcategory?: string
+  hasChineseVersion: boolean
+  hasEnglishVersion: boolean
+  university: string
+  programmingLanguage: string
+  difficulty: string
+  duration?: CourseSearchIndex['duration']
+  summary?: string
+  summaryEn?: string
 }
 
+export interface CourseCatalogCategory {
+  slug: string
+  name: string
+  courses: CourseCatalogEntry[]
+  subcategories: Array<{
+    slug: string
+    name: string
+    courses: CourseCatalogEntry[]
+  }>
+}
 
-async function fileExists(filePath: string): Promise<boolean> {
-  try {
-    await fs.access(filePath)
-    return true
-  } catch {
-    return false
-  }
+const searchIndex = generatedSearchIndex as CourseSearchIndex[]
+
+function normalize(value: string): string {
+  return value.normalize('NFKC').toLocaleLowerCase().trim()
+}
+
+export async function buildSearchIndex(): Promise<CourseSearchIndex[]> {
+  return searchIndex
 }
 
 export function searchCourses(query: string, courses: CourseSearchIndex[], limit?: number): SearchResult[] {
-  if (!query.trim()) {
-    return []
-  }
-  
-  const normalizedQuery = query.toLowerCase().trim()
-  const results: SearchResult[] = []
-  
-  for (const course of courses) {
-    let relevanceScore = 0
-    
-    // Search in title (highest weight)
-    if (course.title.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 10
-    }
-    if (course.titleEn.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 10
-    }
-    
-    // Search in description (medium weight)
-    if (course.description.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 5
-    }
-    if (course.descriptionEn.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 5
-    }
-    
-    // Search in university (medium weight)
-    if (course.university.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 7
-    }
-    
-    // Search in programming language (medium weight)
-    if (course.programmingLanguage.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 6
-    }
-    
-    // Search in category (low weight)
-    if (course.category.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 3
-    }
-    
-    // Search in subcategory (low weight)
-    if (course.subcategory && course.subcategory.toLowerCase().includes(normalizedQuery)) {
-      relevanceScore += 2
-    }
-    
-    // Only include courses with some relevance
-    if (relevanceScore > 0) {
-      results.push({
-        course,
-        relevanceScore
-      })
-    }
-  }
-  
-  // Sort by relevance score (highest first) and limit results
-  const sortedResults = results.sort((a, b) => b.relevanceScore - a.relevanceScore)
-  return limit === undefined ? sortedResults : sortedResults.slice(0, limit)
+  const tokens = normalize(query).split(/\s+/).filter(Boolean)
+  if (tokens.length === 0) return []
+
+  const results = courses.flatMap(course => {
+    const fields = [
+      { value: course.title, weight: 10 },
+      { value: course.titleEn, weight: 10 },
+      { value: course.university, weight: 7 },
+      { value: course.programmingLanguage, weight: 6 },
+      { value: course.summary || '', weight: 5 },
+      { value: course.summaryEn || '', weight: 5 },
+      { value: course.description, weight: 3 },
+      { value: course.descriptionEn, weight: 3 },
+      { value: course.category, weight: 2 },
+      { value: course.subcategory || '', weight: 2 }
+    ].map(field => ({ ...field, value: normalize(field.value) }))
+
+    if (!tokens.every(token => fields.some(field => field.value.includes(token)))) return []
+
+    const relevanceScore = tokens.reduce(
+      (score, token) => score + fields.reduce(
+        (fieldScore, field) => fieldScore + (field.value.includes(token) ? field.weight : 0),
+        0
+      ),
+      0
+    )
+    return [{ course, relevanceScore }]
+  })
+
+  const sorted = results.sort((left, right) =>
+    right.relevanceScore - left.relevanceScore || left.course.titleEn.localeCompare(right.course.titleEn)
+  )
+  return limit === undefined ? sorted : sorted.slice(0, limit)
 }
 
-export function clearSearchIndexCache() {
-  searchIndex = null
-}
+export function buildCourseCatalog(locale: string): CourseCatalogCategory[] {
+  const categories = new Map<string, CourseCatalogCategory>()
 
-// Clear the cache to ensure changes take effect
-searchIndex = null;
+  for (const course of searchIndex) {
+    if (locale === 'en' ? !course.hasEnglishVersion : !course.hasChineseVersion) continue
+
+    const pathParts = course.path.split('/')
+    const slug = pathParts.at(-1) || course.id
+    const entry: CourseCatalogEntry = {
+      id: course.id,
+      title: locale === 'zh' ? course.title : course.titleEn,
+      description: locale === 'zh' ? course.description : course.descriptionEn,
+      path: course.path,
+      slug,
+      category: course.category,
+      subcategory: course.subcategory,
+      hasChineseVersion: course.hasChineseVersion,
+      hasEnglishVersion: course.hasEnglishVersion,
+      university: course.university,
+      programmingLanguage: course.programmingLanguage,
+      difficulty: course.difficulty,
+      duration: course.duration,
+      summary: course.summary,
+      summaryEn: course.summaryEn
+    }
+
+    const category = categories.get(course.category) || {
+      slug: course.category,
+      name: course.category,
+      courses: [],
+      subcategories: []
+    }
+
+    if (course.subcategory) {
+      let subcategory = category.subcategories.find(item => item.slug === course.subcategory)
+      if (!subcategory) {
+        subcategory = { slug: course.subcategory, name: course.subcategory, courses: [] }
+        category.subcategories.push(subcategory)
+      }
+      subcategory.courses.push(entry)
+    }
+    category.courses.push(entry)
+    categories.set(course.category, category)
+  }
+
+  return [...categories.values()].sort((left, right) => left.slug.localeCompare(right.slug))
+}

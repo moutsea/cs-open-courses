@@ -60,8 +60,12 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
-        <Analytics />
-        <SpeedInsights />
+        {process.env.VERCEL && (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        )}
         {process.env.NODE_ENV === 'production' && process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}

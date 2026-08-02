@@ -11,6 +11,7 @@ const staticPages = [
   { pathname: '/', changeFrequency: 'weekly' as const, priority: 1 },
   { pathname: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
   { pathname: '/courses', changeFrequency: 'weekly' as const, priority: 0.9 },
+  { pathname: '/open-source', changeFrequency: 'daily' as const, priority: 0.85 },
   { pathname: '/universities', changeFrequency: 'monthly' as const, priority: 0.7 },
   { pathname: '/tutorial', changeFrequency: 'monthly' as const, priority: 0.8 }
 ]
