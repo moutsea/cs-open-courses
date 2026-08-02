@@ -20,6 +20,13 @@
   ],
   "workers_dev": true,
   "preview_urls": true,
+  "routes": [
+    {
+      "pattern": "www.cs61bbeyond.com",
+      "zone_name": "cs61bbeyond.com",
+      "custom_domain": true
+    }
+  ],
   "vars": {
     "NEXTJS_ENV": "production"
   },
