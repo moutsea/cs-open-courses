@@ -16,15 +16,10 @@ interface LanguageOption {
 
 type Route =
   | '/'
-  | '/zh'
   | '/courses'
-  | '/zh/courses'
   | '/course/data-structures-algorithms/CS61B'
-  | '/zh/course/data-structures-algorithms/CS61B'
   | '/universities'
-  | '/zh/universities'
   | '/tutorial'
-  | '/zh/tutorial'
 
 interface NavLink {
   id: string
@@ -45,15 +40,15 @@ export default function Header({ locale }: { locale: string }) {
 
   const baseLinks: NavLink[] = useMemo(() => {
     return [
-      { id: 'home', label: locale === 'zh' ? '首页' : 'Home', href: locale === 'zh' ? '/zh' : '/' },
-      { id: 'courses', label: t.courses, href: locale === 'zh' ? '/zh/courses' : '/courses' },
+      { id: 'home', label: locale === 'zh' ? '首页' : 'Home', href: '/' },
+      { id: 'courses', label: t.courses, href: '/courses' },
       {
         id: 'cs61b',
         label: locale === 'zh' ? 'CS61B 课程' : 'CS61B Course',
-        href: locale === 'zh' ? '/zh/course/data-structures-algorithms/CS61B' : '/course/data-structures-algorithms/CS61B'
+        href: '/course/data-structures-algorithms/CS61B'
       },
-      { id: 'universities', label: t.universities, href: locale === 'zh' ? '/zh/universities' : '/universities' },
-      { id: 'tutorial', label: t.tutorial, href: locale === 'zh' ? '/zh/tutorial' : '/tutorial' }
+      { id: 'universities', label: t.universities, href: '/universities' },
+      { id: 'tutorial', label: t.tutorial, href: '/tutorial' }
     ]
   }, [locale, t])
 
@@ -89,10 +84,14 @@ export default function Header({ locale }: { locale: string }) {
 
   const isActive = (href: string) => {
     const current = pathname || '/'
-    if (href === '/' || href === '/zh') {
-      return current === href
+    const normalizedCurrent = locale === 'zh'
+      ? current.replace(/^\/zh(?=\/|$)/, '') || '/'
+      : current
+
+    if (href === '/') {
+      return normalizedCurrent === href
     }
-    return current.startsWith(href)
+    return normalizedCurrent.startsWith(href)
   }
 
   const brandSubtitle = locale === 'zh' ? '免费 CS 课程与学习路径' : 'Free CS courses and learning paths'
@@ -102,7 +101,7 @@ export default function Header({ locale }: { locale: string }) {
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/60 via-40% to-transparent" aria-hidden="true"></div>
       <div className="mx-auto flex max-w-screen-2xl flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
-          <Link href={locale === 'zh' ? '/zh' : '/'} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
+          <Link href="/" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
             <Image src="/logo.png" alt="CS61B & Beyond" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
             <div className="flex flex-col min-w-0">
               <span className="text-lg font-semibold text-white truncate">CS61B & Beyond</span>
@@ -273,7 +272,7 @@ export default function Header({ locale }: { locale: string }) {
             </div>
 
             <Link
-              href={locale === 'zh' ? '/zh/courses' : '/courses'}
+              href="/courses"
               onClick={() => setIsMenuOpen(false)}
               className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
             >
