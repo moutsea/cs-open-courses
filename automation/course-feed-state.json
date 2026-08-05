@@ -184,7 +184,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
+      "lastProcessedAt": "2026-08-05T05:24:28.226Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
         "tag:github.com,2008:Grit::Commit/75c46385ee4fe194dee76a5bfdc1a55b16ff4a40",
         "tag:github.com,2008:Grit::Commit/59db7e2ea922cb1cf18e328b5b80f5264b0f755b",
         "tag:github.com,2008:Grit::Commit/b6dd660d4903947e5eb75ae9a457854f3707eb14",
@@ -468,6 +470,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-05T05:24:28.225Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
+      "entryTitle": "avoid warning on recent gcc",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit 'avoid warning on recent gcc' is a minor toolchain compatibility fix with no file list in the evidence and no course-facing change to MIT 6.S081 content, resources, or structure. Nothing verifiable to add to the existing course entry.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-02T05:36:24.052Z",
       "sourceId": "seed-labs",
