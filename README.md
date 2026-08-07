@@ -88,6 +88,35 @@ npm run dev
 npm run build
 ```
 
+### 🤖 AI-Powered Course Updates
+
+GitHub Actions checks 19 allowlisted GitHub Atom feeds every day. Discovery sources can identify new courses, while course-specific upstream repositories can only update the course paths explicitly allowed in `automation/course-feeds.json`.
+
+New feed entries are reviewed through an Anthropic Messages-compatible API. The reviewer returns structured actions, and the sync script applies source allowlists, confidence thresholds, duplicate detection, evidence URL checks, and Markdown validation before changing bilingual course content. A failed site build prevents generated changes from being committed.
+
+The AI credentials, gateway, and model are runtime configuration rather than secrets embedded in the source code:
+
+| Variable | Required | Default | Purpose |
+| --- | --- | --- | --- |
+| `COURSE_AI_API_KEY` | When a new entry needs review | None | API credential; stored as a GitHub Actions secret in production |
+| `COURSE_AI_BASE_URL` | No | `https://cfjwlpro.com/` | Anthropic Messages-compatible gateway exposing `POST /v1/messages` |
+| `COURSE_AI_MODEL` | No | `claude-opus-5` | Model name sent to the configured gateway |
+
+The scheduled workflow currently sets the default gateway and model in `.github/workflows/auto-update-courses.yml`; the script also provides the same fallbacks for local runs. Changing to another Anthropic Messages-compatible gateway or model only requires updating these environment variables. The transport protocol, review prompt, and structured action schema are intentionally enforced in `scripts/sync-course-feeds.mjs`; using a non-Anthropic API protocol requires a code adapter.
+
+Add `COURSE_AI_API_KEY` under **Settings → Secrets and variables → Actions**. Course sources and safety policies live in `automation/course-feeds.json`. A newly added source records its current feed position as a baseline on the first run instead of replaying its history.
+
+```bash
+# Validate feed configuration without applying course changes
+npm run courses:sync:check
+
+# Review new entries locally
+COURSE_AI_API_KEY=your_key \
+COURSE_AI_BASE_URL=https://your-gateway.example/ \
+COURSE_AI_MODEL=your-model \
+npm run courses:sync
+```
+
 ### 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -176,20 +205,31 @@ npm run build
 
 项目每天通过 GitHub Actions 检查 19 个 GitHub Atom Feed。课程发现来源覆盖 `cs-self-learning`、CS Video Courses、OSSU Computer Science、OSSU Data Science、Awesome Courses 和 Open Source Computer Science；课程级来源覆盖 Helsinki Full Stack Open、Harvard CS50、MIT Missing Semester、MIT xv6、MIT 18.06、CMU BusTub、CMU Deep Learning Systems、Stanford CS231n、Princeton Algorithms、SEED Labs、Nand2Tetris、Hugging Face Course 和 fast.ai。
 
-新提交会经过 AI 结构化审核、来源白名单、重复检测和 Markdown 校验；只有高置信度结果才能新增双语课程或追加机器管理的课程动态。目录型来源可以发现课程，官方单课程仓库只能更新配置中指定的课程，并且每次最多审核一条提交。构建失败时不会提交任何更新。
+新提交会通过 Anthropic Messages 兼容 API 进行结构化审核，并继续经过来源白名单、置信度门槛、重复检测、证据 URL 校验和 Markdown 校验；只有通过全部规则的结果才能新增双语课程或追加机器管理的课程动态。目录型来源可以发现课程，官方单课程仓库只能更新配置中指定的课程，并且每次最多审核一条提交。站点构建失败时不会提交任何更新。
 
-在仓库 Settings → Secrets and variables → Actions 中添加：
+AI 密钥、网关和模型均通过运行时配置注入，不会把密钥写入源码：
 
-```text
-COURSE_AI_API_KEY=你的 Anthropic Messages 兼容 API Key
-```
+| 环境变量 | 是否必需 | 默认值 | 作用 |
+| --- | --- | --- | --- |
+| `COURSE_AI_API_KEY` | 有新条目需要审核时必需 | 无 | API 密钥；线上存放在 GitHub Actions Secret 中 |
+| `COURSE_AI_BASE_URL` | 否 | `https://cfjwlpro.com/` | 提供 `POST /v1/messages` 的 Anthropic Messages 兼容网关 |
+| `COURSE_AI_MODEL` | 否 | `claude-opus-5` | 发送给网关的模型名称 |
 
-AI 网关和模型配置位于 `.github/workflows/auto-update-courses.yml`，课程源与安全限制位于 `automation/course-feeds.json`。新增来源首次运行时只记录当前 Feed 基线，不处理历史提交。也可以手动运行工作流，并选择影子模式观察 AI 决策而不修改课程文件。
+定时工作流目前在 `.github/workflows/auto-update-courses.yml` 中设置默认网关和模型，脚本也为本地运行提供相同的回退值。更换其他 Anthropic Messages 兼容网关或模型只需修改环境变量，无需改动审核逻辑。当前固定在 `scripts/sync-course-feeds.mjs` 中的是 Anthropic Messages 传输协议、审核提示词和结构化动作格式；如果要接入 OpenAI 等不同协议，需要增加协议适配代码。
 
-本地检查配置：
+在仓库 **Settings → Secrets and variables → Actions** 中添加 `COURSE_AI_API_KEY`。课程源与安全限制位于 `automation/course-feeds.json`。新增来源首次运行时只记录当前 Feed 基线，不处理历史提交。也可以手动运行工作流，并选择影子模式观察 AI 决策而不修改课程文件。
+
+本地检查或运行：
 
 ```bash
+# 只检查 Feed 配置，不修改课程
 npm run courses:sync:check
+
+# 本地审核新条目
+COURSE_AI_API_KEY=你的密钥 \
+COURSE_AI_BASE_URL=https://你的网关.example/ \
+COURSE_AI_MODEL=你的模型 \
+npm run courses:sync
 ```
 
 ### 📄 许可证
