@@ -184,12 +184,13 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-08T03:42:36.144Z",
+      "lastProcessedAt": "2026-08-09T03:52:28.877Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
         "tag:github.com,2008:Grit::Commit/429989d05b190569f7d76adea313905b04cf0d93",
         "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
+        "tag:github.com,2008:Grit::Commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
         "tag:github.com,2008:Grit::Commit/75c46385ee4fe194dee76a5bfdc1a55b16ff4a40",
         "tag:github.com,2008:Grit::Commit/59db7e2ea922cb1cf18e328b5b80f5264b0f755b",
         "tag:github.com,2008:Grit::Commit/b6dd660d4903947e5eb75ae9a457854f3707eb14",
@@ -473,6 +474,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-09T03:52:28.877Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
+      "entryTitle": "add a macos build test",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit 'add a macos build test' is a CI/build-tooling change with no file list in the evidence and no impact on MIT 6.S081 course content, resources, or logistics. No new verbatim URLs or course facts to support an update to operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-08T03:42:36.144Z",
       "sourceId": "mit-xv6-riscv",
