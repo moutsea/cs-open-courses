@@ -184,13 +184,14 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-09T03:52:28.877Z",
+      "lastProcessedAt": "2026-08-10T04:06:27.573Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
         "tag:github.com,2008:Grit::Commit/429989d05b190569f7d76adea313905b04cf0d93",
         "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
         "tag:github.com,2008:Grit::Commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
+        "tag:github.com,2008:Grit::Commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
         "tag:github.com,2008:Grit::Commit/75c46385ee4fe194dee76a5bfdc1a55b16ff4a40",
         "tag:github.com,2008:Grit::Commit/59db7e2ea922cb1cf18e328b5b80f5264b0f755b",
         "tag:github.com,2008:Grit::Commit/b6dd660d4903947e5eb75ae9a457854f3707eb14",
@@ -240,7 +241,9 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
+      "lastProcessedAt": "2026-08-10T04:06:33.798Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
         "tag:github.com,2008:Grit::Commit/853e0ea91885a1a7e0843b2e26e8ccb85a8155a6",
         "tag:github.com,2008:Grit::Commit/2df4a16c3cedc2c4448e0e7f5bd315f818bc8202",
         "tag:github.com,2008:Grit::Commit/adaebe333b3513437dca4d411a1aa70f4feb815b",
@@ -474,6 +477,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-10T04:06:33.798Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
+      "entryTitle": "Merge branch 'oiahoon/docs/fix-uv-lock-example'",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream commit only merges a small documentation fix to a Dockerfile/uv example inside the existing shipping-code lecture notes (5 additions, 2 deletions). It adds no new lecture, resource URL, or course-level fact, so the existing MIT Missing Semester entry needs no change.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-10T04:06:27.572Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
+      "entryTitle": "fix github action apt-get packages for ubuntu 26.04",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "The commit only fixes GitHub Actions apt-get package names for Ubuntu 26.04 in the xv6-riscv repository. It is CI/build infrastructure maintenance with no changed files listed in the evidence and no impact on MIT 6.S081 course content, labs, prerequisites, or resources, so no update to operating-sys",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-09T03:52:28.877Z",
       "sourceId": "mit-xv6-riscv",
