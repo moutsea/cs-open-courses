@@ -184,7 +184,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-10T04:06:27.573Z",
+      "lastProcessedAt": "2026-08-11T03:54:30.375Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -192,6 +192,7 @@
         "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
         "tag:github.com,2008:Grit::Commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
         "tag:github.com,2008:Grit::Commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
+        "tag:github.com,2008:Grit::Commit/12ae9fa1057ea183e3e72f42bb632af7092e886f",
         "tag:github.com,2008:Grit::Commit/75c46385ee4fe194dee76a5bfdc1a55b16ff4a40",
         "tag:github.com,2008:Grit::Commit/59db7e2ea922cb1cf18e328b5b80f5264b0f755b",
         "tag:github.com,2008:Grit::Commit/b6dd660d4903947e5eb75ae9a457854f3707eb14",
@@ -241,9 +242,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-08-10T04:06:33.798Z",
+      "lastProcessedAt": "2026-08-11T03:54:36.161Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
+        "tag:github.com,2008:Grit::Commit/734343129db6e8425bfe9818d46b7ccc7e618bee",
         "tag:github.com,2008:Grit::Commit/853e0ea91885a1a7e0843b2e26e8ccb85a8155a6",
         "tag:github.com,2008:Grit::Commit/2df4a16c3cedc2c4448e0e7f5bd315f818bc8202",
         "tag:github.com,2008:Grit::Commit/adaebe333b3513437dca4d411a1aa70f4feb815b",
@@ -477,6 +479,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-11T03:54:36.161Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/734343129db6e8425bfe9818d46b7ccc7e618bee",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/734343129db6e8425bfe9818d46b7ccc7e618bee",
+      "entryTitle": "docs: fix uv lockfile Docker example",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "The commit only corrects a Dockerfile snippet (uv sync/lockfile usage) inside one lecture note in _2026/shipping-code.md. It changes no course metadata, syllabus, schedule, or resource links, so there is nothing evidence-backed to update on programming-introduction/MIT-Missing-Semester.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-11T03:54:30.375Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/12ae9fa1057ea183e3e72f42bb632af7092e886f",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/12ae9fa1057ea183e3e72f42bb632af7092e886f",
+      "entryTitle": "run github tests on ubuntu-26.04 to get recent clang-format",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only changes the xv6-riscv GitHub Actions runner image to obtain a newer clang-format. It is CI/tooling maintenance with no file list and no course-facing content (no new labs, materials, or schedule changes), so there is nothing evidence-backed to update on operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-10T04:06:33.798Z",
       "sourceId": "mit-missing-semester",
