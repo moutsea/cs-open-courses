@@ -184,8 +184,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-12T04:16:46.445Z",
+      "lastProcessedAt": "2026-08-13T04:20:00.949Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -480,6 +481,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-13T04:20:00.949Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/03e5422a30d24e85f2899073babd94c075d569a2",
+      "entryTitle": "make fmt",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Feed event is a formatting-only commit (\"make fmt\") in the xv6-riscv repository with no changed files listed. There is no evidence of course content, resource, or curriculum changes relevant to operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-12T04:16:46.445Z",
       "sourceId": "mit-xv6-riscv",
