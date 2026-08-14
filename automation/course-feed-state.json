@@ -3,8 +3,9 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
-      "lastProcessedAt": "2026-07-22T05:30:08.874Z",
+      "lastProcessedAt": "2026-08-14T04:18:00.709Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
         "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
         "tag:github.com,2008:Grit::Commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
         "tag:github.com,2008:Grit::Commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
@@ -184,8 +185,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-13T04:20:00.949Z",
+      "lastProcessedAt": "2026-08-14T04:18:07.035Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
@@ -481,6 +483,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-14T04:18:07.035Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
+      "entryTitle": "fix call to old-style sleep() due to K&R-style header",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "Upstream xv6-riscv commit is a minor source-code fix (a call to an old-style sleep() affected by a K&R-style header) with no file list in the evidence and no change to course structure, labs, schedule, or resources. Nothing here warrants updating operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-14T04:18:00.709Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
+      "entryTitle": "[README] Fix broken Star History chart (#901)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.97,
+      "reason": "Commit only swaps the Star History badge URL in README.md. No course content, no new or updated course material, and allowedTargetPaths is empty so no update is permitted. The substituted third-party chart domain is also not course evidence.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-13T04:20:00.949Z",
       "sourceId": "mit-xv6-riscv",
