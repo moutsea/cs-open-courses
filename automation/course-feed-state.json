@@ -185,8 +185,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-14T04:18:07.035Z",
+      "lastProcessedAt": "2026-08-15T03:03:00.083Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
@@ -483,6 +484,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-15T03:03:00.083Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
+      "entryTitle": "delete unnecessary (and incomplete) check",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit 'delete unnecessary (and incomplete) check' is a minor internal code cleanup with no file list or diff supplied. There is no evidence of a change to course content, labs, structure, or resources for operating-systems/MIT6.S081, so no update is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-14T04:18:07.035Z",
       "sourceId": "mit-xv6-riscv",
