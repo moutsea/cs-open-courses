@@ -135,7 +135,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
+      "lastProcessedAt": "2026-08-16T03:12:10.145Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/c7268b126638c005ffa236dfbe7c2e458160be8b",
         "tag:github.com,2008:Grit::Commit/e71b25460f561bf502fe2eaab1075eedca49f67f",
         "tag:github.com,2008:Grit::Commit/a7427104e4c52b3f14e3be29003e86154540ae4a",
@@ -185,9 +187,10 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-15T03:03:00.083Z",
+      "lastProcessedAt": "2026-08-16T03:12:14.621Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
+        "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
@@ -484,6 +487,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-16T03:12:14.621Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
+      "entryTitle": "reset intena in scheduler",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit 'reset intena in scheduler' is an internal kernel code change with no file diff supplied and no evidence of changed course materials, resources, or metadata for operating-systems/MIT6.S081. Nothing in the evidence supports a summary or resource update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-16T03:12:10.145Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
+      "entryTitle": "Merge pull request #4296 from rishu2132/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit is a one-line correction to an exercise range heading (6.2.-6.6. changed to 6.2.-6.5.) in part6a of the Full Stack open material. It carries no change to course scope, prerequisites, hours, resources, or any fact recorded in web-development/fullstackopen, so no update is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-15T03:03:00.083Z",
       "sourceId": "mit-xv6-riscv",
