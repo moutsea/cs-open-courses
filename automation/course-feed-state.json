@@ -135,9 +135,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-16T03:12:10.145Z",
+      "lastProcessedAt": "2026-08-17T03:12:02.623Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
+        "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/c7268b126638c005ffa236dfbe7c2e458160be8b",
         "tag:github.com,2008:Grit::Commit/e71b25460f561bf502fe2eaab1075eedca49f67f",
         "tag:github.com,2008:Grit::Commit/a7427104e4c52b3f14e3be29003e86154540ae4a",
@@ -187,12 +188,13 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-16T03:12:14.621Z",
+      "lastProcessedAt": "2026-08-17T03:12:09.136Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
+        "tag:github.com,2008:Grit::Commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -487,6 +489,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-17T03:12:09.136Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
+      "entryTitle": "Fix kernel panic and add test case:",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream xv6-riscv commit fixes an internal kernel filesystem bug (ilock panic, create/ialloc-iget races) and adds a test case. It changes source code, not MIT 6.S081 course structure, materials, or resources, and the evidence lists no changed files or new URLs, so there is nothing verifiable to add",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-17T03:12:02.623Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
+      "entryTitle": "Merge pull request #4308 from MucahidTech/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit is a minor upstream documentation correction to one Zustand selector code snippet in Part 6a of Full Stack open. It changes no course-level facts (title, provider, prerequisites, hours, difficulty, languages) and adds no new resource URLs, so there is nothing evidence-backed to update in",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-16T03:12:14.621Z",
       "sourceId": "mit-xv6-riscv",
