@@ -135,10 +135,11 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-17T03:12:02.623Z",
+      "lastProcessedAt": "2026-08-18T03:07:53.068Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
+        "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
         "tag:github.com,2008:Grit::Commit/c7268b126638c005ffa236dfbe7c2e458160be8b",
         "tag:github.com,2008:Grit::Commit/e71b25460f561bf502fe2eaab1075eedca49f67f",
         "tag:github.com,2008:Grit::Commit/a7427104e4c52b3f14e3be29003e86154540ae4a",
@@ -188,13 +189,14 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-17T03:12:09.136Z",
+      "lastProcessedAt": "2026-08-18T03:07:58.352Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
+        "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -489,6 +491,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-18T03:07:58.352Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
+      "entryTitle": "initialize the tx_lock sleeplock",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Upstream xv6-riscv commit 'initialize the tx_lock sleeplock' is an internal kernel code fix with no file list or diff supplied. It carries no course-level information (no syllabus, schedule, lab, or resource change) that would alter the MIT 6.S081 entry, so there is no evidence-backed update to make",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-18T03:07:53.068Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/e4e21888817ae9f88d5046d38514a960393feabd",
+      "entryTitle": "Merge pull request #4293 from toivoantero/patch-3",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "The commit only merges Finnish-language typo fixes and one corrected claim in part 6a of the Full Stack Open material (spelling fixes, a store.js filename fix, and a selector code example adjustment). No change to course structure, prerequisites, hours, or resources, and no new URLs or course facts",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-17T03:12:09.136Z",
       "sourceId": "mit-xv6-riscv",
