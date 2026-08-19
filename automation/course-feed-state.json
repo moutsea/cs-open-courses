@@ -135,11 +135,12 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-18T03:07:53.068Z",
+      "lastProcessedAt": "2026-08-19T03:10:03.124Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
+        "tag:github.com,2008:Grit::Commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
         "tag:github.com,2008:Grit::Commit/c7268b126638c005ffa236dfbe7c2e458160be8b",
         "tag:github.com,2008:Grit::Commit/e71b25460f561bf502fe2eaab1075eedca49f67f",
         "tag:github.com,2008:Grit::Commit/a7427104e4c52b3f14e3be29003e86154540ae4a",
@@ -189,7 +190,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-18T03:07:58.352Z",
+      "lastProcessedAt": "2026-08-19T03:10:08.014Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
@@ -197,6 +198,7 @@
         "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
         "tag:github.com,2008:Grit::Commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
         "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
+        "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -491,6 +493,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-19T03:10:08.013Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
+      "entryTitle": "disable writeback caching for virtio disk",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream xv6-riscv commit is a low-level kernel driver tweak (disabling virtio disk writeback caching) with no file list supplied and no evidence of changed course material, labs, schedule, or resources for operating-systems/MIT6.S081. Nothing here supports an evidence-backed update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-19T03:10:03.124Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
+      "entryTitle": "Merge pull request #4314 from drmbilalkhalid/part5c-fix-end-to-end-ch…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "The commit is a one-word editorial fix in part5c.md ('last chapter' changed to 'next chapter'), a cross-reference correction with no change to course content, structure, resources, or metadata for web-development/fullstackopen. No new URLs or course facts in the evidence to support an update.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-18T03:07:58.352Z",
       "sourceId": "mit-xv6-riscv",
