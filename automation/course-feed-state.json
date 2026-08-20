@@ -135,12 +135,13 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-19T03:10:03.124Z",
+      "lastProcessedAt": "2026-08-20T03:09:07.988Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
         "tag:github.com,2008:Grit::Commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
+        "tag:github.com,2008:Grit::Commit/968b511e013877adea230b325a5204ebd8f2a012",
         "tag:github.com,2008:Grit::Commit/c7268b126638c005ffa236dfbe7c2e458160be8b",
         "tag:github.com,2008:Grit::Commit/e71b25460f561bf502fe2eaab1075eedca49f67f",
         "tag:github.com,2008:Grit::Commit/a7427104e4c52b3f14e3be29003e86154540ae4a",
@@ -190,8 +191,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-19T03:10:08.014Z",
+      "lastProcessedAt": "2026-08-20T03:09:13.855Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/ee0f6b12f5356215ce789234a2c35743a342abc7",
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
@@ -493,6 +495,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-20T03:09:13.855Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ee0f6b12f5356215ce789234a2c35743a342abc7",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ee0f6b12f5356215ce789234a2c35743a342abc7",
+      "entryTitle": "refuse nlink overflow in create() and sys_link()",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink signed overflow in create() and sys_link()); it changes no course-facing material for operating-systems/MIT6.S081. The evidence includes no file list, no lab or syllabus changes, and no new resource URLs, so there is nothing ver",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-20T03:09:07.988Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/968b511e013877adea230b325a5204ebd8f2a012",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/968b511e013877adea230b325a5204ebd8f2a012",
+      "entryTitle": "Fix outdated end-to-end testing chapter reference",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit is a single-word wording correction in part5c.md ('last chapter' to 'next chapter') with no change to course structure, resources, prerequisites, or content worth surfacing. No new URLs or course facts in the evidence, so no update to web-development/fullstackopen is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-19T03:10:08.013Z",
       "sourceId": "mit-xv6-riscv",
