@@ -135,7 +135,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-21T03:15:01.706Z",
+      "lastProcessedAt": "2026-08-22T03:06:45.782Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
@@ -149,6 +149,7 @@
         "tag:github.com,2008:Grit::Commit/92655f535e00d9f740a3e08bb525c28849248780",
         "tag:github.com,2008:Grit::Commit/a6764524ee051de8eaebf48aa761a8e2a71da719",
         "tag:github.com,2008:Grit::Commit/880fba905d06d3bce32cf7ddaaf27b730fda4b59",
+        "tag:github.com,2008:Grit::Commit/1bca5d1e3f948db73e3eb6030fc2f2a13039b727",
         "tag:github.com,2008:Grit::Commit/9ecfdd93364ce0c663ffe7d1f7e045da5b1d2a04",
         "tag:github.com,2008:Grit::Commit/e740446136337c3172b6faaaa36c243e85360d7c",
         "tag:github.com,2008:Grit::Commit/33aa47f115a666c8c18de7b89e7a4d5bc24034cf",
@@ -192,9 +193,10 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-21T03:15:13.080Z",
+      "lastProcessedAt": "2026-08-22T03:06:50.976Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
+        "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
@@ -497,6 +499,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-22T03:06:50.976Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
+      "entryTitle": "refuse nlink overflow in create() and sys_link()",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink short overflow in create() and sys_link()); it carries no course-level information such as syllabus, lab, schedule, or resource changes for operating-systems/MIT6.S081. The evidence also lists no changed files, so there is nothi",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-22T03:06:45.782Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/1bca5d1e3f948db73e3eb6030fc2f2a13039b727",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/1bca5d1e3f948db73e3eb6030fc2f2a13039b727",
+      "entryTitle": "Update exercise range from 6.6 to 6.5",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only edits an exercise range heading (6.2.-6.6. to 6.2.-6.5.) in one course material file. It carries no new course metadata, resources, or structural change that would alter the existing web-development/fullstackopen entry, so no update is justified.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-21T03:15:13.080Z",
       "sourceId": "mit-xv6-riscv",
