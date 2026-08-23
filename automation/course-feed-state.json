@@ -135,8 +135,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-22T03:06:45.782Z",
+      "lastProcessedAt": "2026-08-23T03:13:54.645Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
@@ -193,10 +194,11 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-22T03:06:50.976Z",
+      "lastProcessedAt": "2026-08-23T03:14:00.600Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
         "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
+        "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
@@ -499,6 +501,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-23T03:14:00.599Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
+      "entryTitle": "more plausible machine code for release(); thank you nickolai",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only adjusts illustrative machine code for release(); no file list is supplied and nothing in the evidence changes course structure, resources, or descriptions for operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-23T03:13:54.645Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
+      "entryTitle": "Merge pull request #4286 from elYosu/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only bumps an in-text ECMAScript version reference (ES2024/ES15 to ES2025/ES16) in part1b of the course material. It changes no course-level facts such as title, prerequisites, hours, difficulty, or resources, and supplies no new course URLs, so no update to web-development/fullstackopen",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-22T03:06:50.976Z",
       "sourceId": "mit-xv6-riscv",
