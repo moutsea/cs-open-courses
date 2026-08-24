@@ -135,8 +135,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-23T03:13:54.645Z",
+      "lastProcessedAt": "2026-08-24T03:15:35.971Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
@@ -194,8 +195,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-23T03:14:00.600Z",
+      "lastProcessedAt": "2026-08-24T03:15:39.907Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
         "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
         "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
@@ -501,6 +503,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-24T03:15:39.907Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/35b088427ef37611c38afdeed5a52a278cae38f9",
+      "entryTitle": "test for nlink overflow",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream xv6-riscv commit adds a commented-out regression test for nlink overflow. It is an internal test-suite change with no file diff supplied and no effect on MIT 6.S081 course facts, resources, or descriptions, so no update to operating-systems/MIT6.S081 is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-24T03:15:35.970Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
+      "entryTitle": "Merge pull request #4318 from LeniPe/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit only replaces two outdated MongoDB manual links with their current equivalents in the Part 3c course material. No change to course scope, structure, prerequisites, hours, or offered content, and the touched URLs are third-party documentation references rather than course resources worth i",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-23T03:14:00.599Z",
       "sourceId": "mit-xv6-riscv",
