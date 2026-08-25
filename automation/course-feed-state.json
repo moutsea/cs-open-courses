@@ -135,9 +135,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-24T03:15:35.971Z",
+      "lastProcessedAt": "2026-08-25T03:11:37.168Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
+        "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
@@ -195,9 +196,10 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-24T03:15:39.907Z",
+      "lastProcessedAt": "2026-08-25T03:11:48.640Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
+        "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
         "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
         "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
@@ -294,7 +296,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
+      "lastProcessedAt": "2026-08-25T03:11:59.403Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
         "tag:github.com,2008:Grit::Commit/f0d9e3753482d45f2b5919da1873684600b48508",
         "tag:github.com,2008:Grit::Commit/c26d28cf07acbbdc8b5a46ae6efa1cafb4a7bed2",
         "tag:github.com,2008:Grit::Commit/928a22c0d302fa235f24bde695b2b6e3846088eb",
@@ -319,8 +323,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-08-02T05:36:24.052Z",
+      "lastProcessedAt": "2026-08-25T03:12:07.638Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
         "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
         "tag:github.com,2008:Grit::Commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
         "tag:github.com,2008:Grit::Commit/e6b37692cf5e330939aa9384f2236894e6dcbe5d",
@@ -503,6 +508,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-25T03:12:07.638Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
+      "entryTitle": "Merge pull request #188 from EMLionHeart/docs/use-firefox-network-tool",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Minor documentation update recommending Firefox Network tool for XSS lab. No evidence of course metadata changes, new resources, or substantial curriculum modifications.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-25T03:11:59.403Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
+      "entryTitle": "fix: submit Robin Hood hashing for project 0 (#891)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Minor bug fix in BusTub project codebase (Robin Hood hashing implementation). Does not represent course metadata, structure, or resource changes that warrant updating the CMU 15-445 entry.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-25T03:11:48.640Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
+      "entryTitle": "sys_link: refuse to link into an unlinked directory",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Code commit to xv6-riscv teaching OS (bug fix in sys_link race condition). This is routine codebase maintenance, not a course structure or resource change. No course metadata, syllabus, or student-facing resources affected.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-25T03:11:37.168Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
+      "entryTitle": "Merge pull request #4322 from admyazeed/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Minor punctuation fix in prerequisites section - added missing period. No substantive content, structure, or resource changes that would affect course metadata.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-24T03:15:39.907Z",
       "sourceId": "mit-xv6-riscv",
