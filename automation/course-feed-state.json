@@ -33,8 +33,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-07-15T02:45:13.882Z",
+      "lastProcessedAt": "2026-08-26T03:16:53.650Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
+        "tag:github.com,2008:Grit::Commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
         "tag:github.com,2008:Grit::Commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
         "tag:github.com,2008:Grit::Commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
         "tag:github.com,2008:Grit::Commit/ce004d4889508a5043414ac0702fb60f69db934c",
@@ -135,8 +137,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-25T03:11:37.168Z",
+      "lastProcessedAt": "2026-08-26T03:16:58.808Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
@@ -196,10 +199,11 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-25T03:11:48.640Z",
+      "lastProcessedAt": "2026-08-26T03:17:03.808Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
+        "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
         "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
         "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
@@ -296,9 +300,10 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-08-25T03:11:59.403Z",
+      "lastProcessedAt": "2026-08-26T03:17:16.688Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
+        "tag:github.com,2008:Grit::Commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
         "tag:github.com,2008:Grit::Commit/f0d9e3753482d45f2b5919da1873684600b48508",
         "tag:github.com,2008:Grit::Commit/c26d28cf07acbbdc8b5a46ae6efa1cafb4a7bed2",
         "tag:github.com,2008:Grit::Commit/928a22c0d302fa235f24bde695b2b6e3846088eb",
@@ -323,8 +328,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-08-25T03:12:07.638Z",
+      "lastProcessedAt": "2026-08-26T03:17:24.638Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
         "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
         "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
         "tag:github.com,2008:Grit::Commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
@@ -508,6 +514,78 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-26T03:17:24.638Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
+      "entryTitle": "Merge branch 'master' into development",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Merge commit touches only internal SEED Labs maintenance docs: new emulator/shellcode README notes, ARM porting status tables, and VM setup instructions. No change to course structure, content coverage, or citable resource URLs for system-security/SEEDLabs, so no evidence-backed update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-26T03:17:16.688Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
+      "entryTitle": "Add Robin Hood hashing Project 0 scaffolding (#890)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.85,
+      "reason": "Evidence is a single upstream BusTub repository commit adding Robin Hood hashing Project 0 scaffolding, with an empty file list and no course-page, syllabus, or official CMU 15-445 material confirming a change to the published course content. The only verbatim URL available is the commit link, which",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-26T03:17:03.808Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
+      "entryTitle": "deterministic builds",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream xv6-riscv commit titled 'deterministic builds' with no changed files listed in the evidence. There is no course-facing content, resource, or curriculum change to record, so no update to operating-systems/MIT6.S081 is supported by the evidence.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-26T03:16:58.808Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
+      "entryTitle": "Merge pull request #4325 from adriamarcet/fix/part-6-improve-a11y-inf…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Merge commit for a part 6 accessibility tweak to an info banner; no file diffs supplied and no change to course structure, content, prerequisites, or resources. Evidence is insufficient to justify an update to web-development/fullstackopen.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-26T03:16:53.650Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
+      "entryTitle": "Add UC Berkeley CS 285 (SP26) (#509)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only swaps a YouTube playlist link for the official RAIL course page and adds a Spring 2026 playlist for UC Berkeley CS 285, which already exists in the index at deep-learning/CS285. sourcePolicy.allowedTargetPaths is empty, so no update target is permitted, and a create would duplicate a",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-26T03:16:46.212Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
+      "entryTitle": "Add FSU EML 4930 / 5930 (SP25, SP23) (#508)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Evidence is a single README line adding YouTube playlists for FSU EML 4930/5930 Applied Optimal Control. sourcePolicy.allowedTargetPaths is empty, so no update is permitted. A create is not supportable: the only URLs are video playlists with no official or primary course page, the subject is a mecha",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-25T03:12:07.638Z",
       "sourceId": "seed-labs",
