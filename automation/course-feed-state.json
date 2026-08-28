@@ -138,8 +138,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-27T12:45:58.833Z",
+      "lastProcessedAt": "2026-08-28T14:19:19.305Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
         "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
         "tag:github.com,2008:Grit::Commit/f41eee56b6a0c0e2df498ddbf30324816bcbf2cb",
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
@@ -201,7 +202,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-27T12:46:04.748Z",
+      "lastProcessedAt": "2026-08-28T14:19:24.182Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
@@ -210,6 +211,7 @@
         "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
         "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
         "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
+        "tag:github.com,2008:Grit::Commit/419f4ee5e3f804bc62270b9c5aaae0fbe7a72edf",
         "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
         "tag:github.com,2008:Grit::Commit/37081bd65cd31a93f757b3e3dce7ddc5d8728405",
         "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
@@ -331,10 +333,11 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-08-27T12:46:11.312Z",
+      "lastProcessedAt": "2026-08-28T14:19:31.532Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
         "tag:github.com,2008:Grit::Commit/9b3b89cd3df771fc0d958c7dd6c4d5b3d76cdcd4",
+        "tag:github.com,2008:Grit::Commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
         "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
         "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
         "tag:github.com,2008:Grit::Commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
@@ -518,6 +521,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-28T14:19:31.532Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
+      "entryTitle": "updated the http live header tool part",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit message ('updated the http live header tool part') is a minor internal edit and the commit's file list is empty, so there is no evidence of what changed, no new resource URL, and nothing that would alter the existing system-security/SEEDLabs entry. Proposing an update would require invent",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-28T14:19:24.182Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/419f4ee5e3f804bc62270b9c5aaae0fbe7a72edf",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/419f4ee5e3f804bc62270b9c5aaae0fbe7a72edf",
+      "entryTitle": "make fmt",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Upstream xv6-riscv commit 'make fmt' is a code formatting change with no listed files and no course-relevant information. No evidence of changes to MIT 6.S081 course content, resources, prerequisites, or materials that would justify an update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-28T14:19:19.304Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
+      "entryTitle": "Merge pull request #4327 from BlessedOneKobo/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit is a one-line documentation fix adding a missing code snippet to part3a.md in the Full Stack open course material. It changes no course-level facts, resources, or structure, so no update to web-development/fullstackopen is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-27T12:46:11.312Z",
       "sourceId": "seed-labs",
