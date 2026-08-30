@@ -33,8 +33,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-08-27T12:45:53.012Z",
+      "lastProcessedAt": "2026-08-30T08:17:20.850Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/e2ccd50df428074a7b321790a3c9b426923647fc",
         "tag:github.com,2008:Grit::Commit/205b621ebf2e318c70f1a5fc901c3ead3151878a",
         "tag:github.com,2008:Grit::Commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
         "tag:github.com,2008:Grit::Commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
@@ -138,12 +139,13 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-29T09:00:20.756Z",
+      "lastProcessedAt": "2026-08-30T08:17:25.914Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
         "tag:github.com,2008:Grit::Commit/6c2d0c5d774829211a736a98791a919dab56deef",
         "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
         "tag:github.com,2008:Grit::Commit/f41eee56b6a0c0e2df498ddbf30324816bcbf2cb",
+        "tag:github.com,2008:Grit::Commit/34e277e5967a7cd156a43494da1f48c638d005bf",
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
@@ -203,7 +205,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-29T09:00:26.811Z",
+      "lastProcessedAt": "2026-08-30T08:17:31.642Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
@@ -221,6 +223,7 @@
         "tag:github.com,2008:Grit::Commit/9da28f56db5fde666ce26d3eac824a599a5155c1",
         "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
         "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
+        "tag:github.com,2008:Grit::Commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -335,13 +338,14 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-08-29T09:00:31.168Z",
+      "lastProcessedAt": "2026-08-30T08:17:37.793Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
         "tag:github.com,2008:Grit::Commit/9b3b89cd3df771fc0d958c7dd6c4d5b3d76cdcd4",
         "tag:github.com,2008:Grit::Commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
         "tag:github.com,2008:Grit::Commit/71d52e810274d4659bf2b23f4199cacd1587ff29",
         "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
+        "tag:github.com,2008:Grit::Commit/27f22751b478afe017e4524fd21f244e58c39297",
         "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
         "tag:github.com,2008:Grit::Commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
         "tag:github.com,2008:Grit::Commit/e6b37692cf5e330939aa9384f2236894e6dcbe5d",
@@ -524,6 +528,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-30T08:17:37.793Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/27f22751b478afe017e4524fd21f244e58c39297",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/27f22751b478afe017e4524fd21f244e58c39297",
+      "entryTitle": "docs: use Firefox Network tool in XSS lab",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Upstream commit is a minor documentation wording change (using the Firefox Network tool in the XSS lab) with no file list or diff supplied. No new lab, resource URL, or course-level fact is evidenced, so there is nothing verifiable to add to system-security/SEEDLabs.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-30T08:17:31.641Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
+      "entryTitle": "return -1 on pipewrite with invalid addr",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream xv6-riscv commit is a small kernel bug fix (pipewrite returning -1 on an invalid address) with no file list and no evidence of changed course materials, labs, syllabus, or resources for operating-systems/MIT6.S081. Nothing here supports an evidence-backed course update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-30T08:17:25.913Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/34e277e5967a7cd156a43494da1f48c638d005bf",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/34e277e5967a7cd156a43494da1f48c638d005bf",
+      "entryTitle": "Add language prop to InfoBanner component for improved accessibility",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only adds a language prop to the site's InfoBanner component, an accessibility tweak to the course website UI. No file list is supplied and there is no evidence of changed course content, structure, resources, or metadata for web-development/fullstackopen, so no update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-30T08:17:20.850Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/e2ccd50df428074a7b321790a3c9b426923647fc",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/e2ccd50df428074a7b321790a3c9b426923647fc",
+      "entryTitle": "Add CSE 151A (WI25) (#511)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.76,
+      "reason": "Commit adds a single README link for 'CSE 151A Introduction to Machine Learning' (UCSD, Prof Jingbo Shang) with only a course-page URL. sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the evidence lacks the prerequisites, programming languages, class hours, difficulty, and a",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-29T09:00:31.168Z",
       "sourceId": "seed-labs",
