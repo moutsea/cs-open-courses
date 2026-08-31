@@ -33,8 +33,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-08-30T08:17:20.850Z",
+      "lastProcessedAt": "2026-08-31T08:37:18.363Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
         "tag:github.com,2008:Grit::Commit/e2ccd50df428074a7b321790a3c9b426923647fc",
         "tag:github.com,2008:Grit::Commit/205b621ebf2e318c70f1a5fc901c3ead3151878a",
         "tag:github.com,2008:Grit::Commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
@@ -139,13 +140,14 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-30T08:17:25.914Z",
+      "lastProcessedAt": "2026-08-31T08:37:53.747Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
         "tag:github.com,2008:Grit::Commit/6c2d0c5d774829211a736a98791a919dab56deef",
         "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
         "tag:github.com,2008:Grit::Commit/f41eee56b6a0c0e2df498ddbf30324816bcbf2cb",
         "tag:github.com,2008:Grit::Commit/34e277e5967a7cd156a43494da1f48c638d005bf",
+        "tag:github.com,2008:Grit::Commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
@@ -205,7 +207,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-30T08:17:31.642Z",
+      "lastProcessedAt": "2026-08-31T08:38:10.314Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
@@ -224,6 +226,7 @@
         "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
         "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
         "tag:github.com,2008:Grit::Commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
+        "tag:github.com,2008:Grit::Commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -528,6 +531,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-08-31T08:38:10.314Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
+      "entryTitle": "vmfault: avoid conflating pagetable and myproc()->pagetable",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream xv6-riscv commit is an internal kernel refactor (avoiding conflation of pagetable and myproc()->pagetable) with an empty file list and no course-facing information. It provides no new resource URL, syllabus, or lab change that would justify updating operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-31T08:37:53.747Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
+      "entryTitle": "Enhance accessibility of InfoBanner component by adding ARIA roles an…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit only adds ARIA roles and labels to the site's InfoBanner UI component on the Full Stack open website. It carries no course content change (no new parts, exercises, prerequisites, or resource URLs), and the evidence includes no changed files, so there is nothing verifiable to record for we",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-08-31T08:37:18.363Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
+      "entryTitle": "Add EML 4930/5930 (FA25) (#512)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit adds a single README line listing EML 4930/5930 (FSU) with only a YouTube playlist link. No official or primary course page, prerequisites, class hours, programming languages, or difficulty are supplied, so a create action would require inventing course facts. Update is not possible becau",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-30T08:17:37.793Z",
       "sourceId": "seed-labs",
