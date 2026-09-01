@@ -140,8 +140,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-08-31T08:37:53.747Z",
+      "lastProcessedAt": "2026-09-01T07:48:26.708Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
         "tag:github.com,2008:Grit::Commit/6c2d0c5d774829211a736a98791a919dab56deef",
         "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
@@ -207,7 +208,7 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-08-31T08:38:10.314Z",
+      "lastProcessedAt": "2026-09-01T07:48:38.523Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
@@ -227,6 +228,7 @@
         "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
         "tag:github.com,2008:Grit::Commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
         "tag:github.com,2008:Grit::Commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
+        "tag:github.com,2008:Grit::Commit/78ea70636259050adbef07bdab0bbf98f5d310ee",
         "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
         "tag:github.com,2008:Grit::Commit/9dd28f5e3526197b65a58306ce90248647c77777",
         "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
@@ -313,8 +315,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-08-26T03:17:16.688Z",
+      "lastProcessedAt": "2026-09-01T07:48:52.120Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
         "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
         "tag:github.com,2008:Grit::Commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
         "tag:github.com,2008:Grit::Commit/f0d9e3753482d45f2b5919da1873684600b48508",
@@ -531,6 +534,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-01T07:48:52.120Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
+      "entryTitle": "P1 Memory Checking Utilities (#892)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit adds internal project design document template (docs/p1-design.md) for Project 1 submission. This is a project infrastructure update for students working on assignments, not a course catalog change. No new educational resources, course structure changes, or student-facing course information p",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-01T07:48:38.522Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/78ea70636259050adbef07bdab0bbf98f5d310ee",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/78ea70636259050adbef07bdab0bbf98f5d310ee",
+      "entryTitle": "force lazy allocation in copyinstr",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Routine bug fix commit to xv6-riscv codebase (lazy allocation in copyinstr). No course metadata, structure, resources, or curriculum changes detected. Code maintenance does not warrant course record updates.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-01T07:48:26.708Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/f67b5cfdad1f392ff63832890eac617c117928e0",
+      "entryTitle": "part 7",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.85,
+      "reason": "AI confidence 0.85 is below 0.99",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-08-31T08:38:10.314Z",
       "sourceId": "mit-xv6-riscv",
