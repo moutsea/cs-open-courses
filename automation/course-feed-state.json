@@ -140,8 +140,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-01T07:48:26.708Z",
+      "lastProcessedAt": "2026-09-03T07:09:27.191Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
         "tag:github.com,2008:Grit::Commit/6c2d0c5d774829211a736a98791a919dab56deef",
@@ -287,8 +288,9 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-08-11T03:54:36.161Z",
+      "lastProcessedAt": "2026-09-03T07:09:35.501Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
         "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
         "tag:github.com,2008:Grit::Commit/734343129db6e8425bfe9818d46b7ccc7e618bee",
         "tag:github.com,2008:Grit::Commit/853e0ea91885a1a7e0843b2e26e8ccb85a8155a6",
@@ -534,6 +536,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-03T07:09:35.501Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
+      "entryTitle": "Merge branch 'Matte-Olivs/fix/markdown-syntax'",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.95,
+      "reason": "AI confidence 0.95 is below 0.99",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-03T07:09:27.191Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
+      "entryTitle": "linkit",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.9,
+      "reason": "AI confidence 0.9 is below 0.99",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-01T07:48:52.120Z",
       "sourceId": "cmu-bustub",
