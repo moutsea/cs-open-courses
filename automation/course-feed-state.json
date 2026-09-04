@@ -140,7 +140,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-03T07:09:27.191Z",
+      "lastProcessedAt": "2026-09-04T07:13:27.861Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -152,6 +152,7 @@
         "tag:github.com,2008:Grit::Commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
+        "tag:github.com,2008:Grit::Commit/86c845107a2fad02304f04dd24b525e51491b701",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
@@ -288,9 +289,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-03T07:09:35.501Z",
+      "lastProcessedAt": "2026-09-04T07:13:32.469Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
+        "tag:github.com,2008:Grit::Commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
         "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
         "tag:github.com,2008:Grit::Commit/734343129db6e8425bfe9818d46b7ccc7e618bee",
         "tag:github.com,2008:Grit::Commit/853e0ea91885a1a7e0843b2e26e8ccb85a8155a6",
@@ -536,6 +538,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-04T07:13:32.469Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
+      "entryTitle": "Add a missing word and fixed the markdown syntax",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only completes a truncated sentence and reformats a WebDriver line as a bullet in an archived _2019/web.md lecture page. No change to course structure, resources, or facts, so no update to programming-introduction/MIT-Missing-Semester is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-04T07:13:27.860Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/86c845107a2fad02304f04dd24b525e51491b701",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/86c845107a2fad02304f04dd24b525e51491b701",
+      "entryTitle": "Update link in InfoBanner component",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Feed entry is a minor site-maintenance commit ('Update link in InfoBanner component') with an empty file list and no patch content. There is no evidence of any change to course material, schedule, prerequisites, or resources for web-development/fullstackopen, and no new URL appears verbatim in the e",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-03T07:09:35.501Z",
       "sourceId": "mit-missing-semester",
