@@ -140,7 +140,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-04T07:13:27.861Z",
+      "lastProcessedAt": "2026-09-05T06:55:42.637Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -153,6 +153,7 @@
         "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
         "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
         "tag:github.com,2008:Grit::Commit/86c845107a2fad02304f04dd24b525e51491b701",
+        "tag:github.com,2008:Grit::Commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
@@ -210,8 +211,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-01T07:48:38.523Z",
+      "lastProcessedAt": "2026-09-05T06:55:47.525Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
@@ -538,6 +540,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-05T06:55:47.525Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
+      "entryTitle": "test-xv6.py: retry the log crash test often enough to be reliable",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only adjusts test-xv6.py to retry a flaky log crash test; the file list in the evidence is empty and nothing indicates a change to course content, resources, or structure for operating-systems/MIT6.S081. No evidence supports an update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-05T06:55:42.637Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
+      "entryTitle": "changes",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.72,
+      "reason": "AI confidence 0.72 is below 0.99",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-04T07:13:32.469Z",
       "sourceId": "mit-missing-semester",
