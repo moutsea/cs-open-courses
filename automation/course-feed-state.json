@@ -140,7 +140,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-05T06:55:42.637Z",
+      "lastProcessedAt": "2026-09-06T07:06:33.948Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -155,6 +155,7 @@
         "tag:github.com,2008:Grit::Commit/86c845107a2fad02304f04dd24b525e51491b701",
         "tag:github.com,2008:Grit::Commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
+        "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
@@ -211,9 +212,10 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-05T06:55:47.525Z",
+      "lastProcessedAt": "2026-09-06T07:06:38.397Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
+        "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
@@ -540,6 +542,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-06T07:06:38.397Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
+      "entryTitle": "test-xv6.py: force line-buffering on stdout",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Upstream xv6-riscv commit only forces line-buffering on stdout in a test harness script. No file diffs supplied and no change to course content, materials, structure, or resource URLs for operating-systems/MIT6.S081, so there is nothing evidence-backed to update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-06T07:06:33.948Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
+      "entryTitle": "Merge pull request #4287 from toivoantero/patch-2",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit only fixes Finnish typos and rewords one sentence in part 5c of the course material. No change to course structure, content coverage, resources, prerequisites, or scheduling, so nothing in the existing web-development/fullstackopen entry needs updating.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-05T06:55:47.525Z",
       "sourceId": "mit-xv6-riscv",
