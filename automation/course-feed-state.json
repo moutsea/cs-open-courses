@@ -3,8 +3,9 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
-      "lastProcessedAt": "2026-08-14T04:18:00.709Z",
+      "lastProcessedAt": "2026-09-07T07:18:25.182Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
         "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
         "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
         "tag:github.com,2008:Grit::Commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
@@ -33,8 +34,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-08-31T08:37:18.363Z",
+      "lastProcessedAt": "2026-09-07T07:18:36.041Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
+        "tag:github.com,2008:Grit::Commit/81cf0d0177deb76289607a7830093a7da0073c4a",
         "tag:github.com,2008:Grit::Commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
         "tag:github.com,2008:Grit::Commit/e2ccd50df428074a7b321790a3c9b426923647fc",
         "tag:github.com,2008:Grit::Commit/205b621ebf2e318c70f1a5fc901c3ead3151878a",
@@ -140,7 +143,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-06T07:06:33.948Z",
+      "lastProcessedAt": "2026-09-07T07:18:42.919Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -156,6 +159,7 @@
         "tag:github.com,2008:Grit::Commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
+        "tag:github.com,2008:Grit::Commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
@@ -212,10 +216,11 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-06T07:06:38.397Z",
+      "lastProcessedAt": "2026-09-07T07:18:48.405Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
+        "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
@@ -542,6 +547,66 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-07T07:18:48.405Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
+      "entryTitle": "test-xv6.py: more flexible timeouts for orphan tests",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only loosens timeouts in the test-xv6.py harness for orphan tests. No file diffs were supplied, and nothing indicates a change to MIT 6.S081 course content, labs, prerequisites, or resource URLs, so no update to operating-systems/MIT6.S081 is evidence-backed.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-07T07:18:42.919Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
+      "entryTitle": "Merge pull request #4288 from Vaahtopahvi/express_links",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit only repoints broken Express.js documentation links from 4.x to 5.x URLs across the Part 3a material in six language versions. It changes no course structure, content, prerequisites, or externally listed resources, so there is nothing evidence-backed to record for web-development/fullstac",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-07T07:18:36.041Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
+      "entryTitle": "Add MGTA 415 (WI25) (#515)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit only adds one README link for 'MGTA 415 - Analyzing Unstructured Data - UCSD' under a data mining list. The evidence contains no prerequisites, programming languages, class hours, difficulty, or description, so a create action would require inventing course facts. sourcePolicy.allowedTarg",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-07T07:18:30.737Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/81cf0d0177deb76289607a7830093a7da0073c4a",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/81cf0d0177deb76289607a7830093a7da0073c4a",
+      "entryTitle": "Add MIT 6.S985 (SP26) (#517)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Evidence is a single README line adding a YouTube playlist for MIT 6.S985 (Multimodal AI). No official course page URL, offering details, prerequisites, class hours, difficulty, or programming languages appear in the evidence, and allowedTargetPaths is empty so no update target exists. Insufficient",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-07T07:18:25.182Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
+      "entryTitle": "[ROADMAP] Add stanford cs236 (#904)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "The commit only appends a recommendation blurb for Stanford CS236 to the deep-generative-models roadmap files. An update to 'deep-generative-models/roadmap' is not permitted because sourcePolicy.allowedTargetPaths is empty. A create action is also unsupported: the evidence supplies only the course t",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-06T07:06:38.397Z",
       "sourceId": "mit-xv6-riscv",
