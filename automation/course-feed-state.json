@@ -143,7 +143,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-07T07:18:42.919Z",
+      "lastProcessedAt": "2026-09-08T07:13:27.765Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -160,6 +160,7 @@
         "tag:github.com,2008:Grit::Commit/1ab8320e308fbf1913bc557085c35bd78d1bcf5c",
         "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
         "tag:github.com,2008:Grit::Commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
+        "tag:github.com,2008:Grit::Commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
@@ -216,11 +217,12 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-07T07:18:48.405Z",
+      "lastProcessedAt": "2026-09-08T07:13:34.244Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
+        "tag:github.com,2008:Grit::Commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
@@ -298,8 +300,9 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-04T07:13:32.469Z",
+      "lastProcessedAt": "2026-09-08T07:13:41.724Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
         "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
         "tag:github.com,2008:Grit::Commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
         "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
@@ -547,6 +550,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-08T07:13:41.724Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
+      "entryTitle": "Merge branch 'ayrmoney/printvsreturn'",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only tweaks Python example snippets in the shipping-code lecture notes (switching from returning a string to printing it, plus a type annotation). No change to course structure, resources, or facts, so there is nothing evidence-backed to update for programming-introduction/MIT-Missing-Sem",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-08T07:13:34.244Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
+      "entryTitle": "test-xv6.py: non-blocking read from qemu, so timeout works",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only adjusts the test-xv6.py harness to read from qemu non-blockingly so timeouts work; the file list is empty and there is no evidence of any change to MIT 6.S081 course content, labs, schedule, or resources. Nothing here supports an update to operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-08T07:13:27.765Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
+      "entryTitle": "Merge pull request #4289 from Dinokojt7/fix/part3b-cors-backend-clari…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit is an editorial clarification to part 3b (rewording the reference to the Express backend built in part 3a versus the json-server used in part 2) plus the addition of Railway to a list of third-party free hosting services mentioned by course participants. Nothing changes the course's title",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-07T07:18:48.405Z",
       "sourceId": "mit-xv6-riscv",
