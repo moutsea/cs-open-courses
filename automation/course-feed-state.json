@@ -143,7 +143,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-08T07:13:27.765Z",
+      "lastProcessedAt": "2026-09-09T07:22:01.361Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
@@ -161,6 +161,7 @@
         "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
         "tag:github.com,2008:Grit::Commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
         "tag:github.com,2008:Grit::Commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
+        "tag:github.com,2008:Grit::Commit/77f70d4ad0eea2dbb6227826f22da47660365180",
         "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
         "tag:github.com,2008:Grit::Commit/52bd60ed53c0b8094266e51595acb634f8d9373e",
         "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
@@ -217,12 +218,13 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-08T07:13:34.244Z",
+      "lastProcessedAt": "2026-09-09T07:22:06.423Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
         "tag:github.com,2008:Grit::Commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
+        "tag:github.com,2008:Grit::Commit/84f1cbb05404457ddc4dadb67c96708021c1cff0",
         "tag:github.com,2008:Grit::Commit/35b088427ef37611c38afdeed5a52a278cae38f9",
         "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
         "tag:github.com,2008:Grit::Commit/ab845a4ae978a71a4689e1c6610c7d55e7fa3512",
@@ -300,9 +302,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-08T07:13:41.724Z",
+      "lastProcessedAt": "2026-09-09T07:22:11.967Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
+        "tag:github.com,2008:Grit::Commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
         "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
         "tag:github.com,2008:Grit::Commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
         "tag:github.com,2008:Grit::Commit/fea9192ea79bd3c5e6fd0e084a3e129483351699",
@@ -550,6 +553,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-09T07:22:11.967Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
+      "entryTitle": "Fix code and align to lecture video",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit only adjusts small Python snippets in the 2026 shipping-code lecture notes (returning a string vs. printing, plus a return type annotation) to match the lecture video. No change to course structure, syllabus, resources, or any new URL, so there is nothing evidence-backed to record for pro",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-09T07:22:06.422Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/84f1cbb05404457ddc4dadb67c96708021c1cff0",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/84f1cbb05404457ddc4dadb67c96708021c1cff0",
+      "entryTitle": "test-xv6.py: do not print qemu output multiple times",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only tweaks a test harness script (test-xv6.py output duplication) with no file list in the evidence and no change to course material, labs, prerequisites, or resources. Nothing here warrants an update to operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-09T07:22:01.360Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/77f70d4ad0eea2dbb6227826f22da47660365180",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/77f70d4ad0eea2dbb6227826f22da47660365180",
+      "entryTitle": "Merge pull request #4291 from VerkestThijs/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.82,
+      "reason": "The commit is a one-line editorial edit in src/content/0/en/part0b.md that swaps a passing mention of Redux for Zustand in the course's introductory overview. It does not change the course's official URL, structure, prerequisites, hours, or resource list, and a single sentence in Part 0 is not suffi",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-08T07:13:41.724Z",
       "sourceId": "mit-missing-semester",
