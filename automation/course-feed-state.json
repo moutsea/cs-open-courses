@@ -143,9 +143,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-10T07:17:14.618Z",
+      "lastProcessedAt": "2026-09-11T07:15:56.040Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
+        "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
@@ -555,6 +556,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-11T07:15:56.040Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
+      "entryTitle": "Merge pull request #4307 from Sseik/fix/info-banners",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Merged commit only adjusts site UI styling so close buttons on info banners render visibly in dark mode. No course content, curriculum, resource, or metadata change is evidenced, and the file list is empty, so there is nothing to update on web-development/fullstackopen.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-10T07:17:21.734Z",
       "sourceId": "mit-xv6-riscv",
