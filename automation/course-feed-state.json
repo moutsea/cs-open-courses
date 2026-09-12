@@ -34,8 +34,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-07T07:18:36.041Z",
+      "lastProcessedAt": "2026-09-12T07:08:27.101Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
+        "tag:github.com,2008:Grit::Commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
         "tag:github.com,2008:Grit::Commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
         "tag:github.com,2008:Grit::Commit/81cf0d0177deb76289607a7830093a7da0073c4a",
         "tag:github.com,2008:Grit::Commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
@@ -143,10 +145,11 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-11T07:15:56.040Z",
+      "lastProcessedAt": "2026-09-12T07:08:31.860Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
+        "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
@@ -556,6 +559,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-12T07:08:31.860Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
+      "entryTitle": "Apply batched suggestions from code review",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream commit is a code-review styling tweak to a close button in the course website repo, with no file list and no evidence of curriculum, resource, or course-content changes. Nothing here supports an evidence-backed update to web-development/fullstackopen.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-12T07:08:27.101Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
+      "entryTitle": "Add MIT 6.1200J (SP24) (#519)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.83,
+      "reason": "The commit adds one README line linking MIT 6.1200J 'Mathematics for Computer Science' (Spring 2024) OCW lecture videos plus a YouTube playlist. An update is not possible because sourcePolicy.allowedTargetPaths is empty, so no existing entry (including advanced-mathematics/6.042J, the earlier number",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-12T07:08:16.613Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
+      "entryTitle": "Add Computational Mathematics and AI (#518)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit adds a single README link for an NSF CBMS 2025 workshop (Computational Mathematics and AI) rather than a university-level course offering; the evidence contains no course details such as prerequisites, class hours, programming languages, or difficulty, and sourcePolicy.allowedTargetPaths",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-11T07:15:56.040Z",
       "sourceId": "full-stack-open",
@@ -1731,36 +1770,6 @@
       "confidence": 1,
       "reason": "The commit only removes an AutoMQ sponsorship section from README.md and contains no course creation or update evidence.",
       "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:44:52.111Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/ed6ce780472caf98bb4d336a5671add542dc08c2",
-      "entryTitle": "[UPDATE] Update Coursera ML course (#843)",
-      "mode": "auto",
-      "type": "update",
-      "confidence": 0.99,
-      "targetPath": "machine-learning/ML",
-      "changedFiles": [
-        "course-content/en/machine-learning/ML.md",
-        "course-content/zh/machine-learning/ML.md"
-      ]
-    },
-    {
-      "reviewedAt": "2026-07-15T02:44:48.127Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/cb90db338bddfd5407c5d420320d90c669edb452",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/cb90db338bddfd5407c5d420320d90c669edb452",
-      "entryTitle": "[UPDATE] add CMU 15-779 course pages (#834)",
-      "mode": "auto",
-      "type": "create",
-      "confidence": 0.99,
-      "targetPath": "deep-generative-models/CMU15-779",
-      "changedFiles": [
-        "course-content/en/deep-generative-models/CMU15-779.md",
-        "course-content/zh/deep-generative-models/CMU15-779.md"
-      ]
     }
   ]
 }
