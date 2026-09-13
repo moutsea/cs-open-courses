@@ -145,11 +145,12 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-12T07:08:31.860Z",
+      "lastProcessedAt": "2026-09-13T07:26:58.043Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
         "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
+        "tag:github.com,2008:Grit::Commit/f4fecf330c072ca99e19a662dcf9a6cbcd247b94",
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
@@ -559,6 +560,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-13T07:26:58.042Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/f4fecf330c072ca99e19a662dcf9a6cbcd247b94",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/f4fecf330c072ca99e19a662dcf9a6cbcd247b94",
+      "entryTitle": "Part 3d: Correct ESLint capitalization",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit only corrects the capitalization of \"ESlint\" to \"ESLint\" in Part 3d prose and image alt text. No change to course content, structure, resources, or metadata for web-development/fullstackopen, so no update is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-12T07:08:31.860Z",
       "sourceId": "full-stack-open",
@@ -1757,18 +1770,6 @@
       "type": "ignore",
       "confidence": 0.98,
       "reason": "The evidence identifies a EUROPT Summer School optimization playlist, but does not establish a clearly identified university-level computer science course or provide sufficient course details for a create operation; it matches no existing-course target for an update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:44:55.785Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/3ec3100168528558a30e2e447178697c3a43b3a7",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/3ec3100168528558a30e2e447178697c3a43b3a7",
-      "entryTitle": "[README] rm automq logo (#845)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 1,
-      "reason": "The commit only removes an AutoMQ sponsorship section from README.md and contains no course creation or update evidence.",
       "changedFiles": []
     }
   ]
