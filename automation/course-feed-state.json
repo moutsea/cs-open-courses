@@ -145,8 +145,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-13T07:26:58.043Z",
+      "lastProcessedAt": "2026-09-15T07:41:47.955Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/57da246cffdc808516905b0db35c2525edcf8dae",
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
         "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
@@ -560,6 +561,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-15T07:41:47.955Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/57da246cffdc808516905b0db35c2525edcf8dae",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/57da246cffdc808516905b0db35c2525edcf8dae",
+      "entryTitle": "migration banner",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit 'migration banner' contains no changed files in the supplied evidence and the feed entry adds no course-level information. Nothing indicates a change to curriculum, hours, prerequisites, or resources for web-development/fullstackopen, so there is no evidence-backed update to make.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-13T07:26:58.042Z",
       "sourceId": "full-stack-open",
@@ -1758,18 +1771,6 @@
       "type": "ignore",
       "confidence": 0.98,
       "reason": "The evidence identifies CMU 10-423 S24: Generative AI and supplies course and video URLs, but it does not provide prerequisites, programming languages, difficulty, class hours, or enough course details for an evidence-backed create action; no existing course path exactly matches.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:00.417Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/ce004d4889508a5043414ac0702fb60f69db934c",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/ce004d4889508a5043414ac0702fb60f69db934c",
-      "entryTitle": "Add Optimization from EUROPT Summer School 2021 (#504)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.98,
-      "reason": "The evidence identifies a EUROPT Summer School optimization playlist, but does not establish a clearly identified university-level computer science course or provide sufficient course details for a create operation; it matches no existing-course target for an update.",
       "changedFiles": []
     }
   ]
