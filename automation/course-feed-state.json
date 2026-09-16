@@ -3,8 +3,9 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
-      "lastProcessedAt": "2026-09-07T07:18:25.182Z",
+      "lastProcessedAt": "2026-09-16T07:40:00.021Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/bb7336d32ed7a301754b89ae83c72bb7bf36aa38",
         "tag:github.com,2008:Grit::Commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
         "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
         "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
@@ -145,8 +146,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-15T07:41:47.955Z",
+      "lastProcessedAt": "2026-09-16T07:40:06.736Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/326478ea1834a6b69b0d4fe49286107149db4502",
         "tag:github.com,2008:Grit::Commit/57da246cffdc808516905b0db35c2525edcf8dae",
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
@@ -561,6 +563,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-16T07:40:06.736Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/326478ea1834a6b69b0d4fe49286107149db4502",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/326478ea1834a6b69b0d4fe49286107149db4502",
+      "entryTitle": "Merge pull request #4332 from cherylfong/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit is a one-line documentation typo fix in the upstream course material (correcting a GitHub Actions workflow filename in part 7a). It changes no course facts, structure, resources, or requirements relevant to the existing web-development/fullstackopen entry, so no update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-16T07:40:00.020Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/bb7336d32ed7a301754b89ae83c72bb7bf36aa38",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/bb7336d32ed7a301754b89ae83c72bb7bf36aa38",
+      "entryTitle": "[COURSE] Update MIT 6.824 to its new course number 6.5840 (#908)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Commit only renumbers an existing course (MIT 6.824 -> 6.5840) and adjusts lab counts and links in existing pages; it introduces no new course. An update action is not permitted because sourcePolicy.allowedTargetPaths is empty, so no targetPath (including parallel-distributed-systems/MIT6.824) may b",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-15T07:41:47.955Z",
       "sourceId": "full-stack-open",
@@ -1747,30 +1773,6 @@
       "type": "ignore",
       "confidence": 0.99,
       "reason": "The commit only changes the Semantic Versioning link in CHANGELOG.md from HTTPS to HTTP; it provides no evidence of a course addition or update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:13.882Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/bdbaf28f691fd499ed45ec46f2e3cf3527289b2c",
-      "entryTitle": "Add Game AI course (Spring 2021) from Georgia Tech (#506)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.98,
-      "reason": "The evidence names Georgia Tech CS 4731/7632 Game AI for Spring 2021, but the supplied URL searches for cs7632_2025. This term mismatch and the absence of verified course details or a dedicated official course page make a create action insufficiently supported.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:05.113Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/50e0929bae4ead8401a511f9809f8b4ff51865e8",
-      "entryTitle": "Add Generative AI course from CMU (#505)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.98,
-      "reason": "The evidence identifies CMU 10-423 S24: Generative AI and supplies course and video URLs, but it does not provide prerequisites, programming languages, difficulty, class hours, or enough course details for an evidence-backed create action; no existing course path exactly matches.",
       "changedFiles": []
     }
   ]
