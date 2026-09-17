@@ -3,8 +3,9 @@
   "sources": {
     "cs-self-learning": {
       "initializedAt": "2026-07-15T02:23:27.747Z",
-      "lastProcessedAt": "2026-09-16T07:40:00.021Z",
+      "lastProcessedAt": "2026-09-17T07:36:22.502Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/2c591834a1e4101e2e7579dc7f49bdeb4a6153a2",
         "tag:github.com,2008:Grit::Commit/bb7336d32ed7a301754b89ae83c72bb7bf36aa38",
         "tag:github.com,2008:Grit::Commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
         "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
@@ -146,10 +147,11 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-16T07:40:06.736Z",
+      "lastProcessedAt": "2026-09-17T07:36:28.126Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/326478ea1834a6b69b0d4fe49286107149db4502",
         "tag:github.com,2008:Grit::Commit/57da246cffdc808516905b0db35c2525edcf8dae",
+        "tag:github.com,2008:Grit::Commit/4441c607c422db28750ef6b6f26e869688a01933",
         "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
         "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
@@ -563,6 +565,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-17T07:36:28.126Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/4441c607c422db28750ef6b6f26e869688a01933",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/4441c607c422db28750ef6b6f26e869688a01933",
+      "entryTitle": "fix yaml filename typo for github workflow",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit is a one-line typo fix to a GitHub Actions workflow filename referenced in part7a exercise text. It changes no course metadata, structure, prerequisites, hours, or resources for web-development/fullstackopen, so no course update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-17T07:36:22.502Z",
+      "sourceId": "cs-self-learning",
+      "entryId": "tag:github.com,2008:Grit::Commit/2c591834a1e4101e2e7579dc7f49bdeb4a6153a2",
+      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/2c591834a1e4101e2e7579dc7f49bdeb4a6153a2",
+      "entryTitle": "[COURSE] Update MIT 6.S081 to its new course number 6.1810 (#909)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only renumbers MIT 6.S081 to 6.1810 in titles and adds a pointer to the current offering; no new course and no substantive content change. An update to operating-systems/MIT6.S081 would be the only relevant action, but sourcePolicy.allowedTargetPaths is empty, so no update target is permi",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-16T07:40:06.736Z",
       "sourceId": "full-stack-open",
@@ -1749,30 +1775,6 @@
       "type": "ignore",
       "confidence": 0.99,
       "reason": "The commit only adds a Lecture 30 video archive to a course page. No supplied existing-course targetPath matches this course, and the evidence is insufficient to create a complete new course entry without inventing required facts.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:28.238Z",
-      "sourceId": "ossu-computer-science",
-      "entryId": "tag:github.com,2008:Grit::Commit/a9c3258d478640faa31c6b187096edeede347eaa",
-      "entryUrl": "https://github.com/ossu/computer-science/commit/a9c3258d478640faa31c6b187096edeede347eaa",
-      "entryTitle": "Remove incorrect class-based lecture archive",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.99,
-      "reason": "The commit only removes an incorrect Lecture 30 YouTube archive from an OSSU course page. No supplied existing-course path matches this course, and the evidence is insufficient for a new course entry.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:16.483Z",
-      "sourceId": "ossu-computer-science",
-      "entryId": "tag:github.com,2008:Grit::Commit/acf1cc774628d90f18276571b2fa5c9e66ac2523",
-      "entryUrl": "https://github.com/ossu/computer-science/commit/acf1cc774628d90f18276571b2fa5c9e66ac2523",
-      "entryTitle": "docs: keep changelog unchanged",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.99,
-      "reason": "The commit only changes the Semantic Versioning link in CHANGELOG.md from HTTPS to HTTP; it provides no evidence of a course addition or update.",
       "changedFiles": []
     }
   ]
