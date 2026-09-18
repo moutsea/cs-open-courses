@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-12T07:08:27.101Z",
+      "lastProcessedAt": "2026-09-18T07:23:19.869Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/9098e74e9a606386814555a84426ac2cc97324bf",
         "tag:github.com,2008:Grit::Commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
         "tag:github.com,2008:Grit::Commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
         "tag:github.com,2008:Grit::Commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
@@ -515,7 +516,9 @@
     },
     "hugging-face-course": {
       "initializedAt": "2026-07-29T05:31:16.769Z",
+      "lastProcessedAt": "2026-09-18T07:23:28.614Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/3582dc0d95083b20215697f6abd67da74732cc12",
         "tag:github.com,2008:Grit::Commit/5805d51523d561a82520b301dbc8c5759b212844",
         "tag:github.com,2008:Grit::Commit/80133b2a791c37b48dc431b2af36bc62f8404113",
         "tag:github.com,2008:Grit::Commit/8f9f744b5471374f452ed38a41354d4f8ff3518c",
@@ -565,6 +568,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-18T07:23:28.614Z",
+      "sourceId": "hugging-face-course",
+      "entryId": "tag:github.com,2008:Grit::Commit/3582dc0d95083b20215697f6abd67da74732cc12",
+      "entryUrl": "https://github.com/huggingface/course/commit/3582dc0d95083b20215697f6abd67da74732cc12",
+      "entryTitle": "chore: enable Dependabot weekly GitHub Actions bumps (#1259)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Repository maintenance commit enabling Dependabot weekly GitHub Actions updates. No course content, curriculum, or resource changes; commit lists no modified files. Policy also allows only ignore or create, and there is no evidence identifying a new freely accessible university-level course.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-18T07:23:19.868Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/9098e74e9a606386814555a84426ac2cc97324bf",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/9098e74e9a606386814555a84426ac2cc97324bf",
+      "entryTitle": "Add UCSD DSC 253/CSE 261 (WI26) (#520)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit adds a single README link for UCSD DSC 253/CSE 261 (Winter 2026, Advanced Data-Driven Text Mining). Evidence is limited to the title line and one course-page URL: no prerequisites, programming languages, class hours, difficulty, or confirmation of freely accessible lecture materials, so a",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-17T07:36:28.126Z",
       "sourceId": "full-stack-open",
@@ -1749,33 +1776,6 @@
         "course-content/en/machine-learning-systems/CMU15-442.md",
         "course-content/zh/machine-learning-systems/CMU15-442.md"
       ]
-    },
-    {
-      "reviewedAt": "2026-07-22T05:29:20.296Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/ffc70148d38a9cd3c81a198178357868a63cf7fa",
-      "entryTitle": "[Fix] update MIT calculus course links (#882)",
-      "mode": "auto",
-      "type": "update",
-      "confidence": 0.99,
-      "targetPath": "mathematics-basics/MITmaths",
-      "changedFiles": [
-        "course-content/en/mathematics-basics/MITmaths.md",
-        "course-content/zh/mathematics-basics/MITmaths.md"
-      ]
-    },
-    {
-      "reviewedAt": "2026-07-15T02:45:38.194Z",
-      "sourceId": "ossu-computer-science",
-      "entryId": "tag:github.com,2008:Grit::Commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
-      "entryUrl": "https://github.com/ossu/computer-science/commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
-      "entryTitle": "Add class-based Lecture 30 archive link",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.99,
-      "reason": "The commit only adds a Lecture 30 video archive to a course page. No supplied existing-course targetPath matches this course, and the evidence is insufficient to create a complete new course entry without inventing required facts.",
-      "changedFiles": []
     }
   ]
 }
