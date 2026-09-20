@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-18T07:23:19.869Z",
+      "lastProcessedAt": "2026-09-20T07:43:43.378Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/dee47bda267d61a508ffd5f4a4b5f4b7a2c6dece",
+        "tag:github.com,2008:Grit::Commit/b55ee258c9b5dec59237a8fa43ff26f0f5a726ef",
         "tag:github.com,2008:Grit::Commit/9098e74e9a606386814555a84426ac2cc97324bf",
         "tag:github.com,2008:Grit::Commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
         "tag:github.com,2008:Grit::Commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
@@ -568,6 +570,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-20T07:43:43.378Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/dee47bda267d61a508ffd5f4a4b5f4b7a2c6dece",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/dee47bda267d61a508ffd5f4a4b5f4b7a2c6dece",
+      "entryTitle": "Add CMU 16-831 (FA25) (#522)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Evidence is a single README line adding a Panopto video-folder link for CMU 16-831 Introduction to Robot Learning 2025. There is no official course page, and no evidence of offeredBy details, prerequisites, programming languages, class hours, or description, so a create action would require inventin",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-20T07:43:37.281Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/b55ee258c9b5dec59237a8fa43ff26f0f5a726ef",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/b55ee258c9b5dec59237a8fa43ff26f0f5a726ef",
+      "entryTitle": "Add UCSD DSC 148 (SP26) (#521)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit adds a single README link line for 'DSC 148 - Introduction to Data Mining - UCSD' (https://shangjingbo1226.github.io/teaching/2026-spring-DSC148-DM). The evidence contains only a course title and URL, with no verifiable details on offering institution specifics, prerequisites, programming",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-18T07:23:28.614Z",
       "sourceId": "hugging-face-course",
@@ -1745,36 +1771,6 @@
       "changedFiles": [
         "course-content/en/programming-introduction/python/CS61A.md",
         "course-content/zh/programming-introduction/python/CS61A.md"
-      ]
-    },
-    {
-      "reviewedAt": "2026-07-22T05:30:08.874Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5",
-      "entryTitle": "Update web links (#862)",
-      "mode": "auto",
-      "type": "update",
-      "confidence": 0.99,
-      "targetPath": "programming-introduction/MIT-Missing-Semester",
-      "changedFiles": [
-        "course-content/en/programming-introduction/MIT-Missing-Semester.md",
-        "course-content/zh/programming-introduction/MIT-Missing-Semester.md"
-      ]
-    },
-    {
-      "reviewedAt": "2026-07-22T05:29:31.267Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/08d91a7a9ca409b3390994675a58bf3a932f93d4",
-      "entryTitle": "[COURSE] Add CMU 15-442/642 Machine Learning Systems (#869)",
-      "mode": "auto",
-      "type": "create",
-      "confidence": 0.98,
-      "targetPath": "machine-learning-systems/CMU15-442",
-      "changedFiles": [
-        "course-content/en/machine-learning-systems/CMU15-442.md",
-        "course-content/zh/machine-learning-systems/CMU15-442.md"
       ]
     }
   ]
