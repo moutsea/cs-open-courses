@@ -317,8 +317,9 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-09T07:22:11.967Z",
+      "lastProcessedAt": "2026-09-21T07:56:29.171Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
         "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
         "tag:github.com,2008:Grit::Commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
         "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
@@ -570,6 +571,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-21T07:56:29.171Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/664a33289e294820ab371bb16115d25ff513d67e",
+      "entryTitle": "Merge branch 'ags-thomas/master'",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "The commit is a merge containing a single one-word wording change in _2019/os-customization.md (\"Unix-based\" to \"Linux-based\"). No new lectures, resources, or course facts are added, so there is nothing evidence-backed to update in programming-introduction/MIT-Missing-Semester.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-20T07:43:43.378Z",
       "sourceId": "cs-video-courses",
@@ -1757,21 +1770,6 @@
       "confidence": 0.95,
       "reason": "Upstream commit only deletes an internal 'AI' scaffolding folder (AI-assisted lab drafts, design principles, and an instructor manual) from the seed-labs repository. It adds no published lab, no course-level information, and no new resource URLs relevant to system-security/SEEDLabs, so no update is",
       "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-07-22T05:30:08.874Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/81d874ee0fb37b2289839847026ba7651f3725d5",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/81d874ee0fb37b2289839847026ba7651f3725d5",
-      "entryTitle": "Update web links (#862)",
-      "mode": "auto",
-      "type": "update",
-      "confidence": 0.99,
-      "targetPath": "programming-introduction/python/CS61A",
-      "changedFiles": [
-        "course-content/en/programming-introduction/python/CS61A.md",
-        "course-content/zh/programming-introduction/python/CS61A.md"
-      ]
     }
   ]
 }
