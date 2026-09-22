@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-20T07:43:43.378Z",
+      "lastProcessedAt": "2026-09-22T07:41:30.074Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/ec982e52f614d4e6147717038ee5b4995fdbb0c6",
+        "tag:github.com,2008:Grit::Commit/9e0d7b83affa19b67e4972c8c7eebe2ca4235f44",
         "tag:github.com,2008:Grit::Commit/dee47bda267d61a508ffd5f4a4b5f4b7a2c6dece",
         "tag:github.com,2008:Grit::Commit/b55ee258c9b5dec59237a8fa43ff26f0f5a726ef",
         "tag:github.com,2008:Grit::Commit/9098e74e9a606386814555a84426ac2cc97324bf",
@@ -150,8 +152,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-17T07:36:28.126Z",
+      "lastProcessedAt": "2026-09-22T07:41:47.180Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
         "tag:github.com,2008:Grit::Commit/326478ea1834a6b69b0d4fe49286107149db4502",
         "tag:github.com,2008:Grit::Commit/57da246cffdc808516905b0db35c2525edcf8dae",
         "tag:github.com,2008:Grit::Commit/4441c607c422db28750ef6b6f26e869688a01933",
@@ -317,9 +320,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-21T07:56:29.171Z",
+      "lastProcessedAt": "2026-09-22T07:41:52.453Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
+        "tag:github.com,2008:Grit::Commit/e35b55208722e0687c3468351394c1ccb0b6ceff",
         "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
         "tag:github.com,2008:Grit::Commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
         "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
@@ -571,6 +575,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-22T07:41:52.453Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/e35b55208722e0687c3468351394c1ccb0b6ceff",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/e35b55208722e0687c3468351394c1ccb0b6ceff",
+      "entryTitle": "fix: os customization, tiling window management phrasing",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "The commit is a one-word wording correction in the archived _2019/os-customization.md page (\"Unix-based\" changed to \"Linux-based\" in a tiling window manager sentence). It changes no course facts, structure, resources, or curriculum for programming-introduction/MIT-Missing-Semester, so no update is w",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-22T07:41:47.180Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
+      "entryTitle": "part 6 & 7 migration",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.82,
+      "reason": "AI confidence 0.82 is below 0.99",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-22T07:41:30.074Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/ec982e52f614d4e6147717038ee5b4995fdbb0c6",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/ec982e52f614d4e6147717038ee5b4995fdbb0c6",
+      "entryTitle": "Add Stanford CS229 (SP26) (#524)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit only edits a link line for Stanford CS229 in a third-party README. The course already exists at machine-learning/CS229, and sourcePolicy.allowedTargetPaths is empty, so no update target is permitted; create would duplicate an existing course. The new links in the patch are also low-qualit",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-22T07:41:22.475Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/9e0d7b83affa19b67e4972c8c7eebe2ca4235f44",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/9e0d7b83affa19b67e4972c8c7eebe2ca4235f44",
+      "entryTitle": "Add Stanford CS329A (AU25) (#523)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Discovery feed commit adds a single README link for 'Stanford CS329A Self-Improving AI Agents 2025' with no evidence about offering department details, prerequisites, class hours, programming languages, difficulty, or content, so a create action would require inventing course facts. Update is not po",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-21T07:56:29.171Z",
       "sourceId": "mit-missing-semester",
@@ -1721,54 +1773,6 @@
       "type": "ignore",
       "confidence": 0.92,
       "reason": "Upstream xv6-riscv commit 9dd28f5 is a low-level kernel fix (icache flush after loading user text) with no file list in the evidence and no course-facing changes to MIT 6.S081 materials, schedule, labs, or resources. Nothing here supports an evidence-backed update to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-06T05:26:34.880Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/429989d05b190569f7d76adea313905b04cf0d93",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/429989d05b190569f7d76adea313905b04cf0d93",
-      "entryTitle": "emit the right kind of fence for MMIO",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Upstream xv6-riscv commit 429989d is a low-level code fix (emitting the correct fence for MMIO) with no file list supplied and no course-facing information: no syllabus, lab, schedule, or resource URL changes. Nothing here warrants updating operating-systems/MIT6.S081, and the evidence is insufficie",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-05T05:24:28.225Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/21e05acc12dad60b8fb206a43779db69ab3cd62b",
-      "entryTitle": "avoid warning on recent gcc",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit 'avoid warning on recent gcc' is a minor toolchain compatibility fix with no file list in the evidence and no course-facing change to MIT 6.S081 content, resources, or structure. Nothing verifiable to add to the existing course entry.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-02T05:36:24.052Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/a5e3ed1292c68ece189daff00a1d2e6cbf07497d",
-      "entryTitle": "moved the lab to another place; will move back once it is complete",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit only removes the in-progress Smurf and Fraggle Attack lab files (the author states the lab was moved elsewhere until complete). No new or stable course content, no official course URL, and nothing that changes the existing system-security/SEEDLabs entry, so no update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-01T05:35:36.934Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/fa38be294aa995692654be335f8e0727eb119aa2",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/fa38be294aa995692654be335f8e0727eb119aa2",
-      "entryTitle": "removed the AI folder",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Upstream commit only deletes an internal 'AI' scaffolding folder (AI-assisted lab drafts, design principles, and an instructor manual) from the seed-labs repository. It adds no published lab, no course-level information, and no new resource URLs relevant to system-security/SEEDLabs, so no update is",
       "changedFiles": []
     }
   ]
