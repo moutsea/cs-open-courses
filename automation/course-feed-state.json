@@ -152,7 +152,7 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-23T07:43:50.886Z",
+      "lastProcessedAt": "2026-09-24T07:34:49.382Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
         "tag:github.com,2008:Grit::Commit/9a56516b0535bafd2bce1ca1740e0d1f5b19d7e4",
@@ -163,6 +163,7 @@
         "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
         "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
         "tag:github.com,2008:Grit::Commit/f4fecf330c072ca99e19a662dcf9a6cbcd247b94",
+        "tag:github.com,2008:Grit::Commit/25668ee1ced5f4f82a9d6023c8510bbd941f3852",
         "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
         "tag:github.com,2008:Grit::Commit/f67b5cfdad1f392ff63832890eac617c117928e0",
         "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
@@ -524,8 +525,9 @@
     },
     "hugging-face-course": {
       "initializedAt": "2026-07-29T05:31:16.769Z",
-      "lastProcessedAt": "2026-09-18T07:23:28.614Z",
+      "lastProcessedAt": "2026-09-24T07:34:56.866Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/92d4fb2c7094858430ce3e45851c12d165e36481",
         "tag:github.com,2008:Grit::Commit/3582dc0d95083b20215697f6abd67da74732cc12",
         "tag:github.com,2008:Grit::Commit/5805d51523d561a82520b301dbc8c5759b212844",
         "tag:github.com,2008:Grit::Commit/80133b2a791c37b48dc431b2af36bc62f8404113",
@@ -576,6 +578,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-24T07:34:56.866Z",
+      "sourceId": "hugging-face-course",
+      "entryId": "tag:github.com,2008:Grit::Commit/92d4fb2c7094858430ce3e45851c12d165e36481",
+      "entryUrl": "https://github.com/huggingface/course/commit/92d4fb2c7094858430ce3e45851c12d165e36481",
+      "entryTitle": "Scope GITHUB_TOKEN permissions per job (#1318)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only scopes GITHUB_TOKEN permissions in CI workflow jobs; no course content, no changed files listed, and no evidence of a new or updated freely accessible university-level CS course.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-24T07:34:49.382Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/25668ee1ced5f4f82a9d6023c8510bbd941f3852",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/25668ee1ced5f4f82a9d6023c8510bbd941f3852",
+      "entryTitle": "Fix link in part1d.md",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only corrects a single external link URL inside part1d.md of the Full Stack open material (Egghead 'Beginner's Guide to React' slug). No change to course title, structure, prerequisites, hours, languages, or official resources, so there is nothing course-level to update for web-developmen",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-23T07:43:50.886Z",
       "sourceId": "full-stack-open",
@@ -1750,30 +1776,6 @@
       "type": "ignore",
       "confidence": 0.94,
       "reason": "The commit only fixes GitHub Actions apt-get package names for Ubuntu 26.04 in the xv6-riscv repository. It is CI/build infrastructure maintenance with no changed files listed in the evidence and no impact on MIT 6.S081 course content, labs, prerequisites, or resources, so no update to operating-sys",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-09T03:52:28.877Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/bf452cbafa0d4e5fd14acc105cf4ba07efcc0c69",
-      "entryTitle": "add a macos build test",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit 'add a macos build test' is a CI/build-tooling change with no file list in the evidence and no impact on MIT 6.S081 course content, resources, or logistics. No new verbatim URLs or course facts to support an update to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-08T03:42:36.144Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/4e524edc6adf58256fa2f19f151a0deb7c13de8f",
-      "entryTitle": "do not write to p->parent in freeproc without holding wait_lock",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Upstream xv6-riscv commit is an internal kernel locking bug fix (p->parent write in freeproc without wait_lock) with no file list in the evidence. It does not change MIT 6.S081 course structure, labs, prerequisites, or published resources, so no course page update is justified.",
       "changedFiles": []
     }
   ]
