@@ -152,8 +152,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-24T07:34:49.382Z",
+      "lastProcessedAt": "2026-09-25T07:44:52.241Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/67e12441318826bb8023300397606efa0cb8c6dc",
         "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
         "tag:github.com,2008:Grit::Commit/9a56516b0535bafd2bce1ca1740e0d1f5b19d7e4",
         "tag:github.com,2008:Grit::Commit/326478ea1834a6b69b0d4fe49286107149db4502",
@@ -578,6 +579,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-25T07:44:52.241Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/67e12441318826bb8023300397606efa0cb8c6dc",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/67e12441318826bb8023300397606efa0cb8c6dc",
+      "entryTitle": "add new platform notice for es, fr, zh, ptbr",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.85,
+      "reason": "The commit only adds a localized notice banner and an info page for es/fr/zh/ptbr readers about submission-platform logistics for parts 6+. It changes no course content, structure, prerequisites, or materials, and the evidence includes no file list and no verbatim resource URL for the referenced /ne",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-24T07:34:56.866Z",
       "sourceId": "hugging-face-course",
@@ -1764,18 +1777,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "Upstream commit only merges a small documentation fix to a Dockerfile/uv example inside the existing shipping-code lecture notes (5 additions, 2 deletions). It adds no new lecture, resource URL, or course-level fact, so the existing MIT Missing Semester entry needs no change.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-10T04:06:27.572Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ac5bb1fedeea8f8ce193bc2e50741c077379efb8",
-      "entryTitle": "fix github action apt-get packages for ubuntu 26.04",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.94,
-      "reason": "The commit only fixes GitHub Actions apt-get package names for Ubuntu 26.04 in the xv6-riscv repository. It is CI/build infrastructure maintenance with no changed files listed in the evidence and no impact on MIT 6.S081 course content, labs, prerequisites, or resources, so no update to operating-sys",
       "changedFiles": []
     }
   ]
