@@ -154,9 +154,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-26T07:38:11.831Z",
+      "lastProcessedAt": "2026-09-27T08:05:50.344Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
+        "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
         "tag:github.com,2008:Grit::Commit/67e12441318826bb8023300397606efa0cb8c6dc",
         "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
         "tag:github.com,2008:Grit::Commit/9a56516b0535bafd2bce1ca1740e0d1f5b19d7e4",
@@ -241,8 +242,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-10T07:17:21.734Z",
+      "lastProcessedAt": "2026-09-27T08:05:56.042Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
@@ -582,6 +584,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-27T08:05:56.042Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
+      "entryTitle": "Add killzero test",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream xv6-riscv commit 'Add killzero test' is an internal test addition with no file list in the evidence and no course-facing change. Nothing here alters MIT 6.S081 course content, resources, or logistics, and there is no new verbatim URL to add beyond the commit link itself.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-27T08:05:50.344Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
+      "entryTitle": "Merge pull request #4333 from jade-ho/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit is a single-character typo fix (\"Ohjemistokehitys\" -> \"Ohjelmistokehitys\") in the Finnish translation of part 1a. No change to course content, structure, prerequisites, or resources, so nothing to update for web-development/fullstackopen.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-26T07:38:11.831Z",
       "sourceId": "full-stack-open",
@@ -1756,30 +1782,6 @@
       "type": "ignore",
       "confidence": 0.97,
       "reason": "Commit only swaps the Star History badge URL in README.md. No course content, no new or updated course material, and allowedTargetPaths is empty so no update is permitted. The substituted third-party chart domain is also not course evidence.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-13T04:20:00.949Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/03e5422a30d24e85f2899073babd94c075d569a2",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/03e5422a30d24e85f2899073babd94c075d569a2",
-      "entryTitle": "make fmt",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Feed event is a formatting-only commit (\"make fmt\") in the xv6-riscv repository with no changed files listed. There is no evidence of course content, resource, or curriculum changes relevant to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-12T04:16:46.445Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ae96fd06d2b5c7d805157684eaefd931749cb36c",
-      "entryTitle": "example of sleep waiting for interrupt wakeup",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Upstream xv6-riscv commit 'example of sleep waiting for interrupt wakeup' is a source-code level change with an empty file list in the supplied evidence. There is no evidence of any change to course structure, labs, schedule, prerequisites, or resource URLs for operating-systems/MIT6.S081, so no evi",
       "changedFiles": []
     }
   ]
