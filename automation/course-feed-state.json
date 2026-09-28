@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-26T07:38:05.672Z",
+      "lastProcessedAt": "2026-09-28T08:40:03.537Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/611afdeab0389c4be33abcd69de1aa7efb417ed7",
         "tag:github.com,2008:Grit::Commit/2a86c7b66078222277c02e4540b9c4c6bf9280b8",
         "tag:github.com,2008:Grit::Commit/d2f37f4b8a3e78aa3ba14fb5f90012f1f80a7487",
         "tag:github.com,2008:Grit::Commit/ec982e52f614d4e6147717038ee5b4995fdbb0c6",
@@ -154,10 +155,11 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-27T08:05:50.344Z",
+      "lastProcessedAt": "2026-09-28T08:40:10.788Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
         "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
+        "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
         "tag:github.com,2008:Grit::Commit/67e12441318826bb8023300397606efa0cb8c6dc",
         "tag:github.com,2008:Grit::Commit/f2217f58774dd95f31e7cb077b516d59aed4942a",
         "tag:github.com,2008:Grit::Commit/9a56516b0535bafd2bce1ca1740e0d1f5b19d7e4",
@@ -242,9 +244,10 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-27T08:05:56.042Z",
+      "lastProcessedAt": "2026-09-28T08:40:16.407Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
+        "tag:github.com,2008:Grit::Commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
@@ -362,8 +365,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-09-01T07:48:52.120Z",
+      "lastProcessedAt": "2026-09-28T08:40:26.171Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/715538ae832e7bcd0726eb8fa7bfbb1519904997",
         "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
         "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
         "tag:github.com,2008:Grit::Commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
@@ -584,6 +588,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-28T08:40:26.171Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/715538ae832e7bcd0726eb8fa7bfbb1519904997",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/715538ae832e7bcd0726eb8fa7bfbb1519904997",
+      "entryTitle": "feat(P2-fa26): add P2 design document template (#894)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.85,
+      "reason": "The commit only adds an internal Project 2 design-document template (and mentions btree bench workloads) to the BusTub reference repository for the fall 2026 term. It does not change any course-level facts, syllabus, prerequisites, or publicly documented resources for database-systems/15445, and the",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-28T08:40:16.407Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
+      "entryTitle": "Test case for kill 0",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.92,
+      "reason": "Upstream xv6-riscv commit 'Test case for kill 0' is a single minor test addition with an empty file list and no patch content. There is no evidence of a change to MIT 6.S081 course structure, materials, labs, or resource URLs, so no update to operating-systems/MIT6.S081 is justified.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-28T08:40:10.787Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/0a7e576da738bea4f906ded8180e34adc1c32699",
+      "entryTitle": "Fix typo in software development paragraph",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.96,
+      "reason": "Commit 0a7e576 only fixes a spelling typo ('Ohjemistokehitys' -> 'Ohjelmistokehitys') in the Finnish part 1a material. No change to course content, structure, prerequisites, hours, or resources, so there is nothing to update in web-development/fullstackopen.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-28T08:40:03.537Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/611afdeab0389c4be33abcd69de1aa7efb417ed7",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/611afdeab0389c4be33abcd69de1aa7efb417ed7",
+      "entryTitle": "Fix Bioinformatics Algorithms lecture videos link (#527)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "Commit only swaps one lecture-video URL for a bioinformatics MOOC in a link list. sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the patch supplies no course facts (offering institution details, prerequisites, hours, languages) to support a create. The topic also has no mat",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-27T08:05:56.042Z",
       "sourceId": "mit-xv6-riscv",
@@ -1734,54 +1786,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit 'reset intena in scheduler' is an internal kernel code change with no file diff supplied and no evidence of changed course materials, resources, or metadata for operating-systems/MIT6.S081. Nothing in the evidence supports a summary or resource update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-16T03:12:10.145Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/3c4324ed23a02b93e521c86fbac3b721c160ceef",
-      "entryTitle": "Merge pull request #4296 from rishu2132/patch-1",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "The commit is a one-line correction to an exercise range heading (6.2.-6.6. changed to 6.2.-6.5.) in part6a of the Full Stack open material. It carries no change to course scope, prerequisites, hours, resources, or any fact recorded in web-development/fullstackopen, so no update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-15T03:03:00.083Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/7d01506ee03394b6b1a161ccee69cd150ab471fc",
-      "entryTitle": "delete unnecessary (and incomplete) check",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit 'delete unnecessary (and incomplete) check' is a minor internal code cleanup with no file list or diff supplied. There is no evidence of a change to course content, labs, structure, or resources for operating-systems/MIT6.S081, so no update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-14T04:18:07.035Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/13602eb6aa4b181359f68c0fd1d5b3cb3d45dc4d",
-      "entryTitle": "fix call to old-style sleep() due to K&R-style header",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.94,
-      "reason": "Upstream xv6-riscv commit is a minor source-code fix (a call to an old-style sleep() affected by a K&R-style header) with no file list in the evidence and no change to course structure, labs, schedule, or resources. Nothing here warrants updating operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-14T04:18:00.709Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/adce8e13789dc16aa6d1fbe163e9541736defae4",
-      "entryTitle": "[README] Fix broken Star History chart (#901)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.97,
-      "reason": "Commit only swaps the Star History badge URL in README.md. No course content, no new or updated course material, and allowedTargetPaths is empty so no update is permitted. The substituted third-party chart domain is also not course evidence.",
       "changedFiles": []
     }
   ]
