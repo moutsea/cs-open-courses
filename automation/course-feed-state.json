@@ -245,11 +245,12 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-29T08:26:07.894Z",
+      "lastProcessedAt": "2026-09-30T08:30:16.307Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
         "tag:github.com,2008:Grit::Commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
         "tag:github.com,2008:Grit::Commit/bd77f8e71cde0bcbf8c1f3dbc8716ac959064568",
+        "tag:github.com,2008:Grit::Commit/fec683da28666e0ffcf83608c8e1103f98bafdd7",
         "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
         "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
         "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
@@ -333,9 +334,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-29T08:26:16.701Z",
+      "lastProcessedAt": "2026-09-30T08:30:26.598Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/80fd81cff24ea9b69b85f8efcd4c2c220eedc2fb",
+        "tag:github.com,2008:Grit::Commit/14c03df9d086e2dedcb3c97d651bb3f1d018ceed",
         "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
         "tag:github.com,2008:Grit::Commit/e35b55208722e0687c3468351394c1ccb0b6ceff",
         "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
@@ -591,6 +593,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-09-30T08:30:26.598Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/14c03df9d086e2dedcb3c97d651bb3f1d018ceed",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/14c03df9d086e2dedcb3c97d651bb3f1d018ceed",
+      "entryTitle": "ADD Burmese Translation URL: missing-semester-my.github.io",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.72,
+      "reason": "AI confidence 0.72 is below 0.99",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-09-30T08:30:16.307Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/fec683da28666e0ffcf83608c8e1103f98bafdd7",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/fec683da28666e0ffcf83608c8e1103f98bafdd7",
+      "entryTitle": "no need for atomics for first in forkret()",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit fec683d only removes atomics for the 'first' flag in forkret(); it is an internal kernel code tweak with no file list in the evidence and no change to MIT 6.S081 course structure, labs, or resources. Nothing here warrants updating operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-29T08:26:16.701Z",
       "sourceId": "mit-missing-semester",
@@ -1765,30 +1791,6 @@
       "type": "ignore",
       "confidence": 0.94,
       "reason": "The commit is a one-word editorial fix in part5c.md ('last chapter' changed to 'next chapter'), a cross-reference correction with no change to course content, structure, resources, or metadata for web-development/fullstackopen. No new URLs or course facts in the evidence to support an update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-18T03:07:58.352Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/b7c25cf686b111df40d0d68160a63cd0b2aabee0",
-      "entryTitle": "initialize the tx_lock sleeplock",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Upstream xv6-riscv commit 'initialize the tx_lock sleeplock' is an internal kernel code fix with no file list or diff supplied. It carries no course-level information (no syllabus, schedule, lab, or resource change) that would alter the MIT 6.S081 entry, so there is no evidence-backed update to make",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-18T03:07:53.068Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/e4e21888817ae9f88d5046d38514a960393feabd",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/e4e21888817ae9f88d5046d38514a960393feabd",
-      "entryTitle": "Merge pull request #4293 from toivoantero/patch-3",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.94,
-      "reason": "The commit only merges Finnish-language typo fixes and one corrected claim in part 6a of the Full Stack Open material (spelling fixes, a store.js filename fix, and a selector code example adjustment). No change to course structure, prerequisites, hours, or resources, and no new URLs or course facts",
       "changedFiles": []
     }
   ]
