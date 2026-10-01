@@ -155,8 +155,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-09-29T08:26:02.218Z",
+      "lastProcessedAt": "2026-10-01T08:52:39.046Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
         "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
         "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
@@ -593,6 +594,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-01T08:52:39.045Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
+      "entryTitle": "Merge pull request #4337 from tuhlaajapoika/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "The commit only revises a third-party Egghead.io reading recommendation in the Finnish-language part 1d material. It changes no course facts, structure, prerequisites, hours, or official resources for web-development/fullstackopen, so no update is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-09-30T08:30:26.598Z",
       "sourceId": "mit-missing-semester",
@@ -1779,18 +1792,6 @@
       "type": "ignore",
       "confidence": 0.91,
       "reason": "Upstream xv6-riscv commit is a low-level kernel driver tweak (disabling virtio disk writeback caching) with no file list supplied and no evidence of changed course material, labs, schedule, or resources for operating-systems/MIT6.S081. Nothing here supports an evidence-backed update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-19T03:10:03.124Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/fdf2c7282bcc778f6da06ad4e39819763024d5ca",
-      "entryTitle": "Merge pull request #4314 from drmbilalkhalid/part5c-fix-end-to-end-ch…",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.94,
-      "reason": "The commit is a one-word editorial fix in part5c.md ('last chapter' changed to 'next chapter'), a cross-reference correction with no change to course content, structure, resources, or metadata for web-development/fullstackopen. No new URLs or course facts in the evidence to support an update.",
       "changedFiles": []
     }
   ]
