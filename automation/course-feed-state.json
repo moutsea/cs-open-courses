@@ -155,9 +155,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-01T08:52:39.046Z",
+      "lastProcessedAt": "2026-10-02T08:28:37.188Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
+        "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
         "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
         "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
@@ -594,6 +595,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-02T08:28:37.188Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/a37340100816844500511ea287615a015d86d004",
+      "entryTitle": "Merge pull request #4334 from NotAFlightRisk/part0-node-version-typo",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only fixes typos in Part 0 ('21th' to '21st' and 'at asthe version' to 'at least the version'). No change to course content, structure, prerequisites, or resources, so no update to web-development/fullstackopen is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-01T08:52:39.045Z",
       "sourceId": "full-stack-open",
@@ -1780,18 +1793,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "The commit is a single-word wording correction in part5c.md ('last chapter' to 'next chapter') with no change to course structure, resources, prerequisites, or content worth surfacing. No new URLs or course facts in the evidence, so no update to web-development/fullstackopen is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-19T03:10:08.013Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/0024d4b2bd5e521f83cca1ac97bb5591c4610b9a",
-      "entryTitle": "disable writeback caching for virtio disk",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Upstream xv6-riscv commit is a low-level kernel driver tweak (disabling virtio disk writeback caching) with no file list supplied and no evidence of changed course material, labs, schedule, or resources for operating-systems/MIT6.S081. Nothing here supports an evidence-backed update.",
       "changedFiles": []
     }
   ]
