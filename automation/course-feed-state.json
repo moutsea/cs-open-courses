@@ -155,10 +155,11 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-02T08:28:37.188Z",
+      "lastProcessedAt": "2026-10-03T08:03:51.738Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
+        "tag:github.com,2008:Grit::Commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
         "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
         "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
@@ -595,6 +596,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-03T08:03:51.738Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
+      "entryTitle": "Revise Egghead.io course recommendations in osa1d.md",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Commit only swaps dead third-party Egghead.io recommendation links inside a Finnish-language part 1d page. No change to the Full Stack open course's own content, structure, resources, or official URLs, so nothing in web-development/fullstackopen needs updating. The replacement links are external ven",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-02T08:28:37.188Z",
       "sourceId": "full-stack-open",
@@ -1781,18 +1794,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink signed overflow in create() and sys_link()); it changes no course-facing material for operating-systems/MIT6.S081. The evidence includes no file list, no lab or syllabus changes, and no new resource URLs, so there is nothing ver",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-20T03:09:07.988Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/968b511e013877adea230b325a5204ebd8f2a012",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/968b511e013877adea230b325a5204ebd8f2a012",
-      "entryTitle": "Fix outdated end-to-end testing chapter reference",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "The commit is a single-word wording correction in part5c.md ('last chapter' to 'next chapter') with no change to course structure, resources, prerequisites, or content worth surfacing. No new URLs or course facts in the evidence, so no update to web-development/fullstackopen is warranted.",
       "changedFiles": []
     }
   ]
