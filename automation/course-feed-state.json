@@ -155,11 +155,12 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-03T08:03:51.738Z",
+      "lastProcessedAt": "2026-10-04T08:25:04.750Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
         "tag:github.com,2008:Grit::Commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
+        "tag:github.com,2008:Grit::Commit/5b65093cfc4be0394d6a8dcbf62f0af8bb68a60d",
         "tag:github.com,2008:Grit::Commit/a132729a16ce38dd6029c84302b408fb06588982",
         "tag:github.com,2008:Grit::Commit/54be653a511880bdeb12970daa7adfbe7bc45eda",
         "tag:github.com,2008:Grit::Commit/0a7e576da738bea4f906ded8180e34adc1c32699",
@@ -596,6 +597,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-04T08:25:04.749Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/5b65093cfc4be0394d6a8dcbf62f0af8bb68a60d",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/5b65093cfc4be0394d6a8dcbf62f0af8bb68a60d",
+      "entryTitle": "Part 0: Fix typo in Node version line and '21th' date",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only fixes typos in Part 0 ('21th' to '21st' and 'at asthe version' to 'at least the version'). No change to course content, structure, prerequisites, or resources, so no update to web-development/fullstackopen is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-03T08:03:51.738Z",
       "sourceId": "full-stack-open",
@@ -1782,18 +1795,6 @@
       "type": "reject",
       "confidence": 0.95,
       "reason": "AI confidence 0.95 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-20T03:09:13.855Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/ee0f6b12f5356215ce789234a2c35743a342abc7",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ee0f6b12f5356215ce789234a2c35743a342abc7",
-      "entryTitle": "refuse nlink overflow in create() and sys_link()",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink signed overflow in create() and sys_link()); it changes no course-facing material for operating-systems/MIT6.S081. The evidence includes no file list, no lab or syllabus changes, and no new resource URLs, so there is nothing ver",
       "changedFiles": []
     }
   ]
