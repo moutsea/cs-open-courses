@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-09-28T08:40:03.537Z",
+      "lastProcessedAt": "2026-10-06T08:56:46.718Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/ade811af1a2f8fb4d4932eecf7bd66d0dc3efc78",
         "tag:github.com,2008:Grit::Commit/611afdeab0389c4be33abcd69de1aa7efb417ed7",
         "tag:github.com,2008:Grit::Commit/2a86c7b66078222277c02e4540b9c4c6bf9280b8",
         "tag:github.com,2008:Grit::Commit/d2f37f4b8a3e78aa3ba14fb5f90012f1f80a7487",
@@ -597,6 +598,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-06T08:56:46.718Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/ade811af1a2f8fb4d4932eecf7bd66d0dc3efc78",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/ade811af1a2f8fb4d4932eecf7bd66d0dc3efc78",
+      "entryTitle": "Add UPSaclay HDPS (#528)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.82,
+      "reason": "The commit adds a single README link line for a high-dimensional statistics and probability course (Christophe Giraud, Paris-Saclay) with an official page and a YouTube playlist. The evidence supplies only a title, instructor name, and two URLs. It contains no prerequisites, class hours, difficulty",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-04T08:25:04.749Z",
       "sourceId": "full-stack-open",
@@ -1783,18 +1796,6 @@
       "type": "reject",
       "confidence": 0.85,
       "reason": "AI confidence 0.85 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-21T03:15:01.706Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/92655f535e00d9f740a3e08bb525c28849248780",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/92655f535e00d9f740a3e08bb525c28849248780",
-      "entryTitle": "Part 6a: fix contradiction in Zustand selectors example",
-      "mode": "auto",
-      "type": "reject",
-      "confidence": 0.95,
-      "reason": "AI confidence 0.95 is below 0.99",
       "changedFiles": []
     }
   ]
