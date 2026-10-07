@@ -545,8 +545,9 @@
     },
     "hugging-face-course": {
       "initializedAt": "2026-07-29T05:31:16.769Z",
-      "lastProcessedAt": "2026-09-24T07:34:56.866Z",
+      "lastProcessedAt": "2026-10-07T08:36:27.976Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8b893f0ede6c781045692a7f892f25a0c92b4805",
         "tag:github.com,2008:Grit::Commit/92d4fb2c7094858430ce3e45851c12d165e36481",
         "tag:github.com,2008:Grit::Commit/3582dc0d95083b20215697f6abd67da74732cc12",
         "tag:github.com,2008:Grit::Commit/5805d51523d561a82520b301dbc8c5759b212844",
@@ -598,6 +599,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-07T08:36:27.975Z",
+      "sourceId": "hugging-face-course",
+      "entryId": "tag:github.com,2008:Grit::Commit/8b893f0ede6c781045692a7f892f25a0c92b4805",
+      "entryUrl": "https://github.com/huggingface/course/commit/8b893f0ede6c781045692a7f892f25a0c92b4805",
+      "entryTitle": "Bump doc-builder workflow pin (#1327)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "CI maintenance commit: it only bumps doc-builder workflow pins in three GitHub Actions files. No course content, structure, or resource changes are present, and no new course is identified. Update is also not permitted by sourcePolicy (allowedActions: ignore, create; no allowedTargetPaths).",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-06T08:56:46.718Z",
       "sourceId": "cs-video-courses",
@@ -1784,18 +1797,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "The commit only edits an exercise range heading (6.2.-6.6. to 6.2.-6.5.) in one course material file. It carries no new course metadata, resources, or structural change that would alter the existing web-development/fullstackopen entry, so no update is justified.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-21T03:15:13.080Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/25348327e624e91a51673b3808862e156c751212",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/25348327e624e91a51673b3808862e156c751212",
-      "entryTitle": "consistent handling of negative values in sys_read, sys_write",
-      "mode": "auto",
-      "type": "reject",
-      "confidence": 0.85,
-      "reason": "AI confidence 0.85 is below 0.99",
       "changedFiles": []
     }
   ]
