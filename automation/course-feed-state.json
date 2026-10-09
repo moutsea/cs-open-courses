@@ -339,8 +339,9 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-09-30T08:30:26.598Z",
+      "lastProcessedAt": "2026-10-09T08:59:20.955Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/1d695c94ccafdce3f06d6b9dfe3e6f106097693a",
         "tag:github.com,2008:Grit::Commit/80fd81cff24ea9b69b85f8efcd4c2c220eedc2fb",
         "tag:github.com,2008:Grit::Commit/14c03df9d086e2dedcb3c97d651bb3f1d018ceed",
         "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
@@ -599,6 +600,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-09T08:59:20.954Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/1d695c94ccafdce3f06d6b9dfe3e6f106097693a",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/1d695c94ccafdce3f06d6b9dfe3e6f106097693a",
+      "entryTitle": "Fix overflow and horizontal scroll on mobile",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit 'Fix overflow and horizontal scroll on mobile' is a site styling/layout fix with an empty file list in the evidence. No course content, resources, prerequisites, or schedule information changed, so there is nothing evidence-backed to update on programming-introduction/MIT-Missing-Semester.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-07T08:36:27.975Z",
       "sourceId": "hugging-face-course",
@@ -1785,18 +1798,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink short overflow in create() and sys_link()); it carries no course-level information such as syllabus, lab, schedule, or resource changes for operating-systems/MIT6.S081. The evidence also lists no changed files, so there is nothi",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-22T03:06:45.782Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/1bca5d1e3f948db73e3eb6030fc2f2a13039b727",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/1bca5d1e3f948db73e3eb6030fc2f2a13039b727",
-      "entryTitle": "Update exercise range from 6.6 to 6.5",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "The commit only edits an exercise range heading (6.2.-6.6. to 6.2.-6.5.) in one course material file. It carries no new course metadata, resources, or structural change that would alter the existing web-development/fullstackopen entry, so no update is justified.",
       "changedFiles": []
     }
   ]
