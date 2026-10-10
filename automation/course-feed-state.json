@@ -339,9 +339,10 @@
     },
     "mit-missing-semester": {
       "initializedAt": "2026-07-29T05:31:15.398Z",
-      "lastProcessedAt": "2026-10-09T08:59:20.955Z",
+      "lastProcessedAt": "2026-10-10T08:27:42.539Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/1d695c94ccafdce3f06d6b9dfe3e6f106097693a",
+        "tag:github.com,2008:Grit::Commit/3eb173097798c694c6c80bf3cafd9122a1cd53c6",
         "tag:github.com,2008:Grit::Commit/80fd81cff24ea9b69b85f8efcd4c2c220eedc2fb",
         "tag:github.com,2008:Grit::Commit/14c03df9d086e2dedcb3c97d651bb3f1d018ceed",
         "tag:github.com,2008:Grit::Commit/664a33289e294820ab371bb16115d25ff513d67e",
@@ -600,6 +601,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-10T08:27:42.539Z",
+      "sourceId": "mit-missing-semester",
+      "entryId": "tag:github.com,2008:Grit::Commit/3eb173097798c694c6c80bf3cafd9122a1cd53c6",
+      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/3eb173097798c694c6c80bf3cafd9122a1cd53c6",
+      "entryTitle": "Merge branch 'ma1anga/fix/lecture-typos-and-accuracy'",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Merge commit contains only wording fixes in two lecture notes: a grammar correction in _2020/version-control.md and a rephrasing in _2026/shipping-code.md that references PEP 440. No change to course structure, syllabus, hours, prerequisites, or available resources, so there is nothing evidence-back",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-09T08:59:20.954Z",
       "sourceId": "mit-missing-semester",
@@ -1786,18 +1799,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "The commit only bumps an in-text ECMAScript version reference (ES2024/ES15 to ES2025/ES16) in part1b of the course material. It changes no course-level facts such as title, prerequisites, hours, difficulty, or resources, and supplies no new course URLs, so no update to web-development/fullstackopen",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-22T03:06:50.976Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/fa4789f94cce77c9a07c20c7d00b3f3aa4368b1d",
-      "entryTitle": "refuse nlink overflow in create() and sys_link()",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Upstream xv6-riscv commit is an internal kernel bug fix (guarding nlink short overflow in create() and sys_link()); it carries no course-level information such as syllabus, lab, schedule, or resource changes for operating-systems/MIT6.S081. The evidence also lists no changed files, so there is nothi",
       "changedFiles": []
     }
   ]
