@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-10-06T08:56:46.718Z",
+      "lastProcessedAt": "2026-10-13T09:22:36.245Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/4c52e3d6b0ec1d12158c4d3c1ddfb7a44d73a98c",
         "tag:github.com,2008:Grit::Commit/ade811af1a2f8fb4d4932eecf7bd66d0dc3efc78",
         "tag:github.com,2008:Grit::Commit/611afdeab0389c4be33abcd69de1aa7efb417ed7",
         "tag:github.com,2008:Grit::Commit/2a86c7b66078222277c02e4540b9c4c6bf9280b8",
@@ -250,8 +251,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-09-30T08:30:16.307Z",
+      "lastProcessedAt": "2026-10-13T09:22:42.810Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
         "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
         "tag:github.com,2008:Grit::Commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
         "tag:github.com,2008:Grit::Commit/bd77f8e71cde0bcbf8c1f3dbc8716ac959064568",
@@ -602,6 +604,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-13T09:22:42.809Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
+      "entryTitle": "kernel: add volatile to PLIC MMIO register access (#563)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream xv6-riscv commit is a narrow kernel code change (adding volatile to PLIC MMIO register access) with no file list and no course-facing material: no new labs, syllabus, schedule, or published resources. Nothing in the evidence supports editing the summary or resources of operating-systems/MIT",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-13T09:22:36.245Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/4c52e3d6b0ec1d12158c4d3c1ddfb7a44d73a98c",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/4c52e3d6b0ec1d12158c4d3c1ddfb7a44d73a98c",
+      "entryTitle": "Add UC Berkeley CS 188 (SP26) (#530)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit only bumps the UC Berkeley CS 188 link from the Spring 2025 to the Spring 2026 offering in a link list. The course already exists in the index at artificial-intelligence/CS188, so no create is warranted, and sourcePolicy.allowedTargetPaths is empty, so no update target is permitted. The p",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-11T08:46:05.991Z",
       "sourceId": "mit-missing-semester",
@@ -1776,30 +1802,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "Upstream xv6-riscv commit adds a commented-out regression test for nlink overflow. It is an internal test-suite change with no file diff supplied and no effect on MIT 6.S081 course facts, resources, or descriptions, so no update to operating-systems/MIT6.S081 is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-24T03:15:35.970Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/c91376a5079796aee5187acc7a6816df3f1ff9ae",
-      "entryTitle": "Merge pull request #4318 from LeniPe/patch-1",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit only replaces two outdated MongoDB manual links with their current equivalents in the Part 3c course material. No change to course scope, structure, prerequisites, hours, or offered content, and the touched URLs are third-party documentation references rather than course resources worth i",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-23T03:14:00.599Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/95ff74205e9ce4e5f9a90cdfc7284166bc068f14",
-      "entryTitle": "more plausible machine code for release(); thank you nickolai",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit only adjusts illustrative machine code for release(); no file list is supplied and nothing in the evidence changes course structure, resources, or descriptions for operating-systems/MIT6.S081.",
       "changedFiles": []
     }
   ]
