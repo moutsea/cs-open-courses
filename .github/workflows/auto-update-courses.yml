@@ -58,14 +58,15 @@ jobs:
         run: npm run build
 
       - name: Commit approved updates
+        if: ${{ !inputs.shadow_mode }}
         run: |
-          if git diff --quiet; then
+          git add automation/course-feed-state.json course-content src/data/generated
+          if git diff --cached --quiet; then
             echo "No approved course updates"
             exit 0
           fi
 
           git config user.name "cs-courses-update-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add automation/course-feed-state.json course-content
           git commit -m "chore(courses): apply AI-reviewed feed updates"
           git push origin HEAD:${GITHUB_REF_NAME}
