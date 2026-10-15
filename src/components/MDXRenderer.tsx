@@ -6,6 +6,7 @@ import PageLayout from './PageLayout';
 import { getChineseName } from '@/lib/categoryMapping';
 import { localizedPath } from '@/lib/pathUtils';
 import CourseLearningActions from '@/components/CourseLearningActions';
+import CoursePromotions from '@/components/CoursePromotions';
 
 interface MDXRendererProps {
   content: string;
@@ -82,7 +83,7 @@ export default function MDXRenderer({
           <div className="absolute -bottom-10 left-10 h-80 w-80 rounded-full bg-cyan-400/20 blur-[180px]"></div>
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-24 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
           <div className="space-y-8">
             <Link
               href={backToCoursesHref}
@@ -146,6 +147,8 @@ export default function MDXRenderer({
                   locale
                 }}
               />
+
+              <CoursePromotions key={locale} locale={locale} />
             </div>
           </div>
         </div>

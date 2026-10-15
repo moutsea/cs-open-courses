@@ -3,6 +3,7 @@ import path from 'path';
 import { parseMarkdownFile } from './courseParser';
 import { Category, Subcategory, Course } from './courseParser';
 import { getEnglishSlug } from './categoryMapping';
+import { truncateText } from './textUtils';
 
 export async function getCategoriesForLocale(locale: string): Promise<Category[]> {
   const docsPath = path.join(process.cwd(), 'course-content');
@@ -52,7 +53,7 @@ export async function getCategoriesForLocale(locale: string): Promise<Category[]
               const course: Course = {
                 id: `${category.slug}-${subcategory.slug}-${courseFile.replace('.md', '')}`,
                 title: courseData.title,
-                description: courseData.content.substring(0, 200) + '...',
+                description: truncateText(courseData.content, 200),
                 path: path.relative(docsPath, coursePath),
                 slug: courseFile.replace('.md', ''),
                 content: courseData.content,
@@ -81,7 +82,7 @@ export async function getCategoriesForLocale(locale: string): Promise<Category[]
           const course: Course = {
             id: `${category.slug}-${item.replace('.md', '')}`,
             title: courseData.title,
-            description: courseData.content.substring(0, 200) + '...',
+            description: truncateText(courseData.content, 200),
             path: path.relative(docsPath, coursePath),
             slug: item.replace('.md', ''),
             content: courseData.content,

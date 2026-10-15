@@ -55,9 +55,10 @@ const SOCIAL_LINKS = [
 
 const OTHER_PROJECTS = [
   { name: 'Code By AI', href: 'https://www.codebyai.net', localized: true },
-  { name: 'Claude Code Ide', href: 'https://www.claudeide.net', localized: true },
+  { name: 'Claude Code Ide', href: 'https://aiinide.com', localized: true },
   { name: 'Codex Lab', href: 'https://www.codeilab.com', localized: true },
-  { name: 'KeepAsk', href: 'https://keepask.net', localized: false }
+  { name: 'KimiSeek', href: 'https://kimiseek.app', localized: false },
+  { name: 'WeChatAI', href: 'https://wechatai.app', localized: false }
 ]
 
 const COMPANY_LINKS = [

@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { getEnglishSlug } from './categoryMapping';
+import { truncateText } from './textUtils';
 
 export interface Course {
   id: string;
@@ -177,9 +178,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
         .trim();
       
       // Limit to 150 characters for card display
-      if (summary.length > 150) {
-        summary = summary.substring(0, 150) + '...';
-      }
+      summary = truncateText(summary, 150);
       
       // Store in appropriate summary field based on language
       if (isEnglishFile) {
@@ -266,14 +265,14 @@ export async function buildCourseStructure(): Promise<Category[]> {
             const course: Course = {
               id: `${category.slug}-${subcategory.slug}-${courseFile.replace('.md', '')}`,
               title,
-              description: content.substring(0, 200) + '...',
+              description: truncateText(content, 200),
               path: path.relative(docsPath, coursePath),
               slug: courseFile.replace('.md', ''),
               content,
               contentEn,
               hasEnglishVersion,
-              summary: summary || content.substring(0, 150) + '...',
-              summaryEn: summaryEn || content.substring(0, 150) + '...',
+              summary: summary || truncateText(content, 150),
+              summaryEn: summaryEn || truncateText(content, 150),
               programmingLanguage,
               difficulty,
               duration
@@ -317,14 +316,14 @@ export async function buildCourseStructure(): Promise<Category[]> {
         const course: Course = {
           id: `${category.slug}-${item.replace('.md', '')}`,
           title,
-          description: content.substring(0, 200) + '...',
+          description: truncateText(content, 200),
           path: path.relative(docsPath, coursePath),
           slug: item.replace('.md', ''),
           content,
           contentEn,
           hasEnglishVersion,
-          summary: summary || content.substring(0, 150) + '...',
-          summaryEn: summaryEn || content.substring(0, 150) + '...',
+          summary: summary || truncateText(content, 150),
+          summaryEn: summaryEn || truncateText(content, 150),
           programmingLanguage,
           difficulty,
           duration
@@ -395,7 +394,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
             return {
               id: `${categorySlug}-${courseSlug}`,
               title: courseData.title,
-              description: courseData.content.substring(0, 200) + '...',
+              description: truncateText(courseData.content, 200),
               path: path.relative(docsPath, filePath),
               slug: courseSlug,
               content: courseData.content,
@@ -456,7 +455,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
                 return {
                   id: `${categorySlug}-${subcategorySlug}-${courseSlug}`,
                   title: courseData.title,
-                  description: courseData.content.substring(0, 200) + '...',
+                  description: truncateText(courseData.content, 200),
                   path: path.relative(docsPath, filePath),
                   slug: courseSlug,
                   content: courseData.content,
