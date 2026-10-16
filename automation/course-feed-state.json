@@ -158,8 +158,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-04T08:25:04.750Z",
+      "lastProcessedAt": "2026-10-16T07:06:50.618Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
         "tag:github.com,2008:Grit::Commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
@@ -252,8 +253,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-10-13T09:22:42.810Z",
+      "lastProcessedAt": "2026-10-16T07:06:57.434Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/f780d7850765d74cbdcd1fff4b822d8829f7c9bd",
         "tag:github.com,2008:Grit::Commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
         "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
         "tag:github.com,2008:Grit::Commit/ddc8d99008939aeb2be75d83249d3c833f2b807a",
@@ -605,6 +607,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-16T07:06:57.434Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/f780d7850765d74cbdcd1fff4b822d8829f7c9bd",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/f780d7850765d74cbdcd1fff4b822d8829f7c9bd",
+      "entryTitle": "build with -fno-delete-null-pointer-checks",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit only adds a compiler flag (-fno-delete-null-pointer-checks) to the build; the file list in the evidence is empty and nothing here changes course metadata, resources, or materials for operating-systems/MIT6.S081. No evidence supports an update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-16T07:06:50.617Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
+      "entryTitle": "mluukkai -> mattiluukkainen",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only replaces the instructor's GitHub handle (mluukkai -> mattiluukkainen) in exercise-submission instructions across language variants of parts 0, 1, and 10. No change to course content, structure, prerequisites, hours, or resource URLs, so nothing in the existing web-development/fullstackop",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-15T07:23:14.242Z",
       "sourceId": "cs-video-courses",
@@ -1779,30 +1805,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Minor bug fix in BusTub project codebase (Robin Hood hashing implementation). Does not represent course metadata, structure, or resource changes that warrant updating the CMU 15-445 entry.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-25T03:11:48.640Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/a12cd83d7baabf3d211a349b6f5d68ec33b4175f",
-      "entryTitle": "sys_link: refuse to link into an unlinked directory",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Code commit to xv6-riscv teaching OS (bug fix in sys_link race condition). This is routine codebase maintenance, not a course structure or resource change. No course metadata, syllabus, or student-facing resources affected.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-25T03:11:37.168Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/540b55eb0d3fe5d78258b5d92a83472fd3eec005",
-      "entryTitle": "Merge pull request #4322 from admyazeed/patch-1",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Minor punctuation fix in prerequisites section - added missing period. No substantive content, structure, or resource changes that would affect course metadata.",
       "changedFiles": []
     }
   ]
