@@ -158,8 +158,9 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-16T07:06:50.618Z",
+      "lastProcessedAt": "2026-10-18T07:12:11.839Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/9c24482abcf387699d0f36bcdff5811dbe2ce5a7",
         "tag:github.com,2008:Grit::Commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
@@ -607,6 +608,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-18T07:12:11.839Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/9c24482abcf387699d0f36bcdff5811dbe2ce5a7",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/9c24482abcf387699d0f36bcdff5811dbe2ce5a7",
+      "entryTitle": "Merge pull request #4340 from SRangwala342/patch-2",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit is a one-line internal anchor link fix in the Full Stack Open part5d exercise text (changing /en/part5/end_to_end_testing_playwright to /en/part5/end_to_end_testing). It carries no new course facts, resources, or structural changes that would justify updating the existing web-development/",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-16T07:06:57.434Z",
       "sourceId": "mit-xv6-riscv",
@@ -1793,18 +1806,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Minor documentation update recommending Firefox Network tool for XSS lab. No evidence of course metadata changes, new resources, or substantial curriculum modifications.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-25T03:11:59.403Z",
-      "sourceId": "cmu-bustub",
-      "entryId": "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
-      "entryUrl": "https://github.com/cmu-db/bustub/commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
-      "entryTitle": "fix: submit Robin Hood hashing for project 0 (#891)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Minor bug fix in BusTub project codebase (Robin Hood hashing implementation). Does not represent course metadata, structure, or resource changes that warrant updating the CMU 15-445 entry.",
       "changedFiles": []
     }
   ]
