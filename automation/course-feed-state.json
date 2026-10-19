@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-10-15T07:23:14.243Z",
+      "lastProcessedAt": "2026-10-19T07:43:54.140Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/88c759346a7046aac11e95910cc8c05c8520d028",
+        "tag:github.com,2008:Grit::Commit/6b753e124e005d0c5ecc06b90ffcf49f2bdf4950",
         "tag:github.com,2008:Grit::Commit/c4ac0a610f28675fee7a229d25cd241a558754c0",
         "tag:github.com,2008:Grit::Commit/4c52e3d6b0ec1d12158c4d3c1ddfb7a44d73a98c",
         "tag:github.com,2008:Grit::Commit/ade811af1a2f8fb4d4932eecf7bd66d0dc3efc78",
@@ -158,9 +160,10 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-18T07:12:11.839Z",
+      "lastProcessedAt": "2026-10-19T07:44:01.213Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9c24482abcf387699d0f36bcdff5811dbe2ce5a7",
+        "tag:github.com,2008:Grit::Commit/d8cf29d91e67786c797d6297faa680b177a73040",
         "tag:github.com,2008:Grit::Commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
@@ -384,8 +387,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-09-28T08:40:26.171Z",
+      "lastProcessedAt": "2026-10-19T07:44:10.335Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/256acd251b142a6f75cd5743b7af34d2767c0df8",
         "tag:github.com,2008:Grit::Commit/715538ae832e7bcd0726eb8fa7bfbb1519904997",
         "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
         "tag:github.com,2008:Grit::Commit/3e9884efdd42aab461e2d4f2cddd9d58ee5e382b",
@@ -608,6 +612,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-19T07:44:10.335Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/256acd251b142a6f75cd5743b7af34d2767c0df8",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/256acd251b142a6f75cd5743b7af34d2767c0df8",
+      "entryTitle": "P3 F26 (#898)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Commit only adds an internal Project 3 design-doc template to the BusTub repository. It contains no course metadata, schedule, prerequisite, or resource information that would change the CMU 15-445 entry, and the only available URL is the commit itself, which is not a durable course resource.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-19T07:44:01.212Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/d8cf29d91e67786c797d6297faa680b177a73040",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/d8cf29d91e67786c797d6297faa680b177a73040",
+      "entryTitle": "Merge pull request #4338 from CCode02/patch-1",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit is a single-line Spanish translation wording fix in exercise 5.10 of part 5b (changing 'enumerar' to 'ordenar'). It adds no new course content, resources, or structural changes relevant to the existing web-development/fullstackopen entry, so no update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-19T07:43:54.140Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/88c759346a7046aac11e95910cc8c05c8520d028",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/88c759346a7046aac11e95910cc8c05c8520d028",
+      "entryTitle": "Add Stanford CS221 (AU25) (#533)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.82,
+      "reason": "The commit only swaps a CS221 link line in a README, pointing to the Stanford CS221 Autumn 2025 site plus slides and recording playlists. No allowedTargetPaths were supplied, so no update is permitted, and there is no existing 'artificial-intelligence/CS221' entry in the index to update. A create wo",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-19T07:43:44.280Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/6b753e124e005d0c5ecc06b90ffcf49f2bdf4950",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/6b753e124e005d0c5ecc06b90ffcf49f2bdf4950",
+      "entryTitle": "Add UIUC ECE/CS 434 (SP24) (#532)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Commit only refreshes a README link to the Spring 2024 edition of a UIUC course page. sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the evidence lacks the course facts required for a create (no offering department confirmation in the patch text, no prerequisites, class hou",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-18T07:12:11.839Z",
       "sourceId": "full-stack-open",
@@ -1758,54 +1810,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "Upstream xv6-riscv commit titled 'deterministic builds' with no changed files listed in the evidence. There is no course-facing content, resource, or curriculum change to record, so no update to operating-systems/MIT6.S081 is supported by the evidence.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-26T03:16:58.808Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/e6c46634a446e6d4a77045d721d0e072068d3aad",
-      "entryTitle": "Merge pull request #4325 from adriamarcet/fix/part-6-improve-a11y-inf…",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Merge commit for a part 6 accessibility tweak to an info banner; no file diffs supplied and no change to course structure, content, prerequisites, or resources. Evidence is insufficient to justify an update to web-development/fullstackopen.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-26T03:16:53.650Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/f6a8313636bbca266fafd8909d6005e1f40dad8d",
-      "entryTitle": "Add UC Berkeley CS 285 (SP26) (#509)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "The commit only swaps a YouTube playlist link for the official RAIL course page and adds a Spring 2026 playlist for UC Berkeley CS 285, which already exists in the index at deep-learning/CS285. sourcePolicy.allowedTargetPaths is empty, so no update target is permitted, and a create would duplicate a",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-26T03:16:46.212Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/d84c8544767379d01bb7b9cb1ad06350fccc4676",
-      "entryTitle": "Add FSU EML 4930 / 5930 (SP25, SP23) (#508)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Evidence is a single README line adding YouTube playlists for FSU EML 4930/5930 Applied Optimal Control. sourcePolicy.allowedTargetPaths is empty, so no update is permitted. A create is not supportable: the only URLs are video playlists with no official or primary course page, the subject is a mecha",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-25T03:12:07.638Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/9d18d20b65e43eff5bd7bb7f21362f7787f6aea6",
-      "entryTitle": "Merge pull request #188 from EMLionHeart/docs/use-firefox-network-tool",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Minor documentation update recommending Firefox Network tool for XSS lab. No evidence of course metadata changes, new resources, or substantial curriculum modifications.",
       "changedFiles": []
     }
   ]
