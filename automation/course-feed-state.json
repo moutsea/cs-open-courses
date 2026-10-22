@@ -160,12 +160,13 @@
     },
     "full-stack-open": {
       "initializedAt": "2026-07-29T05:31:14.743Z",
-      "lastProcessedAt": "2026-10-20T07:29:33.282Z",
+      "lastProcessedAt": "2026-10-22T07:35:52.380Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/9c24482abcf387699d0f36bcdff5811dbe2ce5a7",
         "tag:github.com,2008:Grit::Commit/d8cf29d91e67786c797d6297faa680b177a73040",
         "tag:github.com,2008:Grit::Commit/97af49ddb32ed2542976cd93fa7a5d0396f892c9",
         "tag:github.com,2008:Grit::Commit/73ae579470c60dec347bf285e2a565c7eb8ae52f",
+        "tag:github.com,2008:Grit::Commit/9f604b458965dac7cd3545474d583921b1cf49a1",
         "tag:github.com,2008:Grit::Commit/38da1b8ed88e250c22837f114e6390d8fdf131ae",
         "tag:github.com,2008:Grit::Commit/a37340100816844500511ea287615a015d86d004",
         "tag:github.com,2008:Grit::Commit/68e9ce84b46f19835e5b68be8c899abdb8b7cea8",
@@ -516,7 +517,9 @@
     },
     "cmu-dlsys": {
       "initializedAt": "2026-07-29T05:31:16.441Z",
+      "lastProcessedAt": "2026-10-22T07:36:00.235Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/5bdfa992c25189e2188042b85f9013748831ded2",
         "tag:github.com,2008:Grit::Commit/f97fd23fc363fbe8b0e870fd93b699098a9b020e",
         "tag:github.com,2008:Grit::Commit/1548c9c4cbe6cabe4c8e0d02116f7d79278cfbf2",
         "tag:github.com,2008:Grit::Commit/d10636b7606624d247e720fd633d62b8b5218fc2",
@@ -613,6 +616,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-22T07:36:00.235Z",
+      "sourceId": "cmu-dlsys",
+      "entryId": "tag:github.com,2008:Grit::Commit/5bdfa992c25189e2188042b85f9013748831ded2",
+      "entryUrl": "https://github.com/dlsyscourse/public_notebooks/commit/5bdfa992c25189e2188042b85f9013748831ded2",
+      "entryTitle": "Added conv.py script.",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "Feed event is a single upstream commit ('Added conv.py script.') in the course's public notebooks repo with an empty file list and no course-level information. There is no evidence of changed course metadata, syllabus, or a durable new resource that would justify updating machine-learning-systems/CM",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-22T07:35:52.380Z",
+      "sourceId": "full-stack-open",
+      "entryId": "tag:github.com,2008:Grit::Commit/9f604b458965dac7cd3545474d583921b1cf49a1",
+      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/9f604b458965dac7cd3545474d583921b1cf49a1",
+      "entryTitle": "Update part5b.md",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit is a single-word wording fix in the Spanish translation of Full Stack Open part 5b (changing 'enumerar' to 'ordenar' in exercise 5.10). It changes no course content, structure, resources, or metadata, so there is nothing substantive to reflect in the existing web-development/fullstackopen",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-20T07:29:33.282Z",
       "sourceId": "full-stack-open",
@@ -1787,30 +1814,6 @@
       "type": "ignore",
       "confidence": 0.91,
       "reason": "Evidence is a single README link addition for Stanford AA 203 (Optimal and Learning-Based Control). It supplies only a title, instructors, and two URLs; no prerequisites, class hours, difficulty, programming languages, or description are present, so a create action would require inventing course fac",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-26T03:17:24.638Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
-      "entryTitle": "Merge branch 'master' into development",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Merge commit touches only internal SEED Labs maintenance docs: new emulator/shellcode README notes, ARM porting status tables, and VM setup instructions. No change to course structure, content coverage, or citable resource URLs for system-security/SEEDLabs, so no evidence-backed update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-26T03:17:16.688Z",
-      "sourceId": "cmu-bustub",
-      "entryId": "tag:github.com,2008:Grit::Commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
-      "entryUrl": "https://github.com/cmu-db/bustub/commit/0e7a6af7ab688765581c0cd53f87c1c1fbe0c554",
-      "entryTitle": "Add Robin Hood hashing Project 0 scaffolding (#890)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.85,
-      "reason": "Evidence is a single upstream BusTub repository commit adding Robin Hood hashing Project 0 scaffolding, with an empty file list and no course-page, syllabus, or official CMU 15-445 material confirming a change to the published course content. The only verbatim URL available is the commit link, which",
       "changedFiles": []
     }
   ]
