@@ -389,8 +389,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-10-19T07:44:10.335Z",
+      "lastProcessedAt": "2026-10-23T07:27:05.552Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/aa1171c0b6ab5af2a5963b7dff557071252b9c2e",
         "tag:github.com,2008:Grit::Commit/256acd251b142a6f75cd5743b7af34d2767c0df8",
         "tag:github.com,2008:Grit::Commit/715538ae832e7bcd0726eb8fa7bfbb1519904997",
         "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
@@ -616,6 +617,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-23T07:27:05.552Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/aa1171c0b6ab5af2a5963b7dff557071252b9c2e",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/aa1171c0b6ab5af2a5963b7dff557071252b9c2e",
+      "entryTitle": "Fix TombstoneBorrowTest else branch deleting the wrong keys (#899)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream BusTub commit only fixes key selection in the TombstoneBorrowTest else branch of an internal unit test. No change to CMU 15-445 course content, resources, prerequisites, or hours, and the evidence provides no new course-facing URLs, so no update to database-systems/15445 is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-22T07:36:00.235Z",
       "sourceId": "cmu-dlsys",
@@ -1802,18 +1815,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Commit only adds focus styles and an ARIA label to the site's InfoBanner UI component; no file list or diff is supplied and no course content, curriculum, or resource change is evidenced for web-development/fullstackopen.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-27T12:45:53.012Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/205b621ebf2e318c70f1a5fc901c3ead3151878a",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/205b621ebf2e318c70f1a5fc901c3ead3151878a",
-      "entryTitle": "Add Stanford AA 203 (SP26) (#510)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Evidence is a single README link addition for Stanford AA 203 (Optimal and Learning-Based Control). It supplies only a title, instructors, and two URLs; no prerequisites, class hours, difficulty, programming languages, or description are present, so a create action would require inventing course fac",
       "changedFiles": []
     }
   ]
