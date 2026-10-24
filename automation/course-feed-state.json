@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-10-19T07:43:54.140Z",
+      "lastProcessedAt": "2026-10-24T07:15:41.054Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/20b45c3e9f89eb855aca5c0d61a9d40f07fc5a19",
         "tag:github.com,2008:Grit::Commit/88c759346a7046aac11e95910cc8c05c8520d028",
         "tag:github.com,2008:Grit::Commit/6b753e124e005d0c5ecc06b90ffcf49f2bdf4950",
         "tag:github.com,2008:Grit::Commit/c4ac0a610f28675fee7a229d25cd241a558754c0",
@@ -617,6 +618,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-24T07:15:41.053Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/20b45c3e9f89eb855aca5c0d61a9d40f07fc5a19",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/20b45c3e9f89eb855aca5c0d61a9d40f07fc5a19",
+      "entryTitle": "Add Marburg CS 627 (#534)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.78,
+      "reason": "The commit adds a single README link for 'CS 627 - Advanced Algorithms, Marburg University' (official page plus a YouTube playlist). That is the only evidence available: it carries no prerequisites, programming languages, class hours, difficulty, or description, so a create action could not be fille",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-23T07:27:05.552Z",
       "sourceId": "cmu-bustub",
@@ -1803,18 +1816,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit 'fix compilation with clang' is a toolchain build fix with no file list in the evidence and no course-facing content change (no new labs, materials, or URLs). Nothing verifiable to add to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-27T12:45:58.833Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/f41eee56b6a0c0e2df498ddbf30324816bcbf2cb",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/f41eee56b6a0c0e2df498ddbf30324816bcbf2cb",
-      "entryTitle": "Improve accessibility of InfoBanner component by adding focus styles …",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Commit only adds focus styles and an ARIA label to the site's InfoBanner UI component; no file list or diff is supplied and no course content, curriculum, or resource change is evidenced for web-development/fullstackopen.",
       "changedFiles": []
     }
   ]
