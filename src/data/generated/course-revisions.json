@@ -76,7 +76,8 @@
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
   "en/compilers/USTC-Compilers.md": {
-    "hash": "ff2bee3ac67fc7455bd6fa2b4b25a69462a3a1c4a6dc12237023922b97a7ae32"
+    "hash": "ff2bee3ac67fc7455bd6fa2b4b25a69462a3a1c4a6dc12237023922b97a7ae32",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/computer-architecture/CA.md": {
     "hash": "32ba0b106bcbddbfb04a013e80db685d1b3b80d4e99c265ebde7bf831883afa1",
@@ -179,7 +180,8 @@
     "lastModified": "2026-07-28T09:20:55.000Z"
   },
   "en/database-systems/15799.md": {
-    "hash": "976253718b8ac2db456749838a3e8089fbd403f0225de8cb1313c51e0922d6c9"
+    "hash": "976253718b8ac2db456749838a3e8089fbd403f0225de8cb1313c51e0922d6c9",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/database-systems/CS122.md": {
     "hash": "27e19c3d08ebd3b2fbcb063b96499841680a662f8a735d51259d6dbf643a8559",
@@ -226,7 +228,8 @@
     "lastModified": "2025-09-11T23:06:07.000Z"
   },
   "en/deep-learning/CS230.md": {
-    "hash": "55c14f95b15589dde006588ebe696060e69b29281f39df5d8474d0f83b36293e"
+    "hash": "55c14f95b15589dde006588ebe696060e69b29281f39df5d8474d0f83b36293e",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/deep-learning/CS231.md": {
     "hash": "ce0201eeb84d24f5e209fe3004bee7e7866398550065ec52bfc8585d132f7c36",
@@ -285,7 +288,8 @@
     "lastModified": "2025-09-11T23:06:07.000Z"
   },
   "en/essential-tools/Scoop.md": {
-    "hash": "0d7a40171e03b8a45698419e7dea2657b6cc16f6a80c0612c864304421c5ee6d"
+    "hash": "0d7a40171e03b8a45698419e7dea2657b6cc16f6a80c0612c864304421c5ee6d",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/essential-tools/Vim.md": {
     "hash": "37611eeec436604c22789d399953ae1a6e665dc22753c1a99c9fed482fc31a83",
@@ -340,7 +344,8 @@
     "lastModified": "2025-09-11T23:06:07.000Z"
   },
   "en/machine-learning-systems/MLC.md": {
-    "hash": "be204e5d74a88f5c41909c5a2eb02bc2460f8941f1b737c524cc34f76ee4a477"
+    "hash": "be204e5d74a88f5c41909c5a2eb02bc2460f8941f1b737c524cc34f76ee4a477",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/mathematics-basics/MITLA.md": {
     "hash": "4977e48aa203dbeda8186f3d07cf72144a22713a8b522afd685bbc139d02d717",
@@ -367,7 +372,8 @@
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
   "en/operating-systems/MIT6.S081.md": {
-    "hash": "7dcbf6bd4cf9d571f07737db981f98b5c8c6c1d2545796455128b85941e037b4"
+    "hash": "7dcbf6bd4cf9d571f07737db981f98b5c8c6c1d2545796455128b85941e037b4",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/operating-systems/NJUOS.md": {
     "hash": "05687d2cdba8ac525420aefab5a3c4810bff6692bd0bc10462559db44582e8cd",
@@ -430,7 +436,8 @@
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
   "en/programming-introduction/python/CS61A.md": {
-    "hash": "60bc8d6345db7cac6ce4dfab362f5bf243e4bbf5ba5c7df9ab504a50e4f1b72c"
+    "hash": "60bc8d6345db7cac6ce4dfab362f5bf243e4bbf5ba5c7df9ab504a50e4f1b72c",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/programming-introduction/python/MIT6.100L.md": {
     "hash": "2bf8a373244a9558a376d4664bcd5b1c1ed7a772487182f3b83589d5bc0e2ffa",
@@ -469,7 +476,8 @@
     "lastModified": "2025-09-11T23:06:07.000Z"
   },
   "en/software-engineering/6031.md": {
-    "hash": "a553f675f5596135d4c2d182eec5f491bcf80854deefdaaa823b81d615ee1fd0"
+    "hash": "a553f675f5596135d4c2d182eec5f491bcf80854deefdaaa823b81d615ee1fd0",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "en/software-engineering/CS169.md": {
     "hash": "587af7db677407b9f9d2644bef1976f58da92e1539090ea7ec7904f284fe1415",
@@ -700,7 +708,8 @@
     "lastModified": "2026-07-28T09:20:55.000Z"
   },
   "zh/database-systems/15799.md": {
-    "hash": "c605791dbaf2be47f3ab8aa6bed1da7827154177e76e91bee282309ed98b217b"
+    "hash": "c605791dbaf2be47f3ab8aa6bed1da7827154177e76e91bee282309ed98b217b",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/database-systems/CS122.md": {
     "hash": "5a8f670805840a5792f1d42cc0830a3b4d5dbaab05e5e5300cf6c12c4986ce7f",
@@ -807,7 +816,8 @@
     "lastModified": "2025-09-11T17:44:04.000Z"
   },
   "zh/essential-tools/Scoop.md": {
-    "hash": "3c6f36b106dcd8094224a1d1fe237b11a105d7cd009c9afe5bafcf19b87afa81"
+    "hash": "3c6f36b106dcd8094224a1d1fe237b11a105d7cd009c9afe5bafcf19b87afa81",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/essential-tools/Vim.md": {
     "hash": "f3c8fd4d24594a69abb8ef833d20bfc0a57855b7f29736110de9df97976ae824",
@@ -850,7 +860,8 @@
     "lastModified": "2026-07-28T09:20:55.000Z"
   },
   "zh/machine-learning-systems/CMU10-414.md": {
-    "hash": "473e2ed22a33a3a738b5e27b2144bc9af91cd1554f2a0174393cba60245bdfa5"
+    "hash": "473e2ed22a33a3a738b5e27b2144bc9af91cd1554f2a0174393cba60245bdfa5",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/machine-learning-systems/CMU15-442.md": {
     "hash": "bf9d89501edcd85ebe1ee2df2e2b7a8c60e41aa5400aabacec7ec257dee1de2d",
@@ -861,7 +872,8 @@
     "lastModified": "2025-09-11T17:44:04.000Z"
   },
   "zh/machine-learning-systems/MLC.md": {
-    "hash": "149856a83f29e2000af0b58f082f41834c244e20810d7725dea5448221e5498a"
+    "hash": "149856a83f29e2000af0b58f082f41834c244e20810d7725dea5448221e5498a",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/mathematics-basics/MITLA.md": {
     "hash": "a42be537977cb780703123298280e18aa01cd28d6d35508472f9be752fec7f06",
@@ -888,7 +900,8 @@
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
   "zh/operating-systems/MIT6.S081.md": {
-    "hash": "343de6e64439d9450f06b10b1011e8c8e5fbdc0adf0573282f34b6fae95de8ff"
+    "hash": "343de6e64439d9450f06b10b1011e8c8e5fbdc0adf0573282f34b6fae95de8ff",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/operating-systems/NJUOS.md": {
     "hash": "4db5a9adcd9e18b3cfb313133de5bfec10dbc06fddb824fad73876fe0253e69d",
@@ -951,7 +964,8 @@
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
   "zh/programming-introduction/python/CS61A.md": {
-    "hash": "f616b64f46e1e5f0f00bb8a0c36fe2ca490f941064cf50d65cfc60da8f20a7af"
+    "hash": "f616b64f46e1e5f0f00bb8a0c36fe2ca490f941064cf50d65cfc60da8f20a7af",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/programming-introduction/python/MIT6.100L.md": {
     "hash": "df9ecd37c9fbd41592ea5582fdbd4459bbb74747da585cfc5b1300deaabb4a49",
@@ -990,7 +1004,8 @@
     "lastModified": "2025-09-11T17:44:04.000Z"
   },
   "zh/software-engineering/6031.md": {
-    "hash": "617f394d2ed4a102ecf21bb6d7238c2264b0184233fe3ddee28754fe2f8f33d0"
+    "hash": "617f394d2ed4a102ecf21bb6d7238c2264b0184233fe3ddee28754fe2f8f33d0",
+    "lastModified": "2026-10-25T01:53:20.000Z"
   },
   "zh/software-engineering/CS169.md": {
     "hash": "d9e2a86a89132f83ccdd386f7600dec9eec9177ea34c53aeb6f8d97124cd3ad5",
