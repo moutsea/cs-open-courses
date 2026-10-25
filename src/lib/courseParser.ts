@@ -1,7 +1,10 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { getEnglishSlug } from './categoryMapping';
+import { toPosixPath } from './pathUtils';
 import { truncateText } from './textUtils';
+import { isStudyHoursLabel, totalStudyHours } from './courseStudyHours';
+import { courseIntroduction, courseListItemText, courseMarkdownSections } from './courseMarkdown';
 
 export interface Course {
   id: string;
@@ -12,13 +15,21 @@ export interface Course {
   content: string;
   contentEn?: string;
   hasEnglishVersion: boolean;
+  /**
+   * 中文版是否存在。单语课程（只有英文或只有中文）必须靠它区分，
+   * 不能由 `hasEnglishVersion` 反推——否则英文页会宣称自己也有中文版。
+   */
+  hasChineseVersion?: boolean;
   summary?: string;
   summaryEn?: string;
   university?: string;
   programmingLanguage?: string;
   difficulty?: string;
   duration?: string | { value: number | null; originalText: string };
+  /** 目录第一段（分类 slug）。结构化数据的 `about` 与面包屑都用它。 */
   categorySlug?: string;
+  /** 目录第二段（子分类 slug），只有三级目录的课程才有。 */
+  subcategorySlug?: string;
 }
 
 export interface Subcategory {
@@ -66,119 +77,55 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
     // Determine language from file path
     const isEnglishFile = locale === 'en' || filePath.includes('/en/') || filePath.includes('.en.md');
     
-    const introSectionIndex = lines.findIndex(line => {
-      const heading = line.replace(/^#+\s*/, '').trim().toLowerCase();
-      return line.includes('课程简介') || line.includes('Course Introduction') || line.includes('课程介绍') ||
-        line.includes('Course Overview') || line.includes('Descriptions') || line.includes('Description') ||
-        line.includes('简介') || heading === 'introduction';
-    });
-    
-    if (introSectionIndex !== -1) {
-      // Look for the actual description text after the metadata
-      let descriptionStartIndex = introSectionIndex + 1;
-      
-      // Extract metadata from lines starting with -
-      for (let i = introSectionIndex + 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!/^[-*]\s+/.test(line) && line !== '') break;
-        if (line === '') continue; // Skip empty lines
-
-        const metadataParts = line.replace(/^[-*]\s*/, '').replace(/\*\*/g, '').split(/[:：]/);
-        const metadataLabel = metadataParts[0].trim().toLowerCase();
+    const introSection = courseMarkdownSections(content).find(section => section.kind === 'meta');
+    if (introSection) {
+      const { items, description } = courseIntroduction(introSection);
+      for (const item of items) {
+        // A list item's own text includes its continuation lines, but not its
+        // child lists. Keep everything after the first colon intact.
+        const text = courseListItemText(item).replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+        const separator = text.search(/[:：]/);
+        if (separator === -1) continue;
+        const metadataLabel = text.slice(0, separator).trim().toLowerCase();
+        const value = text.slice(separator + 1).trim();
+        if (!value) continue;
         if (['offered by', 'university', 'affiliated university', 'affiliated universities', '所属大学', '课程所属大学', '开课学校'].includes(metadataLabel)) {
-          if (metadataParts.length > 1) {
-            university = metadataParts.slice(1).join(':').trim().replace(/^·+/, '');
-          }
+          university = value.replace(/^·+/, '');
         }
         
         // Extract programming language - handle both Chinese and English formats
-        if (line.includes('编程语言') || line.includes('Programming Language') || line.includes('Programming Languages')) {
-          const parts = line.split(/[:：]/);
-          if (parts.length > 1) {
-            programmingLanguage = parts[1].trim().replace(/\*\*/g, ''); // 移除**加粗符号
-          }
+        if (['编程语言', 'programming language', 'programming languages', 'language', 'languages'].includes(metadataLabel)) {
+          programmingLanguage = value;
         }
         
         // Extract difficulty - handle both Chinese and English formats
-        if (line.includes('课程难度') || line.includes('Difficulty')) {
-          const parts = line.split(/[:：]/);
-          if (parts.length > 1) {
-            const difficultyText = parts[1].trim().replace(/\*\*/g, ''); // 移除**加粗符号
-            
-            // Convert stars to difficulty level
-            const starCount = (difficultyText.match(/🌟/g) || []).length;
-            if (starCount > 0) {
-              if (starCount <= 2) {
-                difficulty = 'Beginner';
-              } else if (starCount <= 4) {
-                difficulty = 'Intermediate';
-              } else {
-                difficulty = 'Advanced';
-              }
+        if (['课程难度', 'difficulty', 'difficulty level', 'course difficulty', 'course difficulty level'].includes(metadataLabel)) {
+          const starCount = (value.match(/🌟/g) || []).length;
+          if (starCount > 0) {
+            if (starCount <= 2) {
+              difficulty = 'Beginner';
+            } else if (starCount <= 4) {
+              difficulty = 'Intermediate';
             } else {
-              difficulty = difficultyText;
+              difficulty = 'Advanced';
             }
+          } else {
+            difficulty = value;
           }
         }
         
         // Extract duration - handle both Chinese and English formats
-        if (line.includes('预计学时') || line.includes('Class Hour') || line.includes('Class Hours') || line.includes('Estimated Hours') || line.includes('Estimated Study Time')) {
-          const parts = line.split(/[:：]/);
-          if (parts.length > 1) {
-            const durationText = parts[1].trim().replace(/\*\*/g, ''); // 移除**加粗符号
-            
-            // Extract numeric value and unit separately
-            const match = durationText.match(/(\d+)\s*(小时|hour|hours)/i);
-            if (match) {
-              const value = match[1];
-              // Store both numeric value and unit info for later localization
-              duration = {
-                value: parseInt(value),
-                originalText: durationText
-              };
-            } else {
-              duration = {
-                value: null,
-                originalText: durationText
-              };
-            }
-          }
+        if (isStudyHoursLabel(metadataLabel)) {
+          duration = {
+            value: totalStudyHours(value) ?? null,
+            originalText: value
+          };
         }
       }
-      
-      // Skip metadata lines (lines starting with -) and empty lines
-      while (descriptionStartIndex < lines.length) {
-        const line = lines[descriptionStartIndex].trim();
-        if (/^[-*]\s+/.test(line) || line.startsWith('##') || line === '') {
-          descriptionStartIndex++;
-        } else {
-          break;
-        }
-      }
-      
-      // Extract the description paragraph (until next section or end)
-      const descriptionLines = [];
-      for (let i = descriptionStartIndex; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (line.startsWith('##') || line.startsWith('#') || line === '---') {
-          break;
-        }
-        if (line) {
-          descriptionLines.push(line);
-        }
-      }
-      
-      // Clean the description by removing markdown syntax
-      summary = descriptionLines.join(' ')
-        .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Remove markdown links
-        .replace(/\*\*([^*]+)\*\*/g, '$1') // Remove bold formatting
-        .replace(/\*([^*]+)\*/g, '$1') // Remove italic formatting
-        .replace(/`([^`]+)`/g, '$1') // Remove inline code
-        .replace(/#+\s*/g, '') // Remove headers
-        .trim();
-      
-      // Limit to 150 characters for card display
-      summary = truncateText(summary, 150);
+
+      // The shared Markdown parser returns visible text with references
+      // resolved. Preserve literal punctuation such as the # in C#.
+      summary = truncateText(description, 150);
       
       // Store in appropriate summary field based on language
       if (isEnglishFile) {
@@ -266,7 +213,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
               id: `${category.slug}-${subcategory.slug}-${courseFile.replace('.md', '')}`,
               title,
               description: truncateText(content, 200),
-              path: path.relative(docsPath, coursePath),
+              path: toPosixPath(path.relative(docsPath, coursePath)),
               slug: courseFile.replace('.md', ''),
               content,
               contentEn,
@@ -317,7 +264,7 @@ export async function buildCourseStructure(): Promise<Category[]> {
           id: `${category.slug}-${item.replace('.md', '')}`,
           title,
           description: truncateText(content, 200),
-          path: path.relative(docsPath, coursePath),
+          path: toPosixPath(path.relative(docsPath, coursePath)),
           slug: item.replace('.md', ''),
           content,
           contentEn,
@@ -395,7 +342,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
               id: `${categorySlug}-${courseSlug}`,
               title: courseData.title,
               description: truncateText(courseData.content, 200),
-              path: path.relative(docsPath, filePath),
+              path: toPosixPath(path.relative(docsPath, filePath)),
               slug: courseSlug,
               content: courseData.content,
               hasEnglishVersion,
@@ -456,7 +403,7 @@ export async function getCourseById(id: string, lang: string = 'en'): Promise<Co
                   id: `${categorySlug}-${subcategorySlug}-${courseSlug}`,
                   title: courseData.title,
                   description: truncateText(courseData.content, 200),
-                  path: path.relative(docsPath, filePath),
+                  path: toPosixPath(path.relative(docsPath, filePath)),
                   slug: courseSlug,
                   content: courseData.content,
                   hasEnglishVersion,

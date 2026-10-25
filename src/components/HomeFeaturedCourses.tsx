@@ -73,7 +73,7 @@ export default async function HomeFeaturedCourses({ courses, locale }: HomeFeatu
               <Link
                 key={course.id}
                 href={href}
-                className="group flex min-h-80 flex-col rounded-[28px] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/10"
+                className="group flex min-h-80 flex-col rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/10"
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full border border-cyan-200/15 bg-cyan-200/10 px-3 py-1 text-xs font-semibold text-cyan-100">

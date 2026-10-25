@@ -103,70 +103,66 @@ export default async function OpenSourcePage({
       <ImmersivePage>
         <StructuredData data={structuredData} />
 
-        <ImmersiveSection className="py-16 text-white sm:py-20">
-          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
+        <ImmersiveSection className="py-16 text-white">
+          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,3fr)_2fr]">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-300/20 bg-cyan-300/10 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
+                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/15 px-5 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">
                   <Radar className="h-4 w-4" />
                   GitHub Open Source Radar
                 </div>
-                <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+                <h1 className="mt-6 max-w-4xl text-4xl font-bold leading-tight sm:text-5xl">
                   {isZh ? '发现真正值得关注的开源项目' : 'Discover open source worth following'}
                 </h1>
-                <p className="mt-5 max-w-3xl text-lg leading-8 text-white/65">
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-white/70">
                   {isZh
                     ? '从 GitHub 多个热门主题持续聚合项目，结合 Star、活跃度和增长排序，并支持按名称、组织、简介、分类与语言搜索。'
                     : 'Continuously aggregate projects from popular GitHub topics, rank them by stars, activity, and growth, and search by name, owner, description, category, or language.'}
                 </p>
-                <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/60">
+                <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/55">
                   <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    <RefreshCw className="h-4 w-4 text-cyan-300" />
+                    <RefreshCw className="h-4 w-4 text-cyan-200" />
                     {isZh ? '每日自动更新' : 'Updated daily'}
                   </span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    <Database className="h-4 w-4 text-blue-300" />
+                    <Database className="h-4 w-4 text-cyan-200" />
                     Cloudflare D1
                   </span>
                   <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2">
-                    <Github className="h-4 w-4 text-violet-300" />
+                    <Github className="h-4 w-4 text-cyan-200" />
                     {isZh ? '多主题聚合' : 'Multi-topic discovery'}
                   </span>
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-[28px] border border-white/12 bg-white/5 p-6 backdrop-blur-xl">
-                  <Github className="h-6 w-6 text-cyan-300" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+                  <Github className="h-6 w-6 text-cyan-200" />
                   <div className="mt-5 text-4xl font-bold">{stats.total.toLocaleString(isZh ? 'zh-CN' : 'en-US')}</div>
-                  <p className="mt-1 text-sm text-white/50">{isZh ? '收录项目' : 'Projects indexed'}</p>
+                  <p className="mt-1 text-sm text-white/45">{isZh ? '收录项目' : 'Projects indexed'}</p>
                 </div>
-                <div className="rounded-[28px] border border-white/12 bg-white/5 p-6 backdrop-blur-xl">
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                   <Star className="h-6 w-6 text-amber-300" />
                   <div className="mt-5 text-4xl font-bold">{compactNumber(stats.totalStars)}</div>
-                  <p className="mt-1 text-sm text-white/50">{isZh ? '累计 Stars' : 'Combined stars'}</p>
+                  <p className="mt-1 text-sm text-white/45">{isZh ? '累计 Stars' : 'Combined stars'}</p>
                 </div>
-                <div className="rounded-[28px] border border-white/12 bg-white/5 p-6 backdrop-blur-xl">
-                  <Radar className="h-6 w-6 text-violet-300" />
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
+                  <Radar className="h-6 w-6 text-cyan-200" />
                   <div className="mt-5 text-4xl font-bold">{stats.categories.length}</div>
-                  <p className="mt-1 text-sm text-white/50">{isZh ? '项目分类' : 'Categories'}</p>
+                  <p className="mt-1 text-sm text-white/45">{isZh ? '项目分类' : 'Categories'}</p>
                 </div>
-                <div className="rounded-[28px] border border-white/12 bg-white/5 p-6 backdrop-blur-xl">
+                <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
                   <Clock3 className="h-6 w-6 text-emerald-300" />
                   <div className="mt-5 text-lg font-semibold">
                     {stats.lastSync?.finishedAt
                       ? new Intl.DateTimeFormat(isZh ? 'zh-CN' : 'en-US', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(stats.lastSync.finishedAt))
                       : (isZh ? '等待首次同步' : 'Waiting for first sync')}
                   </div>
-                  <p className="mt-2 text-sm text-white/50">{isZh ? '最近同步' : 'Last synchronized'}</p>
+                  <p className="mt-2 text-sm text-white/45">{isZh ? '最近同步' : 'Last synchronized'}</p>
                 </div>
               </div>
             </div>
-          </div>
-        </ImmersiveSection>
 
-        <ImmersiveSection className="pb-20 text-white">
-          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8">
             <GithubProjectsExplorer locale={locale} data={projectData} stats={stats} filters={filters} />
           </div>
         </ImmersiveSection>

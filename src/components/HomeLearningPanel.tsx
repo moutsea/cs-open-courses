@@ -10,22 +10,22 @@ const learningDirections = [
   {
     id: 'beginner',
     icon: Code2,
-    href: '/courses?category=programming-introduction'
+    href: '/courses/programming-introduction'
   },
   {
     id: 'algorithms',
     icon: Route,
-    href: '/courses?category=data-structures-algorithms'
+    href: '/courses/data-structures-algorithms'
   },
   {
     id: 'systems',
     icon: Cpu,
-    href: '/courses?category=computer-systems-basics'
+    href: '/courses/computer-systems-basics'
   },
   {
     id: 'ai',
     icon: BrainCircuit,
-    href: '/courses?category=machine-learning'
+    href: '/courses/machine-learning'
   }
 ]
 
@@ -39,7 +39,7 @@ export default function HomeLearningPanel({ locale }: { locale: string }) {
 
   return (
     <section className="px-4 py-10 text-white sm:px-6 lg:px-8" aria-labelledby="home-learning-title" aria-label={t('ariaLabel')}>
-      <div className="mx-auto min-h-96 max-w-screen-2xl rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_25px_80px_rgba(2,6,23,0.28)] backdrop-blur-xl sm:p-8">
+      <div className="mx-auto min-h-96 max-w-screen-2xl rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_25px_80px_rgba(2,6,23,0.28)] backdrop-blur-xl sm:p-8">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200/70">

@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import BrandLockup from './brand/BrandLockup'
 import { buildDynamicRoutePath } from '@/lib/pathUtils'
+import { OTHER_PROJECTS, projectHref } from '@/lib/projectLinks'
 
 const POPULAR_COURSES = [
   {
@@ -53,14 +55,6 @@ const SOCIAL_LINKS = [
   }
 ]
 
-const OTHER_PROJECTS = [
-  { name: 'Code By AI', href: 'https://www.codebyai.net', localized: true },
-  { name: 'Claude Code Ide', href: 'https://aiinide.com', localized: true },
-  { name: 'Codex Lab', href: 'https://www.codeilab.com', localized: true },
-  { name: 'KimiSeek', href: 'https://kimiseek.app', localized: false },
-  { name: 'WeChatAI', href: 'https://wechatai.app', localized: false }
-]
-
 const COMPANY_LINKS = [
   { name: 'Fomalhaut Labs', href: 'https://fomalhautlabs.com' }
 ]
@@ -96,14 +90,18 @@ export default function Footer({ locale }: { locale: string }) {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white border-t border-gray-800">
+    <footer className="border-t border-white/10 bg-[#0b162f] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 md:gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              CS61B & Beyond
-            </h3>
-            <p className="text-gray-400 mb-6 max-w-md">
+            <Link
+              href={isEn ? '/' : '/zh'}
+              aria-label={isEn ? 'CS61B & Beyond home' : 'CS61B & Beyond 首页'}
+              className="mb-5 inline-flex items-center rounded-2xl transition-opacity hover:opacity-90"
+            >
+              <BrandLockup size={46} variant="footer" />
+            </Link>
+            <p className="text-white/60 mb-6 max-w-md">
               {labels.description}
             </p>
             <div className="flex space-x-5">
@@ -113,7 +111,7 @@ export default function Footer({ locale }: { locale: string }) {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-white/60 hover:text-white transition-colors"
                 >
                   <span className="sr-only">{link.name}</span>
                   {link.icon}
@@ -127,7 +125,7 @@ export default function Footer({ locale }: { locale: string }) {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-white/60 hover:text-white transition-colors">
                     {link.name}
                   </Link>
                 </li>
@@ -145,7 +143,7 @@ export default function Footer({ locale }: { locale: string }) {
                       isEn ?
                         `/course/${buildDynamicRoutePath(course.path).join('/')}` :
                         `/zh/course/${buildDynamicRoutePath(course.path).join('/')}`}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     {locale === 'zh' ? course.title : course.titleEn}
                   </Link>
@@ -160,12 +158,17 @@ export default function Footer({ locale }: { locale: string }) {
               {OTHER_PROJECTS.map((project) => (
                 <li key={project.name}>
                   <a
-                    href={!isEn && project.localized ? `${project.href}/zh` : project.href}
+                    href={projectHref(project, locale)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     {project.name}
+                    {project.description && (
+                      <span className="mt-1 block text-xs text-white/45">
+                        {isEn ? project.description.en : project.description.zh}
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
@@ -181,7 +184,7 @@ export default function Footer({ locale }: { locale: string }) {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-white/60 hover:text-white transition-colors"
                   >
                     {link.name}
                   </a>
@@ -191,8 +194,8 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
-          <p className="text-gray-500 text-sm">
+        <div className="mt-12 pt-8 border-t border-white/10 text-center">
+          <p className="text-white/45 text-sm">
             © {new Date().getFullYear()} CS61B & Beyond. {labels.rights}
           </p>
         </div>

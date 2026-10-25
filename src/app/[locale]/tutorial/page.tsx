@@ -137,32 +137,32 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
       <ImmersivePage>
         <StructuredData data={tutorialStructuredData} />
 
-        <ImmersiveSection className="py-20 text-white">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <ImmersiveSection className="py-16 text-white">
+          <div className="mx-auto max-w-screen-2xl px-4 sm:px-6 lg:px-8 space-y-12">
             <div className="grid gap-10 lg:grid-cols-[3fr_2fr] items-center">
               <div className="space-y-6">
                 <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
                   {locale === 'zh' ? '学习路线' : 'Learning Roadmap'}
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+                <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-white">
                   {t('title')}
                 </h1>
                 <p className="text-lg text-white/70 max-w-2xl">{t('subtitle')}</p>
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-                  <div className="rounded-3xl border border-white/15 bg-white/5 p-5 text-center">
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
                     <div className="text-3xl font-bold text-white">{sections.length}</div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/60">{t('stages')}</p>
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/45">{t('stages')}</p>
                   </div>
-                  <div className="rounded-3xl border border-white/15 bg-white/5 p-5 text-center">
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
                     <div className="text-3xl font-bold text-white">{totalTopics}</div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/45">
                       {locale === 'zh' ? '课程主题' : 'Topics'}
                     </p>
                   </div>
-                  <div className="rounded-3xl border border-white/15 bg-white/5 p-5 text-center">
+                  <div className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center backdrop-blur-xl">
                     <div className="text-3xl font-bold text-white">{advancedTopics}</div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+                    <p className="text-xs uppercase tracking-[0.3em] text-white/45">
                       {locale === 'zh' ? '进阶内容' : 'Advanced Lessons'}
                     </p>
                   </div>
@@ -171,26 +171,26 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
                 <div className="flex flex-wrap gap-4">
                   <Link
                     href={localizedPath(locale, '/courses')}
-                    className="inline-flex items-center gap-3 rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-blue-500/30 transition hover:scale-[1.02]"
+                    className="inline-flex items-center gap-3 rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
                   >
                     {locale === 'zh' ? '探索课程' : 'Explore courses'}
                   </Link>
                   <Link
                     href={`${localizedPath(locale, '/tutorial')}#learning-path`}
-                    className="inline-flex items-center gap-3 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/70 hover:text-white"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
                   >
                     {locale === 'zh' ? '路线概览' : 'View roadmap'}
                   </Link>
                   <Link
                     href={localizedPath(locale, '/course/data-structures-algorithms/CS61B')}
-                    className="inline-flex items-center gap-3 rounded-full border border-blue-100/40 px-6 py-3 text-sm font-semibold text-blue-100 transition hover:border-white hover:text-white"
+                    className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
                   >
                     {locale === 'zh' ? '转到 CS61B 专区' : 'Jump to CS61B Hub'}
                   </Link>
                 </div>
               </div>
 
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-2xl">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-xl">
                 <h3 className="text-xl font-semibold text-white mb-4">{t('how_to_start')}</h3>
                 <p className="text-white/70 text-sm leading-relaxed">{t('how_to_start_desc')}</p>
                 <div className="mt-6 space-y-4">
@@ -199,112 +199,109 @@ export default async function TutorialPage({ params }: { params: Promise<{ local
                       key={title}
                       className="flex gap-3 rounded-2xl border border-white/10 bg-slate-950/50 p-4"
                     >
-                      <Icon className="h-10 w-10 text-white" />
+                      <span className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-cyan-400/15 text-cyan-200">
+                        <Icon />
+                      </span>
                       <div>
                         <div className="font-semibold text-white">{title}</div>
-                        <p className="text-sm text-white/60">{description}</p>
+                        <p className="text-sm text-white/55">{description}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
-        </ImmersiveSection>
 
-        <ImmersiveSection className="py-16 text-white" id="learning-path">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/50 mb-3">
-                {locale === 'zh' ? '循序渐进' : 'Step-by-step'}
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{t('sequence_title')}</h2>
-              <p className="text-white/70 max-w-3xl mx-auto">{t('sequence_subtitle')}</p>
-            </div>
+            <div id="learning-path" className="space-y-12">
+              <div className="text-center">
+                <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/45 mb-3">
+                  {locale === 'zh' ? '循序渐进' : 'Step-by-step'}
+                </p>
+                <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">{t('sequence_title')}</h2>
+                <p className="text-white/70 max-w-3xl mx-auto">{t('sequence_subtitle')}</p>
+              </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {sections.map((section, index) => {
-                const IconComponent = sectionIconMap[section.icon]
-                return (
-                  <Link
-                    key={section.title}
-                    href={`${localizedPath(locale, '/tutorial')}#stage-${index + 1}`}
-                    className="rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-white/30 hover:bg-white/10"
-                  >
-                    <IconComponent className="mb-3 h-10 w-10 text-white" />
-                    <p className="text-xs uppercase tracking-[0.3em] text-white/60 mb-2">
-                      {locale === 'zh' ? '阶段' : 'Stage'} {index + 1}
-                    </p>
-                    <h3 className="text-lg font-semibold text-white mb-2">{section.title}</h3>
-                    <p className="text-sm text-white/60">{section.description}</p>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </ImmersiveSection>
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {sections.map((section, index) => {
+                  const IconComponent = sectionIconMap[section.icon]
+                  return (
+                    <Link
+                      key={section.title}
+                      href={`${localizedPath(locale, '/tutorial')}#stage-${index + 1}`}
+                      className="rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition hover:border-white/25 hover:bg-white/10"
+                    >
+                      <span className="mb-3 inline-flex items-center justify-center rounded-xl bg-cyan-400/15 p-2 text-cyan-200">
+                        <IconComponent />
+                      </span>
+                      <p className="text-xs uppercase tracking-[0.3em] text-white/45 mb-2">
+                        {locale === 'zh' ? '阶段' : 'Stage'} {index + 1}
+                      </p>
+                      <h3 className="text-xl font-semibold text-white mb-2">{section.title}</h3>
+                      <p className="text-sm text-white/55">{section.description}</p>
+                    </Link>
+                  )
+                })}
+              </div>
 
-        <ImmersiveSection className="py-16">
-          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-            {sections.map((section, index) => {
-              const IconComponent = sectionIconMap[section.icon]
-              return (
-                <div
-                  key={section.title}
-                  id={`stage-${index + 1}`}
-                  className="rounded-3xl border border-white/10 bg-white/5 p-6 text-white shadow-xl"
-                >
-                  <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-                    <div>
-                      <div className="inline-flex items-center gap-3">
-                        <IconComponent className="h-12 w-12 text-white" />
+              <div className="space-y-10">
+                {sections.map((section, index) => {
+                  const IconComponent = sectionIconMap[section.icon]
+                  return (
+                    <div
+                      key={section.title}
+                      id={`stage-${index + 1}`}
+                      className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 text-white backdrop-blur-xl"
+                    >
+                      <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
                         <div>
-                          <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-                            {locale === 'zh' ? '阶段' : 'Stage'} {index + 1}
-                          </p>
-                          <h3 className="text-2xl font-bold">{section.title}</h3>
+                          <div className="inline-flex items-center gap-3">
+                            <span className="flex items-center justify-center rounded-2xl bg-cyan-400/15 p-2 text-cyan-200">
+                              <IconComponent />
+                            </span>
+                            <div>
+                              <p className="text-xs uppercase tracking-[0.3em] text-white/45">
+                                {locale === 'zh' ? '阶段' : 'Stage'} {index + 1}
+                              </p>
+                              <h3 className="text-xl font-semibold text-white">{section.title}</h3>
+                            </div>
+                          </div>
+                          <p className="mt-4 text-white/70 max-w-2xl">{section.description}</p>
+                        </div>
+                        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/55">
+                          {section.topics.length} {locale === 'zh' ? '个主题' : 'topics'}
                         </div>
                       </div>
-                      <p className="mt-4 text-white/70 max-w-2xl">{section.description}</p>
-                    </div>
-                    <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70">
-                      {section.topics.length} {locale === 'zh' ? '个主题' : 'topics'}
-                    </div>
-                  </div>
 
-                  <div className="mt-6 grid gap-4 md:grid-cols-2">
-                    {section.topics.map(topic => (
-                      <TutorialTopicCard
-                        key={topic.name}
-                        topic={topic}
-                        locale={locale}
-                        variant="immersive"
-                      />
-                    ))}
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </ImmersiveSection>
+                      <div className="mt-6 grid gap-4 md:grid-cols-2">
+                        {section.topics.map(topic => (
+                          <TutorialTopicCard
+                            key={topic.name}
+                            topic={topic}
+                            locale={locale}
+                                                      />
+                        ))}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
 
-        <ImmersiveSection className="py-16 text-white">
-          <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl border border-white/10 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 p-10 text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 text-center backdrop-blur-xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-white/45">
                 {t('ready_to_start')}
               </p>
-              <h2 className="mt-4 text-3xl font-bold text-white">{t('ready_to_start_desc')}</h2>
+              <h2 className="mt-4 text-2xl sm:text-3xl font-semibold text-white">{t('ready_to_start_desc')}</h2>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   href={localizedPath(locale, '/courses')}
-                  className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
+                  className="inline-flex items-center rounded-full bg-cyan-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
                 >
                   {t('browse_courses')}
                 </Link>
                 <Link
                   href={localizedPath(locale, '/tutorial')}
-                  className="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white/80 transition hover:border-white/70 hover:text-white"
+                  className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
                 >
                   {locale === 'zh' ? '返回顶部' : 'Back to top'}
                 </Link>

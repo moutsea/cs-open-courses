@@ -60,7 +60,7 @@ export default async function HomeLearningPaths({ locale }: { locale: string }) 
               <Link
                 key={stage.index}
                 href={localizedPath(locale, stage.href)}
-                className="group rounded-[28px] border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/10"
+                className="group rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/10"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="rounded-2xl border border-cyan-200/15 bg-cyan-200/10 p-3 text-cyan-200">

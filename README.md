@@ -88,6 +88,24 @@ npm run dev
 npm run build
 ```
 
+### Search and SEO maintenance
+
+Course and university collections have permanent URLs under `/courses/<category>` and `/universities/<university>`, with matching Chinese pages under `/zh`. Older query-based filters redirect to these pages. Course links are included in the initial HTML response.
+
+`npm run data:generate` refreshes the search index, catalog routes, and course revision manifest. Sitemap dates come from Git content history or an explicit editorial update date, never from deployment filesystem timestamps. Uncommitted course changes without a reliable revision date omit that date. Commit the generated files with changes to the catalog; builds without Git retain only dates whose content hashes still match.
+
+Run `npm run test:seo`, `npm run test:ui`, `npm run lint`, and `npm run build:cf` before publishing. UI regressions cover unavailable browser storage, desktop/mobile search panels, search history navigation, same-query and explicit retries, and out-of-order search responses. Cloudflare routes the apex domain through the existing Worker, which redirects production HTTP and apex URLs to `https://www.cs61bbeyond.com`, preserving paths and queries. Local development uses `localhost` so production redirects do not affect previews.
+
+### Manually maintained lecture videos
+
+Lecture links are reviewed and saved in `src/data/course-videos.json`, with bilingual titles, course edition, source and official/mirror labels. Both language versions render the same reviewed catalog. Confirm course identity, public availability and lecture scope before adding a link; label partial recordings and exclude paid-only videos or unrelated student projects. Research evidence is kept in `reports/`.
+
+When adding, changing, or removing a course's video resources, update its `courseUpdatedAt` date in the same file. Keep the date even when removing its last video. The sitemap uses this editorial date alongside course content and guide revisions. `checkedAt` records link verification only and does not change sitemap dates.
+
+Automatic video discovery was discontinued on 2026-10-14. Its Cloudflare cron trigger, scheduled handler, discovery pipeline (`src/lib/courseVideos/`) and the `/api/cron/course-videos` endpoint have all been removed, so nothing regenerates or republishes videos any more. Previously accepted videos were migrated into the manual catalog. The D1 tables from migrations `0002`/`0003` are kept untouched because they are already applied in production and hold the audit trail; query them with `wrangler d1 execute` when you need history, and keep the migration files so a fresh database still matches.
+
+`npm run data:generate` only rebuilds the search index and SEO data. Existing daily jobs remain independent: the GitHub course-feed workflow at 02:17 UTC and popular GitHub projects sync at 03:17 UTC.
+
 ### 🤖 AI-Powered Course Updates
 
 GitHub Actions checks 19 allowlisted GitHub Atom feeds every day. Discovery sources can identify new courses, while course-specific upstream repositories can only update the course paths explicitly allowed in `automation/course-feeds.json`.
@@ -200,6 +218,16 @@ npm run dev
 # 构建生产版本
 npm run build
 ```
+
+### 人工维护公开课视频
+
+视频链接经人工核对后保存在 `src/data/course-videos.json`，标注双语标题、课程版本、来源及官方或转载属性，中英文课程页共用同一份已核对清单。新增前确认课程归属、公开可访问性及课堂内容；不完整的录像明确标注，不收录仅付费可看或无关的学生项目。查找证据保存在 `reports/`。
+
+新增、修改或删除某门课程的视频资源时，同步更新该文件中对应的 `courseUpdatedAt` 日期；删除最后一个视频时也保留日期。站点地图会将其与课程正文、学习指南的修改时间合并。`checkedAt` 只表示链接核验日期，不会改变站点地图日期。
+
+2026-10-14 已停用视频自动发现任务：Cloudflare 定时触发器、定时处理入口、发现流水线（`src/lib/courseVideos/`）以及 `/api/cron/course-videos` 接口全部删除，不再有任何自动生成或发布视频的路径。之前通过核对的视频已迁入人工清单。迁移 `0002`/`0003` 建出的 D1 表原样保留——它们已在生产库应用过，且是唯一的追溯记录；需要查历史时用 `wrangler d1 execute` 查，迁移文件也保留，保证空库重建仍与生产一致。
+
+`npm run data:generate` 现在只重建搜索索引与 SEO 数据。原有每日课程来源更新和 GitHub 热门项目同步保持独立。
 
 ### 🤖 AI 自动更新课程
 

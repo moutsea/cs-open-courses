@@ -95,7 +95,7 @@
     "programmingLanguage": "Python preferred",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 70,
+      "value": null,
       "originalText": "50-70 hours"
     },
     "category": "advanced-mathematics",
@@ -141,7 +141,7 @@
     "category": "advanced-mathematics",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "伯克利的离散数学入门课程，个人觉得这门课最大的亮点在于并不是单纯的理论知识的讲授，而是在每个模块都会介绍理论知识在实际算法中的运用，让计算机系的学生在夯实理论基础的同时，跳脱出冰冷形式化的数学符号，在实际应用中感受和体会理论的本质。 具体的理论与算法的对应关系列举如下： - 逻辑证明：稳定匹配算法 ...",
+    "summary": "伯克利的离散数学入门课程，个人觉得这门课最大的亮点在于并不是单纯的理论知识的讲授，而是在每个模块都会介绍理论知识在实际算法中的运用，让计算机系的学生在夯实理论基础的同时，跳脱出冰冷形式化的数学符号，在实际应用中感受和体会理论的本质。 具体的理论与算法的对应关系列举如下： 逻辑证明：稳定匹配算法 图论...",
     "summaryEn": "This is Berkeley's introductory discrete mathematics course. The biggest highlight of this course is that it not only teaches you theoretical knowledg..."
   },
   {
@@ -155,7 +155,7 @@
     "programmingLanguage": "Anything would be OK, Python preferred",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 50,
+      "value": null,
       "originalText": "30-50 hours"
     },
     "category": "advanced-mathematics",
@@ -235,7 +235,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": null,
+      "value": 30,
       "originalText": "30"
     },
     "category": "artificial-intelligence",
@@ -252,11 +252,11 @@
     "descriptionEn": "# Neural Networks: Zero to Hero ## Description - **Instructor:** Andrej Karpathy - **Prerequisites:** Basic Python programming and some familiarity with deep learning concepts - **Programmin...",
     "university": "",
     "path": "artificial-intelligence/Neural Networks：Zero to Hero",
-    "programmingLanguage": " Python",
+    "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 19,
-      "originalText": " Approximately 19 hours"
+      "value": null,
+      "originalText": "Approximately 19 hours"
     },
     "category": "artificial-intelligence",
     "hasChineseVersion": true,
@@ -276,7 +276,7 @@
     "difficulty": "Advanced",
     "duration": {
       "value": 150,
-      "originalText": "150 小时"
+      "originalText": "150"
     },
     "category": "compilers",
     "hasChineseVersion": true,
@@ -316,7 +316,7 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": 80,
-      "originalText": "80 小时"
+      "originalText": "80"
     },
     "category": "compilers",
     "hasChineseVersion": true,
@@ -369,7 +369,7 @@
     "title": "USTC: Principles and Techniques of Compiler",
     "titleEn": "USTC: Principles and Techniques of Compiler",
     "description": "# USTC: Principles and Techniques of Compiler ## 课程简介 - 所属大学：中国科学技术大学 - 先修要求：数据结构、计算机系统基础、C++ 编程基础 - 编程语言：C++ - 课程难度：🌟🌟🌟🌟 - 预计学时：100小时 这门课程的理论部分内容广泛，既涵盖了传统编译原理课程的词法分析、语法分析、语法制导翻译、中间代码翻译，又覆盖了运行时管理、机...",
-    "descriptionEn": "# USTC: Principles and Techniques of Compiler ## Descriptions - Offered by: University of Science and Technology of China (USTC) - Prerequisites: - Programming Languages: - Difficulty: 🌟🌟🌟🌟 - Cl...",
+    "descriptionEn": "# USTC: Principles and Techniques of Compiler ## Descriptions - Offered by: University of Science and Technology of China (USTC) - Prerequisites: Data Structures, Computer Systems Fundamentals, C++ ...",
     "university": "University of Science and Technology of China (USTC)",
     "path": "compilers/USTC-Compilers",
     "programmingLanguage": "C++",
@@ -541,8 +541,8 @@
     "category": "computer-graphics",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "官方介绍: > 本课程将全面而系统地介绍现代计算机图形学的四大组成部分：（1）光栅化成像，（2）几何表示，（3）光的传播理论，以及（4）动画与模拟。每个方面都会从基础原理出发讲解到实际应用，并介绍前沿的理论研究。通过本课程，你可以学习到计算机图形学背后的数学和物理知识，并锻炼实际的编程能力。 > 作...",
-    "summaryEn": "Official Introduction: > This course comprehensively and systematically introduces the four major components of modern computer graphics: (1) rasteriz..."
+    "summary": "官方介绍: 本课程将全面而系统地介绍现代计算机图形学的四大组成部分：（1）光栅化成像，（2）几何表示，（3）光的传播理论，以及（4）动画与模拟。每个方面都会从基础原理出发讲解到实际应用，并介绍前沿的理论研究。通过本课程，你可以学习到计算机图形学背后的数学和物理知识，并锻炼实际的编程能力。 作为入门，...",
+    "summaryEn": "Official Introduction: This course comprehensively and systematically introduces the four major components of modern computer graphics: (1) rasterizat..."
   },
   {
     "id": "computer-graphics-GAMES103",
@@ -561,8 +561,8 @@
     "category": "computer-graphics",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "官方介绍： > 本课程将作为基于物理的计算机动画技术入门，着重介绍各种基础的物理动画模拟技术。 > > 该课程主要涵盖四个方向，分别为：1）刚体模拟；2）质点弹簧、约束与布料模拟；3）基于有限元的弹性体模拟；4）流体模拟。 > > 本课程内容将不会涉及具体的物理模拟引擎，但会讨论各种引擎背后的技术，...",
-    "summaryEn": "Official Introduction: > This course serves as an introduction to physics-based computer animation techniques, focusing on various fundamental physica..."
+    "summary": "官方介绍： 本课程将作为基于物理的计算机动画技术入门，着重介绍各种基础的物理动画模拟技术。 该课程主要涵盖四个方向，分别为：1）刚体模拟；2）质点弹簧、约束与布料模拟；3）基于有限元的弹性体模拟；4）流体模拟。 本课程内容将不会涉及具体的物理模拟引擎，但会讨论各种引擎背后的技术，以及它们的优缺点等等...",
+    "summaryEn": "Official Introduction: This course serves as an introduction to physics-based computer animation techniques, focusing on various fundamental physical ..."
   },
   {
     "id": "computer-graphics-GAMES202",
@@ -581,8 +581,8 @@
     "category": "computer-graphics",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "官方介绍: > 本课程将全面地介绍现代实时渲染中的关键问题与解决方法。由于实时渲染 (>30 FPS) 对速度要求极高，因此本课程的关注点将是在苛刻的时间限制下，人们如何打破速度与质量之间的权衡，同时保证实时的高速度与照片级的真实感。 > > 本课程将以专题的形式呈现，课程内容会覆盖学术界与工业界的...",
-    "summaryEn": "Official Introduction: > This course comprehensively introduces the key issues and solutions in modern real-time rendering. Since real-time rendering ..."
+    "summary": "官方介绍: 本课程将全面地介绍现代实时渲染中的关键问题与解决方法。由于实时渲染 (>30 FPS) 对速度要求极高，因此本课程的关注点将是在苛刻的时间限制下，人们如何打破速度与质量之间的权衡，同时保证实时的高速度与照片级的真实感。 本课程将以专题的形式呈现，课程内容会覆盖学术界与工业界的前沿内容，包...",
+    "summaryEn": "Official Introduction: This course comprehensively introduces the key issues and solutions in modern real-time rendering. Since real-time rendering (>..."
   },
   {
     "id": "computer-graphics-USTC ComputerGraphics",
@@ -621,7 +621,7 @@
     "category": "computer-networks",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "这门课 (开源版本视频) 的主讲人之一是网络领域的巨擘 Nick McKeown 教授。这位拥有自己创业公司的学界业界双巨佬会在他慕课每一章节的最后采访一位业界的高管或者学界的高人，非常开阔眼界。 在这门课的 Project 中，你将用 C++ 循序渐进地搭建出整个 TCP/IP 协议栈。 - ch...",
+    "summary": "这门课 (开源版本视频) 的主讲人之一是网络领域的巨擘 Nick McKeown 教授。这位拥有自己创业公司的学界业界双巨佬会在他慕课每一章节的最后采访一位业界的高管或者学界的高人，非常开阔眼界。 在这门课的 Project 中，你将用 C++ 循序渐进地搭建出整个 TCP/IP 协议栈。 chec...",
     "summaryEn": "One of the lecturers of this course is Professor Nick McKeown, a giant in the field of Networking. At the end of each chapter of MOOC, he will intervi..."
   },
   {
@@ -635,7 +635,7 @@
     "programmingLanguage": "Python, Unix shell",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 140,
+      "value": null,
       "originalText": "Approximately 140 hours (14 weeks × 10 hours/week)"
     },
     "category": "computer-networks",
@@ -682,7 +682,7 @@
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
     "summary": "这门课应该是中文互联网上比较火的计算机网络课了，教材采用神书计算机网络（自顶向下方法），授课风格更偏向实际而非纯理论（强烈建议先阅读教材预习再看课，否则上课时可能会有些懵圈）。 课程内容包括大部分自顶向下方法里的内容，同时涵盖考试内容，可放心观看。 课程视频是郑烇老师本人在哔哩哔哩上上传的，且从20...",
-    "summaryEn": "This course is a well-known computer networking course on the Chinese Internet, it adopts the renowned textbook: _Computer Networking: A Top-Down Appr..."
+    "summaryEn": "This course is a well-known computer networking course on the Chinese Internet, it adopts the renowned textbook: Computer Networking: A Top-Down Appro..."
   },
   {
     "id": "computer-systems-basics-COS217",
@@ -775,7 +775,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Advanced",
     "duration": {
-      "value": 100,
+      "value": null,
       "originalText": "100 hours+"
     },
     "category": "data-structures-algorithms",
@@ -795,7 +795,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Advanced",
     "duration": {
-      "value": 100,
+      "value": null,
       "originalText": "100 hours+"
     },
     "category": "data-structures-algorithms",
@@ -888,7 +888,7 @@
     "id": "database-systems-15799",
     "title": "CMU 15-799: Special Topics in Database Systems",
     "titleEn": "CMU 15-799: Special Topics in Database Systems",
-    "description": "# CMU 15-799: Special Topics in Database Systems ## 课程简介 - 所属大学：CMU - 先修要求：CMU 15-445 - 编程语言：C++ - 课程难度：🌟🌟🌟 - 预计学时：80 小时 这门课目前只开了两次：fall2013 和 spring2022，讨论了数据库领域的一些前沿主题。fall2013 讨论了 Streaming、...",
+    "description": "# CMU 15-799: Special Topics in Database Systems ## 课程简介 - 所属大学：CMU - 先修要求：CMU 15-445 - 编程语言：C++ - 课程难度：🌟🌟🌟 - 预计学时：80 小时 这门课按学期讨论数据库领域的不同前沿主题。fall2013 讨论了 Streaming、Graph DB、NVM 等，spring2022 主要...",
     "descriptionEn": "# CMU 15-799: Special Topics in Database Systems ## Course Introduction - **University**: Carnegie Mellon University (CMU) - **Prerequisites**: CMU 15-445 - **Programming Language**: C++ - **Course ...",
     "university": "Carnegie Mellon University (CMU)",
     "path": "database-systems/15799",
@@ -901,8 +901,8 @@
     "category": "database-systems",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "这门课目前只开了两次：fall2013 和 spring2022，讨论了数据库领域的一些前沿主题。fall2013 讨论了 Streaming、Graph DB、NVM 等，spring2022 主要讨论 Self-Driving DBMS，都提供有相关论文。 spring2022 版课程任务： 任...",
-    "summaryEn": "This course has only been offered twice so far, in Fall 2013 and Spring 2022, and it discusses some cutting-edge topics in the field of databases. The..."
+    "summary": "这门课按学期讨论数据库领域的不同前沿主题。fall2013 讨论了 Streaming、Graph DB、NVM 等，spring2022 主要讨论 Self-Driving DBMS，spring2025 则聚焦查询优化，并提供公开课堂录像。下方的任务介绍对应 spring2022 版本。 spr...",
+    "summaryEn": "This course explores different database research topics each semester. Fall 2013 covered Streaming, Graph DB, and NVM; Spring 2022 focused on Self-Dri..."
   },
   {
     "id": "database-systems-CS122",
@@ -961,7 +961,7 @@
     "category": "database-systems",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "RedBase 是 cs346 的一个项目，实现了一个简易的数据库系统，项目是高度结构化的。整个项目能够被分为以下几个部分（同时也是 4 个需要完善的 lab）： 1. The record management component：记录管理组件。 2. The index component：B+...",
+    "summary": "RedBase 是 cs346 的一个项目，实现了一个简易的数据库系统，项目是高度结构化的。整个项目能够被分为以下几个部分（同时也是 4 个需要完善的 lab）： The record management component：记录管理组件。 The index component：B+ 索引管理。...",
     "summaryEn": "RedBase, the project for CS346, involves the implementation of a simplified database system and is highly structured. The project can be divided into ..."
   },
   {
@@ -975,7 +975,7 @@
     "programmingLanguage": "Python; CUDA and hardware concepts are involved in systems and kernel-level topics.",
     "difficulty": "Advanced",
     "duration": {
-      "value": 120,
+      "value": null,
       "originalText": "80-120 hours"
     },
     "category": "deep-generative-models",
@@ -995,7 +995,7 @@
     "programmingLanguage": "Python (with PyTorch)",
     "difficulty": "Intermediate",
     "duration": {
-      "value": null,
+      "value": 20,
       "originalText": "20"
     },
     "category": "deep-generative-models",
@@ -1016,13 +1016,13 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": null,
-      "originalText": "100 学时以上"
+      "originalText": "100+ hours"
     },
     "category": "deep-generative-models",
     "subcategory": "large-language-models",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "该研究生课程全面介绍了大型语言模型（LLM）的方法与应用，涵盖从基础架构到前沿技术的广泛主题。课程内容包括： 1. 基础知识：语言模型的网络架构、训练、推理和评估方法。 2. 进阶主题：模型解释性、对齐方法、涌现能力，以及在语言任务和非文本任务中的应用。 3. 扩展技术：大规模预训练技术、模型部署优...",
+    "summary": "该研究生课程全面介绍了大型语言模型（LLM）的方法与应用，涵盖从基础架构到前沿技术的广泛主题。课程内容包括： 基础知识：语言模型的网络架构、训练、推理和评估方法。 进阶主题：模型解释性、对齐方法、涌现能力，以及在语言任务和非文本任务中的应用。 扩展技术：大规模预训练技术、模型部署优化，以及高效的训练...",
     "summaryEn": "This graduate-level course provides a comprehensive overview of methods and applications of Large Language Models (LLMs), covering a wide range of top..."
   },
   {
@@ -1036,14 +1036,14 @@
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": null,
-      "originalText": "100 学时"
+      "value": 100,
+      "originalText": "100 hours"
     },
     "category": "deep-generative-models",
     "subcategory": "large-language-models",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "该课程为研究生级别的 NLP 入门与进阶课程，覆盖从词表征、序列建模，到注意力机制、Transformer 架构，再到大规模语言模型预训练、指令微调与复杂推理、多模态和安全性等前沿主题。与其他同类课程相比，本课程： 1. 内容全面且紧跟最新研究：除经典算法外，深入讲解近年热门的大模型方法（如 LLa...",
+    "summary": "该课程为研究生级别的 NLP 入门与进阶课程，覆盖从词表征、序列建模，到注意力机制、Transformer 架构，再到大规模语言模型预训练、指令微调与复杂推理、多模态和安全性等前沿主题。与其他同类课程相比，本课程： 内容全面且紧跟最新研究：除经典算法外，深入讲解近年热门的大模型方法（如 LLaMa、...",
     "summaryEn": "This is a graduate-level course covering both foundational and advanced topics in Natural Language Processing (NLP). The syllabus spans word represent..."
   },
   {
@@ -1057,14 +1057,14 @@
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": null,
-      "originalText": "120 学时"
+      "value": 120,
+      "originalText": "120 hours"
     },
     "category": "deep-generative-models",
     "subcategory": "large-language-models",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "该课程面向研究生开设，聚焦“从算法到工程”的大语言模型系统构建全过程。课程内容包括但不限于： 1. GPU 编程与自动微分：掌握 CUDA kernel 调用、并行编程基础，以及深度学习框架设计原理。 2. 模型训练与分布式系统：学习高效的训练算法、通信优化（ZeRO、FlashAttention）...",
+    "summary": "该课程面向研究生开设，聚焦“从算法到工程”的大语言模型系统构建全过程。课程内容包括但不限于： GPU 编程与自动微分：掌握 CUDA kernel 调用、并行编程基础，以及深度学习框架设计原理。 模型训练与分布式系统：学习高效的训练算法、通信优化（ZeRO、FlashAttention）、分布式训练...",
     "summaryEn": "This graduate-level course focuses on the full stack of large language model (LLM) systems — from algorithms to engineering. The curriculum covers, bu..."
   },
   {
@@ -1156,7 +1156,7 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": 80,
-      "originalText": "80 小时"
+      "originalText": "80 hours"
     },
     "category": "deep-learning",
     "hasChineseVersion": true,
@@ -1195,7 +1195,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 80,
+      "value": null,
       "originalText": "60 ~ 80 hours"
     },
     "category": "deep-learning",
@@ -1255,7 +1255,7 @@
     "programmingLanguage": "Matlab Preferred",
     "difficulty": "Beginner",
     "duration": {
-      "value": 70,
+      "value": null,
       "originalText": "50-70 hours"
     },
     "category": "electronics-basics",
@@ -1452,7 +1452,7 @@
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
     "summary": "",
-    "summaryEn": "> When encountering a problem, remember the first thing is to read the documentation. Don't start by searching online or asking others directly. Revie..."
+    "summaryEn": "When encountering a problem, remember the first thing is to read the documentation. Don't start by searching online or asking others directly. Reviewi..."
   },
   {
     "id": "essential-tools-thesis",
@@ -1546,7 +1546,7 @@
     "id": "machine-learning-systems-CMU10-414",
     "title": "CMU 10-414/714: Deep Learning Systems",
     "titleEn": "CMU 10-414/714: Deep Learning Systems",
-    "description": "# CMU 10-414/714: Deep Learning Systems ## 课程简介 - 所属大学：CMU - 先修要求：系统入门(eg.15-213)、深度学习入门、基本的数学知识 - 编程语言：Python, C++ - 课程难度：🌟🌟🌟 - 预计学时：100小时 <!-- 用一两段话介绍这门课程，内容包括但不限于： （1）课程覆盖的知识点范围 （2）与同类课程...",
+    "description": "# CMU 10-414/714: Deep Learning Systems ## 课程简介 - 所属大学：CMU - 先修要求：系统入门(eg.15-213)、深度学习入门、基本的数学知识 - 编程语言：Python, C++ - 课程难度：🌟🌟🌟 - 预计学时：100小时 深度学习的快速发展和广泛使用很大程度上得益于一系列简单好用且强大的编程框架，例如 Pytorch 和 Tensor...",
     "descriptionEn": "# CMU 10-414/714: Deep Learning Systems ## Course Overview - University: Carnegie Mellon University (CMU) - Prerequisites: Introduction to Systems (e.g., 15-213), Basics of Deep Learning, ...",
     "university": "Carnegie Mellon University (CMU)",
     "path": "machine-learning-systems/CMU10-414",
@@ -1554,13 +1554,13 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": 100,
-      "originalText": "100小时"
+      "originalText": "100 hours"
     },
     "category": "machine-learning-systems",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "<!-- 用一两段话介绍这门课程，内容包括但不限于： （1）课程覆盖的知识点范围 （2）与同类课程相比它的优势与特点 （3）学习这门课程的体验与感受 （4）自学这门课的注意点（踩过的坑、难度预警等等） （5）... ... --> 深度学习的快速发展和广泛使用很大程度上得益于一系列简单好用且强大的编...",
-    "summaryEn": "Fundamental Mathematical Knowledge - Programming Languages: Python, C++ - Difficulty: 🌟🌟🌟 - Estimated Hours: 100 hours The rise of deep learning owes ..."
+    "summary": "深度学习的快速发展和广泛使用很大程度上得益于一系列简单好用且强大的编程框架，例如 Pytorch 和 Tensorflow 等等。但大多数从业者只是这些框架的“调包侠”，对于这些框架内部的细节实现却了解甚少。如果你希望从事深度学习底层框架的开发，或者只是像我一样好奇这些框架的内部实现，那么这门课将会...",
+    "summaryEn": "The rise of deep learning owes much to user-friendly frameworks like PyTorch and TensorFlow. Yet, many users remain unfamiliar with these frameworks' ..."
   },
   {
     "id": "machine-learning-systems-CMU15-442",
@@ -1593,7 +1593,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
-      "value": null,
+      "value": 50,
       "originalText": "50h"
     },
     "category": "machine-learning-systems",
@@ -1606,21 +1606,21 @@
     "id": "machine-learning-systems-MLC",
     "title": "Machine Learning Compilation",
     "titleEn": "Machine Learning Compilation",
-    "description": "# Machine Learning Compilation ## 课程简介 - 所属大学：Bilibili 大学 - 先修要求：机器学习/深度学习基础 - 编程语言：Python - 课程难度：🌟🌟🌟 - 预计学时：30小时 <!-- 用一两段话介绍这门课程，内容包括但不限于： （1）课程覆盖的知识点范围 （2）与同类课程相比它的优势与特点 （3）学习这门课程的体验...",
-    "descriptionEn": "# Machine Learning Compilation ## Course Overview - University: Online course - Prerequisites: Foundations in Machine Learning/Deep Learning - Programming Language: Python --Difficulty: 🌟🌟🌟 - Estima...",
+    "description": "# Machine Learning Compilation ## 课程简介 - 所属大学：Bilibili 大学 - 先修要求：机器学习/深度学习基础 - 编程语言：Python - 课程难度：🌟🌟🌟 - 预计学时：30小时 这门课是机器学习编译领域的顶尖学者陈天奇在2022年暑期开设的一门在线课程。其实机器学习编译无论在工业界还是学术界仍然是一个非常前沿且快速更迭的领域，国内外此前还没有...",
+    "descriptionEn": "# Machine Learning Compilation ## Course Overview - University: Online course - Prerequisites: Foundations in Machine Learning/Deep Learning - Programming Language: Python - Difficulty: 🌟🌟🌟 - Estima...",
     "university": "Online course",
     "path": "machine-learning-systems/MLC",
     "programmingLanguage": "Python",
     "difficulty": "Intermediate",
     "duration": {
       "value": 30,
-      "originalText": "30小时"
+      "originalText": "30 hours"
     },
     "category": "machine-learning-systems",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "<!-- 用一两段话介绍这门课程，内容包括但不限于： （1）课程覆盖的知识点范围 （2）与同类课程相比它的优势与特点 （3）学习这门课程的体验与感受 （4）自学这门课的注意点（踩过的坑、难度预警等等） （5）... ... --> 这门课是机器学习编译领域的顶尖学者陈天奇在2022年暑期开设的一门在...",
-    "summaryEn": "--Difficulty: 🌟🌟🌟 - Estimated Hours: 30 hours This course, offered by top scholar Chen Tianqi during the summer of 2022, focuses on the field of machi..."
+    "summary": "这门课是机器学习编译领域的顶尖学者陈天奇在2022年暑期开设的一门在线课程。其实机器学习编译无论在工业界还是学术界仍然是一个非常前沿且快速更迭的领域，国内外此前还没有为这个方向专门开设的相关课程。因此如果对机器学习编译感兴趣想有个全貌性的感知的话，可以学习一下这门课。 本课程主要以 Apache T...",
+    "summaryEn": "This course, offered by top scholar Chen Tianqi during the summer of 2022, focuses on the field of machine learning compilation. As of now, this area ..."
   },
   {
     "id": "machine-learning-CS189",
@@ -1690,7 +1690,7 @@
     "descriptionEn": "# MIT18.06: Linear Algebra ## Descriptions - Offered by: MIT - Prerequisites: English - Programming languages: None - Difficulty: 🌟🌟🌟 - Class Hour: Varying from person to person Gilbert Strang, a g...",
     "university": "MIT",
     "path": "mathematics-basics/MITLA",
-    "programmingLanguage": "无",
+    "programmingLanguage": "None",
     "difficulty": "Intermediate",
     "duration": {
       "value": null,
@@ -1739,7 +1739,7 @@
     "category": "mathematics-basics",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "MIT 面向大一新生的信息论入门课程，Penfield 教授专门为这门课写了一本[教材][textbook]作为课程 notes，内容深入浅出，生动有趣。 [textbook]: https://ocw.mit.edu/courses/6-050j-information-and-entropy-s...",
+    "summary": "MIT 面向大一新生的信息论入门课程，Penfield 教授专门为这门课写了一本教材作为课程 notes，内容深入浅出，生动有趣。",
     "summaryEn": "This is MIT's introductory information theory course for freshmen, Professor Penfield has written a special textbook for this course as course notes, ..."
   },
   {
@@ -1773,7 +1773,7 @@
     "programmingLanguage": "C, x86 Assembly",
     "difficulty": "Advanced",
     "duration": {
-      "value": 200,
+      "value": null,
       "originalText": "200 hours+"
     },
     "category": "operating-systems",
@@ -1793,8 +1793,8 @@
     "programmingLanguage": "C Language, Assembly",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 100,
-      "originalText": "100 小时+"
+      "value": null,
+      "originalText": "100 hours+"
     },
     "category": "operating-systems",
     "hasChineseVersion": true,
@@ -1961,8 +1961,8 @@
     "subcategory": "c",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "非常好的课程，自我感觉收益非常大： - 侧重基础和基本概念：如 frame、stack memory、heap memory 等讲得很透。 - 针对C最难掌握的指针，有好的练习和编程来加深和强化理解。 - 非常好的 GDB，Valgrind 上手训练，作业也会涉及一些基本的 Git 练习。 - 老师...",
-    "summaryEn": "This is an excellent course which I benefited a lot from. - The course teaches fundamental concepts such as frame, stack memory, heap memory, etc. - T..."
+    "summary": "非常好的课程，自我感觉收益非常大： 侧重基础和基本概念：如 frame、stack memory、heap memory 等讲得很透。 针对C最难掌握的指针，有好的练习和编程来加深和强化理解。 非常好的 GDB，Valgrind 上手训练，作业也会涉及一些基本的 Git 练习。 老师建议作业用 Em...",
+    "summaryEn": "This is an excellent course which I benefited a lot from. The course teaches fundamental concepts such as frame, stack memory, heap memory, etc. There..."
   },
   {
     "id": "programming-introduction-cpp-AUT1400",
@@ -1982,7 +1982,7 @@
     "subcategory": "cpp",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "无意中发现的一个 C++ 课程。课程的 homework 质量很高，每个 homework 相互独立结构简单，且有完善的单元测试，非常适合用来学习 C++ 的编程。本课程共 7 个 homework，如下所示： 1. 实现一个 Matrix 类以及相关函数。 2. 实现一个模拟加密货币客户端/服务端...",
+    "summary": "无意中发现的一个 C++ 课程。课程的 homework 质量很高，每个 homework 相互独立结构简单，且有完善的单元测试，非常适合用来学习 C++ 的编程。本课程共 7 个 homework，如下所示： 实现一个 Matrix 类以及相关函数。 实现一个模拟加密货币客户端/服务端执行过程的程...",
     "summaryEn": "This is an accidentally discovered C++ course. The quality of the homework assignments is outstanding, with each being independently structured and si..."
   },
   {
@@ -1996,7 +1996,7 @@
     "programmingLanguage": "C++",
     "difficulty": "Beginner",
     "duration": {
-      "value": 70,
+      "value": null,
       "originalText": "50-70 hours"
     },
     "category": "programming-introduction",
@@ -2101,14 +2101,14 @@
     "programmingLanguage": "Java",
     "difficulty": "Beginner",
     "duration": {
-      "value": 15,
+      "value": null,
       "originalText": "less than 15 hours"
     },
     "category": "programming-introduction",
     "subcategory": "java",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "MIT 的 Java 入门课程，不需要有任何编程基础也可以开始学习。一节课是一小时 Lec （知识点讲解）+一小时 Lab （代码训练），整个课程是七节课。虽说是十四个小时的课时，真正学起来却很快，一天其实差不多就能结束。感觉是比较适合新手上手的强度。 课程内容包括了： 1. 快速入门 Java 所...",
+    "summary": "MIT 的 Java 入门课程，不需要有任何编程基础也可以开始学习。一节课是一小时 Lec （知识点讲解）+一小时 Lab （代码训练），整个课程是七节课。虽说是十四个小时的课时，真正学起来却很快，一天其实差不多就能结束。感觉是比较适合新手上手的强度。 课程内容包括了： 快速入门 Java 所需的基...",
     "summaryEn": "MIT's Java introductory course is suitable for beginners with no programming background. Each session consists of one hour of lecture (knowledge expla..."
   },
   {
@@ -2122,7 +2122,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Beginner",
     "duration": {
-      "value": 40,
+      "value": null,
       "originalText": "30-40 hours"
     },
     "category": "programming-introduction",
@@ -2150,7 +2150,7 @@
     "subcategory": "python",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "伯克利 CS61 系列的第一门课程，也是我的 Python 入门课。 CS61 系列是伯克利 CS 专业的入门课，其中： - CS61A: 强调抽象，让学生掌握用程序来解决实际问题，而不关注底层的硬件细节。 - CS61B: 注重算法与数据结构以及大规模程序的构建，学生会用 Java 语言结合算法与...",
+    "summary": "伯克利 CS61 系列的第一门课程，也是我的 Python 入门课。 CS61 系列是伯克利 CS 专业的入门课，其中： CS61A: 强调抽象，让学生掌握用程序来解决实际问题，而不关注底层的硬件细节。 CS61B: 注重算法与数据结构以及大规模程序的构建，学生会用 Java 语言结合算法与数据结构...",
     "summaryEn": "This is the first course in the Berkeley CS61 series, and my introductory course to Python. The CS61 series is composed of introductory courses to the..."
   },
   {
@@ -2164,7 +2164,7 @@
     "programmingLanguage": "Python",
     "difficulty": "Beginner",
     "duration": {
-      "value": 50,
+      "value": null,
       "originalText": "50 hours+"
     },
     "category": "programming-introduction",
@@ -2268,7 +2268,7 @@
     "programmingLanguage": "OCaml (ML)",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 30,
+      "value": null,
       "originalText": "20 to 30 hours (12 hours of lecture)"
     },
     "category": "programming-languages-design",
@@ -2289,7 +2289,7 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": 60,
-      "originalText": "60 小时"
+      "originalText": "60 hours"
     },
     "category": "programming-languages-design",
     "hasChineseVersion": true,
@@ -2309,13 +2309,13 @@
     "difficulty": "Intermediate",
     "duration": {
       "value": 60,
-      "originalText": "60 小时"
+      "originalText": "60 hours"
     },
     "category": "programming-languages-design",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "软件分析技术是由北京大学熊英飞老师开设的一门课程，主要介绍了以下内容： 1. 基于抽象解释的程序分析（数据流分析、过程间分析、指针分析、抽象解释等） 2. 基于约束求解的程序分析（SAT、SMT、符号执行等） 3. 软件分析应用（程序合成、缺陷定位、缺陷修复等） 和南京大学的软件分析课程对比，这门课...",
-    "summaryEn": "Software Analysis is a course offered by Prof. Yingfei Xiong from Peking University. The course mainly covers the following topics: 1. Program analysi..."
+    "summary": "软件分析技术是由北京大学熊英飞老师开设的一门课程，主要介绍了以下内容： 基于抽象解释的程序分析（数据流分析、过程间分析、指针分析、抽象解释等） 基于约束求解的程序分析（SAT、SMT、符号执行等） 软件分析应用（程序合成、缺陷定位、缺陷修复等） 和南京大学的软件分析课程对比，这门课程的特点是讲了更多...",
+    "summaryEn": "Software Analysis is a course offered by Prof. Yingfei Xiong from Peking University. The course mainly covers the following topics: Program analysis b..."
   },
   {
     "id": "software-engineering-17803",
@@ -2354,7 +2354,7 @@
     "category": "software-engineering",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "这门课的目标就是让学生学会如何写出高质量的代码，所谓高质量，则是满足下面三个目标（课程设计者原话复制，以防自己翻译曲解本意）： > Safe from bugs. Correctness (correct behavior right now) and defensiveness (correct ...",
+    "summary": "这门课的目标就是让学生学会如何写出高质量的代码，所谓高质量，则是满足下面三个目标（课程设计者原话复制，以防自己翻译曲解本意）： Safe from bugs. Correctness (correct behavior right now) and defensiveness (correct be...",
     "summaryEn": "The goal of this course is for you to learn how to write high quality code, and what is meant by high quality is to meet the following three targets: ..."
   },
   {
@@ -2414,8 +2414,8 @@
     "category": "system-security",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "伯克利的计算机系统安全课程，课程内容分为5个部分： - Security principles: how to design a secure system - Memory safety: buffer overflow attack - Cryptography: symmetric encry...",
-    "summaryEn": "Computer Security course from UC Berkeley, devided into 5 parts: - Security principles: how to design a secure system - Memory safety: buffer overflow..."
+    "summary": "伯克利的计算机系统安全课程，课程内容分为5个部分： Security principles: how to design a secure system Memory safety: buffer overflow attack Cryptography: symmetric encryption,...",
+    "summaryEn": "Computer Security course from UC Berkeley, devided into 5 parts: Security principles: how to design a secure system Memory safety: buffer overflow att..."
   },
   {
     "id": "system-security-CSE365",
@@ -2434,8 +2434,8 @@
     "category": "system-security",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "亚利桑那州立大学 Web 安全的导论课，课程以模块化的形式构成，主要包含以下方面： - Program Misuse: Linux commandline, privilege escalation - Web fundamentals: http, server, intercept - Asse...",
-    "summaryEn": "An introductory course on web security at Arizona State University, the course contains several modules, mainly including: - Program Misuse: Linux com..."
+    "summary": "亚利桑那州立大学 Web 安全的导论课，课程以模块化的形式构成，主要包含以下方面： Program Misuse: Linux commandline, privilege escalation Web fundamentals: http, server, intercept Assembly: ...",
+    "summaryEn": "An introductory course on web security at Arizona State University, the course contains several modules, mainly including: Program Misuse: Linux comma..."
   },
   {
     "id": "system-security-CSE466",
@@ -2454,8 +2454,8 @@
     "category": "system-security",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "亚利桑那州立大学系统安全的核心课，课程以模块化的形式构成，主要包含以下方面： - Linux commandline: Program misuse, program interaction - Shellcoding: Assembly, shellcode injection, preventi...",
-    "summaryEn": "A hard-core course on system security at Arizona State University, the course contains several modules, mainly including: - Linux commandline: Program..."
+    "summary": "亚利桑那州立大学系统安全的核心课，课程以模块化的形式构成，主要包含以下方面： Linux commandline: Program misuse, program interaction Shellcoding: Assembly, shellcode injection, prevention R...",
+    "summaryEn": "A hard-core course on system security at Arizona State University, the course contains several modules, mainly including: Linux commandline: Program m..."
   },
   {
     "id": "system-security-MIT6.1600",
@@ -2494,7 +2494,7 @@
     "category": "system-security",
     "hasChineseVersion": true,
     "hasEnglishVersion": true,
-    "summary": "MIT 的计算机系统安全课程，实验环境是一个 Web Application Zoobar。学生学习攻防技术并应用于该 Web Application。课程在 2023 年改用 6.5660 编号，最新公开课程归档为 Spring 2023。 - Lab 1: you will explore th...",
+    "summary": "MIT 的计算机系统安全课程，实验环境是一个 Web Application Zoobar。学生学习攻防技术并应用于该 Web Application。课程在 2023 年改用 6.5660 编号，最新公开课程归档为 Spring 2023。 Lab 1: you will explore the ...",
     "summaryEn": "This is MIT's Computer Systems Security course. Lectures cover threat models, attacks that compromise security, and techniques for achieving security,..."
   },
   {
@@ -2548,8 +2548,8 @@
     "programmingLanguage": "JavaScript/HTML/CSS",
     "difficulty": "Intermediate",
     "duration": {
-      "value": 2,
-      "originalText": "每周 2 小时（讲座）+ 每周 4–10 小时（作业），持续 12 周"
+      "value": null,
+      "originalText": "2 hrs/week (lecture) + 4–10 hrs/week (HW), 12 weeks"
     },
     "category": "web-development",
     "hasChineseVersion": true,

@@ -82,6 +82,22 @@ function extractTitle(content: string, fallback: string): string {
 }
 
 export async function getCourseContent(coursePath: string[], locale: string) {
+  const missingCourse = {
+    content: '', title: '', filePath: '', exists: false,
+    hasEnglishVersion: false, hasChineseVersion: false, isFallback: false,
+  };
+  let decodedSegments: string[];
+  try {
+    decodedSegments = coursePath.map(segment => decodeURIComponent(segment));
+  } catch {
+    // Next.js may already have decoded %25 into a literal %. Invalid input
+    // should reach the page's notFound(), not throw a URIError during rendering.
+    return missingCourse;
+  }
+  if (!coursePath.length || [...coursePath, ...decodedSegments].some(segment =>
+    !segment || segment === '.' || segment === '..' || /[/\\\0]/.test(segment)
+  )) return missingCourse;
+
   const docsPath = path.join(process.cwd(), 'course-content');
   const relativePath = path.join(...coursePath);
 
@@ -101,9 +117,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
   // Try different URL encodings for special characters
   const encodedVariants = [
     encodedRelativePath,
-    coursePath.map(segment =>
-      decodeURIComponent(segment)
-    ).join('/'),
+    decodedSegments.join('/'),
     coursePath.map(segment =>
       segment.replace(/%3A/g, ':').replace(/%EF%BC%9A/g, '：').replace(/%20/g, ' ').replace(/\+/g, ' ')
     ).join('/')
@@ -146,6 +160,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
         exists: true,
         hasEnglishVersion: locale === 'en' || hasOtherVersion,
         hasChineseVersion: locale === 'zh' || hasOtherVersion,
+        isFallback: false,
       };
     } catch {
       // Continue to next possible path
@@ -177,14 +192,7 @@ export async function getCourseContent(coursePath: string[], locale: string) {
     }
   }
 
-  return {
-    content: '',
-    title: '',
-    filePath: '',
-    exists: false,
-    hasEnglishVersion: false,
-    hasChineseVersion: false,
-  };
+  return missingCourse;
 }
 
 export async function getCourseMetadata(coursePath: string[]) {

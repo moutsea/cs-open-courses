@@ -2,6 +2,7 @@
 
 import { useLearningLibrary } from '@/hooks/useLearningLibrary'
 import type { LearningCourse, LearningStatus } from '@/lib/learningLibrary'
+import { track } from '@/lib/analytics'
 
 interface CourseLearningActionsProps {
   course: LearningCourse
@@ -36,7 +37,10 @@ export default function CourseLearningActions({ course }: CourseLearningActionsP
           type="button"
           disabled={!isReady}
           aria-pressed={isFavorite}
-          onClick={() => updateEntry(course, { favorite: !isFavorite })}
+          onClick={() => {
+            track('course_favorite', { course: course.path, action: isFavorite ? 'remove' : 'add' })
+            updateEntry(course, { favorite: !isFavorite })
+          }}
           className={`inline-flex min-h-11 items-center justify-center gap-2 rounded-full border px-4 py-2 text-sm font-semibold transition disabled:cursor-wait disabled:opacity-60 ${
             isFavorite
               ? 'border-pink-300/50 bg-pink-300/15 text-pink-100'
@@ -52,7 +56,11 @@ export default function CourseLearningActions({ course }: CourseLearningActionsP
           <select
             value={status}
             disabled={!isReady}
-            onChange={(event) => updateEntry(course, { status: event.target.value as LearningStatus })}
+            onChange={(event) => {
+              const nextStatus = event.target.value
+              track('course_progress', { course: course.path, status: nextStatus, from: status })
+              updateEntry(course, { status: nextStatus as LearningStatus })
+            }}
             className="bg-transparent font-semibold text-white outline-none disabled:cursor-wait"
           >
             {statusOptions.map(option => (

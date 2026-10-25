@@ -82,18 +82,18 @@ export default function GithubProjectsExplorer({
     <div id="projects" className="space-y-8 scroll-mt-28">
       <form
         action={localizedPath(locale, '/open-source')}
-        className="rounded-[32px] border border-white/10 bg-white/5 p-5 shadow-[0_30px_90px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-7"
+        className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl sm:p-8"
       >
         <div className="grid gap-4 xl:grid-cols-[minmax(280px,1fr)_220px_220px_180px_auto]">
           <label className="relative block">
             <span className="sr-only">{isZh ? '搜索开源项目' : 'Search open-source projects'}</span>
-            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/40" />
+            <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-white/45" />
             <input
               type="search"
               name="q"
               defaultValue={filters.query || ''}
               placeholder={isZh ? '搜索名称、组织、简介或主题…' : 'Search name, owner, description, or topic…'}
-              className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/60 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/15"
+              className="h-12 w-full rounded-2xl border border-white/10 bg-slate-950/60 pl-12 pr-4 text-sm text-white outline-none transition placeholder:text-white/45 focus:border-cyan-300/60 focus:ring-2 focus:ring-cyan-400/15"
             />
           </label>
 
@@ -149,7 +149,7 @@ export default function GithubProjectsExplorer({
 
           <button
             type="submit"
-            className="inline-flex h-12 items-center justify-center rounded-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 px-6 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition hover:scale-[1.02]"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
           >
             {isZh ? '搜索项目' : 'Search'}
           </button>
@@ -162,7 +162,7 @@ export default function GithubProjectsExplorer({
               : `${data.total.toLocaleString('en-US')} projects found`}
           </p>
           {(filters.query || filters.category || filters.language || activeSort !== 'trending') && (
-            <Link href={`${localizedPath(locale, '/open-source')}#projects`} className="font-semibold text-cyan-300 hover:text-cyan-200">
+            <Link href={`${localizedPath(locale, '/open-source')}#projects`} className="font-semibold text-cyan-200 underline underline-offset-4 hover:text-cyan-100">
               {isZh ? '清除筛选' : 'Clear filters'}
             </Link>
           )}
@@ -176,16 +176,16 @@ export default function GithubProjectsExplorer({
             return (
               <article
                 key={project.id}
-                className="group flex min-w-0 flex-col rounded-[28px] border border-white/10 bg-slate-950/45 p-6 shadow-[0_25px_70px_rgba(2,6,23,0.35)] transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07]"
+                className="group flex min-w-0 flex-col rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-white/25 hover:bg-white/10"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className="min-w-0">
                     <div className="mb-3 flex flex-wrap gap-2">
-                      <span className="rounded-full border border-cyan-300/20 bg-cyan-300/10 px-3 py-1 text-[11px] font-semibold text-cyan-200">
+                      <span className="rounded-full border border-cyan-400/20 bg-cyan-400/15 px-3 py-1 text-[11px] font-semibold text-cyan-200">
                         {isZh ? category.zh : category.en}
                       </span>
                       {project.language && (
-                        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/65">
+                        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium text-white/55">
                           {project.language}
                         </span>
                       )}
@@ -195,37 +195,37 @@ export default function GithubProjectsExplorer({
                     </h2>
                     <p className="mt-1 truncate font-mono text-xs text-white/45">{project.fullName}</p>
                   </div>
-                  <Github className="h-6 w-6 shrink-0 text-white/35 transition group-hover:text-white/70" />
+                  <Github className="h-6 w-6 shrink-0 text-white/45 transition group-hover:text-white/70" />
                 </div>
 
-                <p className="mt-4 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-white/65">
+                <p className="mt-4 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-white/70">
                   {project.description || (isZh ? '该项目暂未提供简介。' : 'No description is available for this project.')}
                 </p>
 
                 <div className="mt-5 grid grid-cols-3 gap-2 text-xs">
-                  <div className="rounded-2xl border border-white/8 bg-black/15 p-3">
-                    <div className="flex items-center gap-1.5 text-white/40"><Star className="h-3.5 w-3.5" /> Stars</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                    <div className="flex items-center gap-1.5 text-white/45"><Star className="h-3.5 w-3.5" /> Stars</div>
                     <div className="mt-1 font-mono font-semibold text-amber-200">{compactNumber(project.stars)}</div>
                   </div>
-                  <div className="rounded-2xl border border-white/8 bg-black/15 p-3">
-                    <div className="flex items-center gap-1.5 text-white/40"><TrendingUp className="h-3.5 w-3.5" /> {isZh ? '增长' : 'Delta'}</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                    <div className="flex items-center gap-1.5 text-white/45"><TrendingUp className="h-3.5 w-3.5" /> {isZh ? '增长' : 'Delta'}</div>
                     <div className="mt-1 font-mono font-semibold text-emerald-200">+{compactNumber(project.starsDelta)}</div>
                   </div>
-                  <div className="rounded-2xl border border-white/8 bg-black/15 p-3">
-                    <div className="flex items-center gap-1.5 text-white/40"><GitFork className="h-3.5 w-3.5" /> Forks</div>
-                    <div className="mt-1 font-mono font-semibold text-blue-200">{compactNumber(project.forks)}</div>
+                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                    <div className="flex items-center gap-1.5 text-white/45"><GitFork className="h-3.5 w-3.5" /> Forks</div>
+                    <div className="mt-1 font-mono font-semibold text-cyan-200">{compactNumber(project.forks)}</div>
                   </div>
                 </div>
 
                 <div className="mt-4 flex min-h-7 flex-wrap gap-1.5">
                   {project.topics.slice(0, 4).map(topic => (
-                    <span key={topic} className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] text-white/50">
+                    <span key={topic} className="rounded-full bg-white/5 px-2.5 py-1 text-[11px] text-white/55">
                       {topic}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/8 pt-5 text-xs text-white/45">
+                <div className="mt-auto flex items-center justify-between gap-4 border-t border-white/10 pt-5 text-xs text-white/45">
                   <span className="inline-flex min-w-0 items-center gap-1.5">
                     <Clock3 className="h-3.5 w-3.5 shrink-0" />
                     <span className="truncate">{formatDate(project.pushedAt, locale)}</span>
@@ -234,7 +234,7 @@ export default function GithubProjectsExplorer({
                     href={project.htmlUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-cyan-300 transition hover:text-cyan-200"
+                    className="inline-flex shrink-0 items-center gap-1.5 font-semibold text-cyan-200 underline underline-offset-4 transition hover:text-cyan-100"
                   >
                     GitHub <ExternalLink className="h-3.5 w-3.5" />
                   </a>
@@ -244,9 +244,9 @@ export default function GithubProjectsExplorer({
           })}
         </div>
       ) : (
-        <div className="rounded-[32px] border border-dashed border-white/15 bg-white/[0.03] px-6 py-16 text-center">
+        <div className="rounded-3xl border border-dashed border-white/15 bg-white/5 px-6 py-16 text-center">
           <Github className="mx-auto h-10 w-10 text-white/25" />
-          <h2 className="mt-5 text-2xl font-semibold text-white">
+          <h2 className="mt-5 text-2xl sm:text-3xl font-semibold text-white">
             {stats.total === 0
               ? (isZh ? '项目雷达等待首次同步' : 'The project radar is waiting for its first sync')
               : (isZh ? '没有找到匹配项目' : 'No projects matched your filters')}
@@ -264,7 +264,7 @@ export default function GithubProjectsExplorer({
           {data.page > 1 ? (
             <Link
               href={buildPageHref(locale, filters, data.page - 1)}
-              className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/75 transition hover:border-white/35 hover:text-white"
+              className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
             >
               {isZh ? '上一页' : 'Previous'}
             </Link>
@@ -275,7 +275,7 @@ export default function GithubProjectsExplorer({
           {data.page < data.totalPages ? (
             <Link
               href={buildPageHref(locale, filters, data.page + 1)}
-              className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white/75 transition hover:border-white/35 hover:text-white"
+              className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/10"
             >
               {isZh ? '下一页' : 'Next'}
             </Link>

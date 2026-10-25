@@ -12,7 +12,7 @@ const IconWrapper = ({ children, className }: { children: ReactNode; className?:
     strokeWidth={1.5}
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={["h-11 w-11 text-white", className].filter(Boolean).join(" ")}
+    className={["h-11 w-11", className].filter(Boolean).join(" ")}
   >
     {children}
   </svg>

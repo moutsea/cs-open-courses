@@ -1,15 +1,20 @@
 'use client';
 
 import Link from 'next/link';
-import { sanitizeMarkdownHTML } from '@/lib/htmlSanitizer';
+import { Suspense, useRef, type ReactNode } from 'react';
 import PageLayout from './PageLayout';
-import { getChineseName } from '@/lib/categoryMapping';
+import { slugLabel } from '@/lib/categoryMapping';
 import { localizedPath } from '@/lib/pathUtils';
 import CourseLearningActions from '@/components/CourseLearningActions';
 import CoursePromotions from '@/components/CoursePromotions';
+import CourseAnchorNavigation from '@/components/CourseAnchorNavigation';
 
 interface MDXRendererProps {
+  /** Final course body from markdownToHTML; never transform it after sanitization. */
   content: string;
+  children?: ReactNode;
+  videoResources?: ReactNode;
+  factSheet?: ReactNode;
   locale: string;
   isFallback?: boolean;
   title?: string;
@@ -22,6 +27,9 @@ interface MDXRendererProps {
 
 export default function MDXRenderer({
   content,
+  children,
+  videoResources,
+  factSheet,
   locale,
   isFallback = false,
   title,
@@ -31,18 +39,11 @@ export default function MDXRenderer({
   hasEnglishVersion = false,
   hasChineseVersion = false
 }: MDXRendererProps) {
+  const articleRef = useRef<HTMLElement>(null);
   const isChinese = locale === 'zh';
   const courseTitle = title || (isChinese ? '课程内容' : 'Course');
 
-  const formatSlug = (slug?: string) => {
-    if (!slug) return '';
-    if (isChinese) {
-      return getChineseName(slug);
-    }
-    return slug
-      .replace(/-/g, ' ')
-      .replace(/\b\w/g, letter => letter.toUpperCase());
-  };
+  const formatSlug = (slug?: string) => (slug ? slugLabel(slug, isChinese ? 'zh' : 'en') : '');
 
   const displayCategory = formatSlug(categorySlug);
   const displaySubcategory = formatSlug(subcategorySlug);
@@ -63,14 +64,6 @@ export default function MDXRenderer({
     });
   }
 
-  // 净化HTML内容以防止XSS攻击
-  const sanitizedContent = sanitizeMarkdownHTML(content);
-  const contentWithoutHeading = title
-    ? sanitizedContent.replace(/<h1[^>]*>[\s\S]*?<\/h1>/, '').trim()
-    : '';
-  const displayContent =
-    contentWithoutHeading.length > 0 ? contentWithoutHeading : sanitizedContent;
-
   const backToCoursesHref = localizedPath(locale, '/courses');
   const displayedLocale = isFallback ? (locale === 'zh' ? 'en' : 'zh') : locale;
 
@@ -78,12 +71,12 @@ export default function MDXRenderer({
     <PageLayout locale={locale}>
       <div className="relative isolate overflow-hidden bg-slate-950 text-white">
         <div className="pointer-events-none absolute inset-0 -z-10">
-          <div className="absolute -top-10 left-1/3 h-72 w-72 rounded-full bg-blue-500/30 blur-[200px]"></div>
-          <div className="absolute top-24 right-0 h-64 w-64 rounded-full bg-purple-500/20 blur-[180px]"></div>
+          <div className="absolute -top-10 left-1/3 h-72 w-72 rounded-full bg-cyan-500/20 blur-[200px]"></div>
+          <div className="absolute top-24 right-0 h-64 w-64 rounded-full bg-slate-400/10 blur-[180px]"></div>
           <div className="absolute -bottom-10 left-10 h-80 w-80 rounded-full bg-cyan-400/20 blur-[180px]"></div>
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-5xl px-4 pt-16 pb-8 sm:px-6 lg:px-8">
           <div className="space-y-8">
             <Link
               href={backToCoursesHref}
@@ -100,14 +93,14 @@ export default function MDXRenderer({
             <div className="space-y-5">
               <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.35em] text-white/80">
                 {displayCategory && (
-                  <span className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5">
+                  <Link href={localizedPath(locale, `/courses/${categorySlug}`)} className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 hover:bg-white/10">
                     {displayCategory}
-                  </span>
+                  </Link>
                 )}
                 {displaySubcategory && (
-                  <span className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5">
+                  <Link href={localizedPath(locale, `/courses/${categorySlug}/${subcategorySlug}`)} className="rounded-full border border-white/15 bg-white/5 px-4 py-1.5 hover:bg-white/10">
                     {displaySubcategory}
-                  </span>
+                  </Link>
                 )}
                 {languageChips.map(chip => (
                   <Link
@@ -133,7 +126,7 @@ export default function MDXRenderer({
 
               <div className="space-y-4">
                 <p className="text-sm uppercase tracking-[0.5em] text-white/60">
-                  {isChinese ? '课程内容' : 'Course Outline'}
+                  {isChinese ? '中文资料 · 先修 · 教材 · 视频' : 'Materials · Prerequisites · Textbook'}
                 </p>
                 <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
                   {courseTitle}
@@ -154,7 +147,7 @@ export default function MDXRenderer({
         </div>
 
         <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="rounded-[36px] border border-white/15 bg-slate-900/80 p-6 text-white shadow-[0_40px_120px_rgba(2,6,23,0.45)] backdrop-blur-2xl sm:p-10">
+          <div className="rounded-3xl border border-white/15 bg-slate-900/80 p-6 text-white shadow-[0_40px_120px_rgba(2,6,23,0.45)] backdrop-blur-2xl sm:p-10">
             {isFallback && (
               <div className="mb-6 rounded-2xl border border-amber-200/40 bg-amber-200/10 px-4 py-4 text-sm text-amber-100">
                 {isChinese
@@ -163,9 +156,15 @@ export default function MDXRenderer({
               </div>
             )}
 
-            <article className="markdown-content space-y-6 text-slate-100 leading-relaxed">
-              <div dangerouslySetInnerHTML={{ __html: displayContent }} />
+            {factSheet}
+            {videoResources}
+            <Suspense fallback={null}>
+              <CourseAnchorNavigation articleRef={articleRef} content={content} />
+            </Suspense>
+            <article ref={articleRef} className="markdown-content space-y-6 text-slate-100 leading-relaxed">
+              <div dangerouslySetInnerHTML={{ __html: content }} />
             </article>
+            {children}
           </div>
         </div>
       </div>
@@ -177,6 +176,9 @@ export default function MDXRenderer({
         }
         .markdown-content :where(p, li, span, blockquote, td, th) {
           color: #e2e8f0;
+        }
+        .markdown-content [id] {
+          scroll-margin-top: 6rem;
         }
         .markdown-content :where(h1) {
           font-size: clamp(2.5rem, 5vw, 3rem);
@@ -225,6 +227,8 @@ export default function MDXRenderer({
         .markdown-content :where(pre code) {
           display: block;
           padding: 0;
+          /* 代码块用 highlight.js 的暗色配色，不要继承行内代码的粉色 */
+          color: #e6edf3;
           background: transparent;
           border-radius: 0;
         }

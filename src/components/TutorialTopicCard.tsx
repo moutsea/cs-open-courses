@@ -8,7 +8,6 @@ import type { TutorialTopic } from '@/components/TutorialContent';
 interface TutorialTopicCardProps {
   topic: TutorialTopic;
   locale: string;
-  variant?: 'default' | 'immersive';
 }
 
 // 课程映射 - 基于课程名称映射到课程文件系统路径
@@ -86,15 +85,14 @@ const courseMapping: Record<string, string> = {
   "系统安全": "system-security/CS161"
 };
 
-const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale, variant = 'default' }: TutorialTopicCardProps) {
-  const isImmersive = variant === 'immersive';
+const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale }: TutorialTopicCardProps) {
   
   const getLevelColor = (level: string) => {
     switch (level) {
-      case "Beginner": return isImmersive ? 'bg-emerald-400/15 text-emerald-200' : 'bg-green-100 text-green-800';
-      case "Intermediate": return isImmersive ? 'bg-amber-400/15 text-amber-200' : 'bg-yellow-100 text-yellow-800';
-      case "Advanced": return isImmersive ? 'bg-rose-400/15 text-rose-200' : 'bg-red-100 text-red-800';
-      default: return isImmersive ? 'bg-white/10 text-white/70' : 'bg-gray-100 text-gray-800';
+      case "Beginner": return 'bg-emerald-400/15 text-emerald-200';
+      case "Intermediate": return 'bg-amber-400/15 text-amber-200';
+      case "Advanced": return 'bg-rose-400/15 text-rose-200';
+      default: return 'bg-white/10 text-white/70';
     }
   };
 
@@ -115,32 +113,28 @@ const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale, varia
     : '';
   
   return (
-    <div className={`rounded-2xl border p-4 transition-all duration-300 ${
-      isImmersive
-        ? 'border-white/10 bg-slate-950/40 text-white hover:border-white/40 hover:bg-slate-900/70'
-        : 'border-gray-200 hover:border-blue-300'
-    } ${
-      hasRelatedCourse ? 'hover:shadow-md cursor-pointer group' : ''
+    <div className={`rounded-2xl border border-white/10 bg-white/5 p-4 text-white transition-all duration-300 hover:border-white/25 hover:bg-white/10 ${
+      hasRelatedCourse ? 'cursor-pointer group' : ''
     }`}>
       {hasRelatedCourse ? (
         <Link href={courseLinkPath} className="block">
           <div className="flex items-center justify-between mb-2">
-            <h3 className={`font-semibold transition-colors ${isImmersive ? 'text-white group-hover:text-cyan-200' : 'text-gray-900 group-hover:text-blue-600'}`}>
+            <h3 className={`font-semibold transition-colors text-white group-hover:text-cyan-200`}>
               {topic.name}
             </h3>
             <span className={`px-2 py-1 text-xs font-medium rounded-full ${getLevelColor(topic.level)}`}>
               {levelTranslations[locale as keyof typeof levelTranslations][topic.level as keyof typeof levelTranslations.en]}
             </span>
           </div>
-          <p className={`text-sm mb-2 ${isImmersive ? 'text-white/60' : 'text-gray-600'}`}>{topic.description}</p>
+          <p className={`text-sm mb-2 text-white/60`}>{topic.description}</p>
           <div className="flex items-center justify-between">
-            <div className={`flex items-center text-sm ${isImmersive ? 'text-white/50' : 'text-gray-500'}`}>
+            <div className={`flex items-center text-sm text-white/50`}>
               <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               {durationText}
             </div>
-            <div className={`flex items-center gap-1 text-sm font-medium ${isImmersive ? 'text-cyan-200' : 'text-blue-600'}`}>
+            <div className={`flex items-center gap-1 text-sm font-medium text-cyan-200`}>
               <span>{locale === 'zh' ? '进入课程' : 'Open course'}</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -151,13 +145,13 @@ const TutorialTopicCard = memo(function TutorialTopicCard({ topic, locale, varia
       ) : (
         <>
           <div className="flex items-center justify-between mb-2">
-            <h3 className={`font-semibold ${isImmersive ? 'text-white' : 'text-gray-900'}`}>{topic.name}</h3>
+            <h3 className={`font-semibold text-white`}>{topic.name}</h3>
             <span className={`px-2 py-1 text-xs font-medium rounded-full ${getLevelColor(topic.level)}`}>
               {levelTranslations[locale as keyof typeof levelTranslations][topic.level as keyof typeof levelTranslations.en]}
             </span>
           </div>
-          <p className={`text-sm mb-2 ${isImmersive ? 'text-white/60' : 'text-gray-600'}`}>{topic.description}</p>
-          <div className={`flex items-center text-sm ${isImmersive ? 'text-white/50' : 'text-gray-500'}`}>
+          <p className={`text-sm mb-2 text-white/60`}>{topic.description}</p>
+          <div className={`flex items-center text-sm text-white/50`}>
             <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>

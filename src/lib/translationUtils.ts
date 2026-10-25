@@ -70,15 +70,15 @@ export function useSafeTranslations(namespace: string, locale?: string) {
 export function getDifficultyColor(difficulty: string): string {
   switch (difficulty.toLowerCase()) {
     case 'beginner':
-      return 'bg-green-100 text-green-800';
+      return 'bg-emerald-400/15 text-emerald-200';
     case 'intermediate':
-      return 'bg-yellow-100 text-yellow-800';
+      return 'bg-amber-400/15 text-amber-200';
     case 'advanced':
-      return 'bg-red-100 text-red-800';
+      return 'bg-rose-400/15 text-rose-200';
     case 'expert':
-      return 'bg-purple-100 text-purple-800';
+      return 'bg-violet-400/15 text-violet-200';
     default:
-      return 'bg-gray-100 text-gray-800';
+      return 'bg-white/10 text-white/70';
   }
 }
 

@@ -38,7 +38,7 @@ const universityGroups = [
 
 const ignoredUniversityValues = ['online course', 'bilibili 大学']
 
-function getUniversityKeys(university: string): string[] {
+export function getUniversityKeys(university: string): string[] {
   const normalizedUniversity = university.trim().replace(/^·+/, '').toLowerCase()
   if (!normalizedUniversity || ignoredUniversityValues.includes(normalizedUniversity)) return []
 

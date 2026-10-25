@@ -109,6 +109,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     }
   ]
 
+  // Hero 标题与页脚保持一致：主体白色，"& Beyond" 用青色强调。
+  const [heroTitleLead, heroTitleAccent] = t('hero.title').split(/\s*&\s*/)
+
   const benefits = [
     [t('benefits.realCourses.title'), t('benefits.realCourses.description')],
     [t('benefits.clearPaths.title'), t('benefits.clearPaths.description')],
@@ -166,9 +169,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
 
               <h1 className="mt-7 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-                <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-violet-300 bg-clip-text text-transparent">
-                  {t('hero.title')}
-                </span>
+                {heroTitleLead}
+                {heroTitleAccent ? <span className="text-cyan-300"> &amp; {heroTitleAccent}</span> : null}
               </h1>
 
               <p className="mt-6 max-w-3xl text-xl leading-relaxed text-white/75 sm:text-2xl">
@@ -190,7 +192,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                     className="w-full bg-transparent text-base text-white outline-none placeholder:text-white/35"
                   />
                 </label>
-                <button className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-white px-6 font-bold text-slate-950 transition hover:bg-cyan-100">
+                <button className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-cyan-400 px-6 font-bold text-slate-950 transition hover:bg-cyan-300">
                   {t('hero.searchButton')}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
@@ -199,7 +201,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href={localizedPath(locale, '/courses')}
-                  className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-200"
+                  className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
                 >
                   {t('hero.browseCourses')}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -213,7 +215,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
             </div>
 
-            <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-[0_30px_100px_rgba(8,47,73,0.25)] backdrop-blur-xl sm:p-8">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_30px_100px_rgba(8,47,73,0.25)] backdrop-blur-xl sm:p-8">
               <div className="flex items-start justify-between gap-6">
                 <div>
                   <p className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-200/70">
@@ -240,7 +242,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
               <Link
                 href={localizedPath(locale, '/course/data-structures-algorithms/CS61B')}
-                className="mt-6 inline-flex w-full items-center justify-between rounded-2xl border border-cyan-200/20 bg-cyan-200/10 px-5 py-4 font-semibold text-cyan-100 transition hover:bg-cyan-200/15"
+                className="mt-6 inline-flex w-full items-center justify-between rounded-2xl border border-cyan-200/20 bg-cyan-200/10 px-5 py-4 font-semibold text-cyan-100 transition hover:bg-cyan-300/15"
               >
                 {t('hero.openCourse')}
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
@@ -275,7 +277,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               {homeUniversities.map(university => (
                 <Link
                   key={university.key}
-                  href={`${localizedPath(locale, '/universities')}?university=${encodeURIComponent(university.key)}#university-courses`}
+                  href={localizedPath(locale, `/universities/${university.key}`)}
                   className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:border-cyan-200/30 hover:bg-white/10"
                   aria-label={locale === 'zh'
                     ? `查看 ${university.shortName} 的 ${university.courses} 门公开课`
@@ -296,7 +298,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </ImmersiveSection>
 
         <ImmersiveSection className="px-4 py-16 text-white sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-screen-2xl rounded-[32px] border border-white/10 bg-white/5 p-7 backdrop-blur-xl sm:p-10">
+          <div className="mx-auto max-w-screen-2xl rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-xl sm:p-10">
             <div className="grid gap-5 md:grid-cols-3">
               {benefits.map(([title, description]) => (
                 <div key={title}>
@@ -312,7 +314,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               </div>
               <Link
                 href={localizedPath(locale, '/courses')}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-100"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-cyan-300"
               >
                 {t('cta.button')}
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />

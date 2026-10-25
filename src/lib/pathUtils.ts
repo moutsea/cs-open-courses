@@ -12,7 +12,7 @@ export function localizedPath(locale: string, pathname = '/'): string {
  */
 export function encodeFilePathToURL(filePath: string): string {
   // 移除语言前缀和文件扩展名，只保留路径部分
-  const pathParts = filePath.split('/');
+  const pathParts = toPosixPath(filePath).split('/');
   // 去掉语言部分（第一个元素）和文件扩展名
   const pathWithoutLocale = pathParts.slice(1); // 移除语言前缀
   const lastPart = pathWithoutLocale[pathWithoutLocale.length - 1];
@@ -73,13 +73,23 @@ export function buildCoursePathFromId(courseId: string): string {
 }
 
 /**
+ * 把文件系统路径统一成正斜杠。
+ *
+ * `path.relative` 在 Windows 上返回反斜杠，而这里的解析、slug 生成和 URL 拼接
+ * 全部按 `/` 切分；课程文件名不会包含反斜杠，所以直接替换是安全的。
+ */
+export function toPosixPath(filePath: string): string {
+  return filePath.replace(/\\/g, '/');
+}
+
+/**
  * 构建动态路由的 URL 路径
  * @param filePath 文件系统路径，如 "zh/programming-introduction/python/CS50P.md"
  * @returns 动态路由路径数组，如 ["programming-introduction", "python", "CS50P"]
  */
 export function buildDynamicRoutePath(filePath: string): string[] {
   // 移除语言前缀和文件扩展名
-  const pathParts = filePath.split('/');
+  const pathParts = toPosixPath(filePath).split('/');
   
   // 检查是否包含语言前缀（如 "zh/" 或 "en/"）
   let pathWithoutLocale = pathParts;

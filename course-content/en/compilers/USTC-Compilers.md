@@ -3,8 +3,8 @@
 ## Descriptions
 
 - Offered by: University of Science and Technology of China (USTC)
-- Prerequisites:  
-- Programming Languages:  
+- Prerequisites: Data Structures, Computer Systems Fundamentals, C++ programming
+- Programming Languages: C++
 - Difficulty: 🌟🌟🌟🌟
 - Class Hour: 100 hours
 

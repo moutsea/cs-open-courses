@@ -1,12 +1,14 @@
+import Link from 'next/link';
 import Header from '@/components/Header';
 import CoursesContent from '@/components/CoursesContent';
 import { ImmersivePage, ImmersiveSection } from '@/components/layout/ImmersivePage';
-import { getCategoriesForLocale } from '@/lib/getServerData';
+import { getCatalog, catalogCardData } from '@/lib/catalog';
+import { courseListSummarySchema } from '@/lib/courseSeo';
+import StructuredData from '@/components/StructuredData';
+import Footer from '@/components/Footer';
 import { Metadata } from 'next';
-import { getChineseName } from '@/lib/categoryMapping';
+import { slugLabel } from '@/lib/categoryMapping';
 import { absoluteUrl, INDEXABLE_ROBOTS, localizedPath, pageAlternates, SITE_NAME, socialImages } from '@/lib/seo';
-import { buildDynamicRoutePath } from '@/lib/pathUtils';
-import { Suspense } from 'react';
 import LearningDashboard from '@/components/LearningDashboard';
 
 export async function generateStaticParams() {
@@ -21,10 +23,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     const isZh = locale === 'zh';
     const pageUrl = absoluteUrl(localizedPath(locale, '/courses'));
     return {
-        title: isZh ? '所有课程' : 'All Courses',
+        title: isZh ? '计算机课程推荐：130+ 门公开课分类目录' : 'Computer Science Courses: 130+ Free Open Courses',
         description: isZh
-            ? '浏览 130+ 门伯克利 CS61B、MIT、斯坦福等开放课程，按类别与子主题筛选，构建系统化的数据结构、系统与 AI 学习路径。'
-            : 'Explore 130+ Berkeley CS61B, MIT, Stanford open CS courses and filter by category or subtopic to build a complete data structures, systems, and AI path.',
+            ? '按方向挑选 130+ 门伯克利 CS61B、MIT、斯坦福、CMU 免费计算机课程，每门附先修要求、编程语言、难度与教材视频入口，可直接自学。'
+            : 'Pick from 130+ free Berkeley CS61B, MIT, Stanford, and CMU CS courses, each with prerequisites, language, difficulty, textbooks, and videos.',
         robots: INDEXABLE_ROBOTS,
         alternates: pageAlternates(locale, '/courses'),
         openGraph: {
@@ -51,16 +53,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function CoursesPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
-    const categories = await getCategoriesForLocale(locale);
+    const categories = await getCatalog(locale);
     const totalCourses = categories.reduce((sum, cat) => sum + cat.courses.length, 0);
     const totalSubcategories = categories.reduce((sum, cat) => sum + cat.subcategories.length, 0);
     const featuredCategories = [...categories]
         .sort((a, b) => b.courses.length - a.courses.length)
         .slice(0, 3);
-    const formatCategoryName = (slug: string) =>
-        locale === 'zh'
-            ? getChineseName(slug)
-            : slug.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+    const formatCategoryName = (slug: string) => slugLabel(slug, locale);
     const allCourses = categories.flatMap(category => category.courses);
 
     // 添加左侧边栏滚动条样式
@@ -81,35 +80,14 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
     }
   `;
 
-    // 生成结构化数据以增强 SEO
-    const structuredData = {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": locale === 'zh' ? "计算机科学课程" : "Computer Science Courses",
-        "description": locale === 'zh'
-            ? "来自顶尖大学的计算机科学开放课程集合"
-            : "Collection of computer science open courses from top universities",
-        "numberOfItems": allCourses.length,
-        "itemListElement": allCourses.map((course, index) => ({
-            "@type": "ListItem",
-            "position": index + 1,
-            "item": {
-                "@type": "Course",
-                "name": course.title,
-                "url": absoluteUrl(localizedPath(locale, `/course/${buildDynamicRoutePath(course.path).join('/')}`))
-            }
-        }))
-    };
+    const structuredData = courseListSummarySchema(allCourses, locale, locale === 'zh' ? '计算机科学公开课' : 'Computer science open courses');
 
     return (
         <div className="min-h-screen flex flex-col">
             <style>{style}</style>
             <Header locale={locale} />
             <ImmersivePage>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-                />
+                <StructuredData data={structuredData} />
 
                 <ImmersiveSection className="py-16 text-white">
                     <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -124,8 +102,8 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
                                     </h1>
                                     <p className="mt-4 text-lg text-white/70 max-w-2xl">
                                         {locale === 'zh'
-                                            ? '汇集伯克利、MIT、斯坦福等顶尖大学的开源课程，帮助你构建系统的计算机科学知识图谱。'
-                                            : 'Curated open courses from Berkeley, MIT, Stanford and more to help you build a complete computer science foundation.'}
+                                            ? '汇集伯克利、MIT、斯坦福等顶尖大学的开源课程，每门都整理先修要求、编程语言、难度与教材视频，帮助你构建系统的计算机科学知识图谱。'
+                                            : 'Curated open courses from Berkeley, MIT, Stanford and more, each with prerequisites, language, difficulty, textbooks, and videos so you can plan a complete computer science foundation.'}
                                     </p>
                                 </div>
                                 <div className="grid gap-4 sm:grid-cols-3">
@@ -149,15 +127,16 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-[32px] border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_35px_120px_rgba(2,6,23,0.55)]">
+                            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl shadow-[0_35px_120px_rgba(2,6,23,0.55)]">
                                 <p className="text-sm font-semibold uppercase tracking-[0.35em] text-white/60 mb-4">
                                     {locale === 'zh' ? '热门方向' : 'Popular Tracks'}
                                 </p>
                                 <div className="space-y-4">
                                     {featuredCategories.map((category) => (
-                                        <div
+                                        <Link
                                             key={category.slug}
-                                            className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3"
+                                            href={localizedPath(locale, `/courses/${category.slug}`)}
+                                            className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-4 py-3 transition hover:border-white/25 hover:bg-white/10"
                                         >
                                             <div>
                                                 <p className="text-sm text-white/60 uppercase tracking-[0.3em]">
@@ -170,7 +149,7 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
                                             <span className="text-sm font-semibold text-white/80">
                                                 {category.courses.length} {locale === 'zh' ? '门课' : 'courses'}
                                             </span>
-                                        </div>
+                                        </Link>
                                     ))}
                                 </div>
                             </div>
@@ -180,7 +159,7 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
 
                 <ImmersiveSection className="py-12">
                     <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="rounded-[36px] border border-white/10 bg-white/5 p-6 sm:p-10 backdrop-blur-xl shadow-[0_40px_120px_rgba(2,6,23,0.45)] text-white">
+                        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-10 backdrop-blur-xl shadow-[0_40px_120px_rgba(2,6,23,0.45)] text-white">
                             <div className="flex flex-col gap-6 pb-10 border-b border-white/10 mb-10">
                                 <div>
                                     <p className="text-sm uppercase tracking-[0.4em] text-white/60">
@@ -199,13 +178,12 @@ export default async function CoursesPage({ params }: { params: Promise<{ locale
 
                             <LearningDashboard locale={locale} />
 
-                            <Suspense fallback={<div className="h-96 animate-pulse rounded-[32px] bg-white/5" />}>
-                                <CoursesContent categories={categories} locale={locale} variant="immersive" />
-                            </Suspense>
+                            <CoursesContent categories={catalogCardData(categories)} locale={locale} />
                         </div>
                     </div>
                 </ImmersiveSection>
             </ImmersivePage>
+            <Footer locale={locale} />
         </div>
     );
 }

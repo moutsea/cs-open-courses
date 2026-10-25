@@ -29,9 +29,9 @@ export const categoryMapping: Record<string, string> = {
   "Python": "python",
   "Rust": "rust",
   "Java": "java",
-  "cpp": "cpp",
   "C": "c",
-  "Functional": "functional",
+  "C++": "cpp",
+  "函数式编程": "functional",
   "大语言模型": "large-language-models"
 };
 
@@ -46,4 +46,26 @@ export function getEnglishSlug(chineseName: string): string {
 
 export function getChineseName(englishSlug: string): string {
   return reverseCategoryMapping[englishSlug] || englishSlug;
+}
+/**
+ * slug 里带符号的标签，首字母大写拼不回来（`cpp` → `Cpp`）。
+ * 展示名一律走 `slugLabel`，不要再各自写 `replace(/\b\w/g, upper)`。
+ */
+const slugLabelOverrides: Record<string, string> = {
+  cpp: 'C++',
+  c: 'C'
+};
+
+/**
+ * 把 slug 变成给人看的名词：中文取映射表，英文按词大写，符号缩写查例外表。
+ * 中文名缺失时退回英文写法，避免把 slug 直接露出来。
+ */
+export function slugLabel(slug: string, locale: string): string {
+  if (locale === 'zh') {
+    const chinese = getChineseName(slug);
+    if (chinese && chinese !== slug) return chinese;
+  }
+  const override = slugLabelOverrides[slug];
+  if (override) return override;
+  return slug.replace(/-/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
 }

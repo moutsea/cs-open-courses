@@ -34,7 +34,7 @@ Scoop's official documentation is very user-friendly for beginners. Instead of e
 
 ### Can Scoop Configure Mirror Sources?
 
-The Scoop community only maintains installation configurations, and all software is downloaded from the official download links provided by the software's creators. Therefore, mirror sources are not provided. If your network environment causes repeated download failures, you may need a bit of [magic](翻墙.md).
+The Scoop community only maintains installation configurations, and all software is downloaded from the official download links provided by the software's creators. Therefore, mirror sources are not provided. If downloads fail repeatedly, check your network connection and proxy settings before retrying.
 
 ### Why Can't I Find Java 8?
 

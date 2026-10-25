@@ -10,7 +10,10 @@ Allow: /
 
 # Block unnecessary paths
 Disallow: /api/
+Disallow: /en/api/
+Disallow: /zh/api/
 Disallow: /private/
+Disallow: /admin/
 `
 }
 

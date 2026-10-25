@@ -1,9 +1,18 @@
-import { marked } from 'marked';
+import { Marked, Renderer } from 'marked';
 import hljs from 'highlight.js';
+import { resolveCourseMarkdownLink, type CourseLinkContext } from './courseLinks';
+import { sanitizeMarkdownHTML, type HTMLSanitizerOptions } from './htmlSanitizer';
 
-export async function markdownToHTML(markdown: string): Promise<string> {
+export async function markdownToHTML(markdown: string, context?: CourseLinkContext, options?: HTMLSanitizerOptions): Promise<string> {
   // Configure marked options
-  const renderer = new marked.Renderer();
+  const renderer = new Renderer();
+  const renderLink = renderer.link;
+  renderer.link = function(token) {
+    return renderLink.call(this, {
+      ...token,
+      href: context ? resolveCourseMarkdownLink(token.href, context) : token.href
+    });
+  };
   
   // Custom code block rendering with syntax highlighting
   renderer.code = function({ text: code, lang }: { text: string; lang?: string }) {
@@ -17,16 +26,18 @@ export async function markdownToHTML(markdown: string): Promise<string> {
     return `<pre><code class="hljs">${hljs.highlightAuto(code).value}</code></pre>`;
   };
   
-  marked.setOptions({
+  const parser = new Marked({
     renderer: renderer,
     breaks: true,
     gfm: true,
   });
 
   // Convert markdown to HTML
-  const html = marked(markdown);
+  const html = parser.parse(markdown, { async: false });
   
-  return html;
+  // Sanitize after all Markdown rendering and highlighting, before sending HTML
+  // to the client. The browser should not need a second HTML parsing pipeline.
+  return sanitizeMarkdownHTML(html, options);
 }
 
 export function extractTitleFromMarkdown(markdown: string): string {

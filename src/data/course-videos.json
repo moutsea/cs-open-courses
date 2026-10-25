@@ -1,0 +1,1338 @@
+{
+  "checkedAt": "2026-10-14",
+  "courseUpdatedAt": {
+    "advanced-machine-learning/CMU10-708": "2026-10-14",
+    "advanced-machine-learning/CS229M": "2026-10-14",
+    "advanced-mathematics/6.042J": "2026-10-14",
+    "advanced-mathematics/CS70": "2026-10-14",
+    "advanced-mathematics/numerical": "2026-10-14",
+    "artificial-intelligence/CS188": "2026-10-14",
+    "artificial-intelligence/CS50": "2026-10-14",
+    "computer-architecture/CA": "2026-10-14",
+    "computer-architecture/DDCA": "2026-10-14",
+    "computer-architecture/N2T": "2026-10-14",
+    "computer-architecture/Princeton-Computer-Architecture": "2026-10-14",
+    "computer-networks/CS168": "2026-10-14",
+    "computer-networks/topdown": "2026-10-14",
+    "computer-systems-basics/COS217": "2026-10-14",
+    "data-science/Data100": "2026-10-14",
+    "data-structures-algorithms/6.006": "2026-10-14",
+    "data-structures-algorithms/6.046": "2026-10-14",
+    "data-structures-algorithms/Algo": "2026-10-14",
+    "data-structures-algorithms/CS61B": "2026-10-14",
+    "database-systems/15445": "2026-10-14",
+    "database-systems/15799": "2026-10-14",
+    "database-systems/CS122": "2026-10-14",
+    "deep-generative-models/MIT6.S184": "2026-10-14",
+    "deep-generative-models/large-language-models/CMU11-711": "2026-10-14",
+    "deep-learning/CS224n": "2026-10-14",
+    "deep-learning/CS224w": "2026-10-14",
+    "deep-learning/CS230": "2026-10-14",
+    "deep-learning/CS231": "2026-10-14",
+    "deep-learning/CS285": "2026-10-14",
+    "deep-learning/LHY": "2026-10-14",
+    "electronics-basics/Signals_and_Systems_AVO": "2026-10-14",
+    "electronics-basics/signal": "2026-10-14",
+    "machine-learning-systems/CMU10-414": "2026-10-14",
+    "machine-learning-systems/MLC": "2026-10-14",
+    "machine-learning/CS229": "2026-10-14",
+    "machine-learning/ML": "2026-10-14",
+    "mathematics-basics/MITLA": "2026-10-14",
+    "mathematics-basics/MITmaths": "2026-10-14",
+    "mathematics-basics/information": "2026-10-14",
+    "operating-systems/MIT6.S081": "2026-10-14",
+    "parallel-distributed-systems/MIT6.824": "2026-10-14",
+    "programming-introduction/MIT-Missing-Semester": "2026-10-14",
+    "programming-introduction/c/CS50": "2026-10-14",
+    "programming-introduction/c/Duke-Coursera-Intro-C": "2026-10-14",
+    "programming-introduction/java/COS126": "2026-10-14",
+    "programming-introduction/python/CS50P": "2026-10-14",
+    "programming-introduction/python/MIT6.100L": "2026-10-14",
+    "programming-introduction/rust/CS110L": "2026-10-14",
+    "programming-languages-design/PKU-SoftwareAnalysis": "2026-10-14",
+    "software-engineering/6031": "2026-10-14",
+    "software-engineering/CS169": "2026-10-14",
+    "system-security/Bitcoin-Cryptocurrency": "2026-10-14",
+    "system-security/CS161": "2026-10-14",
+    "system-security/MIT6.858": "2026-10-14",
+    "system-security/SEEDLabs": "2026-10-14",
+    "web-development/fullstackopen": "2026-10-14",
+    "web-development/mitweb": "2026-10-14"
+  },
+  "courses": {
+    "advanced-machine-learning/CMU10-708": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn",
+        "title": {
+          "zh": "2019 春季 · 概率图模型",
+          "en": "Spring 2019 · Probabilistic Graphical Models"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://sailinglab.github.io/pgm-spring-2019/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1mx411f74X/",
+        "title": {
+          "zh": "2019 春季 · 课堂转载（27 节）",
+          "en": "Spring 2019 · Lecture mirror (27 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1mx411f74X/"
+      }
+    ],
+    "advanced-machine-learning/CS229M": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rP8nAmISxFINlGKSK4rbLKh",
+        "title": {
+          "zh": "2021 秋季 · 机器学习理论",
+          "en": "Fall 2021 · Machine Learning Theory"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://web.stanford.edu/class/stats214/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1jT421r71m/",
+        "title": {
+          "zh": "2021 秋季 · 中英字幕转载",
+          "en": "Fall 2021 · Mirror with Chinese/English subtitles"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1jT421r71m/"
+      }
+    ],
+    "advanced-mathematics/6.042J": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLB7540DEDD482705B",
+        "title": {
+          "zh": "2010 秋季 · 计算机科学数学",
+          "en": "Fall 2010 · Mathematics for Computer Science"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/video_galleries/video-lectures/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1n64y1i777/",
+        "title": {
+          "zh": "Albert R. Meyer · 中英字幕分节版（111 段）",
+          "en": "Albert R. Meyer · Bilingual lecture segments (111 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1n64y1i777/"
+      }
+    ],
+    "advanced-mathematics/CS70": [
+      {
+        "url": "https://www.bilibili.com/video/BV1mb4y1f7kG/",
+        "title": {
+          "zh": "2012 秋季 · 课堂转载（部分课时缺失）",
+          "en": "Fall 2012 · Lecture mirror (some lectures missing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://inst.eecs.berkeley.edu/~cs70/fa12/"
+      }
+    ],
+    "advanced-mathematics/numerical": [
+      {
+        "url": "https://www.bilibili.com/video/BV17K411o7oQ/",
+        "title": {
+          "zh": "第 2 讲 · 数值分析（单节课）",
+          "en": "Lecture 2 · Numerical Analysis (single lecture)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV17K411o7oQ/"
+      }
+    ],
+    "artificial-intelligence/CS188": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLp8QV47qJEg5tSxKiwcZt4LVwN_ek2Kxy",
+        "title": {
+          "zh": "2026 春季 · 人工智能导论",
+          "en": "Spring 2026 · Introduction to AI"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://inst.eecs.berkeley.edu/~cs188/sp26/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1cc411g7CM/",
+        "title": {
+          "zh": "2023 春季 · 课堂转载",
+          "en": "Spring 2023 · Lecture mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1cc411g7CM/"
+      }
+    ],
+    "artificial-intelligence/CS50": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T381PopUTYtMSstgk-hsTGkVm",
+        "title": {
+          "zh": "2023 · CS50 AI：Python 人工智能入门",
+          "en": "2023 · CS50 AI: Artificial Intelligence with Python"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://cs50.harvard.edu/ai/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1XoyaYFEgp/",
+        "title": {
+          "zh": "2024 · CS50 AI 中英字幕",
+          "en": "2024 · CS50 AI with Chinese/English subtitles"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1XoyaYFEgp/"
+      }
+    ],
+    "computer-architecture/CA": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL5Q2soXY2Zi-LfDdGgWyLcTSqzm6a26wD",
+        "title": {
+          "zh": "2024 · 计算机体系结构",
+          "en": "2024 · Computer Architecture"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://safari.ethz.ch/architecture/fall2025/doku.php?id=start"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1MUC6YyEtM/",
+        "title": {
+          "zh": "2024 秋季 · 计算机体系结构中英字幕",
+          "en": "Fall 2024 · Computer Architecture bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1MUC6YyEtM/"
+      }
+    ],
+    "computer-architecture/DDCA": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL5Q2soXY2Zi-EImKxYYY1SZuGiOAOBKaf",
+        "title": {
+          "zh": "2023 春季 · 数字设计与计算机体系结构",
+          "en": "Spring 2023 · Digital Design and Computer Architecture"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://safari.ethz.ch/ddca/spring2026/doku.php?id=start"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1e6421G7mz/",
+        "title": {
+          "zh": "2023 春季 · 数字设计与计算机体系结构（38 段）",
+          "en": "Spring 2023 · Digital Design and Computer Architecture (38 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1e6421G7mz/"
+      }
+    ],
+    "computer-architecture/N2T": [
+      {
+        "url": "https://www.bilibili.com/video/BV1Z4411x7Wk/",
+        "title": {
+          "zh": "Nand to Tetris · Part 2 转载",
+          "en": "Nand to Tetris · Part 2 mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Z4411x7Wk/"
+      }
+    ],
+    "computer-architecture/Princeton-Computer-Architecture": [
+      {
+        "url": "https://www.bilibili.com/video/BV1T4411q79W/",
+        "title": {
+          "zh": "Computer Architecture · 历史课堂转载",
+          "en": "Computer Architecture · Archived lecture mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1T4411q79W/"
+      }
+    ],
+    "computer-networks/CS168": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL0_XloRC3MWtPupAS7uyuVBFdEu5kzgHJ",
+        "title": {
+          "zh": "2025 夏季 · 计算机网络",
+          "en": "Summer 2025 · Computer Networking"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://su25.cs168.io/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1c1qvBFEVw/",
+        "title": {
+          "zh": "2025 春季 · 互联网体系结构与协议（27 讲）",
+          "en": "Spring 2025 · Internet Architecture and Protocols (27 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1c1qvBFEVw/"
+      }
+    ],
+    "computer-networks/topdown": [
+      {
+        "url": "https://www.youtube.com/watch?v=74sEFYBBRAY",
+        "title": {
+          "zh": "第一章导学 · 配套视频入口",
+          "en": "Chapter 1 introduction · Companion video"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://gaia.cs.umass.edu/kurose_ross/videos/1"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV15T411w79y/",
+        "title": {
+          "zh": "Jim Kurose · 自顶向下网络课程（部分章节缺失）",
+          "en": "Jim Kurose · Top-Down Networking lectures (some chapters missing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV15T411w79y/"
+      }
+    ],
+    "computer-systems-basics/COS217": [
+      {
+        "url": "https://www.youtube.com/watch?v=rzpJj1cjFSE",
+        "title": {
+          "zh": "2021 春季 · 第 1A 讲",
+          "en": "Spring 2021 · Lecture 1A"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://www.cs.princeton.edu/courses/archive/spr21/cos217/schedule.html"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=c_5b2oSye-s",
+        "title": {
+          "zh": "2020 秋季录像 · 第 1B 讲：Bash（2021 春季课程沿用）",
+          "en": "Fall 2020 recording · Lecture 1B: Bash (used in Spring 2021)"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://www.cs.princeton.edu/courses/archive/spr21/cos217/schedule.html"
+      }
+    ],
+    "data-science/Data100": [
+      {
+        "url": "https://www.bilibili.com/video/BV1xt4y1S7ay/",
+        "title": {
+          "zh": "2020 夏季 · 数据科学（英文字幕）",
+          "en": "Summer 2020 · Data Science (English subtitles)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "http://www.ds100.org/su20/"
+      }
+    ],
+    "data-structures-algorithms/6.006": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+        "title": {
+          "zh": "2020 春季 · 算法导论",
+          "en": "Spring 2020 · Introduction to Algorithms"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb",
+        "title": {
+          "zh": "2011 秋季 · 算法导论",
+          "en": "Fall 2011 · Introduction to Algorithms"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1fu41127MN/",
+        "title": {
+          "zh": "2020 春季 · 算法导论课堂与习题课",
+          "en": "Spring 2020 · Introduction to Algorithms lectures and problem sessions"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1fu41127MN/"
+      }
+    ],
+    "data-structures-algorithms/6.046": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+        "title": {
+          "zh": "2015 春季 · 算法设计与分析",
+          "en": "Spring 2015 · Design and Analysis of Algorithms"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/video_galleries/lecture-videos/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1A7411E737/",
+        "title": {
+          "zh": "算法设计与分析 · 中英字幕（34 段）",
+          "en": "Design and Analysis of Algorithms · Bilingual mirror (34 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1A7411E737/"
+      }
+    ],
+    "data-structures-algorithms/Algo": [
+      {
+        "url": "https://www.bilibili.com/video/av55943680/",
+        "title": {
+          "zh": "Algorithms · Part I 中英字幕转载",
+          "en": "Algorithms · Part I mirror with Chinese/English subtitles"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/av55943680/"
+      }
+    ],
+    "data-structures-algorithms/CS61B": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL8FaHk7qbOD44fDmItR1wrkor8XdfUXC6",
+        "title": {
+          "zh": "2026 春季 · 数据结构",
+          "en": "Spring 2026 · Data Structures"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://sp26.datastructur.es/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1hJ4m1M7ZA/",
+        "title": {
+          "zh": "2024 春季 · 英文原声与中英字幕",
+          "en": "Spring 2024 · English audio with Chinese/English subtitles"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1hJ4m1M7ZA/"
+      }
+    ],
+    "database-systems/15445": [
+      {
+        "url": "https://www.bilibili.com/video/BV1CzFHedEEV/",
+        "title": {
+          "zh": "2024 秋季 · 课堂转载（从首集进入）",
+          "en": "Fall 2024 · Lecture mirror (start at the first video)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1CzFHedEEV/"
+      }
+    ],
+    "database-systems/15799": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLSE8ODhjZXjYCZfIbmEWH7f6MnYqyPwCE",
+        "title": {
+          "zh": "2025 春季 · 查询优化专题",
+          "en": "Spring 2025 · Query Optimization"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://15799.courses.cs.cmu.edu/spring2025/schedule.html"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1EkipBSEH9/",
+        "title": {
+          "zh": "2025 · 查询优化课堂（14 讲）",
+          "en": "2025 · Query Optimization lectures (14 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1EkipBSEH9/"
+      }
+    ],
+    "database-systems/CS122": [
+      {
+        "url": "https://www.bilibili.com/video/BV1mB4y1H7VZ/",
+        "title": {
+          "zh": "数据库系统实现 · 中英字幕（13 讲）",
+          "en": "Database System Implementation · Bilingual mirror (13 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1mB4y1H7VZ/"
+      }
+    ],
+    "deep-generative-models/MIT6.S184": [
+      {
+        "url": "https://www.youtube.com/watch?v=GCoP2w-Cqtg",
+        "title": {
+          "zh": "2025 · 第 1 讲：流模型与扩散模型",
+          "en": "2025 · Lecture 1: Flow and Diffusion Models"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=yFD-JSSG-D0",
+        "title": {
+          "zh": "2025 · 第 2 讲：构建训练目标",
+          "en": "2025 · Lecture 2: Constructing the Training Target"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=HhfLo1_yza4",
+        "title": {
+          "zh": "2025 · 第 3 讲：训练流模型与扩散模型",
+          "en": "2025 · Lecture 3: Training Flow and Diffusion Models"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=nfrZ30mnwP0",
+        "title": {
+          "zh": "2025 · 第 4 讲：构建图像生成器",
+          "en": "2025 · Lecture 4: Building an Image Generator"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=7tsCN2hRBMg",
+        "title": {
+          "zh": "2025 · 第 5 讲：机器人生成模型",
+          "en": "2025 · Lecture 5: Generative Models for Robotics"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=hi_s4T1-gBY",
+        "title": {
+          "zh": "2025 · 第 6 讲：蛋白质设计生成模型",
+          "en": "2025 · Lecture 6: Generative Models for Protein Design"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://diffusion.csail.mit.edu/2025/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1gc8Ez8EFL/",
+        "title": {
+          "zh": "2025 · 流匹配与扩散模型（6 讲）",
+          "en": "2025 · Flow Matching and Diffusion Models (6 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1gc8Ez8EFL/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1xzAFzqEbZ/",
+        "title": {
+          "zh": "2026 · 流匹配与扩散模型（6 段录像）",
+          "en": "2026 · Flow Matching and Diffusion Models (6 recorded segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1xzAFzqEbZ/"
+      }
+    ],
+    "deep-generative-models/large-language-models/CMU11-711": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL8PYTP1V4I8DZprnWryM4nR8IZl1ZXDjg",
+        "title": {
+          "zh": "2024 春季 · 高级自然语言处理",
+          "en": "Spring 2024 · Advanced NLP"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://phontron.com/class/anlp2024/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1Txt2zFEVT/",
+        "title": {
+          "zh": "2025 春季 · 高级自然语言处理中英字幕（22 讲）",
+          "en": "Spring 2025 · Advanced NLP bilingual mirror (22 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Txt2zFEVT/"
+      }
+    ],
+    "deep-learning/CS224n": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+        "title": {
+          "zh": "2024 春季 · 自然语言处理与深度学习",
+          "en": "Spring 2024 · NLP with Deep Learning"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://web.stanford.edu/class/cs224n/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV163Jc6pENx/",
+        "title": {
+          "zh": "2024 春季 · 深度学习自然语言处理（中文配音）",
+          "en": "Spring 2024 · NLP with Deep Learning (Chinese dubbing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV163Jc6pENx/"
+      }
+    ],
+    "deep-learning/CS224w": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp",
+        "title": {
+          "zh": "2021 · 图机器学习",
+          "en": "2021 · Machine Learning with Graphs"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/watch?v=JAB_plj2rbA"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1RZ4y1c7Co/",
+        "title": {
+          "zh": "2021 · 图机器学习中英字幕（60 段）",
+          "en": "2021 · Machine Learning with Graphs bilingual mirror (60 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1RZ4y1c7Co/"
+      }
+    ],
+    "deep-learning/CS230": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0",
+        "title": {
+          "zh": "专项课程 1 · 神经网络与深度学习",
+          "en": "Specialization Course 1 · Neural Networks and Deep Learning"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1FT4y1E74V/",
+        "title": {
+          "zh": "DeepLearning.AI 专项课程 · 双语字幕（183 段）",
+          "en": "DeepLearning.AI Specialization · Bilingual mirror (183 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1FT4y1E74V/"
+      }
+    ],
+    "deep-learning/CS231": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16",
+        "title": {
+          "zh": "2025 · 计算机视觉深度学习",
+          "en": "2025 · Deep Learning for Computer Vision"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://cs231n.stanford.edu/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1YJ3PzLEiW/",
+        "title": {
+          "zh": "2025 春季 · 计算机视觉深度学习（18 讲）",
+          "en": "Spring 2025 · Deep Learning for Computer Vision (18 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1YJ3PzLEiW/"
+      }
+    ],
+    "deep-learning/CS285": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps",
+        "title": {
+          "zh": "2023 · 深度强化学习",
+          "en": "2023 · Deep Reinforcement Learning"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://rail.eecs.berkeley.edu/deeprlcourse/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1NjH4eYEyZ/",
+        "title": {
+          "zh": "2023 · 深度强化学习中英字幕（99 段）",
+          "en": "2023 · Deep Reinforcement Learning bilingual mirror (99 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NjH4eYEyZ/"
+      }
+    ],
+    "deep-learning/LHY": [
+      {
+        "url": "https://www.bilibili.com/video/BV1RQwJzKEMz/",
+        "title": {
+          "zh": "2026 · 李宏毅机器学习课堂转载",
+          "en": "2026 · Hung-yi Lee Machine Learning lecture mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1RQwJzKEMz/"
+      }
+    ],
+    "electronics-basics/Signals_and_Systems_AVO": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL41692B571DD0AF9B",
+        "title": {
+          "zh": "Alan Oppenheim · 信号与系统经典课堂",
+          "en": "Alan Oppenheim · Signals and Systems"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/resources/lecture-videos/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1SB4y1C7yx/",
+        "title": {
+          "zh": "Alan Oppenheim · 信号与系统画质修复版（26 讲）",
+          "en": "Alan Oppenheim · Restored Signals and Systems lectures (26 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1SB4y1C7yx/"
+      }
+    ],
+    "electronics-basics/signal": [
+      {
+        "url": "https://www.bilibili.com/video/BV1J7421o7pF/",
+        "title": {
+          "zh": "EE120 · 第 1 讲（中英字幕）",
+          "en": "EE120 · Lecture 1 (Chinese/English subtitles)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://ee120-course-staff.github.io/"
+      }
+    ],
+    "machine-learning-systems/CMU10-414": [
+      {
+        "url": "https://www.youtube.com/watch?v=ftP5HeOvsI0",
+        "title": {
+          "zh": "第 1 讲：深度学习系统导论",
+          "en": "Lecture 1: Introduction to Deep Learning Systems"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://dlsyscourse.org/lectures"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1Rg4y137jH/",
+        "title": {
+          "zh": "深度学习系统 · 课堂合集（原课程未设第 22 讲）",
+          "en": "Deep Learning Systems · Lecture collection (no Lecture 22 in the original course)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Rg4y137jH/"
+      }
+    ],
+    "machine-learning-systems/MLC": [
+      {
+        "url": "https://www.youtube.com/watch?v=Oc_wVXdnrrM",
+        "title": {
+          "zh": "第 1 讲：机器学习编译导论",
+          "en": "Lecture 1: Introduction to Machine Learning Compilation"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://mlc.ai/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV15v4y1g7EU/",
+        "title": {
+          "zh": "2022 · 机器学习编译中文课程合集入口（10 讲）",
+          "en": "2022 · Chinese Machine Learning Compilation collection (10 lectures)"
+        },
+        "kind": "collection",
+        "official": true,
+        "source": "https://mlc.ai/summer22-zh/schedule"
+      }
+    ],
+    "machine-learning/CS229": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+        "title": {
+          "zh": "2022 春季 · 机器学习",
+          "en": "Spring 2022 · Machine Learning"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1YtB2YXEne/",
+        "title": {
+          "zh": "2022 · 机器学习中英字幕（缺第 1 讲）",
+          "en": "2022 · Machine Learning bilingual mirror (Lecture 1 missing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1YtB2YXEne/"
+      }
+    ],
+    "machine-learning/ML": [
+      {
+        "url": "https://www.youtube.com/watch?v=vStJoetOxJg",
+        "title": {
+          "zh": "机器学习专项课程 · 第一课导学",
+          "en": "Machine Learning Specialization · First lesson"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://www.youtube.com/watch?v=vStJoetOxJg"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1pZ4y1v7Cf/",
+        "title": {
+          "zh": "2022 · 吴恩达机器学习专项课程（142 段）",
+          "en": "2022 · Andrew Ng Machine Learning Specialization (142 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1pZ4y1v7Cf/"
+      }
+    ],
+    "mathematics-basics/MITLA": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8",
+        "title": {
+          "zh": "MIT 18.06 · Gilbert Strang 线性代数",
+          "en": "MIT 18.06 · Gilbert Strang Linear Algebra"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.mit.edu/~18.06/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1zx411g7gq/",
+        "title": {
+          "zh": "2005 春季 · Gilbert Strang 线性代数中英字幕",
+          "en": "Spring 2005 · Gilbert Strang Linear Algebra bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1zx411g7gq/"
+      }
+    ],
+    "mathematics-basics/MITmaths": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PL590CCC2BC5AF3BC1",
+        "title": {
+          "zh": "18.01 · 2006 秋季单变量微积分",
+          "en": "18.01 · Fall 2006 Single Variable Calculus"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/playlist?list=PL590CCC2BC5AF3BC1"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38",
+        "title": {
+          "zh": "18.02 · 2007 秋季多变量微积分",
+          "en": "18.02 · Fall 2007 Multivariable Calculus"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1NgcqzNE97/",
+        "title": {
+          "zh": "2006 秋季 · 单变量微积分（部分课堂录像）",
+          "en": "Fall 2006 · Single Variable Calculus (partial lecture collection)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NgcqzNE97/"
+      }
+    ],
+    "mathematics-basics/information": [
+      {
+        "url": "https://www.bilibili.com/video/BV1g64y1M7zR/",
+        "title": {
+          "zh": "2008 春季 · 信息与熵课堂转载",
+          "en": "Spring 2008 · Information and Entropy lecture mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1g64y1M7zR/"
+      }
+    ],
+    "operating-systems/MIT6.S081": [
+      {
+        "url": "https://www.bilibili.com/video/BV1QA411F7ij/",
+        "title": {
+          "zh": "xv6 历史课堂 · 中英字幕（第 2 讲无录像）",
+          "en": "Archived xv6 lectures · Chinese/English subtitles (Lecture 2 unavailable)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1QA411F7ij/"
+      }
+    ],
+    "parallel-distributed-systems/MIT6.824": [
+      {
+        "url": "https://www.bilibili.com/video/BV1qk4y197bB/",
+        "title": {
+          "zh": "2020 春季 · 分布式系统（中英机翻字幕）",
+          "en": "Spring 2020 · Distributed Systems (machine-translated Chinese/English subtitles)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1qk4y197bB/"
+      }
+    ],
+    "programming-introduction/MIT-Missing-Semester": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLyzOVJj3bHQunmnnTXrNbZnBaCA-ieK4L",
+        "title": {
+          "zh": "2026 · 计算机教育中缺失的一课",
+          "en": "2026 · The Missing Semester"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://missing.csail.mit.edu/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1CkArz1E4o/",
+        "title": {
+          "zh": "2026 · Missing Semester 中英字幕（9 讲）",
+          "en": "2026 · Missing Semester bilingual mirror (9 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1CkArz1E4o/"
+      }
+    ],
+    "programming-introduction/c/CS50": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T380hlTqAU8HfvVepCcjCqTg6",
+        "title": {
+          "zh": "CS50x 2026 · 计算机科学导论",
+          "en": "CS50x 2026 · Introduction to Computer Science"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://cs50.harvard.edu/x/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1XQ6mBWEoS/",
+        "title": {
+          "zh": "2026 · CS50x 计算机科学导论中英字幕",
+          "en": "2026 · CS50x Introduction to Computer Science bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1XQ6mBWEoS/"
+      }
+    ],
+    "programming-introduction/c/Duke-Coursera-Intro-C": [
+      {
+        "url": "https://www.bilibili.com/video/BV1K5cNzGEew/",
+        "title": {
+          "zh": "C 语言编程入门 · 中英字幕（90 段）",
+          "en": "Introductory C Programming · Bilingual mirror (90 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1K5cNzGEew/"
+      }
+    ],
+    "programming-introduction/java/COS126": [
+      {
+        "url": "https://www.bilibili.com/video/BV1epmVYHEHb/",
+        "title": {
+          "zh": "2017 春季 · 第 0–10 讲（字幕及中文配音）",
+          "en": "Spring 2017 · Lectures 0–10 (subtitles and Chinese dubbing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1epmVYHEHb/"
+      }
+    ],
+    "programming-introduction/python/CS50P": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V",
+        "title": {
+          "zh": "2022 · CS50P：Python 编程入门",
+          "en": "2022 · CS50P: Introduction to Programming with Python"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://cs50.harvard.edu/python/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1NK411x7x1/",
+        "title": {
+          "zh": "2022 · CS50P Python 编程入门中英字幕",
+          "en": "2022 · CS50P Introduction to Programming with Python bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NK411x7x1/"
+      }
+    ],
+    "programming-introduction/python/MIT6.100L": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+        "title": {
+          "zh": "2022 秋季 · Python 与计算机科学入门",
+          "en": "Fall 2022 · Introduction to CS and Programming using Python"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/resources/lecture-videos/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1vLc8eMEXo/",
+        "title": {
+          "zh": "2022 秋季 · Python 计算机科学入门（26 讲）",
+          "en": "Fall 2022 · Introduction to CS using Python (26 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1vLc8eMEXo/"
+      }
+    ],
+    "programming-introduction/rust/CS110L": [
+      {
+        "url": "https://www.youtube.com/watch?v=DNK-YeP7S5Y",
+        "title": {
+          "zh": "2021 春季 · 第 1 讲",
+          "en": "Spring 2021 · Lecture 1"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://reberhardt.com/cs110l/spring-2021/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1dh4y1T75r/",
+        "title": {
+          "zh": "2020/2021 混合版本 · Rust 系统编程安全中英字幕",
+          "en": "Mixed 2020/2021 editions · Safety in Systems Programming bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1dh4y1T75r/"
+      }
+    ],
+    "programming-languages-design/PKU-SoftwareAnalysis": [
+      {
+        "url": "https://www.bilibili.com/video/BV1Rt4y1s7tC/",
+        "title": {
+          "zh": "2020 · 软件分析技术课堂转载",
+          "en": "2020 · Software Analysis lecture mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://xiongyingfei.github.io/SA/2020/main.htm"
+      }
+    ],
+    "software-engineering/6031": [
+      {
+        "url": "https://www.bilibili.com/video/BV1nuht6fEv5/",
+        "title": {
+          "zh": "6.005 历史版本 · 阅读配套短视频（74 段）",
+          "en": "Earlier 6.005 edition · Reading companion videos (74 segments)"
+        },
+        "kind": "supplemental",
+        "official": false,
+        "source": "https://web.mit.edu/6.005/www/fa16/general/"
+      }
+    ],
+    "software-engineering/CS169": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjcFZVmvkuc5tW2HtTkqlgP",
+        "title": {
+          "zh": "教材第 1 章 · SaaS、敏捷开发与云计算",
+          "en": "Textbook chapter 1 · Introduction to Software as a Service, Agile Development, and Cloud Computing"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh7_76PotmzGsZGM8Q1Vthl",
+        "title": {
+          "zh": "教材第 2 章 · 学习新编程语言",
+          "en": "Textbook chapter 2 · How to Learn a New Language"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxgAcnQh5eHqTfO4Ucs5JORw",
+        "title": {
+          "zh": "教材第 3 章 · SaaS 应用架构",
+          "en": "Textbook chapter 3 · SaaS Application Architecture: Microservices, APIs, and REST"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjBbeB_aZ4L8Wo91rEds_GD",
+        "title": {
+          "zh": "教材第 4 章 · Rails 与 MVC",
+          "en": "Textbook chapter 4 · SaaS Framework: Rails as a Model–View–Controller Framework"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxgeKHXxYOkV4JKCbRg5gWpg",
+        "title": {
+          "zh": "教材第 5 章 · SaaS 高级编程抽象",
+          "en": "Textbook chapter 5 · SaaS Framework: Advanced Programming Abstractions for SaaS"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxghXCpd4twByvWG6RKWcxHN",
+        "title": {
+          "zh": "教材第 6 章 · JavaScript 客户端",
+          "en": "Textbook chapter 6 · Mobile and Desktop SaaS Clients: JavaScript Introduction"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjbdVAkCU99UumJDWuLvg-l",
+        "title": {
+          "zh": "教材第 7 章 · BDD 与用户故事",
+          "en": "Textbook chapter 7 · Requirements: BDD and User Stories"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_gCC98WbEfpRt5UBFrjAT",
+        "title": {
+          "zh": "教材第 8 章 · 测试驱动开发",
+          "en": "Textbook chapter 8 · Testing: Test-Driven Development"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjSeso1JXLqmqXPDB0Ka-L3",
+        "title": {
+          "zh": "教材第 9 章 · 遗留系统与重构",
+          "en": "Textbook chapter 9 · Software Maintenance: Enhancing Legacy Software Using Refactoring and Agile Methods"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjO97PniMI2kfRyR4_MnT3t",
+        "title": {
+          "zh": "教材第 10 章 · 敏捷团队",
+          "en": "Textbook chapter 10 · Agile Teams"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxhmpbjhY8yurexXmuF4Fvai",
+        "title": {
+          "zh": "教材第 11 章 · SaaS 设计模式",
+          "en": "Textbook chapter 11 · Design Patterns for SaaS Apps"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_vJS0_FVhudNMJ2cA95cH",
+        "title": {
+          "zh": "教材第 12 章 · DevOps",
+          "en": "Textbook chapter 12 · Dev/Ops"
+        },
+        "kind": "chapter",
+        "official": true,
+        "source": "https://saasbook.info/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1VJ41197Nq/",
+        "title": {
+          "zh": "2019 秋季 · 软件工程课堂（26 讲）",
+          "en": "Fall 2019 · Software Engineering lectures (26 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1VJ41197Nq/"
+      }
+    ],
+    "system-security/Bitcoin-Cryptocurrency": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies course",
+          "en": "Bitcoin and Cryptocurrency Technologies course"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "en": "Bitcoin and Cryptocurrency Technologies - Princeton"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1ZD421H7Pz/",
+        "title": {
+          "zh": "比特币与加密货币技术 · 中英字幕（61 段）",
+          "en": "Bitcoin and Cryptocurrency Technologies · Bilingual mirror (61 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1ZD421H7Pz/"
+      }
+    ],
+    "system-security/CS161": [
+      {
+        "url": "https://www.bilibili.com/video/BV1Zz4y1f7G5/",
+        "title": {
+          "zh": "2020 夏季 · 计算机安全（英文字幕）",
+          "en": "Summer 2020 · Computer Security (English subtitles)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://su20.cs161.org/"
+      }
+    ],
+    "system-security/MIT6.858": [
+      {
+        "url": "https://www.youtube.com/watch?v=073D9t3ltEw",
+        "title": {
+          "zh": "2022 · 第 1 讲：计算机系统安全",
+          "en": "2022 · Lecture 1: Computer Systems Security"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://css.csail.mit.edu/6.858/2022/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1Jp4y167N5/",
+        "title": {
+          "zh": "2020 · 计算机系统安全中文字幕（23 段）",
+          "en": "2020 · Computer Systems Security with Chinese subtitles (23 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Jp4y167N5/"
+      }
+    ],
+    "system-security/SEEDLabs": [
+      {
+        "url": "https://www.bilibili.com/video/BV15t4y1y7dG/",
+        "title": {
+          "zh": "SEED Labs · 安全实验讲座（8 节）",
+          "en": "SEED Labs · Security lab lectures (8 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV15t4y1y7dG/"
+      }
+    ],
+    "web-development/fullstackopen": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLumQiZ25uijis31zaRL7rhzLalSwLqUtm",
+        "title": {
+          "zh": "Full Stack MOOC · 芬兰语嘉宾讲座（补充资源）",
+          "en": "Full Stack MOOC · Guest lectures in Finnish (supplemental)"
+        },
+        "kind": "supplemental",
+        "official": true,
+        "source": "https://fullstackopen.com/zh/"
+      }
+    ],
+    "web-development/mitweb": [
+      {
+        "url": "https://www.youtube.com/playlist?list=PLVAxjdyIU8_w2dywNhJQfmXkr527COLYo",
+        "title": {
+          "zh": "2025 IAP · WebLab 官方课堂与工作坊",
+          "en": "2025 IAP · Official WebLab lectures and workshops"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/@mitweblab/playlists"
+      },
+      {
+        "url": "https://www.youtube.com/playlist?list=PLVAxjdyIU8_z6iFliCz-n9zqf_ZRsbyPA",
+        "title": {
+          "zh": "2026 IAP · WebLab 官方课堂与工作坊",
+          "en": "2026 IAP · Official WebLab lectures and workshops"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/@mitweblab/playlists"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1hrqaBNErf/",
+        "title": {
+          "zh": "2025 · WebLab 中英字幕（40 段）",
+          "en": "2025 · WebLab bilingual mirror (40 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1hrqaBNErf/"
+      },
+      {
+        "url": "https://www.bilibili.com/video/BV1Pt421J7Sf/",
+        "title": {
+          "zh": "2024 · WebLab 英文课堂与工作坊（43 段）",
+          "en": "2024 · WebLab lectures and workshops in English (43 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Pt421J7Sf/"
+      }
+    ]
+  }
+}

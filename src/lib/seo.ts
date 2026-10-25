@@ -23,14 +23,24 @@ export function absoluteUrl(pathname = '/'): string {
   return new URL(pathname, `${SITE_URL}/`).toString()
 }
 
-export function pageAlternates(locale: string, pathname = '/'): Metadata['alternates'] {
+export function pageAlternates(locale: string, pathname = '/', availableLocales: SiteLocale[] = ['en', 'zh']): Metadata['alternates'] {
   return {
     canonical: absoluteUrl(localizedPath(locale, pathname)),
     languages: {
-      en: absoluteUrl(localizedPath('en', pathname)),
-      zh: absoluteUrl(localizedPath('zh', pathname)),
-      'x-default': absoluteUrl(localizedPath('en', pathname))
+      ...Object.fromEntries(availableLocales.map(language => [language, absoluteUrl(localizedPath(language, pathname))])),
+      ...(availableLocales.includes('en') ? { 'x-default': absoluteUrl(localizedPath('en', pathname)) } : {})
     }
+  }
+}
+
+export function collectionMetadata(locale: string, pathname: string, title: string, description: string): Metadata {
+  return {
+    title,
+    description,
+    robots: INDEXABLE_ROBOTS,
+    alternates: pageAlternates(locale, pathname),
+    openGraph: { title, description, url: absoluteUrl(localizedPath(locale, pathname)), siteName: SITE_NAME, type: 'website', locale: locale === 'zh' ? 'zh_CN' : 'en_US', images: socialImages() },
+    twitter: { card: 'summary_large_image', title, description, images: [absoluteUrl(DEFAULT_OG_IMAGE)] }
   }
 }
 

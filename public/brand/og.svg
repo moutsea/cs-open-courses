@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0B1220"/>
+  <g transform="translate(120 150) scale(2.65625)">
+    <rect x="1" y="1" width="62" height="62" rx="18" fill="#06B6D4"/>
+    <g fill="none" stroke="#0B1220" stroke-width="6.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M24 15.5V48.5"/>
+      <path d="M24 15.5h8.5a9.2 9.2 0 0 1 0 18.4H24"/>
+      <path d="M24 33.9h10a9.2 9.2 0 0 1 0 14.6H24"/>
+    </g>
+  </g>
+  <text x="336" y="266" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#FFFFFF">CS61B</text>
+  <text x="598" y="266" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="72" font-weight="700" fill="#22D3EE">&amp; Beyond</text>
+  <text x="336" y="328" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="29" fill="#94A3B8">Free CS courses from Berkeley, MIT, Stanford &amp; CMU</text>
+  <line x1="120" y1="422" x2="1080" y2="422" stroke="#1E293B" stroke-width="1"/>
+  <text x="120" y="486" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="34" font-weight="600" fill="#E2E8F0">130+ 门名校公开课 · 系统学习路线 · 双语课程资料</text>
+  <text x="120" y="536" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="26" fill="#64748B">cs61bbeyond.com</text>
+</svg>

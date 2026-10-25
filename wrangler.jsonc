@@ -18,19 +18,28 @@
       "fallthrough": false
     }
   ],
-  "workers_dev": true,
-  "preview_urls": true,
+  // 关掉公开副本：workers.dev 子域与每版预览 URL 会让整站（含 /admin）多出可访问入口。
+  "workers_dev": false,
+  "preview_urls": false,
+  "dev": {
+    "host": "localhost"
+  },
   "routes": [
     {
       "pattern": "www.cs61bbeyond.com",
       "zone_name": "cs61bbeyond.com",
       "custom_domain": true
+    },
+    {
+      "pattern": "cs61bbeyond.com/*",
+      "zone_name": "cs61bbeyond.com"
     }
   ],
   "vars": {
     "NEXTJS_ENV": "production"
   },
   "assets": {
+    "run_worker_first": true,
     "binding": "ASSETS",
     "directory": ".open-next/assets"
   },

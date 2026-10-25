@@ -5,7 +5,7 @@
 - University: Online course
 - Prerequisites: Foundations in Machine Learning/Deep Learning
 - Programming Language: Python
---Difficulty: 🌟🌟🌟
+- Difficulty: 🌟🌟🌟
 - Estimated Hours: 30 hours
 
 This course, offered by top scholar Chen Tianqi during the summer of 2022, focuses on the field of machine learning compilation. As of now, this area remains cutting-edge and rapidly evolving, with no dedicated courses available domestically or internationally. If you're interested in gaining a comprehensive overview of machine learning compilation, this course is worth exploring.

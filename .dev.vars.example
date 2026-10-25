@@ -1,3 +1,7 @@
 NEXTJS_ENV=development
 GITHUB_TOKEN=replace-with-a-github-token
 GITHUB_PROJECTS_CRON_SECRET=replace-with-a-random-secret
+# 后台登录密码（必填，否则 /admin 登录页拒绝登录）
+ADMIN_PASSWORD=replace-with-a-strong-password
+# 可选：后台 cookie 的独立签名密钥，配了就与密码分离（改密码仍会让旧 cookie 失效）
+ADMIN_SESSION_SECRET=replace-with-a-random-secret

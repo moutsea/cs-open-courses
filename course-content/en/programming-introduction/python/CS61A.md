@@ -24,13 +24,13 @@ Note: If you have no prior programming experience at all, getting started with C
 
 ## Course Resources
 
-- Course Website: [Summer 2026 current offering](https://cs61a.org/)
+- Course Website: [Fall 2026 current offering](https://cs61a.org/)
 - Course Website (backup): [Spring 2026](https://lr2933.github.io/cs61a-spring-2026), [Fall 2024](https://insideempire.github.io/CS61A-Website-Archive/), [Spring 2022](https://cs61a.vercel.app/), [Fall 2020](https://web.archive.org/web/20201219202644/https://cs61a.org/)
-- Recordings: [Summer 2026 official calendar and videos](https://cs61a.org/), [Spring 2024 Bilibili](https://www.bilibili.com/video/BV1sy411z7nA/), [Fall 2022 Bilibili](https://www.bilibili.com/video/BV1GK411Q7qp/)
+- Recordings: [Fall 2026 official calendar and videos](https://cs61a.org/), [Spring 2024 Bilibili](https://www.bilibili.com/video/BV1sy411z7nA/), [Fall 2022 Bilibili](https://www.bilibili.com/video/BV1GK411Q7qp/)
 - [Textbook](https://www.composingprograms.com/)
 - [Epub of the Textbook](https://github.com/CC-bit/UCB-CS61A-Textbook/)
 - [Textbook(Chinese)](https://composingprograms.netlify.app/)
-- Assignments: [Summer 2026 labs, homeworks, and projects](https://cs61a.org/), [Fall 2024 backup](https://github.com/InsideEmpire/CS61A-Assignments)
+- Assignments: [Fall 2026 labs, homeworks, and projects](https://cs61a.org/), [Fall 2024 backup](https://github.com/InsideEmpire/CS61A-Assignments)
 
 ## Personal Resources
 

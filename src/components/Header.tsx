@@ -1,13 +1,15 @@
 'use client'
 
-import { Fragment, Suspense, useMemo, useState } from 'react'
-import Image from 'next/image'
+import { Fragment, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, GlobeAltIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import { usePathname, useRouter } from 'next/navigation'
+import { ChevronDownIcon, GlobeAltIcon, Bars3Icon, XMarkIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Link } from '@/navigation'
 import SearchBox from './SearchBox'
+import BrandLockup from './brand/BrandLockup'
 import { useSimpleTranslations } from '@/lib/translationUtils'
+import { track } from '@/lib/analytics'
+import { aiToolLinks } from '@/lib/projectLinks'
 
 interface LanguageOption {
   code: string
@@ -28,10 +30,128 @@ interface NavLink {
   href: Route
 }
 
+function HeaderNavigationObserver({ onNavigate }: { onNavigate: () => void }) {
+  const pathname = usePathname()
+  const search = useSearchParams().toString()
+
+  useEffect(() => {
+    onNavigate()
+  }, [pathname, search, onNavigate])
+
+  return null
+}
+
 export default function Header({ locale }: { locale: string }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const searchButtonRef = useRef<HTMLButtonElement>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const searchPanelRef = useRef<HTMLDivElement>(null)
   const router = useRouter()
   const pathname = usePathname()
+
+  // 搜索框按需展开：点图标打开，点窗外 / 按 Esc / 切换路由时收起。
+  useEffect(() => {
+    if (!isSearchOpen) return
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node
+      if (searchPanelRef.current?.contains(target) || searchButtonRef.current?.contains(target)) return
+      setIsSearchOpen(false)
+    }
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setIsSearchOpen(false)
+      searchButtonRef.current?.focus()
+    }
+    document.addEventListener('pointerdown', handlePointerDown)
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown)
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isSearchOpen])
+
+  // 面板内 Tab 循环，避免焦点跑到面板背后的页面
+  useEffect(() => {
+    if (!isSearchOpen) return
+    const panel = searchPanelRef.current
+    if (!panel) return
+    const handleTab = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab') return
+      const focusables = Array.from(
+        panel.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])')
+      ).filter(element => element.offsetParent !== null)
+      if (focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault()
+        last.focus()
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault()
+        first.focus()
+      }
+    }
+    document.addEventListener('keydown', handleTab)
+    return () => document.removeEventListener('keydown', handleTab)
+  }, [isSearchOpen])
+
+  const closePanels = useCallback(() => {
+    setIsSearchOpen(false)
+    setIsMenuOpen(false)
+  }, [])
+
+  // 搜索/菜单面板打开时，把页面主体设为 inert：键盘和读屏都不会跑到背景内容
+  useEffect(() => {
+    if (!isSearchOpen && !isMenuOpen) return
+    const targets = Array.from(document.querySelectorAll<HTMLElement>('main, footer'))
+    const previous = targets.map(element => ({
+      element,
+      inert: element.inert,
+      ariaHidden: element.getAttribute('aria-hidden')
+    }))
+    for (const { element } of previous) {
+      element.inert = true
+      element.setAttribute('aria-hidden', 'true')
+    }
+    return () => {
+      for (const { element, inert, ariaHidden } of previous) {
+        element.inert = inert
+        if (ariaHidden === null) element.removeAttribute('aria-hidden')
+        else element.setAttribute('aria-hidden', ariaHidden)
+      }
+    }
+  }, [isSearchOpen, isMenuOpen])
+
+  // 视口跨过断点时收起面板：否则面板被 CSS 隐藏了，背景滚动锁还留着
+  useEffect(() => {
+    const desktopQuery = window.matchMedia('(min-width: 1280px)')
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) setIsMenuOpen(false)
+      else setIsSearchOpen(false)
+    }
+    desktopQuery.addEventListener('change', handleChange)
+    return () => desktopQuery.removeEventListener('change', handleChange)
+  }, [])
+
+  // 移动端菜单展开时：Esc 关闭，并锁定背景滚动（面板自身可滚）
+  useEffect(() => {
+    if (!isMenuOpen) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return
+      setIsMenuOpen(false)
+      // 和搜索面板一致：Esc 收起后焦点回到触发按钮，键盘用户不会掉到页面顶端。
+      menuButtonRef.current?.focus()
+    }
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMenuOpen])
+
   const t = useSimpleTranslations(locale)
 
   const languages: LanguageOption[] = [
@@ -54,14 +174,11 @@ export default function Header({ locale }: { locale: string }) {
     ]
   }, [locale, t])
 
-  const aiTools = [
-    { label: 'Claude Code', href: locale === 'en' ? 'https://www.claudeide.net' : `https://www.claudeide.net/${locale}` },
-    { label: 'Codex', href: locale === 'en' ? 'https://www.codeilab.com' : `https://www.codeilab.com/${locale}` },
-    { label: 'Gemini', href: locale === 'en' ? 'https://www.codebyai.net' : `https://www.codebyai.net/${locale}` }
-  ]
+  const aiTools = aiToolLinks(locale)
 
   const handleLanguageChange = (newLocale: string) => {
     if (newLocale === locale) return
+    track('language_switch', { from: locale, to: newLocale })
 
     const currentPath = window.location.pathname
     const currentSearch = window.location.search
@@ -100,30 +217,35 @@ export default function Header({ locale }: { locale: string }) {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/5 bg-slate-950/70 backdrop-blur-xl">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-indigo-400/60 via-40% to-transparent" aria-hidden="true"></div>
+      {/* Observe query-only navigation without making the static header wait for search params. */}
+      <Suspense fallback={null}>
+        <HeaderNavigationObserver onNavigate={closePanels} />
+      </Suspense>
+      <div className="absolute inset-x-0 top-0 h-px bg-cyan-400/30" aria-hidden="true"></div>
       <div className="mx-auto flex max-w-screen-2xl flex-col px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 shadow-lg shadow-indigo-500/10 transition hover:border-white/30 min-w-0">
-            <Image src="/logo.png" alt="CS61B & Beyond" width={40} height={40} className="h-10 w-10 flex-shrink-0" priority />
-            <div className="flex flex-col min-w-0">
-              <span className="text-lg font-semibold text-white truncate">CS61B & Beyond</span>
-              <span className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 truncate">{brandSubtitle}</span>
-            </div>
+          <Link
+            href="/"
+            aria-label={locale === 'zh' ? 'CS61B & Beyond 首页' : 'CS61B & Beyond home'}
+            className="group -ml-2 flex min-w-0 items-center rounded-2xl px-2 py-1.5 transition-colors hover:bg-white/[0.06]"
+          >
+            <BrandLockup size={40} subtitle={brandSubtitle} />
           </Link>
 
-          <nav className="hidden items-center gap-3 2xl:flex">
+          <div className="ml-auto flex items-center gap-2 xl:gap-3">
+            <nav className="hidden items-center gap-1 xl:flex">
             {baseLinks.map(link => (
               <Link
                 key={link.id}
                 href={link.href}
-                className={`relative rounded-full px-4 py-2 text-sm font-semibold transition-all ${isActive(link.href)
+                className={`relative rounded-full px-3 py-2 text-sm font-semibold transition-all ${isActive(link.href)
                   ? 'text-white'
                   : 'text-white/70 hover:text-white'
                   }`}
               >
                 {link.label}
                 {isActive(link.href) && (
-                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400"></span>
+                  <span className="absolute inset-x-3 -bottom-1 h-0.5 rounded-full bg-cyan-400"></span>
                 )}
               </Link>
             ))}
@@ -154,6 +276,9 @@ export default function Header({ locale }: { locale: string }) {
                           className={`block rounded-xl px-4 py-3 text-sm font-medium transition ${active ? 'bg-white/10 text-white' : 'text-white/80'}`}
                         >
                           {item.label}
+                          {item.description && (
+                            <span className="mt-1 block text-xs font-normal text-white/50">{item.description}</span>
+                          )}
                         </a>
                       )}
                     </Menu.Item>
@@ -163,11 +288,41 @@ export default function Header({ locale }: { locale: string }) {
             </Menu>
           </nav>
 
-          <div className="hidden items-center gap-3 2xl:flex">
-            <div className="mr-16 w-44 xl:w-52">
-              <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
-                <SearchBox locale={locale} />
-              </Suspense>
+          <div className="hidden items-center gap-2 xl:flex">
+            <div className="relative">
+              <button
+                ref={searchButtonRef}
+                type="button"
+                onClick={() => setIsSearchOpen(open => !open)}
+                aria-expanded={isSearchOpen}
+                aria-controls="header-search"
+                className={`inline-flex h-10 w-10 items-center justify-center rounded-full border transition ${
+                  isSearchOpen
+                    ? 'border-cyan-300/60 bg-cyan-300/15 text-white'
+                    : 'border-white/10 bg-white/5 text-white/70 hover:border-white/30 hover:text-white'
+                }`}
+              >
+                <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
+                <span className="sr-only">{locale === 'zh' ? '搜索课程' : 'Search courses'}</span>
+              </button>
+
+              {isSearchOpen && (
+                <div
+                  id="header-search"
+                  ref={searchPanelRef}
+                  role="dialog"
+                  aria-modal="true"
+                  aria-label={locale === 'zh' ? '搜索课程' : 'Search courses'}
+                  className="absolute right-0 top-full z-50 mt-3 w-[min(86vw,24rem)] rounded-2xl border border-white/10 bg-slate-950/95 p-3 shadow-2xl shadow-black/50 backdrop-blur-xl"
+                >
+                  <Suspense fallback={<div className="h-11 w-full rounded-full bg-white/5" />}>
+                    <SearchBox locale={locale} autoFocus onSearch={() => {
+                      setIsSearchOpen(false)
+                      searchButtonRef.current?.focus()
+                    }} />
+                  </Suspense>
+                </div>
+              )}
             </div>
 
             <Menu as="div" className="relative">
@@ -192,7 +347,7 @@ export default function Header({ locale }: { locale: string }) {
                       {({ active }) => (
                         <button
                           onClick={() => handleLanguageChange(language.code)}
-                          className={`w-full rounded-xl px-3 py-2 text-sm font-medium transition ${language.code === locale ? 'bg-blue-500/20 text-white' : active ? 'bg-white/10 text-white' : 'text-white/70'}`}
+                          className={`w-full rounded-xl px-3 py-2 text-sm font-medium transition ${language.code === locale ? 'bg-cyan-400/20 text-white' : active ? 'bg-white/10 text-white' : 'text-white/70'}`}
                         >
                           {language.nativeName}
                         </button>
@@ -202,12 +357,16 @@ export default function Header({ locale }: { locale: string }) {
                 </Menu.Items>
               </Transition>
             </Menu>
+            </div>
           </div>
 
           <button
+            ref={menuButtonRef}
             onClick={() => setIsMenuOpen(prev => !prev)}
-            className="inline-flex items-center justify-center rounded-2xl border border-white/10 p-2 text-white/80 transition hover:border-white/30 hover:text-white 2xl:hidden"
-            aria-label="Toggle navigation"
+            className="inline-flex items-center justify-center rounded-2xl border border-white/10 p-2 text-white/80 transition hover:border-white/30 hover:text-white xl:hidden"
+            aria-label={locale === 'zh' ? '打开导航菜单' : 'Toggle navigation'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
           </button>
@@ -223,9 +382,9 @@ export default function Header({ locale }: { locale: string }) {
           leaveFrom="transform opacity-100 translate-y-0"
           leaveTo="transform opacity-0 -translate-y-2"
         >
-          <div className="mt-4 flex flex-col gap-4 rounded-3xl border border-white/10 bg-slate-950/80 p-4 shadow-xl shadow-black/40 2xl:hidden">
+          <div id="mobile-menu" className="mt-4 flex max-h-[calc(100dvh-6.5rem)] flex-col gap-4 overflow-y-auto overscroll-contain rounded-3xl border border-white/10 bg-slate-950/90 p-4 shadow-xl shadow-black/40 xl:hidden">
             <Suspense fallback={<div className="h-10 w-full rounded-lg bg-white/10" />}>
-              <SearchBox locale={locale} />
+              <SearchBox locale={locale} onSearch={() => setIsMenuOpen(false)} />
             </Suspense>
 
             <div className="grid gap-2">
@@ -253,6 +412,9 @@ export default function Header({ locale }: { locale: string }) {
                     className="rounded-2xl bg-white/5 px-4 py-3 text-sm font-semibold text-white/80 transition hover:bg-white/10"
                   >
                     {tool.label}
+                    {tool.description && (
+                      <span className="mt-1 block text-xs font-normal text-white/50">{tool.description}</span>
+                    )}
                   </a>
                 ))}
               </div>
@@ -265,7 +427,7 @@ export default function Header({ locale }: { locale: string }) {
                   <button
                     key={language.code}
                     onClick={() => handleLanguageChange(language.code)}
-                    className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${language.code === locale ? 'bg-blue-500/20 text-white' : 'bg-white/5 text-white/70 hover:bg-white/10'}`}
+                    className={`rounded-2xl px-4 py-3 text-sm font-semibold transition ${language.code === locale ? 'bg-cyan-400/20 text-white' : 'bg-white/5 text-white/70 hover:bg-white/10'}`}
                   >
                     {language.nativeName}
                   </button>
@@ -276,7 +438,7 @@ export default function Header({ locale }: { locale: string }) {
             <Link
               href="/courses"
               onClick={() => setIsMenuOpen(false)}
-              className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-500/30 transition hover:scale-[1.02]"
+              className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300"
             >
               {locale === 'zh' ? '立即开始' : 'Start learning'}
             </Link>

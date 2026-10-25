@@ -22,12 +22,12 @@ const SectionNavigation = memo(function SectionNavigation({ sections }: SectionN
         <div key={index} className="flex items-center">
           <button
             onClick={() => handleSectionClick(index)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium cursor-pointer transition-colors duration-200 hover:shadow-md"
+            className="bg-cyan-400 hover:bg-cyan-300 text-slate-950 px-4 py-2 rounded-lg font-medium cursor-pointer transition-colors duration-200 hover:shadow-md"
           >
             {section.title}
           </button>
           {index < sections.length - 1 && (
-            <div className="text-gray-400 mx-2">→</div>
+            <div className="text-white/60 mx-2">→</div>
           )}
         </div>
       ))}
