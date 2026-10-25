@@ -6,6 +6,7 @@ import '../globals.css';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import AnalyticsListener from '@/components/AnalyticsListener';
+import PageViewTracker from '@/components/PageViewTracker';
 import { SITE_NAME, SITE_URL } from '@/lib/seo';
 
 const locales = ['en', 'zh'] as const;
@@ -62,6 +63,7 @@ export default async function LocaleLayout({
           {children}
         </NextIntlClientProvider>
         <AnalyticsListener />
+        <PageViewTracker />
         {process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN && (
           <Script
             src="https://static.cloudflareinsights.com/beacon.min.js"

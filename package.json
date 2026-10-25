@@ -21,7 +21,7 @@
     "start": "next start",
     "lint": "eslint",
     "test:seo": "tsx --test tests/seo.test.ts tests/course-links.test.ts tests/course-update-workflow.test.ts tests/course-rendering.test.tsx tests/course-anchors.test.tsx tests/course-facts.test.tsx",
-    "test:analytics": "tsx --test tests/analytics.test.ts tests/analytics-route.test.ts tests/analytics-client.test.ts tests/analytics-retention.test.ts tests/rate-limit.test.ts",
+    "test:analytics": "tsx --test tests/analytics.test.ts tests/analytics-route.test.ts tests/analytics-client.test.ts tests/analytics-retention.test.ts tests/rate-limit.test.ts tests/page-views.test.ts tests/page-view-route.test.ts tests/page-view-middleware.test.ts",
     "test:admin": "tsx --test tests/admin-session.test.ts tests/login-throttle.test.ts tests/admin-guard.test.ts",
     "test:gaps": "tsx --test tests/searchGaps.test.ts tests/searchGapIndex.test.ts tests/searchGapCache.test.ts",
     "test:ui": "tsx --test tests/ui-regressions.test.tsx",

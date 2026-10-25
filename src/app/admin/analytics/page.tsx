@@ -7,9 +7,12 @@ import {
   SectionCard,
   ShareList,
   StatCard,
+  TrafficChart,
+  TrafficTable,
   formatNumber
 } from '@/components/admin/panels'
 import { loadAnalyticsReport, normalizeDays } from '@/lib/analyticsReport'
+import { loadTrafficSummary, type TrafficSummary } from '@/lib/pageViews'
 import { requireAdmin } from '@/lib/adminAuth'
 
 export const dynamic = 'force-dynamic'
@@ -41,6 +44,17 @@ export default async function AdminAnalyticsPage({
       report = await loadAnalyticsReport(db, days)
     } catch (cause) {
       error = cause instanceof Error ? cause.message : String(cause)
+    }
+  }
+
+  // 访问表与事件表分开查：0005 迁移没跑时只有这一块挂掉，行为事件照样能看。
+  let traffic: TrafficSummary | null = null
+  let trafficError = ''
+  if (db) {
+    try {
+      traffic = await loadTrafficSummary(db, days)
+    } catch (cause) {
+      trafficError = cause instanceof Error ? cause.message : String(cause)
     }
   }
 
@@ -87,6 +101,79 @@ export default async function AdminAnalyticsPage({
           </p>
           <p className="mt-2 font-mono text-xs text-slate-500">{error}</p>
         </SectionCard>
+      ) : null}
+
+      {trafficError ? (
+        <SectionCard title="访问统计查询失败" hint="多半是 0005 迁移还没跑">
+          <p className="text-sm text-slate-300">
+            跑一次 <code className="rounded bg-white/10 px-1.5 py-0.5">npm run db:migrate:prod</code> 建
+            <code className="mx-1 rounded bg-white/10 px-1 py-0.5">page_views</code>表。
+          </p>
+          <p className="mt-2 font-mono text-xs text-slate-500">{trafficError}</p>
+        </SectionCard>
+      ) : null}
+
+      {traffic ? (
+        <>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <StatCard
+              label="PV 浏览量"
+              value={formatNumber(traffic.totals.pv)}
+              hint={`日均 ${formatNumber(Math.round(traffic.totals.pv / days))} 次`}
+            />
+            <StatCard
+              label="日 UV 合计"
+              value={formatNumber(traffic.totals.visitorDays)}
+              hint="每天去重后再累加，不是独立访客数"
+            />
+            <StatCard
+              label="人均页数"
+              value={
+                traffic.totals.visitorDays === 0
+                  ? '—'
+                  : (traffic.totals.pv / traffic.totals.visitorDays).toFixed(1)
+              }
+              hint="PV ÷ 日 UV 合计，粗略看粘性"
+            />
+            <StatCard
+              label="爬虫请求"
+              value={formatNumber(traffic.totals.bots)}
+              hint="edge 记录，不计入 PV"
+            />
+          </div>
+
+          <SectionCard title="访问趋势" hint="按北京时间切分自然日 · 柱高是 PV">
+            <TrafficChart daily={traffic.daily} />
+          </SectionCard>
+
+          <div className="grid gap-4 lg:grid-cols-2">
+            <SectionCard title="热门页面 Top 15" hint="PV / 日 UV 合计 / 占全部 PV">
+              <TrafficTable rows={traffic.topPages} empty="区间内没有访问记录" mono />
+            </SectionCard>
+            <SectionCard title="来源 Top 15" hint="utm_source 优先，否则看 referrer">
+              <TrafficTable rows={traffic.sources} empty="区间内没有访问记录" />
+            </SectionCard>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <SectionCard title="国家 / 地区">
+              <TrafficTable rows={traffic.countries.slice(0, 10)} empty="暂无数据" />
+            </SectionCard>
+            <SectionCard title="设备">
+              <TrafficTable rows={traffic.devices} empty="暂无数据" />
+            </SectionCard>
+          </div>
+
+          {traffic.totals.pv === 0 ? (
+            <SectionCard title="这个时间段没有人类访问记录" hint="页面视角的计数">
+              <ul className="list-inside list-disc space-y-1 text-sm text-slate-300">
+                <li>PV 从浏览器实际展示后采集，脚本被拦截、<code className="rounded bg-white/10 px-1.5 py-0.5">Do Not Track</code> 类插件、无 JS 环境都不会记录</li>
+                <li>确认 <code className="rounded bg-white/10 px-1.5 py-0.5">page_views</code> 表已建：<code className="rounded bg-white/10 px-1.5 py-0.5">npm run db:migrate:prod</code></li>
+                <li>部署之后才会上报，历史流量不会补</li>
+              </ul>
+            </SectionCard>
+          ) : null}
+        </>
       ) : null}
 
       {report ? (
@@ -150,8 +237,11 @@ export default async function AdminAnalyticsPage({
           </div>
 
           <p className="text-xs leading-relaxed text-slate-500">
-            数据来自自己的 D1 表 <code className="rounded bg-white/10 px-1 py-0.5">analytics_events</code>（不存 IP / User-Agent / Cookie）。
-            PV/UV 与来源在 Cloudflare 后台 Web Analytics 看，这里看的是站内行为和出站转化。常用 SQL 见仓库
+            数据全部来自自己的 D1：<code className="rounded bg-white/10 px-1 py-0.5">page_views</code> 记 PV/UV，
+            <code className="mx-1 rounded bg-white/10 px-1 py-0.5">analytics_events</code> 记站内行为。
+            两张表都不存原始 IP / User-Agent / Cookie：访客标识是
+            <code className="mx-1 rounded bg-white/10 px-1 py-0.5">sha256(IP + UA + 日期 + 盐)</code>
+            的一次性哈希，跨天即失效，所以「日 UV」只能按天看、不能跨天去重。常用 SQL 见仓库
             <code className="mx-1 rounded bg-white/10 px-1 py-0.5">reports/analytics.md</code> 第 7 节。
           </p>
         </>

@@ -2,6 +2,7 @@ import openNextWorker from './.open-next/worker.js'
 import { syncPopularGithubProjects } from './src/lib/githubProjects/sync'
 import { canonicalRedirect, shouldNoindex } from './src/lib/canonicalRedirect'
 import { purgeAnalyticsEvents } from './src/lib/analyticsRetention'
+import { purgePageViews } from './src/lib/pageViews'
 
 async function runGithubProjectSync(
   env: CloudflareEnv
@@ -16,12 +17,17 @@ async function runGithubProjectSync(
   await syncPopularGithubProjects(env.DB, token)
 }
 
-/** 埋点表没有 TTL，靠每日 cron 按保留期删旧数据。 */
+/** 埋点表与访问表都没有 TTL，靠每日 cron 按保留期删旧数据。 */
 async function runAnalyticsRetention(env: CloudflareEnv): Promise<void> {
   if (!env.DB) return
   const { cutoffDay, deleted } = await purgeAnalyticsEvents(env.DB)
   if (deleted > 0) {
     console.log(JSON.stringify({ message: 'Analytics retention purged', cutoffDay, deleted }))
+  }
+  // 访问表（PV/UV）同样会无限增长，一起清理；一次删不完的留给下一次 cron。
+  const purgedViews = await purgePageViews(env.DB)
+  if (purgedViews > 0) {
+    console.log(JSON.stringify({ message: 'Page views retention purged', purged: purgedViews }))
   }
 }
 

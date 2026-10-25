@@ -5,3 +5,5 @@ GITHUB_PROJECTS_CRON_SECRET=replace-with-a-random-secret
 ADMIN_PASSWORD=replace-with-a-strong-password
 # 可选：后台 cookie 的独立签名密钥，配了就与密码分离（改密码仍会让旧 cookie 失效）
 ADMIN_SESSION_SECRET=replace-with-a-random-secret
+# 可选：PV/UV 访客哈希的盐（不配则复用 ADMIN_SESSION_SECRET）。换掉等于打散历史 UV。
+ANALYTICS_SALT=replace-with-a-random-secret
