@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-10-24T07:15:41.054Z",
+      "lastProcessedAt": "2026-10-27T07:47:36.770Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/5e4036ef254e71be2ef3f8a1e843753c0424c02d",
+        "tag:github.com,2008:Grit::Commit/b8718a72fba4974d5461a60a29718265ac0c61a4",
         "tag:github.com,2008:Grit::Commit/20b45c3e9f89eb855aca5c0d61a9d40f07fc5a19",
         "tag:github.com,2008:Grit::Commit/88c759346a7046aac11e95910cc8c05c8520d028",
         "tag:github.com,2008:Grit::Commit/6b753e124e005d0c5ecc06b90ffcf49f2bdf4950",
@@ -260,8 +262,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-10-16T07:06:57.434Z",
+      "lastProcessedAt": "2026-10-27T07:47:43.410Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/e93dabeb98431235c6e1a101cb96c73c923fdbc4",
         "tag:github.com,2008:Grit::Commit/f780d7850765d74cbdcd1fff4b822d8829f7c9bd",
         "tag:github.com,2008:Grit::Commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
         "tag:github.com,2008:Grit::Commit/06aad25c735fd3159bdfae5680be4eab7b1668b2",
@@ -507,9 +510,10 @@
     },
     "nand2tetris-projects": {
       "initializedAt": "2026-07-29T05:31:16.241Z",
-      "lastProcessedAt": "2026-10-26T07:45:33.261Z",
+      "lastProcessedAt": "2026-10-27T07:47:50.410Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/5bd2184edfd4945ff8a28eb0b237c12cdbe9e498",
+        "tag:github.com,2008:Grit::Commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
         "tag:github.com,2008:Grit::Commit/6097b770073025891fb8b7a22aa3b72f61f81277",
         "tag:github.com,2008:Grit::Commit/527332cfa14408b39859deb54a677bb69234f58c",
         "tag:github.com,2008:Grit::Commit/f358c71da0a6192450b6d108dfaabfb8f0ce016a",
@@ -621,6 +625,54 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-27T07:47:50.410Z",
+      "sourceId": "nand2tetris-projects",
+      "entryId": "tag:github.com,2008:Grit::Commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
+      "entryUrl": "https://github.com/nand2tetris/projects/commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
+      "entryTitle": "Return Array from Memory.alloc (#14)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.91,
+      "reason": "Upstream commit is a small source-code correction in the Nand2Tetris projects repository, changing Memory.alloc to return Array per the book's OS interface. It carries no course-level information (no new syllabus, materials, or resource URLs) and the file list in the evidence is empty, so there is n",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-27T07:47:43.410Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/e93dabeb98431235c6e1a101cb96c73c923fdbc4",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/e93dabeb98431235c6e1a101cb96c73c923fdbc4",
+      "entryTitle": "tx_busy",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Upstream xv6-riscv commit 'tx_busy' is a minor source-code change with no file list and no course-level information (no syllabus, lab, schedule, or resource updates). Nothing here supports an evidence-backed update to operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-27T07:47:36.769Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/5e4036ef254e71be2ef3f8a1e843753c0424c02d",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/5e4036ef254e71be2ef3f8a1e843753c0424c02d",
+      "entryTitle": "Add Marburg CS 594 (#535)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.9,
+      "reason": "The commit adds a single README link for CS 594 Algorithms of Bioinformatics (Sebastian Wild, 2025 Marburg University) with a course site and YouTube playlist. Evidence is a one-line index entry only: no prerequisites, class hours, difficulty, programming languages, or descriptive detail, so a creat",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-10-27T07:47:29.645Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/b8718a72fba4974d5461a60a29718265ac0c61a4",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/b8718a72fba4974d5461a60a29718265ac0c61a4",
+      "entryTitle": "Fix IDS 2021-2022 playlist link (#536)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Commit only repairs a malformed YouTube playlist link for an existing README entry (IDS 2021-2022 edition). No existing course path in the supplied index corresponds to this entry, allowedTargetPaths is empty so no update is permitted, and the evidence provides no official course page, prerequisites",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-26T07:45:33.261Z",
       "sourceId": "nand2tetris-projects",
@@ -1771,54 +1823,6 @@
       "type": "ignore",
       "confidence": 0.91,
       "reason": "The event is an upstream xv6-riscv kernel commit fixing an ialloc/iput race that could orphan an inode. It changes lab source internals only; there is no evidence of any change to MIT 6.S081 course materials, schedule, resources, or metadata, and the commit file list is empty. Nothing here would alt",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-29T09:00:20.756Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/6c2d0c5d774829211a736a98791a919dab56deef",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/6c2d0c5d774829211a736a98791a919dab56deef",
-      "entryTitle": "Add missing code snippet to part3a.md",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.94,
-      "reason": "The commit adds a single missing code line (app.use(express.json())) to part3a.md course material to match surrounding prose about middleware ordering. It is a minor content correction with no change to the Full Stack open course structure, prerequisites, hours, or resources, so no update to web-dev",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-28T14:19:31.532Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
-      "entryTitle": "updated the http live header tool part",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit message ('updated the http live header tool part') is a minor internal edit and the commit's file list is empty, so there is no evidence of what changed, no new resource URL, and nothing that would alter the existing system-security/SEEDLabs entry. Proposing an update would require invent",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-28T14:19:24.182Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/419f4ee5e3f804bc62270b9c5aaae0fbe7a72edf",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/419f4ee5e3f804bc62270b9c5aaae0fbe7a72edf",
-      "entryTitle": "make fmt",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Upstream xv6-riscv commit 'make fmt' is a code formatting change with no listed files and no course-relevant information. No evidence of changes to MIT 6.S081 course content, resources, prerequisites, or materials that would justify an update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-28T14:19:19.304Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/2b102be84f24ea0dd6b3b06c6a72358700e1695f",
-      "entryTitle": "Merge pull request #4327 from BlessedOneKobo/patch-1",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "The commit is a one-line documentation fix adding a missing code snippet to part3a.md in the Full Stack open course material. It changes no course-level facts, resources, or structure, so no update to web-development/fullstackopen is warranted.",
       "changedFiles": []
     }
   ]
