@@ -2,6 +2,8 @@
  * /admin/analytics 的聚合查询。SQL 单独放一份常量，方便在本地用 sqlite 直接验证语法。
  */
 
+import { shanghaiDaysAgo } from './calendarDay'
+
 export interface CountRow {
   n: number
 }
@@ -59,7 +61,8 @@ export const QUERIES = {
 
 export function sinceDay(days: number, now: number = Date.now()): string {
   const safeDays = Math.min(Math.max(Math.trunc(days) || 1, 1), 365)
-  return new Date(now - (safeDays - 1) * 86_400_000).toISOString().slice(0, 10)
+  // analytics_events.day 与 page_views.day 都按 Asia/Shanghai 切分，这里必须同口径。
+  return shanghaiDaysAgo(safeDays - 1, now)
 }
 
 export function normalizeDays(value: string | null): number {

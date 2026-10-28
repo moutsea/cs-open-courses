@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import AdminShell from '@/components/admin/AdminShell'
-import { BarList, DayChart, SectionCard, StatCard, formatNumber } from '@/components/admin/panels'
+import { BarList, DayChart, SectionCard, StatCard } from '@/components/admin/panels'
+import { formatNumber } from '@/lib/format'
 import { loadAnalyticsReport } from '@/lib/analyticsReport'
 import { requireAdmin } from '@/lib/adminAuth'
 

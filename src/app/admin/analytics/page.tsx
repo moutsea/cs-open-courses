@@ -8,9 +8,10 @@ import {
   ShareList,
   StatCard,
   TrafficChart,
-  TrafficTable,
-  formatNumber
+  TrafficTable
 } from '@/components/admin/panels'
+import { formatNumber } from '@/lib/format'
+import { shanghaiDateTime } from '@/lib/calendarDay'
 import { loadAnalyticsReport, normalizeDays } from '@/lib/analyticsReport'
 import { loadTrafficSummary, type TrafficSummary } from '@/lib/pageViews'
 import { requireAdmin } from '@/lib/adminAuth'
@@ -19,9 +20,10 @@ export const dynamic = 'force-dynamic'
 
 const RANGES = [7, 30, 90] as const
 
-function formatUtc(ms: number | null): string {
+function formatShanghai(ms: number | null): string {
   if (!ms) return '暂无数据'
-  return `${new Date(ms).toISOString().slice(0, 16).replace('T', ' ')} UTC`
+  // 整页都是北京时间口径（day 列、sinceDay），这里再写 UTC 会让人加 8 小时。
+  return `${shanghaiDateTime(ms)} 北京时间`
 }
 
 export default async function AdminAnalyticsPage({
@@ -64,7 +66,7 @@ export default async function AdminAnalyticsPage({
         <div>
           <h2 className="text-base font-semibold text-white">流量看板</h2>
           <p className="mt-1 text-sm text-slate-400">
-            最近 {days} 天（自 {report?.sinceDay ?? '—'}）· 最后一条事件 {formatUtc(report?.lastEventAt ?? null)}
+            最近 {days} 天（自 {report?.sinceDay ?? '—'}）· 最后一条事件 {formatShanghai(report?.lastEventAt ?? null)}
           </p>
         </div>
         <nav className="flex items-center gap-2">
@@ -150,7 +152,7 @@ export default async function AdminAnalyticsPage({
             <SectionCard title="热门页面 Top 15" hint="PV / 日 UV 合计 / 占全部 PV">
               <TrafficTable rows={traffic.topPages} empty="区间内没有访问记录" mono />
             </SectionCard>
-            <SectionCard title="来源 Top 15" hint="utm_source 优先，否则看 referrer">
+            <SectionCard title="来源 Top 15" hint="按入口来源归因，站内浏览沿用；无法识别时归为直接访问 / 来源未知">
               <TrafficTable rows={traffic.sources} empty="区间内没有访问记录" />
             </SectionCard>
           </div>

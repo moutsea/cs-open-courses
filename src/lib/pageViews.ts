@@ -13,11 +13,10 @@
 
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { isTrackedPage, normalizePath } from './pageViewPaths'
+import { DAY_OFFSET_SECONDS, shanghaiDay, shanghaiDaysAgo } from './calendarDay'
 
 export { isTrackedPage, normalizePath }
-
-/** 站点按 Asia/Shanghai 切分自然日，而 Worker 的时钟是 UTC。 */
-export const DAY_OFFSET_SECONDS = 8 * 60 * 60
+export { DAY_OFFSET_SECONDS, shanghaiDay, shanghaiDaysAgo }
 
 /** 与 0004 的行为事件一致：180 天后由每日 cron 清掉。 */
 export const PAGE_VIEW_RETENTION_DAYS = 180
@@ -46,7 +45,7 @@ export function classifyDevice(userAgent: string): PageViewDevice {
   return 'desktop'
 }
 
-/** 把来源 URL 收敛成主机名，去 www 前缀；站内来源记为空串（算直接访问）。 */
+/** 把来源 URL 收敛成主机名，去 www 前缀；未能归因的站内来源归入「直接访问 / 来源未知」。 */
 export function referrerHost(referrer: string | null, siteHost: string): string {
   if (!referrer) return ''
   try {
@@ -58,14 +57,6 @@ export function referrerHost(referrer: string | null, siteHost: string): string 
   } catch {
     return ''
   }
-}
-
-export function shanghaiDay(now: number = Date.now()): string {
-  return new Date(now + DAY_OFFSET_SECONDS * 1000).toISOString().slice(0, 10)
-}
-
-export function shanghaiDaysAgo(days: number, now: number = Date.now()): string {
-  return shanghaiDay(now - days * 24 * 60 * 60 * 1000)
 }
 
 function toHex(bytes: Uint8Array): string {
@@ -100,7 +91,7 @@ export interface PageViewInput {
 
 export interface RecordPageViewOptions {
   salt: string
-  /** 本站主机名，用来把站内跳转的 referrer 判为「直接访问」。 */
+  /** 本站主机名，用来排除未能归因的站内 referrer。 */
   siteHost?: string
   now?: number
   /**
@@ -397,7 +388,7 @@ export async function loadTrafficSummary(
     },
     daily,
     topPages: bucket(pageResult.results as unknown as LabelRow[] | undefined, '/'),
-    sources: bucket(sourceResult.results as unknown as LabelRow[] | undefined, '直接访问'),
+    sources: bucket(sourceResult.results as unknown as LabelRow[] | undefined, '直接访问 / 来源未知'),
     countries: bucket(countryResult.results as unknown as LabelRow[] | undefined, '未知'),
     devices: bucket(deviceResult.results as unknown as LabelRow[] | undefined, 'desktop')
   }

@@ -1,9 +1,7 @@
 import type { ReactNode } from 'react'
 import type { DayRow, KeyCountRow } from '@/lib/analyticsReport'
-
-export function formatNumber(value: number): string {
-  return value.toLocaleString('en-US')
-}
+import { formatNumber } from '@/lib/format'
+import { DailyBarChart } from './DailyBarChart'
 
 export function SectionCard({
   title,
@@ -113,69 +111,34 @@ export function ShareList({ rows, empty }: { rows: KeyCountRow[]; empty: string 
   )
 }
 
-/** 每日事件量柱状图（纯 div，无依赖）。 */
+/** 每日事件量柱状图：缺的天补 0，数值靠悬浮 / 聚焦 / 点按看。 */
 export function DayChart({ daily, days, sinceDay }: { daily: DayRow[]; days: number; sinceDay: string }) {
   const counts = new Map(daily.map(row => [row.day, row.n]))
-  const start = new Date(`${sinceDay}T00:00:00Z`).getTime()
+  const start = Date.parse(`${sinceDay}T00:00:00Z`)
+  // sinceDay 坏掉时（空串 / 非日期）以前会 new Date(NaN).toISOString() 抛 RangeError，
+  // 把整个后台页面打成 500；这里退化成一句提示。
+  if (Number.isNaN(start)) return <DailyBarChart points={[]} unit="事件" empty="日期范围无效" />
+
   const series = Array.from({ length: days }, (_, index) => {
     const day = new Date(start + index * 86_400_000).toISOString().slice(0, 10)
-    return { day, n: counts.get(day) ?? 0 }
+    return { day, value: counts.get(day) ?? 0 }
   })
-  const max = Math.max(...series.map(item => item.n), 1)
-  const peak = series.reduce((best, item) => (item.n > best.n ? item : best), series[0])
 
-  return (
-    <div>
-      <div className="flex h-[132px] items-end gap-[3px]">
-        {series.map(item => (
-          <div
-            key={item.day}
-            title={`${item.day} · ${item.n} 条`}
-            className={[
-              'flex-1 rounded-t-[3px]',
-              item.n === 0 ? 'bg-white/10' : 'bg-cyan-400/85'
-            ].join(' ')}
-            style={{ height: item.n === 0 ? '2px' : `${Math.max((item.n / max) * 100, 3)}%` }}
-          />
-        ))}
-      </div>
-      <div className="mt-2 flex justify-between text-xs text-slate-500">
-        <span>{sinceDay}</span>
-        <span>
-          峰值 {peak.n} 条 / {peak.day}
-        </span>
-        <span>今天</span>
-      </div>
-    </div>
-  )
+  return <DailyBarChart points={series} unit="事件" empty="这段时间没有事件" />
 }
 
-/** 访问趋势：柱高按 PV，鼠标悬停给出当天 PV / UV / 爬虫。 */
+/** 访问趋势：柱高按 PV，悬浮 / 聚焦 / 点按给出当天 PV、日 UV、爬虫。 */
 export function TrafficChart({ daily }: { daily: { day: string; pv: number; uv: number; bots: number }[] }) {
-  if (daily.length === 0) return <p className="text-sm text-slate-500">区间内没有访问记录</p>
-  const max = Math.max(...daily.map(item => item.pv), 1)
-  const peak = daily.reduce((best, item) => (item.pv > best.pv ? item : best), daily[0])
-  return (
-    <div>
-      <div className="flex h-[132px] items-end gap-[3px]">
-        {daily.map(item => (
-          <div
-            key={item.day}
-            title={`${item.day} · PV ${formatNumber(item.pv)} · 日 UV ${formatNumber(item.uv)}${item.bots > 0 ? ` · 爬虫 ${formatNumber(item.bots)}` : ''}`}
-            className={['flex-1 rounded-t-[3px]', item.pv === 0 ? 'bg-white/10' : 'bg-cyan-400/85'].join(' ')}
-            style={{ height: item.pv === 0 ? '2px' : `${Math.max((item.pv / max) * 100, 3)}%` }}
-          />
-        ))}
-      </div>
-      <div className="mt-2 flex justify-between text-xs text-slate-500">
-        <span>{daily[0].day}</span>
-        <span>
-          峰值 {formatNumber(peak.pv)} PV / {peak.day}
-        </span>
-        <span>{daily[daily.length - 1].day}</span>
-      </div>
-    </div>
-  )
+  const points = daily.map(item => ({
+    day: item.day,
+    value: item.pv,
+    extras: [
+      { label: '日 UV', value: item.uv },
+      ...(item.bots > 0 ? [{ label: '爬虫', value: item.bots }] : [])
+    ]
+  }))
+
+  return <DailyBarChart points={points} unit="PV" empty="区间内没有访问记录" />
 }
 
 /**

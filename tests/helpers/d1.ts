@@ -20,7 +20,39 @@ export interface TestDatabase {
 
 const MIGRATIONS = ['0005_page_views.sql'] as const
 
-export async function createTestDatabase(): Promise<TestDatabase> {
+export async function applyMigration(db: CloudflareEnv['DB'], file: string): Promise<void> {
+  const sql = readFileSync(new URL(`../../migrations/${file}`, import.meta.url), 'utf8')
+    .split('\n')
+    .filter(line => !line.trimStart().startsWith('--'))
+    .join('\n')
+
+  const statements: string[] = []
+  let current = ''
+  let isTrigger = false
+
+  for (const character of sql) {
+    current += character
+    if (!isTrigger && /^\s*CREATE\s+TRIGGER\b/i.test(current)) isTrigger = true
+    if (character !== ';') continue
+
+    if (!isTrigger || /\bEND\s*;\s*$/i.test(current)) {
+      statements.push(current.slice(0, -1))
+      current = ''
+      isTrigger = false
+    }
+  }
+  if (current.trim()) statements.push(current)
+
+  for (const statement of statements) {
+    if (statement.trim().length === 0) continue
+    await db.prepare(statement).run()
+  }
+}
+
+export async function createTestDatabase(
+  options: { migrations?: readonly string[] } = {}
+): Promise<TestDatabase> {
+  const migrations = options.migrations ?? MIGRATIONS
   const miniflare = new Miniflare({
     modules: true,
     script: '',
@@ -31,18 +63,9 @@ export async function createTestDatabase(): Promise<TestDatabase> {
   try {
     const db = (await miniflare.getD1Database('DB')) as unknown as CloudflareEnv['DB']
 
-    for (const file of MIGRATIONS) {
-      // 不用 db.exec：D1 的 exec 是逐行处理的，多行的 CREATE TABLE 会被判成
-      // 「incomplete input」。这里自己按分号切开逐条执行；迁移文件里没有
-      // 触发器/存储过程，也没有含分号的字符串字面量，所以简单切分是安全的。
-      const sql = readFileSync(new URL(`../../migrations/${file}`, import.meta.url), 'utf8')
-        .split('\n')
-        .filter(line => !line.trimStart().startsWith('--'))
-        .join('\n')
-      for (const statement of sql.split(';')) {
-        if (statement.trim().length === 0) continue
-        await db.prepare(statement).run()
-      }
+    for (const file of migrations) {
+      // 不用 db.exec：D1 的 exec 会把多行 CREATE 当成不完整 SQL。
+      await applyMigration(db, file)
     }
 
     return {

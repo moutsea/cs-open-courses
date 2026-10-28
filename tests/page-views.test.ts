@@ -79,7 +79,7 @@ test('bot and device classification', () => {
   assert.equal(classifyDevice(''), 'desktop')
 })
 
-test('referrer is collapsed to a host and self-referrals count as direct', () => {
+test('referrer is collapsed to a host and unattributed self-referrals remain unknown', () => {
   assert.equal(referrerHost('https://www.google.com/search?q=cs61b', SITE_HOST), 'google.com')
   assert.equal(referrerHost('https://www.example.test/courses', SITE_HOST), '')
   assert.equal(referrerHost('https://example.test/zh/course/x', SITE_HOST), '')
@@ -212,8 +212,8 @@ test('summary counts PV per view and UV per person-day, ignoring bots', async t 
 
   assert.equal(summary.devices[0].label, 'desktop')
   assert.equal(summary.countries[0].label, 'CN')
-  // 没有 referrer 也没有 utm 的访问算直接访问
-  assert.equal(summary.sources[0].label, '直接访问')
+  // 空来源不能证明是直接打开，也可能是来源未传递或旧版站内浏览。
+  assert.equal(summary.sources[0].label, '直接访问 / 来源未知')
 })
 
 test('utm source wins over referrer in the source bucket', async t => {

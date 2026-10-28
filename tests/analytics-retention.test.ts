@@ -24,7 +24,7 @@ function fakeDb(changes: number) {
   }
 }
 
-test('retention cutoff is a UTC day string derived from the retention window', () => {
+test('retention cutoff is a Beijing calendar day derived from the retention window', () => {
   const now = Date.UTC(2026, 0, 31, 12, 0, 0)
   assert.equal(ANALYTICS_RETENTION_DAYS, 180)
   assert.equal(analyticsCutoffDay(180, now), '2025-08-04')

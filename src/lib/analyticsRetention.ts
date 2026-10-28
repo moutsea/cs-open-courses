@@ -8,14 +8,16 @@
  * 保留 180 天：足够看同比，也不至于把 D1 撑爆（单条 ~200 字节，日均上千事件也是百 MB 级）。
  */
 
+import { shanghaiDaysAgo } from './calendarDay'
+
 export const ANALYTICS_RETENTION_DAYS = 180
 
 /** 一次最多删多少行，避免单条语句过久占用 D1（cron 每天跑，剩下的下次继续）。 */
 export const ANALYTICS_PURGE_CHUNK = 5000
 
 export function analyticsCutoffDay(days = ANALYTICS_RETENTION_DAYS, now = Date.now()): string {
-  const cutoff = new Date(now - days * 24 * 60 * 60 * 1000)
-  return cutoff.toISOString().slice(0, 10)
+  // day 列是北京时间自然日，截止日也必须按同一口径算，否则会在边界多删/少删一天。
+  return shanghaiDaysAgo(days, now)
 }
 
 export interface PurgeResult {

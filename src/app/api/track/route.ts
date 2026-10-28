@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { getCloudflareContext } from '@opennextjs/cloudflare'
 import { normalizeBatch } from '@/lib/analyticsServer'
 import { MAX_ANALYTICS_BODY_BYTES } from '@/lib/analyticsLimits'
+import { shanghaiDay } from '@/lib/calendarDay'
 import { createRateLimiter } from '@/lib/rateLimit'
 
 /**
@@ -113,7 +114,8 @@ export async function POST(request: Request) {
   if (events.length === 0) return new NextResponse(null, { status: 204 })
 
   const now = Date.now()
-  const day = new Date(now).toISOString().slice(0, 10)
+  // 与 page_views 同一套日历日口径（Asia/Shanghai），否则两张图会差一天。
+  const day = shanghaiDay(now)
   const device = detectDevice(request.headers.get('user-agent') || '')
   const country = (request.headers.get('cf-ipcountry') || '').slice(0, 2)
 
