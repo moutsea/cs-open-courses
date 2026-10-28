@@ -92,7 +92,7 @@ CREATE TABLE analytics_events (
 /admin/gaps       内容缺口：搜了但站内没答上来的词 → 该补哪几门课（见第 9 节）
 ```
 
-导航在顶部（概览 · 流量看板 · 内容缺口 · 退出）。以后要加「订阅列表」「死链报告」之类，直接加 `src/app/admin/<section>/page.tsx` 并在 `src/components/admin/AdminNav.tsx` 的 `LINKS` 里加一行即可。
+导航在顶部（概览 · 流量看板 · 内容缺口 · 刷新 · 退出）。「刷新」走 `router.refresh()`，只重新查当前页的数据，保留 `?days=` 和滚动位置，不用整页重载。以后要加「订阅列表」「死链报告」之类，直接加 `src/app/admin/<section>/page.tsx` 并在 `src/components/admin/AdminNav.tsx` 的 `LINKS` 里加一行即可。
 
 ### 5.2 密码
 
