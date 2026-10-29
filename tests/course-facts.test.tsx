@@ -8,9 +8,11 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import CourseFactSheet from '../src/components/CourseFactSheet'
 import CourseFaq from '../src/components/CourseFaq'
 import CourseComparisonTable from '../src/components/CourseComparisonTable'
+import CourseStudyGuide from '../src/components/CourseStudyGuide'
 import { parseMarkdownFile, type Course } from '../src/lib/courseParser'
 import { buildCourseFaq, extractCourseFacts, factSheetRows, formatStudyHours, type FactLocale } from '../src/lib/courseFacts'
 import { courseListSchema, courseSchema, faqSchema, getCourseSeo } from '../src/lib/courseSeo'
+import { buildDynamicRoutePath } from '../src/lib/pathUtils'
 import { markdownToHTML } from '../src/lib/markdownProcessor'
 
 function sampleCourse(overrides: Partial<Course> = {}): Course {
@@ -223,6 +225,18 @@ test('resource display limits do not remove CS61A textbooks or assignments from 
   assert.ok(links.some(link => link.getAttribute('href') === 'https://www.composingprograms.com/'))
   assert.ok(links.some(link => link.textContent?.includes('Assignments & labs')))
   assert.ok(links.some(link => link.textContent?.includes('Lecture videos')))
+  dom.window.close()
+})
+
+test('study guide renders nothing without a guide or related courses, but keeps a related link', () => {
+  const only = sampleCourse()
+  const sibling = sampleCourse({ id: 'CS456', slug: 'CS456', path: 'example/CS456', title: 'CS456' })
+  const routeOf = (course: Course) => buildDynamicRoutePath(course.path).join('/')
+  // A lone course in its category used to leave an empty bordered wrapper: a stray divider above the footer.
+  assert.equal(renderToStaticMarkup(<CourseStudyGuide coursePath={routeOf(only)} courses={[only]} locale="en" />), '')
+  const dom = new JSDOM(renderToStaticMarkup(<CourseStudyGuide coursePath={routeOf(only)} courses={[only, sibling]} locale="en" />))
+  const links = [...dom.window.document.querySelectorAll('a')].map(link => link.getAttribute('href'))
+  assert.deepEqual(links, [`/course/${routeOf(sibling)}`])
   dom.window.close()
 })
 

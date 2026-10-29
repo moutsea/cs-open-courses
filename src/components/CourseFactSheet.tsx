@@ -48,7 +48,7 @@ export default function CourseFactSheet({ rows, resources, locale }: CourseFactS
   return (
     <section
       aria-label={isZh ? '课程速览' : 'Course at a glance'}
-      className="mb-8 rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6"
+      className="mb-8 border-b border-white/15 pb-8"
     >
       <h2 className="mb-4 flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200/80">
         {isZh ? '课程速览' : 'At a glance'}

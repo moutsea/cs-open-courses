@@ -62,7 +62,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
       hasEnglishVersion={content.hasEnglishVersion} hasChineseVersion={content.hasChineseVersion} isFallback={content.isFallback}
       factSheet={<CourseFactSheet rows={rows} resources={facts.resources} locale={uiLocale} />}
       videoResources={<CourseVideoResources coursePath={coursePath} locale={locale} />}>
-      <CourseFaq items={faq} locale={factLocale} />
+      <CourseFaq items={faq} locale={factLocale} variant="flat" />
       <CourseStudyGuide coursePath={coursePath} courses={courses} locale={contentLocale} />
     </MDXRenderer>
   </>

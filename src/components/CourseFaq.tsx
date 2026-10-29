@@ -8,6 +8,8 @@ interface CourseFaqProps {
   title?: string
   /** Heading id; pages that render more than one FAQ block must pass distinct values. */
   id?: string
+  /** `panel` frames the block on collection pages; `flat` joins the course page's divided section flow. */
+  variant?: 'panel' | 'flat'
 }
 
 const URL_PATTERN = /(https?:\/\/[^\s"<>“”‘’「」『』《》）。，；、：]+)/g
@@ -65,14 +67,15 @@ function renderAnswer(item: CourseFaqItem): ReactNode[] {
   })
 }
 
-export default function CourseFaq({ items, locale, title, id = 'course-faq' }: CourseFaqProps) {
+export default function CourseFaq({ items, locale, title, id = 'course-faq', variant = 'panel' }: CourseFaqProps) {
   const isZh = locale === 'zh'
   if (items.length === 0) return null
   const heading = title || (isZh ? '常见问题' : 'Frequently asked questions')
+  const flat = variant === 'flat'
 
   return (
-    <section aria-labelledby={id} className="mt-10 rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6">
-      <h2 id={id} className="mb-4 text-lg font-semibold text-white">{heading}</h2>
+    <section aria-labelledby={id} className={flat ? 'mt-10 border-t border-white/15 pt-8' : 'mt-10 rounded-3xl border border-white/10 bg-white/[0.04] p-5 sm:p-6'}>
+      <h2 id={id} className={flat ? 'mb-4 text-2xl font-semibold' : 'mb-4 text-lg font-semibold text-white'}>{heading}</h2>
       <div className="space-y-2">
         {items.map(item => (
           <details key={item.q} className="group rounded-2xl border border-white/10 bg-slate-950/40 px-4 py-3">

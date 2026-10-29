@@ -13,6 +13,8 @@ export default function CourseStudyGuide({ coursePath, courses, locale }: { cour
     ...(guide?.related || []),
     ...[...byPath.keys()].filter(path => path.startsWith(`${currentCategory}/`))
   ])].filter(path => path !== coursePath && byPath.has(path)).slice(0, 4)
+  // With no guide and no related courses the wrapper would only draw a stray divider.
+  if (!text && relatedPaths.length === 0) return null
   return <div className="mt-10 space-y-8 border-t border-white/15 pt-8">
     {text && <section aria-labelledby="study-guide-title" className="space-y-5">
       <h2 id="study-guide-title" className="text-2xl font-semibold">{locale === 'zh' ? '自学路线与常见难点' : 'Self-study plan and common pitfalls'}</h2>

@@ -146,26 +146,24 @@ export default function MDXRenderer({
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-5xl px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-white/15 bg-slate-900/80 p-6 text-white shadow-[0_40px_120px_rgba(2,6,23,0.45)] backdrop-blur-2xl sm:p-10">
-            {isFallback && (
-              <div className="mb-6 rounded-2xl border border-amber-200/40 bg-amber-200/10 px-4 py-4 text-sm text-amber-100">
-                {isChinese
-                  ? '提示：此课程暂无完整中文内容，当前展示英文原版。'
-                  : "Heads up: this course is not available in English yet, so we're showing the Chinese version."}
-              </div>
-            )}
+        <div className="relative z-10 mx-auto max-w-5xl px-4 pt-8 pb-16 sm:px-6 lg:px-8">
+          {isFallback && (
+            <div className="mb-6 rounded-2xl border border-amber-200/40 bg-amber-200/10 px-4 py-4 text-sm text-amber-100">
+              {isChinese
+                ? '提示：此课程暂无完整中文内容，当前展示英文原版。'
+                : "Heads up: this course is not available in English yet, so we're showing the Chinese version."}
+            </div>
+          )}
 
-            {factSheet}
-            {videoResources}
-            <Suspense fallback={null}>
-              <CourseAnchorNavigation articleRef={articleRef} content={content} />
-            </Suspense>
-            <article ref={articleRef} className="markdown-content space-y-6 text-slate-100 leading-relaxed">
-              <div dangerouslySetInnerHTML={{ __html: content }} />
-            </article>
-            {children}
-          </div>
+          {factSheet}
+          {videoResources}
+          <Suspense fallback={null}>
+            <CourseAnchorNavigation articleRef={articleRef} content={content} />
+          </Suspense>
+          <article ref={articleRef} className="markdown-content space-y-6 text-slate-100 leading-relaxed">
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+          </article>
+          {children}
         </div>
       </div>
       <style jsx global>{`
