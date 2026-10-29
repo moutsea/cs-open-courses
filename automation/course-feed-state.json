@@ -510,11 +510,12 @@
     },
     "nand2tetris-projects": {
       "initializedAt": "2026-07-29T05:31:16.241Z",
-      "lastProcessedAt": "2026-10-28T08:25:07.018Z",
+      "lastProcessedAt": "2026-10-29T08:25:05.450Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/5bd2184edfd4945ff8a28eb0b237c12cdbe9e498",
         "tag:github.com,2008:Grit::Commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
         "tag:github.com,2008:Grit::Commit/83cccbfb7de33e5a6a5ea3083ab18c4e6e77dbdb",
+        "tag:github.com,2008:Grit::Commit/7852eccafc2eedfde94fd8d6da6be218c31f8fa3",
         "tag:github.com,2008:Grit::Commit/6097b770073025891fb8b7a22aa3b72f61f81277",
         "tag:github.com,2008:Grit::Commit/527332cfa14408b39859deb54a677bb69234f58c",
         "tag:github.com,2008:Grit::Commit/f358c71da0a6192450b6d108dfaabfb8f0ce016a",
@@ -626,6 +627,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-29T08:25:05.450Z",
+      "sourceId": "nand2tetris-projects",
+      "entryId": "tag:github.com,2008:Grit::Commit/7852eccafc2eedfde94fd8d6da6be218c31f8fa3",
+      "entryUrl": "https://github.com/nand2tetris/projects/commit/7852eccafc2eedfde94fd8d6da6be218c31f8fa3",
+      "entryTitle": "fixed spelling typo (#11)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Upstream commit only fixes a spelling typo and lists no changed files, so there is no substantive course content, resource, or metadata change to record for computer-architecture/N2T.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-28T08:25:07.017Z",
       "sourceId": "nand2tetris-projects",
@@ -1812,18 +1825,6 @@
       "type": "ignore",
       "confidence": 0.76,
       "reason": "Commit adds a single README link for 'CSE 151A Introduction to Machine Learning' (UCSD, Prof Jingbo Shang) with only a course-page URL. sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the evidence lacks the prerequisites, programming languages, class hours, difficulty, and a",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-29T09:00:31.168Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/71d52e810274d4659bf2b23f4199cacd1587ff29",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/71d52e810274d4659bf2b23f4199cacd1587ff29",
-      "entryTitle": "revised the tool part",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Commit 'revised the tool part' supplies no changed files and no substantive detail, so there is no evidence of a course-content change worth recording for system-security/SEEDLabs.",
       "changedFiles": []
     }
   ]
