@@ -510,12 +510,13 @@
     },
     "nand2tetris-projects": {
       "initializedAt": "2026-07-29T05:31:16.241Z",
-      "lastProcessedAt": "2026-10-29T08:25:05.450Z",
+      "lastProcessedAt": "2026-10-30T08:34:55.085Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/5bd2184edfd4945ff8a28eb0b237c12cdbe9e498",
         "tag:github.com,2008:Grit::Commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
         "tag:github.com,2008:Grit::Commit/83cccbfb7de33e5a6a5ea3083ab18c4e6e77dbdb",
         "tag:github.com,2008:Grit::Commit/7852eccafc2eedfde94fd8d6da6be218c31f8fa3",
+        "tag:github.com,2008:Grit::Commit/2780e3c8d13cf071a64c8c302d744c48c2bc5f16",
         "tag:github.com,2008:Grit::Commit/6097b770073025891fb8b7a22aa3b72f61f81277",
         "tag:github.com,2008:Grit::Commit/527332cfa14408b39859deb54a677bb69234f58c",
         "tag:github.com,2008:Grit::Commit/f358c71da0a6192450b6d108dfaabfb8f0ce016a",
@@ -627,6 +628,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-10-30T08:34:55.085Z",
+      "sourceId": "nand2tetris-projects",
+      "entryId": "tag:github.com,2008:Grit::Commit/2780e3c8d13cf071a64c8c302d744c48c2bc5f16",
+      "entryUrl": "https://github.com/nand2tetris/projects/commit/2780e3c8d13cf071a64c8c302d744c48c2bc5f16",
+      "entryTitle": "Fix mismatch of cases in Square by allowing both (nand2tetris/web-ide…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "The commit is a minor fix to a Square project file (case-mismatch tolerance, referencing a web-ide issue) in the nand2tetris/projects repository. The file list is empty and the evidence contains no change to course content, structure, resources, or logistics that would warrant updating computer-arch",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-29T08:25:05.450Z",
       "sourceId": "nand2tetris-projects",
@@ -1813,18 +1826,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Commit only adds a language prop to the site's InfoBanner component, an accessibility tweak to the course website UI. No file list is supplied and there is no evidence of changed course content, structure, resources, or metadata for web-development/fullstackopen, so no update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-30T08:17:20.850Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/e2ccd50df428074a7b321790a3c9b426923647fc",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/e2ccd50df428074a7b321790a3c9b426923647fc",
-      "entryTitle": "Add CSE 151A (WI25) (#511)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.76,
-      "reason": "Commit adds a single README link for 'CSE 151A Introduction to Machine Learning' (UCSD, Prof Jingbo Shang) with only a course-page URL. sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the evidence lacks the prerequisites, programming languages, class hours, difficulty, and a",
       "changedFiles": []
     }
   ]
