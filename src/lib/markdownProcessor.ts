@@ -13,6 +13,15 @@ export async function markdownToHTML(markdown: string, context?: CourseLinkConte
       href: context ? resolveCourseMarkdownLink(token.href, context) : token.href
     });
   };
+
+  const renderHeading = renderer.heading;
+  renderer.heading = function(token) {
+    const heading = renderHeading.call(this, token);
+    if (context?.locale === 'zh' && token.depth === 2 && token.text.trim() === '课程资源') {
+      return `${heading}<div class="my-6 rounded-2xl border border-emerald-300/20 bg-emerald-300/5 px-5 py-4"><p class="m-0">🎁 添加微信<strong class="font-semibold text-emerald-200">liangtangjhz</strong>免费领取互联网大厂面试资料</p></div>`;
+    }
+    return heading;
+  };
   
   // Custom code block rendering with syntax highlighting
   renderer.code = function({ text: code, lang }: { text: string; lang?: string }) {

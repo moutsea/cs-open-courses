@@ -84,6 +84,24 @@ test('title-only courses do not restore the duplicate heading and ordinary Markd
   assert.equal(textContent(elements(renderCourseDocument(bodyOnly), 'article')[0]).trim(), 'Body only')
 })
 
+test('Chinese course resources include the interview-materials promotion immediately after the heading', async () => {
+  const markdown = '# Title\n\n## 课程资源\n\n- 课程网站：[Course](https://example.org)'
+  for (const locale of ['zh', 'en']) {
+    const document = parser.parse(await markdownToHTML(markdown, { locale, coursePath: 'essential-tools/Scoop' }, { removeFirstHeading: true }))
+    const children = document.children.filter((node): node is Element => node.type === 'element')
+    const promotions = elements(document, 'strong').filter(element => textContent(element) === 'liangtangjhz')
+
+    if (locale === 'zh') {
+      assert.deepEqual(children.map(element => element.tagName), ['h2', 'div', 'ul'])
+      assert.equal(promotions.length, 1)
+      assert.match(textContent(children[1]), /添加微信liangtangjhz免费领取互联网大厂面试资料/)
+    } else {
+      assert.deepEqual(children.map(element => element.tagName), ['h2', 'ul'])
+      assert.equal(promotions.length, 0)
+    }
+  }
+})
+
 test('same-page links resolve to sanitized IDs including encoded and already-prefixed names', () => {
   for (const id of ['resources', '课程资源', 'section one', '100%', 'user-content-resources', 'location']) {
     for (const fragment of [id, encodeURIComponent(id)]) {
