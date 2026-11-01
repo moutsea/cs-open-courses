@@ -1,7 +1,8 @@
 import type { Course } from './courseParser'
 import type { Token, Tokens } from 'marked'
 import { isStudyHoursLabel } from './courseStudyHours'
-import { courseIntroduction, courseListItemParagraphs, courseListItemText, courseMarkdownLinkHref, courseMarkdownLinkText, courseMarkdownSections, courseMarkdownText } from './courseMarkdown'
+import { courseIntroduction, courseListItemParagraphs, courseListItemText, courseListItemVisibleText, courseMarkdownLinkHref, courseMarkdownLinkText, courseMarkdownSections, courseMarkdownText } from './courseMarkdown'
+import { classifyCourseResource as classifyResource } from './courseResourceKinds.mjs'
 
 export type FactLocale = 'zh' | 'en'
 
@@ -63,13 +64,6 @@ function faqResourceLabel(label: string): CourseFaqAnswerPart {
   }
   return label
 }
-
-const RESOURCE_KIND_PATTERNS: Array<{ kind: ResourceKind; test: RegExp }> = [
-  { kind: 'textbook', test: /(课程教材|教材|课本|\b(?:textbooks?|text\s*books?|reading)\b)/i },
-  { kind: 'video', test: /(课程视频|视频|录播|\b(?:recordings?|videos?|lecture\s+videos?)\b)/i },
-  { kind: 'assignment', test: /(课程作业|作业|实验|项目|\b(?:coursework|homeworks?|assignments?|labs?|projects?|problem\s+sets?)\b)/i },
-  { kind: 'website', test: /(课程网站|课程主页|官网|网站|\b(?:websites?|course\s+(?:site|page|website)|homepages?)\b)/i }
-]
 
 const KIND_ORDER: Record<ResourceKind, number> = {
   website: 0,
@@ -169,13 +163,6 @@ function extractLinks(paragraphs: Token[], fallbackLabel: string): ParsedLink[] 
   return links
 }
 
-function classifyResource(labelLine: string): ResourceKind {
-  for (const pattern of RESOURCE_KIND_PATTERNS) {
-    if (pattern.test.test(labelLine)) return pattern.kind
-  }
-  return 'other'
-}
-
 function resourceUnavailable(rawValue: string): boolean {
   const value = cleanValue(rawValue)
   // Keep explicit absence separate from a plain-text book title or directions
@@ -237,13 +224,12 @@ export function extractCourseFacts(markdown: string, locale: FactLocale = 'zh'):
   for (const section of courseMarkdownSections(markdown)) {
     if (section.kind === 'meta') {
       for (const item of courseIntroduction(section).items) {
-        const bullet = courseListItemText(item)
+        const bullet = courseListItemVisibleText(item)
         const separator = bullet.search(/[:：]/)
         if (separator === -1) continue
         const label = normalizeLabel(bullet.slice(0, separator))
-        const value = cleanValue(bullet.slice(separator + 1))
-        // An autolink has no display text after cleanValue, but still carries
-        // a resource URL (and an empty resource label may own a child list).
+        const value = bullet.slice(separator + 1).trim()
+        // An empty resource field may still own a child list with its links.
         if (!value && classifyResource(label) === 'other') continue
 
         if (matches(label, PREREQUISITE_LABELS)) {

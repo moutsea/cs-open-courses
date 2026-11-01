@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import { courseMarkdownTitle } from './courseMarkdown';
 
 export interface CoursePath {
   locale: string;
@@ -73,12 +74,7 @@ async function fileExists(filePath: string): Promise<boolean> {
 }
 
 function extractTitle(content: string, fallback: string): string {
-  const lines = content.split('\n');
-  const firstLine = lines.find(line => line.startsWith('# '));
-  if (firstLine) {
-    return firstLine.substring(2).trim();
-  }
-  return fallback;
+  return courseMarkdownTitle(content, fallback);
 }
 
 export async function getCourseContent(coursePath: string[], locale: string) {

@@ -3,7 +3,13 @@ import { promises as fs } from 'node:fs'
 import { isIP } from 'node:net'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { marked } from 'marked'
+import rehypeParse from 'rehype-parse'
+import { unified } from 'unified'
 import { courseAiMessagesEndpoint, courseAiRequestInit } from './course-ai-endpoint.mjs'
+import { createCourseMarkdownRenderer } from '../src/lib/courseMarkdownRenderer.mjs'
+import { courseMarkdownTitle } from '../src/lib/courseMarkdownText.mjs'
+import { classifyCourseResource } from '../src/lib/courseResourceKinds.mjs'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CONFIG_PATH = path.join(ROOT, 'automation', 'course-feeds.json')
@@ -11,6 +17,7 @@ const STATE_PATH = path.join(ROOT, 'automation', 'course-feed-state.json')
 const COURSE_ROOT = path.join(ROOT, 'course-content')
 const UPDATE_START = '<!-- AUTO-COURSE-UPDATES:START -->'
 const UPDATE_END = '<!-- AUTO-COURSE-UPDATES:END -->'
+const ACTION_TYPES = new Set(['ignore', 'update', 'create'])
 const args = new Set(process.argv.slice(2))
 const checkOnly = args.has('--check')
 const syncMode = process.env.COURSE_SYNC_MODE === 'shadow' ? 'shadow' : 'auto'
@@ -40,7 +47,6 @@ function assertConfig(config, state) {
   }
 
   const ids = new Set()
-  const supportedActions = new Set(['ignore', 'update', 'create'])
   for (const source of config.sources) {
     if (!source.id || !source.name || !source.feedUrl || !source.repository) {
       throw new Error('Every feed source needs id, name, feedUrl, and repository')
@@ -51,14 +57,14 @@ function assertConfig(config, state) {
     if (feedUrl.protocol !== 'https:' || feedUrl.hostname !== 'github.com' || !feedUrl.pathname.endsWith('.atom')) {
       throw new Error(`Only allowlisted GitHub Atom feeds are supported: ${source.id}`)
     }
-    if (!Number.isFinite(source.minimumConfidence) || source.minimumConfidence < 0.9) {
-      throw new Error(`minimumConfidence must be at least 0.9: ${source.id}`)
+    if (!Number.isFinite(source.minimumConfidence) || source.minimumConfidence < 0.9 || source.minimumConfidence > 1) {
+      throw new Error(`minimumConfidence must be between 0.9 and 1: ${source.id}`)
     }
     if (source.maxPerRun !== undefined && (!Number.isInteger(source.maxPerRun) || source.maxPerRun < 1)) {
       throw new Error(`maxPerRun must be a positive integer: ${source.id}`)
     }
     if (source.allowedActions !== undefined) {
-      if (!Array.isArray(source.allowedActions) || !source.allowedActions.includes('ignore') || source.allowedActions.some(action => !supportedActions.has(action))) {
+      if (!Array.isArray(source.allowedActions) || !source.allowedActions.includes('ignore') || source.allowedActions.some(action => !ACTION_TYPES.has(action))) {
         throw new Error(`allowedActions must contain supported actions and include ignore: ${source.id}`)
       }
     }
@@ -85,8 +91,16 @@ function assertSourceTargets(config, courseIndex) {
 function decodeXml(value = '') {
   return value
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1')
-    .replace(/&#x([0-9a-f]+);/gi, (_, code) => String.fromCodePoint(Number.parseInt(code, 16)))
-    .replace(/&#(\d+);/g, (_, code) => String.fromCodePoint(Number.parseInt(code, 10)))
+    .replace(/&#(x[0-9a-f]+|\d+);/gi, (_, code) => {
+      // Decode once and replace invalid XML characters, including overflow and
+      // lone surrogates, rather than letting one entry abort the entire sync.
+      const codePoint = /^x/i.test(code) ? Number.parseInt(code.slice(1), 16) : Number.parseInt(code, 10)
+      const valid = codePoint === 0x9 || codePoint === 0xa || codePoint === 0xd
+        || (codePoint >= 0x20 && codePoint <= 0xd7ff)
+        || (codePoint >= 0xe000 && codePoint <= 0xfffd)
+        || (codePoint >= 0x10000 && codePoint <= 0x10ffff)
+      return valid ? String.fromCodePoint(codePoint) : '\uFFFD'
+    })
     .replace(/&amp;/g, '&')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
@@ -167,7 +181,9 @@ async function fetchCommit(source, entry) {
   return {
     sha,
     url: commit.html_url || entry.link,
-    message: stripMarkup(commit.commit?.message || entry.title).slice(0, 1_000),
+    // GitHub's JSON commit message is plain text; the fallback title is already
+    // decoded by parseAtom. Neither should pass through XML/HTML decoding here.
+    message: cleanLine(commit.commit?.message || entry.title, 1_000),
     authoredAt: commit.commit?.author?.date || entry.updatedAt,
     files
   }
@@ -185,9 +201,10 @@ async function walkMarkdown(directory) {
 
 function normalizeCourseKey(value) {
   return value
-    .toLowerCase()
     .normalize('NFKC')
-    .replace(/[^a-z0-9\u4e00-\u9fff]+/g, '')
+    .toLowerCase()
+    // Language names such as C, C++ and C# identify different courses.
+    .replace(/[^a-z0-9\u4e00-\u9fff+#]+/g, '')
 }
 
 async function buildCourseIndex() {
@@ -196,31 +213,76 @@ async function buildCourseIndex() {
   const courses = []
   for (const filePath of files) {
     const content = await fs.readFile(filePath, 'utf8')
-    const title = content.match(/^#\s+(.+)$/m)?.[1]?.trim() || path.basename(filePath, '.md')
+    const title = courseMarkdownTitle(content, path.basename(filePath, '.md'))
     const relativePath = path.relative(englishRoot, filePath).replace(/\\/g, '/').replace(/\.md$/, '')
     courses.push({ path: relativePath, title, key: normalizeCourseKey(title) })
   }
   return courses
 }
 
-function extractEvidenceUrls(value) {
+export function extractEvidenceUrls(value) {
   const urls = new Set()
-  for (const match of String(value).matchAll(/https:\/\/[^\s<>"'\])}]+/g)) {
-    urls.add(match[0].replace(/[.,;:]+$/, ''))
+  function visit(field) {
+    if (typeof field === 'string') {
+      // Read original text: JSON serialization turns line breaks into URL characters.
+      // Consume bracketed IPv6 hosts together, and never consume a backslash escape.
+      for (const match of field.matchAll(/https:\/\/(?:\[[0-9a-f:.]+\]|[^\s<>"'\]}\\])+/gi)) {
+        let candidate = match[0]
+        let depth = 0
+        for (let index = 0; index < candidate.length; index++) {
+          if (candidate[index] === '(') depth += 1
+          if (candidate[index] === ')') {
+            if (depth === 0) {
+              candidate = candidate.slice(0, index)
+              break
+            }
+            depth -= 1
+          }
+        }
+        urls.add(candidate.replace(/[.,;:]+$/, ''))
+      }
+    } else if (field && typeof field === 'object') {
+      for (const child of Object.values(field)) visit(child)
+    }
   }
+  visit(value)
   return urls
 }
 
-function safePublicHttpsUrl(value) {
+function publicIpv4(hostname) {
+  const [first, second] = hostname.split('.').map(Number)
+  return !(first === 0 || first === 10 || first === 127 || first >= 224
+    || (first === 100 && second >= 64 && second <= 127)
+    || (first === 169 && second === 254)
+    || (first === 172 && second >= 16 && second <= 31)
+    || (first === 192 && second === 168))
+}
+
+export function safePublicHttpsUrl(value) {
   try {
     const url = new URL(value)
     if (url.protocol !== 'https:' || url.username || url.password) return false
-    const hostname = url.hostname.toLowerCase()
-    if (hostname === 'localhost' || hostname.endsWith('.local')) return false
-    if (isIP(hostname)) {
-      if (/^(10\.|127\.|169\.254\.|192\.168\.|0\.|224\.|240\.)/.test(hostname)) return false
-      if (/^172\.(1[6-9]|2\d|3[01])\./.test(hostname)) return false
-      if (hostname === '::1' || hostname.startsWith('fc') || hostname.startsWith('fd') || hostname.startsWith('fe80')) return false
+    // A trailing DNS root dot does not make a local name public. URL parsing
+    // also decodes percent-encoded dots before this check.
+    const hostname = url.hostname.toLowerCase().replace(/^\[|\]$/g, '').replace(/\.+$/, '')
+    if (!hostname || hostname === 'localhost' || hostname.endsWith('.localhost')
+      || hostname === 'local' || hostname.endsWith('.local')) return false
+    const version = isIP(hostname)
+    if (version === 4) return publicIpv4(hostname)
+    if (version === 6) {
+      // WHATWG URL canonicalizes IPv4-mapped addresses to two hexadecimal groups.
+      const mapped = /^::ffff:([0-9a-f]+):([0-9a-f]+)$/.exec(hostname)
+      if (mapped) {
+        const high = Number.parseInt(mapped[1], 16)
+        const low = Number.parseInt(mapped[2], 16)
+        return publicIpv4([high >> 8, high & 255, low >> 8, low & 255].join('.'))
+      }
+      const first = Number.parseInt(hostname.split(':')[0] || '0', 16)
+      if (hostname.startsWith('::') // Unspecified, loopback and IPv4-compatible addresses.
+        || (first & 0xfe00) === 0xfc00 // Unique local: fc00::/7.
+        || (first & 0xffc0) === 0xfe80 // Link local: fe80::/10.
+        || (first & 0xffc0) === 0xfec0 // Deprecated site local: fec0::/10.
+        || (first & 0xff00) === 0xff00) return false // Multicast.
     }
     return true
   } catch {
@@ -230,9 +292,9 @@ function safePublicHttpsUrl(value) {
 
 function normalizeUrl(value) {
   try {
-    const url = new URL(value)
-    url.hash = ''
-    return url.toString().replace(/\/$/, '')
+    // Canonicalize syntax only: fragments, path slashes and query values may
+    // all identify different resources, both for evidence checks and output.
+    return new URL(value).toString()
   } catch {
     return ''
   }
@@ -283,7 +345,40 @@ Use update only when targetPath exactly matches the supplied existing-course ind
 }
 
 function cleanLine(value, maxLength = 500) {
-  return stripMarkup(String(value || '')).replace(/[\r\n]+/g, ' ').slice(0, maxLength).trim()
+  // Plain-text fields are not Feed HTML. Preserve generics, comparisons
+  // and literal entities; markdownText escapes them at the rendering boundary.
+  return (typeof value === 'string' ? value : '').replace(/\s+/g, ' ').slice(0, maxLength).trim()
+}
+
+function markdownText(value, maxLength = 500) {
+  // Escape after cleaning/truncation, including GFM bare URLs and HTML entities.
+  return cleanLine(value, maxLength).replace(/[\\`*_{}[\]()#+\-.!|~:<>/&]/g, '\\$&')
+}
+
+function markdownLink(label, url) {
+  const destination = new URL(url).toString().replace(/&/g, '&amp;')
+  return `[${markdownText(label, 80)}](<${destination}>)`
+}
+
+const generatedHtmlParser = unified().use(rehypeParse, { fragment: true })
+
+export function validateGeneratedMarkdown(markdown, allowedUrls) {
+  const allowed = new Set(Array.from(allowedUrls, normalizeUrl))
+  const tree = generatedHtmlParser.parse(marked.parse(markdown, {
+    async: false, gfm: true, renderer: createCourseMarkdownRenderer()
+  }))
+  function visit(node) {
+    if (node.type === 'element') {
+      for (const attribute of ['href', 'src']) {
+        const url = node.properties[attribute]
+        if (url !== undefined && (!safePublicHttpsUrl(url) || !allowed.has(normalizeUrl(url)))) {
+          throw new ReviewValidationError('Generated Markdown contains a URL outside the approved evidence')
+        }
+      }
+    }
+    for (const child of node.children || []) visit(child)
+  }
+  visit(tree)
 }
 
 function evidenceResourceList(resources, evidenceUrls) {
@@ -295,20 +390,33 @@ function evidenceResourceList(resources, evidenceUrls) {
       url: normalizeUrl(resource?.url)
     }))
     .filter(resource => resource.url && safePublicHttpsUrl(resource.url) && evidenceUrls.has(resource.url))
-    .filter((resource, index, list) => list.findIndex(item => item.url === resource.url) === index)
+    // Keep a row when it adds a role in either language. Rendering also
+    // deduplicates per locale, because bilingual labels can differ in role.
+    .filter((resource, index, list) => list.findIndex(item => item.url === resource.url
+      && classifyCourseResource(item.labelEn) === classifyCourseResource(resource.labelEn)
+      && classifyCourseResource(item.labelZh) === classifyCourseResource(resource.labelZh)) === index)
     .slice(0, 8)
 }
 
+function isValidConfidence(value) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= 1
+}
+
 function validateConfidence(action, source) {
-  const confidence = Number(action?.confidence)
-  if (!Number.isFinite(confidence) || confidence < source.minimumConfidence) {
-    throw new ReviewValidationError(`AI confidence ${action?.confidence} is below ${source.minimumConfidence}`)
+  const confidence = action.confidence
+  if (!isValidConfidence(confidence)) {
+    throw new ReviewValidationError('AI confidence must be a finite number between 0 and 1')
+  }
+  // An ignore action still needs a valid probability, but approves no changes.
+  if (source && confidence < source.minimumConfidence) {
+    throw new ReviewValidationError(`AI confidence ${confidence} is below ${source.minimumConfidence}`)
   }
   return confidence
 }
 
 function safeTargetPath(value) {
-  const normalized = String(value || '').replace(/\\/g, '/').replace(/^\/+|\.md$/g, '')
+  if (typeof value !== 'string') return ''
+  const normalized = value.replace(/\\/g, '/').replace(/^\/+|\.md$/g, '')
   if (!normalized || normalized.includes('..') || !/^[A-Za-z0-9._/-]+$/.test(normalized)) return ''
   return normalized
 }
@@ -317,22 +425,28 @@ function entryFingerprint(entry) {
   return createHash('sha256').update(entry.id).digest('hex').slice(0, 16)
 }
 
-async function appendManagedUpdate(filePath, locale, source, entry, summary, resources) {
-  const content = await fs.readFile(filePath, 'utf8')
+async function prepareManagedUpdate(filePath, locale, source, entry, updates, plannedFiles) {
+  const content = plannedFiles.has(filePath) ? plannedFiles.get(filePath) : await fs.readFile(filePath, 'utf8')
   const fingerprint = entryFingerprint(entry)
-  if (content.includes(`feed-entry:${fingerprint}`)) return false
+  if (content.includes(`feed-entry:${fingerprint}`)) return null
   const date = /^\d{4}-\d{2}-\d{2}/.exec(entry.updatedAt)?.[0] || new Date().toISOString().slice(0, 10)
   const sourceLabel = locale === 'zh' ? '来源' : 'Source'
-  const resourceLines = resources.map(resource => {
-    const label = locale === 'zh' ? resource.labelZh : resource.labelEn
-    return `  - [${label}](${resource.url})`
+  // One entry marker covers the whole batch, so replays remain idempotent even
+  // if the reviewer reorders its actions. Keep each summary's own length limit.
+  const items = updates.map(update => {
+    const summary = locale === 'zh' ? update.summaryZh : update.summaryEn
+    const resourceLines = update.resources.map(resource => {
+      const label = locale === 'zh' ? resource.labelZh : resource.labelEn
+      return `  - ${markdownLink(label, resource.url)}`
+    })
+    return [
+      `- **${date}** — ${markdownText(summary, 600)}`,
+      `  - ${sourceLabel}: ${markdownLink(source.name, entry.link)}`,
+      ...resourceLines
+    ].join('\n')
   })
-  const item = [
-    `- **${date}** — ${cleanLine(summary, 600)}`,
-    `  - ${sourceLabel}: [${source.name}](${entry.link})`,
-    ...resourceLines,
-    `  <!-- feed-entry:${fingerprint} -->`
-  ].join('\n')
+  const item = `${items.join('\n\n')}\n  <!-- feed-entry:${fingerprint} -->`
+  validateGeneratedMarkdown(item, [entry.link, ...updates.flatMap(update => update.resources.map(resource => resource.url))])
   const heading = locale === 'zh' ? '## 最新课程动态' : '## Latest Course Updates'
   const blockPattern = new RegExp(`${UPDATE_START}[\\s\\S]*?${UPDATE_END}`)
   const existingBlock = content.match(blockPattern)?.[0]
@@ -341,17 +455,16 @@ async function appendManagedUpdate(filePath, locale, source, entry, summary, res
     : ''
   const nextBlock = `${UPDATE_START}\n${heading}\n\n${item}${existingItems ? `\n\n${existingItems}` : ''}\n${UPDATE_END}`
   const nextContent = existingBlock
-    ? content.replace(blockPattern, nextBlock)
+    ? content.replace(blockPattern, () => nextBlock)
     : `${content.trimEnd()}\n\n${nextBlock}\n`
-  await fs.writeFile(filePath, nextContent, 'utf8')
-  return true
+  return nextContent
 }
 
 function difficultyStars(value) {
   return value === 'Beginner' ? '🌟🌟' : value === 'Advanced' ? '🌟🌟🌟🌟🌟' : '🌟🌟🌟'
 }
 
-function renderCourse(locale, course, resources, source, entry) {
+function renderCourse(locale, course, resources, source, entry, officialUrl) {
   const isZh = locale === 'zh'
   const labels = isZh
     ? {
@@ -362,85 +475,145 @@ function renderCourse(locale, course, resources, source, entry) {
         descriptions: 'Descriptions', offeredBy: 'Offered by', prerequisites: 'Prerequisites', languages: 'Programming Languages',
         difficulty: 'Difficulty', hours: 'Class Hour', resources: 'Resources', source: 'Automated source'
       }
-  const resourceLines = resources.map(resource => {
+  const localizedResources = resources.map(resource => {
     const label = isZh ? resource.labelZh : resource.labelEn
-    return `- ${label}: [${label}](${resource.url})`
+    return { url: resource.url, label, kind: classifyCourseResource(label) }
   })
-  return `# ${cleanLine(course.title, 180)}
+  const officialLabel = isZh ? '课程官网' : 'Official course page'
+  const officialResource = localizedResources.find(resource => resource.url === officialUrl && resource.kind === 'website')
+    || localizedResources.find(resource => resource.url === officialUrl && resource.kind === 'other')
+  // Add the official role first without replacing a textbook/video/assignment
+  // role on the same URL. Generic labels can merge into the official entry.
+  const resourceLines = [`- ${officialLabel}: ${markdownLink(officialResource?.label || officialLabel, officialUrl)}`]
+  const seenResources = new Set([`website:${officialUrl}`])
+  for (const resource of localizedResources) {
+    if (resource.url === officialUrl && resource.kind === 'other') continue
+    const key = `${resource.kind}:${resource.url}`
+    if (seenResources.has(key)) continue
+    seenResources.add(key)
+    resourceLines.push(`- ${markdownText(resource.label, 80)}: ${markdownLink(resource.label, resource.url)}`)
+  }
+  const markdown = `# ${markdownText(course.title, 180)}
 
 ## ${labels.descriptions}
 
-- ${labels.offeredBy}: ${cleanLine(course.offeredBy, 160)}
-- ${labels.prerequisites}: ${cleanLine(course.prerequisites || (isZh ? '未注明' : 'Not specified'), 400)}
-- ${labels.languages}: ${cleanLine(course.programmingLanguages || (isZh ? '未注明' : 'Not specified'), 160)}
+- ${labels.offeredBy}: ${markdownText(course.offeredBy, 160)}
+- ${labels.prerequisites}: ${markdownText(course.prerequisites || (isZh ? '未注明' : 'Not specified'), 400)}
+- ${labels.languages}: ${markdownText(course.programmingLanguages || (isZh ? '未注明' : 'Not specified'), 160)}
 - ${labels.difficulty}: ${difficultyStars(course.difficulty)}
-- ${labels.hours}: ${cleanLine(course.classHours || (isZh ? '未注明' : 'Not specified'), 100)}
+- ${labels.hours}: ${markdownText(course.classHours || (isZh ? '未注明' : 'Not specified'), 100)}
 
-${cleanLine(course.description, 1_200)}
+${markdownText(course.description, 1_200)}
 
 ## ${labels.resources}
 
 ${resourceLines.join('\n')}
 
+## ${labels.source}
+
 <!-- AUTO-GENERATED-COURSE source=${source.id} entry=${entryFingerprint(entry)} -->
-- ${labels.source}: [${source.name}](${entry.link})
+${markdownLink(source.name, entry.link)}
 `
+  validateGeneratedMarkdown(markdown, [officialUrl, entry.link, ...resources.map(resource => resource.url)])
+  return markdown
 }
 
 function validateLocalizedCourse(course, locale) {
-  if (!course || typeof course !== 'object') throw new ReviewValidationError(`Missing ${locale} course data`)
-  if (cleanLine(course.title).length < 4) throw new ReviewValidationError(`Missing ${locale} title`)
-  if (cleanLine(course.offeredBy).length < 2) throw new ReviewValidationError(`Missing ${locale} provider`)
-  const minimumDescription = locale === 'zh' ? 30 : 80
-  if (cleanLine(course.description, 2_000).length < minimumDescription) {
-    throw new ReviewValidationError(`${locale} description is too short`)
+  if (!course || typeof course !== 'object' || Array.isArray(course)) {
+    throw new ReviewValidationError(`Missing ${locale} course data`)
+  }
+  const normalized = {}
+  for (const [field, minimum, maximum] of [
+    ['title', 4, 180], ['offeredBy', 2, 160], ['description', locale === 'zh' ? 30 : 80, 1_200]
+  ]) {
+    if (typeof course[field] !== 'string') {
+      throw new ReviewValidationError(`${locale} ${field} must be a string`)
+    }
+    normalized[field] = cleanLine(course[field], maximum)
+    if (normalized[field].length < minimum) {
+      throw new ReviewValidationError(`${locale} ${field} is too short`)
+    }
+  }
+  for (const [field, maximum] of [['prerequisites', 400], ['programmingLanguages', 160], ['classHours', 100]]) {
+    if (course[field] != null && typeof course[field] !== 'string') {
+      throw new ReviewValidationError(`${locale} ${field} must be a string`)
+    }
+    normalized[field] = cleanLine(course[field], maximum)
   }
   if (!['Beginner', 'Intermediate', 'Advanced'].includes(course.difficulty)) {
     throw new ReviewValidationError(`${locale} difficulty is invalid`)
   }
+  normalized.difficulty = course.difficulty
+  return normalized
 }
 
-async function applyUpdate(action, source, entry, courseIndex, evidenceUrls) {
+function validateUpdate(action, source, courseIndex, evidenceUrls) {
   const confidence = validateConfidence(action, source)
   const targetPath = safeTargetPath(action.targetPath)
   const existing = courseIndex.find(course => course.path.toLowerCase() === targetPath.toLowerCase())
-  if (!existing) throw new ReviewValidationError(`Update target does not exist: ${action.targetPath}`)
+  if (!existing) throw new ReviewValidationError(`Update target does not exist: ${targetPath || '(invalid path)'}`)
   if (cleanLine(action.summaryEn).length < 20 || cleanLine(action.summaryZh).length < 10) {
     throw new ReviewValidationError('Bilingual update summaries are required')
   }
   const resources = evidenceResourceList(action.resources, evidenceUrls)
+  return { confidence, targetPath: existing.path, summaryEn: action.summaryEn, summaryZh: action.summaryZh, resources }
+}
+
+async function applyUpdates(updates, source, entry, plannedFiles) {
+  const targetPath = updates[0].targetPath
+  const confidence = Math.min(...updates.map(update => update.confidence))
   const changedFiles = []
-  for (const [locale, summary] of [['en', action.summaryEn], ['zh', action.summaryZh]]) {
-    const filePath = path.join(COURSE_ROOT, locale, `${existing.path}.md`)
+  const prepared = []
+  for (const locale of ['en', 'zh']) {
+    const filePath = path.join(COURSE_ROOT, locale, `${targetPath}.md`)
     try {
-      await fs.access(filePath)
-      if (syncMode !== 'shadow' && await appendManagedUpdate(filePath, locale, source, entry, summary, resources)) {
-        changedFiles.push(path.relative(ROOT, filePath).replace(/\\/g, '/'))
-      }
+      const content = await prepareManagedUpdate(filePath, locale, source, entry, updates, plannedFiles)
+      if (content !== null) prepared.push({ filePath, content })
     } catch (error) {
       if (error?.code !== 'ENOENT') throw error
     }
   }
-  return { type: 'update', confidence, targetPath: existing.path, changedFiles }
+  for (const { filePath, content } of prepared) {
+    if (syncMode !== 'shadow') {
+      await fs.writeFile(filePath, content, 'utf8')
+      changedFiles.push(path.relative(ROOT, filePath).replace(/\\/g, '/'))
+    }
+    plannedFiles.set(filePath, content)
+  }
+  return { type: 'update', confidence, targetPath, changedFiles }
 }
 
-async function applyCreate(action, source, entry, courseIndex, categories, evidenceUrls) {
+async function applyCreate(action, source, entry, courseIndex, categories, evidenceUrls, plannedFiles) {
   const confidence = validateConfidence(action, source)
-  const category = String(action.category || '')
-  const slug = String(action.slug || '')
+  const category = typeof action.category === 'string' ? action.category : ''
+  const slug = typeof action.slug === 'string' ? action.slug : ''
   if (!categories.has(category)) throw new ReviewValidationError(`Unknown course category: ${category}`)
-  if (!/^[A-Za-z0-9][A-Za-z0-9._-]{1,79}$/.test(slug)) throw new ReviewValidationError(`Unsafe course slug: ${slug}`)
-  validateLocalizedCourse(action.english, 'en')
-  validateLocalizedCourse(action.chinese, 'zh')
+  const targetPath = `${category}/${slug}`
+  // Require an exact round-trip through update validation. The site also
+  // removes .md when building routes, so it cannot be part of a new slug.
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]{1,79}$/.test(slug)
+    || safeTargetPath(targetPath) !== targetPath || /\.md/i.test(slug)) {
+    throw new ReviewValidationError(`Unsafe course slug: ${slug}`)
+  }
+  const english = validateLocalizedCourse(action.english, 'en')
+  const chinese = validateLocalizedCourse(action.chinese, 'zh')
+  // Derive index values from the exact titles that will be rendered, before
+  // any writes. No unvalidated AI values may reach normalization after commit.
+  const englishKey = normalizeCourseKey(english.title)
+  const chineseKey = normalizeCourseKey(chinese.title)
   const officialUrl = normalizeUrl(action.officialUrl)
   if (!officialUrl || !safePublicHttpsUrl(officialUrl) || !evidenceUrls.has(officialUrl)) {
     throw new ReviewValidationError('Official URL must be a public HTTPS URL present in the commit evidence')
   }
   const duplicate = courseIndex.find(course =>
-    course.key === normalizeCourseKey(action.english.title) || course.key === normalizeCourseKey(action.chinese.title)
+    course.key === englishKey || course.key === chineseKey
   )
   if (duplicate) throw new ReviewValidationError(`Course title already exists at ${duplicate.path}`)
-  const targetPath = `${category}/${slug}`
+  // The index includes successful plans in shadow mode. Match paths with the
+  // same case-insensitive identity used by updates, independently of the OS.
+  if (courseIndex.some(course => course.path.toLowerCase() === targetPath.toLowerCase())) {
+    throw new ReviewValidationError(`Course file already exists: ${targetPath}`)
+  }
   for (const locale of ['en', 'zh']) {
     try {
       await fs.access(path.join(COURSE_ROOT, locale, `${targetPath}.md`))
@@ -450,24 +623,32 @@ async function applyCreate(action, source, entry, courseIndex, categories, evide
     }
   }
   const resources = evidenceResourceList(action.resources, evidenceUrls)
-  if (!resources.some(resource => resource.url === officialUrl)) {
-    resources.unshift({ labelEn: 'Official course page', labelZh: '课程官网', url: officialUrl })
-  }
   const changedFiles = []
-  if (syncMode !== 'shadow') {
-    for (const [locale, course] of [['en', action.english], ['zh', action.chinese]]) {
-      const filePath = path.join(COURSE_ROOT, locale, `${targetPath}.md`)
+  // Both modes render and validate both languages before any course is written.
+  const prepared = [['en', english], ['zh', chinese]].map(([locale, course]) => ({
+    filePath: path.join(COURSE_ROOT, locale, `${targetPath}.md`),
+    content: renderCourse(locale, course, resources, source, entry, officialUrl)
+  }))
+  for (const { filePath, content } of prepared) {
+    if (syncMode !== 'shadow') {
       await fs.mkdir(path.dirname(filePath), { recursive: true })
-      await fs.writeFile(filePath, renderCourse(locale, course, resources, source, entry), 'utf8')
+      await fs.writeFile(filePath, content, 'utf8')
       changedFiles.push(path.relative(ROOT, filePath).replace(/\\/g, '/'))
     }
+    plannedFiles.set(filePath, content)
   }
-  courseIndex.push({ path: targetPath, title: action.english.title, key: normalizeCourseKey(action.english.title) })
+  courseIndex.push({ path: targetPath, title: english.title, key: englishKey })
   return { type: 'create', confidence, targetPath, changedFiles }
 }
 
 function validateSourceAction(action, source) {
-  const actionType = String(action?.type || '')
+  if (!action || typeof action !== 'object' || Array.isArray(action)) {
+    throw new ReviewValidationError('AI action must be an object')
+  }
+  const actionType = action.type
+  if (typeof actionType !== 'string' || !ACTION_TYPES.has(actionType)) {
+    throw new ReviewValidationError('AI action type must be ignore, update, or create')
+  }
   const allowedActions = source.allowedActions || ['ignore', 'update', 'create']
   if (!allowedActions.includes(actionType)) {
     throw new ReviewValidationError(`${actionType || 'Unknown action'} is not allowed for source ${source.id}`)
@@ -477,19 +658,20 @@ function validateSourceAction(action, source) {
     const targetPath = safeTargetPath(action.targetPath).toLowerCase()
     const allowedTargetPaths = source.targetPaths.map(pathValue => pathValue.toLowerCase())
     if (!allowedTargetPaths.includes(targetPath)) {
-      throw new ReviewValidationError(`Update target is not allowed for source ${source.id}: ${action.targetPath}`)
+      throw new ReviewValidationError(`Update target is not allowed for source ${source.id}: ${targetPath || '(invalid path)'}`)
     }
   }
+  return actionType
 }
 
-async function reviewEntry(source, entry, courseIndex, categories) {
+async function reviewEntry(source, entry, courseIndex, categories, plannedFiles) {
   const commit = await fetchCommit(source, entry)
   const sourcePolicy = {
     allowedActions: source.allowedActions || ['ignore', 'update', 'create'],
     allowedTargetPaths: source.targetPaths || []
   }
   const evidence = { source: { id: source.id, name: source.name, mode: source.mode }, entry, commit }
-  const evidenceUrls = extractEvidenceUrls(JSON.stringify(evidence))
+  const evidenceUrls = extractEvidenceUrls(evidence)
   for (const url of Array.from(evidenceUrls)) {
     const normalized = normalizeUrl(url)
     if (normalized && normalized !== url) {
@@ -505,17 +687,48 @@ async function reviewEntry(source, entry, courseIndex, categories) {
     evidence
   })
   const results = []
+  const pendingUpdates = new Map()
   for (const action of actions) {
     try {
-      validateSourceAction(action, source)
-      if (action?.type === 'ignore') results.push({ type: 'ignore', confidence: Number(action.confidence) || 0, reason: cleanLine(action.reason, 300), changedFiles: [] })
-      else if (action?.type === 'update') results.push(await applyUpdate(action, source, entry, courseIndex, evidenceUrls))
-      else results.push(await applyCreate(action, source, entry, courseIndex, categories, evidenceUrls))
+      // Dispatch the exact string that passed the source policy. Unknown or
+      // malformed action types must never fall through to creation.
+      switch (validateSourceAction(action, source)) {
+        case 'ignore':
+          results.push({ type: 'ignore', confidence: validateConfidence(action), reason: cleanLine(action.reason, 300), changedFiles: [] })
+          break
+        case 'update': {
+          // Validate independently before grouping: rejected actions must not
+          // discard valid siblings or reach the renderer.
+          const update = validateUpdate(action, source, courseIndex, evidenceUrls)
+          const updates = pendingUpdates.get(update.targetPath) || []
+          updates.push(update)
+          pendingUpdates.set(update.targetPath, updates)
+          break
+        }
+        case 'create':
+          results.push(await applyCreate(action, source, entry, courseIndex, categories, evidenceUrls, plannedFiles))
+          break
+        default:
+          throw new ReviewValidationError('Unsupported AI action type')
+      }
     } catch (error) {
       if (!(error instanceof ReviewValidationError)) throw error
       results.push({
         type: 'reject',
-        confidence: Number(action?.confidence) || 0,
+        confidence: isValidConfidence(action?.confidence) ? action.confidence : 0,
+        reason: cleanLine(error.message, 300),
+        changedFiles: []
+      })
+    }
+  }
+  for (const updates of pendingUpdates.values()) {
+    try {
+      results.push(await applyUpdates(updates, source, entry, plannedFiles))
+    } catch (error) {
+      if (!(error instanceof ReviewValidationError)) throw error
+      results.push({
+        type: 'reject',
+        confidence: Math.min(...updates.map(update => update.confidence)),
         reason: cleanLine(error.message, 300),
         changedFiles: []
       })
@@ -552,6 +765,8 @@ async function main() {
 
   let stateChanged = false
   let approvedChanges = 0
+  // Share accepted file contents across entries, including shadow-only plans.
+  const plannedFiles = new Map()
   for (const source of config.sources.filter(item => item.enabled)) {
     const entries = await fetchFeed(source)
     if (entries.length === 0) throw new Error(`Feed returned no entries: ${source.id}`)
@@ -568,9 +783,12 @@ async function main() {
 
     const seen = new Set(sourceState?.seenEntryIds || [])
     const sourceLimit = Math.min(maxPerSource, source.maxPerRun || maxPerSource)
+    // GitHub feeds are newest first. Drain normal backlogs oldest first before
+    // limiting the batch, so creation precedes later updates across runs.
+    // Explicit replays still select the newest batch.
     const pending = replayLatest
       ? entries.slice(0, sourceLimit).reverse()
-      : entries.filter(entry => !seen.has(entry.id)).slice(0, sourceLimit).reverse()
+      : entries.filter(entry => !seen.has(entry.id)).reverse().slice(0, sourceLimit)
     if (pending.length === 0) {
       log(`${source.id}: no new entries`)
       continue
@@ -578,7 +796,7 @@ async function main() {
 
     log(`${source.id}: reviewing ${pending.length} entr${pending.length === 1 ? 'y' : 'ies'}`)
     for (const entry of pending) {
-      const results = await reviewEntry(source, entry, courseIndex, categories)
+      const results = await reviewEntry(source, entry, courseIndex, categories, plannedFiles)
       for (const result of results) {
         state.decisions.unshift(decisionRecord(source, entry, result))
         approvedChanges += result.changedFiles.length
@@ -601,7 +819,9 @@ async function main() {
   log(syncMode === 'shadow' ? 'Shadow review complete; no files were changed' : `Sync complete; ${approvedChanges} course files changed`)
 }
 
-main().catch(error => {
-  console.error(`[course-sync] ${error instanceof Error ? error.message : String(error)}`)
-  process.exitCode = 1
-})
+if (process.argv[1] && fileURLToPath(import.meta.url) === path.resolve(process.argv[1])) {
+  main().catch(error => {
+    console.error(`[course-sync] ${error instanceof Error ? error.message : String(error)}`)
+    process.exitCode = 1
+  })
+}

@@ -1,11 +1,13 @@
-import { Marked, Renderer } from 'marked';
+import { Marked } from 'marked';
 import hljs from 'highlight.js';
 import { resolveCourseMarkdownLink, type CourseLinkContext } from './courseLinks';
 import { sanitizeMarkdownHTML, type HTMLSanitizerOptions } from './htmlSanitizer';
+import { courseMarkdownTitle } from './courseMarkdown';
+import { createCourseMarkdownRenderer } from './courseMarkdownRenderer.mjs';
 
 export async function markdownToHTML(markdown: string, context?: CourseLinkContext, options?: HTMLSanitizerOptions): Promise<string> {
   // Configure marked options
-  const renderer = new Renderer();
+  const renderer = createCourseMarkdownRenderer();
   const renderLink = renderer.link;
   renderer.link = function(token) {
     return renderLink.call(this, {
@@ -50,14 +52,7 @@ export async function markdownToHTML(markdown: string, context?: CourseLinkConte
 }
 
 export function extractTitleFromMarkdown(markdown: string): string {
-  const lines = markdown.split('\n');
-  const firstLine = lines.find(line => line.startsWith('# '));
-  if (firstLine) {
-    return firstLine.substring(2).trim();
-  }
-  
-  // Fallback to filename if no title found
-  return 'Untitled';
+  return courseMarkdownTitle(markdown, 'Untitled');
 }
 
 export function cleanMarkdownForDisplay(markdown: string): string {

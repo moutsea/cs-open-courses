@@ -4,7 +4,7 @@ import { getEnglishSlug } from './categoryMapping';
 import { toPosixPath } from './pathUtils';
 import { truncateText } from './textUtils';
 import { isStudyHoursLabel, totalStudyHours } from './courseStudyHours';
-import { courseIntroduction, courseListItemText, courseMarkdownSections } from './courseMarkdown';
+import { courseIntroduction, courseListItemVisibleText, courseMarkdownSections, courseMarkdownTitle } from './courseMarkdown';
 
 export interface Course {
   id: string;
@@ -57,14 +57,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
 }> {
   try {
     const content = await fs.readFile(filePath, 'utf-8');
-    const lines = content.split('\n');
-    
-    // Extract title from first h1 or use filename
-    let title = path.basename(filePath, '.md').replace('.en', '');
-    const firstLine = lines.find(line => line.startsWith('# '));
-    if (firstLine) {
-      title = firstLine.substring(2).trim();
-    }
+    const title = courseMarkdownTitle(content, path.basename(filePath, '.md').replace('.en', ''));
     
     // Extract metadata from the course description section
     let summary = '';
@@ -83,7 +76,7 @@ export async function parseMarkdownFile(filePath: string, locale?: string): Prom
       for (const item of items) {
         // A list item's own text includes its continuation lines, but not its
         // child lists. Keep everything after the first colon intact.
-        const text = courseListItemText(item).replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+        const text = courseListItemVisibleText(item);
         const separator = text.search(/[:：]/);
         if (separator === -1) continue;
         const metadataLabel = text.slice(0, separator).trim().toLowerCase();

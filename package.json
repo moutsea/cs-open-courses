@@ -21,7 +21,7 @@
     "db:backfill:analytics-days": "tsx scripts/backfill-analytics-days.ts",
     "start": "next start",
     "lint": "eslint",
-    "test:seo": "tsx --test tests/seo.test.ts tests/course-links.test.ts tests/course-update-workflow.test.ts tests/course-rendering.test.tsx tests/course-anchors.test.tsx tests/course-facts.test.tsx",
+    "test:seo": "tsx --test tests/seo.test.ts tests/course-links.test.ts tests/course-update-workflow.test.ts tests/course-feed-safety.test.ts tests/course-rendering.test.tsx tests/course-anchors.test.tsx tests/course-facts.test.tsx",
     "test:analytics": "tsx --test tests/analytics.test.ts tests/analytics-route.test.ts tests/analytics-client.test.ts tests/analytics-retention.test.ts tests/rate-limit.test.ts tests/page-views.test.ts tests/page-view-route.test.ts tests/page-view-middleware.test.ts tests/page-view-client.test.tsx tests/calendar-day.test.ts",
     "test:admin": "tsx --test tests/admin-session.test.ts tests/login-throttle.test.ts tests/admin-guard.test.ts tests/admin-chart.test.tsx tests/course-ai-channel.test.ts tests/course-ai-config-loader.test.ts tests/course-ai-request.test.ts tests/course-ai-config-route.test.ts tests/course-ai-settings-action.test.ts",
     "test:gaps": "tsx --test tests/searchGaps.test.ts tests/searchGapIndex.test.ts tests/searchGapCache.test.ts",

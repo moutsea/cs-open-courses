@@ -1,7 +1,10 @@
 import { Lexer, Parser, type Token, type Tokens } from 'marked'
-import type { Root, RootContent } from 'hast'
 import rehypeParse from 'rehype-parse'
 import { unified } from 'unified'
+import { createCourseMarkdownRenderer } from './courseMarkdownRenderer.mjs'
+import { courseMarkdownText } from './courseMarkdownText.mjs'
+
+export { courseMarkdownText, courseMarkdownTitle, courseMarkdownLinkText } from './courseMarkdownText.mjs'
 
 const META_SECTION = /^(课程简介|课程介绍|课程概述|简介|(?:Course\s+)?Introductions?|Course\s+Overviews?|Descriptions?)$/i
 const RESOURCE_SECTION = /^(课程资源|课程资源汇总|Course\s+(?:Resources?|Materials?)|Resources?)$/i
@@ -54,40 +57,19 @@ export function courseListItemText(item: Tokens.ListItem): string {
     .join('\n')
 }
 
+/** Use rendered text for metadata, retaining literal punctuation and references. */
+export function courseListItemVisibleText(item: Tokens.ListItem): string {
+  return courseMarkdownText(courseListItemParagraphs(item))
+}
+
 const htmlParser = unified().use(rehypeParse, { fragment: true })
-const TEXT_BLOCKS = new Set(['address', 'article', 'aside', 'blockquote', 'dd', 'div', 'dl', 'dt',
-  'figcaption', 'figure', 'footer', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'header', 'hr',
-  'li', 'main', 'nav', 'ol', 'p', 'pre', 'section', 'table', 'td', 'th', 'tr', 'ul'])
-
-function visibleText(node: Root | RootContent): string {
-  if (node.type === 'text') return node.value
-  if (node.type === 'element') {
-    if (['script', 'style', 'template'].includes(node.tagName)) return ''
-    if (node.tagName === 'br') return ' '
-  }
-  const text = 'children' in node ? node.children.map(visibleText).join('') : ''
-  return node.type === 'element' && TEXT_BLOCKS.has(node.tagName) ? ` ${text} ` : text
-}
-
-/** Render resolved tokens without re-lexing, then read text and decode entities. */
-export function courseMarkdownText(tokens: Token[]): string {
-  if (!tokens.length) return ''
-  return visibleText(htmlParser.parse(Parser.parse(tokens, { gfm: true })))
-    .replace(/\s+/g, ' ').trim()
-}
 
 /** Match the body's rendered href, decoding entities once in attribute context. */
 export function courseMarkdownLinkHref(link: Tokens.Link): string | undefined {
-  const element = htmlParser.parse(Parser.parseInline([link], { gfm: true })).children
+  const element = htmlParser.parse(Parser.parseInline([link], { gfm: true, renderer: createCourseMarkdownRenderer() })).children
     .find(node => node.type === 'element' && node.tagName === 'a')
   if (element?.type !== 'element') return undefined
   return typeof element.properties.href === 'string' ? element.properties.href : undefined
-}
-
-/** Link labels use text-context entity decoding, separately from their targets. */
-export function courseMarkdownLinkText(link: Tokens.Link): string {
-  return visibleText(htmlParser.parse(Parser.parseInline(link.tokens, { gfm: true })))
-    .replace(/\s+/g, ' ').trim()
 }
 
 /** Metadata is the leading list block(s); the remaining blocks form the description. */
