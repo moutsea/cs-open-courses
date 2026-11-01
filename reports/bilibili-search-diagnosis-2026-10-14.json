@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-10-14T02:04:49.420706+00:00",
+  "requestMode": {
+    "userAgent": "Mozilla/5.0 (compatible; CSCoursesVideoBot/1.0; +https://www.cs61bbeyond.com)",
+    "cookieSent": false,
+    "refererSent": false,
+    "localProxyConfigured": true
+  },
+  "productionEvidence": {
+    "runId": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+    "attemptedCourses": 28,
+    "bilibiliSearchHttp412": 28,
+    "responseBodyRetained": false
+  },
+  "localEvidence": [
+    {
+      "name": "search_api",
+      "url": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Stanford%20CS148%20lectures",
+      "status": 412,
+      "contentType": "application/json",
+      "server": "openresty",
+      "retryAfter": null,
+      "wwwAuthenticate": null,
+      "code": -412,
+      "message": "request was banned"
+    },
+    {
+      "name": "video_metadata",
+      "url": "https://api.bilibili.com/x/web-interface/view?bvid=BV1CzFHedEEV",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "server": null,
+      "retryAfter": null,
+      "wwwAuthenticate": null,
+      "code": 0,
+      "message": "OK"
+    },
+    {
+      "name": "public_search_page",
+      "url": "https://search.bilibili.com/all?keyword=Stanford%20CS148",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "server": null,
+      "retryAfter": null,
+      "wwwAuthenticate": null
+    }
+  ],
+  "findings": [
+    "同一个 Bilibili 搜索接口在后台任务和本地均返回 HTTP 412；本地响应 JSON 明确给出 code=-412、message=request was banned。",
+    "同一请求配置下，Bilibili 视频详情接口返回 HTTP 200、code=0；公开搜索网页返回 HTTP 200。限制集中在直接调用搜索接口的方式。",
+    "后台的错误处理原先只记录 HTTP 状态码并丢弃响应体，因此运行记录未保留平台给出的错误说明。",
+    "Bilibili 未返回具体命中的拦截规则，现有证据无法区分来源 IP 信誉、匿名会话、请求特征或调用频率等因素；不能认定为 Cloudflare 独有问题。",
+    "未进行登录、验证码处理、请求身份伪装或切换出口来规避限制。"
+  ]
+}

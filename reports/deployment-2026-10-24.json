@@ -1,0 +1,512 @@
+{
+  "productionUrl": "https://www.cs61bbeyond.com",
+  "worker": "cs-courses",
+  "deployedAt": "2026-10-23T23:00:55.120003Z",
+  "verifiedAt": "2026-10-23T23:04:09.188762+00:00",
+  "deploymentId": "4858fd7d-18c5-45e2-b9ec-49362a8b83c5",
+  "versionId": "4b09c892-94a8-4a89-acda-2a03bb554fba",
+  "trafficPercent": 100,
+  "previousVersionId": "51553069-e23c-4e67-8895-713fe061aa8f",
+  "source": {
+    "commit": "cdf1c6be5c4b5ed7d0d78fd8b8f3f067b4b6d833",
+    "includesUncommittedWorkspaceFixes": true,
+    "nextBuildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+    "sha256": {
+      "src/components/Header.tsx": "75f9052bb201057fc94ef1a83c40e115293ff64fde13d49c911638d8e3f31b7a",
+      "src/components/SearchBox.tsx": "dd53146de4de8d4cbf8b644c9e608ba1df1b538608c6f505b54db91a28c164dd",
+      "src/components/SearchResults.tsx": "a23c0e684b524a8539ad61706d436b715dcd6d7c401646c60d96518928317759",
+      "src/components/SearchRetryProvider.tsx": "3c42b06d69affefa98fc151a8533b886e3ad15a839058563397a291286136a92",
+      "src/components/CoursesContent.tsx": "ea53a415551e4784f5301abaaebb4294f8780d14e18530a02bc7217a8f32c5fc",
+      "src/app/[locale]/search/page.tsx": "d617f16e36d1d36cfdf1a0394684b55b865ae20ac29e50c9887b1f67654ecc23",
+      "tests/ui-regressions.test.tsx": "a292cae17499438ef788a84a9e490200733d461079c3c69e32549cc43ec1464e",
+      "worker.ts": "5820c08ab9cf22e990c48d365e90cf60cf19ef8d9864aadb7b325b9c8fdf64f2",
+      "wrangler.jsonc": "18f84aa513a191013dbeebf91e32873255f21e7e4291d4812252584d311596f9",
+      "package-lock.json": "13e8af5a664ffe369acd78fc1db638fa055dac6bf4372a9d62cf52fcb4321c5e"
+    }
+  },
+  "preflight": {
+    "uiRegressionTests": 25,
+    "seoRegressionTests": 98,
+    "videoRegressionTests": 12,
+    "lint": "passed",
+    "typecheck": "passed in Cloudflare production build",
+    "cloudflareBuild": "passed",
+    "deployDryRun": "passed"
+  },
+  "productionVerification": {
+    "http": {
+      "verifiedAt": "2026-10-23T23:03:03.484185+00:00",
+      "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+      "pageCount": 47,
+      "pages": [
+        {
+          "url": "https://www.cs61bbeyond.com/",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/about",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/about",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 0
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CMU10-708",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CMU10-708",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CS229M",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CS229M",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/STA4273",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/advanced-machine-learning/STA4273",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/STAT8201",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/advanced-machine-learning/STAT8201",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/computer-architecture/N2T",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/computer-architecture/N2T",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/computer-graphics/15462",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/computer-graphics/15462",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/computer-networks/CS168",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/computer-networks/CS168",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/database-systems/15799",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/database-systems/15799",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-711",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-711",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-868",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-868",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/deep-learning/CS230",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/deep-learning/CS230",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/CMU10-414",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/machine-learning-systems/CMU10-414",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/MLC",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/machine-learning-systems/MLC",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/programming-introduction/DeCal",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/programming-introduction/DeCal",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/course/programming-introduction/functional/CS3110",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/course/programming-introduction/functional/CS3110",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/courses",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/courses",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/courses/deep-generative-models/large-language-models",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/courses/deep-generative-models/large-language-models",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/courses/machine-learning",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/courses/machine-learning",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 3
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/open-source",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/open-source",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/search?q=python",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/search",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 0
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/tutorial",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/tutorial",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/universities",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/universities",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/universities/stanford",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/universities/stanford",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 4
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/about",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/about",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 0
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CMU10-708",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CMU10-708",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CS229M",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CS229M",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STA4273",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STA4273",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STAT8201",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STAT8201",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/CS126",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/CS126",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/computer-graphics/15462",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/computer-graphics/15462",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/database-systems/15799",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/database-systems/15799",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-711",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-711",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/MLC",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/MLC",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/information",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/information",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/functional/CS3110",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/programming-introduction/functional/CS3110",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/course/software-engineering/17803",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/course/software-engineering/17803",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 2
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/courses",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/courses",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/courses/machine-learning",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/courses/machine-learning",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 3
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/open-source",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/open-source",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/search?q=python",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/search",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 0
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/tutorial",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/tutorial",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/universities",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/universities",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 1
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/zh/universities/stanford",
+          "status": 200,
+          "canonical": "https://www.cs61bbeyond.com/zh/universities/stanford",
+          "buildId": "PoYlX5Iq5ZH7PCqaQ0TqL",
+          "jsonLdBlocks": 4
+        }
+      ],
+      "searchApis": [
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=python&page=1&locale=en",
+          "status": 200,
+          "total": 45,
+          "results": 10
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=python&page=2&locale=en",
+          "status": 200,
+          "total": 45,
+          "results": 10
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=java&page=1&locale=en",
+          "status": 200,
+          "total": 21,
+          "results": 10
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=python&page=1&locale=zh",
+          "status": 200,
+          "total": 45,
+          "results": 10
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=python&page=2&locale=zh",
+          "status": 200,
+          "total": 45,
+          "results": 10
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/api/search?q=java&page=1&locale=zh",
+          "status": 200,
+          "total": 21,
+          "results": 10
+        }
+      ],
+      "robots": "passed",
+      "sitemapUrls": 402,
+      "redirects": [
+        {
+          "url": "https://cs61bbeyond.com/search?q=python",
+          "status": 308,
+          "location": "https://www.cs61bbeyond.com/search?q=python"
+        },
+        {
+          "url": "https://www.cs61bbeyond.com/en/courses",
+          "status": 307,
+          "location": "https://www.cs61bbeyond.com/courses"
+        }
+      ],
+      "failures": []
+    },
+    "browser": {
+      "normalConsoleErrors": 0,
+      "failureSimulation": "HTTP 503 responses injected only in the isolated browser; recovery used the production search API.",
+      "desktop": {
+        "submitted": {
+          "url": "https://www.cs61bbeyond.com/search?q=java",
+          "heading": "Results for “java”",
+          "open": "false",
+          "inert": false
+        },
+        "back": {
+          "url": "https://www.cs61bbeyond.com/search?q=python",
+          "heading": "Results for “python”",
+          "open": "false",
+          "inert": false
+        },
+        "forward": {
+          "url": "https://www.cs61bbeyond.com/search?q=java",
+          "heading": "Results for “java”",
+          "open": "false",
+          "inert": false
+        }
+      },
+      "mobile": {
+        "submitted": {
+          "url": "https://www.cs61bbeyond.com/zh/search?q=java",
+          "heading": "“java” 的搜索结果",
+          "open": "false",
+          "inert": false,
+          "overflow": ""
+        },
+        "back": {
+          "url": "https://www.cs61bbeyond.com/zh/search?q=python",
+          "heading": "“python” 的搜索结果",
+          "open": "false",
+          "inert": false,
+          "overflow": ""
+        },
+        "forward": {
+          "url": "https://www.cs61bbeyond.com/zh/search?q=java",
+          "heading": "“java” 的搜索结果",
+          "open": "false",
+          "inert": false,
+          "overflow": ""
+        }
+      },
+      "mobileSameQueryRetry": {
+        "before": {
+          "heading": "搜索暂时不可用",
+          "calls": 1
+        },
+        "after": {
+          "heading": "“python” 的搜索结果",
+          "calls": 2,
+          "open": "false",
+          "inert": false,
+          "overflow": ""
+        }
+      },
+      "explicitRetry": {
+        "url": "https://www.cs61bbeyond.com/search?q=python&page=2",
+        "heading": "Results for “python”",
+        "calls": [
+          "/api/search?q=python&page=2&limit=10&locale=en",
+          "/api/search?q=python&page=2&limit=10&locale=en"
+        ]
+      },
+      "desktopSameQueryRetry": {
+        "heading": "Results for “python”",
+        "calls": 2,
+        "open": "false",
+        "inert": false
+      },
+      "blockedStorageSorting": {
+        "before": "CS50: This is CS50xHarvardBeginner20 hours",
+        "byName": "Advanced Machine Learning Roadmap",
+        "byDifficulty": "CS50: This is CS50xHarvardBeginner20 hours"
+      }
+    }
+  },
+  "courseVideoDiscovery": "disabled; manual updates only",
+  "activeCron": "17 3 * * * (GitHub projects sync)",
+  "buildWarnings": [
+    "Existing Next.js middleware naming deprecation.",
+    "Three duplicate options keys in generated dependency bundle; build, dry-run and deployment succeeded."
+  ]
+}

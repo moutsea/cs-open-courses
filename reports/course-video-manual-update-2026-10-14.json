@@ -1,0 +1,1280 @@
+{
+  "checkedAt": "2026-10-14T02:39:20.422118+00:00",
+  "site": "https://www.cs61bbeyond.com",
+  "mode": "manual",
+  "automation": {
+    "videoCronRemoved": true,
+    "manualTriggerDisabled": true,
+    "retainedCloudflareCrons": [
+      "17 3 * * *"
+    ],
+    "historicalRecordsRetained": true,
+    "previousAcceptedLinksMigrated": 2
+  },
+  "summary": {
+    "updatedCourses": 38,
+    "newLinks": 39,
+    "newBilibiliLinks": 37,
+    "newYoutubeLinks": 2,
+    "consolidatedExistingLinks": 3,
+    "newlyCoveredCourses": 7,
+    "remainingCoursesWithoutConfirmedBilibiliOrYoutube": 20
+  },
+  "newlyCoveredCourses": [
+    {
+      "path": "advanced-mathematics/numerical",
+      "title": "MIT18.330 : Introduction to numerical analysis"
+    },
+    {
+      "path": "database-systems/CS122",
+      "title": "Caltech CS 122: Database System Implementation"
+    },
+    {
+      "path": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "title": "Introductory C Programming Specialization"
+    },
+    {
+      "path": "programming-introduction/java/COS126",
+      "title": "Princeton COS 126: Computer Science — An Interdisciplinary Approach"
+    },
+    {
+      "path": "software-engineering/6031",
+      "title": "MIT 6.031 / 6.1020: Software Construction"
+    },
+    {
+      "path": "system-security/SEEDLabs",
+      "title": "SEEDLabs"
+    },
+    {
+      "path": "web-development/mitweb",
+      "title": "MIT Web Development Crash Course"
+    }
+  ],
+  "additions": [
+    {
+      "coursePath": "advanced-mathematics/numerical",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV17K411o7oQ/",
+        "title": {
+          "zh": "第 2 讲 · 数值分析（单节课）",
+          "en": "Lecture 2 · Numerical Analysis (single lecture)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV17K411o7oQ/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "江小鱼南京分鱼",
+        "parts": 1,
+        "durationSeconds": 3205,
+        "checkedAt": "2026-10-14T02:36:39.021897+00:00"
+      }
+    },
+    {
+      "coursePath": "database-systems/CS122",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1mB4y1H7VZ/",
+        "title": {
+          "zh": "数据库系统实现 · 中英字幕（13 讲）",
+          "en": "Database System Implementation · Bilingual mirror (13 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1mB4y1H7VZ/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "血小板自动机",
+        "parts": 13,
+        "durationSeconds": 51809,
+        "checkedAt": "2026-10-14T02:36:39.022661+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1K5cNzGEew/",
+        "title": {
+          "zh": "C 语言编程入门 · 中英字幕（90 段）",
+          "en": "Introductory C Programming · Bilingual mirror (90 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1K5cNzGEew/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 90,
+        "durationSeconds": 19579,
+        "checkedAt": "2026-10-14T02:36:39.030388+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/java/COS126",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1epmVYHEHb/",
+        "title": {
+          "zh": "2017 春季 · 第 0–10 讲（字幕及中文配音）",
+          "en": "Spring 2017 · Lectures 0–10 (subtitles and Chinese dubbing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1epmVYHEHb/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "XJY工作室",
+        "parts": 22,
+        "durationSeconds": 79880,
+        "checkedAt": "2026-10-14T02:36:39.032821+00:00"
+      }
+    },
+    {
+      "coursePath": "software-engineering/6031",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1nuht6fEv5/",
+        "title": {
+          "zh": "6.005 历史版本 · 阅读配套短视频（74 段）",
+          "en": "Earlier 6.005 edition · Reading companion videos (74 segments)"
+        },
+        "kind": "supplemental",
+        "official": false,
+        "source": "https://web.mit.edu/6.005/www/fa16/general/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "GPT中英字幕课程资源",
+        "parts": 74,
+        "durationSeconds": 21947,
+        "checkedAt": "2026-10-14T02:36:39.084655+00:00"
+      }
+    },
+    {
+      "coursePath": "system-security/Bitcoin-Cryptocurrency",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1ZD421H7Pz/",
+        "title": {
+          "zh": "比特币与加密货币技术 · 中英字幕（61 段）",
+          "en": "Bitcoin and Cryptocurrency Technologies · Bilingual mirror (61 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1ZD421H7Pz/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "GPT中英字幕课程资源",
+        "parts": 61,
+        "durationSeconds": 50564,
+        "checkedAt": "2026-10-14T02:36:39.100804+00:00"
+      }
+    },
+    {
+      "coursePath": "system-security/SEEDLabs",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV15t4y1y7dG/",
+        "title": {
+          "zh": "SEED Labs · 安全实验讲座（8 节）",
+          "en": "SEED Labs · Security lab lectures (8 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV15t4y1y7dG/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "卡斯雷曼",
+        "parts": 8,
+        "durationSeconds": 27145,
+        "checkedAt": "2026-10-14T02:36:39.102392+00:00"
+      }
+    },
+    {
+      "coursePath": "web-development/mitweb",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1hrqaBNErf/",
+        "title": {
+          "zh": "2025 · WebLab 中英字幕（40 段）",
+          "en": "2025 · WebLab bilingual mirror (40 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1hrqaBNErf/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 40,
+        "durationSeconds": 99161,
+        "checkedAt": "2026-10-14T02:36:39.111685+00:00"
+      }
+    },
+    {
+      "coursePath": "web-development/mitweb",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1Pt421J7Sf/",
+        "title": {
+          "zh": "2024 · WebLab 英文课堂与工作坊（43 段）",
+          "en": "2024 · WebLab lectures and workshops in English (43 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Pt421J7Sf/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "睡眠鲤鱼",
+        "parts": 43,
+        "durationSeconds": 111077,
+        "checkedAt": "2026-10-14T02:36:39.112329+00:00"
+      }
+    },
+    {
+      "coursePath": "advanced-mathematics/6.042J",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1n64y1i777/",
+        "title": {
+          "zh": "Albert R. Meyer · 中英字幕分节版（111 段）",
+          "en": "Albert R. Meyer · Bilingual lecture segments (111 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1n64y1i777/"
+      },
+      "change": "consolidated-existing",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "凯老师六维学堂",
+        "parts": 111,
+        "durationSeconds": 67959,
+        "checkedAt": "2026-10-14T02:36:39.113051+00:00"
+      }
+    },
+    {
+      "coursePath": "artificial-intelligence/CS50",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1XoyaYFEgp/",
+        "title": {
+          "zh": "2024 · CS50 AI 中英字幕",
+          "en": "2024 · CS50 AI with Chinese/English subtitles"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1XoyaYFEgp/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Freedom__00",
+        "parts": 8,
+        "durationSeconds": 42654,
+        "checkedAt": "2026-10-14T02:36:39.113801+00:00"
+      }
+    },
+    {
+      "coursePath": "computer-architecture/CA",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1MUC6YyEtM/",
+        "title": {
+          "zh": "2024 秋季 · 计算机体系结构中英字幕",
+          "en": "Fall 2024 · Computer Architecture bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1MUC6YyEtM/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "GPT中英字幕课程资源",
+        "parts": 39,
+        "durationSeconds": 373105,
+        "checkedAt": "2026-10-14T02:36:39.163576+00:00"
+      }
+    },
+    {
+      "coursePath": "computer-architecture/DDCA",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1e6421G7mz/",
+        "title": {
+          "zh": "2023 春季 · 数字设计与计算机体系结构（38 段）",
+          "en": "Spring 2023 · Digital Design and Computer Architecture (38 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1e6421G7mz/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "这样好__",
+        "parts": 38,
+        "durationSeconds": 240892,
+        "checkedAt": "2026-10-14T02:36:39.165223+00:00"
+      }
+    },
+    {
+      "coursePath": "computer-networks/CS168",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1c1qvBFEVw/",
+        "title": {
+          "zh": "2025 春季 · 互联网体系结构与协议（27 讲）",
+          "en": "Spring 2025 · Internet Architecture and Protocols (27 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1c1qvBFEVw/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "萧良信",
+        "parts": 27,
+        "durationSeconds": 133810,
+        "checkedAt": "2026-10-14T02:36:39.165936+00:00"
+      }
+    },
+    {
+      "coursePath": "computer-networks/topdown",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV15T411w79y/",
+        "title": {
+          "zh": "Jim Kurose · 自顶向下网络课程（部分章节缺失）",
+          "en": "Jim Kurose · Top-Down Networking lectures (some chapters missing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV15T411w79y/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Composable",
+        "parts": 44,
+        "durationSeconds": 40567,
+        "checkedAt": "2026-10-14T02:36:39.166502+00:00"
+      }
+    },
+    {
+      "coursePath": "data-structures-algorithms/6.006",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1fu41127MN/",
+        "title": {
+          "zh": "2020 春季 · 算法导论课堂与习题课",
+          "en": "Spring 2020 · Introduction to Algorithms lectures and problem sessions"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1fu41127MN/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "偷得半日来学习",
+        "parts": 32,
+        "durationSeconds": 127199,
+        "checkedAt": "2026-10-14T02:36:39.167273+00:00"
+      }
+    },
+    {
+      "coursePath": "data-structures-algorithms/6.046",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1A7411E737/",
+        "title": {
+          "zh": "算法设计与分析 · 中英字幕（34 段）",
+          "en": "Design and Analysis of Algorithms · Bilingual mirror (34 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1A7411E737/"
+      },
+      "change": "consolidated-existing",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "鬼谷良师",
+        "parts": 34,
+        "durationSeconds": 142082,
+        "checkedAt": "2026-10-14T02:36:39.168001+00:00"
+      }
+    },
+    {
+      "coursePath": "database-systems/15799",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1EkipBSEH9/",
+        "title": {
+          "zh": "2025 · 查询优化课堂（14 讲）",
+          "en": "2025 · Query Optimization lectures (14 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1EkipBSEH9/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "AngularMomenta",
+        "parts": 14,
+        "durationSeconds": 60760,
+        "checkedAt": "2026-10-14T02:36:39.195067+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-generative-models/MIT6.S184",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1gc8Ez8EFL/",
+        "title": {
+          "zh": "2025 · 流匹配与扩散模型（6 讲）",
+          "en": "2025 · Flow Matching and Diffusion Models (6 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1gc8Ez8EFL/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "GPT中英字幕课程资源",
+        "parts": 6,
+        "durationSeconds": 24690,
+        "checkedAt": "2026-10-14T02:36:39.220338+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-generative-models/MIT6.S184",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1xzAFzqEbZ/",
+        "title": {
+          "zh": "2026 · 流匹配与扩散模型（6 段录像）",
+          "en": "2026 · Flow Matching and Diffusion Models (6 recorded segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1xzAFzqEbZ/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "大师公开课",
+        "parts": 6,
+        "durationSeconds": 24510,
+        "checkedAt": "2026-10-14T02:36:39.221310+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-generative-models/large-language-models/CMU11-711",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1Txt2zFEVT/",
+        "title": {
+          "zh": "2025 春季 · 高级自然语言处理中英字幕（22 讲）",
+          "en": "Spring 2025 · Advanced NLP bilingual mirror (22 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Txt2zFEVT/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "AI成精",
+        "parts": 22,
+        "durationSeconds": 91167,
+        "checkedAt": "2026-10-14T02:36:39.223503+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-learning/CS224n",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV163Jc6pENx/",
+        "title": {
+          "zh": "2024 春季 · 深度学习自然语言处理（中文配音）",
+          "en": "Spring 2024 · NLP with Deep Learning (Chinese dubbing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV163Jc6pENx/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤名校课",
+        "parts": 46,
+        "durationSeconds": 127668,
+        "checkedAt": "2026-10-14T02:36:39.231685+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-learning/CS224w",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1RZ4y1c7Co/",
+        "title": {
+          "zh": "2021 · 图机器学习中英字幕（60 段）",
+          "en": "2021 · Machine Learning with Graphs bilingual mirror (60 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1RZ4y1c7Co/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "爱可可-爱生活",
+        "parts": 60,
+        "durationSeconds": 80592,
+        "checkedAt": "2026-10-14T02:36:39.232692+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-learning/CS230",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1FT4y1E74V/",
+        "title": {
+          "zh": "DeepLearning.AI 专项课程 · 双语字幕（183 段）",
+          "en": "DeepLearning.AI Specialization · Bilingual mirror (183 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1FT4y1E74V/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "mHarvey",
+        "parts": 183,
+        "durationSeconds": 99817,
+        "checkedAt": "2026-10-14T02:36:39.233865+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-learning/CS231",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1YJ3PzLEiW/",
+        "title": {
+          "zh": "2025 春季 · 计算机视觉深度学习（18 讲）",
+          "en": "Spring 2025 · Deep Learning for Computer Vision (18 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1YJ3PzLEiW/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "人工智能网课",
+        "parts": 18,
+        "durationSeconds": 76386,
+        "checkedAt": "2026-10-14T02:36:39.234781+00:00"
+      }
+    },
+    {
+      "coursePath": "deep-learning/CS285",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1NjH4eYEyZ/",
+        "title": {
+          "zh": "2023 · 深度强化学习中英字幕（99 段）",
+          "en": "2023 · Deep Reinforcement Learning bilingual mirror (99 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NjH4eYEyZ/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 99,
+        "durationSeconds": 111723,
+        "checkedAt": "2026-10-14T02:36:39.250624+00:00"
+      }
+    },
+    {
+      "coursePath": "electronics-basics/Signals_and_Systems_AVO",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1SB4y1C7yx/",
+        "title": {
+          "zh": "Alan Oppenheim · 信号与系统画质修复版（26 讲）",
+          "en": "Alan Oppenheim · Restored Signals and Systems lectures (26 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1SB4y1C7yx/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "拾叁浏",
+        "parts": 26,
+        "durationSeconds": 72839,
+        "checkedAt": "2026-10-14T02:36:39.254228+00:00"
+      }
+    },
+    {
+      "coursePath": "machine-learning-systems/CMU10-414",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1Rg4y137jH/",
+        "title": {
+          "zh": "深度学习系统 · 课堂合集（原课程未设第 22 讲）",
+          "en": "Deep Learning Systems · Lecture collection (no Lecture 22 in the original course)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Rg4y137jH/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Asph0delus",
+        "parts": 25,
+        "durationSeconds": 83894,
+        "checkedAt": "2026-10-14T02:36:39.255130+00:00"
+      }
+    },
+    {
+      "coursePath": "machine-learning-systems/MLC",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV15v4y1g7EU/",
+        "title": {
+          "zh": "2022 · 机器学习编译中文课程合集入口（10 讲）",
+          "en": "2022 · Chinese Machine Learning Compilation collection (10 lectures)"
+        },
+        "kind": "collection",
+        "official": true,
+        "source": "https://mlc.ai/summer22-zh/schedule"
+      },
+      "change": "consolidated-existing",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "陈天奇机器学习",
+        "parts": 1,
+        "durationSeconds": 2462,
+        "checkedAt": "2026-10-14T02:36:39.255675+00:00"
+      }
+    },
+    {
+      "coursePath": "machine-learning/CS229",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1YtB2YXEne/",
+        "title": {
+          "zh": "2022 · 机器学习中英字幕（缺第 1 讲）",
+          "en": "2022 · Machine Learning bilingual mirror (Lecture 1 missing)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1YtB2YXEne/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 18,
+        "durationSeconds": 87877,
+        "checkedAt": "2026-10-14T02:36:39.272798+00:00"
+      }
+    },
+    {
+      "coursePath": "machine-learning/ML",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1pZ4y1v7Cf/",
+        "title": {
+          "zh": "2022 · 吴恩达机器学习专项课程（142 段）",
+          "en": "2022 · Andrew Ng Machine Learning Specialization (142 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1pZ4y1v7Cf/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Python大本营",
+        "parts": 142,
+        "durationSeconds": 70624,
+        "checkedAt": "2026-10-14T02:36:39.274522+00:00"
+      }
+    },
+    {
+      "coursePath": "mathematics-basics/MITLA",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1zx411g7gq/",
+        "title": {
+          "zh": "2005 春季 · Gilbert Strang 线性代数中英字幕",
+          "en": "Spring 2005 · Gilbert Strang Linear Algebra bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1zx411g7gq/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "仲春Mon",
+        "parts": 35,
+        "durationSeconds": 100483,
+        "checkedAt": "2026-10-14T02:36:39.275206+00:00"
+      }
+    },
+    {
+      "coursePath": "mathematics-basics/MITmaths",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1NgcqzNE97/",
+        "title": {
+          "zh": "2006 秋季 · 单变量微积分（部分课堂录像）",
+          "en": "Fall 2006 · Single Variable Calculus (partial lecture collection)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NgcqzNE97/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤名校课",
+        "parts": 35,
+        "durationSeconds": 102710,
+        "checkedAt": "2026-10-14T02:36:39.275907+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/MIT-Missing-Semester",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1CkArz1E4o/",
+        "title": {
+          "zh": "2026 · Missing Semester 中英字幕（9 讲）",
+          "en": "2026 · Missing Semester bilingual mirror (9 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1CkArz1E4o/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 9,
+        "durationSeconds": 36158,
+        "checkedAt": "2026-10-14T02:36:39.288966+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/c/CS50",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1XQ6mBWEoS/",
+        "title": {
+          "zh": "2026 · CS50x 计算机科学导论中英字幕",
+          "en": "2026 · CS50x Introduction to Computer Science bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1XQ6mBWEoS/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "常青藤中英字幕课程",
+        "parts": 12,
+        "durationSeconds": 88579,
+        "checkedAt": "2026-10-14T02:36:39.302263+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/python/CS50P",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1NK411x7x1/",
+        "title": {
+          "zh": "2022 · CS50P Python 编程入门中英字幕",
+          "en": "2022 · CS50P Introduction to Programming with Python bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1NK411x7x1/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "GPT中英字幕课程资源",
+        "parts": 11,
+        "durationSeconds": 57239,
+        "checkedAt": "2026-10-14T02:36:39.358118+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/python/MIT6.100L",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1vLc8eMEXo/",
+        "title": {
+          "zh": "2022 秋季 · Python 计算机科学入门（26 讲）",
+          "en": "Fall 2022 · Introduction to CS using Python (26 lectures)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1vLc8eMEXo/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Mindofuture",
+        "parts": 26,
+        "durationSeconds": 100085,
+        "checkedAt": "2026-10-14T02:36:39.371512+00:00"
+      }
+    },
+    {
+      "coursePath": "programming-introduction/rust/CS110L",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1dh4y1T75r/",
+        "title": {
+          "zh": "2020/2021 混合版本 · Rust 系统编程安全中英字幕",
+          "en": "Mixed 2020/2021 editions · Safety in Systems Programming bilingual mirror"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1dh4y1T75r/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Reichtums",
+        "parts": 15,
+        "durationSeconds": 48762,
+        "checkedAt": "2026-10-14T02:36:39.372377+00:00"
+      }
+    },
+    {
+      "coursePath": "software-engineering/CS169",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1VJ41197Nq/",
+        "title": {
+          "zh": "2019 秋季 · 软件工程课堂（26 讲）",
+          "en": "Fall 2019 · Software Engineering lectures (26 videos)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1VJ41197Nq/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "Junjun17",
+        "parts": 26,
+        "durationSeconds": 120790,
+        "checkedAt": "2026-10-14T02:36:39.372905+00:00"
+      }
+    },
+    {
+      "coursePath": "system-security/MIT6.858",
+      "resource": {
+        "url": "https://www.bilibili.com/video/BV1Jp4y167N5/",
+        "title": {
+          "zh": "2020 · 计算机系统安全中文字幕（23 段）",
+          "en": "2020 · Computer Systems Security with Chinese subtitles (23 segments)"
+        },
+        "kind": "collection",
+        "official": false,
+        "source": "https://www.bilibili.com/video/BV1Jp4y167N5/"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "Bilibili",
+        "apiCode": 0,
+        "available": true,
+        "paid": false,
+        "publisher": "逆风微笑的代码狗",
+        "parts": 23,
+        "durationSeconds": 111419,
+        "checkedAt": "2026-10-14T02:36:39.373620+00:00"
+      }
+    },
+    {
+      "coursePath": "web-development/mitweb",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLVAxjdyIU8_z6iFliCz-n9zqf_ZRsbyPA",
+        "title": {
+          "zh": "2026 IAP · WebLab 官方课堂与工作坊",
+          "en": "2026 IAP · Official WebLab lectures and workshops"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/@mitweblab/playlists"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "YouTube",
+        "playlistTitle": "IAP 2026",
+        "visibleVideos": 28,
+        "sample": {
+          "id": "YyHCJJiiINE",
+          "title": "MIT web.lab (6.962) - Day 7: W7 - Chatbook with Sockets"
+        },
+        "oembed": {
+          "title": "MIT web.lab (6.962) - Day 7: W7 - Chatbook with Sockets",
+          "author_name": "MIT Web Lab (6.962)",
+          "author_url": "https://www.youtube.com/@mitweblab",
+          "type": "video"
+        },
+        "checkedAt": "2026-10-14T02:36:39.373892+00:00"
+      }
+    },
+    {
+      "coursePath": "web-development/mitweb",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLVAxjdyIU8_w2dywNhJQfmXkr527COLYo",
+        "title": {
+          "zh": "2025 IAP · WebLab 官方课堂与工作坊",
+          "en": "2025 IAP · Official WebLab lectures and workshops"
+        },
+        "kind": "playlist",
+        "official": true,
+        "source": "https://www.youtube.com/@mitweblab/playlists"
+      },
+      "change": "new",
+      "verification": {
+        "platform": "YouTube",
+        "playlistTitle": "IAP 2025",
+        "visibleVideos": 28,
+        "sample": {
+          "id": "-6h47c-YEas",
+          "title": "MIT web.lab (6.962) - Theme Reveal"
+        },
+        "oembed": {
+          "title": "MIT web.lab (6.962) - Theme Reveal",
+          "author_name": "MIT Web Lab (6.962)",
+          "author_url": "https://www.youtube.com/@mitweblab",
+          "type": "video"
+        },
+        "checkedAt": "2026-10-14T02:36:39.373933+00:00"
+      }
+    }
+  ],
+  "excludedCandidates": [
+    {
+      "url": "https://www.bilibili.com/video/BV1Vax2zMEQV/",
+      "reason": "平台标记为充电专属及预览，未收录；数值分析仅收录核实过的免费第 2 讲。"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1Kp42117vh/",
+      "reason": "平台标记为充电专属及预览，改用核实为非付费的另一版本。"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1a9CeB4EJW/",
+      "reason": "内容为课程导读及项目通关回顾，不作为公开课堂录像。"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1vQMBz6EvP/",
+      "reason": "年份与同目录的其他版本标注不一致，未采用此条。"
+    }
+  ],
+  "remaining": [
+    {
+      "path": "advanced-machine-learning/STA4273",
+      "title": "STA 4273 Winter 2021: Minimizing Expectations",
+      "sources": [
+        "https://www.cs.toronto.edu/~cmaddis/courses/sta4273_w21/"
+      ],
+      "note": "课程官网说明录像供选课学生通过 Quercus 查看，未找到可核实的公开版本。"
+    },
+    {
+      "path": "advanced-machine-learning/STAT8201",
+      "title": "Columbia STAT 8201: Deep Generative Models",
+      "sources": [
+        "http://stat.columbia.edu/~cunningham/teaching/GR8201/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "advanced-mathematics/CS126",
+      "title": "UCB CS126 : Probability theory",
+      "sources": [
+        "https://inst.eecs.berkeley.edu/~ee126/fa20/content.html"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "compilers/PKU-Compilers",
+      "title": "PKU 编译原理实践",
+      "sources": [
+        "https://pku-minic.github.io/online-doc/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "compilers/SJTU-Compilers",
+      "title": "SJTU 编译原理",
+      "sources": [
+        "https://ipads.se.sjtu.edu.cn/courses/compilers/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "computer-graphics/CS148",
+      "title": "Stanford CS148",
+      "sources": [
+        "https://web.stanford.edu/class/cs148/index.html",
+        "https://web.stanford.edu/class/cs148/lectures.html"
+      ],
+      "note": "课程官网要求 Stanford 账号进入 Canvas / Panopto，未找到可核实的公开版本。"
+    },
+    {
+      "path": "database-systems/CS346",
+      "title": "Stanford CS 346: Database System Implementation",
+      "sources": [
+        "https://web.stanford.edu/class/cs346/2015/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "deep-generative-models/CMU15-779",
+      "title": "CMU 15-779：机器学习系统高级专题（大语言模型版）",
+      "sources": [
+        "https://www.cs.cmu.edu/~zhihaoj2/15-779"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "deep-generative-models/large-language-models/CMU11-667",
+      "title": "CMU11-667: Large Language Models: Methods and Applications",
+      "sources": [
+        "https://cmu-llms.org/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "deep-generative-models/large-language-models/CMU11-868",
+      "title": "CMU 11-868: Large Language Model Systems",
+      "sources": [
+        "https://llmsystem.github.io/llmsystem2026fall/",
+        "https://llmsystem.github.io/llmsystem2026spring/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "machine-learning-systems/CMU15-442",
+      "title": "CMU 15-442/642：机器学习系统",
+      "sources": [
+        "https://mlsyscourse.org",
+        "https://mlsyscourse.org/schedule"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "operating-systems/COS318",
+      "title": "Princeton COS 318: Operating Systems",
+      "sources": [
+        "https://www.cs.princeton.edu/courses/archive/fall20/cos318/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "programming-introduction/cpp/AUT1400",
+      "title": "Amirkabir University of Technology 1400-2: Advanced Programming Course",
+      "sources": [
+        "https://github.com/courseworks"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "programming-introduction/functional/Haskell-MOOC",
+      "title": "Haskell MOOC",
+      "sources": [
+        "https://haskell.mooc.fi/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "programming-introduction/java/MIT 6.092",
+      "title": "MIT 6.092: Introduction To Programming In Java",
+      "sources": [
+        "https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/syllabus/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "programming-introduction/rust/cs220",
+      "title": "CS220: Programming Principles",
+      "sources": [
+        "https://github.com/kaist-cp/cs220"
+      ],
+      "note": "官网提供讲义和作业，未确认对应公开课堂录像。"
+    },
+    {
+      "path": "programming-languages-design/CS242",
+      "title": "CS242 Programming Languages",
+      "sources": [
+        "https://web.stanford.edu/class/cs242/",
+        "https://stanford-cs242.github.io/f19/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "system-security/MIT6.1600",
+      "title": "MIT6.1600: Foundations of Computer Security",
+      "sources": [
+        "https://61600.csail.mit.edu/",
+        "https://61600.csail.mit.edu/2023/"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "web-development/CS142",
+      "title": "Stanford CS142: Web Applications",
+      "sources": [
+        "https://web.stanford.edu/class/cs142/index.html",
+        "https://web.stanford.edu/class/cs142/lectures.html"
+      ],
+      "note": "已查找课程官网与平台公开结果，尚未核实到课程匹配的公开录像；不代表永久没有视频。"
+    },
+    {
+      "path": "web-development/CS571",
+      "title": "CS571 Building UI (React & React Native)",
+      "sources": [
+        "https://cs571.org"
+      ],
+      "note": "官网通过 Kaltura 提供录像，未核实到对应 Bilibili / YouTube 版本；课程页已有官网录像指引。"
+    }
+  ],
+  "verificationScope": "核对平台元数据、公开可访问标记、付费状态、分P目录和课程来源。未逐节完整播放；部分录像、历史版本和混合年份已在标题中标注。",
+  "validation": {
+    "lint": "passed",
+    "videoTests": 12,
+    "seoTests": 5,
+    "productionVerification": "passed",
+    "productionPagesChecked": 76,
+    "productionPagesPassed": 76,
+    "build": "passed",
+    "deploymentVersion": "7ea694fd-e8b8-4d29-8d7d-183c5dc82968",
+    "checkedAt": "2026-10-14T02:44:38.334345+00:00",
+    "manualTriggerHTTPStatus": 410,
+    "videoJobEnabled": false,
+    "cronSchedules": [
+      "17 3 * * *"
+    ],
+    "report": "course-video-manual-production-verification-2026-10-14.json",
+    "reportDisplayAndFilter": "passed"
+  }
+}

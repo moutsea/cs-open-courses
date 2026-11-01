@@ -1,0 +1,2531 @@
+{
+  "checkedAt": "2026-10-14T01:59:34.611503+00:00",
+  "workerVersion": "f3cb39cd-e138-40e7-b2b0-4ec093dd3ea5",
+  "schedule": {
+    "executor": "Cloudflare Worker cs-courses",
+    "timezone": "Asia/Shanghai",
+    "intervalHours": 72,
+    "dailyDueCheck": "12:17",
+    "nextRun": "2026-10-17T12:17:00+08:00",
+    "overlapProtection": "D1 atomic lease, 15 minutes"
+  },
+  "latestRun": {
+    "id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+    "started_at": 1791943011960,
+    "finished_at": 1791943044796,
+    "status": "partial",
+    "attempted": 28,
+    "accepted": 2,
+    "review": 23,
+    "error_count": 31,
+    "error": null
+  },
+  "summary": {
+    "attemptedCourses": 28,
+    "newlyCoveredCourses": 1,
+    "acceptedLinks": 2,
+    "remainingUncoveredCourses": 27,
+    "candidateStatuses": {
+      "review": 24,
+      "accepted": 2,
+      "rejected": 46
+    },
+    "sourceErrors": {
+      "HTTP 412": 28,
+      "HTTP 401": 2,
+      "HTTP 404": 1
+    }
+  },
+  "notes": [
+    "Bilibili 搜索本轮返回 HTTP 412，已记录访问受限；下轮继续尝试。",
+    "合集核对了标题、课程归属及可公开嵌入的样本视频，未逐节播放。",
+    "初次试跑误判的 90 秒课程宣传片已撤回，并加入更严格的课堂范围和时长检查；无关搜索结果已排除。",
+    "重复手动触发返回 skipped，未改变下次执行日期。"
+  ],
+  "accepted": [
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+      "status": "accepted",
+      "checked_at": 1791943039510,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies course",
+          "en": "Bitcoin and Cryptocurrency Technologies course"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt"
+      },
+      "evidence": {
+        "reason": "Course identity, institution and lecture title match",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+          "title": "Bitcoin and Cryptocurrency Technologies course",
+          "author": "",
+          "description": "Bitcoin and Cryptocurrency Technologies course by Princeton University (Feb 2015)\n\nhttps://bitcoinbook.cs.princeton.edu/",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+      "status": "accepted",
+      "checked_at": 1791943039510,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "en": "Bitcoin and Cryptocurrency Technologies - Princeton"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc"
+      },
+      "evidence": {
+        "reason": "Course identity, institution and lecture title match",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+          "title": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    }
+  ],
+  "playlistSpotChecks": [
+    {
+      "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+      "title": {
+        "playlistMetadataRenderer": {
+          "title": "Bitcoin and Cryptocurrency Technologies course",
+          "description": "Bitcoin and Cryptocurrency Technologies course by Princeton University (Feb 2015)\n\nhttps://bitcoinbook.cs.princeton.edu/",
+          "androidAppindexingLink": "android-app://com.google.android.youtube/http/www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+          "iosAppindexingLink": "ios-app://544007664/vnd.youtube/www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt"
+        }
+      },
+      "visibleVideos": 12,
+      "firstVideo": "fOMVZXLjKYo",
+      "sampleTitle": "Lecture 1 — Intro to Crypto and Cryptocurrencies",
+      "sampleAuthor": "Bitcoin and Cryptocurrency Technologies Online Course",
+      "sampleAuthorUrl": "https://www.youtube.com/@bitcoinandcryptocurrencyte3219"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+      "title": {
+        "playlistMetadataRenderer": {
+          "title": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "androidAppindexingLink": "android-app://com.google.android.youtube/http/www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+          "iosAppindexingLink": "ios-app://544007664/vnd.youtube/www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc"
+        }
+      },
+      "visibleVideos": 13,
+      "firstVideo": "fOMVZXLjKYo",
+      "sampleTitle": "Lecture 1 — Intro to Crypto and Cryptocurrencies",
+      "sampleAuthor": "Bitcoin and Cryptocurrency Technologies Online Course",
+      "sampleAuthorUrl": "https://www.youtube.com/@bitcoinandcryptocurrencyte3219"
+    }
+  ],
+  "attempts": [
+    {
+      "course_path": "web-development/mitweb",
+      "checked_at": 1791943044736,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=MIT%20weblab%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "web-development/CS571",
+      "checked_at": 1791943044235,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Wisconsin%20CS571%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "system-security/SEEDLabs",
+      "checked_at": 1791943043350,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Wenliang%20Du%20seed%20labs%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "web-development/CS142",
+      "checked_at": 1791943042886,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Stanford%20CS142%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "system-security/MIT6.1600",
+      "checked_at": 1791943039621,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=MIT%206.1600%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "checked_at": 1791943039510,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "covered",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Princeton%20bitcoin%20and%20cryptocurrency%20technologies%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "checked_at": 1791943038401,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=KAIST%20CS220%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "software-engineering/6031",
+      "checked_at": 1791943037262,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=MIT%206.031%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-languages-design/CS242",
+      "checked_at": 1791943035223,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Stanford%20CS242%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "checked_at": 1791943033817,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Helsinki%20haskell%20mooc%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/java/MIT 6.092",
+      "checked_at": 1791943033361,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=MIT%206.092%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/java/COS126",
+      "checked_at": 1791943032078,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Princeton%20COS126%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "checked_at": 1791943029800,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Amirkabir%20advanced%20programming%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "checked_at": 1791943028303,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Duke%20introductory%20c%20programming%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "operating-systems/COS318",
+      "checked_at": 1791943027286,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Princeton%20COS318%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "machine-learning-systems/CMU15-442",
+      "checked_at": 1791943026645,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=CMU%2015-442%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-667",
+      "checked_at": 1791943025408,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=CMU%2011-667%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-868",
+      "checked_at": 1791943025407,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=CMU%2011-868%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "deep-generative-models/CMU15-779",
+      "checked_at": 1791943024204,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=CMU%2015-779%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "compilers/SJTU-Compilers",
+      "checked_at": 1791943023787,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=SJTU%20compiler%20principles%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "database-systems/CS346",
+      "checked_at": 1791943021558,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Stanford%20CS346%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "database-systems/CS122",
+      "checked_at": 1791943020028,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Caltech%20CS122%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "computer-graphics/CS148",
+      "checked_at": 1791943019060,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Stanford%20CS148%20lectures",
+          "message": "HTTP 412"
+        },
+        {
+          "source": "https://www.youtube.com/watch?v=tDFmCsRCdpQ",
+          "message": "HTTP 401"
+        }
+      ]
+    },
+    {
+      "course_path": "compilers/PKU-Compilers",
+      "checked_at": 1791943018093,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Peking%20compiler%20principles%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "advanced-mathematics/numerical",
+      "checked_at": 1791943017043,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=MIT%2018.330%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "advanced-mathematics/CS126",
+      "checked_at": 1791943016244,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Berkeley%20EE126%20lectures",
+          "message": "HTTP 412"
+        },
+        {
+          "source": "https://www.youtube.com/watch?v=OlwJw7JlkVg",
+          "message": "HTTP 401"
+        }
+      ]
+    },
+    {
+      "course_path": "advanced-machine-learning/STAT8201",
+      "checked_at": 1791943014627,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "http://stat.columbia.edu/~cunningham/teaching/GR8201/",
+          "message": "HTTP 404"
+        },
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Columbia%20STAT8201%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    },
+    {
+      "course_path": "advanced-machine-learning/STA4273",
+      "checked_at": 1791943014398,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "status": "partial",
+      "errors": [
+        {
+          "source": "https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=Toronto%20STA4273%20lectures",
+          "message": "HTTP 412"
+        }
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "course_path": "web-development/CS571",
+      "url": "https://www.youtube.com/playlist?list=PL0F6Br9_OLQaR8A-Vwa3pC2C3sZgK4_AG",
+      "status": "review",
+      "checked_at": 1791943044235,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PL0F6Br9_OLQaR8A-Vwa3pC2C3sZgK4_AG",
+        "title": {
+          "zh": "Spring '20: CS 571 Operating Systems",
+          "en": "Spring '20: CS 571 Operating Systems"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PL0F6Br9_OLQaR8A-Vwa3pC2C3sZgK4_AG"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PL0F6Br9_OLQaR8A-Vwa3pC2C3sZgK4_AG",
+          "title": "Spring '20: CS 571 Operating Systems",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/SEEDLabs",
+      "url": "https://www.youtube.com/watch?v=s1xQxcIi-2g",
+      "status": "review",
+      "checked_at": 1791943043350,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=s1xQxcIi-2g",
+        "title": {
+          "zh": "SEED Labs - A Hands-on Approach in Cybersecurity Education - Prof. Wenliang (Kevin) Du",
+          "en": "SEED Labs - A Hands-on Approach in Cybersecurity Education - Prof. Wenliang (Kevin) Du"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=s1xQxcIi-2g"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=s1xQxcIi-2g",
+          "title": "SEED Labs - A Hands-on Approach in Cybersecurity Education - Prof. Wenliang (Kevin) Du",
+          "author": "AI and Security Tech Talks",
+          "description": "SEED Labs\nhttps://seedsecuritylabs.org/\n\nUdemy Courses\nhttps://www.udemy.com/user/wenliang-du/\n\nBooks Website\nhttps://www.handsonsecurity.net/\n\nPresentation\nhttp://eacademic.ju.edu.jo/mousa.akhras/Material/GuestLectures/SEED_Labs_2020_02.pdf",
+          "durationSeconds": 3235,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/SEEDLabs",
+      "url": "https://www.youtube.com/watch?v=s0mtPJ8QHa0",
+      "status": "review",
+      "checked_at": 1791943043350,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=s0mtPJ8QHa0",
+        "title": {
+          "zh": "Professor Kevin Du - SEEDLabs",
+          "en": "Professor Kevin Du - SEEDLabs"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=s0mtPJ8QHa0"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=s0mtPJ8QHa0",
+          "title": "Professor Kevin Du - SEEDLabs",
+          "author": "USA-teach.online",
+          "description": "Wenliang (Kevin) Du, Ph.D.\nProfessor at Syracuse University\nCEO of SEEDLabs Workshop, LLC",
+          "durationSeconds": 114,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/SEEDLabs",
+      "url": "https://www.youtube.com/watch?v=hLwm_eSeyW0",
+      "status": "review",
+      "checked_at": 1791943043350,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=hLwm_eSeyW0",
+        "title": {
+          "zh": "Install SEEDLabs in the Cloud, on Microsoft Azure",
+          "en": "Install SEEDLabs in the Cloud, on Microsoft Azure"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=hLwm_eSeyW0"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=hLwm_eSeyW0",
+          "title": "Install SEEDLabs in the Cloud, on Microsoft Azure",
+          "author": "Robert Yenji",
+          "description": "This video guides you through installing SEEDLabs, a free cybersecurity training environment, on Microsoft Azure.\nSEED Lab's are created by Dr. Wenliang Du and all labs are publicly available (https://seedsecuritylabs.org/index.html). \nThis video is posted under fare usage policy.\n\nEven if you're new to Azure, this video provides clear instructions to get your SEEDLabs environment up and running.\n\nLinks (in video description):\n\nSEEDLabs: https://seedsecuritylabs.org/\nSEEDLabs Cloud Installation Guide: https://github.com/seed-labs/seed-labs/blob/master/manuals/cloud/seedvm-cloud.md\nSEEDLabs Azure Installation Guide: https://github.com/seed-labs/seed-labs/blob/master/manuals/cloud/create_vm_azure.md\n\n Lecture on Udemy\nComputer Security: A Hands-on Approach: https://www.udemy.com/course/du-computer-security/?referralCode=A22952E661213A336573&couponCode=SEED2024A0423\n\nInternet Security: A Hands-on Approach: https://www.udemy.com/course/du-internet-security/?referralCode=9279DCD7BAFFAC610D6B&couponCode=SEED2024A0423\n\nWeb Security: A Hands-on Approach: https://www.udemy.com/course/web-security-du/?referralCode=E6E591AF1BE86914BBA6&couponCode=SEED2024A0423\n\nCryptography: A Hands-on Approach: https://www.udemy.com/course/du-cryptography/?referralCode=D1011CAA63DD07F8A392&couponCode=SEED2024A0423\n#SEEDLabs #Cybersecurity #Azure #CloudSecurity",
+          "durationSeconds": 1712,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS142",
+      "url": "https://www.youtube.com/watch?v=6YuhJjvi1iE",
+      "status": "review",
+      "checked_at": 1791943042886,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=6YuhJjvi1iE",
+        "title": {
+          "zh": "Stanford CS 142",
+          "en": "Stanford CS 142"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=6YuhJjvi1iE"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=6YuhJjvi1iE",
+          "title": "Stanford CS 142",
+          "author": "Ji Yu",
+          "description": "Final Project",
+          "durationSeconds": 117,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS142",
+      "url": "https://www.youtube.com/watch?v=tT3QGB1ZjDg",
+      "status": "review",
+      "checked_at": 1791943042886,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=tT3QGB1ZjDg",
+        "title": {
+          "zh": "CS142 - Project 8 - Stanford University",
+          "en": "CS142 - Project 8 - Stanford University"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=tT3QGB1ZjDg"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=tT3QGB1ZjDg",
+          "title": "CS142 - Project 8 - Stanford University",
+          "author": "ItsRaminTime",
+          "description": "Video of Final Project and its implementations",
+          "durationSeconds": 172,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS142",
+      "url": "https://www.youtube.com/watch?v=PSqDvU5oJE0",
+      "status": "review",
+      "checked_at": 1791943042886,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=PSqDvU5oJE0",
+        "title": {
+          "zh": "Stanford CS142 - Web Application Project",
+          "en": "Stanford CS142 - Web Application Project"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=PSqDvU5oJE0"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=PSqDvU5oJE0",
+          "title": "Stanford CS142 - Web Application Project",
+          "author": "Zhiwen Zhang",
+          "description": "Photo sharing web application",
+          "durationSeconds": 270,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+      "status": "accepted",
+      "checked_at": 1791943039510,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies course",
+          "en": "Bitcoin and Cryptocurrency Technologies course"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt"
+      },
+      "evidence": {
+        "reason": "Course identity, institution and lecture title match",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLFxxVqRfGX4sr61apzSVgKPBKGPv9bnxt",
+          "title": "Bitcoin and Cryptocurrency Technologies course",
+          "author": "",
+          "description": "Bitcoin and Cryptocurrency Technologies course by Princeton University (Feb 2015)\n\nhttps://bitcoinbook.cs.princeton.edu/",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+      "status": "accepted",
+      "checked_at": 1791943039510,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "en": "Bitcoin and Cryptocurrency Technologies - Princeton"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc"
+      },
+      "evidence": {
+        "reason": "Course identity, institution and lecture title match",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLYbMlt5FmbYaZcQ54xIekYkueVa4Jqitc",
+          "title": "Bitcoin and Cryptocurrency Technologies - Princeton",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m37q5Ujg4bDaccZ0Eh1KXvK",
+      "status": "review",
+      "checked_at": 1791943038401,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m37q5Ujg4bDaccZ0Eh1KXvK",
+        "title": {
+          "zh": "CS220 Second Semester 2020-2021",
+          "en": "CS220 Second Semester 2020-2021"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m37q5Ujg4bDaccZ0Eh1KXvK"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m37q5Ujg4bDaccZ0Eh1KXvK",
+          "title": "CS220 Second Semester 2020-2021",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "url": "https://www.youtube.com/playlist?list=PLXY5xcFHqg308kyRc7RNTzafUUOoE4C5Q",
+      "status": "review",
+      "checked_at": 1791943038401,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLXY5xcFHqg308kyRc7RNTzafUUOoE4C5Q",
+        "title": {
+          "zh": "CS 220 Data Programming I",
+          "en": "CS 220 Data Programming I"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLXY5xcFHqg308kyRc7RNTzafUUOoE4C5Q"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLXY5xcFHqg308kyRc7RNTzafUUOoE4C5Q",
+          "title": "CS 220 Data Programming I",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m1cVjx0DvobKHIglK9mrMkU",
+      "status": "review",
+      "checked_at": 1791943038401,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m1cVjx0DvobKHIglK9mrMkU",
+        "title": {
+          "zh": "Prof. Najib Kofahi CS220 First Semester 2020-2021",
+          "en": "Prof. Najib Kofahi CS220 First Semester 2020-2021"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m1cVjx0DvobKHIglK9mrMkU"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLl4UrSdWL8m1cVjx0DvobKHIglK9mrMkU",
+          "title": "Prof. Najib Kofahi CS220 First Semester 2020-2021",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "software-engineering/6031",
+      "url": "https://www.youtube.com/watch?v=O_weHbBq-4E",
+      "status": "review",
+      "checked_at": 1791943037262,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=O_weHbBq-4E",
+        "title": {
+          "zh": "ExplainMIT video demo for 6.031",
+          "en": "ExplainMIT video demo for 6.031"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=O_weHbBq-4E"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=O_weHbBq-4E",
+          "title": "ExplainMIT video demo for 6.031",
+          "author": "Elton Lin",
+          "description": "(This video has no sound). \nWebsite: https://explain.mit.edu\nSource code: https://github.com/eltonlin1998/ExplainMIT.",
+          "durationSeconds": 70,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "url": "https://www.youtube.com/watch?v=orMFZP8ZtGY",
+      "status": "review",
+      "checked_at": 1791943033817,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=orMFZP8ZtGY",
+        "title": {
+          "zh": "haskell mooc part1 lecture1 1 8 Working with Examples",
+          "en": "haskell mooc part1 lecture1 1 8 Working with Examples"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=orMFZP8ZtGY"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=orMFZP8ZtGY",
+          "title": "haskell mooc part1 lecture1 1 8 Working with Examples",
+          "author": "최광훈",
+          "description": "",
+          "durationSeconds": 1189,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "url": "https://www.youtube.com/watch?v=DLYNHOXEU8U",
+      "status": "review",
+      "checked_at": 1791943033817,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=DLYNHOXEU8U",
+        "title": {
+          "zh": "haskell mooc part1 lecture1 1 11 A Word About Indentation",
+          "en": "haskell mooc part1 lecture1 1 11 A Word About Indentation"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=DLYNHOXEU8U"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=DLYNHOXEU8U",
+          "title": "haskell mooc part1 lecture1 1 11 A Word About Indentation",
+          "author": "최광훈",
+          "description": "",
+          "durationSeconds": 913,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "url": "https://www.youtube.com/watch?v=htqYKugeLVA",
+      "status": "review",
+      "checked_at": 1791943033817,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=htqYKugeLVA",
+        "title": {
+          "zh": "Haskell MOOC Feedback Video October 2018",
+          "en": "Haskell MOOC Feedback Video October 2018"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=htqYKugeLVA"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=htqYKugeLVA",
+          "title": "Haskell MOOC Feedback Video October 2018",
+          "author": "Glasgow VideoLectures",
+          "description": "Jeremy Singer presents feedback on the FutureLearn Haskell MOOC from 2018, covering topics including type and data constructors in Haskell.",
+          "durationSeconds": 244,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/COS126",
+      "url": "https://www.youtube.com/watch?v=GYADUvQwR9Q",
+      "status": "review",
+      "checked_at": 1791943032078,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=GYADUvQwR9Q",
+        "title": {
+          "zh": "COS 126 Assignment: Traveling Salesperson Problem (Tips and Tricks)",
+          "en": "COS 126 Assignment: Traveling Salesperson Problem (Tips and Tricks)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=GYADUvQwR9Q"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=GYADUvQwR9Q",
+          "title": "COS 126 Assignment: Traveling Salesperson Problem (Tips and Tricks)",
+          "author": "COS 126",
+          "description": "This video presents the \"Traveling Salesperson Assignment\" and some of its history in computer science, and then discusses some tips to make the implementation of the Tour class and its performance analysis easier.\n\nAssignment link:\nhttp://www.cs.princeton.edu/courses/archive/fall18/cos126/assignments/tsp/\n\nSlides link:\nhttp://www.cs.princeton.edu/courses/archive/fall18/cos126/meetings/tsp-tips-slides.pdf\n\nLive recording of the class meeting on Nov. 29, 2018, by Dr. Jérémie Lumbroso.",
+          "durationSeconds": 2872,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/COS126",
+      "url": "https://www.youtube.com/watch?v=u-gzRADa8eM",
+      "status": "review",
+      "checked_at": 1791943032078,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=u-gzRADa8eM",
+        "title": {
+          "zh": "cos126 final project caroline and wiley",
+          "en": "cos126 final project caroline and wiley"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=u-gzRADa8eM"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=u-gzRADa8eM",
+          "title": "cos126 final project caroline and wiley",
+          "author": "Wiley Kohler",
+          "description": "Our final project for COS126 is an interactive map of Princeton University.",
+          "durationSeconds": 105,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/COS126",
+      "url": "https://www.youtube.com/watch?v=6sCtV64agSs",
+      "status": "review",
+      "checked_at": 1791943032078,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=6sCtV64agSs",
+        "title": {
+          "zh": "COS 126 Spring 2021 \"Art.java\" project",
+          "en": "COS 126 Spring 2021 \"Art.java\" project"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=6sCtV64agSs"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=6sCtV64agSs",
+          "title": "COS 126 Spring 2021 \"Art.java\" project",
+          "author": "COS 126",
+          "description": "Every semester, COS 126 invites students to use their newly acquired programming skills to create some amazing pieces of \"recursive\" art!\n\nHere is what the Spring 2021 class has come up with!\n\nYou can also see the art pieces, as static images, here:\nhttps://www.cs.princeton.edu/courses/archive/spring21/cos126/obj/Art/\n\nFor more information, see \"Recursive Graphics\" on the course site:\nhttps://www.cs.princeton.edu/courses/archive/spring21/cos126/assignments.html\n\nCREDIT:\n— Art: The COS 126 Spring 2021 students.\n— Music: \"Origin Funk\" by Ketsa (with permission).\n— Production: COS 126 Staff.\n\nhttps://freemusicarchive.org/music/Ketsa/1-of-1/origin-funk\n\nVideo licensed under CC BY-NC-ND 4.0:\nhttps://creativecommons.org/licenses/by-nc-nd/4.0/",
+          "durationSeconds": 195,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "url": "https://www.youtube.com/playlist?list=PL17KQCa8hhvCISza9xQEQ7MAIEWkW5ifK",
+      "status": "review",
+      "checked_at": 1791943029800,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PL17KQCa8hhvCISza9xQEQ7MAIEWkW5ifK",
+        "title": {
+          "zh": "2024 - PROG2006 - Advanced Programming",
+          "en": "2024 - PROG2006 - Advanced Programming"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PL17KQCa8hhvCISza9xQEQ7MAIEWkW5ifK"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PL17KQCa8hhvCISza9xQEQ7MAIEWkW5ifK",
+          "title": "2024 - PROG2006 - Advanced Programming",
+          "author": "",
+          "description": "Lecture material for 2024 for PROG2006, advanced programming",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "url": "https://www.youtube.com/playlist?list=PLw454N-VXALROTZ_phkQ-D4QDU5w3x4R8",
+      "status": "review",
+      "checked_at": 1791943029800,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLw454N-VXALROTZ_phkQ-D4QDU5w3x4R8",
+        "title": {
+          "zh": "Advanced programming language concepts (LINFO1131)",
+          "en": "Advanced programming language concepts (LINFO1131)"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLw454N-VXALROTZ_phkQ-D4QDU5w3x4R8"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLw454N-VXALROTZ_phkQ-D4QDU5w3x4R8",
+          "title": "Advanced programming language concepts (LINFO1131)",
+          "author": "",
+          "description": "Advanced programming language concepts (LINFO1131) is a third-year university course given to all computer science majors at the École Polytechnique de Louvain (UCLouvain Engineering School).  LINFO1131 is a successor course to LINFO1104 also given at EPL. Note that the course LINGI1131 is an earlier course that later became LINFO1131. Part of this course, Lectures 1 through 5, give a comprehensive presentation of declarative programming: what it is, why it is powerful, and what are its limitations. Table of contents:\n1. Refresher of previous course (LINFO1104). Summary of Oz, higher-order programming, symbolic programming, deterministic dataflow concurrency, nondeterminism, and semantics.\n2. Lazy evaluation, lazy deterministic dataflow, lazy quicksort. How lazy evaluation can use infinite data structures and invent incremental algorithms.\n3. What is declarative programming? All executions reach partial termination and give logically equivalent stores.\n4. Advanced declarative algorithm design. Single assignment supports fast ephemeral algorithms and lazy evaluation supports fast persistent algorithms.\n5. Limitations of declarative programming.  Programs that interact with the real world are not declarative.\n6. Data abstractions.  Objects and abstract data types, which each can be purely functional or stateful.\n7. Message-passing concurrency and multi-agent programming.  How to design programs as networks of active objects that pass messages.\n8. Robust multi-agent programming in Erlang.  Basic concepts of Erlang and high-level abstractions (behaviors) that support robust multi-agent applications using the “let it crash” approach.\n9. Shared-state concurrency. How to design concurrent programs that share state by building large atomic actions, namely locks and tuple spaces.\n10. Monitors.  How threads can collaborate in shared-state programs.  Monitors are widely used in legacy code but are a deprecated concept.\n11. Transactions.  How to build robust high-performance databases with abortable atomic actions.",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "url": "https://www.youtube.com/playlist?list=PLi1tfWVoMB-jK918LOk89PVf_HTDZ0qaP",
+      "status": "review",
+      "checked_at": 1791943029800,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLi1tfWVoMB-jK918LOk89PVf_HTDZ0qaP",
+        "title": {
+          "zh": "Advanced Programming",
+          "en": "Advanced Programming"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLi1tfWVoMB-jK918LOk89PVf_HTDZ0qaP"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLi1tfWVoMB-jK918LOk89PVf_HTDZ0qaP",
+          "title": "Advanced Programming",
+          "author": "",
+          "description": "",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "database-systems/CS122",
+      "url": "https://www.youtube.com/playlist?list=PL-djvvkRw6duLx8_mhpzTDdOsZAX4SjWT",
+      "status": "review",
+      "checked_at": 1791943020028,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PL-djvvkRw6duLx8_mhpzTDdOsZAX4SjWT",
+        "title": {
+          "zh": "CS 122",
+          "en": "CS 122"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PL-djvvkRw6duLx8_mhpzTDdOsZAX4SjWT"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PL-djvvkRw6duLx8_mhpzTDdOsZAX4SjWT",
+          "title": "CS 122",
+          "author": "",
+          "description": "Lecture videos for Computer Science 122.",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "computer-graphics/CS148",
+      "url": "https://www.youtube.com/watch?v=RVYeTOLbxJ8",
+      "status": "review",
+      "checked_at": 1791943019060,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=RVYeTOLbxJ8",
+        "title": {
+          "zh": "Stanford CS 148 Homework 2",
+          "en": "Stanford CS 148 Homework 2"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=RVYeTOLbxJ8"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=RVYeTOLbxJ8",
+          "title": "Stanford CS 148 Homework 2",
+          "author": "George Lo",
+          "description": "Breathing Cube + Mario\n\nSummer 2017: CS 148 Introduction to Computer Graphics HW2",
+          "durationSeconds": 157,
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "compilers/PKU-Compilers",
+      "url": "https://www.youtube.com/playlist?list=PLwCompoQyM1QeQAw1aNT88SN1REnmqxOW",
+      "status": "review",
+      "checked_at": 1791943018093,
+      "run_id": "8550fd09-575a-49e0-ac00-49e8c284aad2",
+      "resource": {
+        "url": "https://www.youtube.com/playlist?list=PLwCompoQyM1QeQAw1aNT88SN1REnmqxOW",
+        "title": {
+          "zh": "Compiler Principles",
+          "en": "Compiler Principles"
+        },
+        "kind": "playlist",
+        "official": false,
+        "source": "https://www.youtube.com/playlist?list=PLwCompoQyM1QeQAw1aNT88SN1REnmqxOW"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/playlist?list=PLwCompoQyM1QeQAw1aNT88SN1REnmqxOW",
+          "title": "Compiler Principles",
+          "author": "",
+          "description": "Compilers Principles (Course Code: 19041382)\nWelcome to the Compilers Principles course offered by the College of Information Technology – Department of Computer Science at Palestine Technical University – Kadoorie (PTUK).\nTaught by Dr. Eman Yaser Daraghmi, this lecture is part of the Bachelor of Computer Science program for the academic year 2024–2025 (Second Semester).\n\n- About the Course\nCompilers Principles explores the fundamental syntactic and semantic elements of modern programming languages and the computational models that define them.\nStudents learn the algorithms and techniques used by compilers to translate high-level programming languages into machine code and other target representations.\n\nThis course covers:\n\n- Lexical Analysis\n\n- Syntax and Semantic Analysis\n\n- Syntax-Directed Translation\n\n- Intermediate Code Generation\n\n- Code Optimization and Code Generation\n\nBy the end of the course, students will be able to:\n\n- Understand the structure and phases of a compiler\n\n- Apply compiler-construction tools such as Lex and YACC\n\n- Design syntax trees and generate three-address code\n\n- Integrate compiler phases into a working mini-compiler\n\n🧠 Topics in This Lecture\n\n✅ [List specific topics for each lecture, e.g.:]\n\nIntroduction to Compilers\n\nPhases of Compilation\n\nLexical Analysis and Tokenization\n\nSyntax-Directed TranslatCompilers Principles (Course Code: 19041382)\nWelcome to the Compilers Principles course offered by the College of Information Technology – Department of Computer Science at Palestine Technical University – Kadoorie (PTUK).\nTaught by Dr. Eman Yaser Daraghmi, this lecture is part of the Bachelor of Computer Science program for the academic year 2024–2025 (Second Semester).\n\n🧩 About the Course\n\nCompilers Principles explores the fundamental syntactic and semantic elements of modern programming languages and the computational models that define them.\nStudents learn the algorithms and techniques used by compilers to translate high-level programming languages into machine code and other target representations.\n\nThis course covers:\n\nLexical Analysis\n\nSyntax and Semantic Analysis\n\nSyntax-Directed Translation\n\nIntermediate Code Generation\n\nCode Optimization and Code Generation\n\nBy the end of the course, students will be able to:\n\nUnderstand the structure and phases of a compiler\n\nApply compiler-construction tools such as Lex and YACC\n\nDesign syntax trees and generate three-address code\n\nIntegrate compiler phases into a working mini-compiler\n\n Main Reference\n\nAho, Alfred V., et al. Compilers: Principles, Techniques, and Tools. 2nd ed., Addison-Wesley, ISBN 978-0321486813.\n\n\nDon’t forget to like, subscribe, and turn on the notification bell 🔔 to follow the full playlist of Compiler Principles lectures and other Computer Science courses.\n\n#compilerdesign  #CompilerPrinciples\n #computerscience   #programminglanguages  #compilercourse  #lexicalanalysis  #syntaxanalysis  #semanticanalysis  #codegeneration  #intermediatecode  #universitycourse  #csstudents  #LearnCompiler #academiclecture  #programmingfundamentals",
+          "kind": "playlist",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/mitweb",
+      "url": "https://www.youtube.com/watch?v=YyHCJJiiINE",
+      "status": "rejected",
+      "checked_at": 1791942591841,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=YyHCJJiiINE",
+        "title": {
+          "zh": "MIT web.lab (6.962) - Day 7: W7 - Chatbook with Sockets",
+          "en": "MIT web.lab (6.962) - Day 7: W7 - Chatbook with Sockets"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=YyHCJJiiINE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=YyHCJJiiINE",
+          "title": "MIT web.lab (6.962) - Day 7: W7 - Chatbook with Sockets",
+          "author": "MIT Web Lab (6.962)",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/mitweb",
+      "url": "https://www.youtube.com/watch?v=lqF4KJC_DjY",
+      "status": "rejected",
+      "checked_at": 1791942591841,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=lqF4KJC_DjY",
+        "title": {
+          "zh": "MIT web.lab (6.962) - Day 7: Sockets",
+          "en": "MIT web.lab (6.962) - Day 7: Sockets"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=lqF4KJC_DjY"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=lqF4KJC_DjY",
+          "title": "MIT web.lab (6.962) - Day 7: Sockets",
+          "author": "MIT Web Lab (6.962)",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS571",
+      "url": "https://www.youtube.com/watch?v=S771zr6GDhQ",
+      "status": "rejected",
+      "checked_at": 1791942590433,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=S771zr6GDhQ",
+        "title": {
+          "zh": "Jack Williams, geography",
+          "en": "Jack Williams, geography"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=S771zr6GDhQ"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=S771zr6GDhQ",
+          "title": "Jack Williams, geography",
+          "author": "UW-Madison",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS571",
+      "url": "https://www.youtube.com/watch?v=mHa2_ySIVNE",
+      "status": "rejected",
+      "checked_at": 1791942590433,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=mHa2_ySIVNE",
+        "title": {
+          "zh": "Joann Peck, marketing",
+          "en": "Joann Peck, marketing"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=mHa2_ySIVNE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=mHa2_ySIVNE",
+          "title": "Joann Peck, marketing",
+          "author": "UW-Madison",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "web-development/CS142",
+      "url": "https://www.youtube.com/watch?v=9p_s457RSQE",
+      "status": "rejected",
+      "checked_at": 1791942590292,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=9p_s457RSQE",
+        "title": {
+          "zh": "1 Introduction",
+          "en": "1 Introduction"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=9p_s457RSQE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=9p_s457RSQE",
+          "title": "1 Introduction",
+          "author": "Haibo Yan",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/SEEDLabs",
+      "url": "https://www.youtube.com/watch?v=-Ddkm_bzqzk",
+      "status": "rejected",
+      "checked_at": 1791942589084,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=-Ddkm_bzqzk",
+        "title": {
+          "zh": "Dr. Wenliang Du - 02/17/2023 - Developing an Internet and Blockchain Emulator",
+          "en": "Dr. Wenliang Du - 02/17/2023 - Developing an Internet and Blockchain Emulator"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=-Ddkm_bzqzk"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=-Ddkm_bzqzk",
+          "title": "Dr. Wenliang Du - 02/17/2023 - Developing an Internet and Blockchain Emulator",
+          "author": "CMIX Seminars - UL Lafayette",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/MIT6.1600",
+      "url": "https://www.youtube.com/watch?v=Q8SoG1OIveU",
+      "status": "rejected",
+      "checked_at": 1791942588906,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=Q8SoG1OIveU",
+        "title": {
+          "zh": "Lec 16 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "en": "Lec 16 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=Q8SoG1OIveU"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=Q8SoG1OIveU",
+          "title": "Lec 16 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/MIT6.1600",
+      "url": "https://www.youtube.com/watch?v=2aHkqB2-46k",
+      "status": "rejected",
+      "checked_at": 1791942588906,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=2aHkqB2-46k",
+        "title": {
+          "zh": "Lecture 1: Introduction to Cryptography by Christof Paar",
+          "en": "Lecture 1: Introduction to Cryptography by Christof Paar"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=2aHkqB2-46k"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=2aHkqB2-46k",
+          "title": "Lecture 1: Introduction to Cryptography by Christof Paar",
+          "author": "Introduction to Cryptography by Christof Paar",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/watch?v=CEuuIV4nCh4",
+      "status": "rejected",
+      "checked_at": 1791942587541,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=CEuuIV4nCh4",
+        "title": {
+          "zh": "Bitcoin and Cryptocurrency Technologies",
+          "en": "Bitcoin and Cryptocurrency Technologies"
+        },
+        "kind": "lecture",
+        "official": true,
+        "source": "https://online.princeton.edu/bitcoin-and-cryptocurrency-technologies"
+      },
+      "evidence": {
+        "reason": "Confirmed 90-second course trailer, not a lecture",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=CEuuIV4nCh4",
+          "title": "Bitcoin and Cryptocurrency Technologies",
+          "author": "Princeton Online",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "system-security/Bitcoin-Cryptocurrency",
+      "url": "https://www.youtube.com/watch?v=fOMVZXLjKYo",
+      "status": "rejected",
+      "checked_at": 1791942587541,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=fOMVZXLjKYo",
+        "title": {
+          "zh": "Lecture 1 — Intro to Crypto and Cryptocurrencies",
+          "en": "Lecture 1 — Intro to Crypto and Cryptocurrencies"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=fOMVZXLjKYo"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=fOMVZXLjKYo",
+          "title": "Lecture 1 — Intro to Crypto and Cryptocurrencies",
+          "author": "Bitcoin and Cryptocurrency Technologies Online Course",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "software-engineering/6031",
+      "url": "https://www.youtube.com/watch?v=zm2VP0kHl1M",
+      "status": "rejected",
+      "checked_at": 1791942587257,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=zm2VP0kHl1M",
+        "title": {
+          "zh": "Lec 4 | MIT 6.033 Computer System Engineering, Spring 2005",
+          "en": "Lec 4 | MIT 6.033 Computer System Engineering, Spring 2005"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=zm2VP0kHl1M"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=zm2VP0kHl1M",
+          "title": "Lec 4 | MIT 6.033 Computer System Engineering, Spring 2005",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "software-engineering/6031",
+      "url": "https://www.youtube.com/watch?v=RmdAWsvcsZw",
+      "status": "rejected",
+      "checked_at": 1791942587257,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=RmdAWsvcsZw",
+        "title": {
+          "zh": "Lec 5 | MIT 6.033 Computer System Engineering, Spring 2005",
+          "en": "Lec 5 | MIT 6.033 Computer System Engineering, Spring 2005"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=RmdAWsvcsZw"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=RmdAWsvcsZw",
+          "title": "Lec 5 | MIT 6.033 Computer System Engineering, Spring 2005",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-languages-design/CS242",
+      "url": "https://www.youtube.com/watch?v=Ps8jOj7diA0",
+      "status": "rejected",
+      "checked_at": 1791942585978,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=Ps8jOj7diA0",
+        "title": {
+          "zh": "Lecture 1 | Programming Paradigms (Stanford)",
+          "en": "Lecture 1 | Programming Paradigms (Stanford)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=Ps8jOj7diA0"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=Ps8jOj7diA0",
+          "title": "Lecture 1 | Programming Paradigms (Stanford)",
+          "author": "Stanford",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-languages-design/CS242",
+      "url": "https://www.youtube.com/watch?v=jTSvthW34GU",
+      "status": "rejected",
+      "checked_at": 1791942585978,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=jTSvthW34GU",
+        "title": {
+          "zh": "Lecture 2 | Programming Paradigms (Stanford)",
+          "en": "Lecture 2 | Programming Paradigms (Stanford)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=jTSvthW34GU"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=jTSvthW34GU",
+          "title": "Lecture 2 | Programming Paradigms (Stanford)",
+          "author": "Stanford",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "url": "https://www.youtube.com/watch?v=qbuTh1mIyHU",
+      "status": "rejected",
+      "checked_at": 1791942585070,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=qbuTh1mIyHU",
+        "title": {
+          "zh": "[KAIST CS420, 2020 Spring] Introduction",
+          "en": "[KAIST CS420, 2020 Spring] Introduction"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=qbuTh1mIyHU"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=qbuTh1mIyHU",
+          "title": "[KAIST CS420, 2020 Spring] Introduction",
+          "author": "KAIST Concurrency and Parallelism Laboratory",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/rust/cs220",
+      "url": "https://www.youtube.com/watch?v=bCd1uT9ERIs",
+      "status": "rejected",
+      "checked_at": 1791942585070,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=bCd1uT9ERIs",
+        "title": {
+          "zh": "[KAIST CS420, 2020 Spring] Logistics (reading through the homepage)",
+          "en": "[KAIST CS420, 2020 Spring] Logistics (reading through the homepage)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=bCd1uT9ERIs"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=bCd1uT9ERIs",
+          "title": "[KAIST CS420, 2020 Spring] Logistics (reading through the homepage)",
+          "author": "KAIST Concurrency and Parallelism Laboratory",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/MIT 6.092",
+      "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+      "status": "rejected",
+      "checked_at": 1791942584347,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+        "title": {
+          "zh": "Lec 1 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "en": "Lec 1 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=k6U-i4gXkLM"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=k6U-i4gXkLM",
+          "title": "Lec 1 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/MIT 6.092",
+      "url": "https://www.youtube.com/watch?v=Pij6J0HsYFA",
+      "status": "rejected",
+      "checked_at": 1791942584347,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=Pij6J0HsYFA",
+        "title": {
+          "zh": "Lec 2 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "en": "Lec 2 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=Pij6J0HsYFA"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=Pij6J0HsYFA",
+          "title": "Lec 2 | MIT 6.00 Introduction to Computer Science and Programming, Fall 2008",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "url": "https://www.youtube.com/watch?v=nlTJU8wLo7E",
+      "status": "rejected",
+      "checked_at": 1791942583282,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=nlTJU8wLo7E",
+        "title": {
+          "zh": "Haskell For Dilettantes - Part 1 - Intro",
+          "en": "Haskell For Dilettantes - Part 1 - Intro"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=nlTJU8wLo7E"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=nlTJU8wLo7E",
+          "title": "Haskell For Dilettantes - Part 1 - Intro",
+          "author": "Tea Leaves",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/functional/Haskell-MOOC",
+      "url": "https://www.youtube.com/watch?v=qy0AO0tWFOU",
+      "status": "rejected",
+      "checked_at": 1791942583282,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=qy0AO0tWFOU",
+        "title": {
+          "zh": "Haskell for Dilettantes, Part 2: Expressions, Types, and Functions",
+          "en": "Haskell for Dilettantes, Part 2: Expressions, Types, and Functions"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=qy0AO0tWFOU"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=qy0AO0tWFOU",
+          "title": "Haskell for Dilettantes, Part 2: Expressions, Types, and Functions",
+          "author": "Tea Leaves",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/java/COS126",
+      "url": "https://www.youtube.com/watch?v=CXdxU2tb8DE",
+      "status": "rejected",
+      "checked_at": 1791942582907,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=CXdxU2tb8DE",
+        "title": {
+          "zh": "🔥 Symbol Tables & Binary Search Trees in Java | Data Structures",
+          "en": "🔥 Symbol Tables & Binary Search Trees in Java | Data Structures"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=CXdxU2tb8DE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=CXdxU2tb8DE",
+          "title": "🔥 Symbol Tables & Binary Search Trees in Java | Data Structures",
+          "author": "Tech Academy | Master Code, Tools & Tech",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "url": "https://www.youtube.com/watch?v=OKideVWqrmQ",
+      "status": "review",
+      "checked_at": 1791942581239,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=OKideVWqrmQ",
+        "title": {
+          "zh": "PROG2006 Advanced Programming: Introduction (1/2)",
+          "en": "PROG2006 Advanced Programming: Introduction (1/2)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=OKideVWqrmQ"
+      },
+      "evidence": {
+        "reason": "Needs review: course identity, institution or lecture scope is not sufficiently clear",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=OKideVWqrmQ",
+          "title": "PROG2006 Advanced Programming: Introduction (1/2)",
+          "author": "GTL",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/cpp/AUT1400",
+      "url": "https://www.youtube.com/watch?v=ZX9vrSD5m3E",
+      "status": "rejected",
+      "checked_at": 1791942581239,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=ZX9vrSD5m3E",
+        "title": {
+          "zh": "PROG2006 Adv. Programming: Introduction (2/2)",
+          "en": "PROG2006 Adv. Programming: Introduction (2/2)"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=ZX9vrSD5m3E"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=ZX9vrSD5m3E",
+          "title": "PROG2006 Adv. Programming: Introduction (2/2)",
+          "author": "GTL",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "url": "https://www.youtube.com/watch?v=zqDWTCqv77c",
+      "status": "rejected",
+      "checked_at": 1791942581031,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=zqDWTCqv77c",
+        "title": {
+          "zh": "C Programming - Lecture 01 - Introduction to Computers",
+          "en": "C Programming - Lecture 01 - Introduction to Computers"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=zqDWTCqv77c"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=zqDWTCqv77c",
+          "title": "C Programming - Lecture 01 - Introduction to Computers",
+          "author": "MyOnlineEdu.com",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "url": "https://www.youtube.com/watch?v=EjavYOFoJJ0",
+      "status": "rejected",
+      "checked_at": 1791942581031,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=EjavYOFoJJ0",
+        "title": {
+          "zh": "C_01 Introduction to C Language | C Programming Tutorials",
+          "en": "C_01 Introduction to C Language | C Programming Tutorials"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=EjavYOFoJJ0"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=EjavYOFoJJ0",
+          "title": "C_01 Introduction to C Language | C Programming Tutorials",
+          "author": "Jenny's Lectures CS IT",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "operating-systems/COS318",
+      "url": "https://www.youtube.com/watch?v=c_5b2oSye-s",
+      "status": "rejected",
+      "checked_at": 1791942579657,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=c_5b2oSye-s",
+        "title": {
+          "zh": "COS 217 Fall 2020 Lecture1B - bash Walkthrough",
+          "en": "COS 217 Fall 2020 Lecture1B - bash Walkthrough"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=c_5b2oSye-s"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=c_5b2oSye-s",
+          "title": "COS 217 Fall 2020 Lecture1B - bash Walkthrough",
+          "author": "Princeton COS 217",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "operating-systems/COS318",
+      "url": "https://www.youtube.com/watch?v=z0My6q-cGR4",
+      "status": "rejected",
+      "checked_at": 1791942579657,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=z0My6q-cGR4",
+        "title": {
+          "zh": "COS 217 Fall 2020 Lecture 2 - emacs and bash",
+          "en": "COS 217 Fall 2020 Lecture 2 - emacs and bash"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=z0My6q-cGR4"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=z0My6q-cGR4",
+          "title": "COS 217 Fall 2020 Lecture 2 - emacs and bash",
+          "author": "Princeton COS 217",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-868",
+      "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+      "status": "rejected",
+      "checked_at": 1791942577765,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+        "title": {
+          "zh": "CMU LLM Inference (12): Reward Models and Best-of-N",
+          "en": "CMU LLM Inference (12): Reward Models and Best-of-N"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=p-MWR625HB8"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+          "title": "CMU LLM Inference (12): Reward Models and Best-of-N",
+          "author": "Graham Neubig",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-868",
+      "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+      "status": "rejected",
+      "checked_at": 1791942577765,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+        "title": {
+          "zh": "CMU LLM Inference (11): Agents and Multi-Agent Communication",
+          "en": "CMU LLM Inference (11): Agents and Multi-Agent Communication"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=ixLXrgF77ME"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+          "title": "CMU LLM Inference (11): Agents and Multi-Agent Communication",
+          "author": "Graham Neubig",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-667",
+      "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+      "status": "rejected",
+      "checked_at": 1791942576458,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+        "title": {
+          "zh": "CMU LLM Inference (12): Reward Models and Best-of-N",
+          "en": "CMU LLM Inference (12): Reward Models and Best-of-N"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=p-MWR625HB8"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=p-MWR625HB8",
+          "title": "CMU LLM Inference (12): Reward Models and Best-of-N",
+          "author": "Graham Neubig",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/large-language-models/CMU11-667",
+      "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+      "status": "rejected",
+      "checked_at": 1791942576458,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+        "title": {
+          "zh": "CMU LLM Inference (11): Agents and Multi-Agent Communication",
+          "en": "CMU LLM Inference (11): Agents and Multi-Agent Communication"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=ixLXrgF77ME"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=ixLXrgF77ME",
+          "title": "CMU LLM Inference (11): Agents and Multi-Agent Communication",
+          "author": "Graham Neubig",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/CMU15-779",
+      "url": "https://www.youtube.com/watch?v=qbJqOFMyIwg",
+      "status": "rejected",
+      "checked_at": 1791942576250,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=qbJqOFMyIwg",
+        "title": {
+          "zh": "Deep Learning Systems Online Course Teaser",
+          "en": "Deep Learning Systems Online Course Teaser"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=qbJqOFMyIwg"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=qbJqOFMyIwg",
+          "title": "Deep Learning Systems Online Course Teaser",
+          "author": "Deep Learning Systems Course",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "deep-generative-models/CMU15-779",
+      "url": "https://www.youtube.com/watch?v=ftP5HeOvsI0",
+      "status": "rejected",
+      "checked_at": 1791942576250,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=ftP5HeOvsI0",
+        "title": {
+          "zh": "Lecture 1 - Introduction and Logistics",
+          "en": "Lecture 1 - Introduction and Logistics"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=ftP5HeOvsI0"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=ftP5HeOvsI0",
+          "title": "Lecture 1 - Introduction and Logistics",
+          "author": "Deep Learning Systems Course",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "compilers/SJTU-Compilers",
+      "url": "https://www.youtube.com/watch?v=W9B98S2mGGE",
+      "status": "rejected",
+      "checked_at": 1791942573499,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=W9B98S2mGGE",
+        "title": {
+          "zh": "Compilers Lecture 0: Introduction and Syllabus",
+          "en": "Compilers Lecture 0: Introduction and Syllabus"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=W9B98S2mGGE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=W9B98S2mGGE",
+          "title": "Compilers Lecture 0: Introduction and Syllabus",
+          "author": "Ghassan Shobaki Computer Science Lectures",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "compilers/SJTU-Compilers",
+      "url": "https://www.youtube.com/watch?v=mH0XqOZ6Yjk",
+      "status": "rejected",
+      "checked_at": 1791942573499,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=mH0XqOZ6Yjk",
+        "title": {
+          "zh": "Compilers Lecture 1: Compiler Overview (1): Structure and Major Components",
+          "en": "Compilers Lecture 1: Compiler Overview (1): Structure and Major Components"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=mH0XqOZ6Yjk"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=mH0XqOZ6Yjk",
+          "title": "Compilers Lecture 1: Compiler Overview (1): Structure and Major Components",
+          "author": "Ghassan Shobaki Computer Science Lectures",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "database-systems/CS122",
+      "url": "https://www.youtube.com/watch?v=-Qp_0tn0oSo",
+      "status": "rejected",
+      "checked_at": 1791942572363,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=-Qp_0tn0oSo",
+        "title": {
+          "zh": "Watson Lecture Promo – November 4, 2026: Katie Bouman",
+          "en": "Watson Lecture Promo – November 4, 2026: Katie Bouman"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=-Qp_0tn0oSo"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=-Qp_0tn0oSo",
+          "title": "Watson Lecture Promo – November 4, 2026: Katie Bouman",
+          "author": "caltech",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "database-systems/CS122",
+      "url": "https://www.youtube.com/watch?v=BZdpZ5K8b_8",
+      "status": "rejected",
+      "checked_at": 1791942572363,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=BZdpZ5K8b_8",
+        "title": {
+          "zh": "Chasing Sustainable Battery Chemistries for the Future - Kimberly See",
+          "en": "Chasing Sustainable Battery Chemistries for the Future - Kimberly See"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=BZdpZ5K8b_8"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=BZdpZ5K8b_8",
+          "title": "Chasing Sustainable Battery Chemistries for the Future - Kimberly See",
+          "author": "caltech",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "compilers/PKU-Compilers",
+      "url": "https://www.youtube.com/watch?v=yxnbvS2t_QA",
+      "status": "rejected",
+      "checked_at": 1791942569179,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=yxnbvS2t_QA",
+        "title": {
+          "zh": "Mod-01 Lec-01 An Overview of a Compiler",
+          "en": "Mod-01 Lec-01 An Overview of a Compiler"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=yxnbvS2t_QA"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=yxnbvS2t_QA",
+          "title": "Mod-01 Lec-01 An Overview of a Compiler",
+          "author": "nptelhrd",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "compilers/PKU-Compilers",
+      "url": "https://www.youtube.com/watch?v=trocRZqxZFM",
+      "status": "rejected",
+      "checked_at": 1791942569179,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=trocRZqxZFM",
+        "title": {
+          "zh": "Mod-02 Lec-02 Lexical Analysis - Part 1",
+          "en": "Mod-02 Lec-02 Lexical Analysis - Part 1"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=trocRZqxZFM"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=trocRZqxZFM",
+          "title": "Mod-02 Lec-02 Lexical Analysis - Part 1",
+          "author": "nptelhrd",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-mathematics/numerical",
+      "url": "https://www.youtube.com/watch?v=XDhJ8lVGbl8",
+      "status": "rejected",
+      "checked_at": 1791942567938,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=XDhJ8lVGbl8",
+        "title": {
+          "zh": "Lec 1 | MIT 18.03 Differential Equations, Spring 2006",
+          "en": "Lec 1 | MIT 18.03 Differential Equations, Spring 2006"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=XDhJ8lVGbl8"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=XDhJ8lVGbl8",
+          "title": "Lec 1 | MIT 18.03 Differential Equations, Spring 2006",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-mathematics/numerical",
+      "url": "https://www.youtube.com/watch?v=LbKKzMag5Rc",
+      "status": "rejected",
+      "checked_at": 1791942567938,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=LbKKzMag5Rc",
+        "title": {
+          "zh": "Lec 2 | MIT 18.03 Differential Equations, Spring 2006",
+          "en": "Lec 2 | MIT 18.03 Differential Equations, Spring 2006"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=LbKKzMag5Rc"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=LbKKzMag5Rc",
+          "title": "Lec 2 | MIT 18.03 Differential Equations, Spring 2006",
+          "author": "MIT OpenCourseWare",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-mathematics/CS126",
+      "url": "https://www.youtube.com/watch?v=SZVYnxJ-PAU",
+      "status": "rejected",
+      "checked_at": 1791942567518,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=SZVYnxJ-PAU",
+        "title": {
+          "zh": "UC Berkeley eecs 127 Fa22 Lecture 12",
+          "en": "UC Berkeley eecs 127 Fa22 Lecture 12"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=SZVYnxJ-PAU"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=SZVYnxJ-PAU",
+          "title": "UC Berkeley eecs 127 Fa22 Lecture 12",
+          "author": "iamavolk",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-mathematics/CS126",
+      "url": "https://www.youtube.com/watch?v=mAf31AN-8IM",
+      "status": "rejected",
+      "checked_at": 1791942567518,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=mAf31AN-8IM",
+        "title": {
+          "zh": "UC Berkeley eecs 127 Fa22 Lecture 1",
+          "en": "UC Berkeley eecs 127 Fa22 Lecture 1"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=mAf31AN-8IM"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=mAf31AN-8IM",
+          "title": "UC Berkeley eecs 127 Fa22 Lecture 1",
+          "author": "iamavolk",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-machine-learning/STA4273",
+      "url": "https://www.youtube.com/watch?v=FvAibtlARQ8",
+      "status": "rejected",
+      "checked_at": 1791942565935,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=FvAibtlARQ8",
+        "title": {
+          "zh": "University of Toronto - Introduction to Machine Learning Course - 2019 - Lecture 1",
+          "en": "University of Toronto - Introduction to Machine Learning Course - 2019 - Lecture 1"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=FvAibtlARQ8"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=FvAibtlARQ8",
+          "title": "University of Toronto - Introduction to Machine Learning Course - 2019 - Lecture 1",
+          "author": "Amir H. Ashouri",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-machine-learning/STA4273",
+      "url": "https://www.youtube.com/watch?v=YSHQ2x7rMpo",
+      "status": "rejected",
+      "checked_at": 1791942565935,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=YSHQ2x7rMpo",
+        "title": {
+          "zh": "Lecture 2- Linear Model - 2019",
+          "en": "Lecture 2- Linear Model - 2019"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=YSHQ2x7rMpo"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=YSHQ2x7rMpo",
+          "title": "Lecture 2- Linear Model - 2019",
+          "author": "Amir H. Ashouri",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-machine-learning/STAT8201",
+      "url": "https://www.youtube.com/watch?v=B2wyclHrvzo",
+      "status": "rejected",
+      "checked_at": 1791942565672,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=B2wyclHrvzo",
+        "title": {
+          "zh": "Transformations in Europe, 1500-1750",
+          "en": "Transformations in Europe, 1500-1750"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=B2wyclHrvzo"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=B2wyclHrvzo",
+          "title": "Transformations in Europe, 1500-1750",
+          "author": "Columbia University",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    },
+    {
+      "course_path": "advanced-machine-learning/STAT8201",
+      "url": "https://www.youtube.com/watch?v=JO0Nr9ifXOE",
+      "status": "rejected",
+      "checked_at": 1791942565672,
+      "run_id": "6b7f739a-edea-46bd-bd87-324c4ea28ccd",
+      "resource": {
+        "url": "https://www.youtube.com/watch?v=JO0Nr9ifXOE",
+        "title": {
+          "zh": "The Americas, the Atlantic, and Africa, 1530-1770",
+          "en": "The Americas, the Atlantic, and Africa, 1530-1770"
+        },
+        "kind": "lecture",
+        "official": false,
+        "source": "https://www.youtube.com/watch?v=JO0Nr9ifXOE"
+      },
+      "evidence": {
+        "reason": "Unrelated search result: course identity does not match",
+        "metadata": {
+          "url": "https://www.youtube.com/watch?v=JO0Nr9ifXOE",
+          "title": "The Americas, the Atlantic, and Africa, 1530-1770",
+          "author": "Columbia University",
+          "description": "",
+          "kind": "lecture",
+          "paid": false
+        }
+      }
+    }
+  ],
+  "validation": {
+    "videoTests": 8,
+    "seoTests": 5,
+    "lint": "passed",
+    "cloudflareBuild": "passed",
+    "liveBilingualCoursePages": "HTTP 200; both playlists present, trailer absent",
+    "unauthenticatedOperationsEndpoint": "HTTP 401"
+  },
+  "superseded": {
+    "date": "2026-10-14",
+    "reason": "User discontinued backend video discovery and requested manual updates. Video cron removed; triggering endpoint disabled.",
+    "currentReport": "course-video-manual-update-2026-10-14.json"
+  }
+}

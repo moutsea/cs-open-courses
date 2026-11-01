@@ -1,0 +1,634 @@
+{
+  "checkedAt": "2026-10-14T02:44:38.334345+00:00",
+  "pages": [
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/6.042J",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-mathematics/6.042J",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/numerical",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-mathematics/numerical",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/CS50",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/artificial-intelligence/CS50",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/CA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/CA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/DDCA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/DDCA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS168",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-networks/CS168",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-networks/topdown",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-networks/topdown",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.006",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/6.006",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.046",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/6.046",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/database-systems/15799",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/database-systems/15799",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/database-systems/CS122",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/database-systems/CS122",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/MIT6.S184",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 8,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-generative-models/MIT6.S184",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 8,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-711",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-711",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224n",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS224n",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224w",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS224w",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS230",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS230",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS231",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS231",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS285",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS285",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/electronics-basics/Signals_and_Systems_AVO",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/electronics-basics/Signals_and_Systems_AVO",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/CMU10-414",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/CMU10-414",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/MLC",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/MLC",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS229",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning/CS229",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning/ML",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning/ML",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITLA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/mathematics-basics/MITLA",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITmaths",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/mathematics-basics/MITmaths",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/MIT-Missing-Semester",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/MIT-Missing-Semester",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/CS50",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/c/CS50",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/Duke-Coursera-Intro-C",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/c/Duke-Coursera-Intro-C",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/java/COS126",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/java/COS126",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/CS50P",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/python/CS50P",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/MIT6.100L",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/python/MIT6.100L",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/rust/CS110L",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/rust/CS110L",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/software-engineering/6031",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/software-engineering/6031",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/software-engineering/CS169",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 13,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/software-engineering/CS169",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 13,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/Bitcoin-Cryptocurrency",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/Bitcoin-Cryptocurrency",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 3,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/MIT6.858",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/MIT6.858",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 2,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/SEEDLabs",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/SEEDLabs",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 1,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/web-development/mitweb",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 4,
+      "missing": [],
+      "ok": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/web-development/mitweb",
+      "status": 200,
+      "renderedVideoSection": true,
+      "expectedLinks": 4,
+      "missing": [],
+      "ok": true
+    }
+  ],
+  "pageCount": 76,
+  "passedPages": 76,
+  "disabledJob": {
+    "getStatus": 200,
+    "enabled": false,
+    "mode": "manual",
+    "postStatus": 410,
+    "postResult": {
+      "status": "disabled",
+      "message": "Course videos are maintained manually."
+    },
+    "runCountUnchanged": true,
+    "ok": true
+  },
+  "ok": true,
+  "deployment": {
+    "versionId": "7ea694fd-e8b8-4d29-8d7d-183c5dc82968",
+    "cloudflareCrons": [
+      "17 3 * * *"
+    ]
+  }
+}

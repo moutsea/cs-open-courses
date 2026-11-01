@@ -1,0 +1,605 @@
+{
+  "checkedAt": "2026-10-14T03:03:18.484509+00:00",
+  "sitemapPagesPassed": 402,
+  "fixedOrRemovedLinks": 18,
+  "affectedPages": 16,
+  "videoPageDatesPassed": 114,
+  "repairs": [
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/computer-architecture/CS61C",
+      "old": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/computer-networks/topdown",
+      "old": "https://www.cs61bbeyond.com/course/computer-networks/CS144.en.md",
+      "new": "https://www.cs61bbeyond.com/course/computer-networks/CS144",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/computer-networks/topdown",
+      "old": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS144.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS144",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.006",
+      "old": "https://www.cs61bbeyond.com/zh/course/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/cpp/CS106B_CS106X.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/programming-introduction/cpp/CS106B_CS106X",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/deep-generative-models/roadmap",
+      "old": "https://www.cs61bbeyond.com/course/deep-generative-models/MIT6.S184.md",
+      "new": "https://www.cs61bbeyond.com/course/deep-generative-models/MIT6.S184",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/roadmap",
+      "old": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/MIT6.S184.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/MIT6.S184",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/essential-tools/Emacs",
+      "old": "https://www.cs61bbeyond.com/course/essential-tools/Vim.en.md",
+      "new": "https://www.cs61bbeyond.com/course/essential-tools/Vim",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/essential-tools/Emacs",
+      "old": "https://www.cs61bbeyond.com/zh/course/essential-tools/Vim.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/essential-tools/Vim",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/essential-tools/Scoop",
+      "old": "https://www.cs61bbeyond.com/course/essential-tools/%E7%BF%BB%E5%A2%99.md",
+      "new": null,
+      "status": "removed missing target"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/essential-tools/Scoop",
+      "old": "https://www.cs61bbeyond.com/zh/course/essential-tools/%E7%BF%BB%E5%A2%99.md",
+      "new": null,
+      "status": "removed missing target"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/machine-learning/ML",
+      "old": "https://www.cs61bbeyond.com/course/machine-learning/CS189.md",
+      "new": "https://www.cs61bbeyond.com/course/machine-learning/CS189",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/machine-learning/ML",
+      "old": "https://www.cs61bbeyond.com/course/machine-learning/CS229.md",
+      "new": "https://www.cs61bbeyond.com/course/machine-learning/CS229",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/machine-learning/ML",
+      "old": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS229.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS229",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/machine-learning/ML",
+      "old": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS189.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS189",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/programming-introduction/java/MIT%206.092",
+      "old": "https://www.cs61bbeyond.com/course/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6031.en.md",
+      "new": "https://www.cs61bbeyond.com/course/software-engineering/6031",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/programming-introduction/java/MIT%206.092",
+      "old": "https://www.cs61bbeyond.com/zh/course/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/6031.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/software-engineering/6031",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/course/programming-languages-design/PKU-SoftwareAnalysis",
+      "old": "https://www.cs61bbeyond.com/course/programming-languages-design/NJU-SoftwareAnalysis.en.md",
+      "new": "https://www.cs61bbeyond.com/course/programming-languages-design/NJU-SoftwareAnalysis",
+      "status": "corrected"
+    },
+    {
+      "source": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/PKU-SoftwareAnalysis",
+      "old": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/NJU-SoftwareAnalysis.md",
+      "new": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/NJU-SoftwareAnalysis",
+      "status": "corrected"
+    }
+  ],
+  "videoDates": [
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CMU10-708",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CMU10-708",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-machine-learning/CS229M",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CS229M",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-mathematics/6.042J",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/6.042J",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-mathematics/CS70",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/CS70",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/advanced-mathematics/numerical",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/numerical",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/artificial-intelligence/CS188",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/CS188",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/artificial-intelligence/CS50",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/CS50",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/CA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/CA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/DDCA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/DDCA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/N2T",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-architecture/Princeton-Computer-Architecture",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-architecture/Princeton-Computer-Architecture",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-networks/CS168",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS168",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-networks/topdown",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-networks/topdown",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/computer-systems-basics/COS217",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/computer-systems-basics/COS217",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-science/Data100",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-science/Data100",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/6.006",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.006",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/6.046",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.046",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/Algo",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/Algo",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/data-structures-algorithms/CS61B",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/CS61B",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/database-systems/15445",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/database-systems/15445",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/database-systems/15799",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/database-systems/15799",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/database-systems/CS122",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/database-systems/CS122",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-generative-models/MIT6.S184",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/MIT6.S184",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-generative-models/large-language-models/CMU11-711",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-711",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS224n",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224n",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS224w",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224w",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS230",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS230",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS231",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS231",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/CS285",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS285",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/deep-learning/LHY",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/deep-learning/LHY",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/electronics-basics/Signals_and_Systems_AVO",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/electronics-basics/Signals_and_Systems_AVO",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/electronics-basics/signal",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/electronics-basics/signal",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/CMU10-414",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/CMU10-414",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning-systems/MLC",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/MLC",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning/CS229",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS229",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/machine-learning/ML",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/machine-learning/ML",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/mathematics-basics/MITLA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITLA",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/mathematics-basics/MITmaths",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITmaths",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/mathematics-basics/information",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/information",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/operating-systems/MIT6.S081",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/operating-systems/MIT6.S081",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/parallel-distributed-systems/MIT6.824",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/parallel-distributed-systems/MIT6.824",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/MIT-Missing-Semester",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/MIT-Missing-Semester",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/c/CS50",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/CS50",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/c/Duke-Coursera-Intro-C",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/Duke-Coursera-Intro-C",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/java/COS126",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/java/COS126",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/python/CS50P",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/CS50P",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/python/MIT6.100L",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/MIT6.100L",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-introduction/rust/CS110L",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-introduction/rust/CS110L",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/programming-languages-design/PKU-SoftwareAnalysis",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/PKU-SoftwareAnalysis",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/software-engineering/6031",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/software-engineering/6031",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/software-engineering/CS169",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/software-engineering/CS169",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/Bitcoin-Cryptocurrency",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/Bitcoin-Cryptocurrency",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/CS161",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/CS161",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/MIT6.858",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/MIT6.858",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/SEEDLabs",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/SEEDLabs",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/web-development/fullstackopen",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/web-development/fullstackopen",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/course/web-development/mitweb",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/web-development/mitweb",
+      "lastModified": "2026-10-14T00:00:00.000Z"
+    }
+  ],
+  "ok": true,
+  "validation": {
+    "lint": "passed",
+    "typescript": "passed",
+    "seoAndRegressionTests": 10,
+    "videoTests": 12,
+    "productionBuild": "passed",
+    "videoJob": {
+      "status": 200,
+      "enabled": false,
+      "mode": "manual"
+    }
+  },
+  "deployment": {
+    "version": "4f1fab17-bba2-4e7c-a32a-1de3caf9defe",
+    "remainingCrons": [
+      "17 3 * * *"
+    ]
+  },
+  "workflow": {
+    "commit": "ef542a8c2cf8e621d76106a20ba831474994697f",
+    "pushedTo": "origin/main",
+    "testedScenarios": [
+      "no changes",
+      "generated files only",
+      "new course and generated index",
+      "unrelated untracked file excluded"
+    ],
+    "scheduledRunManuallyTriggered": false
+  }
+}

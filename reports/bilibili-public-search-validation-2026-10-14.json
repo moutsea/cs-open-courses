@@ -1,0 +1,766 @@
+{
+  "checkedAt": "2026-10-14T02:22:21.412366+00:00",
+  "site": "https://www.cs61bbeyond.com",
+  "changes": [
+    "Bilibili discovery uses rendered public search-page video cards with course code and Chinese institution aliases.",
+    "Video details, course identity, institution, lecture scope and payment checks remain required before publication.",
+    "Per-source audit distinguishes successful, failed and skipped checks; HTTP errors retain bounded platform codes and messages.",
+    "Bilibili HTTP 412 or either platform HTTP 429 pauses further requests to that platform for this run. Existing in-flight requests may finish. The next scheduled run tries again."
+  ],
+  "localEvidence": {
+    "publicBilibiliSearchHttpStatus": 200,
+    "positiveQuery": "CMU 15-445",
+    "parsedVideoCards": 38,
+    "cookiesSent": false
+  },
+  "initialProductionVerification": {
+    "versionId": "9873c39a-35be-444c-83a9-95b80e1cb881",
+    "run": {
+      "id": "eb991c9e-bcdb-4173-97c2-edf501eaaff6",
+      "started_at": 1791944250083,
+      "finished_at": 1791944275740,
+      "status": "partial",
+      "attempted": 27,
+      "accepted": 0,
+      "review": 11,
+      "error_count": 41,
+      "error": null
+    },
+    "bilibiliSearch": {
+      "courses": 27,
+      "statuses": {
+        "error": 27
+      },
+      "internalSearchApiChecks": 0,
+      "details": [
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%20weblab",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "web-development/mitweb"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%9D%9C%E6%96%87%E4%BA%AE%20seed%20labs",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "system-security/SEEDLabs"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%A8%81%E6%96%AF%E5%BA%B7%E6%98%9F%20CS571",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "web-development/CS571"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS142",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "web-development/CS142"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%9F%A9%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E9%99%A2%20CS220",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/rust/cs220"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.1600",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "system-security/MIT6.1600"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E8%B5%AB%E5%B0%94%E8%BE%9B%E5%9F%BA%20haskell%20mooc",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/functional/Haskell-MOOC"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.031",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "software-engineering/6031"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS242",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-languages-design/CS242"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%20COS126",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/java/COS126"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.092",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/java/MIT 6.092"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=Amirkabir%20advanced%20programming",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/cpp/AUT1400"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%20COS318",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "operating-systems/COS318"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%9D%9C%E5%85%8B%20introductory%20c%20programming",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "programming-introduction/c/Duke-Coursera-Intro-C"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2015-442",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "machine-learning-systems/CMU15-442"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2011-667",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "deep-generative-models/large-language-models/CMU11-667"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2011-868",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "deep-generative-models/large-language-models/CMU11-868"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "compilers/SJTU-Compilers"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2015-779",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "deep-generative-models/CMU15-779"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8A%A0%E5%B7%9E%E7%90%86%E5%B7%A5%20CS122",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "database-systems/CS122"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS346",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "database-systems/CS346"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS148",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "computer-graphics/CS148"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "compilers/PKU-Compilers"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E4%BC%AF%E5%85%8B%E5%88%A9%20EE126",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-mathematics/CS126"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%2018.330",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-mathematics/numerical"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%A4%9A%E4%BC%A6%E5%A4%9A%20STA4273",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-machine-learning/STA4273"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%20STAT8201",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-machine-learning/STAT8201"
+        }
+      ]
+    },
+    "sourceResults": [
+      {
+        "host": "61600.csail.mit.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "cmu-llms.org",
+        "status": "ok",
+        "count": 3
+      },
+      {
+        "host": "courses.cms.caltech.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "cs571.org",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "github.com",
+        "status": "ok",
+        "count": 3
+      },
+      {
+        "host": "haskell.mooc.fi",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "inst.eecs.berkeley.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "introcs.cs.princeton.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "ipads.se.sjtu.edu.cn",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "llmsystem.github.io",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "mlsyscourse.org",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "ocw.mit.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "pku-minic.github.io",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "search.bilibili.com",
+        "status": "error",
+        "count": 27
+      },
+      {
+        "host": "seedsecuritylabs.org",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "stanford-cs242.github.io",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "stat.columbia.edu",
+        "status": "error",
+        "count": 1
+      },
+      {
+        "host": "web.mit.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "web.stanford.edu",
+        "status": "ok",
+        "count": 7
+      },
+      {
+        "host": "weblab.is",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.coursera.org",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.cs.cmu.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "www.cs.princeton.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "www.cs.toronto.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.handsonsecurity.net",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.youtube.com",
+        "status": "error",
+        "count": 13
+      },
+      {
+        "host": "www.youtube.com",
+        "status": "ok",
+        "count": 37
+      }
+    ],
+    "errors": [
+      {
+        "host": "search.bilibili.com",
+        "message": "HTTP 412 (code -412: request was banned)",
+        "count": 27
+      },
+      {
+        "host": "www.youtube.com",
+        "message": "HTTP 429",
+        "count": 10
+      },
+      {
+        "host": "www.youtube.com",
+        "message": "YouTube page unavailable or requires consent",
+        "count": 1
+      },
+      {
+        "host": "www.youtube.com",
+        "message": "HTTP 401",
+        "count": 2
+      },
+      {
+        "host": "stat.columbia.edu",
+        "message": "HTTP 404",
+        "count": 1
+      }
+    ],
+    "courseStatusCounts": {
+      "partial": 27
+    },
+    "newAccepted": [],
+    "remainingUncoveredCourses": 27,
+    "nextRunAt": "2026-10-17T04:17:00+00:00",
+    "leaseReleased": true
+  },
+  "finalProductionVerification": {
+    "versionId": "75fdc46e-a608-48b3-b081-0773771e093b",
+    "run": {
+      "id": "56ccb0ec-cc49-4dc5-b149-d8bc77ed39ff",
+      "started_at": 1791944494582,
+      "finished_at": 1791944514537,
+      "status": "partial",
+      "attempted": 27,
+      "accepted": 0,
+      "review": 10,
+      "error_count": 20,
+      "error": null
+    },
+    "bilibiliSearch": {
+      "courses": 27,
+      "statuses": {
+        "skipped": 25,
+        "error": 2
+      },
+      "internalSearchApiChecks": 0,
+      "details": [
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%20weblab",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "web-development/mitweb"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%9D%9C%E6%96%87%E4%BA%AE%20seed%20labs",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "system-security/SEEDLabs"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS142",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "web-development/CS142"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%A8%81%E6%96%AF%E5%BA%B7%E6%98%9F%20CS571",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "web-development/CS571"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%9F%A9%E5%9B%BD%E7%A7%91%E5%AD%A6%E6%8A%80%E6%9C%AF%E9%99%A2%20CS220",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/rust/cs220"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E8%B5%AB%E5%B0%94%E8%BE%9B%E5%9F%BA%20haskell%20mooc",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/functional/Haskell-MOOC"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.1600",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "system-security/MIT6.1600"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.031",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "software-engineering/6031"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%20COS126",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/java/COS126"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS242",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-languages-design/CS242"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=Amirkabir%20advanced%20programming",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/cpp/AUT1400"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%206.092",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/java/MIT 6.092"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%9D%9C%E5%85%8B%20introductory%20c%20programming",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "programming-introduction/c/Duke-Coursera-Intro-C"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%99%AE%E6%9E%97%E6%96%AF%E9%A1%BF%20COS318",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "operating-systems/COS318"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2015-442",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "machine-learning-systems/CMU15-442"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "compilers/SJTU-Compilers"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2011-667",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "deep-generative-models/large-language-models/CMU11-667"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2011-868",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "deep-generative-models/large-language-models/CMU11-868"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8A%A0%E5%B7%9E%E7%90%86%E5%B7%A5%20CS122",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "database-systems/CS122"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8D%A1%E5%86%85%E5%9F%BA%E6%A2%85%E9%9A%86%2015-779",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "deep-generative-models/CMU15-779"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS346",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "database-systems/CS346"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E6%96%AF%E5%9D%A6%E7%A6%8F%20CS148",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "computer-graphics/CS148"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "compilers/PKU-Compilers"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E4%BC%AF%E5%85%8B%E5%88%A9%20EE126",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "advanced-mathematics/CS126"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E9%BA%BB%E7%9C%81%E7%90%86%E5%B7%A5%2018.330",
+          "status": "skipped",
+          "message": "Bilibili requests paused for this run after HTTP 412",
+          "coursePath": "advanced-mathematics/numerical"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%93%A5%E4%BC%A6%E6%AF%94%E4%BA%9A%20STAT8201",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-machine-learning/STAT8201"
+        },
+        {
+          "source": "https://search.bilibili.com/all?keyword=%E5%A4%9A%E4%BC%A6%E5%A4%9A%20STA4273",
+          "status": "error",
+          "message": "HTTP 412 (code -412: request was banned)",
+          "coursePath": "advanced-machine-learning/STA4273"
+        }
+      ]
+    },
+    "sourceResults": [
+      {
+        "host": "61600.csail.mit.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "cmu-llms.org",
+        "status": "ok",
+        "count": 3
+      },
+      {
+        "host": "courses.cms.caltech.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "cs571.org",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "github.com",
+        "status": "ok",
+        "count": 3
+      },
+      {
+        "host": "haskell.mooc.fi",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "inst.eecs.berkeley.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "introcs.cs.princeton.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "ipads.se.sjtu.edu.cn",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "llmsystem.github.io",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "mlsyscourse.org",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "ocw.mit.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "pku-minic.github.io",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "search.bilibili.com",
+        "status": "error",
+        "count": 2
+      },
+      {
+        "host": "search.bilibili.com",
+        "status": "skipped",
+        "count": 25
+      },
+      {
+        "host": "seedsecuritylabs.org",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "stanford-cs242.github.io",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "stat.columbia.edu",
+        "status": "error",
+        "count": 1
+      },
+      {
+        "host": "web.mit.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "web.stanford.edu",
+        "status": "ok",
+        "count": 7
+      },
+      {
+        "host": "weblab.is",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.coursera.org",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.cs.cmu.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "www.cs.princeton.edu",
+        "status": "ok",
+        "count": 2
+      },
+      {
+        "host": "www.cs.toronto.edu",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.handsonsecurity.net",
+        "status": "ok",
+        "count": 1
+      },
+      {
+        "host": "www.youtube.com",
+        "status": "error",
+        "count": 17
+      },
+      {
+        "host": "www.youtube.com",
+        "status": "ok",
+        "count": 37
+      }
+    ],
+    "errors": [
+      {
+        "host": "www.youtube.com",
+        "message": "HTTP 429",
+        "count": 14
+      },
+      {
+        "host": "www.youtube.com",
+        "message": "YouTube page unavailable or requires consent",
+        "count": 1
+      },
+      {
+        "host": "www.youtube.com",
+        "message": "HTTP 401",
+        "count": 2
+      },
+      {
+        "host": "stat.columbia.edu",
+        "message": "HTTP 404",
+        "count": 1
+      },
+      {
+        "host": "search.bilibili.com",
+        "message": "HTTP 412 (code -412: request was banned)",
+        "count": 2
+      }
+    ],
+    "courseStatusCounts": {
+      "partial": 27
+    },
+    "newAccepted": [],
+    "remainingUncoveredCourses": 27,
+    "nextRunAt": "2026-10-17T04:17:00+00:00",
+    "leaseReleased": true
+  },
+  "regressionChecks": [
+    {
+      "url": "https://www.cs61bbeyond.com/course/system-security/Bitcoin-Cryptocurrency",
+      "status": 200,
+      "previousAcceptedPlaylistsPresent": true,
+      "rejectedPromoAbsent": true
+    },
+    {
+      "url": "https://www.cs61bbeyond.com/zh/course/system-security/Bitcoin-Cryptocurrency",
+      "status": 200,
+      "previousAcceptedPlaylistsPresent": true,
+      "rejectedPromoAbsent": true
+    }
+  ],
+  "validation": {
+    "videoTestsPassed": 12,
+    "seoTestsPassed": 5,
+    "lint": "passed",
+    "cloudflareBuild": "passed",
+    "d1Migration0003": "applied locally and remotely"
+  },
+  "findings": [
+    "公开搜索页本地可访问，但正式网站后台仍被 Bilibili 以 HTTP 412、code=-412、request was banned 拒绝；更换入口尚未恢复后台访问。",
+    "具体风控规则未公开，不能仅凭现有证据断定是某个 IP、登录要求或请求频率导致。",
+    "无新增通过核验的视频链接；已有收录保留，受限和跳过不会冒充已查无结果。",
+    "网站后台每三天的重试安排保留，下一次为 2026-10-17 12:17 Asia/Shanghai。"
+  ],
+  "superseded": {
+    "date": "2026-10-14",
+    "reason": "User discontinued backend video discovery and requested manual updates. Video cron removed; triggering endpoint disabled.",
+    "currentReport": "course-video-manual-update-2026-10-14.json"
+  }
+}

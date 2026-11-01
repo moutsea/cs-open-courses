@@ -1,0 +1,3118 @@
+{
+  "checkedAt": "2026-10-14",
+  "summary": {
+    "catalogEntries": 132,
+    "updatedCourses": 49,
+    "selectedLinks": 72,
+    "newLinks": 71,
+    "previousLinksAlsoFeatured": 1,
+    "youtube": 55,
+    "bilibili": 17,
+    "updated": 49,
+    "existing": 39,
+    "unconfirmed": 28,
+    "guide": 16
+  },
+  "method": "核对课程官网、YouTube 页面标题及 Bilibili 公开视频元数据；只收录明确对应的课堂、章节或注明范围的补充视频。历史链接未全部复核，未逐节播放验证。",
+  "rejectedCandidates": [
+    {
+      "url": "https://www.bilibili.com/video/BV1TktpzcEjk/",
+      "reason": "CS168 充电专属候选，未加入。"
+    },
+    {
+      "url": "https://www.bilibili.com/video/BV1QT411t7RB/",
+      "reason": "MIT 18.330 单课候选：Bilibili 元数据接口返回 62012，未确认可用，未加入。"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PLDDE03B3BDCA1D9B1",
+      "reason": "MIT 6.050J 旧合集页面未返回有效标题；保留已确认的 B 站转载入口。"
+    },
+    {
+      "url": "https://www.youtube.com/playlist?list=PL_oUiialZGrVl5J070eZ_8-wtrcY2atA2",
+      "reason": "比特币课程候选的合集标题标为 Stanford，与 Princeton 页面归属有冲突，本轮未加入。"
+    },
+    {
+      "url": "https://www.bilibili.com/cheese/play/ss35077",
+      "reason": "付费数据库讲解，不作为原课程免费公开课堂加入。"
+    }
+  ],
+  "courses": [
+    {
+      "path": "advanced-machine-learning/CMU10-708",
+      "title": "CMU 10-708: Probabilistic Graphical Models",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CMU10-708",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoZgVqqHOumTY2CAQHL45tQp6kmDnDcqn",
+          "title": {
+            "zh": "2019 春季 · 概率图模型",
+            "en": "Spring 2019 · Probabilistic Graphical Models"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://sailinglab.github.io/pgm-spring-2019/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Spring 2019 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1mx411f74X/",
+          "title": {
+            "zh": "2019 春季 · 课堂转载（27 节）",
+            "en": "Spring 2019 · Lecture mirror (27 videos)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1mx411f74X/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "10-708 Probabilistic Graphical Models__CMU__Eric Xing",
+            "uploader": "ElectronicBrandy",
+            "parts": 27,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://sailinglab.github.io/pgm-spring-2019/"
+      ],
+      "searches": [
+        "CMU 10-708 probabilistic graphical models 2019 video youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-machine-learning/CS229M",
+      "title": "STATS214 / CS229M: Machine Learning Theory",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/CS229M",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rP8nAmISxFINlGKSK4rbLKh",
+          "title": {
+            "zh": "2021 秋季 · 机器学习理论",
+            "en": "Fall 2021 · Machine Learning Theory"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://web.stanford.edu/class/stats214/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Stanford CS229M: Machine Learning Theory - Fall 2021 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1jT421r71m/",
+          "title": {
+            "zh": "2021 秋季 · 中英字幕转载",
+            "en": "Fall 2021 · Mirror with Chinese/English subtitles"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1jT421r71m/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "斯坦福大学《机器学习理论|CS229M Machine Learning Theory - Fall 2021》中英字幕",
+            "uploader": "GPT中英字幕课程资源",
+            "parts": 20,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://web.stanford.edu/class/stats214/"
+      ],
+      "searches": [
+        "Stanford STATS214 CS229M machine learning theory lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-machine-learning/STA4273",
+      "title": "STA 4273 Winter 2021: Minimizing Expectations",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STA4273",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.cs.toronto.edu/~cmaddis/courses/sta4273_w21/"
+      ],
+      "searches": [
+        "STA4273 Chris Maddison Minimizing Expectations lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-machine-learning/STAT8201",
+      "title": "Columbia STAT 8201: Deep Generative Models",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/STAT8201",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://stat.columbia.edu/~cunningham/teaching/GR8201/"
+      ],
+      "searches": [
+        "Columbia STAT8201 Cunningham Deep Generative Models lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-machine-learning/roadmap",
+      "title": "机器学习进阶学习路线",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-machine-learning/roadmap",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "advanced-mathematics/6.042J",
+      "title": "MIT 6.042J: Mathematics for Computer Science",
+      "existing": [
+        "https://www.bilibili.com/video/BV1L741147VX/?spm_id_from=333.337.search-card.all.click&vd_source=a4d76d1247665a7e7bec15d15fd12349",
+        "https://www.bilibili.com/video/BV1n64y1i777/?spm_id_from=333.337.search-card.all.click&vd_source=a4d76d1247665a7e7bec15d15fd12349"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/6.042J",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLB7540DEDD482705B",
+          "title": {
+            "zh": "2010 秋季 · 计算机科学数学",
+            "en": "Fall 2010 · Mathematics for Computer Science"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/video_galleries/video-lectures/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.042J Mathematics for Computer Science, Fall 2010 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/",
+        "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/",
+        "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2005/"
+      ],
+      "searches": [
+        "MIT 6.042J mathematics computer science youtube playlist MIT OpenCourseWare",
+        "MIT 6.042J Mathematics for Computer Science Fall 2010 YouTube playlist"
+      ]
+    },
+    {
+      "path": "advanced-mathematics/CS126",
+      "title": "UCB CS126 : Probability theory",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/CS126",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://inst.eecs.berkeley.edu/~ee126/fa20/content.html"
+      ],
+      "searches": [
+        "Berkeley EE126 probability lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-mathematics/CS70",
+      "title": "UCB CS70 : discrete Math and probability theory",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/CS70",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1mb4y1f7kG/",
+          "title": {
+            "zh": "2012 秋季 · 课堂转载（部分课时缺失）",
+            "en": "Fall 2012 · Lecture mirror (some lectures missing)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://inst.eecs.berkeley.edu/~cs70/fa12/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "(UC Berkeley离散数学和概率论)CS70 Discrete mathematics and probability theory-12 fall",
+            "uploader": "蓝色的狸猫zzz",
+            "parts": 20,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://www.eecs70.org/"
+      ],
+      "searches": [
+        "Berkeley CS70 discrete probability lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "advanced-mathematics/The_Information_Theory_Pattern_Recognition_and_Neural_Networks",
+      "title": "The Information Theory, Pattern Recognition, and Neural Networks",
+      "existing": [
+        "https://www.bilibili.com/video/BV1rs411T71e",
+        "https://www.youtube.com/playlist?list=PLruBu5BI5n4aFpG32iMbdWoRVAA-Vcso6"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/The_Information_Theory_Pattern_Recognition_and_Neural_Networks",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://www.inference.org.uk/mackay/itila/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "advanced-mathematics/convex",
+      "title": "Stanford EE364A: Convex Optimization",
+      "existing": [
+        "https://www.bilibili.com/video/BV1aD4y1Q7aW",
+        "https://www.youtube.com/watch?v=VNON98dKjno&list=PLoCMsyE1cvdXeoqd1hGaMBsCAQQ6otUtO"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/convex",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/ee364a/index.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "advanced-mathematics/numerical",
+      "title": "MIT18.330 : Introduction to numerical analysis",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/advanced-mathematics/numerical",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://github.com/mitmath/18330"
+      ],
+      "searches": [
+        "MIT 18.330 numerical analysis Steven Johnson lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "artificial-intelligence/CS188",
+      "title": "CS188: Introduction to Artificial Intelligence",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/CS188",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLp8QV47qJEg5tSxKiwcZt4LVwN_ek2Kxy",
+          "title": {
+            "zh": "2026 春季 · 人工智能导论",
+            "en": "Spring 2026 · Introduction to AI"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://inst.eecs.berkeley.edu/~cs188/sp26/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "[CS188 SP26] Live Lectures - YouTube"
+          }
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1cc411g7CM/",
+          "title": {
+            "zh": "2023 春季 · 课堂转载",
+            "en": "Spring 2023 · Lecture mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1cc411g7CM/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "CS188 伯克利最新AI课程--人工智能入门推荐",
+            "uploader": "Labrabull",
+            "parts": 29,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://inst.eecs.berkeley.edu/~cs188/sp26/",
+        "https://inst.eecs.berkeley.edu/~cs188/sp24/",
+        "https://inst.eecs.berkeley.edu/~cs188/sp26/calendar/"
+      ],
+      "searches": [
+        "Berkeley CS188 artificial intelligence lectures playlist bilibili youtube"
+      ]
+    },
+    {
+      "path": "artificial-intelligence/CS50",
+      "title": "CS50’s Introduction to AI with Python",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/CS50",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T381PopUTYtMSstgk-hsTGkVm",
+          "title": {
+            "zh": "2023 · CS50 AI：Python 人工智能入门",
+            "en": "2023 · CS50 AI: Artificial Intelligence with Python"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://cs50.harvard.edu/ai/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CS50's Introduction to Artificial Intelligence with Python 2023 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://cs50.harvard.edu/ai/",
+        "https://cs50.harvard.edu/ai/2020/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "artificial-intelligence/Neural Networks：Zero to Hero",
+      "title": "神经网络：从零到英雄  ",
+      "existing": [
+        "https://www.youtube.com/watch?v=VMj-3S1tku0&list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/artificial-intelligence/Neural%20Networks%EF%BC%9AZero%20to%20Hero",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "compilers/CS143",
+      "title": "Stanford CS143: Compilers",
+      "existing": [
+        "https://www.bilibili.com/video/BV17K4y147Bz"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/CS143",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://web.stanford.edu/class/cs143/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "compilers/CS420",
+      "title": "CS420: Compiler Design",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL5aMzERQ_OZ8RWqn-XiZLXm1IJuaQbXp0"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/CS420",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://github.com/kaist-cp/cs420"
+      ],
+      "searches": []
+    },
+    {
+      "path": "compilers/NJU-Compilers",
+      "title": "NJU 编译原理",
+      "existing": [
+        "https://space.bilibili.com/479141149/lists/2312309"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/NJU-Compilers",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://docs.compilers.cpl.icu/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "compilers/PKU-Compilers",
+      "title": "PKU 编译原理实践",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/PKU-Compilers",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": [
+        "北京大学 编译原理 实践 pku minidecaf bilibili 视频"
+      ]
+    },
+    {
+      "path": "compilers/SJTU-Compilers",
+      "title": "SJTU 编译原理",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/SJTU-Compilers",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://ipads.se.sjtu.edu.cn/courses/compilers/"
+      ],
+      "searches": [
+        "上海交通大学 IPADS 编译原理 课程 bilibili"
+      ]
+    },
+    {
+      "path": "compilers/USTC-Compilers",
+      "title": "USTC: Principles and Techniques of Compiler",
+      "existing": [
+        "https://www.bilibili.com/video/BV1D7421N7c4"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/compilers/USTC-Compilers",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://ustc-compiler-principles.github.io/2023"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-architecture/CA",
+      "title": "ETH: Computer Architecture",
+      "existing": [
+        "https://www.bilibili.com/video/BV1Vf4y1i7YG/?vd_source=77d47fcb2bac41ab4ad02f265b3273cf"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-architecture/CA",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL5Q2soXY2Zi-LfDdGgWyLcTSqzm6a26wD",
+          "title": {
+            "zh": "2024 · 计算机体系结构",
+            "en": "2024 · Computer Architecture"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://safari.ethz.ch/architecture/fall2025/doku.php?id=start",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Livestream - Computer Architecture - ETH Zürich (Fall 2024) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://safari.ethz.ch/architecture/fall2025/doku.php?id=start",
+        "https://safari.ethz.ch/architecture/fall2022/doku.php?id=start"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-architecture/CS61C",
+      "title": "CS61C: Great Ideas in Computer Architecture",
+      "existing": [
+        "https://www.bilibili.com/video/BV17b42177VG/?share_source=copy_web&vd_source=7c3823b46a52fbbef42b79e01d55c300",
+        "https://www.bilibili.com/video/BV1fC4y147iZ/?share_source=copy_web&vd_source=7c3823b46a52fbbef42b79e01d55c300",
+        "https://youtube.com/playlist?list=PL0j-r-omG7i0-mnsxN5T4UcVS1Di0isqf&si=CG1EjQiPcw7r7Vs4",
+        "https://youtube.com/playlist?list=PLDoI-XvXO0aqgoMQvogzmf7CKiSMSUS3M&si=62aaH5a_PMGrAT2Y"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-architecture/CS61C",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs61c.org/",
+        "https://www.learncs.site/docs/curriculum-resource/cs61c/syllabus"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-architecture/DDCA",
+      "title": "ETH Zurich：Digital Design and Computer Architecture",
+      "existing": [
+        "https://www.bilibili.com/video/BV1MA411s7qq/?vd_source=77d47fcb2bac41ab4ad02f265b3273cf",
+        "https://www.youtube.com/playlist?list=PL5Q2soXY2Zi_FRrloMa2fUYWPGiZUBQo2"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-architecture/DDCA",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL5Q2soXY2Zi-EImKxYYY1SZuGiOAOBKaf",
+          "title": {
+            "zh": "2023 春季 · 数字设计与计算机体系结构",
+            "en": "Spring 2023 · Digital Design and Computer Architecture"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://safari.ethz.ch/ddca/spring2026/doku.php?id=start",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Livestream - Digital Design and Computer Architecture - ETH Zürich (Spring 2023) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://safari.ethz.ch/digitaltechnik/spring2026/",
+        "https://safari.ethz.ch/digitaltechnik/spring2023/",
+        "https://safari.ethz.ch/digitaltechnik/spring2020/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-architecture/N2T",
+      "title": "Coursera: Nand2Tetris",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-architecture/N2T",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1Z4411x7Wk/",
+          "title": {
+            "zh": "Nand to Tetris · Part 2 转载",
+            "en": "Nand to Tetris · Part 2 mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1Z4411x7Wk/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "From Nand to Tetris Part 2",
+            "uploader": "leoxus",
+            "parts": 11,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [],
+      "searches": [
+        "nand2tetris course playlist bilibili Shimon Schocken"
+      ]
+    },
+    {
+      "path": "computer-architecture/Princeton-Computer-Architecture",
+      "title": "Princeton: Computer Architecture",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-architecture/Princeton-Computer-Architecture",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1T4411q79W/",
+          "title": {
+            "zh": "Computer Architecture · 历史课堂转载",
+            "en": "Computer Architecture · Archived lecture mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1T4411q79W/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "[计算机体系结构] - Princeton - Computer Architecture",
+            "uploader": "哈库那玛塔塔i",
+            "parts": 107,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://online.princeton.edu/computer-architecture"
+      ],
+      "searches": [
+        "Princeton computer architecture David Wentzlaff bilibili youtube course"
+      ]
+    },
+    {
+      "path": "computer-graphics/15462",
+      "title": "CMU 15-462 : COMPUTER GRAPHICS",
+      "existing": [
+        "https://www.bilibili.com/video/BV1QZ4y1K7ga",
+        "https://www.youtube.com/watch?v=W6yEALqsD7k&list=PL9_jI1bdZmz2emSh0UQ5iOdT2xRHFHL7E&index=1"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/15462",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://15462.courses.cs.cmu.edu/",
+        "https://15462.courses.cs.cmu.edu/fall2022/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-graphics/CS148",
+      "title": "Stanford CS148",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/CS148",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs148/index.html",
+        "https://web.stanford.edu/class/cs148/lectures.html"
+      ],
+      "searches": [
+        "Stanford CS148 lecture videos youtube bilibili"
+      ]
+    },
+    {
+      "path": "computer-graphics/GAMES101",
+      "title": "GAMES101",
+      "existing": [
+        "https://www.bilibili.com/video/BV1X7411F744?p=1"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/GAMES101",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://games-cn.org/intro-graphics/",
+        "https://sites.cs.ucsb.edu/~lingqi/teaching/games101.html",
+        "http://games-cn.org/graphics-intro-ppt-video/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-graphics/GAMES103",
+      "title": "GAMES103",
+      "existing": [
+        "https://www.bilibili.com/video/BV12Q4y1S73g"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/GAMES103",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://games-cn.org/games103/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-graphics/GAMES202",
+      "title": "GAMES202",
+      "existing": [
+        "https://www.bilibili.com/video/BV1YK4y1T7yY"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/GAMES202",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://sites.cs.ucsb.edu/~lingqi/teaching/games202.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-graphics/USTC ComputerGraphics",
+      "title": "USTC Computer Graphics",
+      "existing": [
+        "https://www.bilibili.com/video/BV1iT4y1o7oM/?spm_id_from=333.880.my_history.page.click&vd_source=eea47a16439992e41b232bc5d5684e27"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-graphics/USTC%20ComputerGraphics",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://staff.ustc.edu.cn/~lgliu/Courses/ComputerGraphics_2020_spring-summer/default.htm"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-networks/CS144",
+      "title": "CS144: Computer Network",
+      "existing": [
+        "https://www.youtube.com/watch?v=r2WZNaFyrbQ&list=PL6RdenZrxrw9inR-IJv-erlOKRHjymxMN"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS144",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs144.github.io/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-networks/CS168",
+      "title": "CS 168：Introduction to the Internet: Architecture and Protocols",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-networks/CS168",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL0_XloRC3MWtPupAS7uyuVBFdEu5kzgHJ",
+          "title": {
+            "zh": "2025 夏季 · 计算机网络",
+            "en": "Summer 2025 · Computer Networking"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://su25.cs168.io/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "[CS168 SU25] Lectures - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://su26.cs168.io/",
+        "https://sp25.cs168.io/",
+        "https://su25.cs168.io/"
+      ],
+      "searches": [
+        "Berkeley CS168 course lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "computer-networks/topdown",
+      "title": "Computer Networking: A Top-Down Approach",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-networks/topdown",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=74sEFYBBRAY",
+          "title": {
+            "zh": "第一章导学 · 配套视频入口",
+            "en": "Chapter 1 introduction · Companion video"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://gaia.cs.umass.edu/kurose_ross/videos/1",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "1.1 Introduction (reposted) - What is the Internet - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://gaia.cs.umass.edu/kurose_ross/index.php",
+        "https://gaia.cs.umass.edu/kurose_ross/lectures.php",
+        "https://gaia.cs.umass.edu/kurose_ross/videos/1"
+      ],
+      "searches": [
+        "Kurose Ross computer networking top down lectures youtube playlist"
+      ]
+    },
+    {
+      "path": "computer-networks/topdown_ustc",
+      "title": "USTC Computer Networking:A Top-Down Approach",
+      "existing": [
+        "https://www.bilibili.com/video/BV1JV411t7ow/"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-networks/topdown_ustc",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://staff.ustc.edu.cn/~qzheng/teaching.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-systems-basics/COS217",
+      "title": "Princeton COS 217: Introduction to Programming Systems",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-systems-basics/COS217",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=rzpJj1cjFSE",
+          "title": {
+            "zh": "2021 春季 · 第 1A 讲",
+            "en": "Spring 2021 · Lecture 1A"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://www.cs.princeton.edu/courses/archive/spr21/cos217/schedule.html",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "COS 217 Spring 2021 Lecture 1A - Introduction - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=c_5b2oSye-s",
+          "title": {
+            "zh": "2020 秋季录像 · 第 1B 讲：Bash（2021 春季课程沿用）",
+            "en": "Fall 2020 recording · Lecture 1B: Bash (used in Spring 2021)"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://www.cs.princeton.edu/courses/archive/spr21/cos217/schedule.html",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "COS 217 Fall 2020 Lecture1B - bash Walkthrough - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://www.cs.princeton.edu/courses/archive/fall23/cos217/info.php",
+        "https://www.cs.princeton.edu/courses/archive/spr21/cos217/schedule.html"
+      ],
+      "searches": [
+        "Princeton COS217 lecture videos youtube bilibili"
+      ]
+    },
+    {
+      "path": "computer-systems-basics/CS110",
+      "title": "CS110: Principles of Computer Systems",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLai-xIlqf4JmTNR9aPCwIAOySs1GOm8sQ"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-systems-basics/CS110",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/archive/cs/cs110/cs110.1204/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "computer-systems-basics/CSAPP",
+      "title": "CMU CS15213: CSAPP",
+      "existing": [
+        "https://space.bilibili.com/354767108/",
+        "https://www.bilibili.com/video/BV1cD4y1D7uR",
+        "https://www.bilibili.com/video/BV1iW411d7hd"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/computer-systems-basics/CSAPP",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://csapp.cs.cmu.edu/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "data-science/Data100",
+      "title": "UCB Data100: Principles and Techniques of Data Science",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-science/Data100",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1xt4y1S7ay/",
+          "title": {
+            "zh": "2020 夏季 · 数据科学（英文字幕）",
+            "en": "Summer 2020 · Data Science (English subtitles)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "http://www.ds100.org/su20/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "加州大学伯克利分校 DATA100 数据科学导论 Principles and Techniques of Data Science（Summer 2020）",
+            "uploader": "___main___",
+            "parts": 161,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ds100.org/"
+      ],
+      "searches": [
+        "Berkeley Data100 lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "data-structures-algorithms/6.006",
+      "title": "MIT 6.006: Introduction to Algorithms",
+      "existing": [
+        "https://www.bilibili.com/video/BV1b7411e7ZP"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.006",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+          "title": {
+            "zh": "2020 春季 · 算法导论",
+            "en": "Spring 2020 · Introduction to Algorithms"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.006 Introduction to Algorithms, Spring 2020 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb",
+          "title": {
+            "zh": "2011 秋季 · 算法导论",
+            "en": "Fall 2011 · Introduction to Algorithms"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.006 Introduction to Algorithms, Fall 2011 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/"
+      ],
+      "searches": [
+        "MIT 6.006 2011 youtube playlist"
+      ]
+    },
+    {
+      "path": "data-structures-algorithms/6.046",
+      "title": "MIT 6.046: Design and Analysis of Algorithms",
+      "existing": [
+        "https://www.bilibili.com/video/BV1A7411E737"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/6.046",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP6317WaSNfmCvGym2ucw3oGp",
+          "title": {
+            "zh": "2015 春季 · 算法设计与分析",
+            "en": "Spring 2015 · Design and Analysis of Algorithms"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/video_galleries/lecture-videos/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.046J Design and Analysis of Algorithms, Spring 2015 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/"
+      ],
+      "searches": [
+        "MIT 6.046 2015 youtube playlist",
+        "MIT 6.046J Design and Analysis of Algorithms Spring 2015 YouTube playlist"
+      ]
+    },
+    {
+      "path": "data-structures-algorithms/Algo",
+      "title": "Coursera: Algorithms I & II",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/Algo",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/av55943680/",
+          "title": {
+            "zh": "Algorithms · Part I 中英字幕转载",
+            "en": "Algorithms · Part I mirror with Chinese/English subtitles"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/av55943680/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "【普林斯顿】Algorithms, Part I（Princeton University）（中英字幕）【完】",
+            "uploader": "zihengCat",
+            "parts": 60,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://algs4.cs.princeton.edu/home/"
+      ],
+      "searches": [
+        "Princeton algorithms Robert Sedgewick Kevin Wayne course bilibili youtube"
+      ]
+    },
+    {
+      "path": "data-structures-algorithms/CS170",
+      "title": "CS170: Efficient Algorithms and Intractable Problems",
+      "existing": [
+        "https://www.bilibili.com/video/BV1BU4y1b7RK",
+        "https://www.youtube.com/playlist?list=PLnocShPlK-Ft-o7NInBDw18be86dNaxlT"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/CS170",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs170.org/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "data-structures-algorithms/CS61B",
+      "title": "CS61B: Data Structures and Algorithms",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL8FaHk7qbOD44fDmItR1wrkor8XdfUXC6"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/data-structures-algorithms/CS61B",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL8FaHk7qbOD44fDmItR1wrkor8XdfUXC6",
+          "title": {
+            "zh": "2026 春季 · 数据结构",
+            "en": "Spring 2026 · Data Structures"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://sp26.datastructur.es/",
+          "newToCourse": false,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Spring 2026 - Live Lecture Recordings - YouTube"
+          }
+        },
+        {
+          "url": "https://www.bilibili.com/video/BV1hJ4m1M7ZA/",
+          "title": {
+            "zh": "2024 春季 · 英文原声与中英字幕",
+            "en": "Spring 2024 · English audio with Chinese/English subtitles"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1hJ4m1M7ZA/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "【完结】【CS61B精翻双语·英文原声】伯克利大学《算法与数据结构》(2024)",
+            "uploader": "CS自学社区",
+            "parts": 40,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://cs61bl.org/",
+        "https://sp26.datastructur.es/",
+        "https://sp24.datastructur.es/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "database-systems/15445",
+      "title": "CMU 15-445: Database Systems",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLSE8ODhjZXjaKScG3l0nuOiDTTqpfnWFf"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/database-systems/15445",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1CzFHedEEV/",
+          "title": {
+            "zh": "2024 秋季 · 课堂转载（从首集进入）",
+            "en": "Fall 2024 · Lecture mirror (start at the first video)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1CzFHedEEV/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "CMU《数据库系统导论|15-445: Intro to Database Systems, Fall 2024》中英字幕",
+            "uploader": "学习领航员贺老师",
+            "parts": 1,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://15445.courses.cs.cmu.edu/",
+        "https://15445.courses.cs.cmu.edu/spring2023/schedule.html",
+        "https://15445.courses.cs.cmu.edu/fall2022/schedule.html"
+      ],
+      "searches": [
+        "CMU 15445 2025 数据库 bilibili",
+        "CMU 15-445 2024 课程 中英字幕 合集 bilibili"
+      ]
+    },
+    {
+      "path": "database-systems/15799",
+      "title": "CMU 15-799: Special Topics in Database Systems",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/database-systems/15799",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLSE8ODhjZXjYCZfIbmEWH7f6MnYqyPwCE",
+          "title": {
+            "zh": "2025 春季 · 查询优化专题",
+            "en": "Spring 2025 · Query Optimization"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://15799.courses.cs.cmu.edu/spring2025/schedule.html",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CMU Special Topics in Database: Query Optimization (15-799 - Spring 2025) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://15799.courses.cs.cmu.edu/spring2025/schedule.html",
+        "https://15799.courses.cs.cmu.edu/spring2022/schedule.html"
+      ],
+      "searches": [
+        "CMU 15-799 special topics database lectures youtube"
+      ]
+    },
+    {
+      "path": "database-systems/CS122",
+      "title": "Caltech CS 122: Database System Implementation",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/database-systems/CS122",
+      "selected": [],
+      "reviewedCourseSources": [
+        "http://courses.cms.caltech.edu/cs122/"
+      ],
+      "searches": [
+        "Caltech CS122 database Donnie Pinkston lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "database-systems/CS186",
+      "title": "UCB CS186: Introduction to Database System",
+      "existing": [
+        "https://www.bilibili.com/video/BV13a411c7Qo",
+        "https://www.youtube.com/playlist?list=PLYp4IGUhNFmw8USiYMJvCUjZe79fvyYge"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/database-systems/CS186",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs186berkeley.net/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "database-systems/CS346",
+      "title": "Stanford CS 346: Database System Implementation",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/database-systems/CS346",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs346/2015/"
+      ],
+      "searches": [
+        "Stanford CS346 database implementation lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "deep-generative-models/CMU15-779",
+      "title": "CMU 15-779：机器学习系统高级专题（大语言模型版）",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/CMU15-779",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.cs.cmu.edu/~zhihaoj2/15-779"
+      ],
+      "searches": [
+        "CMU 15-779 Zhihao Jia large language models course lectures bilibili youtube"
+      ]
+    },
+    {
+      "path": "deep-generative-models/MIT6.S184",
+      "title": "MIT6.S184: Generative AI with Stochastic Differential Equations",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/MIT6.S184",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=GCoP2w-Cqtg",
+          "title": {
+            "zh": "2025 · 第 1 讲：流模型与扩散模型",
+            "en": "2025 · Lecture 1: Flow and Diffusion Models"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 01 - Generative AI with SDEs (2025) - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=yFD-JSSG-D0",
+          "title": {
+            "zh": "2025 · 第 2 讲：构建训练目标",
+            "en": "2025 · Lecture 2: Constructing the Training Target"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 02 - Constructing a Training Target - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HhfLo1_yza4",
+          "title": {
+            "zh": "2025 · 第 3 讲：训练流模型与扩散模型",
+            "en": "2025 · Lecture 3: Training Flow and Diffusion Models"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 03 - Training Flow/Diffusion Models (2025) - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=nfrZ30mnwP0",
+          "title": {
+            "zh": "2025 · 第 4 讲：构建图像生成器",
+            "en": "2025 · Lecture 4: Building an Image Generator"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 04 - Building an Image Generator (2025) - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=7tsCN2hRBMg",
+          "title": {
+            "zh": "2025 · 第 5 讲：机器人生成模型",
+            "en": "2025 · Lecture 5: Generative Models for Robotics"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 05 - Diffusion for Robotics (2025) - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=hi_s4T1-gBY",
+          "title": {
+            "zh": "2025 · 第 6 讲：蛋白质设计生成模型",
+            "en": "2025 · Lecture 6: Generative Models for Protein Design"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://diffusion.csail.mit.edu/2025/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.S184: Flow Matching and Diffusion Models - Lecture 06 - Diffusion for Proteins (2025) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://diffusion.csail.mit.edu/",
+        "https://diffusion.csail.mit.edu/2025/"
+      ],
+      "searches": [
+        "MIT 6.S184 diffusion stochastic differential equations course youtube bilibili",
+        "MIT 6.S184 2025 diffusion flow matching youtube playlist"
+      ]
+    },
+    {
+      "path": "deep-generative-models/large-language-models/CMU11-667",
+      "title": "CMU11-667: Large Language Models: Methods and Applications",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-667",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cmu-llms.org/"
+      ],
+      "searches": [
+        "CMU 11-667 large language models methods applications lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "deep-generative-models/large-language-models/CMU11-711",
+      "title": "CMU 11-711: Advanced Natural Language Processing (ANLP)",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-711",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL8PYTP1V4I8DZprnWryM4nR8IZl1ZXDjg",
+          "title": {
+            "zh": "2024 春季 · 高级自然语言处理",
+            "en": "Spring 2024 · Advanced NLP"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://phontron.com/class/anlp2024/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CMU Advanced NLP Spring 2024 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://www.phontron.com/class/anlp-fall2024/",
+        "https://www.phontron.com/class/anlp-spring2024/",
+        "https://www.phontron.com/class/anlp2024/"
+      ],
+      "searches": [
+        "Graham Neubig CMU 11-711 advanced natural language processing 2024 youtube"
+      ]
+    },
+    {
+      "path": "deep-generative-models/large-language-models/CMU11-868",
+      "title": "CMU 11-868: Large Language Model Systems",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/large-language-models/CMU11-868",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://llmsystem.github.io/llmsystem2026fall/",
+        "https://llmsystem.github.io/llmsystem2026spring/",
+        "https://llmsystem.github.io/"
+      ],
+      "searches": [
+        "CMU 11-868 LLM systems 2026 lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "deep-generative-models/roadmap",
+      "title": "深度生成模型学习路线",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-generative-models/roadmap",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "deep-learning/CS224n",
+      "title": "CS224n: Natural Language Processing",
+      "existing": [
+        "https://www.bilibili.com/"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224n",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOaMFbaqxPDoLWjDaRAdP9D",
+          "title": {
+            "zh": "2024 春季 · 自然语言处理与深度学习",
+            "en": "Spring 2024 · NLP with Deep Learning"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://web.stanford.edu/class/cs224n/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Stanford CS224N Natural Language Processing with Deep Learning I Spring 2024 I Professor Christopher Manning - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://web.stanford.edu/class/cs224n/index.html"
+      ],
+      "searches": [
+        "CS224n 2024 自然语言处理 bilibili 合集"
+      ]
+    },
+    {
+      "path": "deep-learning/CS224w",
+      "title": "CS224w: Machine Learning with Graphs",
+      "existing": [
+        "https://www.youtube.com/watch?v=JAB_plj2rbA"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS224w",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOP-ImU-O1rYRg2RFxomvFp",
+          "title": {
+            "zh": "2021 · 图机器学习",
+            "en": "2021 · Machine Learning with Graphs"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://www.youtube.com/watch?v=JAB_plj2rbA",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Stanford CS224W Machine Learning with Graphs I Jure Leskovec - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://web.stanford.edu/class/cs224w/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "deep-learning/CS230",
+      "title": "Coursera: Deep Learning",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS230",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0",
+          "title": {
+            "zh": "专项课程 1 · 神经网络与深度学习",
+            "en": "Specialization Course 1 · Neural Networks and Deep Learning"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://www.youtube.com/playlist?list=PLkDaE6sCZn6Ec-XTbcX1uRg2_u4xOEky0",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Neural Networks and Deep Learning (Course 1 of the Deep Learning Specialization) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [],
+      "searches": [
+        "DeepLearningAI neural networks deep learning course youtube playlist"
+      ]
+    },
+    {
+      "path": "deep-learning/CS231",
+      "title": "CS231n: CNN for Visual Recognition",
+      "existing": [
+        "https://www.bilibili.com/video/BV1nJ411z7fe"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS231",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rOmsNzYBMe0gJY2XS8AQg16",
+          "title": {
+            "zh": "2025 · 计算机视觉深度学习",
+            "en": "2025 · Deep Learning for Computer Vision"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://cs231n.stanford.edu/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Stanford CS231N Deep Learning for Computer Vision I 2025 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://cs231n.stanford.edu/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "deep-learning/CS285",
+      "title": "CS285: Deep Reinforcement Learning",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL_iWQOsE6TfX7MaC6C3HcdOf1g337dlC9"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/CS285",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL_iWQOsE6TfVYGEGiAOMaOzzv41Jfm_Ps",
+          "title": {
+            "zh": "2023 · 深度强化学习",
+            "en": "2023 · Deep Reinforcement Learning"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://rail.eecs.berkeley.edu/deeprlcourse/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CS 285: Deep RL, 2023 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://rail.eecs.berkeley.edu/deeprlcourse/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "deep-learning/EECS498-007",
+      "title": "UMich EECS 498-007 / 598-005: Deep Learning for Computer Vision",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL5-TkQAfAZFbzxjBHtzdVCWE0Zbhomg7r"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/EECS498-007",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.eecs.umich.edu/~justincj/teaching/eecs498/WI2022/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "deep-learning/LHY",
+      "title": "国立台湾大学：李宏毅机器学习",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/deep-learning/LHY",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1RQwJzKEMz/",
+          "title": {
+            "zh": "2026 · 李宏毅机器学习课堂转载",
+            "en": "2026 · Hung-yi Lee Machine Learning lecture mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1RQwJzKEMz/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "李宏毅2026《机器学习》",
+            "uploader": "啥都会一点的研究生",
+            "parts": 21,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://speech.ee.ntu.edu.tw/~hylee/ml/2026-spring.php",
+        "https://speech.ee.ntu.edu.tw/~hylee/ml/2025-spring.php",
+        "https://speech.ee.ntu.edu.tw/~hylee/ml/2023-spring.php"
+      ],
+      "searches": [
+        "李宏毅 2026 机器学习 YouTube bilibili 课程"
+      ]
+    },
+    {
+      "path": "electronics-basics/EE16",
+      "title": "UCB EE16A&B: Designing Information Devices and Systems I&II",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL6nn4B7IPh8YwpxeJqCoNJ7wh0jme6WNr",
+        "https://www.youtube.com/playlist?list=PLfSttCKflps1UrUS1ZaV9KQJkoPFzdZAk"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/electronics-basics/EE16",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://inst.eecs.berkeley.edu/~ee16a/su20/",
+        "https://eecs16b.org/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "electronics-basics/Signals_and_Systems_AVO",
+      "title": "MIT 6.007 Signals and Systems",
+      "existing": [
+        "https://www.bilibili.com/video/BV1CZ4y1j7hs"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/electronics-basics/Signals_and_Systems_AVO",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL41692B571DD0AF9B",
+          "title": {
+            "zh": "Alan Oppenheim · 信号与系统经典课堂",
+            "en": "Alan Oppenheim · Signals and Systems"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/resources/lecture-videos/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT RES.6.007 Signals and Systems, 1987 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/"
+      ],
+      "searches": [
+        "MIT RES.6-007 Signals and Systems YouTube playlist"
+      ]
+    },
+    {
+      "path": "electronics-basics/signal",
+      "title": "UCB EE120: Signal and Systems",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/electronics-basics/signal",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1J7421o7pF/",
+          "title": {
+            "zh": "EE120 · 第 1 讲（中英字幕）",
+            "en": "EE120 · Lecture 1 (Chinese/English subtitles)"
+          },
+          "kind": "lecture",
+          "official": false,
+          "source": "https://ee120-course-staff.github.io/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "【伯克利 EE120 信号与系统 中英双字】 Signal and system | Lecture_1",
+            "uploader": "zxc524580210",
+            "parts": 1,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://inst.eecs.berkeley.edu/~ee120/fa19/"
+      ],
+      "searches": [
+        "Berkeley EE120 signals systems lectures bilibili youtube"
+      ]
+    },
+    {
+      "path": "essential-tools/CMake",
+      "title": "CMake",
+      "existing": [
+        "https://www.bilibili.com/video/BV14h41187FZ"
+      ],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/CMake",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/Docker",
+      "title": "Docker",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/Docker",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/Emacs",
+      "title": "Emacs",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/Emacs",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/GNU_Make",
+      "title": "GNU Make",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/GNU_Make",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/Git",
+      "title": "Git",
+      "existing": [
+        "https://www.bilibili.com/video/BV1vy4y1s7k6"
+      ],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/Git",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/GitHub",
+      "title": "GitHub",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/GitHub",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/LaTeX",
+      "title": "LaTeX",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/LaTeX",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/Scoop",
+      "title": "Scoop",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/Scoop",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/Vim",
+      "title": "Vim",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/Vim",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/information-retrieval",
+      "title": "信息检索",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/information-retrieval",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/thesis",
+      "title": "毕业论文",
+      "existing": [
+        "https://www.bilibili.com/video/BV1YQ4y1M73G?p=1&vd_source=a4d76d1247665a7e7bec15d15fd12349"
+      ],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/thesis",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/tools",
+      "title": "实用工具箱",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/tools",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/vpn",
+      "title": "翻墙",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/vpn",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "essential-tools/workflow",
+      "title": "底层核心逻辑",
+      "existing": [],
+      "status": "guide",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/essential-tools/workflow",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": []
+    },
+    {
+      "path": "machine-learning/CS189",
+      "title": "CS189: Introduction to Machine Learning",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLOOm2AoWIPEyZazQVnIcaK2KnezpGZV-X"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS189",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://eecs189.org/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "machine-learning/CS229",
+      "title": "CS229: Machine Learning",
+      "existing": [
+        "https://www.bilibili.com/video/BV1JE411w7Ub"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning/CS229",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+          "title": {
+            "zh": "2022 春季 · 机器学习",
+            "en": "Spring 2022 · Machine Learning"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://www.youtube.com/playlist?list=PLoROMvodv4rNyWOpJg_Yh4NSqI4Z4vOYy",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Stanford CS229: Machine Learning I Spring 2022 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "http://cs229.stanford.edu",
+        "https://cs229.stanford.edu/syllabus-spring2022.html",
+        "https://cs229.stanford.edu/"
+      ],
+      "searches": [
+        "Stanford CS229 2022 YouTube Stanford Online playlist"
+      ]
+    },
+    {
+      "path": "machine-learning/ML",
+      "title": "Coursera: Machine Learning",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning/ML",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=vStJoetOxJg",
+          "title": {
+            "zh": "机器学习专项课程 · 第一课导学",
+            "en": "Machine Learning Specialization · First lesson"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://www.youtube.com/watch?v=vStJoetOxJg",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "#1 Machine Learning Specialization [Course 1, Week 1, Lesson 1] - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [],
+      "searches": [
+        "Andrew Ng machine learning specialization course playlist youtube bilibili"
+      ]
+    },
+    {
+      "path": "machine-learning-systems/AICS",
+      "title": "智能计算系统",
+      "existing": [
+        "https://space.bilibili.com/494117284"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/AICS",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://novel.ict.ac.cn/aics/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "machine-learning-systems/CMU10-414",
+      "title": "CMU 10-414/714: Deep Learning Systems",
+      "existing": [
+        "https://www.youtube.com/watch?v=qbJqOFMyIwg"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/CMU10-414",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=ftP5HeOvsI0",
+          "title": {
+            "zh": "第 1 讲：深度学习系统导论",
+            "en": "Lecture 1: Introduction to Deep Learning Systems"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://dlsyscourse.org/lectures",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Lecture 1 - Introduction and Logistics - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://dlsyscourse.org",
+        "https://dlsyscourse.org/lectures"
+      ],
+      "searches": []
+    },
+    {
+      "path": "machine-learning-systems/CMU15-442",
+      "title": "CMU 15-442/642：机器学习系统",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/CMU15-442",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://mlsyscourse.org",
+        "https://mlsyscourse.org/schedule"
+      ],
+      "searches": [
+        "CMU 15-442 642 machine learning systems course lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "machine-learning-systems/EML",
+      "title": "MIT6.5940: TinyML and Efficient Deep Learning Computing",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL80kAHvQbh-pT4lCkDT53zT8DKmhE0idB",
+        "https://www.youtube.com/playlist?list=PL80kAHvQbh-qGtNc54A6KW4i4bkTPjiRF"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/EML",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://hanlab.mit.edu/courses/2024-fall-65940",
+        "https://hanlab.mit.edu/courses/2023-fall-65940"
+      ],
+      "searches": []
+    },
+    {
+      "path": "machine-learning-systems/MLC",
+      "title": "Machine Learning Compilation",
+      "existing": [
+        "https://www.bilibili.com/video/BV15v4y1g7EU?spm_id_from=333.337.search-card.all.click&vd_source=a4d76d1247665a7e7bec15d15fd12349"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/machine-learning-systems/MLC",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=Oc_wVXdnrrM",
+          "title": {
+            "zh": "第 1 讲：机器学习编译导论",
+            "en": "Lecture 1: Introduction to Machine Learning Compilation"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://mlc.ai/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Machine Learning Compilation: Episode 1 / Overview - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://mlc.ai/summer22-zh/"
+      ],
+      "searches": [
+        "Machine Learning Compilation MLC course YouTube playlist"
+      ]
+    },
+    {
+      "path": "mathematics-basics/MITLA",
+      "title": "MIT18.06: Linear Algebra",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITLA",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8",
+          "title": {
+            "zh": "MIT 18.06 · Gilbert Strang 线性代数",
+            "en": "MIT 18.06 · Gilbert Strang Linear Algebra"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://www.mit.edu/~18.06/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 18.06 Linear Algebra, Spring 2005 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
+        "https://www.mit.edu/~18.06/"
+      ],
+      "searches": [
+        "MIT 18.06 linear algebra Gilbert Strang youtube playlist"
+      ]
+    },
+    {
+      "path": "mathematics-basics/MITmaths",
+      "title": "MIT Calculus Course",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/MITmaths",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PL590CCC2BC5AF3BC1",
+          "title": {
+            "zh": "18.01 · 2006 秋季单变量微积分",
+            "en": "18.01 · Fall 2006 Single Variable Calculus"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://www.youtube.com/playlist?list=PL590CCC2BC5AF3BC1",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 18.01 Single Variable Calculus, Fall 2006 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38",
+          "title": {
+            "zh": "18.02 · 2007 秋季多变量微积分",
+            "en": "18.02 · Fall 2007 Multivariable Calculus"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://www.youtube.com/playlist?list=PL4C4C8A7D06566F38",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 18.02 Multivariable Calculus, Fall 2007 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+        "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/"
+      ],
+      "searches": [
+        "MIT 18.01 18.02 calculus youtube playlist"
+      ]
+    },
+    {
+      "path": "mathematics-basics/information",
+      "title": "MIT6.050J: Information theory and Entropy",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/mathematics-basics/information",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1g64y1M7zR/",
+          "title": {
+            "zh": "2008 春季 · 信息与熵课堂转载",
+            "en": "Spring 2008 · Information and Entropy lecture mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1g64y1M7zR/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "MIT 6.050J Information and Entropy, Spring 2008",
+            "uploader": "etaprime",
+            "parts": 18,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-050j-information-and-entropy-spring-2008/"
+      ],
+      "searches": [
+        "MIT 6.050J information entropy lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "operating-systems/COS318",
+      "title": "Princeton COS 318: Operating Systems",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/operating-systems/COS318",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.cs.princeton.edu/courses/archive/fall20/cos318/"
+      ],
+      "searches": [
+        "Princeton COS318 operating systems lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "operating-systems/CS162",
+      "title": "CS162: Operating System",
+      "existing": [
+        "https://www.youtube.com/watch?v=YfHY0pvpRkk"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/operating-systems/CS162",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs162.org/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "operating-systems/HITOS",
+      "title": "HIT OS: Operating System",
+      "existing": [
+        "https://www.bilibili.com/video/BV19r4y1b7Aw/?p=1"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/operating-systems/HITOS",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.icourse163.org/course/HIT-1002531008"
+      ],
+      "searches": []
+    },
+    {
+      "path": "operating-systems/MIT6.S081",
+      "title": "MIT 6.S081: Operating System Engineering",
+      "existing": [
+        "https://space.bilibili.com/1040264970/",
+        "https://www.youtube.com/playlist?list=PLbtzT1TYeoMhTPzyTZboW_j7TPAnjv9XB",
+        "https://www.youtube.com/watch?v=L6YqHxYHa7A"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/operating-systems/MIT6.S081",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1QA411F7ij/",
+          "title": {
+            "zh": "xv6 历史课堂 · 中英字幕（第 2 讲无录像）",
+            "en": "Archived xv6 lectures · Chinese/English subtitles (Lecture 2 unavailable)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1QA411F7ij/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "MIT 操作系统 6.S081（中英文字幕）",
+            "uploader": "菜饼同学",
+            "parts": 23,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://pdos.csail.mit.edu/6.1810/",
+        "https://pdos.csail.mit.edu/6.828/2021/schedule.html"
+      ],
+      "searches": [
+        "MIT 6.S081 操作系统 2021 bilibili"
+      ]
+    },
+    {
+      "path": "operating-systems/NJUOS",
+      "title": "NJU OS: Operating System Design and Implementation",
+      "existing": [
+        "https://space.bilibili.com/202224425/channel/collectiondetail?sid=192498",
+        "https://space.bilibili.com/202224425/lists/7587348"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/operating-systems/NJUOS",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://jyywiki.cn/OS/2026/",
+        "https://jyywiki.cn/OS/2022/index.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "parallel-distributed-systems/CS149",
+      "title": "CMU 15-418/Stanford CS149: Parallel Computing",
+      "existing": [
+        "https://youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp&si=txtQiRDZ9ZZUzyRn"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/parallel-distributed-systems/CS149",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.cs.cmu.edu/afs/cs/academic/class/15418-s18/www/index.html",
+        "https://gfxcourses.stanford.edu/cs149/fall21",
+        "https://www.cs.cmu.edu/afs/cs/academic/class/15418-s18/www/schedule.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "parallel-distributed-systems/MIT6.824",
+      "title": "MIT6.824: Distributed System",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/parallel-distributed-systems/MIT6.824",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1qk4y197bB/",
+          "title": {
+            "zh": "2020 春季 · 分布式系统（中英机翻字幕）",
+            "en": "Spring 2020 · Distributed Systems (machine-translated Chinese/English subtitles)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://www.bilibili.com/video/BV1qk4y197bB/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "【MIT公开课】6.824 分布式系统 · 2020年春（完结·中英字幕·机翻）",
+            "uploader": "鬼谷良师",
+            "parts": 20,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://pdos.csail.mit.edu/6.824/",
+        "https://pdos.csail.mit.edu/6.824/schedule.html",
+        "https://pdos.csail.mit.edu/6.824/2020/schedule.html"
+      ],
+      "searches": [
+        "MIT 6.824 分布式系统 2020 完整 bilibili"
+      ]
+    },
+    {
+      "path": "programming-introduction/DeCal",
+      "title": "UCB: Sysadmin DeCal",
+      "existing": [
+        "https://space.bilibili.com/483435468/video",
+        "https://www.bilibili.com/video/BV1rs4y1T7zJ/?share_source=copy_web"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/DeCal",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://decal.ocf.berkeley.edu/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/MIT-Missing-Semester",
+      "title": "MIT-Missing-Semester",
+      "existing": [
+        "https://space.bilibili.com/1010983811?spm_id_from=333.337.search-card.all.click",
+        "https://space.bilibili.com/518734451?spm_id_from=333.337.search-card.all.click",
+        "https://www.youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/MIT-Missing-Semester",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLyzOVJj3bHQunmnnTXrNbZnBaCA-ieK4L",
+          "title": {
+            "zh": "2026 · 计算机教育中缺失的一课",
+            "en": "2026 · The Missing Semester"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://missing.csail.mit.edu/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Missing Semester IAP 2026 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://missing.csail.mit.edu/",
+        "https://missing.csail.mit.edu/2020/",
+        "https://missing.csail.mit.edu"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/c/CS50",
+      "title": "CS50: This is CS50x",
+      "existing": [
+        "https://www.bilibili.com/video/BV1HW4y1A7Yi/?spm_id_from=333.999.0.0&vd_source=a4d76d1247665a7e7bec15d15fd12349"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/CS50",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T380hlTqAU8HfvVepCcjCqTg6",
+          "title": {
+            "zh": "CS50x 2026 · 计算机科学导论",
+            "en": "CS50x 2026 · Introduction to Computer Science"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://cs50.harvard.edu/x/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CS50x Lectures - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://cs50.harvard.edu/x/",
+        "https://cs50.harvard.edu/x/2025/",
+        "https://cs50.harvard.edu/x/2024/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/c/Duke-Coursera-Intro-C",
+      "title": "Introductory C Programming Specialization",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/c/Duke-Coursera-Intro-C",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": [
+        "Duke introductory C programming specialization videos bilibili youtube"
+      ]
+    },
+    {
+      "path": "programming-introduction/cpp/AUT1400",
+      "title": "Amirkabir University of Technology 1400-2: Advanced Programming Course",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/cpp/AUT1400",
+      "selected": [],
+      "reviewedCourseSources": [],
+      "searches": [
+        "AUT 1400 advanced programming course youtube bilibili"
+      ]
+    },
+    {
+      "path": "programming-introduction/cpp/CS106B_CS106X",
+      "title": "Stanford CS106B/X: Programming Abstractions in C++",
+      "existing": [
+        "https://www.bilibili.com/video/BV1G7411k7jG",
+        "https://www.youtube.com/watch?v=FIroM06V2MA&list=PL-h0BZdG_K4kAmsfvAik-Za826pNbQd0d"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/cpp/CS106B_CS106X",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs106b/",
+        "https://web.stanford.edu/class/archive/cs/cs106b/cs106b.1224/",
+        "https://web.stanford.edu/class/cs106x/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/cpp/CS106L",
+      "title": "CS106L: Standard C++ Programming",
+      "existing": [
+        "https://www.youtube.com/channel/UCSqr6y-eaQT_qZJVUm_4QxQ/playlists"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/cpp/CS106L",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs106l/"
+      ],
+      "searches": [
+        "CS106L 2023 YouTube playlist Stanford"
+      ]
+    },
+    {
+      "path": "programming-introduction/functional/CS3110",
+      "title": "CS3110：OCaml Programming Correct + Efficient + Beautiful",
+      "existing": [
+        "https://www.bilibili.com/video/BV1dv4y127Ui/",
+        "https://www.youtube.com/playlist?list=PLre5AT9JnKShBOPeuiD9b-I4XROIJhkIU"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/functional/CS3110",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs3110.github.io/textbook"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/functional/Haskell-MOOC",
+      "title": "Haskell MOOC",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/functional/Haskell-MOOC",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://haskell.mooc.fi/"
+      ],
+      "searches": [
+        "Haskell MOOC Helsinki course videos youtube bilibili"
+      ]
+    },
+    {
+      "path": "programming-introduction/java/COS126",
+      "title": "Princeton COS 126: Computer Science — An Interdisciplinary Approach",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/java/COS126",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://introcs.cs.princeton.edu/java/home/"
+      ],
+      "searches": [
+        "Princeton COS126 computer science interdisciplinary approach youtube playlist"
+      ]
+    },
+    {
+      "path": "programming-introduction/java/MIT 6.092",
+      "title": "MIT 6.092: Introduction To Programming In Java",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/java/MIT%206.092",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-092-introduction-to-programming-in-java-january-iap-2010/pages/syllabus/"
+      ],
+      "searches": [
+        "MIT 6.092 introduction programming Java lecture videos youtube bilibili"
+      ]
+    },
+    {
+      "path": "programming-introduction/python/CS50P",
+      "title": "CS50P Introduction to Programming with Python",
+      "existing": [
+        "https://www.bilibili.com/video/BV1z5411X7wX"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/CS50P",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLhQjrBD2T3817j24-GogXmWqO5Q5vYy0V",
+          "title": {
+            "zh": "2022 · CS50P：Python 编程入门",
+            "en": "2022 · CS50P: Introduction to Programming with Python"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://cs50.harvard.edu/python/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "CS50's Introduction to Programming with Python (CS50P) 2022 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://cs50.harvard.edu/python/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/python/CS61A",
+      "title": "CS61A: Structure and Interpretation of Computer Programs",
+      "existing": [
+        "https://www.bilibili.com/video/BV1GK411Q7qp/",
+        "https://www.bilibili.com/video/BV1sy411z7nA/",
+        "https://www.youtube.com/watch?v=gNv81_4X0uU&list=PLHODd-fpPyMC5Mho6PIjIGsGgBW_syyHi"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/CS61A",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs61a.org/",
+        "https://lr2933.github.io/cs61a-spring-2026",
+        "https://insideempire.github.io/CS61A-Website-Archive/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/python/MIT6.100L",
+      "title": "MIT6.100L: Introduction to CS and Programming using Python",
+      "existing": [
+        "https://www.bilibili.com/video/BV1WE421V7bL?spm_id_from=333.788.videopod.sections&vd_source=3181deb7fb0c10621dd8dbdf8ab90a04"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/python/MIT6.100L",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP62A-ynp6v6-LGBCzeH3VAQB",
+          "title": {
+            "zh": "2022 秋季 · Python 与计算机科学入门",
+            "en": "Fall 2022 · Introduction to CS and Programming using Python"
+          },
+          "kind": "playlist",
+          "official": true,
+          "source": "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/resources/lecture-videos/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "MIT 6.100L Introduction to CS and Programming using Python, Fall 2022 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://ocw.mit.edu/courses/6-100l-introduction-to-cs-and-programming-using-python-fall-2022/pages/material-by-lecture/",
+        "https://github.com/Alidme/MIT6.100L?tab=readme-ov-file#%E5%85%B3%E4%BA%8E%E4%B8%AD%E6%96%87%E7%B2%BE%E7%BF%BB%E7%9A%84%E8%AF%B4%E6%98%8E"
+      ],
+      "searches": [
+        "MIT 6.100L 2022 youtube playlist",
+        "MIT 6.100L Introduction CS Programming Python Fall 2022 YouTube playlist"
+      ]
+    },
+    {
+      "path": "programming-introduction/rust/CS110L",
+      "title": "CS110L: Safety in Systems Programming",
+      "existing": [
+        "https://youtu.be/j7AQrtLevUE"
+      ],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/rust/CS110L",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=DNK-YeP7S5Y",
+          "title": {
+            "zh": "2021 春季 · 第 1 讲",
+            "en": "Spring 2021 · Lecture 1"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://reberhardt.com/cs110l/spring-2021/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Lecture 1: Welcome to CS 110L | CS 110L, spring 2021 (Safety in Systems Programming) - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://reberhardt.com/cs110l/spring-2021/",
+        "https://reberhardt.com/cs110l/spring-2020/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-introduction/rust/cs220",
+      "title": "CS220: Programming Principles",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/rust/cs220",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://doc.rust-lang.org/book/",
+        "https://docs.google.com/presentation/d/17G3SwkE_tq0H3lTt9N0ysIbHhqDZBfHkoWD5LwwAKSo/edit#slide=id.p",
+        "https://csdiy.wiki/%E7%BC%96%E7%A8%8B%E5%85%A5%E9%97%A8/Rust/CS110L/"
+      ],
+      "searches": [
+        "\"KAIST\" \"CS220\" lecture video"
+      ]
+    },
+    {
+      "path": "programming-introduction/rust/cs431",
+      "title": "CS431: Concurrent Programming",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL5aMzERQ_OZ9j40DJNlsem2qAGoFbfwb4"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-introduction/rust/cs431",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://github.com/kaist-cp/cs431"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-languages-design/CS242",
+      "title": "CS242 Programming Languages",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/CS242",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs242/",
+        "https://stanford-cs242.github.io/f19/"
+      ],
+      "searches": [
+        "\"Stanford\" \"CS242\" lecture videos"
+      ]
+    },
+    {
+      "path": "programming-languages-design/Cambridge-Semantics",
+      "title": "Cambridge: Semantics of Programming Languages",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PL-2hPK7m5S3hVagseKDPxCBZEqg0PqZhs"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/Cambridge-Semantics",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://www.cl.cam.ac.uk/teaching/2324/Semantics/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-languages-design/NJU-SoftwareAnalysis",
+      "title": "NJU 软件分析",
+      "existing": [
+        "https://www.bilibili.com/video/BV1b7411K7P4/?spm_id_from=333.999.0.0&vd_source=b58da8cd0259ee873ef3dc2c9aa36d74"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/NJU-SoftwareAnalysis",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://tai-e.pascal-lab.net/lectures.html"
+      ],
+      "searches": []
+    },
+    {
+      "path": "programming-languages-design/PKU-SoftwareAnalysis",
+      "title": "北京大学 软件分析技术",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/programming-languages-design/PKU-SoftwareAnalysis",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1Rt4y1s7tC/",
+          "title": {
+            "zh": "2020 · 软件分析技术课堂转载",
+            "en": "2020 · Software Analysis lecture mirror"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://xiongyingfei.github.io/SA/2020/main.htm",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "【北京大学公开课】软件分析技术-熊英飞",
+            "uploader": "路人十二",
+            "parts": 22,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://xiongyingfei.github.io/SA_new/2025/",
+        "https://xiongyingfei.github.io/SA/2020/main.htm",
+        "https://xiongyingfei.github.io/"
+      ],
+      "searches": [
+        "\"北京大学\" \"软件分析\" bilibili"
+      ]
+    },
+    {
+      "path": "software-engineering/17803",
+      "title": "CMU 17-803: Empirical Methods",
+      "existing": [
+        "https://www.youtube.com/playlist?list=PLuPUOEODcOmsiOxD7LK5EcQcj34Y9NwYg",
+        "https://www.youtube.com/watch?v=IDtePCle3Qc"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/software-engineering/17803",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://bvasiles.github.io/empirical-methods/",
+        "https://bvasiles.github.io/empirical-methods/fall-2022/",
+        "https://bvasiles.github.io/empirical-methods/spring-2021/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "software-engineering/6031",
+      "title": "MIT 6.031 / 6.1020: Software Construction",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/software-engineering/6031",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://catalog.mit.edu/search/?search=6.1020",
+        "https://web.mit.edu/6.031/www/sp22/",
+        "https://web.mit.edu/6.031/www/sp21/"
+      ],
+      "searches": [
+        "\"MIT\" \"6.031\" lectures youtube"
+      ]
+    },
+    {
+      "path": "software-engineering/CS169",
+      "title": "UCB CS169: software engineering",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/software-engineering/CS169",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjcFZVmvkuc5tW2HtTkqlgP",
+          "title": {
+            "zh": "教材第 1 章 · SaaS、敏捷开发与云计算",
+            "en": "Textbook chapter 1 · Introduction to Software as a Service, Agile Development, and Cloud Computing"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 1 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh7_76PotmzGsZGM8Q1Vthl",
+          "title": {
+            "zh": "教材第 2 章 · 学习新编程语言",
+            "en": "Textbook chapter 2 · How to Learn a New Language"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 2 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxgAcnQh5eHqTfO4Ucs5JORw",
+          "title": {
+            "zh": "教材第 3 章 · SaaS 应用架构",
+            "en": "Textbook chapter 3 · SaaS Application Architecture: Microservices, APIs, and REST"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 3 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjBbeB_aZ4L8Wo91rEds_GD",
+          "title": {
+            "zh": "教材第 4 章 · Rails 与 MVC",
+            "en": "Textbook chapter 4 · SaaS Framework: Rails as a Model–View–Controller Framework"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 4 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxgeKHXxYOkV4JKCbRg5gWpg",
+          "title": {
+            "zh": "教材第 5 章 · SaaS 高级编程抽象",
+            "en": "Textbook chapter 5 · SaaS Framework: Advanced Programming Abstractions for SaaS"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 5 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxghXCpd4twByvWG6RKWcxHN",
+          "title": {
+            "zh": "教材第 6 章 · JavaScript 客户端",
+            "en": "Textbook chapter 6 · Mobile and Desktop SaaS Clients: JavaScript Introduction"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 6 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjbdVAkCU99UumJDWuLvg-l",
+          "title": {
+            "zh": "教材第 7 章 · BDD 与用户故事",
+            "en": "Textbook chapter 7 · Requirements: BDD and User Stories"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 7 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_gCC98WbEfpRt5UBFrjAT",
+          "title": {
+            "zh": "教材第 8 章 · 测试驱动开发",
+            "en": "Textbook chapter 8 · Testing: Test-Driven Development"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 8 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjSeso1JXLqmqXPDB0Ka-L3",
+          "title": {
+            "zh": "教材第 9 章 · 遗留系统与重构",
+            "en": "Textbook chapter 9 · Software Maintenance: Enhancing Legacy Software Using Refactoring and Agile Methods"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 9 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxjO97PniMI2kfRyR4_MnT3t",
+          "title": {
+            "zh": "教材第 10 章 · 敏捷团队",
+            "en": "Textbook chapter 10 · Agile Teams"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 10 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxhmpbjhY8yurexXmuF4Fvai",
+          "title": {
+            "zh": "教材第 11 章 · SaaS 设计模式",
+            "en": "Textbook chapter 11 · Design Patterns for SaaS Apps"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 11 - YouTube"
+          }
+        },
+        {
+          "url": "https://www.youtube.com/playlist?list=PLeMMGxq3FPxh_vJS0_FVhudNMJ2cA95cH",
+          "title": {
+            "zh": "教材第 12 章 · DevOps",
+            "en": "Textbook chapter 12 · Dev/Ops"
+          },
+          "kind": "chapter",
+          "official": true,
+          "source": "https://saasbook.info/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "ESaaS Chapter 12 - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://saasbook.info/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "system-security/Bitcoin-Cryptocurrency",
+      "title": "Princeton: Bitcoin and Cryptocurrency Technologies",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/Bitcoin-Cryptocurrency",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://online.princeton.edu/bitcoin-and-cryptocurrency-technologies"
+      ],
+      "searches": [
+        "Princeton Bitcoin cryptocurrency technologies youtube playlist"
+      ]
+    },
+    {
+      "path": "system-security/CS161",
+      "title": "UCB CS161: Computer Security",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/CS161",
+      "selected": [
+        {
+          "url": "https://www.bilibili.com/video/BV1Zz4y1f7G5/",
+          "title": {
+            "zh": "2020 夏季 · 计算机安全（英文字幕）",
+            "en": "Summer 2020 · Computer Security (English subtitles)"
+          },
+          "kind": "collection",
+          "official": false,
+          "source": "https://su20.cs161.org/",
+          "newToCourse": true,
+          "verification": {
+            "method": "Bilibili public video metadata",
+            "title": "加州大学伯克利分校 CS 161 计算机安全 Computer Security（Summer 2020）",
+            "uploader": "___main___",
+            "parts": 275,
+            "chargingExclusive": false
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://cs161.org/",
+        "https://su20.cs161.org/",
+        "https://su20.cs161.org/lectures/1"
+      ],
+      "searches": [
+        "Berkeley CS161 computer security summer 2020 youtube playlist bilibili"
+      ]
+    },
+    {
+      "path": "system-security/CSE365",
+      "title": "ASU CSE365: Introduction to Cybersecurity",
+      "existing": [
+        "https://youtube.com/pwncollege"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/CSE365",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://pwn.college/cse365-s2026/",
+        "https://pwn.college/cse365-s2025/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "system-security/CSE466",
+      "title": "ASU CSE466: Computer Systems Security",
+      "existing": [
+        "https://youtube.com/pwncollege"
+      ],
+      "status": "existing",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/CSE466",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://dojo.pwn.college/cse466/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "system-security/MIT6.1600",
+      "title": "MIT6.1600: Foundations of Computer Security",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/MIT6.1600",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://61600.csail.mit.edu/",
+        "https://61600.csail.mit.edu/2023/",
+        "https://61600.csail.mit.edu/2022/"
+      ],
+      "searches": [
+        "MIT 6.1600 foundations computer security lectures youtube bilibili"
+      ]
+    },
+    {
+      "path": "system-security/MIT6.858",
+      "title": "MIT 6.858 / 6.5660: Computer System Security",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/MIT6.858",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/watch?v=073D9t3ltEw",
+          "title": {
+            "zh": "2022 · 第 1 讲：计算机系统安全",
+            "en": "2022 · Lecture 1: Computer Systems Security"
+          },
+          "kind": "lecture",
+          "official": true,
+          "source": "https://css.csail.mit.edu/6.858/2022/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "6.858 Spring 2022 Lecture 1: Introduction - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://css.csail.mit.edu/6.858/",
+        "https://css.csail.mit.edu/6.858/2022/"
+      ],
+      "searches": []
+    },
+    {
+      "path": "system-security/SEEDLabs",
+      "title": "SEEDLabs",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/system-security/SEEDLabs",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://seedsecuritylabs.org/index.html",
+        "https://www.handsonsecurity.net/video.html"
+      ],
+      "searches": [
+        "\"SEED Labs\" official youtube Wenliang Du"
+      ]
+    },
+    {
+      "path": "web-development/CS142",
+      "title": "Stanford CS142: Web Applications",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/web-development/CS142",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://web.stanford.edu/class/cs142/index.html",
+        "https://web.stanford.edu/class/cs142/lectures.html"
+      ],
+      "searches": [
+        "Stanford CS142 web applications lectures bilibili youtube"
+      ]
+    },
+    {
+      "path": "web-development/CS571",
+      "title": "CS571 Building UI (React & React Native)",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/web-development/CS571",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://cs571.org"
+      ],
+      "searches": [
+        "CS571 Cole Nelson lectures youtube React"
+      ]
+    },
+    {
+      "path": "web-development/fullstackopen",
+      "title": "University of Helsinki: Full Stack open",
+      "existing": [],
+      "status": "updated",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/web-development/fullstackopen",
+      "selected": [
+        {
+          "url": "https://www.youtube.com/playlist?list=PLumQiZ25uijis31zaRL7rhzLalSwLqUtm",
+          "title": {
+            "zh": "Full Stack MOOC · 芬兰语嘉宾讲座（补充资源）",
+            "en": "Full Stack MOOC · Guest lectures in Finnish (supplemental)"
+          },
+          "kind": "supplemental",
+          "official": true,
+          "source": "https://fullstackopen.com/zh/",
+          "newToCourse": true,
+          "verification": {
+            "method": "YouTube page title and course source",
+            "title": "Full stack MOOC vierailijaluennot - YouTube"
+          }
+        }
+      ],
+      "reviewedCourseSources": [
+        "https://fullstackopen.com/zh/"
+      ],
+      "searches": [
+        "\"Full Stack Open\" Helsinki youtube course"
+      ]
+    },
+    {
+      "path": "web-development/mitweb",
+      "title": "MIT Web Development Crash Course",
+      "existing": [],
+      "status": "unconfirmed",
+      "courseUrl": "https://www.cs61bbeyond.com/zh/course/web-development/mitweb",
+      "selected": [],
+      "reviewedCourseSources": [
+        "https://weblab.is/"
+      ],
+      "searches": [
+        "MIT weblab web development 2025 2026 youtube playlist"
+      ]
+    }
+  ]
+}
