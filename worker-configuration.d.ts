@@ -8,6 +8,7 @@ interface __BaseEnv_CloudflareEnv {
 	NEXTJS_ENV: string;
 	GITHUB_TOKEN: string;
 	GITHUB_PROJECTS_CRON_SECRET: string;
+	COURSE_SYNC_CONFIG_SECRET: string;
 }
 declare namespace Cloudflare {
 	interface GlobalProps {
@@ -20,7 +21,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "NEXTJS_ENV" | "GITHUB_TOKEN" | "GITHUB_PROJECTS_CRON_SECRET">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "NEXTJS_ENV" | "GITHUB_TOKEN" | "GITHUB_PROJECTS_CRON_SECRET" | "COURSE_SYNC_CONFIG_SECRET">> {}
 }
 declare module "*.md" {
 	const value: string;

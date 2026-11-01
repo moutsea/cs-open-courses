@@ -6,7 +6,8 @@ import { usePathname } from 'next/navigation'
 const LINKS = [
   { href: '/admin', label: '概览' },
   { href: '/admin/analytics', label: '流量看板' },
-  { href: '/admin/gaps', label: '内容缺口' }
+  { href: '/admin/gaps', label: '内容缺口' },
+  { href: '/admin/settings', label: '模型渠道' }
 ] as const
 
 export default function AdminNav() {

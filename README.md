@@ -112,17 +112,18 @@ GitHub Actions checks 19 allowlisted GitHub Atom feeds every day. Discovery sour
 
 New feed entries are reviewed through an Anthropic Messages-compatible API. The reviewer returns structured actions, and the sync script applies source allowlists, confidence thresholds, duplicate detection, evidence URL checks, and Markdown validation before changing bilingual course content. A failed site build prevents generated changes from being committed.
 
-The AI credentials, gateway, and model are runtime configuration rather than secrets embedded in the source code:
+The AI credentials, gateway, and model are runtime configuration rather than secrets embedded in the source code. Administrators can change all three under `/admin/settings`; the workflow reads the latest D1-backed configuration before every run, so channel changes do not require a deployment.
 
 | Variable | Required | Default | Purpose |
 | --- | --- | --- | --- |
-| `COURSE_AI_API_KEY` | When a new entry needs review | None | API credential; stored as a GitHub Actions secret in production |
-| `COURSE_AI_BASE_URL` | No | `https://cfjwlpro.com/` | Anthropic Messages-compatible gateway exposing `POST /v1/messages` |
-| `COURSE_AI_MODEL` | No | `claude-opus-5` | Model name sent to the configured gateway |
+| `COURSE_AI_API_KEY` | When a new entry needs review | None | Fallback API credential; stored as a GitHub Actions secret |
+| `COURSE_AI_BASE_URL` | No | `https://cfjwlpro.com/` | Fallback Anthropic Messages-compatible gateway exposing `POST /v1/messages` |
+| `COURSE_AI_MODEL` | No | `claude-opus-5` | Fallback model name sent to the configured gateway |
+| `COURSE_SYNC_CONFIG_SECRET` | For Admin-managed configuration | None | Shared secret that lets GitHub Actions read `/api/course-ai/config`; set the same value in Cloudflare and GitHub Actions |
 
-The scheduled workflow currently sets the default gateway and model in `.github/workflows/auto-update-courses.yml`; the script also provides the same fallbacks for local runs. Changing to another Anthropic Messages-compatible gateway or model only requires updating these environment variables. The transport protocol, review prompt, and structured action schema are intentionally enforced in `scripts/sync-course-feeds.mjs`; using a non-Anthropic API protocol requires a code adapter.
+The Admin API key is write-only in the browser: leaving the field blank preserves the stored key. If the dynamic configuration endpoint is unavailable or no override has been saved, the workflow keeps using the GitHub Actions fallbacks above. Apply migration `0008_course_ai_channel.sql` before enabling this feature. The transport protocol, review prompt, and structured action schema remain enforced in `scripts/sync-course-feeds.mjs`; using a non-Anthropic API protocol requires a code adapter.
 
-Add `COURSE_AI_API_KEY` under **Settings → Secrets and variables → Actions**. Course sources and safety policies live in `automation/course-feeds.json`. A newly added source records its current feed position as a baseline on the first run instead of replaying its history.
+Add the fallback `COURSE_AI_API_KEY` under **Settings → Secrets and variables → Actions**. Course sources and safety policies live in `automation/course-feeds.json`. A newly added source records its current feed position as a baseline on the first run instead of replaying its history.
 
 ```bash
 # Validate feed configuration without applying course changes
@@ -235,17 +236,18 @@ npm run build
 
 新提交会通过 Anthropic Messages 兼容 API 进行结构化审核，并继续经过来源白名单、置信度门槛、重复检测、证据 URL 校验和 Markdown 校验；只有通过全部规则的结果才能新增双语课程或追加机器管理的课程动态。目录型来源可以发现课程，官方单课程仓库只能更新配置中指定的课程，并且每次最多审核一条提交。站点构建失败时不会提交任何更新。
 
-AI 密钥、网关和模型均通过运行时配置注入，不会把密钥写入源码：
+AI 密钥、网关和模型均通过运行时配置注入，不会把密钥写入源码。管理员可在 `/admin/settings` 修改三项配置；工作流每次运行前读取最新的 D1 配置，因此更换渠道不需要重新发布网站。
 
 | 环境变量 | 是否必需 | 默认值 | 作用 |
 | --- | --- | --- | --- |
-| `COURSE_AI_API_KEY` | 有新条目需要审核时必需 | 无 | API 密钥；线上存放在 GitHub Actions Secret 中 |
-| `COURSE_AI_BASE_URL` | 否 | `https://cfjwlpro.com/` | 提供 `POST /v1/messages` 的 Anthropic Messages 兼容网关 |
-| `COURSE_AI_MODEL` | 否 | `claude-opus-5` | 发送给网关的模型名称 |
+| `COURSE_AI_API_KEY` | 有新条目需要审核时必需 | 无 | 回退 API 密钥；存放在 GitHub Actions Secret 中 |
+| `COURSE_AI_BASE_URL` | 否 | `https://cfjwlpro.com/` | 回退 Anthropic Messages 兼容网关，提供 `POST /v1/messages` |
+| `COURSE_AI_MODEL` | 否 | `claude-opus-5` | 发送给网关的回退模型名称 |
+| `COURSE_SYNC_CONFIG_SECRET` | 启用 Admin 动态配置时必需 | 无 | 供 GitHub Actions 读取 `/api/course-ai/config` 的共享密钥，Cloudflare 与 GitHub Actions 必须配置相同值 |
 
-定时工作流目前在 `.github/workflows/auto-update-courses.yml` 中设置默认网关和模型，脚本也为本地运行提供相同的回退值。更换其他 Anthropic Messages 兼容网关或模型只需修改环境变量，无需改动审核逻辑。当前固定在 `scripts/sync-course-feeds.mjs` 中的是 Anthropic Messages 传输协议、审核提示词和结构化动作格式；如果要接入 OpenAI 等不同协议，需要增加协议适配代码。
+Admin 页面不会回显 API Key，留空表示保留当前密钥。动态配置接口不可用或尚未保存覆盖配置时，工作流会继续使用上述 GitHub Actions 回退值。启用前需要执行 `0008_course_ai_channel.sql` 迁移。Anthropic Messages 传输协议、审核提示词和结构化动作格式仍固定在 `scripts/sync-course-feeds.mjs`；如果要接入 OpenAI 等不同协议，需要增加协议适配代码。
 
-在仓库 **Settings → Secrets and variables → Actions** 中添加 `COURSE_AI_API_KEY`。课程源与安全限制位于 `automation/course-feeds.json`。新增来源首次运行时只记录当前 Feed 基线，不处理历史提交。也可以手动运行工作流，并选择影子模式观察 AI 决策而不修改课程文件。
+在仓库 **Settings → Secrets and variables → Actions** 中添加回退用的 `COURSE_AI_API_KEY`。课程源与安全限制位于 `automation/course-feeds.json`。新增来源首次运行时只记录当前 Feed 基线，不处理历史提交。也可以手动运行工作流，并选择影子模式观察 AI 决策而不修改课程文件。
 
 本地检查或运行：
 

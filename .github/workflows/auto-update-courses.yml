@@ -31,6 +31,8 @@ jobs:
       COURSE_AI_BASE_URL: https://cfjwlpro.com/
       COURSE_AI_MODEL: claude-opus-5
       COURSE_AI_API_KEY: ${{ secrets.COURSE_AI_API_KEY }}
+      COURSE_AI_CONFIG_URL: https://www.cs61bbeyond.com/api/course-ai/config
+      COURSE_SYNC_CONFIG_SECRET: ${{ secrets.COURSE_SYNC_CONFIG_SECRET }}
       COURSE_SYNC_MODE: ${{ inputs.shadow_mode && 'shadow' || 'auto' }}
       COURSE_SYNC_REPLAY_LATEST: ${{ inputs.replay_latest && '1' || '0' }}
       COURSE_SYNC_MAX_PER_SOURCE: '3'
@@ -47,6 +49,9 @@ jobs:
         with:
           node-version: 20
           cache: npm
+
+      - name: Load course AI configuration
+        run: node scripts/load-course-ai-config.mjs
 
       - name: Install dependencies
         run: npm ci
