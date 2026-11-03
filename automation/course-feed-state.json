@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-10-27T07:47:36.770Z",
+      "lastProcessedAt": "2026-11-03T09:29:41.941Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8a14d45b5eec619f684c802936f5be7c7ae4303d",
+        "tag:github.com,2008:Grit::Commit/44227b24edea03f2f9c4dda37f4c64f01781c60d",
         "tag:github.com,2008:Grit::Commit/5e4036ef254e71be2ef3f8a1e843753c0424c02d",
         "tag:github.com,2008:Grit::Commit/b8718a72fba4974d5461a60a29718265ac0c61a4",
         "tag:github.com,2008:Grit::Commit/20b45c3e9f89eb855aca5c0d61a9d40f07fc5a19",
@@ -510,13 +512,14 @@
     },
     "nand2tetris-projects": {
       "initializedAt": "2026-07-29T05:31:16.241Z",
-      "lastProcessedAt": "2026-10-30T08:34:55.085Z",
+      "lastProcessedAt": "2026-11-03T09:29:49.734Z",
       "seenEntryIds": [
         "tag:github.com,2008:Grit::Commit/5bd2184edfd4945ff8a28eb0b237c12cdbe9e498",
         "tag:github.com,2008:Grit::Commit/8abe852c8a2f3e5c0d22a93ad3dc1ac6736ef789",
         "tag:github.com,2008:Grit::Commit/83cccbfb7de33e5a6a5ea3083ab18c4e6e77dbdb",
         "tag:github.com,2008:Grit::Commit/7852eccafc2eedfde94fd8d6da6be218c31f8fa3",
         "tag:github.com,2008:Grit::Commit/2780e3c8d13cf071a64c8c302d744c48c2bc5f16",
+        "tag:github.com,2008:Grit::Commit/3c1cd4f1bb219504d55989137952230faf538a28",
         "tag:github.com,2008:Grit::Commit/6097b770073025891fb8b7a22aa3b72f61f81277",
         "tag:github.com,2008:Grit::Commit/527332cfa14408b39859deb54a677bb69234f58c",
         "tag:github.com,2008:Grit::Commit/f358c71da0a6192450b6d108dfaabfb8f0ce016a",
@@ -628,6 +631,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-03T09:29:49.734Z",
+      "sourceId": "nand2tetris-projects",
+      "entryId": "tag:github.com,2008:Grit::Commit/3c1cd4f1bb219504d55989137952230faf538a28",
+      "entryUrl": "https://github.com/nand2tetris/projects/commit/3c1cd4f1bb219504d55989137952230faf538a28",
+      "entryTitle": "Use a semicolon after tock in Memory.tst keyboard loops (#12)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.94,
+      "reason": "This is a minor repository-level fix to a Nand2Tetris test script (Memory.tst keyboard loop changed from comma to semicolon so the script runner steps per tick). It does not alter the course's structure, syllabus, prerequisites, or any of the indexed metadata for computer-architecture/N2T, and the e",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-03T09:29:41.941Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/8a14d45b5eec619f684c802936f5be7c7ae4303d",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/8a14d45b5eec619f684c802936f5be7c7ae4303d",
+      "entryTitle": "Add Marburg CS 650 (#538)",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.86,
+      "reason": "AI confidence 0.86 is below 0.95",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-03T09:29:30.787Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/44227b24edea03f2f9c4dda37f4c64f01781c60d",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/44227b24edea03f2f9c4dda37f4c64f01781c60d",
+      "entryTitle": "Update CS50 link to the current CS50x course page (#537)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.62,
+      "reason": "The commit only refreshes the CS50 hyperlink in the source README (from online-learning.harvard.edu to https://cs50.harvard.edu/x/). Although the existing course programming-introduction/c/CS50 (\"CS50: This is CS50x\") covers the same course, sourcePolicy.allowedTargetPaths is empty, so no update tar",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-10-30T08:34:55.085Z",
       "sourceId": "nand2tetris-projects",
@@ -1790,42 +1829,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "The commit adds a single README line listing EML 4930/5930 (FSU) with only a YouTube playlist link. No official or primary course page, prerequisites, class hours, programming languages, or difficulty are supplied, so a create action would require inventing course facts. Update is not possible becau",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-30T08:17:37.793Z",
-      "sourceId": "seed-labs",
-      "entryId": "tag:github.com,2008:Grit::Commit/27f22751b478afe017e4524fd21f244e58c39297",
-      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/27f22751b478afe017e4524fd21f244e58c39297",
-      "entryTitle": "docs: use Firefox Network tool in XSS lab",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Upstream commit is a minor documentation wording change (using the Firefox Network tool in the XSS lab) with no file list or diff supplied. No new lab, resource URL, or course-level fact is evidenced, so there is nothing verifiable to add to system-security/SEEDLabs.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-30T08:17:31.641Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/76821fcc789885b54a05996ecf3f6d624c50cb3c",
-      "entryTitle": "return -1 on pipewrite with invalid addr",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Upstream xv6-riscv commit is a small kernel bug fix (pipewrite returning -1 on an invalid address) with no file list and no evidence of changed course materials, labs, syllabus, or resources for operating-systems/MIT6.S081. Nothing here supports an evidence-backed course update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-30T08:17:25.913Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/34e277e5967a7cd156a43494da1f48c638d005bf",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/34e277e5967a7cd156a43494da1f48c638d005bf",
-      "entryTitle": "Add language prop to InfoBanner component for improved accessibility",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Commit only adds a language prop to the site's InfoBanner component, an accessibility tweak to the course website UI. No file list is supplied and there is no evidence of changed course content, structure, resources, or metadata for web-development/fullstackopen, so no update is warranted.",
       "changedFiles": []
     }
   ]
