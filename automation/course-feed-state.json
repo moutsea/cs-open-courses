@@ -36,8 +36,10 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-03T09:29:41.941Z",
+      "lastProcessedAt": "2026-11-05T09:31:41.508Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/099a3f7ffb51011d1138a12944a1ddde4a107066",
+        "tag:github.com,2008:Grit::Commit/4aaa8adb41954170e09f6aef9b49763ef0c92414",
         "tag:github.com,2008:Grit::Commit/8a14d45b5eec619f684c802936f5be7c7ae4303d",
         "tag:github.com,2008:Grit::Commit/44227b24edea03f2f9c4dda37f4c64f01781c60d",
         "tag:github.com,2008:Grit::Commit/5e4036ef254e71be2ef3f8a1e843753c0424c02d",
@@ -264,8 +266,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-10-27T07:47:43.410Z",
+      "lastProcessedAt": "2026-11-05T09:31:48.710Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/3cffe45b84308847bdd61d563a69a2ec04dc8ad3",
         "tag:github.com,2008:Grit::Commit/e93dabeb98431235c6e1a101cb96c73c923fdbc4",
         "tag:github.com,2008:Grit::Commit/f780d7850765d74cbdcd1fff4b822d8829f7c9bd",
         "tag:github.com,2008:Grit::Commit/4ded343d5d9d40d4e9dcf4867ca45b14170bf364",
@@ -631,6 +634,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-05T09:31:48.710Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/3cffe45b84308847bdd61d563a69a2ec04dc8ad3",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/3cffe45b84308847bdd61d563a69a2ec04dc8ad3",
+      "entryTitle": "vuln-fix: fix 4-byte padding leak in filestat",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "This is an upstream xv6-riscv kernel bug-fix commit (padding initialization in stati/filestat), not a change to the MIT 6.S081 course content, materials, schedule, or metadata. The only allowed target is operating-systems/MIT6.S081, and the evidence provides no course-level information warranting a",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-05T09:31:41.508Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/099a3f7ffb51011d1138a12944a1ddde4a107066",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/099a3f7ffb51011d1138a12944a1ddde4a107066",
+      "entryTitle": "Add UCLouvain LINMA2491 (#540)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Newly discovered UCLouvain LINMA2491 Stochastic Optimization course does not fit any allowed category cleanly; evidence provides only a title and YouTube playlist link, lacking official course page, prerequisites, programming languages, hours, or difficulty needed for a create action.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-05T09:31:33.995Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/4aaa8adb41954170e09f6aef9b49763ef0c92414",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/4aaa8adb41954170e09f6aef9b49763ef0c92414",
+      "entryTitle": "Add Marburg COMP 526 (#541)",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.82,
+      "reason": "AI confidence 0.82 is below 0.95",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-03T09:29:49.734Z",
       "sourceId": "nand2tetris-projects",
@@ -1793,42 +1832,6 @@
       "type": "reject",
       "confidence": 0.85,
       "reason": "AI confidence 0.85 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-31T08:38:10.314Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/4f2fc8b7bd47d737b1d9ac9e68e407fc7cdd1cad",
-      "entryTitle": "vmfault: avoid conflating pagetable and myproc()->pagetable",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "Upstream xv6-riscv commit is an internal kernel refactor (avoiding conflation of pagetable and myproc()->pagetable) with an empty file list and no course-facing information. It provides no new resource URL, syllabus, or lab change that would justify updating operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-31T08:37:53.747Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/a83c80e33a44939b66bcf23c171f5aac7566b681",
-      "entryTitle": "Enhance accessibility of InfoBanner component by adding ARIA roles an…",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "The commit only adds ARIA roles and labels to the site's InfoBanner UI component on the Full Stack open website. It carries no course content change (no new parts, exercises, prerequisites, or resource URLs), and the evidence includes no changed files, so there is nothing verifiable to record for we",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-08-31T08:37:18.363Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/3964fc44f5b6aeccc6f1de6a8b532ab13944d8f7",
-      "entryTitle": "Add EML 4930/5930 (FA25) (#512)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit adds a single README line listing EML 4930/5930 (FSU) with only a YouTube playlist link. No official or primary course page, prerequisites, class hours, programming languages, or difficulty are supplied, so a create action would require inventing course facts. Update is not possible becau",
       "changedFiles": []
     }
   ]
