@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-05T09:31:41.508Z",
+      "lastProcessedAt": "2026-11-09T09:44:54.518Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/49a3dbca7d7398723efa87b56e36dae5b823b253",
         "tag:github.com,2008:Grit::Commit/099a3f7ffb51011d1138a12944a1ddde4a107066",
         "tag:github.com,2008:Grit::Commit/4aaa8adb41954170e09f6aef9b49763ef0c92414",
         "tag:github.com,2008:Grit::Commit/8a14d45b5eec619f684c802936f5be7c7ae4303d",
@@ -91,8 +92,11 @@
     },
     "ossu-computer-science": {
       "initializedAt": "2026-07-15T02:23:31.267Z",
-      "lastProcessedAt": "2026-07-15T02:45:38.194Z",
+      "lastProcessedAt": "2026-11-09T09:45:07.973Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8f8272b1d378d31494240aa1d667aa6b045c6552",
+        "tag:github.com,2008:Grit::Commit/8cd82d3fcc28ab4c76385191addaf3467861c288",
+        "tag:github.com,2008:Grit::Commit/e5c126d1201c9c9deb520ddf63e89fe5ffdb257f",
         "tag:github.com,2008:Grit::Commit/33d44a44e3526ede8e862bf1ad50ae5ae7a2f112",
         "tag:github.com,2008:Grit::Commit/a9c3258d478640faa31c6b187096edeede347eaa",
         "tag:github.com,2008:Grit::Commit/acf1cc774628d90f18276571b2fa5c9e66ac2523",
@@ -241,7 +245,9 @@
     },
     "harvard-cs50-lectures": {
       "initializedAt": "2026-07-29T05:31:14.948Z",
+      "lastProcessedAt": "2026-11-09T09:45:17.085Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/0561b5c78882c11efd024c199ec66697feb3c116",
         "tag:github.com,2008:Grit::Commit/c218da65901ad9dad0d4813c487794cc41fa0372",
         "tag:github.com,2008:Grit::Commit/db4b671a064cf1349e11fb6d627534f037e5c907",
         "tag:github.com,2008:Grit::Commit/fcf0c858da7377a6e38d0a6bd0159d20d2b1cd4b",
@@ -266,8 +272,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-11-07T08:44:19.468Z",
+      "lastProcessedAt": "2026-11-09T09:45:22.181Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
         "tag:github.com,2008:Grit::Commit/6605c5d1170040075e6e595d0afc1fb3ff5feb53",
         "tag:github.com,2008:Grit::Commit/df7cfdfb4e6b6ff84f1e691d9bbb75429e477ac0",
         "tag:github.com,2008:Grit::Commit/3cffe45b84308847bdd61d563a69a2ec04dc8ad3",
@@ -636,6 +643,78 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-09T09:45:22.181Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
+      "entryTitle": "trampoline: remove unused usertrap global declaration",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "This is an upstream code-commit event to xv6-riscv (trampoline cleanup removing an unused usertrap declaration), not a course-content update. It does not change any course facts, prerequisites, hours, or resources for MIT 6.S081, and the feed text carries no course-level evidence warranting an updat",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-09T09:45:17.085Z",
+      "sourceId": "harvard-cs50-lectures",
+      "entryId": "tag:github.com,2008:Grit::Commit/0561b5c78882c11efd024c199ec66697feb3c116",
+      "entryUrl": "https://github.com/cs50/lectures/commit/0561b5c78882c11efd024c199ec66697feb3c116",
+      "entryTitle": "src9",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.97,
+      "reason": "The commit only adds a small README listing directory names under 'src9' in the cs50/lectures repository. It contains no course-description, schedule, prerequisite, or resource details that would justify updating programming-introduction/c/CS50, and the allowed actions exclude creating new courses.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-09T09:45:07.973Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/8f8272b1d378d31494240aa1d667aa6b045c6552",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/8f8272b1d378d31494240aa1d667aa6b045c6552",
+      "entryTitle": "Reflect that CS2023 has been published",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Commit only updates curriculum-guideline prose in OSSU's CURRICULAR_GUIDELINES.md (CS2023 publication note); no individual course is added, changed, or removed, and the supplied existing-course index contains no matching target path.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-09T09:45:03.983Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/8cd82d3fcc28ab4c76385191addaf3467861c288",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/8cd82d3fcc28ab4c76385191addaf3467861c288",
+      "entryTitle": "Fix 2005 mathematics solutions link",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.97,
+      "reason": "This commit only fixes a broken 2005 solutions link for MIT 6.042J in an external curriculum README. It adds no new course, institution, language, prerequisite, or scheduling fact, and the existing-course index is not provided, so no update or create operation is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-09T09:44:59.192Z",
+      "sourceId": "ossu-computer-science",
+      "entryId": "tag:github.com,2008:Grit::Commit/e5c126d1201c9c9deb520ddf63e89fe5ffdb257f",
+      "entryUrl": "https://github.com/ossu/computer-science/commit/e5c126d1201c9c9deb520ddf63e89fe5ffdb257f",
+      "entryTitle": "Fix three dead links (Calculus 1B, Category Theory notes, OSTEP rever…",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "This commit only repairs three dead links in OSSU (Calculus 1B prerequisite, a category-theory reading, and an OSTEP project link). None of the allowed target paths match the affected courses, and there is no new freely accessible university-level CS course with an official course URL to create, so",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-09T09:44:54.518Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/49a3dbca7d7398723efa87b56e36dae5b823b253",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/49a3dbca7d7398723efa87b56e36dae5b823b253",
+      "entryTitle": "Add Stanford AA 274A (AU19) (#542)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit adds Stanford AA 274A (Principles of Robotic Autonomy), a robotics course that does not fit any allowed category; no existing targetPath applies and no eligible category exists for creation.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-07T08:44:19.467Z",
       "sourceId": "mit-xv6-riscv",
@@ -1762,78 +1841,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit only adjusts test-xv6.py to retry a flaky log crash test; the file list in the evidence is empty and nothing indicates a change to course content, resources, or structure for operating-systems/MIT6.S081. No evidence supports an update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-05T06:55:42.637Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/8274a8ad5135ffc6ac99a2564b7e0b278c40794c",
-      "entryTitle": "changes",
-      "mode": "auto",
-      "type": "reject",
-      "confidence": 0.72,
-      "reason": "AI confidence 0.72 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-04T07:13:32.469Z",
-      "sourceId": "mit-missing-semester",
-      "entryId": "tag:github.com,2008:Grit::Commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
-      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/04b8eed7164b2afbd6ac37ed0a749bf2987a722d",
-      "entryTitle": "Add a missing word and fixed the markdown syntax",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Commit only completes a truncated sentence and reformats a WebDriver line as a bullet in an archived _2019/web.md lecture page. No change to course structure, resources, or facts, so no update to programming-introduction/MIT-Missing-Semester is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-04T07:13:27.860Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/86c845107a2fad02304f04dd24b525e51491b701",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/86c845107a2fad02304f04dd24b525e51491b701",
-      "entryTitle": "Update link in InfoBanner component",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Feed entry is a minor site-maintenance commit ('Update link in InfoBanner component') with an empty file list and no patch content. There is no evidence of any change to course material, schedule, prerequisites, or resources for web-development/fullstackopen, and no new URL appears verbatim in the e",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-03T07:09:35.501Z",
-      "sourceId": "mit-missing-semester",
-      "entryId": "tag:github.com,2008:Grit::Commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
-      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/5a52b36493fbb7d3c1b35cb6dd91119a44e7fd98",
-      "entryTitle": "Merge branch 'Matte-Olivs/fix/markdown-syntax'",
-      "mode": "auto",
-      "type": "reject",
-      "confidence": 0.95,
-      "reason": "AI confidence 0.95 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-03T07:09:27.191Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/0711aef8a451c4458263e5587ccda85f08fd7a96",
-      "entryTitle": "linkit",
-      "mode": "auto",
-      "type": "reject",
-      "confidence": 0.9,
-      "reason": "AI confidence 0.9 is below 0.99",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-01T07:48:52.120Z",
-      "sourceId": "cmu-bustub",
-      "entryId": "tag:github.com,2008:Grit::Commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
-      "entryUrl": "https://github.com/cmu-db/bustub/commit/c0a5431985287e258a6f25f53d822f0d0d2e63e8",
-      "entryTitle": "P1 Memory Checking Utilities (#892)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Commit adds internal project design document template (docs/p1-design.md) for Project 1 submission. This is a project infrastructure update for students working on assignments, not a course catalog change. No new educational resources, course structure changes, or student-facing course information p",
       "changedFiles": []
     }
   ]
