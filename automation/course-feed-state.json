@@ -272,8 +272,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-11-09T09:45:22.181Z",
+      "lastProcessedAt": "2026-11-10T09:45:27.769Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/7b154087b7128ddc98b3adc34b404b1584c32c37",
         "tag:github.com,2008:Grit::Commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
         "tag:github.com,2008:Grit::Commit/6605c5d1170040075e6e595d0afc1fb3ff5feb53",
         "tag:github.com,2008:Grit::Commit/df7cfdfb4e6b6ff84f1e691d9bbb75429e477ac0",
@@ -407,8 +408,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-10-26T07:45:25.606Z",
+      "lastProcessedAt": "2026-11-10T09:45:33.648Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8861b69e25cc055f65383d4e2a10fd203c6e990a",
         "tag:github.com,2008:Grit::Commit/e42a66f171093c138464b8302f5c3677a08e2ce4",
         "tag:github.com,2008:Grit::Commit/aa1171c0b6ab5af2a5963b7dff557071252b9c2e",
         "tag:github.com,2008:Grit::Commit/256acd251b142a6f75cd5743b7af34d2767c0df8",
@@ -643,6 +645,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-10T09:45:33.648Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/8861b69e25cc055f65383d4e2a10fd203c6e990a",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/8861b69e25cc055f65383d4e2a10fd203c6e990a",
+      "entryTitle": "Add design doc to p4 (#902)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.92,
+      "reason": "The evidence is a single BusTub repository commit adding a Project 4 design-document template (docs/p4-design.md). It introduces no new course-level facts, syllabus changes, or verifiable course resources beyond the commit itself, so updating database-systems/15445 is not justified. Per source polic",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-10T09:45:27.768Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/7b154087b7128ddc98b3adc34b404b1584c32c37",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/7b154087b7128ddc98b3adc34b404b1584c32c37",
+      "entryTitle": "fix(usertests): detect sbrk failure in lazy_sbrk",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "This upstream xv6-riscv commit only fixes an sbrk error check inside usertests.c; it does not change MIT 6.S081 course information (title, staff, prerequisites, schedule, language, hours, or resources) and provides no evidence for editing the existing operating-systems/MIT6.S081 entry.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-09T09:45:22.181Z",
       "sourceId": "mit-xv6-riscv",
@@ -1817,30 +1843,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Upstream xv6-riscv commit only forces line-buffering on stdout in a test harness script. No file diffs supplied and no change to course content, materials, structure, or resource URLs for operating-systems/MIT6.S081, so there is nothing evidence-backed to update.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-06T07:06:33.948Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/c3a07151a72c849d10452fbfc5fba6348ce8093d",
-      "entryTitle": "Merge pull request #4287 from toivoantero/patch-2",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "The commit only fixes Finnish typos and rewords one sentence in part 5c of the course material. No change to course structure, content coverage, resources, prerequisites, or scheduling, so nothing in the existing web-development/fullstackopen entry needs updating.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-05T06:55:47.525Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/9e3161a9abf5f51ea402562d1874caf6c4926597",
-      "entryTitle": "test-xv6.py: retry the log crash test often enough to be reliable",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit only adjusts test-xv6.py to retry a flaky log crash test; the file list in the evidence is empty and nothing indicates a change to course content, resources, or structure for operating-systems/MIT6.S081. No evidence supports an update.",
       "changedFiles": []
     }
   ]
