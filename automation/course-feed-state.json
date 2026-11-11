@@ -36,8 +36,11 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-09T09:44:54.518Z",
+      "lastProcessedAt": "2026-11-11T09:20:54.930Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/1dc697b8fd352b912895c1b14d2450e564cc5976",
+        "tag:github.com,2008:Grit::Commit/1da4c4735f959f8bcd1e95f2437b61e6f55a31fa",
+        "tag:github.com,2008:Grit::Commit/1704ae62a9c67b43e81333be9e56e1757cc56f24",
         "tag:github.com,2008:Grit::Commit/49a3dbca7d7398723efa87b56e36dae5b823b253",
         "tag:github.com,2008:Grit::Commit/099a3f7ffb51011d1138a12944a1ddde4a107066",
         "tag:github.com,2008:Grit::Commit/4aaa8adb41954170e09f6aef9b49763ef0c92414",
@@ -272,8 +275,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-11-10T09:45:27.769Z",
+      "lastProcessedAt": "2026-11-11T09:21:38.145Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/ffe25cbdc831aaad2aca3afa5405075b0d4c3169",
         "tag:github.com,2008:Grit::Commit/7b154087b7128ddc98b3adc34b404b1584c32c37",
         "tag:github.com,2008:Grit::Commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
         "tag:github.com,2008:Grit::Commit/6605c5d1170040075e6e595d0afc1fb3ff5feb53",
@@ -442,8 +446,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-08-30T08:17:37.793Z",
+      "lastProcessedAt": "2026-11-11T09:22:03.715Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/518582f79ac63a141ee4af6df29390b1be934b6c",
         "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
         "tag:github.com,2008:Grit::Commit/9b3b89cd3df771fc0d958c7dd6c4d5b3d76cdcd4",
         "tag:github.com,2008:Grit::Commit/3836e85123c2698b7b4b9b3505c457b10f00a0ed",
@@ -645,6 +650,66 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-11T09:22:03.715Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/518582f79ac63a141ee4af6df29390b1be934b6c",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/518582f79ac63a141ee4af6df29390b1be934b6c",
+      "entryTitle": "Move Arm Labsetup to upper directory",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit only moves a Labsetup README file within the SEED Labs repository; it provides no substantive change to the course index entry (title, description, or resource links), so no update is warranted.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-11T09:21:38.145Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/ffe25cbdc831aaad2aca3afa5405075b0d4c3169",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ffe25cbdc831aaad2aca3afa5405075b0d4c3169",
+      "entryTitle": "pipe: avoid blocking on zero-length reads",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Evidence is a single upstream xv6-riscv commit ('pipe: avoid blocking on zero-length reads') with no file list, no course metadata, and no resources. It does not support any change to the existing course entry operating-systems/MIT6.S081.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-11T09:20:54.930Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/1dc697b8fd352b912895c1b14d2450e564cc5976",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/1dc697b8fd352b912895c1b14d2450e564cc5976",
+      "entryTitle": "Add HKUST COMP 3711H (SP24) (#545)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The feed only adds a YouTube playlist link for HKUST COMP 3711H; no existing target path matches, and the evidence lacks an official course page plus required metadata to create a reliable course entry.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-11T09:20:43.368Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/1da4c4735f959f8bcd1e95f2437b61e6f55a31fa",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/1da4c4735f959f8bcd1e95f2437b61e6f55a31fa",
+      "entryTitle": "Add Oxford Algorithms and Data Structures (#544)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Only a YouTube playlist URL is provided for Oxford Algorithms and Data Structures; no official/primary course URL or sufficient course details are available to support a create action, and no allowed existing target path matches an update.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-11T09:20:38.012Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/1704ae62a9c67b43e81333be9e56e1757cc56f24",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/1704ae62a9c67b43e81333be9e56e1757cc56f24",
+      "entryTitle": "Add Marburg COMP 526 Applied Algorithmics (SP22) (#543)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.88,
+      "reason": "The commit only adds a YouTube playlist link for Marburg COMP 526 Applied Algorithmics (Spring 2022). sourcePolicy.allowedTargetPaths is empty, so no update is permitted, and the existing course index has no matching path. A create is not justified: the evidence supplies only a video playlist URL an",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-10T09:45:33.648Z",
       "sourceId": "cmu-bustub",
@@ -1783,66 +1848,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit only loosens timeouts in the test-xv6.py harness for orphan tests. No file diffs were supplied, and nothing indicates a change to MIT 6.S081 course content, labs, prerequisites, or resource URLs, so no update to operating-systems/MIT6.S081 is evidence-backed.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-07T07:18:42.919Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/d1ef6f9616b5571095cf9b4b1a300e7abc2f93a7",
-      "entryTitle": "Merge pull request #4288 from Vaahtopahvi/express_links",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit only repoints broken Express.js documentation links from 4.x to 5.x URLs across the Part 3a material in six language versions. It changes no course structure, content, prerequisites, or externally listed resources, so there is nothing evidence-backed to record for web-development/fullstac",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-07T07:18:36.041Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/d0ef152ff0bd5393562c864f4e13c07ed5f121e5",
-      "entryTitle": "Add MGTA 415 (WI25) (#515)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit only adds one README link for 'MGTA 415 - Analyzing Unstructured Data - UCSD' under a data mining list. The evidence contains no prerequisites, programming languages, class hours, difficulty, or description, so a create action would require inventing course facts. sourcePolicy.allowedTarg",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-07T07:18:30.737Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/81cf0d0177deb76289607a7830093a7da0073c4a",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/81cf0d0177deb76289607a7830093a7da0073c4a",
-      "entryTitle": "Add MIT 6.S985 (SP26) (#517)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "Evidence is a single README line adding a YouTube playlist for MIT 6.S985 (Multimodal AI). No official course page URL, offering details, prerequisites, class hours, difficulty, or programming languages appear in the evidence, and allowedTargetPaths is empty so no update target exists. Insufficient",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-07T07:18:25.182Z",
-      "sourceId": "cs-self-learning",
-      "entryId": "tag:github.com,2008:Grit::Commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
-      "entryUrl": "https://github.com/PKUFlyingPig/cs-self-learning/commit/bfdfc1348944298cf19a24e66ceba81d1ba2ee0f",
-      "entryTitle": "[ROADMAP] Add stanford cs236 (#904)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.91,
-      "reason": "The commit only appends a recommendation blurb for Stanford CS236 to the deep-generative-models roadmap files. An update to 'deep-generative-models/roadmap' is not permitted because sourcePolicy.allowedTargetPaths is empty. A create action is also unsupported: the evidence supplies only the course t",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-06T07:06:38.397Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/2e6b4c1bd96e781993a22c9a1718258d617e7612",
-      "entryTitle": "test-xv6.py: force line-buffering on stdout",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Upstream xv6-riscv commit only forces line-buffering on stdout in a test harness script. No file diffs supplied and no change to course content, materials, structure, or resource URLs for operating-systems/MIT6.S081, so there is nothing evidence-backed to update.",
       "changedFiles": []
     }
   ]
