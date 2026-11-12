@@ -275,8 +275,9 @@
     },
     "mit-xv6-riscv": {
       "initializedAt": "2026-07-29T05:31:15.091Z",
-      "lastProcessedAt": "2026-11-11T09:21:38.145Z",
+      "lastProcessedAt": "2026-11-12T09:46:05.338Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/fa2ddcb7ca87a77af579380a6eafd5aff163b44f",
         "tag:github.com,2008:Grit::Commit/ffe25cbdc831aaad2aca3afa5405075b0d4c3169",
         "tag:github.com,2008:Grit::Commit/7b154087b7128ddc98b3adc34b404b1584c32c37",
         "tag:github.com,2008:Grit::Commit/46d609c87826acaf81ba52dac01ebf03ecadfc32",
@@ -446,8 +447,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-11-11T09:22:03.715Z",
+      "lastProcessedAt": "2026-11-12T09:46:09.721Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/d46e36016afd39309d473304b525ea099edb7ffc",
         "tag:github.com,2008:Grit::Commit/518582f79ac63a141ee4af6df29390b1be934b6c",
         "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
         "tag:github.com,2008:Grit::Commit/9b3b89cd3df771fc0d958c7dd6c4d5b3d76cdcd4",
@@ -650,6 +652,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-12T09:46:09.721Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/d46e36016afd39309d473304b525ea099edb7ffc",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/d46e36016afd39309d473304b525ea099edb7ffc",
+      "entryTitle": "Restore unavailable links",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.97,
+      "reason": "The upstream commit only carries the message \"Restore unavailable links\"; the evidence exposes no changed files, no course content, no resource URLs, and no verifiable description of what links were restored. Without concrete evidence, no update to system-security/SEEDLabs (or any other path) can be",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-12T09:46:05.338Z",
+      "sourceId": "mit-xv6-riscv",
+      "entryId": "tag:github.com,2008:Grit::Commit/fa2ddcb7ca87a77af579380a6eafd5aff163b44f",
+      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/fa2ddcb7ca87a77af579380a6eafd5aff163b44f",
+      "entryTitle": "usertests: bound the zero-length pipe read regression test",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.93,
+      "reason": "Evidence is a single xv6-riscv repository commit adjusting a user test ('usertests: bound the zero-length pipe read regression test'), with no file details or course-page changes. It does not supply course-level facts (description, prerequisites, hours, resources) for MIT 6.S081, so no update or cre",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-11T09:22:03.715Z",
       "sourceId": "seed-labs",
@@ -1824,30 +1850,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit only adjusts the test-xv6.py harness to read from qemu non-blockingly so timeouts work; the file list is empty and there is no evidence of any change to MIT 6.S081 course content, labs, schedule, or resources. Nothing here supports an update to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-08T07:13:27.765Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/4e0f097a6f3aafacacd6b23e604d207d9367c20b",
-      "entryTitle": "Merge pull request #4289 from Dinokojt7/fix/part3b-cors-backend-clari…",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit is an editorial clarification to part 3b (rewording the reference to the Express backend built in part 3a versus the json-server used in part 2) plus the addition of Railway to a list of third-party free hosting services mentioned by course participants. Nothing changes the course's title",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-07T07:18:48.405Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/ee1b6582ce84bbedcdf30171f31ef3b980ad3000",
-      "entryTitle": "test-xv6.py: more flexible timeouts for orphan tests",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit only loosens timeouts in the test-xv6.py harness for orphan tests. No file diffs were supplied, and nothing indicates a change to MIT 6.S081 course content, labs, prerequisites, or resource URLs, so no update to operating-systems/MIT6.S081 is evidence-backed.",
       "changedFiles": []
     }
   ]
