@@ -413,8 +413,9 @@
     },
     "cmu-bustub": {
       "initializedAt": "2026-07-29T05:31:15.551Z",
-      "lastProcessedAt": "2026-11-10T09:45:33.648Z",
+      "lastProcessedAt": "2026-11-13T09:28:57.470Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/820bcaf90710ec39f463532a10f6c66cd2368491",
         "tag:github.com,2008:Grit::Commit/8861b69e25cc055f65383d4e2a10fd203c6e990a",
         "tag:github.com,2008:Grit::Commit/e42a66f171093c138464b8302f5c3677a08e2ce4",
         "tag:github.com,2008:Grit::Commit/aa1171c0b6ab5af2a5963b7dff557071252b9c2e",
@@ -447,8 +448,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-11-12T09:46:09.721Z",
+      "lastProcessedAt": "2026-11-13T09:29:02.752Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/a63957d1f3e2519c5cce9a9e5cae4901540ff8ed",
         "tag:github.com,2008:Grit::Commit/d46e36016afd39309d473304b525ea099edb7ffc",
         "tag:github.com,2008:Grit::Commit/518582f79ac63a141ee4af6df29390b1be934b6c",
         "tag:github.com,2008:Grit::Commit/8422b931e8e6d9fa71980bdb8a9d525ed231863f",
@@ -652,6 +654,30 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-13T09:29:02.752Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/a63957d1f3e2519c5cce9a9e5cae4901540ff8ed",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/a63957d1f3e2519c5cce9a9e5cae4901540ff8ed",
+      "entryTitle": "Develop labsetup testing framework & shellshock testing",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.88,
+      "reason": "The commit only adds an internal README for a lab-environment acceptance/testing framework (Docker Compose lifecycle, manifests, artifact collection) plus a Shellshock test manifest. It documents repository tooling rather than course content, syllabus, prerequisites, or learning resources, so it pro",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-13T09:28:57.470Z",
+      "sourceId": "cmu-bustub",
+      "entryId": "tag:github.com,2008:Grit::Commit/820bcaf90710ec39f463532a10f6c66cd2368491",
+      "entryUrl": "https://github.com/cmu-db/bustub/commit/820bcaf90710ec39f463532a10f6c66cd2368491",
+      "entryTitle": "Fix typo in window function executor header (#904)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "Feed evidence is a single BusTub upstream commit fixing a typo in a window function executor header. It contains no course-level information (syllabus, schedule, prerequisites, resources, or official course URL) that would justify updating database-systems/15445, and creating a new course is not per",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-12T09:46:09.721Z",
       "sourceId": "seed-labs",
@@ -1826,30 +1852,6 @@
       "type": "ignore",
       "confidence": 0.82,
       "reason": "The commit is a one-line editorial edit in src/content/0/en/part0b.md that swaps a passing mention of Redux for Zustand in the course's introductory overview. It does not change the course's official URL, structure, prerequisites, hours, or resource list, and a single sentence in Part 0 is not suffi",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-08T07:13:41.724Z",
-      "sourceId": "mit-missing-semester",
-      "entryId": "tag:github.com,2008:Grit::Commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
-      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/7baa3e7d6ba20df85d58e37efbceae1f8498e305",
-      "entryTitle": "Merge branch 'ayrmoney/printvsreturn'",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "The commit only tweaks Python example snippets in the shipping-code lecture notes (switching from returning a string to printing it, plus a type annotation). No change to course structure, resources, or facts, so there is nothing evidence-backed to update for programming-introduction/MIT-Missing-Sem",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-08T07:13:34.244Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/03a54dab959aff3dab6bb71c5818ce9af3ac2d8d",
-      "entryTitle": "test-xv6.py: non-blocking read from qemu, so timeout works",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit only adjusts the test-xv6.py harness to read from qemu non-blockingly so timeouts work; the file list is empty and there is no evidence of any change to MIT 6.S081 course content, labs, schedule, or resources. Nothing here supports an update to operating-systems/MIT6.S081.",
       "changedFiles": []
     }
   ]
