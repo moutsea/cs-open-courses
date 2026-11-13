@@ -195,13 +195,22 @@
     "hash": "7c40103563c667374de81ad23be5da999619ead0a591ff2c311c69045812858a",
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
+  "en/deep-generative-models/CMU10423.md": {
+    "hash": "ed0c3ee670ee7777a4a58bd765ad7dfcef35e39452eb5f6cd7d0aaa9a5282567"
+  },
   "en/deep-generative-models/CMU15-779.md": {
     "hash": "cc56d53270052cce305c0e9d48aad50ca1c1c23a21090cbf9904bc59a8d89fc5",
     "lastModified": "2026-07-15T02:49:33.000Z"
   },
+  "en/deep-generative-models/CS294-158.md": {
+    "hash": "d758ac098c8f465709ad6ac8f0de22e9200aa1719dad843c875a1b30bbe063c9"
+  },
   "en/deep-generative-models/MIT6.S184.md": {
     "hash": "f430c777481af639c7f9dc46a9af7443be24975154726ac4cd2e4f6f893eccb1",
     "lastModified": "2025-09-11T23:06:07.000Z"
+  },
+  "en/deep-generative-models/MIT6.S978.md": {
+    "hash": "095fc8d40472609b1e802fce745ae89eed7deb1434426b1825ea2d71eca99187"
   },
   "en/deep-generative-models/large-language-models/CMU11-667.md": {
     "hash": "1c84d3900cd42fa13af6323e91e78d480fcb1f58e3d5ffec6ff8945bb199aaf2",
@@ -215,9 +224,23 @@
     "hash": "daf16f064d5e14537991939c1bd646685113317602158f1360e3d5c3c587cfce",
     "lastModified": "2026-07-28T09:20:55.000Z"
   },
+  "en/deep-generative-models/large-language-models/CS224G.md": {
+    "hash": "ac5e6ac810e41fad93e12376d5f55caffa228168d1468cc504d9371b3c2055e7"
+  },
+  "en/deep-generative-models/large-language-models/CS324.md": {
+    "hash": "6e84cab83b0518adbabe3cfc1596e6f6a81564d1dae37aa7e2999f884b51b5ff"
+  },
+  "en/deep-generative-models/large-language-models/CS336.md": {
+    "hash": "da5d5d35731c2eb8db29891d41d3458454b61acf8a818bad3fc8cb8cc442175b"
+  },
+  "en/deep-generative-models/large-language-models/Full-Stack-Deep-Learning.md": {
+    "hash": "f25ac00e71422031f12d85adc2c10940f2859710788ed795bf8bca1cc7b9b6ca"
+  },
+  "en/deep-generative-models/large-language-models/HuggingFace-LLM-Course.md": {
+    "hash": "e9f45df9cb6fb220f6961a0cac01fcb3251574330af9ea9331b608dc3d7dab46"
+  },
   "en/deep-generative-models/roadmap.md": {
-    "hash": "f4d4f62834fc382e97c3a652d0c2f9f54b839753866e03395fee56295a0509b2",
-    "lastModified": "2026-07-28T09:20:55.000Z"
+    "hash": "2e41d8770254d7adc6d08de9f5e8e1bb101978b835a623d49c4731321c3eeb9c"
   },
   "en/deep-learning/CS224n.md": {
     "hash": "421a45ee2b36708c2c9fa5cc413e848e52bf152cf2847bbd62ad009d85bef0d7",
@@ -246,6 +269,12 @@
   "en/deep-learning/LHY.md": {
     "hash": "e6b63ca757e1707a99ac2d8034b21bb7f9224d23ca1643d63cc8729a91204a12",
     "lastModified": "2026-07-28T09:20:55.000Z"
+  },
+  "en/deep-learning/MIT6.S191.md": {
+    "hash": "1195581d13f55705fe8ddc5e832c26cb4e90150de9e893f0d2a8a630abdb4474"
+  },
+  "en/deep-learning/fastai.md": {
+    "hash": "7df644fc557ab7d252ae2f49f42a0a7b875dfe34726de0c4b45140e98b73fa16"
   },
   "en/electronics-basics/EE16.md": {
     "hash": "d9f3a63623b4554df00340b7ba40b6fbf2734aa911234cc8152348d803279f43",
@@ -723,13 +752,22 @@
     "hash": "0e5082e71c1108bddfe69f9e27e3ee9e86750830e66db56ee3896114e248fd83",
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
+  "zh/deep-generative-models/CMU10423.md": {
+    "hash": "553e0283e0b1c6bb0deff796a2320966d5059032310180f66009cc61e689d177"
+  },
   "zh/deep-generative-models/CMU15-779.md": {
     "hash": "8449fc49d8c124373ffe74928aa0017c99f5651887d61175a0709ce276bff8bd",
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
+  "zh/deep-generative-models/CS294-158.md": {
+    "hash": "50eb2578c2e5af7c0d2ac3ddd2c54a2c9466b511ecd4350a83b0d6b19742218e"
+  },
   "zh/deep-generative-models/MIT6.S184.md": {
     "hash": "7fb3098d720ba15408a14feae5a2fe976184f545b4ff29a8ea5ac2e8fe6a5215",
     "lastModified": "2025-09-11T17:44:04.000Z"
+  },
+  "zh/deep-generative-models/MIT6.S978.md": {
+    "hash": "82bb975d68b20a999f0e8e5bf6bf6d35098dd11d59f6977bc230cf533a667dd0"
   },
   "zh/deep-generative-models/large-language-models/CMU11-667.md": {
     "hash": "7e20f9f963a5cd480cc5ac073d00f6c20bf0895da563197defc3a615d4c38921",
@@ -743,9 +781,23 @@
     "hash": "76259d580c78eed2ae3fddca5005cd1e120ae745a2dfc54828a00910f30f1915",
     "lastModified": "2026-07-28T09:20:55.000Z"
   },
+  "zh/deep-generative-models/large-language-models/CS224G.md": {
+    "hash": "fab21291067d966d4033eb3160990c9472402596ae39d1ed4727192e0d4db2d7"
+  },
+  "zh/deep-generative-models/large-language-models/CS324.md": {
+    "hash": "4cdf95187f03fe70b646533c82433d812f7dd2177c0404f977a0ff3f9bf02468"
+  },
+  "zh/deep-generative-models/large-language-models/CS336.md": {
+    "hash": "5e380cb0390dfb49c6491040fd8d99a56d8631285d790c2aef719cc2fbacbdc0"
+  },
+  "zh/deep-generative-models/large-language-models/Full-Stack-Deep-Learning.md": {
+    "hash": "314280d022aa67eba63c5a114937bf190227782560b607f939f0e7c103c04829"
+  },
+  "zh/deep-generative-models/large-language-models/HuggingFace-LLM-Course.md": {
+    "hash": "49dbe30fae6473a31a207fa342ee0a7857d1b0614859b17cdeb9595aaf2d63e2"
+  },
   "zh/deep-generative-models/roadmap.md": {
-    "hash": "46300d4d1969884741369fa8ba6b5c7aa6aefb97575722e47c0b7d5652fe0db7",
-    "lastModified": "2026-07-28T09:20:55.000Z"
+    "hash": "04f3b6daad4e73f8aa3ffe6c751488de0a6ebb06404e13c768ba4f03c6601d75"
   },
   "zh/deep-learning/CS224n.md": {
     "hash": "878220fd7b7fbf44b3c0f3fe82b71d07fd448556f386512146e8c1323858aa55",
@@ -774,6 +826,12 @@
   "zh/deep-learning/LHY.md": {
     "hash": "01b73024d1ecbb16d685297f3ab7509c1f5a7599812e4c3525b24de15d0279f4",
     "lastModified": "2026-07-28T09:20:55.000Z"
+  },
+  "zh/deep-learning/MIT6.S191.md": {
+    "hash": "94f3a3fa949adb49bdaf109f18e3811152f0542caf55bdc01e031551861c2553"
+  },
+  "zh/deep-learning/fastai.md": {
+    "hash": "c7288ec4c3e3b554ff3a7278f8d1f8c686b964e3ecc3201233d191bbfb0b9389"
   },
   "zh/electronics-basics/EE16.md": {
     "hash": "02a46e34fe02a40a40d4cebfecab41ae6a26352964c73d3f04d61bfcbebba24b",

@@ -8,19 +8,27 @@ Recommended courses for learning:
 
 - [MIT 6.S184: Generative AI with Stochastic Differential Equations](./MIT6.S184.md): An introductory GenAI course offered during MIT's IAP term. It explains the mathematical foundations behind Flow Matching and Diffusion Models from the perspective of differential equations, accompanied by simple hands-on labs to help students grasp the concepts through practice. Ideal for those interested in the underlying mathematical principles.
 
-- [MIT 6.S978: Deep Generative Models](https://mit-6s978.github.io/schedule.html): Taught by MIT’s rising star Prof. Kaiming He, this course covers fundamental theories and cutting-edge papers related to various generative models. The assignments include well-prepared scaffold code. While not overly difficult, they help deepen understanding and provide a quick, comprehensive view of the field.
+- [MIT 6.S978: Deep Generative Models](./MIT6.S978.md): A graduate seminar on the theory and research frontiers of variational, autoregressive, adversarial, and diffusion models, with paper presentations and a final project.
 
-- [UCB CS294-158-SP24: Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp24/home): Taught by reinforcement learning giant Pieter Abbeel. Compared to the MIT course, this one is more comprehensive and includes lecture videos and slides. The homework only provides test code, so students must implement model architecture and training code themselves. Though demanding, it’s ideal for those who want hands-on experience in training models. As is well known, there are many practical tricks in deep learning, and the devil is often in the details. Nothing teaches those details better than training a model yourself.
+- [UCB CS294-158-SP24: Deep Unsupervised Learning](./CS294-158.md): A demanding course on generative models and self-supervised learning. The homework requires students to implement and train models themselves, making it a strong choice for hands-on practice.
 
-- [CMU 10423: Generative AI](https://www.cs.cmu.edu/~mgormley/courses/10423/schedule.html): CMU’s GenAI course focuses more on large language models compared to the previous two, but shares much of the same content otherwise. The assignments are quite engaging and worth trying out in your spare time.
+- [CMU 10423: Generative AI](./CMU10423.md): A broad generative-AI course covering text, code, images, Transformers, diffusion, multimodal generation, and the engineering challenges of scaling models.
 
 The GPT series by OpenAI has demonstrated remarkable performance under the guidance of scaling laws, especially in mathematics and coding. If you are primarily interested in LLMs, the following courses are recommended:
 
-- [Stanford CS336: Language Modeling from Scratch (Spring 2026)](https://cs336.stanford.edu/): As the title suggests, this course teaches you to build all the core components of an LLM from scratch, such as the tokenizer, model architecture, training optimizer, low-level operators, data cleaning, and post-training algorithms. Each assignment has a 40-50 page PDF handout—very rigorous. Highly recommended if you want to fully understand every low-level detail of LLMs.
+- [Stanford CS336: Language Modeling from Scratch](./large-language-models/CS336.md): Builds the core components of an LLM from scratch, including data cleaning, tokenisation, Transformer architecture, training, evaluation, and post-training.
 
-- [CMU 11868: Large Language Model Systems (2026)](https://llmsystem.github.io/): This CMU course focuses on system-level optimization of LLMs, including GPU acceleration, distributed training/inference, and cutting-edge techniques. Great for students in systems research to gain a holistic understanding of the field. (Disclosure: One of my papers on PD decoupling is included in the syllabus, hence the personal recommendation.) Assignments involve implementing a mini-PyTorch framework and then building system-level LLM optimizations on top of it.
+- [Stanford CS224G: Building and Scaling LLM Applications](./large-language-models/CS224G.md): A project-based course on RAG, context engineering, agents, evaluation, deployment, observability, and product iteration.
 
-- [CMU 11667: Large Language Models: Methods and Applications](https://cmu-llms.org/) and [CMU 11711: Advanced NLP](https://www.phontron.com/class/anlp-fall2024/): Compared to the previous two, these courses focus more on higher-level algorithms and applications. Each lecture includes many recommended readings, making them suitable for gaining a broad understanding of LLM research frontiers. You can then dive deeper into any subfield that interests you based on the reading materials.
+- [Hugging Face LLM Course](./large-language-models/HuggingFace-LLM-Course.md): A self-paced practical course using Transformers, Datasets, Tokenizers, Accelerate, and the Hugging Face Hub.
+
+- [Full Stack Deep Learning: LLM Bootcamp](./large-language-models/Full-Stack-Deep-Learning.md): Covers model selection, prompt and tool use, LLMOps, evaluation, deployment, monitoring, and user experience.
+
+- [Stanford CS324: Large Language Models](./large-language-models/CS324.md): An archived survey of LLM modelling, theory, systems, applications, ethics, and societal impact.
+
+- [CMU 11-868: Large Language Model Systems](./large-language-models/CMU11-868.md): Focuses on GPU acceleration, distributed training and inference, model compression, serving, and system-level LLM optimisation.
+
+- [CMU 11-667: Large Language Models: Methods and Applications](./large-language-models/CMU11-667.md) and [CMU 11-711: Advanced NLP](./large-language-models/CMU11-711.md): Focus on higher-level algorithms, applications, readings, and research frontiers.
 
 In addition to courses, the following resources are also highly recommended:
 

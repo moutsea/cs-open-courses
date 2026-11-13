@@ -7,20 +7,28 @@
 
 - [MIT 6.S184: Generative AI with Stochastic Differential Equations](./MIT6.S184.md): MIT IAP 小学期的 GenAI 入门课程，主要通过微分方程的视角讲解了 Flow Matching 和 Diffusion Model 背后的数学原理，并且配有简单的小实验让学生在实践中理解，适合对底层数学原理感兴趣的同学入门。
 
-- [MIT 6.S978: Deep Generative Models](https://mit-6s978.github.io/schedule.html): MIT 新晋明星教授何恺明亲授，涵盖了各种生成模型的基础理论和相关前沿论文，几次作业都有丰富的脚手架代码，难度不高但能加深理解，能对这个领域有个快速全貌了解。
+- [MIT 6.S978: Deep Generative Models](./MIT6.S978.md)：研究生级别的生成模型研讨课，覆盖变分、自回归、对抗和扩散模型，并包含论文报告与期末项目。
 
-- [UCB CS294-158-SP24: Deep Unsupervised Learning](https://sites.google.com/view/berkeley-cs294-158-sp24/home): 强化学习领域的顶级巨佬 Pieter Abbeel 主讲，相比 MIT 的课程内容更加丰富全面，并且有配套课程视频和 Slides。此外课后作业只有测试代码，需要学生自主编写模型架构定义和训练代码，虽然硬核但很适合有志于炼丹的同学练手。众所周知，深度学习理论实践中存在着很多经验技巧，魔鬼往往存在于细节里。没有什么比自己上手训一个模型更能掌握这些细节了。
+- [UCB CS294-158-SP24: Deep Unsupervised Learning](./CS294-158.md)：涵盖生成模型和自监督学习，作业要求学生自己实现并训练模型，适合想通过实践掌握生成模型细节的学习者。
 
-- [CMU 10423: Generative AI](https://www.cs.cmu.edu/~mgormley/courses/10423/schedule.html): CMU 的 GenAI 课程，相比前两门课更侧重于大语言模型一些，其他内容和前两门课重合较多。不过课程作业都挺有意思，推荐闲暇时间练练手。
+- [CMU 10423: Generative AI](./CMU10423.md)：覆盖文本、代码、图像、Transformer、扩散模型、多模态生成，以及大规模训练中的工程问题。
 
 
 OpenAI 的 GPT 系列让大语言模型在 Scaling Law 的指引下展现出惊人的效果，在数学和代码领域取得了很大进展。如果你主要关注大语言模型这个方向，那么推荐如下课程：
 
-- [Stanford CS336: Language Modeling from Scratch（Spring 2026）](https://cs336.stanford.edu/): 正如课程标题写的，在这门课程中你将从头编写大语言模型的所有核心组件，例如 Tokenizer，模型架构，训练优化器，底层算子，训练数据清洗，后训练算法等等。每次作业的 handout 都有四五十页 pdf，相当硬核。如果你想充分吃透大语言模型的所有底层细节，那么非常推荐学习这门课程。
+- [Stanford CS336: Language Modeling from Scratch](./large-language-models/CS336.md)：从零实现 LLM 的核心组件，包括数据清洗、Tokenizer、Transformer、训练、评估和后训练。
 
-- [CMU 11868: Large Language Model Systems（2026）](https://llmsystem.github.io/): CMU 的大语言模型系统课程，侧重底层系统优化，例如 GPU 加速，分布式训练和推理，以及各种前沿技术。非常适合从事系统领域的同学对这个方向有个全貌性的了解。课表里还包含了一篇我发表的 PD 分离相关的文章，因此私心推荐一下。课程作业的话会让你先实现一个迷你 Pytorch，然后在上面实现各种大语言模型的系统级优化。
+- [Stanford CS224G：构建和扩展大语言模型应用](./large-language-models/CS224G.md)：通过项目学习 RAG、上下文工程、Agent、评测、部署、可观测性和产品迭代。
 
-- [CMU 11667: Large Language Models: Methods and Applications](https://cmu-llms.org/) 和 [CMU 11711: Advanced NLP](https://www.phontron.com/class/anlp-fall2024/): 和前两门课相比，这两门课更偏重上层算法和应用，而且每节课都列举了很多相关阅读材料，适合对大语言模型发展前沿的各个方向都有个粗糙的认识，如果对某个子领域感兴趣的话再寻着参考资料深入学习。
+- [Hugging Face LLM Course](./large-language-models/HuggingFace-LLM-Course.md)：使用 Transformers、Datasets、Tokenizers、Accelerate 和 Hugging Face Hub 的实战课程。
+
+- [Full Stack Deep Learning：LLM Bootcamp](./large-language-models/Full-Stack-Deep-Learning.md)：覆盖模型选择、Prompt 和工具调用、LLMOps、评估、部署、监控和用户体验。
+
+- [Stanford CS324：大语言模型](./large-language-models/CS324.md)：系统梳理 LLM 的建模、理论、系统、应用、伦理和社会影响。
+
+- [CMU 11-868：Large Language Model Systems](./large-language-models/CMU11-868.md)：侧重 GPU 加速、分布式训练与推理、模型压缩、服务部署和大语言模型的系统级优化。
+
+- [CMU 11-667：Large Language Models: Methods and Applications](./large-language-models/CMU11-667.md) 和 [CMU 11-711：Advanced NLP](./large-language-models/CMU11-711.md)：更偏重上层算法、应用、论文阅读和大语言模型研究前沿。
 
 除了课程以外，还有很多不错的资料作为参考：
 

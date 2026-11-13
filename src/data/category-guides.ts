@@ -17,8 +17,8 @@ export const categoryGuides: Record<string, { en: string; zh: string }> = {
     zh: '机器学习入门最容易踩的坑是先看太理论的课，然后在数学上卡住。Coursera 的 Machine Learning 是最平滑的第一门，100 小时、Python，需要一点 AI 入门和 Python 熟练度，把监督学习、评估和调参讲得足够具体；Stanford 的 CS229 是同一位讲者的研究生版本，同样 100 小时，但要求高数、概率论和较深厚的数学功底，讲的是算法背后的推导而不是调包。伯克利的 CS189 介于两者之间，但要先修 CS188 与 CS70。想先建立直觉，就按 Machine Learning、CS189、CS229 的顺序走。'
   },
   'deep-learning': {
-    en: 'Deep learning courses are chosen by the application you care about, not by which one covers the most ground. For a general start, Stanford CS230 or Hung-yi Lee’s machine learning course runs about 80 hours in Python and assumes basic machine learning. Then specialise: CS231n and UMich EECS 498-007 for computer vision, CS224n for natural language processing, CS224w for graph data, and CS285 for reinforcement learning, which explicitly requires CS188 and CS189. All of them assume working PyTorch skills and paper-reproduction assignments, so revise backpropagation first.',
-    zh: '深度学习课的选择取决于你想深入哪个应用方向，而不是哪门「更全」。通用入门可以从 Stanford 的 CS230 或台大李宏毅机器学习开始，80 小时、Python，先修是机器学习基础。之后按方向分流：计算机视觉看 CS231n 与 UMich 的 EECS 498-007，自然语言处理看 CS224n，图数据看 CS224w，强化学习看 CS285，后者明确要求先修 CS188 与 CS189。这些课都假设你能写 PyTorch，作业以复现经典模型为主，提前把反向传播补一遍会轻松很多。'
+    en: 'Deep learning courses are chosen by the application you care about, not by which one covers the most ground. For a first pass, MIT 6.S191 is the compact foundations course, fast.ai is the most project-first route, and Stanford CS230 or Hung-yi Lee’s machine learning course gives a broader survey in Python. Then specialise: CS231n and UMich EECS 498-007 for computer vision, CS224n for natural language processing, CS224w for graph data, and CS285 for reinforcement learning. All of them assume working PyTorch skills and paper-reproduction assignments, so revise backpropagation first.',
+    zh: '深度学习课的选择取决于你想深入哪个应用方向，而不是哪门「更全」。第一遍入门可以选 MIT 6.S191 这类紧凑的基础课，或选 fast.ai 这种项目驱动路线；想系统浏览更多主题，再看 Stanford CS230 或台大李宏毅机器学习。之后按方向分流：计算机视觉看 CS231n 与 UMich 的 EECS 498-007，自然语言处理看 CS224n，图数据看 CS224w，强化学习看 CS285。这些课都假设你能写 PyTorch，作业以复现经典模型为主，提前把反向传播补一遍会轻松很多。'
   },
   'advanced-machine-learning': {
     en: 'This is the research-level shelf: it assumes you already know machine learning and want depth rather than coverage. CMU 10-708 builds probabilistic graphical models up to variational inference and MCMC, and connects them to neural networks and reinforcement learning; CS229M (STATS214) treats learning as a theory problem with generalisation bounds. Both expect prior coursework in machine learning, deep learning, and statistics, and the difficulty ratings start at five stars. Close your gaps in probability and convex optimisation first, then pick one thread and finish it.',
@@ -101,8 +101,8 @@ export const categoryGuides: Record<string, { en: string; zh: string }> = {
     zh: '编译原理是少数必须动手写才学得会的课，只看书几乎不可能掌握。CS143 是完整度最高的选择：用 Java 或 C++ 为 COOL 语言实现词法、语法、语义分析与代码生成，最终编译到 MIPS 汇编，但它要求先修计算机体系结构，150 小时的投入也不算轻。想降低门槛可以先看南大编译原理，只需离散数学、80 小时、Java 实现，能把前端流程完整走一遍；PKU 编译原理实践则让你从空文件夹构建 SysY 到 RISC-V 的编译器，60 小时、自由度最高。'
   },
   'deep-generative-models': {
-    en: 'Generative modelling now means two threads: diffusion models and large language models. To understand the mathematics, MIT 6.S184 is the lightest entry at about 20 hours, deriving diffusion and flow matching from stochastic differential equations with only deep learning and calculus as prerequisites. The systems side is CMU 15-779 and CMU 11-868, covering GPU programming, machine learning compilation, distributed training, and LLM serving; both expect PyTorch experience and some CUDA. The modelling and NLP layers sit in CMU 11-667 and 11-711.',
-    zh: '这个方向现在基本是两条线：扩散模型与大语言模型。想理解生成模型的数学原理，MIT 6.S184 是最轻的入口，约 20 小时，从随机微分方程的角度讲扩散与流匹配，先修只要深度学习和微积分，配套笔记质量很高。偏系统与工程一侧是 CMU 15-779 与 CMU 11-868，前者讲 GPU 编程、机器学习编译、分布式训练与推理加速，后者从算子一路做到大模型服务部署，两门都要求 PyTorch 经验并建议了解 CUDA。上层算法与应用可以看 CMU 11-667 与 11-711。'
+    en: 'Generative modelling now means two threads: diffusion models and large language models. MIT 6.S184 is the lightest mathematical entry, while CMU 10-423 and MIT 6.S978 give broader generative-model coverage. For LLMs, Stanford CS336 covers language modelling from scratch, CMU 11-667 and 11-711 cover modelling and NLP, and Stanford CS224G plus the Hugging Face course cover applications. The systems side is CMU 15-779 and CMU 11-868, covering GPU programming, distributed training, and LLM serving.',
+    zh: '这个方向现在基本是两条线：扩散模型与大语言模型。想理解生成模型的数学原理，MIT 6.S184 是最轻的入口；CMU 10-423 和 MIT 6.S978 则提供更完整的生成模型视角。关注 LLM 可以走 Stanford CS336 的从零实现路线，或用 CMU 11-667、11-711 学建模与 NLP，再用 Stanford CS224G 和 Hugging Face 课程补应用层。偏系统与工程一侧是 CMU 15-779 与 11-868，覆盖 GPU 编程、分布式训练和大模型服务。'
   }
 }
 
@@ -151,7 +151,7 @@ export const categoryFaqs: Record<string, { en: CategoryFaqItem[]; zh: CategoryF
   },
   'deep-learning': {
     zh: [
-      { q: '深度学习入门学哪门课？', a: '可以先看 Stanford 的 CS230 或台大李宏毅机器学习，80 小时、Python，先修是机器学习基础；想做视觉可以直接看 UMich 的 EECS 498-007，它更偏工程实现与动手训练。' },
+      { q: '深度学习入门学哪门课？', a: '想快速建立基础可以先学 MIT 6.S191，想边做项目边学可以选 fast.ai；已经有机器学习基础，再看 Stanford CS230 或台大李宏毅机器学习。想做视觉可以接 UMich 的 EECS 498-007。' },
       { q: 'CS231n 需要什么基础？', a: '先修写的是机器学习基础，编程语言 Python，预计 80 小时、难度四星。作业要手写卷积与反向传播，最好先熟悉 NumPy 和 PyTorch。' },
       { q: '强化学习课程需要什么先修？', a: 'CS285 明确要求先修 CS188 与 CS189，还需要了解马尔可夫决策过程。课程公式较多，机器学习基础不牢会很难跟上进度。' },
       { q: 'NLP 和图神经网络该学哪门？', a: '自然语言处理看 Stanford 的 CS224n，图数据看 CS224w，两门都要求深度学习基础和 Python、各约 80 小时。按你手头的项目方向选一门即可。' }
@@ -381,13 +381,13 @@ export const categoryFaqs: Record<string, { en: CategoryFaqItem[]; zh: CategoryF
     zh: [
       { q: '生成模型课程先学哪门？', a: '先学 MIT 6.S184，约 20 小时，从随机微分方程讲扩散与流匹配，先修只要深度学习和微积分，难度四星；想进大模型系统方向再学 CMU 15-779。' },
       { q: '扩散模型需要什么数学基础？', a: '需要微积分和线性代数。6.S184 的先修写明要熟悉微积分，课程大量使用微分方程与概率记号，最好还能读懂基础的随机过程。' },
-      { q: '大模型课程怎么选？', a: '偏系统与性能选 CMU 11-868 和 15-779，涉及 GPU 编程、分布式训练与推理加速；偏算法与建模选 CMU 11-667 与 11-711，后者还需要一定的 NLP 背景。' },
+      { q: '大模型课程怎么选？', a: '想从底层实现模型选 Stanford CS336，想学生成模型全景选 CMU 10-423；偏系统与性能选 CMU 11-868 和 15-779；偏算法与 NLP 选 CMU 11-667 与 11-711；想做应用则接 Stanford CS224G 或 Hugging Face LLM Course。' },
       { q: '零基础可以学这些课吗？', a: '不建议。这些课默认你已学过深度学习并有 PyTorch 经验，15-779 还建议了解 CUDA 与机器学习基础。先完成一门深度学习课再进入会稳很多。' }
     ],
     en: [
       { q: 'Which generative models course should I start with?', a: 'MIT 6.S184: about 20 hours, deriving diffusion and flow matching from stochastic differential equations, with only deep learning and calculus as prerequisites. Move to CMU 15-779 for the systems side.' },
       { q: 'What mathematics do diffusion models need?', a: 'Calculus and linear algebra. 6.S184 explicitly asks for comfort with calculus and leans heavily on differential equations and probability notation; basic stochastic processes help.' },
-      { q: 'How do I choose among the LLM courses?', a: 'For systems and performance, CMU 11-868 and 15-779 cover GPU programming, distributed training, and inference acceleration. For modelling, CMU 11-667 and 11-711 cover architecture, training, and evaluation.' },
+      { q: 'How do I choose among the LLM courses?', a: 'Choose Stanford CS336 to build a language model from scratch, CMU 10-423 for a broader generative-AI survey, CMU 11-667 or 11-711 for modelling and NLP, CMU 11-868 or 15-779 for systems, and Stanford CS224G or the Hugging Face course for applications.' },
       { q: 'Can I take these with no background?', a: 'Not really. They assume deep learning coursework and PyTorch experience, and 15-779 also suggests CUDA and machine learning basics. Finish a deep learning course first.' }
     ]
   },

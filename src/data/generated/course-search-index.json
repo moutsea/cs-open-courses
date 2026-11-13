@@ -965,6 +965,26 @@
     "summaryEn": "RedBase, the project for CS346, involves the implementation of a simplified database system and is highly structured. The project can be divided into ..."
   },
   {
+    "id": "deep-generative-models-CMU10423",
+    "title": "CMU 10-423/623/723：生成式人工智能",
+    "titleEn": "CMU 10-423/623/723: Generative AI",
+    "description": "# CMU 10-423/623/723：生成式人工智能 ## 课程简介 - 所属大学：Carnegie Mellon University - 先修要求：机器学习、深度学习、概率论，以及扎实的 Python 或 PyTorch 基础 - 编程语言：Python、PyTorch - 课程难度：🌟🌟🌟🌟 - 预计学时：100 学时以上 CMU 的生成式人工智能课程研究如何为文本、代码、图像和其...",
+    "descriptionEn": "# CMU 10-423/623/723: Generative AI ## Course Overview - University: Carnegie Mellon University - Prerequisites: Machine learning, deep learning, probability, and solid Python or PyTorch experience ...",
+    "university": "Carnegie Mellon University",
+    "path": "deep-generative-models/CMU10423",
+    "programmingLanguage": "Python, PyTorch",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "100+ hours"
+    },
+    "category": "deep-generative-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "CMU 的生成式人工智能课程研究如何为文本、代码、图像和其他数据构建并扩展生成模型。课程把自回归语言模型和 Transformer 与变分方法、扩散模型、多模态生成、模型评估，以及大规模训练中的工程问题联系起来。 它很适合放在通用深度学习课和专门的 LLM 课程之间。作业和课程项目要求把数学思想实现...",
+    "summaryEn": "CMU's Generative AI course studies how generative models are built and scaled for text, code, images, and other data. The material connects autoregres..."
+  },
+  {
     "id": "deep-generative-models-CMU15-779",
     "title": "CMU 15-779：机器学习系统高级专题（大语言模型版）",
     "titleEn": "CMU 15-779: Advanced Topics in Machine Learning Systems (LLM Edition)",
@@ -985,6 +1005,26 @@
     "summaryEn": "A systems-focused course on how high-level machine learning models are compiled and executed efficiently on accelerators and distributed infrastructur..."
   },
   {
+    "id": "deep-generative-models-CS294-158",
+    "title": "UC Berkeley CS294-158：深度无监督学习",
+    "titleEn": "UC Berkeley CS294-158: Deep Unsupervised Learning",
+    "description": "# UC Berkeley CS294-158：深度无监督学习 ## 课程简介 - 所属大学：University of California, Berkeley - 先修要求：扎实掌握概率论、优化和深度学习 - 编程语言：Python、PyTorch - 课程难度：🌟🌟🌟🌟🌟 - 预计学时：100 学时以上 Berkeley CS294-158 研究在缺少标注数据时如何进行深度生成建模和自...",
+    "descriptionEn": "# UC Berkeley CS294-158: Deep Unsupervised Learning ## Course Overview - University: University of California, Berkeley - Prerequisites: Significant experience with probability, optimisation, and de...",
+    "university": "University of California, Berkeley",
+    "path": "deep-generative-models/CS294-158",
+    "programmingLanguage": "Python, PyTorch",
+    "difficulty": "Advanced",
+    "duration": {
+      "value": null,
+      "originalText": "100+ hours"
+    },
+    "category": "deep-generative-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Berkeley CS294-158 研究在缺少标注数据时如何进行深度生成建模和自监督学习。课程主题包括自回归模型、流模型、潜变量模型、GAN、扩散模型、表示学习和多模态模型，并通过专题内容涉及大语言模型。 这门课实践性很强：作业要求自己实现并训练模型，期末项目则把所学方法变成一个独立的研究型实验。...",
+    "summaryEn": "Berkeley CS294-158 studies deep generative models and self-supervised learning when labelled data is limited or unavailable. Topics include autoregres..."
+  },
+  {
     "id": "deep-generative-models-MIT6.S184",
     "title": "MIT6.S184: Generative AI with Stochastic Differential Equations",
     "titleEn": "MIT6.S184: Generative AI with Stochastic Differential Equations",
@@ -1003,6 +1043,26 @@
     "hasEnglishVersion": true,
     "summary": "这门课程是由 MIT CSAIL 的 IAP 小学期开办的扩散模型入门课程。该课程由 MIT 学生 Peter Holderrieth 和 Ezra Erives 主讲，从微分方程的视角深入浅出地讲解了扩散模型和流匹配模型的数学理论基础，并且配以实践让学生从零构建扩散模型，最后通过讲座介绍其在分子设...",
     "summaryEn": "This course is an introductory diffusion model course offered during MIT's IAP term by MIT CSAIL. Taught by MIT students Peter Holderrieth and Ezra Er..."
+  },
+  {
+    "id": "deep-generative-models-MIT6.S978",
+    "title": "MIT 6.S978：深度生成模型",
+    "titleEn": "MIT 6.S978: Deep Generative Models",
+    "description": "# MIT 6.S978：深度生成模型 ## 课程简介 - 所属大学：MIT - 先修要求：研究生水平的深度学习，以及计算机视觉或自然语言处理基础 - 编程语言：Python、PyTorch - 课程难度：🌟🌟🌟🌟🌟 - 预计学时：100 学时以上 MIT 6.S978 是一门研究生研讨课，讨论深度生成模型的理论、应用和研究前沿。课程覆盖变分自编码器、自回归模型、GAN、扩散模型，以及视觉、...",
+    "descriptionEn": "# MIT 6.S978: Deep Generative Models ## Course Overview - University: MIT - Prerequisites: Graduate-level deep learning and either computer vision or natural-language processing - Programming Langua...",
+    "university": "MIT",
+    "path": "deep-generative-models/MIT6.S978",
+    "programmingLanguage": "Python, PyTorch",
+    "difficulty": "Advanced",
+    "duration": {
+      "value": null,
+      "originalText": "100+ hours"
+    },
+    "category": "deep-generative-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "MIT 6.S978 是一门研究生研讨课，讨论深度生成模型的理论、应用和研究前沿。课程覆盖变分自编码器、自回归模型、GAN、扩散模型，以及视觉、机器人、生物和材料等方向的应用。 这门课偏研究：需要阅读论文、做报告、完成习题和期末项目。它适合想建立 LLM 之外的生成模型全景知识的学习者，但不适合作为...",
+    "summaryEn": "MIT 6.S978 is a graduate seminar on the theory, applications, and research frontiers of deep generative models. The syllabus covers variational autoen..."
   },
   {
     "id": "deep-generative-models-large-language-models-CMU11-667",
@@ -1066,6 +1126,111 @@
     "hasEnglishVersion": true,
     "summary": "该课程面向研究生开设，聚焦“从算法到工程”的大语言模型系统构建全过程。课程内容包括但不限于： GPU 编程与自动微分：掌握 CUDA kernel 调用、并行编程基础，以及深度学习框架设计原理。 模型训练与分布式系统：学习高效的训练算法、通信优化（ZeRO、FlashAttention）、分布式训练...",
     "summaryEn": "This graduate-level course focuses on the full stack of large language model (LLM) systems — from algorithms to engineering. The curriculum covers, bu..."
+  },
+  {
+    "id": "deep-generative-models-large-language-models-CS224G",
+    "title": "Stanford CS224G：构建和扩展大语言模型应用",
+    "titleEn": "Stanford CS224G: Building and Scaling LLM Applications",
+    "description": "# Stanford CS224G：构建和扩展大语言模型应用 ## 课程简介 - 所属大学：Stanford University - 先修要求：具备较好的编程能力，了解机器学习或 LLM 基础，并对构建软件产品感兴趣 - 编程语言：Python、JavaScript 或 TypeScript - 课程难度：🌟🌟🌟🌟 - 预计学时：80 学时以上 Stanford CS224G 是一门以项目...",
+    "descriptionEn": "# Stanford CS224G: Building and Scaling LLM Applications ## Course Overview - University: Stanford University - Prerequisites: Comfortable programming, basic machine learning or LLM knowledge, and i...",
+    "university": "Stanford University",
+    "path": "deep-generative-models/large-language-models/CS224G",
+    "programmingLanguage": "Python, JavaScript or TypeScript",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "80+ hours"
+    },
+    "category": "deep-generative-models",
+    "subcategory": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Stanford CS224G 是一门以项目为中心、专门讲如何构建生产级大语言模型应用的课程。它覆盖模型课程容易忽略的应用层：Prompt 与上下文工程、检索增强生成、工具调用与 Agent 循环、评测、可靠性、多模态和语音应用、部署、可观测性，以及产品迭代。 这门课适合与 CS336 或 CMU ...",
+    "summaryEn": "Stanford CS224G is a project-based course about building production-ready applications with large language models. It covers the application layer tha..."
+  },
+  {
+    "id": "deep-generative-models-large-language-models-CS324",
+    "title": "Stanford CS324：大语言模型",
+    "titleEn": "Stanford CS324: Large Language Models",
+    "description": "# Stanford CS324：大语言模型 ## 课程简介 - 所属大学：Stanford University - 先修要求：机器学习、自然语言处理和基础深度学习知识 - 编程语言：Python - 课程难度：🌟🌟🌟🌟 - 预计学时：80 学时以上 Stanford CS324 是一门覆盖面很广的大语言模型导论，把模型、理论、系统、应用、伦理和社会影响放在同一套框架中讨论。它适合帮助学习...",
+    "descriptionEn": "# Stanford CS324: Large Language Models ## Course Overview - University: Stanford University - Prerequisites: Machine learning, natural language processing, and basic deep-learning experience - Prog...",
+    "university": "Stanford University",
+    "path": "deep-generative-models/large-language-models/CS324",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "80+ hours"
+    },
+    "category": "deep-generative-models",
+    "subcategory": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Stanford CS324 是一门覆盖面很广的大语言模型导论，把模型、理论、系统、应用、伦理和社会影响放在同一套框架中讨论。它适合帮助学习者建立领域地图：基础模型如何训练，如何适配和评估，具备什么能力与局限，以及部署之后会带来哪些安全和治理问题。 这门课是归档课程，更适合当作基础综述来学习，而不是...",
+    "summaryEn": "Stanford CS324 is a broad introduction to large language models that connects modelling, theory, systems, applications, ethics, and societal impact. I..."
+  },
+  {
+    "id": "deep-generative-models-large-language-models-CS336",
+    "title": "Stanford CS336：从零开始构建语言模型",
+    "titleEn": "Stanford CS336: Language Modeling from Scratch",
+    "description": "# Stanford CS336：从零开始构建语言模型 ## 课程简介 - 所属大学：Stanford University - 先修要求：熟练掌握 Python 与 PyTorch，具备概率论、线性代数和基础系统知识 - 编程语言：Python、PyTorch、CUDA - 课程难度：🌟🌟🌟🌟🌟 - 预计学时：150 学时以上 Stanford CS336 采用类似「从零构建操作系统」的路...",
+    "descriptionEn": "# Stanford CS336: Language Modeling from Scratch ## Course Overview - University: Stanford University - Prerequisites: Strong Python and PyTorch skills, probability, linear algebra, and basic system...",
+    "university": "Stanford University",
+    "path": "deep-generative-models/large-language-models/CS336",
+    "programmingLanguage": "Python, PyTorch, CUDA",
+    "difficulty": "Advanced",
+    "duration": {
+      "value": null,
+      "originalText": "150+ hours"
+    },
+    "category": "deep-generative-models",
+    "subcategory": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Stanford CS336 采用类似「从零构建操作系统」的路线学习大语言模型。课程不会把预训练模型当成黑盒，而是要求学生逐步实现语言模型的主要环节：训练数据的收集与清洗、Tokenizer、Transformer 架构、训练与优化、评估和后训练。想从算法、算子和系统层面理解 LLM，而不只是会调用...",
+    "summaryEn": "Stanford CS336 takes the operating-systems-from-scratch approach to large language models. Instead of treating a pretrained model as a black box, stud..."
+  },
+  {
+    "id": "deep-generative-models-large-language-models-Full-Stack-Deep-Learning",
+    "title": "Full Stack Deep Learning：LLM Bootcamp",
+    "titleEn": "Full Stack Deep Learning: LLM Bootcamp",
+    "description": "# Full Stack Deep Learning：LLM Bootcamp ## 课程简介 - 所属大学：Full Stack Deep Learning / UC Berkeley 社区 - 先修要求：熟悉 Python，了解基础深度学习，并有软件开发经验 - 编程语言：Python - 课程难度：🌟🌟🌟🌟 - 预计学时：60 学时以上 Full Stack Deep Learning...",
+    "descriptionEn": "# Full Stack Deep Learning: LLM Bootcamp ## Course Overview - University: Full Stack Deep Learning / UC Berkeley community - Prerequisites: Comfortable Python, basic deep learning, and familiarity w...",
+    "university": "Full Stack Deep Learning / UC Berkeley community",
+    "path": "deep-generative-models/large-language-models/Full-Stack-Deep-Learning",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "60+ hours"
+    },
+    "category": "deep-generative-models",
+    "subcategory": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Full Stack Deep Learning 关注 AI 产品从实验到上线的完整工程生命周期。LLM Bootcamp 涵盖模型和 GPU 选择、Prompt 工程、检索与工具调用、LLMOps、评估、部署、监控和用户体验；完整课程还会延伸到数据收集、训练和持续改进。 它适合作为「从 Noteb...",
+    "summaryEn": "Full Stack Deep Learning focuses on the engineering lifecycle around AI-powered products. The LLM Bootcamp covers model and GPU selection, prompt engi..."
+  },
+  {
+    "id": "deep-generative-models-large-language-models-HuggingFace-LLM-Course",
+    "title": "Hugging Face LLM Course",
+    "titleEn": "Hugging Face LLM Course",
+    "description": "# Hugging Face LLM Course ## 课程简介 - 所属大学：Hugging Face - 先修要求：熟练掌握 Python，并了解基础机器学习或深度学习 - 编程语言：Python - 课程难度：🌟🌟🌟 - 预计学时：60-80 学时 Hugging Face LLM Course 是一门以工具和代码为中心的自学课程，介绍现代自然语言处理和大语言模型。课程会带着学习者使...",
+    "descriptionEn": "# Hugging Face LLM Course ## Course Overview - University: Hugging Face - Prerequisites: Good Python skills and basic deep-learning or machine-learning knowledge - Programming Language: Python - Cou...",
+    "university": "Hugging Face",
+    "path": "deep-generative-models/large-language-models/HuggingFace-LLM-Course",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "60-80 hours"
+    },
+    "category": "deep-generative-models",
+    "subcategory": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "Hugging Face LLM Course 是一门以工具和代码为中心的自学课程，介绍现代自然语言处理和大语言模型。课程会带着学习者使用 Transformers、Datasets、Tokenizers、Accelerate 以及 Hugging Face Hub，从传统 NLP 基础逐步过渡到微...",
+    "summaryEn": "The Hugging Face LLM Course is a self-paced, library-driven introduction to modern natural-language processing and large language models. It teaches t..."
   },
   {
     "id": "deep-generative-models-roadmap",
@@ -1223,6 +1388,46 @@
     "hasEnglishVersion": true,
     "summary": "李宏毅老师是国立台湾大学的教授，其风趣幽默的授课风格深受大家喜爱，并且尤其喜欢在 PPT 中插入宝可梦等动漫元素，是个非常可爱的老师。 这门课挂着机器学习的牌子，但其课程内容之广实在令人咋舌。2023 年及更早版本曾包含 Regression、Classification、CNN、Self-Atte...",
     "summaryEn": "Professor Hung-yi Lee, a professor at National Taiwan University, is known for his humorous and engaging teaching style. He often incorporates fun ele..."
+  },
+  {
+    "id": "deep-learning-MIT6.S191",
+    "title": "MIT 6.S191：深度学习导论",
+    "titleEn": "MIT 6.S191: Introduction to Deep Learning",
+    "description": "# MIT 6.S191：深度学习导论 ## 课程简介 - 所属大学：MIT - 先修要求：会写 Python，并具备基础微积分或线性代数知识 - 编程语言：Python、PyTorch、TensorFlow - 课程难度：🌟🌟🌟 - 预计学时：40-60 学时 MIT 6.S191 是一门紧凑的深度学习基础与应用入门课。课程从神经网络、损失函数、反向传播和优化开始，再通过计算机视觉、序列建...",
+    "descriptionEn": "# MIT 6.S191: Introduction to Deep Learning ## Course Overview - University: MIT - Prerequisites: Python programming and basic calculus or linear algebra - Programming Language: Python, PyTorch, Ten...",
+    "university": "MIT",
+    "path": "deep-learning/MIT6.S191",
+    "programmingLanguage": "Python, PyTorch, TensorFlow",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "40-60 hours"
+    },
+    "category": "deep-learning",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "MIT 6.S191 是一门紧凑的深度学习基础与应用入门课。课程从神经网络、损失函数、反向传播和优化开始，再通过计算机视觉、序列建模、生成模型和语言模型等例子，把知识落到可运行的模型上。 它适合作为 CS230、CS224n 或专门 LLM 课程之前的第一门深度学习课。讲座和实验材料会让学习者较快训...",
+    "summaryEn": "MIT 6.S191 is a compact introduction to deep-learning foundations and applications. It starts with neural networks, loss functions, backpropagation, a..."
+  },
+  {
+    "id": "deep-learning-fastai",
+    "title": "fast.ai：面向程序员的实用深度学习",
+    "titleEn": "fast.ai: Practical Deep Learning for Coders",
+    "description": "# fast.ai：面向程序员的实用深度学习 ## 课程简介 - 所属大学：fast.ai - 先修要求：有一定编程经验，会 Python，掌握高中数学基础 - 编程语言：Python - 课程难度：🌟🌟🌟 - 预计学时：50 学时以上 《Practical Deep Learning for Coders》是一门以项目为先的深度学习课程。它会先带着学习者训练出有用的模型，再逐步解释计算机视...",
+    "descriptionEn": "# fast.ai: Practical Deep Learning for Coders ## Course Overview - University: fast.ai - Prerequisites: At least some programming experience, Python, and basic high-school mathematics - Programming ...",
+    "university": "fast.ai",
+    "path": "deep-learning/fastai",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": null,
+      "originalText": "50+ hours"
+    },
+    "category": "deep-learning",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "《Practical Deep Learning for Coders》是一门以项目为先的深度学习课程。它会先带着学习者训练出有用的模型，再逐步解释计算机视觉、自然语言处理、表格数据、推荐系统和部署等主题。课程使用现代 Python 工具，鼓励先动手实验，不必等到学完一长串理论才开始做项目。 它很适...",
+    "summaryEn": "Practical Deep Learning for Coders is a project-first deep-learning course. It teaches learners to build useful models early, then opens up the ideas ..."
   },
   {
     "id": "electronics-basics-EE16",
