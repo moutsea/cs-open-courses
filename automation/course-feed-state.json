@@ -448,8 +448,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-11-13T09:29:02.752Z",
+      "lastProcessedAt": "2026-11-14T08:56:48.473Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/e9f81543853b27b4c64a74dbf1fc3c7246a4bfe6",
         "tag:github.com,2008:Grit::Commit/a63957d1f3e2519c5cce9a9e5cae4901540ff8ed",
         "tag:github.com,2008:Grit::Commit/d46e36016afd39309d473304b525ea099edb7ffc",
         "tag:github.com,2008:Grit::Commit/518582f79ac63a141ee4af6df29390b1be934b6c",
@@ -654,6 +655,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-14T08:56:48.473Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/e9f81543853b27b4c64a74dbf1fc3c7246a4bfe6",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/e9f81543853b27b4c64a74dbf1fc3c7246a4bfe6",
+      "entryTitle": "Update testing framework",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The commit only updates the SEED Labs testing framework documentation and test-runner README; it does not change course metadata, curriculum, prerequisites, or provide a course resource suitable for updating system-security/SEEDLabs.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-13T09:29:02.752Z",
       "sourceId": "seed-labs",
@@ -1840,18 +1853,6 @@
       "type": "ignore",
       "confidence": 0.93,
       "reason": "Upstream xv6-riscv commit only tweaks a test harness script (test-xv6.py output duplication) with no file list in the evidence and no change to course material, labs, prerequisites, or resources. Nothing here warrants an update to operating-systems/MIT6.S081.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-09T07:22:01.360Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/77f70d4ad0eea2dbb6227826f22da47660365180",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/77f70d4ad0eea2dbb6227826f22da47660365180",
-      "entryTitle": "Merge pull request #4291 from VerkestThijs/patch-1",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.82,
-      "reason": "The commit is a one-line editorial edit in src/content/0/en/part0b.md that swaps a passing mention of Redux for Zustand in the course's introductory overview. It does not change the course's official URL, structure, prerequisites, hours, or resource list, and a single sentence in Part 0 is not suffi",
       "changedFiles": []
     }
   ]
