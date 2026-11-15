@@ -448,8 +448,9 @@
     },
     "seed-labs": {
       "initializedAt": "2026-07-29T05:31:15.749Z",
-      "lastProcessedAt": "2026-11-14T08:56:48.473Z",
+      "lastProcessedAt": "2026-11-15T09:18:20.100Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/8b961448e7929ff175ded62d9b557a3dcb9c9510",
         "tag:github.com,2008:Grit::Commit/e9f81543853b27b4c64a74dbf1fc3c7246a4bfe6",
         "tag:github.com,2008:Grit::Commit/a63957d1f3e2519c5cce9a9e5cae4901540ff8ed",
         "tag:github.com,2008:Grit::Commit/d46e36016afd39309d473304b525ea099edb7ffc",
@@ -655,6 +656,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-15T09:18:20.100Z",
+      "sourceId": "seed-labs",
+      "entryId": "tag:github.com,2008:Grit::Commit/8b961448e7929ff175ded62d9b557a3dcb9c9510",
+      "entryUrl": "https://github.com/seed-labs/seed-labs/commit/8b961448e7929ff175ded62d9b557a3dcb9c9510",
+      "entryTitle": "Merge pull request #189 from BruceJqs/master",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "This commit only adds internal test-harness documentation and scaffolding for SEED lab environments; it does not change course facts, scope, prerequisites, or resources described for the existing SEEDLabs course entry, so no update is warranted.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-14T08:56:48.473Z",
       "sourceId": "seed-labs",
@@ -1841,18 +1854,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "The commit only adjusts small Python snippets in the 2026 shipping-code lecture notes (returning a string vs. printing, plus a return type annotation) to match the lecture video. No change to course structure, syllabus, resources, or any new URL, so there is nothing evidence-backed to record for pro",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-09T07:22:06.422Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/84f1cbb05404457ddc4dadb67c96708021c1cff0",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/84f1cbb05404457ddc4dadb67c96708021c1cff0",
-      "entryTitle": "test-xv6.py: do not print qemu output multiple times",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream xv6-riscv commit only tweaks a test harness script (test-xv6.py output duplication) with no file list in the evidence and no change to course material, labs, prerequisites, or resources. Nothing here warrants an update to operating-systems/MIT6.S081.",
       "changedFiles": []
     }
   ]
