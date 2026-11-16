@@ -36,8 +36,11 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-11T09:20:54.930Z",
+      "lastProcessedAt": "2026-11-16T09:36:03.584Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/45630bbc81e046bc26059cab327fe44f790b5863",
+        "tag:github.com,2008:Grit::Commit/b14b7921f30c0caa3532d24496dab6908e5cf29b",
+        "tag:github.com,2008:Grit::Commit/b10d277ce3dba72a033a50b35b30841532aa167c",
         "tag:github.com,2008:Grit::Commit/1dc697b8fd352b912895c1b14d2450e564cc5976",
         "tag:github.com,2008:Grit::Commit/1da4c4735f959f8bcd1e95f2437b61e6f55a31fa",
         "tag:github.com,2008:Grit::Commit/1704ae62a9c67b43e81333be9e56e1757cc56f24",
@@ -656,6 +659,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-16T09:36:03.584Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/45630bbc81e046bc26059cab327fe44f790b5863",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/45630bbc81e046bc26059cab327fe44f790b5863",
+      "entryTitle": "Update six MIT OpenCourseWare lecture video links (#548)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.98,
+      "reason": "The commit only updates existing MIT OpenCourseWare video-gallery URLs; no allowed target path for updates and no new course metadata or official course URL supporting a create action.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-16T09:35:35.534Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/b14b7921f30c0caa3532d24496dab6908e5cf29b",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/b14b7921f30c0caa3532d24496dab6908e5cf29b",
+      "entryTitle": "Add HKUST COMP 5711 (FA22) (#547)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The feed only adds a YouTube playlist link for HKUST COMP 5711 (Fall 2022). No existing-course target path matches, and there is insufficient evidence about prerequisites, programming languages, class hours, difficulty, or official course details to support a create action.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-16T09:35:30.186Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/b10d277ce3dba72a033a50b35b30841532aa167c",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/b10d277ce3dba72a033a50b35b30841532aa167c",
+      "entryTitle": "Add Stanford CS329Z (FA26) (#546)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.86,
+      "reason": "The commit adds a Stanford CS329Z link and YouTube playlist, but the supplied evidence does not provide enough verified course metadata (free access to course materials, prerequisites, programming languages, difficulty, or class hours) to create a complete entry without inventing facts.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-15T09:18:20.100Z",
       "sourceId": "seed-labs",
@@ -1818,42 +1857,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "Merged commit only adjusts site UI styling so close buttons on info banners render visibly in dark mode. No course content, curriculum, resource, or metadata change is evidenced, and the file list is empty, so there is nothing to update on web-development/fullstackopen.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-10T07:17:21.734Z",
-      "sourceId": "mit-xv6-riscv",
-      "entryId": "tag:github.com,2008:Grit::Commit/8f9749d9f03e307c446ff53e83b95f2ccd419d9c",
-      "entryUrl": "https://github.com/mit-pdos/xv6-riscv/commit/8f9749d9f03e307c446ff53e83b95f2ccd419d9c",
-      "entryTitle": "test-xv6.py: fix three bugs on the failure path (#536)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream commit only fixes three bugs on the failure path of test-xv6.py (error() argument handling, os.exit vs sys.exit, self.out vs self.output) in the xv6-riscv repository. This is internal test-harness maintenance with no change to course material, labs, structure, prerequisites, or resources fo",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-10T07:17:14.618Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/9960db551f39d54651ae15c1109c82a7fd943ea0",
-      "entryTitle": "Merge pull request #4330 from joshuaenahoro/patch-2",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "The commit only corrects the capitalization of 'ESlint' to 'ESLint' in part3d of the English course material. No change to course content, structure, resources, prerequisites, or hours, so there is nothing evidence-backed to update for web-development/fullstackopen.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-09T07:22:11.967Z",
-      "sourceId": "mit-missing-semester",
-      "entryId": "tag:github.com,2008:Grit::Commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
-      "entryUrl": "https://github.com/missing-semester/missing-semester/commit/bd9d5d164236424db9f594a73b5e98ad71b75155",
-      "entryTitle": "Fix code and align to lecture video",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit only adjusts small Python snippets in the 2026 shipping-code lecture notes (returning a string vs. printing, plus a return type annotation) to match the lecture video. No change to course structure, syllabus, resources, or any new URL, so there is nothing evidence-backed to record for pro",
       "changedFiles": []
     }
   ]
