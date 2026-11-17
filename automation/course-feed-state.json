@@ -36,8 +36,9 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-16T09:36:03.584Z",
+      "lastProcessedAt": "2026-11-17T10:41:01.168Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/bcb4d9f93c1fc89eb09592353f360442ae018ab5",
         "tag:github.com,2008:Grit::Commit/45630bbc81e046bc26059cab327fe44f790b5863",
         "tag:github.com,2008:Grit::Commit/b14b7921f30c0caa3532d24496dab6908e5cf29b",
         "tag:github.com,2008:Grit::Commit/b10d277ce3dba72a033a50b35b30841532aa167c",
@@ -659,6 +660,18 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-17T10:41:01.168Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/bcb4d9f93c1fc89eb09592353f360442ae018ab5",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/bcb4d9f93c1fc89eb09592353f360442ae018ab5",
+      "entryTitle": "Add HKUST COMP 2711 (FA24) (#549)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.88,
+      "reason": "The commit only adds a YouTube playlist link for HKUST COMP2711 Honors Discrete Mathematics; no official course page or sufficient evidence for prerequisites, programming languages, difficulty, class hours, or a matching existing course path is provided.",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-16T09:36:03.584Z",
       "sourceId": "cs-video-courses",
@@ -1845,18 +1858,6 @@
       "type": "ignore",
       "confidence": 0.9,
       "reason": "The commit adds a single README link for an NSF CBMS 2025 workshop (Computational Mathematics and AI) rather than a university-level course offering; the evidence contains no course details such as prerequisites, class hours, programming languages, or difficulty, and sourcePolicy.allowedTargetPaths",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-11T07:15:56.040Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/9c73c22f99eb7602dd3acecc54b476aa0e31bd28",
-      "entryTitle": "Merge pull request #4307 from Sseik/fix/info-banners",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.95,
-      "reason": "Merged commit only adjusts site UI styling so close buttons on info banners render visibly in dark mode. No course content, curriculum, resource, or metadata change is evidenced, and the file list is empty, so there is nothing to update on web-development/fullstackopen.",
       "changedFiles": []
     }
   ]
