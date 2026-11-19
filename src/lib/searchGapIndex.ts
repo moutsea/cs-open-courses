@@ -37,6 +37,7 @@ const categorySearchAliases: Record<string, string[]> = {
   'advanced-machine-learning': ['机器学习进阶', '图模型'],
   'deep-learning': ['深度学习', 'dl'],
   'deep-generative-models': ['生成模型', '大模型', 'aigc'],
+  'large-language-models': ['llm', '大模型', '语言模型', 'llm 课程'],
   'electronics-basics': ['电路', '电子基础', '信号与系统'],
   'system-security': ['系统安全', '信息安全', '网络安全', '安全'],
   'programming-introduction': ['编程入门', '零基础', '入门编程', '语言入门'],

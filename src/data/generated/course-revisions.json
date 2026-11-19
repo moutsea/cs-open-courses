@@ -355,6 +355,30 @@
     "hash": "3a679894fa011b5ff397c838a13e2fbed896efc540bf2fdac973c03ce8893b1b",
     "lastModified": "2026-07-28T07:24:40.000Z"
   },
+  "en/large-language-models/Berkeley-LLM-Agents.md": {
+    "hash": "f7703bedbe266cb7a95f4e8420647884190365a8553e5982608ffc437595a35f",
+    "lastModified": "2026-11-19T06:19:22.000Z"
+  },
+  "en/large-language-models/CMU11-664.md": {
+    "hash": "eb9dedf537b0049208e4201b0d85a65361bad8d2c7f4627aa5af1ae831e3f0aa",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "en/large-language-models/CMU11-777.md": {
+    "hash": "df7c29ca3f183c9860dad3dcb1318112afab63ad30f8832fbe544f9ecb9c7df8",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "en/large-language-models/ETH-LLM.md": {
+    "hash": "c4ffb82086b6f0fc98ca69e169498d91b4d4fc1c6b9e3b9e1a7a2f3813c05ad7",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "en/large-language-models/PKU-LLM-Alignment.md": {
+    "hash": "bae04b2ad1923ed693bbe2a435e779e8baf5005efb65022c7997fc0540002896",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "en/large-language-models/Tsinghua-LLM-From-Scratch.md": {
+    "hash": "1f8f2959f24a4db5280814b165b6cd01ccea1dcf26e8b1a1b9c0bbe4845eb8e2",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
   "en/machine-learning/CS189.md": {
     "hash": "c6e9295839cdfdfa5f75fe481d24739c4cb95392bfe82392bb9ccb1695706b9f",
     "lastModified": "2026-07-28T07:24:40.000Z"
@@ -922,6 +946,30 @@
   "zh/essential-tools/workflow.md": {
     "hash": "0348d6e91021c062bc4d95bd3c0fb18d1de785afb7efd5cf965915261568b61b",
     "lastModified": "2026-07-28T07:24:40.000Z"
+  },
+  "zh/large-language-models/Berkeley-LLM-Agents.md": {
+    "hash": "b396a71d73485ff3f7561d83617d00d7664b1f44ed4786e64f18685b7f075a3a",
+    "lastModified": "2026-11-19T06:19:22.000Z"
+  },
+  "zh/large-language-models/CMU11-664.md": {
+    "hash": "4bfa4df29f615919bd46cccdda72db3562310e3ae888dc83f1495de01c344910",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "zh/large-language-models/CMU11-777.md": {
+    "hash": "f146c99152ed486754441da6c3155a3784c6b71786dbf3cb74aea724c332b92f",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "zh/large-language-models/ETH-LLM.md": {
+    "hash": "6fbb731e1c8c2d6a60e1278fd3d27f87f78a5d9c4048d9be77345fc6b3d9e370",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "zh/large-language-models/PKU-LLM-Alignment.md": {
+    "hash": "0fce3b68bf2659146f9ea51280a0620a7635c9c161b3cf67140d42cd06af2c73",
+    "lastModified": "2026-11-19T05:59:25.000Z"
+  },
+  "zh/large-language-models/Tsinghua-LLM-From-Scratch.md": {
+    "hash": "0bd5c9e55583fe6e26353e84b27e0754f13cf40d9710963505e8bea67cb2364b",
+    "lastModified": "2026-11-19T05:59:25.000Z"
   },
   "zh/machine-learning/CS189.md": {
     "hash": "3a984e2fa116bf02cffeedd26b51255df1a72e3d114d16afde6de867fa1f7ba5",

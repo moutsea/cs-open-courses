@@ -1728,6 +1728,126 @@
     "summaryEn": ""
   },
   {
+    "id": "large-language-models-Berkeley-LLM-Agents",
+    "title": "UC Berkeley CS294/194-196：Large Language Model Agents",
+    "titleEn": "UC Berkeley CS294/194-196: Large Language Model Agents",
+    "description": "# UC Berkeley CS294/194-196：Large Language Model Agents ## 课程简介 - 所属大学：University of California, Berkeley - 先修要求：强烈建议先具备机器学习与深度学习经验，例如修过 CS182、CS188、CS189 - 编程语言：Python - 课程难度：🌟🌟🌟 - 预计学时：100 学时 这门 ...",
+    "descriptionEn": "# UC Berkeley CS294/194-196: Large Language Model Agents ## Course Overview - University: University of California, Berkeley - Prerequisites: Students are strongly encouraged to have experience with...",
+    "university": "University of California, Berkeley",
+    "path": "large-language-models/Berkeley-LLM-Agents",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": 100,
+      "originalText": "100 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "这门 2024 年秋季的系列讲座由 Dawn Song 主持，每周邀请工业界或学界的研究者主讲，把 LLM Agent 当作一个系统问题来讲。课程从 Agent 需要的能力出发，覆盖推理、规划与工具调用，再进入 Agent 基础设施、检索增强生成、代码生成、多模态与机器人 Agent、评测、隐私安全...",
+    "summaryEn": "This Fall 2024 lecture series, led by Dawn Song with guest speakers from industry and academia, treats LLM agents as a systems problem. It starts from..."
+  },
+  {
+    "id": "large-language-models-CMU11-664",
+    "title": "CMU 11-664/763：Inference Algorithms for Language Modeling",
+    "titleEn": "CMU 11-664/763: Inference Algorithms for Language Modeling",
+    "description": "# CMU 11-664/763：Inference Algorithms for Language Modeling ## 课程简介 - 所属大学：Carnegie Mellon University - 先修要求：11-411/611/711、11-785、10-401/601/701、10-715 或 11-667 中的一门；能用 Python 编程，并具备语言模型与 NLP 基础 - ...",
+    "descriptionEn": "# CMU 11-664/763: Inference Algorithms for Language Modeling ## Course Overview - University: Carnegie Mellon University - Prerequisites: One of 11-411/611/711, 11-785, 10-401/601/701, 10-715, or 11...",
+    "university": "Carnegie Mellon University",
+    "path": "large-language-models/CMU11-664",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": 130,
+      "originalText": "130 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "这门研究生课关注模型训练完成之后发生的事：推理。课程系统梳理解码方法、推理阶段的推理与搜索、工具调用以及 inference-time scaling，重点不是读论文，而是把每类方法实现出来、测出差异。后半程会讲到系统侧：请求批处理、KV cache、投机解码、硬件瓶颈与部署取舍。 考核由三次实现量...",
+    "summaryEn": "This graduate course focuses on what happens after a language model is trained: the inference process. It surveys decoding methods, reasoning-time tec..."
+  },
+  {
+    "id": "large-language-models-CMU11-777",
+    "title": "CMU 11-777：Multimodal Machine Learning",
+    "titleEn": "CMU 11-777: Multimodal Machine Learning",
+    "description": "# CMU 11-777：Multimodal Machine Learning ## 课程简介 - 所属大学：Carnegie Mellon University - 先修要求：未明确列出；项目作业默认具备深度学习、Transformer 与 Python/PyTorch 经验 - 编程语言：Python、PyTorch - 课程难度：🌟🌟🌟🌟 - 预计学时：150 学时 CMU 11-7...",
+    "descriptionEn": "# CMU 11-777: Multimodal Machine Learning ## Course Overview - University: Carnegie Mellon University - Prerequisites: Not explicitly listed; the project work assumes deep learning, Transformer, and...",
+    "university": "Carnegie Mellon University",
+    "path": "large-language-models/CMU11-777",
+    "programmingLanguage": "Python, PyTorch",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": 150,
+      "originalText": "150 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "CMU 11-777 研究如何把文本、图像、视频、音频和动作整合到共享表示与推理系统中。2024 年秋季版本从单模态表示、融合与分裂讲到对齐与 grounding、Transformer、生成、具身与推理，后段还涉及如何与视觉语言模型交互以及 Agent。即使只跟公开的阅读列表，它也是一张相当完整的...",
+    "summaryEn": "CMU 11-777 studies how to integrate text, images, video, audio, and actions into shared representations and reasoning systems. The Fall 2024 edition r..."
+  },
+  {
+    "id": "large-language-models-ETH-LLM",
+    "title": "ETH Zürich：Large Language Models",
+    "titleEn": "ETH Zürich: Large Language Models",
+    "description": "# ETH Zürich：Large Language Models ## 课程简介 - 所属大学：ETH Zurich - 先修要求：没有正式先修，但需要熟悉概率论、线性代数、计算复杂性以及机器学习 - 编程语言：Python - 课程难度：🌟🌟🌟🌟🌟 - 预计学时：150 学时 ETH Zürich 2025 年春季的这门课从语言模型的形式化基础讲起，一路推到当前主流的系统与应用。前半程...",
+    "descriptionEn": "# ETH Zürich: Large Language Models ## Course Overview - University: ETH Zurich - Prerequisites: No formal prerequisites, but students are expected to be comfortable with probability theory, linear ...",
+    "university": "ETH Zurich",
+    "path": "large-language-models/ETH-LLM",
+    "programmingLanguage": "Python",
+    "difficulty": "Advanced",
+    "duration": {
+      "value": 150,
+      "originalText": "150 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "ETH Zürich 2025 年春季的这门课从语言模型的形式化基础讲起，一路推到当前主流的系统与应用。前半程包括概率定义、n-gram 与循环语言模型、Transformer、Tokenizer 和文本生成；后半程进入迁移学习与参数高效微调、上下文学习与指令微调、多模态、检索增强生成、面向推理的强...",
+    "summaryEn": "ETH Zürich’s Spring 2025 course starts from the formal foundations of language models and works up to the systems and applications that dominate curre..."
+  },
+  {
+    "id": "large-language-models-PKU-LLM-Alignment",
+    "title": "北京大学：Large Language Models and Alignment",
+    "titleEn": "Peking University: Large Language Models and Alignment",
+    "description": "# 北京大学：Large Language Models and Alignment ## 课程简介 - 所属大学：Peking University - 先修要求：未明确列出；建议先具备深度学习、Transformer 架构和 Python 基础，否则作业会比较吃力 - 编程语言：Python - 课程难度：🌟🌟🌟🌟 - 预计学时：150 学时 这门 2025 年春季课程沿着大模型开发的主...",
+    "descriptionEn": "# Peking University: Large Language Models and Alignment ## Course Overview - University: Peking University - Prerequisites: Not explicitly listed; students should be comfortable with deep learning,...",
+    "university": "Peking University",
+    "path": "large-language-models/PKU-LLM-Alignment",
+    "programmingLanguage": "Python",
+    "difficulty": "Intermediate",
+    "duration": {
+      "value": 150,
+      "originalText": "150 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "这门 2025 年春季课程沿着大模型开发的主线讲：预训练、监督微调，再到基于人类反馈的强化学习。内容包括大模型基础架构、预训练、推理与思维链、推理与微调、参数高效微调、强化学习精要、策略优化、RLHF 和直接偏好优化；后几讲把对齐扩展到具身与多模态模型，再转向 NVIDIA 训练架构、CUDA 编程...",
+    "summaryEn": "This 2025 Spring course follows the main path of LLM development: pretraining, supervised fine-tuning, and reinforcement learning from human feedback...."
+  },
+  {
+    "id": "large-language-models-Tsinghua-LLM-From-Scratch",
+    "title": "清华 IIIS：Large Language Models from Scratch",
+    "titleEn": "Tsinghua IIIS: Large Language Models from Scratch",
+    "description": "# 清华 IIIS：Large Language Models from Scratch ## 课程简介 - 所属大学：Tsinghua University - 先修要求：未列出正式先修；需要熟悉 Python 与 PyTorch，具备深度学习和线性代数基础，作业还会用到 CUDA 与 Triton - 编程语言：Python、PyTorch、CUDA、Triton - 课程难度：🌟🌟🌟🌟🌟...",
+    "descriptionEn": "# Tsinghua IIIS: Large Language Models from Scratch ## Course Overview - University: Tsinghua University - Prerequisites: No formal prerequisites are listed. You should be comfortable with Python an...",
+    "university": "Tsinghua University",
+    "path": "large-language-models/Tsinghua-LLM-From-Scratch",
+    "programmingLanguage": "Python, PyTorch, CUDA, Triton",
+    "difficulty": "Advanced",
+    "duration": {
+      "value": 180,
+      "originalText": "180 hours"
+    },
+    "category": "large-language-models",
+    "hasChineseVersion": true,
+    "hasEnglishVersion": true,
+    "summary": "这是 2025 年秋季开设的「从零实现大语言模型」课程。前半程先讲 GPU 编程与对 GPU 友好的架构设计，再进入注意力机制的各种变体、超参数调节与 scaling law、优化器和数据筛选；最后几讲拆解 Qwen 系列模型的构建方式与后训练系统，把训练的数学原理和真正跑起一次大模型所需的工程细节...",
+    "summaryEn": "This Fall 2025 course takes the “build it yourself” route through large language models. The lectures begin with GPU programming and GPU-friendly arch..."
+  },
+  {
     "id": "machine-learning-systems-AICS",
     "title": "智能计算系统",
     "titleEn": "Intelligent Computing Systems",

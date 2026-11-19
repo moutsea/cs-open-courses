@@ -9,6 +9,7 @@ import CourseFactSheet from '../src/components/CourseFactSheet'
 import CourseFaq from '../src/components/CourseFaq'
 import CourseComparisonTable from '../src/components/CourseComparisonTable'
 import CourseStudyGuide from '../src/components/CourseStudyGuide'
+import { categoryFaqs } from '../src/data/category-guides'
 import { parseMarkdownFile, type Course } from '../src/lib/courseParser'
 import { buildCourseFaq, extractCourseFacts, factSheetRows, formatStudyHours, type FactLocale } from '../src/lib/courseFacts'
 import { courseListSchema, courseSchema, faqSchema, getCourseSeo } from '../src/lib/courseSeo'
@@ -1154,4 +1155,49 @@ test('FAQ questions are real headings and the summary keeps only phrasing conten
   assert.ok(arrow)
   assert.equal(arrow.textContent?.trim(), '▸')
   dom.window.close()
+})
+
+test('LLM category FAQ accepts CMU machine learning coursework as a prerequisite', async t => {
+  for (const [locale, question, prerequisite] of [
+    ['en', 'What should I learn before an LLM course?', /CMU 11-664 accepts[^.]*machine learning courses, including 10-401\/601\/701/],
+    ['zh', '学 LLM 之前要先补什么？', /CMU 11-664 接受[^。]*机器学习课程作为先修[^。]*10-401\/601\/701/]
+  ] as const) {
+    await t.test(locale, () => {
+      const items = categoryFaqs['large-language-models'][locale]
+      const dom = new JSDOM(renderToStaticMarkup(<CourseFaq items={items} locale={locale} />))
+      try {
+        const heading = [...dom.window.document.querySelectorAll('summary h3')].find(node => node.textContent === question)
+        const answer = heading?.closest('details')?.querySelector('p')?.textContent
+        assert.match(answer ?? '', prerequisite)
+        assert.match(faqSchema(items, locale).mainEntity.find(item => item.name === question)?.acceptedAnswer.text ?? '', prerequisite)
+      } finally {
+        dom.window.close()
+      }
+    })
+  }
+})
+
+test('LLM application FAQ recommends Berkeley for agent topics and ETH for RAG', async t => {
+  for (const [locale, question, agentTopics] of [
+    ['en', 'Do I need inference systems if I only build applications?', /tool (use|calling).*evaluation/i],
+    ['zh', '只做应用和 Agent，需要学推理系统吗？', /工具调用.*评测/]
+  ] as const) {
+    await t.test(locale, () => {
+      const items = categoryFaqs['large-language-models'][locale]
+      const dom = new JSDOM(renderToStaticMarkup(<CourseFaq items={items} locale={locale} />))
+      try {
+        const document: Document = dom.window.document
+        const heading = [...document.querySelectorAll('summary h3')].find(node => node.textContent === question)
+        const answer = heading?.closest('details')?.querySelector('p')?.textContent ?? ''
+        const sentences = answer.split(/[.。]/)
+        const eth = sentences.find(sentence => sentence.includes('ETH Zürich')) ?? ''
+        assert.match(eth, /RAG/)
+        assert.doesNotMatch(eth, /tool (use|calling)|evaluation|工具调用|评测/i)
+        assert.match(sentences.find(sentence => sentence.includes('Berkeley')) ?? '', agentTopics)
+        assert.equal(faqSchema(items, locale).mainEntity.find(item => item.name === question)?.acceptedAnswer.text, answer)
+      } finally {
+        dom.window.close()
+      }
+    })
+  }
 })

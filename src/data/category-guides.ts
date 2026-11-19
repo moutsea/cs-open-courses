@@ -103,6 +103,10 @@ export const categoryGuides: Record<string, { en: string; zh: string }> = {
   'deep-generative-models': {
     en: 'Generative modelling now means two threads: diffusion models and large language models. MIT 6.S184 is the lightest mathematical entry, while CMU 10-423 and MIT 6.S978 give broader generative-model coverage. For LLMs, Stanford CS336 covers language modelling from scratch, CMU 11-667 and 11-711 cover modelling and NLP, and Stanford CS224G plus the Hugging Face course cover applications. The systems side is CMU 15-779 and CMU 11-868, covering GPU programming, distributed training, and LLM serving.',
     zh: '这个方向现在基本是两条线：扩散模型与大语言模型。想理解生成模型的数学原理，MIT 6.S184 是最轻的入口；CMU 10-423 和 MIT 6.S978 则提供更完整的生成模型视角。关注 LLM 可以走 Stanford CS336 的从零实现路线，或用 CMU 11-667、11-711 学建模与 NLP，再用 Stanford CS224G 和 Hugging Face 课程补应用层。偏系统与工程一侧是 CMU 15-779 与 11-868，覆盖 GPU 编程、分布式训练和大模型服务。'
+  },
+  'large-language-models': {
+    en: 'LLM courses divide by what you want to build. To implement a model end to end, start with Tsinghua IIIS’s Large Language Models from Scratch: it develops its own GPU, scaling, and Qwen assignments around that goal. ETH Zürich’s course is the best single survey of the field, moving from formal foundations to fine-tuning, retrieval-augmented generation, RLHF, and security. For inference and serving, CMU 11-664/763 is the most implementation-heavy option: you build batching, KV caching, and speculative decoding yourself instead of configuring an existing server. Berkeley’s LLM Agents MOOC covers planning, tool use, RAG, and evaluation for agent systems; PKU’s Large Language Models and Alignment goes deeper into RLHF, DPO, and the hardware stack. CMU 11-777 adds the multimodal layer — vision-language models, generation, embodiment, and agents.',
+    zh: 'LLM 课程的选择取决于你想动手做什么。想完整实现一遍模型，可以从清华 IIIS 的 Large Language Models from Scratch 开始：它围绕 GPU、scaling 和 Qwen 重新设计了四次作业。想先建立全景，ETH Zürich 的 Large Language Models 是最均衡的一门，从形式化基础一路讲到微调、检索增强、RLHF 与安全。偏推理与部署就看 CMU 11-664/763，它要求你自己实现批处理、KV cache 和投机解码，而不是配置现成服务器。Berkeley 的 LLM Agents MOOC 覆盖 Agent 的规划、工具调用、RAG 与评测；北大的 Large Language Models and Alignment 则深入 RLHF、DPO 和硬件栈。CMU 11-777 补上多模态这一层，包括视觉语言模型、生成、具身与 Agent。'
   }
 }
 
@@ -389,6 +393,22 @@ export const categoryFaqs: Record<string, { en: CategoryFaqItem[]; zh: CategoryF
       { q: 'What mathematics do diffusion models need?', a: 'Calculus and linear algebra. 6.S184 explicitly asks for comfort with calculus and leans heavily on differential equations and probability notation; basic stochastic processes help.' },
       { q: 'How do I choose among the LLM courses?', a: 'Choose Stanford CS336 to build a language model from scratch, CMU 10-423 for a broader generative-AI survey, CMU 11-667 or 11-711 for modelling and NLP, CMU 11-868 or 15-779 for systems, and Stanford CS224G or the Hugging Face course for applications.' },
       { q: 'Can I take these with no background?', a: 'Not really. They assume deep learning coursework and PyTorch experience, and 15-779 also suggests CUDA and machine learning basics. Finish a deep learning course first.' }
+    ]
+  },
+  'large-language-models': {
+    zh: [
+      { q: '学 LLM 之前要先补什么？', a: '先把机器学习和深度学习各学完一门，再熟悉 Transformer 与 Python/PyTorch。ETH Zürich 的课明确要求概率论、线性代数、计算复杂性和机器学习基础；CMU 11-664 接受机器学习课程作为先修（如 10-401/601/701 或 10-715），不局限于 NLP 或深度学习课程。' },
+      { q: '想从零训练一个语言模型，选哪门？', a: '清华 IIIS 的 Large Language Models from Scratch。四次作业依次实现 Transformer 推理、Triton kernel、100M 模型预训练和 0.6B 模型的有监督微调，还有 40% 的小组项目；前提是你能独立处理 CUDA 和训练调试。' },
+      { q: '只做应用和 Agent，需要学推理系统吗？', a: '不必一开始就学。Agent 的工具调用与评测可以看 Berkeley 的 LLM Agents。想补 RAG，可以看 ETH Zürich 的相关讲义。等遇到延迟、吞吐或成本问题，再补 CMU 11-664 的批处理、KV cache 与投机解码。' },
+      { q: '对齐和评测看哪门？', a: '北大的 Large Language Models and Alignment 最集中：三次作业覆盖 Transformer 与 LoRA、奖励建模与 DPO，以及 DPU 编程。ETH Zürich 的课则把 RLHF、安全攻击与隐私评测放在同一门课里，适合先建立整体判断。' },
+      { q: '多模态方向从哪门入手？', a: 'CMU 11-777。它从单模态表示、融合与对齐讲到 Transformer、生成、具身和 Agent，并以完整项目为主；先具备深度学习和 PyTorch 经验再选，否则项目会很难推进。' }
+    ],
+    en: [
+      { q: 'What should I learn before an LLM course?', a: 'Finish one machine learning and one deep learning course, then get comfortable with Transformers and Python/PyTorch. ETH Zürich explicitly expects probability, linear algebra, computational complexity, and machine learning; CMU 11-664 accepts machine learning courses, including 10-401/601/701 and 10-715, in addition to NLP and deep learning options.' },
+      { q: 'Which course has you train a language model from scratch?', a: 'Tsinghua IIIS’s Large Language Models from Scratch. Its four assignments cover Transformer inference, Triton kernels, pretraining a 100M model, and supervised fine-tuning a 0.6B model, plus a 40% group project. You need to be comfortable with CUDA and training debugging.' },
+      { q: 'Do I need inference systems if I only build applications?', a: 'Not at the start. Start with Berkeley’s LLM Agents for agent tool use and evaluation. For RAG, see the ETH Zürich lecture materials. When latency, throughput, or cost becomes the bottleneck, add CMU 11-664 for batching, KV caching, and speculative decoding.' },
+      { q: 'Where should I study alignment and evaluation?', a: 'PKU’s Large Language Models and Alignment is the most focused: its assignments cover Transformers and LoRA, reward modelling and DPO, and DPU programming. ETH Zürich places RLHF, security attacks, and privacy evaluation in one course, which is a better first overview.' },
+      { q: 'Which course should I take for multimodal work?', a: 'CMU 11-777. It moves from unimodal representations and fusion/alignment through Transformers, generation, embodiment, and agents, and is organised around a full project. Take it after deep learning and PyTorch experience.' }
     ]
   },
   'electronics-basics': {

@@ -102,6 +102,24 @@ test('Chinese course resources include the interview-materials promotion immedia
   }
 })
 
+test('Berkeley LLM Agents states the shared requirements and what replaces the lecture article', async t => {
+  const coursePath = ['large-language-models', 'Berkeley-LLM-Agents']
+  for (const [locale, shared, unitWork] of [
+    ['en', /All enrolled students.*attend lectures in person.*weekly reading summaries/i,
+      /One-unit students.*article summarizing one lecture.*More than one unit.*lab assignment and a project instead of the article/i],
+    ['zh', /所有选课学生.*到场听课.*每周.*阅读总结/,
+      /1 学分.*总结一场讲座的文章.*超过 1 学分.*实验作业和项目替代这篇文章/]
+  ] as const) {
+    await t.test(locale, async () => {
+      const { content } = await getCourseContent(coursePath, locale)
+      const html = await markdownToHTML(content, { locale, coursePath: coursePath.join('/') }, { removeFirstHeading: true })
+      const paragraphs = elements(renderCourseDocument(html, locale), 'p').map(textContent).join('\n')
+      assert.match(paragraphs, shared)
+      assert.match(paragraphs, unitWork)
+    })
+  }
+})
+
 test('same-page links resolve to sanitized IDs including encoded and already-prefixed names', () => {
   for (const id of ['resources', '课程资源', 'section one', '100%', 'user-content-resources', 'location']) {
     for (const fragment of [id, encodeURIComponent(id)]) {
