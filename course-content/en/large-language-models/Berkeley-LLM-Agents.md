@@ -10,7 +10,7 @@
 
 This Fall 2024 lecture series, led by Dawn Song with guest speakers from industry and academia, treats LLM agents as a systems problem. It starts from the abilities an agent needs — reasoning, planning, and tool use — then covers agent infrastructure, retrieval-augmented generation, code generation, multimodal and robotic agents, evaluation, privacy, safety, and multi-agent collaboration. Most weeks are taught by a researcher or practitioner working directly on the topic.
 
-The course is variable-unit. One unit requires a lecture summary; two units add a lab and a survey-style project; three or four units require a programming project that interacts with LLMs, with the four-unit version demanding a substantial implementation. The edited lecture videos are public, so the talks are useful even without Berkeley enrollment, but the project feedback and grading are limited to enrolled students.
+All enrolled students attend lectures in person and complete weekly reading summaries. One-unit students also submit an article summarizing one lecture. Students taking more than one unit submit a lab assignment and a project instead of the article. The two-unit project includes a written report that may be a survey; three- and four-unit projects require code that interacts with LLMs, with a substantial implementation for four units. The edited lecture videos are public, so the talks are useful even without Berkeley enrollment, but the project feedback and grading are limited to enrolled students.
 
 ## Course Resources
 
