@@ -397,14 +397,14 @@ export const categoryFaqs: Record<string, { en: CategoryFaqItem[]; zh: CategoryF
   },
   'large-language-models': {
     zh: [
-      { q: '学 LLM 之前要先补什么？', a: '先把机器学习和深度学习各学完一门，再熟悉 Transformer 与 Python/PyTorch。ETH Zürich 的课明确要求概率论、线性代数、计算复杂性和机器学习基础；CMU 11-664 也要求先修过 NLP 或深度学习课程。' },
+      { q: '学 LLM 之前要先补什么？', a: '先把机器学习和深度学习各学完一门，再熟悉 Transformer 与 Python/PyTorch。ETH Zürich 的课明确要求概率论、线性代数、计算复杂性和机器学习基础；CMU 11-664 接受机器学习课程作为先修（如 10-401/601/701 或 10-715），不局限于 NLP 或深度学习课程。' },
       { q: '想从零训练一个语言模型，选哪门？', a: '清华 IIIS 的 Large Language Models from Scratch。四次作业依次实现 Transformer 推理、Triton kernel、100M 模型预训练和 0.6B 模型的有监督微调，还有 40% 的小组项目；前提是你能独立处理 CUDA 和训练调试。' },
       { q: '只做应用和 Agent，需要学推理系统吗？', a: '不必一开始就学。Berkeley 的 LLM Agents 和 ETH Zürich 的课都会讲 RAG、工具调用与评测，足够支撑应用开发；等遇到延迟、吞吐或成本问题，再补 CMU 11-664 的批处理、KV cache 与投机解码。' },
       { q: '对齐和评测看哪门？', a: '北大的 Large Language Models and Alignment 最集中：三次作业覆盖 Transformer 与 LoRA、奖励建模与 DPO，以及 DPU 编程。ETH Zürich 的课则把 RLHF、安全攻击与隐私评测放在同一门课里，适合先建立整体判断。' },
       { q: '多模态方向从哪门入手？', a: 'CMU 11-777。它从单模态表示、融合与对齐讲到 Transformer、生成、具身和 Agent，并以完整项目为主；先具备深度学习和 PyTorch 经验再选，否则项目会很难推进。' }
     ],
     en: [
-      { q: 'What should I learn before an LLM course?', a: 'Finish one machine learning and one deep learning course, then get comfortable with Transformers and Python/PyTorch. ETH Zürich explicitly expects probability, linear algebra, computational complexity, and machine learning; CMU 11-664 requires prior NLP or deep learning coursework.' },
+      { q: 'What should I learn before an LLM course?', a: 'Finish one machine learning and one deep learning course, then get comfortable with Transformers and Python/PyTorch. ETH Zürich explicitly expects probability, linear algebra, computational complexity, and machine learning; CMU 11-664 accepts machine learning courses, including 10-401/601/701 and 10-715, in addition to NLP and deep learning options.' },
       { q: 'Which course has you train a language model from scratch?', a: 'Tsinghua IIIS’s Large Language Models from Scratch. Its four assignments cover Transformer inference, Triton kernels, pretraining a 100M model, and supervised fine-tuning a 0.6B model, plus a 40% group project. You need to be comfortable with CUDA and training debugging.' },
       { q: 'Do I need inference systems if I only build applications?', a: 'Not at the start. Berkeley’s LLM Agents and ETH Zürich cover RAG, tool use, and evaluation well enough for application work. When latency, throughput, or cost becomes the bottleneck, add CMU 11-664 for batching, KV caching, and speculative decoding.' },
       { q: 'Where should I study alignment and evaluation?', a: 'PKU’s Large Language Models and Alignment is the most focused: its assignments cover Transformers and LoRA, reward modelling and DPO, and DPU programming. ETH Zürich places RLHF, security attacks, and privacy evaluation in one course, which is a better first overview.' },
