@@ -36,8 +36,11 @@
     },
     "cs-video-courses": {
       "initializedAt": "2026-07-15T02:23:30.149Z",
-      "lastProcessedAt": "2026-11-17T10:41:01.168Z",
+      "lastProcessedAt": "2026-11-21T09:44:54.532Z",
       "seenEntryIds": [
+        "tag:github.com,2008:Grit::Commit/dcaeff11aab30d18e74d19e5f9c61b962575eafe",
+        "tag:github.com,2008:Grit::Commit/29e9228b132e6a4ad38445b083f21e4e79e972b6",
+        "tag:github.com,2008:Grit::Commit/7dc02be032a4bb2d5b84ede68c2dfeea095e092f",
         "tag:github.com,2008:Grit::Commit/bcb4d9f93c1fc89eb09592353f360442ae018ab5",
         "tag:github.com,2008:Grit::Commit/45630bbc81e046bc26059cab327fe44f790b5863",
         "tag:github.com,2008:Grit::Commit/b14b7921f30c0caa3532d24496dab6908e5cf29b",
@@ -660,6 +663,42 @@
     }
   },
   "decisions": [
+    {
+      "reviewedAt": "2026-11-21T09:44:54.532Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/dcaeff11aab30d18e74d19e5f9c61b962575eafe",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/dcaeff11aab30d18e74d19e5f9c61b962575eafe",
+      "entryTitle": "Add new course links for CMU programs",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.95,
+      "reason": "The patch only adds YouTube playlist links without official course pages or sufficient evidence to verify course details such as prerequisites, programming languages, class hours, or difficulty. No allowed target paths are available for updates.",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-21T09:44:41.820Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/29e9228b132e6a4ad38445b083f21e4e79e972b6",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/29e9228b132e6a4ad38445b083f21e4e79e972b6",
+      "entryTitle": "Add NYU CSCI-UA 480 075 (FA25) (#551)",
+      "mode": "auto",
+      "type": "reject",
+      "confidence": 0.88,
+      "reason": "AI confidence 0.88 is below 0.95",
+      "changedFiles": []
+    },
+    {
+      "reviewedAt": "2026-11-21T09:44:24.799Z",
+      "sourceId": "cs-video-courses",
+      "entryId": "tag:github.com,2008:Grit::Commit/7dc02be032a4bb2d5b84ede68c2dfeea095e092f",
+      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/7dc02be032a4bb2d5b84ede68c2dfeea095e092f",
+      "entryTitle": "Add Johns Hopkins CS 601.471/671 (FA26) (#550)",
+      "mode": "auto",
+      "type": "ignore",
+      "confidence": 0.82,
+      "reason": "The feed adds a Johns Hopkins NLP course site, but the evidence provides only a title and URL. No existing-course target matches, allowedTargetPaths is empty, and there is insufficient evidence to supply required create metadata such as access status, prerequisites, programming languages, difficulty",
+      "changedFiles": []
+    },
     {
       "reviewedAt": "2026-11-17T10:41:01.168Z",
       "sourceId": "cs-video-courses",
@@ -1822,42 +1861,6 @@
       "type": "ignore",
       "confidence": 0.95,
       "reason": "The commit only corrects the capitalization of \"ESlint\" to \"ESLint\" in Part 3d prose and image alt text. No change to course content, structure, resources, or metadata for web-development/fullstackopen, so no update is warranted.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-12T07:08:31.860Z",
-      "sourceId": "full-stack-open",
-      "entryId": "tag:github.com,2008:Grit::Commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
-      "entryUrl": "https://github.com/fullstack-hy2020/fullstack-hy2020.github.io/commit/bf5fdbfc012143f4f26a591e2c6d7fc4b9699abf",
-      "entryTitle": "Apply batched suggestions from code review",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.93,
-      "reason": "Upstream commit is a code-review styling tweak to a close button in the course website repo, with no file list and no evidence of curriculum, resource, or course-content changes. Nothing here supports an evidence-backed update to web-development/fullstackopen.",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-12T07:08:27.101Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/db81c1090ebbcf69617cb0d1a2b580fff6ccb689",
-      "entryTitle": "Add MIT 6.1200J (SP24) (#519)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.83,
-      "reason": "The commit adds one README line linking MIT 6.1200J 'Mathematics for Computer Science' (Spring 2024) OCW lecture videos plus a YouTube playlist. An update is not possible because sourcePolicy.allowedTargetPaths is empty, so no existing entry (including advanced-mathematics/6.042J, the earlier number",
-      "changedFiles": []
-    },
-    {
-      "reviewedAt": "2026-09-12T07:08:16.613Z",
-      "sourceId": "cs-video-courses",
-      "entryId": "tag:github.com,2008:Grit::Commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
-      "entryUrl": "https://github.com/Developer-Y/cs-video-courses/commit/323701d9a9fec8bfacec84bfa46646b7cce202a2",
-      "entryTitle": "Add Computational Mathematics and AI (#518)",
-      "mode": "auto",
-      "type": "ignore",
-      "confidence": 0.9,
-      "reason": "The commit adds a single README link for an NSF CBMS 2025 workshop (Computational Mathematics and AI) rather than a university-level course offering; the evidence contains no course details such as prerequisites, class hours, programming languages, or difficulty, and sourcePolicy.allowedTargetPaths",
       "changedFiles": []
     }
   ]
